@@ -64,7 +64,7 @@ imported document-to-html.xsl for details.
           </div>
         </xsl:if>
         <div id="skinconf-toc-page"/>
-      </div> 
+      </div>
       <xsl:apply-templates select="body"/>
       <xsl:if test="header/authors">
         <p align="right">
@@ -86,6 +86,18 @@ imported document-to-html.xsl for details.
   </xsl:template>
   <xsl:template match="body">
     <xsl:apply-templates/>
+    <!-- Piwik -->
+    <!-- script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://esx-179.gbv.de/piwik/piwik/" : "http://esx-179.gbv.de/piwik/piwik/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+    </script><noscript><p><img src="http://esx-179.gbv.de/piwik/piwik/piwik.php?idsite=3" style="border:0" alt="" /></p></noscript -->
+    <!-- End Piwik Tracking Code -->
   </xsl:template>
   <xsl:template match="@id">
     <xsl:apply-imports/>
