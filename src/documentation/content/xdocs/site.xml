@@ -20,11 +20,12 @@ See http://forrest.apache.org/docs/linking.html for more info
   always use index.html when you request http://yourHost/
   See FAQ: "How can I use a start-up-page other than index.html?"
 -->
-<site label="MyCoRe Documentation" href="" xmlns="http://apache.org/forrest/linkmap/1.0" tab="welcome">
+<site label="MyCoRe Website" href="" xmlns="http://apache.org/forrest/linkmap/1.0">
 
-  <welcome         label="Willkommen bei MyCoRe">
-    <news          label="Aktuelles"          href="index.html" />
- <!--   <workshop      label="Anwenderworkshop"   href="workshop.html" /> -->
+  <welcome         label="Willkommen bei MyCoRe" href="index.html" tab="x" />
+
+    <!-- news          label="Aktuelles"          href="index.html" />
+    <workshop      label="Anwenderworkshop"   href="workshop.html" />
     <archive       label="Meldungen Archiv"   href="archive.html" />
     <about         label="Über MyCoRe"        href="about.html" />
     <license       label="Lizenzbedingungen"  href="license.html" />
@@ -34,7 +35,6 @@ See http://forrest.apache.org/docs/linking.html for more info
     <presentations label="Präsentationen"     href="presentations.html" />
     <team          label="Team"               href="team.html" />
     <sitemap       label="Sitemap"            href="linkmap.html" />
-  </welcome>
 
   <whos_using label="Wer nutzt MyCoRe?">
     <applications  label="Neuste Anwendungen"        href="applications.html" >
@@ -46,9 +46,13 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   <demo label="Demo-Version">
     <docportal label="DocPortal" href="http://www.mycore.de:8291/" />
-  </demo>
+  </demo -->
 
-  <download      label="Download"        href="download/" tab="download">
+  <features label="Features" href="features/index.html" tab="features" />
+
+  <demo label="Demo" href="demo/index.html" tab="demo" />
+
+  <download      label="Software"        href="download/" tab="download">
     <howtoget    label="Übersicht"       href="index.html" />
     <release     label="Release 2.1"     href="release.html" />
     <!-- prerelease    label="Prerelease"        href="prerelease.html" / -->
@@ -59,7 +63,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <artifactory label="Artifactory"       href="http://www.mycore.de/artifactory/" />
   </download>
 
-  <documentation label="Dokumentation"          href="documentation/" tab="documentation">
+  <documentation label="Hilfe"          href="documentation/" tab="documentation">
     <overview    label="Übersicht"              href="index.html" />
     <version_2_1 label="MyCoRe 2.1" href="version21/">
       <whats_new_2_1 label="Was ist neu?" href="whats_new.html" />
@@ -172,22 +176,22 @@ See http://forrest.apache.org/docs/linking.html for more info
     <apidocs     label="Javadocs"        href="http://www.mycore.de/generated/mycore/apidocs/" />
 
     <doc_archive label="Archiv">
-	    <version_2_0 label="MyCoRe 2.0" href="version20/">
-	        <mcruse      label="User Guide"             href="mcruse.html" />
-	        <appdev      label="Programmer Guide"       href="appdev.html">
-	          <chapter1  label="Allgemeines"            href="#Allgemeines+zur+Implementierung" />
-	          <chapter2  label="Funktionsprinzipien"    href="#Funktionsprinzipien+und+Implementierungen+von+Kernkomponenten" />
-	          <chapter3  label="Komponenten"            href="#Komponenten" />
-	          <chapter4  label="Anmerkungen"            href="#Anmerkungen+und+Hinweise" />
-	          <sessions  href="#session" />
-	        </appdev>
-	        <mcrdev      label="Developer Guide"        href="mcrdev.html" />
-	    </version_2_0>
+      <version_2_0 label="MyCoRe 2.0" href="version20/">
+          <mcruse      label="User Guide"             href="mcruse.html" />
+          <appdev      label="Programmer Guide"       href="appdev.html">
+            <chapter1  label="Allgemeines"            href="#Allgemeines+zur+Implementierung" />
+            <chapter2  label="Funktionsprinzipien"    href="#Funktionsprinzipien+und+Implementierungen+von+Kernkomponenten" />
+            <chapter3  label="Komponenten"            href="#Komponenten" />
+            <chapter4  label="Anmerkungen"            href="#Anmerkungen+und+Hinweise" />
+            <sessions  href="#session" />
+          </appdev>
+          <mcrdev      label="Developer Guide"        href="mcrdev.html" />
+      </version_2_0>
     </doc_archive>
-    
+
   </documentation>
 
-  <support label="Support &amp; Kontakt" href="support/" tab="support">
+  <support label="Kontakt" href="support/" tab="support">
     <email      label="Mailing-Listen"   href="index.html" />
     <office     label="Geschäftsstelle"  href="office.html" />
     <faqs       label="FAQs"             href="faqs.html" />

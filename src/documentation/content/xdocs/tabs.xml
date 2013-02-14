@@ -9,12 +9,15 @@
     directory (ends in '/'), in which case /index.html will be added
     If @id's are present, site.xml entries with a matching @tab will be in that tab.
 
-   Tabs can be embedded to a depth of two. The second level of tabs will only 
-    be displayed when their parent tab is selected.    
+   Tabs can be embedded to a depth of two. The second level of tabs will only
+    be displayed when their parent tab is selected.
   -->
-  <tab id="welcome"        dir=""              label="Willkommen" />  
-  <tab id="download"       dir="download"      label="Download" />
-  <tab id="documentation"  dir="documentation" label="Dokumentation" />  
-  <tab id="support"        dir="support"       label="Support &amp; Kontakt" />
-  <tab id="impressum"      dir="impressum"     label="Impressum" />
+  <!-- tab id="welcome"        dir=""              label="Willkommen" /-->
+
+  <tab id="features"       dir="features"      label="Features" />
+  <tab id="demo"           dir="demo"          label="Demo" />
+  <tab id="download"       dir="download"      label="Software" />
+  <tab id="documentation"  dir="documentation" label="Hilfe" />
+  <tab id="support"        dir="support"       label="Kontakt" />
+  <!--  tab id="impressum"      dir="impressum"     label="Impressum" / -->
 </tabs>

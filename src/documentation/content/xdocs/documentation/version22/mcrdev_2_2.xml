@@ -105,7 +105,7 @@
           <strong>m2e</strong>, siehe <a href="http://eclipse.org/m2e/">http://eclipse.org/m2e/</a>.
           Weiteres dazu und wie nun MyCoRe in die Entwicklungsumgebung geholt wird, steht im
           <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Ideen/Maven#Eclipse">Wiki</a>.
-          <!-- Bilder dazu mycore_checkout.png und mycore_toMaven.png -->
+          <!-- TODO: Bilder dazu mycore_checkout.png und mycore_toMaven.png -->
         </p>
         <p>
           Zur Bearbeitung von I18N-Sprachdateien hat sich der

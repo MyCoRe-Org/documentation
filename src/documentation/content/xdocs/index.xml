@@ -6,100 +6,28 @@
     <title>Willkommen bei MyCoRe</title>
   </header>
   <body>
-    <!-- div style="float:right;border:solid 1px gray;">
-      <script type="text/javascript" src="http://www.ohloh.net/p/16348/widgets/project_factoids.js"></script>
-    </div -->  
-  <p>
-    MyCoRe ist ein System zur Entwicklung von Dokumenten- und Publikationsservern,
-    Archivanwendungen, Sammlungen von Digitalisaten oder vergleichbaren Repositorien.
-    Auf MyCoRe basierende Anwendungen nutzen einen gemeinsamen Kern, der die
-    typischerweise für solche Anwendungen erforderliche Funktionalität wie
-    Metadatenverwaltung, Suchfunktionen, OAI-Schnittstelle, ein Bildbetrachtungsmodul
-    etc. bereitstellt.
-  </p>
-  <br /> <br /> <br />
- <!--
-  <h2 class="underlined_10"> Ankündigung </h2>
-  
-  <div style="margin-top: 20px;zoom:1;">
-    <img alt="Stabi Berlin" title="Berlin" 
-    class="float" src="images/SBB-Logo.png" />
-    
-    <p class="fett">Einladung zum Miless-/MyCoRe-Workshop 2012 in Berlin</p>
-    
-    <p>
-      Die MyCoRe-Entwickler laden alle Miless-/MyCoRe-Anwender und Interessierte
-      zu einem Workshop nach Berlin ein. Am 12. und 13. November 2012 sind wir zu Gast
-      in der  „Staatsbibliothek zu Berlin - Preussischer Kulturbesitz“ 
-      (siehe <a href="http://staatsbibliothek-berlin.de/die-staatsbibliothek/abteilungen/orient/aktuelles/" 
-      title="Ankündigung der SBB">Ankündigung der SBB</a>) und geben 
-      Gelegenheit zum Austausch mit anderen Anwendern, Interessierten
-      und den Entwicklern. Fragen, Anregungen und Themenwünsche sind willkommen 
-      und können an die <a href="site:office">MyCoRe Geschäftsstelle</a> 
-      geschickt werden.<br/> Weitere <b><a title="Weitere Informationen" href="site:workshop">
-      Informationen zum Workshop finden Sie hier</a></b> und im <a title="AnwenderWorkshop2012" 
-      href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2012">MyCoRe-Wiki</a>.
-    </p>
-    
-    <p class="kleinRight">15. Oktober 2012, Wiebke Oeltjen</p>
-  </div>
- 
-  <div style="clear: both;" />
--->
 
-  <h2 class="underlined_10">Aktuelles</h2>
+    <div>
+      MyCoRe ist ein System zur Entwicklung von Dokumenten- und Publikationsservern, Archivanwendungen, Sammlungen von Digitalisaten oder vergleichbaren Repositorien. Auf MyCoRe basierende Anwendungen nutzen einen gemeinsamen Kern, der die typischerweise für solche Anwendungen erforderliche Funktionalität wie Metadatenverwaltung, Suchfunktionen, OAI-Schnittstelle, ein Bildbetrachtungsmodul etc. bereitstellt.
+    </div>
 
-  <div style="margin-top: 20px;zoom:1;">
-    <img alt="Stabi Berlin" title="Berlin" 
-    class="float" src="images/SBB-Logo.png" />
-    
-    <p class="fett">MyCoRe-Workshop 2012 und Entwicklerkonferenz fanden an der SBB in Berlin statt</p>
-    
-    <p>
-      Die MyCoRe-Community und an MyCoRe Interessierte trafen sich dieses Jahr (am 12./13. November 2012)
-      zu einem Workshop in Berlin. Gastgeberin war die „Staatsbibliothek zu Berlin - Preussischer Kulturbesitz“ 
-      (<a href="http://staatsbibliothek-berlin.de/die-staatsbibliothek/abteilungen/orient/aktuelles/" 
-      title="SBB">SBB</a>), wo in der MyCoRe-Anwendung „MySBB“
-      <a href="http://orient-digital.staatsbibliothek-berlin.de/content/main/search-islamhs.xml" 
-      title="Orientalische Handschriften der SBB">orientalische Handschriften</a> digital erfasst werden.
-      Weitere MyCoRe-User zeigten ihre Anwendungen, Fragen wurden geklärt,
-      Ideen wurden diskutiert und die Entwickler präsentierten neue MyCoRe-Features. 
-      Im Anschluß daran fand die Entwicklerkonferenz statt. 
-      Sie diente dem Ziel, das nächste Release vorzubereiten.
-    </p>
-    
-    <p class="kleinRight">15. November 2012, Wiebke Oeltjen</p>
-  </div>
- 
-  <div style="clear: both;" />
 
-  <div>
-    <a href="http://www.fz-juelich.de/zb/DE/WissKom2012/WissKom2012_node.html" title="Link zur WissKom-Konferenz">
-    <img alt="WissKom Konferenz in Jülich" class="float" src="images/WissKom.png" /></a>
-    
-    <p class="fett">MyCoRe auf der WissKom2012</p>
-    
-    <p>
-      MyCoRe wurde auf der Konferenz „<a 
-      href="http://www.fz-juelich.de/zb/DE/WissKom2012/WissKom2012_node.html" 
-      title="Link zur WissKom-Konferenz">WissKom 2012</a>“ in Jülich präsentiert. Die
-      6. Konferenz der Zentralbibliothek des Forschungszentrums Jülich fand
-      vom 5. bis 7. November 2012 statt. Das Schwerpunktthema lautete 
-      „Vernetztes Wissen – Daten, Menschen, Systeme“. Es gab einen Vortrag
-      über verschiedene Aspekte der Vernetzung mit MyCoRe und 
-      ein Poster zur Vernetzung biographischer Online-Ressourcen 
-      mit der MyCoRe-Anwendung „Catalogus Professorum Rostochiensium“.
-    </p>
-    
-    <p class="kleinRight">8. November 2012, Wiebke Oeltjen</p>
-  </div>
-  
-  <div style="clear: both;" />  
+    <div class="float">
+        <a class="icon" href="/demo" title="Beispiele">
+            <img style="margin:20px;padding:5px;border:3px solid #C0C0C0;" src="//c.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg/182/137" width="100"  alt="Beispiele"/>
+        </a>
+        <a class="icon" href="/features" title="Landkarte">
+            <img style="margin:20px;padding:5px;border:3px solid #C0C0C0;" src="//c.fsdn.com/con/app/proj/mycore/screenshots/300687.jpg/182/137" width="100"  alt="Landkarte"/>
+        </a>
+        <a class="icon" href="/documentation" title="Einsteigen">
+            <img style="margin:20px;padding:5px;border:3px solid #C0C0C0;" src="//c.fsdn.com/con/app/proj/mycore/screenshots/300673.jpg/182/137" width="100"  alt="Einsteigen"/>
+        </a>
+        <a class="icon" href="/documentation" title="Mitmachen">
+            <img style="margin:20px;padding:5px;border:3px solid #C0C0C0;" src="//c.fsdn.com/con/app/proj/mycore/screenshots/300677.jpg/182/137" width="100"  alt="Mitmachen"/>
+        </a>
+    </div>
 
-  <h2 class="underlined_10">Weitere Links</h2> 
-  <p>
-    <a href="site:archive">Weitere Nachrichten</a> <br/>
-    <a href="site:about">Was ist MyCoRe?</a>
-  </p>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
 </body>
 </document>
