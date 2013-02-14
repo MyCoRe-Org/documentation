@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Übersicht</title>
+  </header>
+  <body>
+
+    <section id="documentation_2_1">
+      <title>Dokumentation zu MyCoRe 2.1</title>
+      <ul>
+        <li>
+          <a href="site:chapter1_ug21">User Guide</a> - <a href="site:wholedoc_ug21">als PDF</a>
+          <p>beschreibt Schritt für Schritt Installation und Konfiguration des MyCoRe-Kerns und der Referenz- und
+            Beispielanwendung DocPortal, sowie die Integration in die eigene Systemumgebung.</p>
+        </li>
+        <li>
+          <a href="site:chapter1_pg21">Programmer Guide</a> - <a href="site:wholedoc_pg21">als PDF</a>
+          <p>ist für Entwickler eigener Anwendungen auf Basis des MyCoRe-Kerns gedacht und beschreibt die Funktionsweise
+            und Nutzung einzelner Kernkomponenten, z. B. das Query-System, das Datenmodell, das Editor Framework zur
+            Erstellung eigener Such- und Eingabemasken etc.</p>
+        </li>
+        <li>
+          <a href="site:mcrdev_2_1">Developer Guide</a>
+          <p>beschreibt die Hinweise und Festlegungen für die am Projekt beteiligten Entwickler.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="documentation_2_2">
+      <title>Dokumentation zu MyCoRe 2.2</title>
+      <p>Das Release 2.2 ist in Arbeit. Alle neuen Funktionen sind entsprechend in der neuen Version der Dokumentation zu finden:</p>
+      <ul>
+        <li>
+          <a href="site:chapter1_ug22">User Guide</a> - <a href="site:wholedoc_ug22">als PDF</a>
+        </li>
+        <li>
+          <a href="site:chapter1_pg22">Programmer Guide</a> - <a href="site:wholedoc_pg22">als PDF</a>
+        </li>
+        <li>
+          <a href="site:mcrdev_2_2">Developer Guide</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="howto">
+      <title>HowTo's</title>
+      <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo">HowTo's (Wiki)</a>
+      <p>beschreiben in knappen Anleitungen, wie etwas gemacht wird und wie häufige MyCoRe-Probleme gelöst werden können.</p>
+    </section>
+
+    <section id="migration">
+      <title>Migration</title>
+      <ul>
+        <li>
+          <a href="site:migrate21_22">Version 2.1 -> Version 2.2</a>
+          <p>Migrationsanleitung von einer MyCoRe-Anwendung auf Basis der Version 2.1 zu 2.2</p>
+        </li>
+        <li>
+          <a href="site:migrate20_21">Version 2.0 -> Version 2.1</a>
+          <p>Migrationsanleitung von einer MyCoRe-Anwendung auf Basis der Version 2.0 zu 2.1</p>
+        </li>
+        <li>
+          <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20">Version 1.3 -> Version 2.0</a> (Wiki)
+        </li>
+        <li>
+          <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13">Version 1.2 -> Version 1.3</a> (Wiki)
+        </li>
+      </ul>
+    </section>
+
+    <section id="maven">
+      <title>Generierte Projektdokumentation (Maven)</title>
+      <ul>
+        <li>
+          <a href="site:maven">Maven Site</a>
+        </li>
+        <li>
+          <a href="site:apidocs">Aktuelle API Dokumentation (Javadocs)</a>.<br/>
+          Diese Seite umfasst sämtliche Klassen des MyCoRe-Build-Prozesses, unter Umständen auch solche, die nicht in mycore-complete enthalten sind.<br/>
+          Die Javadocs der einzelnen MyCoRe-Komponenten erreichen sie über die <a href="http://www.mycore.de/generated/mycore/">MyCoRe-Maven-Hauptseite</a> (jeweils Eintrag unter "Modules" -> "Project Reports" -> "JavaDocs").<br/>
+          Javadocs für älteren Versionen sind über die <a href="site:maven">Maven Site</a> erreichbar ("Project Reports" -> "JavaDocs").
+        </li>
+      </ul>
+    </section>
+    
+    <section id="doc_archive">
+      <title>Archiv</title>
+      <p>Alte Dokumentation wird hier aufbewahrt und steht somit Anwendern vergangener Release-Versionen
+      auch weiterhin zur Verfügung. Wir empfehlen jedoch ein baldmögliches Update auf das aktuelle
+      Release.</p>
+      <ul>
+        <li>Dokumentation zum <a href="site:mcruse">Release 2.0</a></li>
+      </ul>
+    </section>
+  </body>
+</document>

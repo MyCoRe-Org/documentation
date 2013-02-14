@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Allgemeine Klassen / Exception-Modell / MCRCache</title>
+    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten</abstract>
+  </header>
+<body>
+
+   <section>
+    <title>Allgemeine Klassen</title>
+    <p>
+    Wie in jedem Projekt, so gibt es auch in MyCoRe allgemein verwendete Klassen. Diese sind im Paket
+    <code>org.mycore.common</code> und den dort befindlichen Unterpaketen platziert. Hier finden Sie Klassen für
+    </p>
+    <ul>
+    <li>die Behandlung des MyCoRe-internen EventHandler-Systems,</li>
+    <li>die Behandlung und den Umgang mit XML-Daten,</li>
+    <li>Ausnahmebehandlungen,</li>
+    <li>Caches,</li>
+    <li>MyCoRe-Sessions und</li>
+    <li>weitere nützliche Funktionen.</li>
+    </ul>
+    <p>
+    In den JavaDocs können Sie sich leicht einen Überblick der implementierten Klassen und Methoden verschaffen.
+    </p>
+   </section>
+
+   <section>
+    <title>Exception Modell</title>
+     <p>
+     MyCoRe nutzt zwei verschiedene Exception-Modelle, die hier kurz erläutert werden sollen. Hinsichtlich der
+     Funktionen und Methoden der Exceptions sollten Sie die JavaDocs des MyCoRe-Projektes konsultieren.
+     </p>
+     <ul>
+     <li>MCRException und alle davon abgeleiteten Klassen. Diese Exception-Klasse ist von der Java-Klasse
+         RuntimeException abgeleitet und kann damit Ausnahmezustände nach außen tragen.
+     </li>
+     <li>Die MCRCatchException ist hingegen von der Java-Klasse Exception abgeleitet und muss auch jeden Fall
+         abgefangen werden.
+     </li>
+     </ul>
+    </section>
+
+</body>
+</document>
+

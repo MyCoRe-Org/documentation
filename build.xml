@@ -1,0 +1,67 @@
+<project name="MyCoRe Documentation" default="info" basedir=".">
+
+  <property environment="env" />
+  
+  <property name="fop.config.location" location="src/documentation/resources/fonts/config.xml"/>
+
+  <fail message="Environment variable ANT_HOME is not set.">
+    <condition> <not> <isset property="env.ANT_HOME"/> </not> </condition>
+  </fail>
+
+  <fail message="Environment variable FORREST_HOME is not set. Install Forrest 0.9 first!">
+    <condition> <not> <isset property="env.FORREST_HOME"/> </not> </condition>
+  </fail>
+
+  <property name="forrest.home" value="${env.FORREST_HOME}"/>
+  <import file="${env.FORREST_HOME}/main/forrest.build.xml"/>  
+
+  <target name="info">
+    <echo>
+      Before using Forrest with Ant, you have to
+      cp $FORREST_HOME/lib/core/xml-commons-resolver-*.jar $ANT_HOME/lib
+    </echo>
+  </target>
+  
+  <target name="config-fop" description="configure FOP for PDF support" >
+    <echo append="false" file="src/documentation/resources/schema/symbols-project-v10.ent"><![CDATA[<!ENTITY pdf-config-file "${fop.config.location}">
+]]></echo>
+  </target>
+
+	<!-- ============================================== -->
+
+  <target name="hudson" depends="config-fop,war">
+    <unwar src="build/my-project.war" dest="build/unwar" />
+    <copy overwrite="true" file="patch/document-to-fo.xsl" todir="build/unwar/project/src/documentation/skins/common/xslt/fo/" />
+    <delete file="build/my-project.war" />
+    <zip destfile="build/documentation.zip" basedir="build/unwar" /> 
+  </target>
+	
+	<!-- ============================================== -->
+
+  <target name="changelog" depends="init">
+    <echo>
+
+      Building SVN ChangeLog and statistics, please be patient...
+    </echo>
+
+    <mkdir dir="changelogs"/>
+    <mkdir dir="changelogs/statsvn" />
+    
+    <exec executable="svn" output="changelogs/statsvn/svnlog.xml">
+      <arg line="log -v --xml" />
+    </exec>
+    <java jar="../../doclets/statsvn.jar" fork="true">
+      <arg value="changelogs/statsvn/svnlog.xml" />
+      <arg value="." />
+      <arg value="-title" />
+      <arg value="MyCoRe Documentation" />
+      <arg value="-output-dir" />
+      <arg value="changelogs/statsvn" />
+      <arg value="-viewvc" />
+      <arg value="http://www.mycore.de/viewvc/viewvc.cgi/documentation" />
+      <arg value="-bugzilla" />
+      <arg value="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=%s&amp;group_id=92005&amp;atid=599192" />
+    </java>
+  </target>
+
+</project>

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+
+<document>
+  <header>
+     <title>Quick Installation Guide</title>
+  </header>
+  
+  <body>
+  
+  <section>
+   <title>Introduction</title>
+   <p>
+   This guide describes the installation of the demo distribution of the MyCoRe sample application software DocPortal. 
+   The goal is to demonstrate how the software works. After the installation you get a complete running system to work 
+   off line on your own computer. The installation should be very easy for non-IT-specialists. For installing a 
+   production server system we recommend to read the DocPortal documentation and the MyCoRe documentation (included in 
+   the distribution or you visit <a title="" href="http://www.mycore.de/">http://www.mycore.de/</a>). 
+   You can install this demo distribution under Linux (tested under SuSE 9.3) or Microsoft Windows (tested under 
+   Windows XP).
+   </p>
+   <p>
+   The software uses three system ports for the communication. Port 8291 for the web application, port 8298 for the 
+   HSQLDB access and port 8299 for the file upload. To test the editor system you must use the login of a user 
+   (see table). To administrate the system use the user <code>administrator</code> with <code>alleswirdgut</code>
+   too.
+   </p>
+   
+   <table>
+   <tr>
+   <th>User</th>
+   <th>Password</th>
+   </tr>
+   <tr>
+   <td>author1A</td>
+   <td>author1A</td>
+   </tr>
+   <tr>
+   <td>author2A</td>
+   <td>author2A</td>
+   </tr>
+   <tr>
+   <td>author1B</td>
+   <td>author1B</td>
+   </tr>
+   <tr>
+   <td>author2B</td>
+   <td>author2B</td>
+   </tr>
+   <tr>
+   <td>editor1A</td>
+   <td>editor1A</td>
+   </tr>
+   <tr>
+   <td>editor2A</td>
+   <td>editor2A</td>
+   </tr>
+   <tr>
+   <td>editor1B</td>
+   <td>editor1B</td>
+   </tr>
+   <tr>
+   <td>editor2B</td>
+   <td>editor2B</td>
+   </tr>
+   <tr>
+   <td>reader1A</td>
+   <td>reader1A</td>
+   </tr>
+   <tr>
+   <td>reader1B</td>
+   <td>reader1B</td>
+   </tr>
+   <tr>
+   <td>gast</td>
+   <td>none</td>
+   </tr>
+   </table>
+   
+  </section>
+   
+  <section>
+   <title>Preconditions for MS Windows</title>
+   <p>
+   To install and run the demonstration you need only a current JDK (Java Developer Kit form Sun) installation 
+   version 1.5.0 or higher. This software you can download from the SUN Java web pages:
+   </p>
+   <p class="break">
+   <a href="http://java.sun.com/j2se/1.5.0/download.jsp">http://java.sun.com/j2se/1.5.0/download.jsp</a>
+   </p>
+   <p>
+   To install it follow the instruction and/or run the downloaded <code>*.exe</code> file. Follow the installation 
+   instructions dialogue. After the successful installation, set the system environment variable <code>JAVA_HOME</code> 
+   with the system configuration tool. 
+   </p>
+   <p class="kasten">
+   Start - Settings -&gt; Control Panel<br />   
+   System -&gt; Advanced -&gt; Environment Variables
+   </p>
+   <p>
+   <img src="images/start_control_panel.png"  />
+   <img src="images/system_properties.png"  />
+   </p>
+   <p class="kasten">
+    New (system variable)<br /> 
+    in German: Systemsteuerung --&gt; System --&gt; Erweitert --&gt; Umgebungsvariable --&gt; 
+    Neue System Variable
+    </p>
+   
+   <p>
+   <img src="images/environment_variables.png" />
+   </p>
+   
+   <p>
+   Add the entry:
+   </p>
+   
+   <p class="kasten">
+   <code>JAVA_HOME<br/></code>
+   <code>C:\Programme\Java\jdk1.5.0_05\jre</code> (or the path of the Java installation)
+   </p>
+   
+   <p>
+   and press OK.
+   </p>
+   
+   <p>
+   <img src="images/java_home.png" />
+   </p>
+   
+  </section>
+  
+  <section>
+   <title>Preconditions for Linux</title>
+   <p> 
+   The default installation under Linux is planned for the user <code>mcradmin</code> with the home directory 
+   <code>/home/mcradmin</code>. Add this user to your system with the <code>/bin/bash</code> UNIX shell. Install the 
+   JDK package from your Linux distribution. You should install the XPDF- and OpenOffice-packages for text extracting 
+   too.
+   </p> 
+   <p>
+   Set the environment (if not automatic) for the user <code>mcradmin</code> with
+   </p>
+   <p class="kasten"><code>export JAVA_HOME=/usr/lib/java</code></p>  
+  </section>
+  
+  <section>
+   <title>Installation and test DocPortal</title>
+   <p>
+   The installation is the same for all Operation systems. It depends that you have been installed the Java Kit 
+   1.5.x or higher. Download the distribution <code>docportal-installable-yyyyMMdd.jar</code> form our 
+   <a href="http://www.mycore.de/content/main/download.xml">web page</a> 
+   or take the distribution media like CD. <code>yyyyMMdd</code> is the date of the distribution.
+   </p>
+   <p>
+   Start the installation with double click to the <code>*.jar</code> file or with <code>java -Xmx1024m -Xms1024m -jar 
+   docportal-installable-yyyyMMdd.jar </code>.
+   </p>
+   
+   <section>
+    <title>Language selection</title>
+    <p>
+    At first select the language for the installation dialogue. It is not the language default for the application!
+    </p>
+    <p>
+    <img src="images/install_language_01.png" />
+    </p>   
+   </section>
+   
+   <section>
+    <title>Welcome</title>
+    <p>
+    Now you get a welcome window. Click next.
+    </p>
+    <p>
+    <img src="images/install_welcome_01.png" />
+    </p>    
+   </section>
+    
+   <section>
+    <title>ReadMe</title>
+    <p>
+    The ReadMe text show you some short information about this installation.
+    </p>
+    <p>
+    <img src="images/install_readme_01.png" />
+    </p> 
+   </section>
+   
+   <section>
+    <title>Licence</title>
+    <p>As next step you must agree the licence of the software. All own software of this project is under the GNU 
+    Public License.
+    </p>
+    <p>
+    <img src="images/install_license_01.png" />
+    </p> 
+   </section>
+   
+   <section>
+    <title>Select the install path</title>
+    <p>
+    With the next window you can select the installation path. This will be write to your installed data.
+    </p>
+    <p>
+    <img src="images/install_path_01.png" />
+    </p>
+   </section>
+   
+   <section>
+   <title>Select the packages</title>
+   <div class="png">
+    <img src="images/info.png" />
+    </div>
+    <p>
+    If you agree the license you can select the packages for the installation. 
+    On the first installation you must select the Preloaded Database too. 
+    If you install a newer version of an distribution please save your data and do not select the <em>Preloaded Database</em> 
+    package!
+    </p>
+    <p>
+    <img src="images/install_select_01.png" />
+    </p>
+  </section>
+  
+  <section>
+   <title>Installation</title>
+   <p>
+   If you have select the packages and click next the installation will be start. It show you the following window.
+   </p>
+   <p>
+    <img src="images/install_install_01.png" />
+    </p>
+  </section>
+  <section>
+   <title>Finish</title>
+   <p>
+   The installation is finished now. Don't push the 'Generate an automatic installation script' button. 
+   See the next chapter for running the system.
+   </p>
+   <p>
+    <img src="images/install_finish_01.png" />
+    </p>
+  </section>
+  
+ </section>
+ 
+ <section>
+  <title>Run the system</title>
+  <p>
+  After a successfully installation you can run the system. This steps you must do each time to run the software on 
+  your own computer. In the <code>bin</code> directory you can find command scripts for your operating system. 
+  This can be <code>*.sh</code> for UNIX, <code>*.cmd</code> for Windows. Do the following steps:
+  </p>
+  <ol>
+  <li>
+  start the HSQLDB with <code>bin/hsqldbstart.xxx</code> and let it run
+  </li>
+  <li>
+  start the Jetty servlet engine with <code>bin/jettystart.xxx</code> and let it run
+  </li>
+  <li>
+  open the Web browser and enter the URL <a title="" href="http://localhost:8291/">http://localhost:8291/</a>
+  </li>
+  </ol>
+  <p>
+  For Windows user Shortcuts are installed. You can start the HSQLDB-Server and Jetty over the shortcut menu.
+  </p>
+ </section>
+ 
+ <section>
+  <title>Other tools</title>
+  <p>
+  To use the full text search for documents you should install the <a href="http://www.foolabs.com/xpdf/">XPDF</a>- and 
+  <a href="http://de.openoffice.org/">OpenOffice</a>-programs on your system.
+  </p>
+ </section>
+ 
+ <section>
+  <title>Installing sample data</title>
+  <p>
+  For testing the installation DocPortal provide some sample data blocks. Available are the following packages form 
+  the MyCoRe download page:
+  </p>
+  <table>
+  <tr>
+  <th>Package</th>
+  <th>Description</th>
+  </tr>
+  <tr>
+  <td>defaultsamples-installable-yyyyMMdd.jar</td>
+  <td>Some little data samples like images, text and so on</td>
+  </tr><tr><td>audiosamples-installable-yyyyMMdd.jar</td>
+  <td>Audio samples as content</td>
+  </tr>
+  <tr>
+  <td>videosamples-installable-yyyyMMdd.jar</td>
+  <td>Video samples as content (large)</td>
+  </tr>
+  <tr>
+  <td>theses-installable-yyyyMMdd.jar</td>
+  <td>Some theses about MyCoRe as content</td>
+  </tr>
+  <tr>
+  <td>kochbuch-yyyyMMdd.jar</td>
+  <td>Teddies Kochbuch von U. Reber as content</td>
+  </tr>
+  </table>
+  <div class="png">
+   <img src="images/info.png" />
+  </div>
+  <p>
+  The installation is the same like DocPortal. <strong>Attention!</strong> You must have run the HSQLDB and Jetty 
+  server. Otherwise you can get errors. After installation the process will load the data automatically. 
+  Search after install for data like 'author is Jens'.
+  </p>
+  <p>
+  In next month we will add more sample data packages too.
+  </p>
+ </section>
+ 
+ <section>
+  <title>Contact</title>
+  <p>
+  You can contact the developers of the project under the email address 
+  <a href="mailto:mycore-user@lists.sourceforge.net">mycore-user@lists.sourceforge.net</a>. 
+  Before you do this would you first consult the complete documentation to find solutions of your problem! 
+  </p>
+  <p class="kastenFun">Have a lot of fun!</p>
+  
+ </section> 
+ 
+ </body>
+
+</document>

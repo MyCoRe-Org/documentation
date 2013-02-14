@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+
+<header>
+  <title>MyCoRe im Überblick</title>
+</header>
+
+<body>
+
+   <section>
+    <title>Allgemeines</title>
+    <p>
+    MyCoRe ist ein Kernsystem, das alle Grundfunktionen von digitalen Bibliotheken und Sammlungen abdeckt. Es kann als
+    Basis für eine eigene Bibliotheksanwendung, aber auch für die Implementierungen einer ganz anderen Applikation, wie
+    zur Verwaltung multimedialer Objekte verwendet werden. Dabei sollen eigene spezialisierte Lösungen insbesondere
+    hinsichtlich der Datenmodellierung relativ schnell und einfach realisiert werden können. MyCoRe gestattet auch die
+    Kopplung einzelner Installationen zu einem Verbund, was die Attraktivität erheblich erhöht. Beispiele dafür sind
+    u. a. das DocPortal oder das <a href="http://papyri.uni-leipzig.de">Papyrus-Projekt</a> der Universitäten Halle,
+    Jena und Leipzig.
+    </p>
+
+    <img src="images/overview_kern_pic01.png" alt="Grobes Schichtenmodell" />
+    <p class="klein"><strong>Abbildung 1.1:</strong> Grobes Schichtenmodell von MyCoRe</p>
+
+    <p>
+    Auf Abbildung 1.1 ist dargestellt, wie MyCoRe-Anwendungen innerhalb eines Betreibers und aus der Sicht mehrerer Betreiber
+    angelegt sind. In einer Einrichtung X gibt es einen MyCoRe-Kern pro Server, auf welchen mehrere Applikationen
+    aufsetzen können. Ebenso können mehrere Anwendungen auf einem System der Einrichtung Y existieren. Dabei ist es auch
+    möglich, dass mehrere physische Anwendungen eine gemeinsame logische Anwendung (virtuelle Datenbasis) darstellen. Dies
+    ermöglicht gemeinsame Projekte verschiedener Einrichtungen auf der gleichen Basis.
+    </p>
+    <p>
+    Das MyCoRe-Projekt gliedert sich zum einen in den Kern, welcher grundlegende Funktionalitäten und eine
+    Programmierschnittstelle (API) bereitstellt und in die darauf aufsetzenden Anwendungen, welche neben einer eigenen
+    Präsentation auch die Kern-Komponenten erweitern und/oder umgestalten können. Somit ist gewährleistet, dass MyCoRe in
+    vielen Projekten als Datenbasis eingesetzt werden kann. Abbildung 1.2 zeigt die wesentlichen Hauptkomponenten von
+    MyCoRe und deren Zusammengehörigkeit. In den folgenden Abschnitten sollen dann die Leistungen der einzelnen
+    Projektbereiche näher beschrieben werden.
+    </p>
+
+    <img src="images/overview_kern_pic02.png" alt="Kopmpnentenmodell" />
+    <p class="klein"><strong>Abbildung 1.2:</strong> Komponentennmodell von MyCoRe</p>
+   </section>
+
+</body>
+</document>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document>
+<header>
+<title>Mailing-Listen</title>
+</header>
+
+ <body>
+ 
+  <p class="fett">Weitere Informationen zu MyCoRe</p>
+  <p>
+  Wenn Sie Fragen zu MyCoRe haben, oder weitere Informationen wünschen, steht Ihnen die 
+  <a href="site:office" title="Link zur MyCoRe-Geschäftstelle">MyCoRe Geschäftsstelle</a> zur Verfügung. Die Geschäftsstelle berät 
+  Interessenten, steht bei der Lösung von Problemen der Anwender zur Verfügung, unterstützt und 
+  koordiniert die gemeinsame Weiterentwicklung des Systems und übernimmt redaktionelle Arbeiten an 
+  Dokumentation und Webauftritt. Wenn Sie spezielle Fragen zu einzelnen Funktionen von MyCoRe haben, 
+  können Sie sich alternativ auch <a href="site:team" title="Das MyCoRe-Team von a bis Z">gern direkt an einen der Entwickler wenden</a>.
+  </p>
+  <hr/>
+  <br/>
+  <p class="fett">Mailing-Liste für Anwender: MyCoRe-User</p>
+  <div class="margin">
+  In der Mailing-Liste <a href="mailto:mycore-user@lists.sourceforge.net">
+  mycore-user@lists.sourceforge.net</a> werden alle Probleme der Nutzung von MyCoRe und DocPortal 
+  diskutiert. Über diese Liste werden Anwender auch über neue Releases, wichtige Bugfixes und neue 
+  Funktionen benachrichtigt. Diese Liste ist offen. Wenn Sie ein Problem haben oder einen Fehler im 
+  MyCoRe Kern oder in der DocPortal Anwendung entdecken, schicken Sie bitte zunächst eine Email an diese 
+  Liste. Oft ist das Problem in der Community bereits bekannt und wir können Ihnen helfen.
+  <ul>
+    <li><a href="mailto:mycore-user@lists.sourceforge.net">Email an MyCoRe-User Liste schreiben</a></li>
+    <li><a target="_blank" href="https://lists.sourceforge.net/lists/listinfo/mycore-user" 
+    title="MyCoRe-User-Liste abonnieren">MyCoRe-User Liste abonnieren</a></li>
+    <li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=mycore-user"
+    target="_blank" title="Email-Archiv der MyCoRe-User-Liste bei Sourceforge">Archiv der Liste MyCoRe-User</a></li>
+  </ul>
+  </div>
+  <br/>
+  <p class="fett">Bug Tracking System</p>
+  <div class="margin">
+  Wenn das Problem über die MyCoRe-User Liste nicht gelöst werden kann, können Sie auch eine offizielle 
+  Fehlermeldung über unser <a href="https://sourceforge.net/tracker/?group_id=92005&amp;atid=599192"
+  target="_blank" title="MyCoRe Bug Tracking System bei Sourceforge">
+  SourceForge Bug Tracking System</a> eingeben. Die Entwickler erhalten dann automatisch eine 
+  Benachrichtigung, und es ist sichergestellt, daß Ihr Problem weiter verfolgt wird.
+  </div>
+  <br/>
+  <p class="fett">Mailing-Liste für Entwickler: MyCoRe-Developer</p>
+  <div class="margin">
+  Die Mailing-Liste <a href="mailto:mycore-developer@lists.sourceforge.net">
+  mycore-developer@lists.sourceforge.net</a> dient der Absprache und internen Kommunikation zwischen den 
+  MyCoRe Entwicklern. Hier werden Funktionen und Quellcode des MyCoRe Kerns und der DocPortal Anwendung 
+  diskutiert. Diese Liste ist nicht offen.
+  <ul>
+    <li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=mycore-developer" target="_blank"
+    title="Email-Archiv der MyCoRe-Developer-Liste bei Sourceforge">
+    Archiv der Liste MyCoRe-Developer</a></li>
+  </ul>
+  </div>
+  <br/>
+  <p class="fett">MyCoRe Wiki</p>
+  <div class="margin">
+  Unser <a href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" target="_blank" title="Link zum MyCoRe Wiki">MyCoRe Wiki</a> dient ebenfalls der internen 
+  Organisation der Entwickler-Community, der Sammlung von Ideen und Architekturvorschlägen, der Pflege 
+  von ToDo-Listen etc. Teile des Wikis sind aber offen zugänglich.
+  </div>
+  <br/>
+  <p class="fett">MyCoRe IRC-Kanal</p>
+  <div class="margin">
+  Im IRC-Kanal (<strong>Server: irc.freenode.net, Channel: mycore</strong>) sind alle willkommen, die 
+  sich zum Thema MyCoRe austauschen wollen. Alle Fragen und Vorschläge werden zur Kenntnis genommen, 
+  bitte haben Sie aber Verständnis, wenn nicht immer gleich eine Reaktion erfolgt. Oft sind aber einige 
+  Entwickler oder Anwender online, so dass Sie direkt eine Antwort erhalten können. Ein Medium für eine 
+  zwanglose und direkte Kommunikation. Weitere Hilfe zu IRC unter <a href="http://www.irchelp.org"
+  target="_blank" title="IRChelp.org Internet Relay Chat (IRC) help archive">
+  www.irchelp.org</a> und im <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/MyCoReKanal"
+  target="_blank" title="Wiki-Beitrag MyCoReKanal">
+  Wiki</a>.
+  </div>
+  <br/>
+  <hidden>
+  <p class="fett">Diese Seite taggen</p>
+  <div class="margin">
+  
+  <img src="images/delicious.png" alt="del.icio.us"/> 
+  <a target="_blank" href="http://del.icio.us/post?url=http://www.mycore.de/&amp;notes=Open-Source-Software+zur+Realisierung+von+Institutionellen+Repositories">del.icio.us</a>
+  </div>
+  </hidden>
+ </body>
+ 
+</document>

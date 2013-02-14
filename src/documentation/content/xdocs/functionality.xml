@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+
+<header>
+  <title>Funktionalität im Überblick</title>
+</header>
+
+<body>
+
+  <section>
+    <title>MyCoRe Datenmodellierung</title>
+     
+    <section>
+     <title>Metadatenmodell für Objekte</title>
+     <p>
+       Das Metadatenmodell soll eine flexible Modellierung von Metadaten bei möglichst geringem Arbeitsaufwand für
+       die Einzelanwendung gestatten. Um dies zu realisieren wurden die Ansätze implementiert:
+     </p>
+     <ul>
+       <li>Die interne Speicherung und Darstellung der Metadaten erfolgt im XML-Format</li>
+       <li>Die eigentlichen Metadaten werden in ein Framework zur Objektverwaltung integriert.</li>
+       <li>Es erfolgt eine Gestaltung eines XML-Schemas von Typen für die allgemein gültigen und oft gebrauchten Metadaten.</li>
+     </ul>
+     <p>Ein MyCoRe-Metadaten-Objekt besteht aus den drei Teilen</p>
+     <dl>
+       <dt><code>structure</code></dt>
+       <dd>Hier werden Informationen zur Einordnung des Datensatzes in eine logische Struktur festgehalten. Dies umfasst
+       Verweise zu Eltern- und Kind-Metadaten-Sätzen. Weiterhin werden in dem Abschnitt Referenzen zu den 
+       eigentlichen digitalen Objekte gespeichert.</dd>
+     </dl>
+     <dl>
+       <dt><code>metadata</code></dt>
+       <dd>In diesem Bereich werden die Metadaten gemäß des Datenmodells abgelegt. Jeder
+       MyCoRe-Metadaten-Typ kann hier als eine Liste von Elementen angegeben werden. Jeder Metadaten-Typ hat
+       mindestens folgende Eigenschaften:
+       <ul>
+       <li>Er hat einen Schalter, ob er vererbt werden darf.</li>
+       <li>Er hat einen Schalter, ob er selbst erben darf.</li>
+       <li>Bei einigen Elementen kann die zugehörige Sprache angegeben werden.</li>
+       <li>Jedes Element kann einen Attribut 'type' haben.</li>
+     </ul>
+     </dd>
+     </dl>
+     <dl>
+     <dt><code>service</code></dt>
+     <dd>Der letzte Abschnitt enthält Informationen zur Verwaltung des Metadaten-Satzes wie Erstellungsdatum,
+     Zugriffsrechte (ACL's) oder Verwaltungs-Flags.</dd>
+     </dl>
+     <p>
+     Sollten die im MyCoRe-Kern angebotenen Datentypen zur Gestaltung eines Projektes nicht ausreichen, so besteht die
+     Möglichkeit, innerhalb der Anwendung eigene Typen zu kreieren und diese mit einzubinden. Somit ist MyCoRe auch für
+     Nutzungsbereiche offen, von denen die Autoren bisher nicht ausgegangen sind. Der Datenmodellierung sind in MyCoRe
+     kaum Grenzen gesetzt. Auch externe Speicher für die Speicherung von Daten in anderen Suchmechanismen (z. B.
+     Polygonsuche geographischer Daten) lassen sich problemlos integrieren.
+     </p>
+    </section>
+
+    <section>
+      <title>Vererbung</title>
+      <p>
+        In einigen Projekten ist es erforderlich, die Strukturierung der zu speichernden Objekte mit abzulegen. Eine
+        hierarchische Anordnung der Teilobjekte, z. B. der Kapitel eines Buches, soll zu einem effizienteren Zugriff auf
+        die gewünschten Objekte führen. Dabei sollen aber alle Metadaten-Informationen möglichst nicht redundant erfasst
+        werden.
+      </p>
+      <p>
+        In MyCoRe wurde ein Vererbungsmodell integriert, welches eine Verzahnung von
+        Metadaten gleichen Datentyps zulässt. Dabei können jedem Metadaten-Element Informationen mitgegeben werden, ob
+        es von Elementen eines Kind-Objektes geerbt werden kann oder diese von den Eltern erben soll. Auf diese Weise
+        lassen sich auch komplexere Strukturen relativ leicht abbilden. Die Informationen über den Strukturzusammenhang
+        einzelner Metadaten-Objekte werden im Frame-Bereich structure gespeichert und verwaltet. Abbildung 1.3 stellt das
+        Vererbungsmodell nochmal grafisch dar.
+      </p>
+      <img src="images/overview_vererbung_pic01.png" alt="Vererbungsmodell" title="Vererbungsmodell"/>
+      <p class="klein"><strong>Abbildung 1.3:</strong> Vererbungsmodell von MyCoRe</p>
+    </section>
+
+    <section>
+      <title>Hierarchisches Klassifikationssystem</title>
+      <p>
+        Um eine bessere Wiederauffindbarkeit von Informationen, besonders in großen Datenbeständen, zu erreichen, wurden in
+        allen Bereichen der Informationsverarbeitung Klassifikationen eingeführt. Dabei kann es sich um sehr allgemeine,
+        wie die einer Herkunft oder eines Dateiformat-Typs, oder aber fach- bzw. anwendungsspezifische Klassifikationen
+        z. B. eng begrenzte Wissenschafts- oder Sachgebiete, handeln. In beiden Fällen sollte es jedoch möglich sein, hier
+        auch eine Strukturierung der einzelnen Begriffe abbilden zu können.
+      </p>
+      <p>
+        MyCoRe implementiert ein Datenmodell mit folgenden Eigenschaften:</p>
+        <ul>
+          <li>Abbildung von hierarchischen Strukturen einer Klassifikation.</li>
+          <li>Eindeutige Identifizierung einer Kategorie.</li>
+          <li>Speicherung der Kategorie-Bezeichner in mehreren Sprachen.</li>
+          <li>Speicherung von Text-Beschreibungen zu den einzelnen Kategorien.</li>
+          <li>Speicherung einer URL zu jeder einzelnen Kategorie.</li>
+          <li>Jede Klassifikation kann mittels Online-Editor oder offline als XML-Datei bearbeitet werden.</li>
+        </ul>
+      <p>
+        Auf die im MyCoRe-Projekt gespeicherten Klassifikationen kann von den Metadaten aus via einer Referenz aus
+        Klassifikations- und Kategorie-ID zugegriffen werden. Neben der Einbindung der Klassifikationen in die Metadaten
+        des zu speichernden Objektes ist es auch möglich, Recherchen via Navigation über diese Klassifikationen
+        durchzuführen.
+      </p>
+      <img src="images/classificationdemo.png" alt="Klassifikation" title="Klassifikation und Klassifikationseditor"/>
+      <p class="klein"><strong>Abbildung 1.4:</strong> Beispiel einer Klassifikation und eines Klassifikations-Editors</p>   
+    </section>
+    <section>
+      <title>Persistent Identifier (URNs)</title>
+      <p>
+        MyCoRe unterstützt die Generierung, Vergabe und Verwaltung von 
+        <link href="http://www.persistent-identifier.de/" title="Persistent Identifier - Service der DNB" target="_blan">
+        Persistent Identifiers im Namensraum urn:nbn:de</link>, 
+        wie sie etwa die Deutsche Nationalbibliothek für Online-Publikationen einsetzt. Dokumente erhalten so eine
+        dauerhafte, standardisierte und weltweit eindeutige Adresse, unter der sie erreichbar sind. Für die Generierung
+        von URNs stehen verschieden Algorithmen zur Verfügung, etwa auf Basis von Zeitstempeln oder fortlaufenden Zählern,
+        die auch miteinander kombiniert werden können. MyCoRe speichert die URN, berechnet und testet ggf. die zugehörige 
+        Prüfsumme und implementiert einen lokalen URN-Resolver. Vergebene URNs können entweder über die OAI-Schnittstelle 
+        mittels Epicur, oder über eine automatisch generierte E-Mail bei der Deutschen Nationalbibliothek registriert werden.
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <title>Dateiverwaltung, Streaming, Viewer</title>
+
+    <section>
+      <title>Internes Dateisystem (IFS)</title>
+      <p>
+        MyCoRe verwaltet nicht nur Metadaten, sondern auch die dazugehörenden Dateien intern. Die zu einem Metadatenobjekt
+        gehörenden Dateien werden in das System importiert bzw. über den Browser hochgeladen und diesem als sogenanntes Derivat
+        (Dateibereich) zugeordnet. So können z.B. Varianten eines Dokumentes in PDF- und HTML-Form existieren, die jeweils ein
+        Derivat mit ein oder mehreren Dateien bilden. 
+      </p>
+      <p>
+        MyCoRe besitzt zu diesem Zweck ein Internes Dateisystem (Internal Filesystem, IFS), das die gewohnte Sicht
+        der Derivate von Dateien und Verzeichnisse präsentiert. Gleichzeitig erlaubt das IFS aber Dateien aufgrund eines
+        Regelwerks an physisch unterschiedlichen Orten vorzuhalten, um z.B. Videos auf einem Streaming-Server abzulegen.
+        Über eine API stellt das IFS alle notwendigen Dateisystemoperationen dem Anwendungsentwickler zur Verfügung.
+      </p>
+      <p>
+        Sowohl über die MyCoRe-Kommandozeile (Command Line Interface) als auch über die Web-Schnittstelle können Derivate,
+        d. h. Einzeldateien oder Dateibündel, die zu einem Dokument gehören, importiert oder aktualisiert werden.
+        Ein Java Applet ermöglicht den Upload auch großer Dateien oder kompletter Verzeichnisse. 
+        Die Verzeichnisstruktur bleibt im internen Derivat erhalten, so dass auch umfangreiche HTML-Bäume importiert werden können. 
+        Über ein Servlet werden Dateien und Verzeichnisse im Browser angezeigt und ausgeliefert. Dabei können Dateien 
+        oder Verzeichnisse auch on demand als ZIP-Datei ausgeliefert werden.
+      </p>
+      <p>
+        Die beschreibenden und technischen Daten zu Dateien und Verzeichnissen werden in einer Datenbank abgelegt. 
+        Die Dateiinhalte dagegen werden getrennt davon in einem sog. FileContentStore gespeichert und verwaltet. Derzeit gibt
+        es eine Reihe von Implementierungen eines FileContentStores, die je nach Konfiguration des Systems auch gleichzeitig
+        eingesetzt werden können, z. B. ein lokales oder entferntes, via SFTP/Samba/CIFS angebundenes Dateisystem, 
+        oder ein Video Streaming Server.
+        Anhand von Regeln wird für die importierte Datei ein entsprechender Content Store gewählt. So können etwa 
+        Audio-/Videodateien anhand ihrer Dateiendung automatisch beim Upload auf einem Video Streaming Server abgelegt werden.
+      </p>
+    </section>
+
+    <section>
+      <title>Audio-/Video-Streaming</title>
+      <p>
+        MyCoRe kann transparent einen Audio-/Video-Streaming-Server als Ablageort für Dateien integrieren. Der Nutzer importiert
+        eine Datei bzw. lädt sie über den Webbrowser hoch. Anhand der Dateiendung und hinterlegter Regeln wählt MyCoRe dann
+        automatisch den Streamingserver als Speicherort. Die Audio-/Videodatei kann dann über den Streaming Server wiedergegeben
+        werden, ohne dass ein Download erforderlich ist. Der Nutzer kann frei im Videostrom navigieren oder direkt über die URL
+        bestimmte Stellen ansteuern. In der Weboberfläche können aus dem Streaming Server gewonnene technische Metadaten wie 
+        Bitrate, Framerate und Abspieldauer angezeigt werden. 
+        </p>
+        <img src="images/videostreaming.png" alt="Video-Streaming" title="Video-Streaming"/>        
+        <p class="klein"><strong>Abbildung 1.5:</strong> Anzeige Real-Player und Metadaten</p>          
+      <p>
+        Unterstützt wird der <link href="https://helix-server.helixcommunity.org/" title="Helix Community" target="_blank">
+        Helix-Server (Real)</link> 
+        (Streaming von Real Audio/Video, Windows Media, MP3, AVI, Quicktime u.a.) oder der
+        <link href="http://www-306.ibm.com/software/data/videocharger/" title="IBM Content Manager VideoCharger" target="_blank">
+        IBM VideoCharger Server</link> 
+       (Streaming von MPEG 1 und 2, Quicktime u.a.).
+      </p>     
+    </section>
+
+    <section>
+      <title>Viewer für Bilder und Digitalisate</title>
+      <p>
+        Das MyCoRe Image Viewer Modul realisiert einen Bildbetrachter für große Grafikdateien wie Landkarten, oder hochauflösende
+        Digitalisate. Über die Java Advanced Imaging API können Formate wie TIFF serverseitig zu in jedem Browser
+        betrachtbaren JPEG-Dateien konvertiert werden. Der Image Viewer erlaubt das Skalieren von Bildern (Zoomen), und das
+        Bereitstellen von Ausschnitten. Über ein Thumbnail kann in großen Bildern navigiert werden. 
+        Der Image Viewer kann einfach in einen Dokumentenserver integriert werden. Beim Import eines Bildes werden erforderliche
+        Zoomstufen automatisch von MyCoRe generiert und intern zwischengespeichert.
+        </p>
+        <img src="images/imageviewer.png" alt="Image Viewer" title="Image Viewer"/>        
+        <p class="klein"><strong>Abbildung 1.6:</strong> Modul: Image Viewer</p>                
+    </section>
+  </section>
+  
+  <section>
+    <title>Weboberfläche, Benutzerschnittstellen</title>
+   
+    <section>
+      <title>Datenpräsentation</title>
+      <p>
+        MyCoRe verwendet intern XML als Speicher- und Datenaustauschformat. Die Weboberfläche einer Anwendung 
+        wird durch Java Servlets implementiert, die die Ergebnisse einer Anfrage als XML-Daten ausliefern. Diese
+        XML-Darstellung wird serverseitig mittels XSL-Stylesheets in eine Webseite im HTML-Format transformiert.
+        Auch andere Zielformate wie RSS, CSV oder PDF (mittels XSL-FO) sind leicht realisierbar. In MyCoRe integriert
+        ist etwa die Möglichkeit, XML-Dateien mittels eines XSL-Stylesheets als PDF-Datei auszugeben.
+      </p>
+      <p>
+        Durch Verwendung von XSL kann MyCoRe sehr flexibel unterschiedliche Darstellungen oder Layouts erzeugen, oder
+        mehrere XML-Quellen miteinander kombinieren. So kann nicht nur bei einem Verbund mehrerer Partner-Applikationen 
+        jede ihr eigenes Layout zeigen, sondern die Präsentation an sich komplett geändert werden, wenn dies gewünscht ist.
+        Die Präsentationsschicht erstreckt sich in MyCoRe von einfachen Web-Seiten über Trefferlisten und Resultats- bzw.
+        Dokumentanzeigen bis hin zu Komponenten der Nutzerverwaltung.        
+      </p>
+      <img src="images/xmlxslhtml.png" alt="Aus xml und xsl wird html" title="Aus xml und xsl wird html"/>        
+      <p class="klein"><strong>Abbildung 1.7:</strong> Aus xml und xsl wird html</p>    
+      <p>
+        Alternativ kann auch ein anderer Ansatz zur Realisierung der Weboberfläche gewählt werden. So steht die Referenzanwendung
+        <a href="http://www.mycore.de:8291/" target="_blank" title="MyCoRe-Demoanwendung DocPortal">DocPortal</a> auch in einer auf Java Server Pages (JSP) 
+        basierenden Variante zur Verfügung.
+      </p>
+    </section>
+    <section>
+      <title>Mehrsprachigkeit</title>
+      <p>
+        MyCoRe unterstützt mehrsprachige Weboberflächen. Einzelne Abschnitte oder ganze Webseiten können in verschiedenen
+        Sprachen hinterlegt werden. Bezeichnungen von Such- oder Eingabefeldern werden in sprachabhängigen, einfach anpassbaren
+        Konfigurationsdateien verwaltet. Bei der Ein- und Ausgabe von Datums- und Zahlenwerten werden verschiedene Formate
+        unterstützt. Auch der Textfluss ist z. B. für das Arabische von rechts nach links umkehrbar.        
+      </p>
+      <img src="images/i18n.png" alt="Islamische Handschriften" title="Islamische Handschriften"/>        
+      <p class="klein"><strong>Abbildung 1.8:</strong> Beispiel für Mehrsprachigkeit: Islamische Handschriften</p>    
+    </section>
+    <section>
+      <title>Web Content Management Modul</title>
+      <p>
+        Über das integrierte WCMS-Modul können das Navigationsmenü und die statischen Webseiten einer MyCoRe-Anwendung
+        online erstellt und über einen <link href="http://www.fckeditor.net/" target="_blank" title="CKEditor">WYSIWYG-Editor</link> bearbeitet werden. 
+        Es gibt eine Übersetzungsfunktion zur Realisierung mehrsprachiger Webseiten. Das WCMS-Modul generiert automatisch 
+        eine Sitemap Ihres Servers und speichert die Änderungshistorie an den Seiten. Auch ein Upload von Bildern ist möglich.
+        Bestimmten Seiten oder Bereichen kann ein Layout-Template auf CSS-Basis zugewiesen werden, so dass innerhalb eines
+        Anwendungsservers verschiedene Bereiche mit unterschiedlichem Layout gepflegt werden können.
+      </p>
+      <img src="images/wcms.png" alt="WCMS-Modul" title="Das MyCoRe WCMS-Modul" />        
+      <p class="klein"><strong>Abbildung 1.9:</strong> WCMS-Modul</p>    
+    </section>
+    <section>
+      <title>Autoreninterface</title>
+      <p>
+        Das MyCoRe-System bietet einen Schnittstelle für die Dateneingabe durch berechtigte Anwender. Hier ist das zentrale
+        Glied das MCREditorServlet und die zugehörigen XSL-Stylesheets. Das System ist eine Mischung aus
+        Konfigurationsdateien und anwendungsbezogenen Servlets. Dem Ideenreichtum bei der Gestaltung des Editors und der
+        Prüfung der Daten entsprechend des Datenmodells sind kaum Grenzen gesetzt.
+        Derzeit wird eine einfache Workflow-Implementation als Modul angeboten, welche die zu bearbeitenden Metadaten und 
+        Objekte auf einem Plattenbereich zwischenspeichert, und so einen typischen zweistufigen Workflow (Eingabe durch
+        den Autor, Prüfung und Korrektur durch die betreibende Institution) realisiert.
+      </p>
+      <p>
+        Autoren können die beschreibenden Daten ihrer Dokumente selbst über Online-Formulare eingeben, und im Anschluss die
+        dazugehörenden Dateien über ein HTML-Formular oder ein Java Applet hochladen.
+      </p>
+    </section>
+    <section>
+      <title>Eingabemasken</title>
+      <p>
+        Die freie Konfigurierbarkeit des Datenmodells erfordert eine flexible Möglichkeit, eigene Such- und Eingabemasken zu
+        gestalten. Dies wird durch das MyCoRe Editor Framework realisiert. Metadaten und Suchanfragen werden in MyCoRe intern als 
+        XML-Dokumente dargestellt. Das Editor Framework ordnet Eingabefeldern in Formularen daher bestimmten XML-Elementen zu.
+        So können auch komplexe Formulare individuell realisiert werden. Das Editor Framework unterstützt mehrsprachige 
+        Bezeichner, wiederholbare Felder und Panels, Online-Hilfetexte und umfangreiche Regeln zur Eingabevalidierung.
+      </p>
+      <img src="images/entry_mask.png" alt="Eingabemaske" title="DocPortal Eingabemaske"/>        
+      <p class="klein"><strong>Abbildung 1.10:</strong> Beispiel: Eingabemaske</p> 
+    </section>
+    <section>
+      <title>Command Line Interface (CLI)</title>
+      <p>
+        Neben der Weboberfläche verfügt MyCoRe für administrative Zwecke über eine Benutzerschnittstelle auf Kommandozeilenbasis.
+        Über diese Schnittstelle können insbesondere große Datenmengen, z. B. Metadaten im XML-Format, 
+        importiert und exportiert werden, oder Suchindizes nach geänderter Systemkonfiguration neu aufgebaut werden.
+        Die Schnittstelle unterstützt den Batchimport großer Datenmengen.
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <title>Standardisierte Schnittstellen</title>
+    <section>
+      <title>Open Archives Initiative OAI-PMH 2.0</title>
+      <p>
+        MyCoRe bietet eine Schnittstelle entsprechend dem "Metadata Harvesting Protocol" der 
+        <link href="http://www.openarchives.org" target="_blank" title=" OAI - Open Archives Initiative">
+        Open Archives Initiative</link> in der aktuellen Protokoll-Version 2.0. 
+        Über die OAI-Schnittstelle  werden Metadaten von Dokumentenservern frei verfügbar gemacht und durch 
+        OAI Service Provider gesammelt und weltweit zugänglich. Die OAI-Schnittstelle ist frei konfigurierbar, 
+        unterstützt Sets, Resumption Tokens und beliebige Metadatenformate. OAI Sets werden auf MyCoRe Klassifikationen abgebildet. 
+      </p>
+      <p>
+        Implementierungen für die Metadatenformate 
+        <link href="http://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank" 
+        title="The Open Archives Initiative Protocol for Metadata Harvesting">Dublin Core</link> 
+        und <link href="http://www.d-nb.de/standards/xmetadiss/xmetadiss.htm" target="_blank"
+        title="XMetaDiss Format des Metadatensatzes der Deutschen Nationalbibliothek für Online-Hochschulschriften">
+        XMetaDiss</link> zur Meldung von Dissertationen an die 
+        <link href="http://www.d-nb.de/" target="_blank" title=" DNB Deutsche Nationalbibliothek">
+        Deutsche Nationalbibliothek</link> sind verfügbar. Über das OAI-Format 
+        <link href="http://www.d-nb.de/wir/projekte/epicur.htm" target="_blank" 
+        title="EPICUR (Enhancement of Persistent Identifier Services - Comprehensive Method for unequivocal Resource Identification)">
+        Epicur</link> können die 
+        <link href="http://www.persistent-identifier.de/" target="_blank" 
+        title="Persistent Identifier, der Service der DNB">Persistent Identifier (URNs)</link> Ihrer 
+        Dokumente bei der Deutschen Nationalbibliothek automatisiert registriert werden.
+      </p>
+    </section>
+    <section>
+      <title>Zugang für Robots, Google</title>
+      <p>
+        MyCoRe bietet eine spezielle Schnittstelle, über die ein vollständiger Index enthaltener Objekte
+        für die Indizierung durch Suchmaschinen-Robots generiert wird. Suchmaschinen wie Google und andere können so
+        Metadaten und Volltexte frei zugänglicher, MyCoRe-basierter Dokumentenserver indizieren und weltweit
+        auffindbar machen. MyCoRe implementiert ausserdem das 
+        <link href="https://www.google.com/webmasters/tools" target="_blank" title="Google webmaster-tools">Google Sitemap Protocol</link>.
+      </p>
+    </section>
+    <section>
+      <title>Web Services (SOAP)</title>
+      <p>
+        MyCoRe bietet eine <link href="http://de.wikipedia.org/wiki/SOAP" target="_blank" title="Wikipedia-Beitrag zu SOAP">
+        SOAP</link>-Schnittstelle für die Suche im 
+        Objektbestand, über die auch eine verteilte Suche über mehrere MyCoRe-Server konfiguriert werden kann.
+      </p>
+    </section>
+    <section>
+      <title>z39.50 Schnittstelle</title>
+      <p>
+        MyCoRe bietet eine <link href="http://de.wikipedia.org/wiki/Z39.50" target="_blank" title="Wikipedia-Beitrag zur Z39.50">
+        z39.50</link> Schnittstelle, 
+        über die einfache Suchanfragen im z39.50 Prefix Query Format (PQF) gestellt
+        und beantwortet werden. Über diese Schnittstelle kann etwa ein MyCoRe-basierter Dokumentenserver an einen
+        Bibliothekskatalog angebunden werden.
+      </p>
+    </section>
+    <section>
+      <title>XML-Schnittstelle</title>
+      <p>
+        MyCoRe verwendet intern das XML-Format zur Speicherung von Metadaten und zum Datenaustausch. Metadaten können daher
+        im XML-Format importiert und exportiert werden. Über Java Servlets sind diese XML-Daten auch externen Systemen 
+        via HTTP zugänglich.
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <title>Suche in Metadaten und Volltext</title>
+    <section>
+      <title>Suchfunktionen</title>
+      <p>
+        MyCoRe unterstützt die kombinierte Suche in den Metadaten von Objekten (Titel, Autor etc.), 
+        in den Metadaten von Dateien (Änderungsdatum, Dateigröße etc.) und in den Volltexten von Dateien. 
+        Eine MyCoRe Anwendung sucht dabei nicht direkt in den Daten von Objekten und Dateien, sondern in daraus abgeleiteten
+        Suchfeldern. Die Abbildung von Metadaten auf Suchfelder erfolgt über eine Konfigurationsdatei. So wird z. B.
+        das XML-Element <code>/metadata/titles/title</code> auf ein Suchfeld <code>title</code> abgebildet.
+      </p>
+      <img src="images/searchfield.png" alt="searchfield" title="searchfield.xml"/>        
+      <p class="klein"><strong>Abbildung 1.11:</strong> Datei: searchfields.xml</p>
+      <p>
+        Dabei können auch komplexe Suchanfragen mit booleschen Ausdrücken (und/oder/nicht), Platzhaltern und Suchoperatoren 
+        gestellt werden. Der Datentyp eines Suchfeldes (ID, Name, Text, Zahl, Datum etc.) bestimmt die bei der Suche 
+        einsetzbaren Operatoren (z.B. Phrasensuche, Trunkierung, &lt;, &gt;, ...). 
+      </p>
+      <img src="images/mcrql.png" alt="MCR Query Language" title="Suchausdruck in MCR Query Language"/>        
+      <p class="klein"><strong>Abbildung 1.12:</strong> Expertensuche: MCR Query Language</p>
+      <p>
+        Die Suche in MyCoRe ist auf Basis von 
+        <link href="http://lucene.apache.org" target="_blank" title="Apache Lucene Home">Apache Lucene</link> 
+        realisiert. Obwohl auch andere Implementierungen denkbar sind, ist dies
+        die zur Zeit einzige Implementierung der MyCoRe Suche, die für den Produktionseinsatz sinnvoll ist. 
+        Über Lucene durchlaufen indizierte Texte ggf. verschiedene Normalisierungsschritte wie Stammwortreduktion (Stemming) und 
+        Umlautnormalisierung.
+      </p>
+    </section>
+    <section>
+      <title>Suchmasken und Trefferlisten</title>
+      <p>
+        MyCoRe Suchmasken sind frei konfigurierbar, von einfachen Ein-Feld-Suchformularen über komplexere, qualifiziertere
+        Suchmasken bis hin zu frei formulierbaren Experten-Abfragen in der MyCoRe Query Language (MCRQL). Suchmasken können
+        selbst erstellt oder aus einer Konfiguration von Suchfeldern automatisch generiert werden.
+      </p>
+      <img src="images/searchmask.png" alt="Suchmaske" title="DocPortal Suchmaske"/>        
+      <p class="klein"><strong>Abbildung 1.13:</strong> Beipsiel: Suchmaske</p>
+      <p>
+        Trefferlisten sind auf- oder absteigend nach mehreren Feldern beliebig sortierbar. Die ursprüngliche Suche kann angezeigt 
+        ("Sie haben gesucht nach: ...") oder noch einmal verfeinert werden (Rückkehr zum Suchformular mit Anpassung der
+        Suchparameter). 
+      </p>
+      <p>
+        Auch eine verteilte Suche über mehrere Server ist möglich und intern über Web Services Schnittstellen 
+        realisiert. Auf diesem Wege können auch Legacy-Systeme mittels einer eigenen Implementierung dieser Schnittstellen auf 
+        Java-Basis integriert werden.
+      </p>
+    </section>
+    <section>
+      <title>Datei-Inhalte durchsuchen</title>
+      <p>
+        Für die Volltextsuche wird der Inhalt von Textdateien über konfigurierbare Filter extrahiert. Derzeit sind Implementierungen
+        für HTML, XML, TXT, OpenOffice Formate und PDF-Dateien enthalten. 
+      </p>
+      <p>
+        MyCoRe kann aus bestimmten Dateitypen zusätzliche Metadaten extrahieren und diese ebenfalls durchsuchbar machen. Derzeit 
+        sind Implementierungen für die Extraktion bzw. Suche in EXIF-Metadaten von JPEG-Grafiken (Aufnahmedatum etc.), 
+        in ID3-Metadaten von MP3-Audiodateien (Titel, Interpret, Länge etc.)
+        und in Metadaten von PDF-Dokumenten (Seitenzahl, Autor etc.) verfügbar.
+      </p>
+      <p>
+        MyCoRe kann als Content gespeicherte XML-Dateien qualifiziert durchsuchen. Bei entsprechender Konfiguration könnten z. B.
+        die XML-Strukturen einer manifest.xml Datei eines SCORM-Lernpaketes, oder METS-Metadaten eines Digitalisates durchsucht werden. 
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <title>Benutzer- und Zugriffsrechteverwaltung</title>
+    <p>
+      Im Subsystem Benutzermanagement wird die Verwaltung derjenigen Personen geregelt, die mit dem System umgehen
+      (zum Beispiel als Autoren Dokumente einstellen). Dazu bietet die Benutzerverwaltung insbesondere die Möglichkeit,
+      dass sich Benutzer am System via Login authentifizieren können. Die Geschäftsprozesse einer Benutzerverwaltung wie zum
+      Beispiel das Anlegen neuer Benutzer, das Setzen von Passwörtern, die Aktivierung/Deaktivierung von Benutzern
+      usw. erfordern unterschiedliche Rechte. Diese können je nach Aufgaben festgelegt werden.
+    </p>
+    <p>
+      Benutzer können Gruppen zugeordnet werden, die den Rollen der Benutzer entsprechen. Zugriffsrechte wie Lesen, 
+      Bearbeiten und Löschen von Dokumenten, enthaltenen Dateien und auch statischen Seiten der Weboberfläche können 
+      einzelnen Benutzern oder bestimmten Gruppen zugeordnet werden. Die Zuordnung von Rechten zu Objekten erfolgt über 
+      Access Control Listen. Alternativ kann auch auf Basis von IP-Adressbereichen Zugang zu Dokumenten oder anderen
+      Objekten gewährt werden. 
+    </p>
+    <img src="images/accesscontrol.png" alt="Access Control" title="Access Control Online-Editor"/>        
+    <p class="klein"><strong>Abbildung 1.14:</strong> Online-Editor: Access Control</p>
+  </section>
+
+</body>
+</document>

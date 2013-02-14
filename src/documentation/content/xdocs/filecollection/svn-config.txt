@@ -1,0 +1,76 @@
+###############################################
+#Text files                                    
+###############################################
+*.properties    = svn:eol-style=native;svn:mime-type=text/plain
+*.properties*   = svn:eol-style=native;svn:mime-type=text/plain
+*.asp           = svn:eol-style=native;svn:mime-type=text/plain
+*.aspx          = svn:eol-style=native;svn:mime-type=text/plain
+buglist         = svn:eol-style=native;svn:mime-type=text/plain
+*.cgi           = svn:eol-style=native;svn:mime-type=text/plain;svn:executable
+*.cmd           = svn:eol-style=native;svn:mime-type=text/plain               
+
+# dtd real mime-type: application/xml-dtd
+*.dtd           = svn:eol-style=native;svn:mime-type=text/plain
+
+# js  real mime-type: application/x-javascript
+*.js            = svn:eol-style=native;svn:mime-type=text/plain
+
+*.jsp           = svn:eol-style=native;svn:mime-type=text/plain
+LICENSE         = svn:eol-style=native;svn:mime-type=text/plain
+*.mft           = svn:eol-style=native;svn:mime-type=text/plain
+*.php           = svn:eol-style=native;svn:mime-type=text/plain
+*.prefs         = svn:eol-style=native;svn:mime-type=text/plain
+*.rc            = svn:eol-style=native;svn:mime-type=text/plain
+README          = svn:eol-style=native;svn:mime-type=text/plain
+*.sql           = svn:eol-style=native;svn:mime-type=text/plain
+*.txt           = svn:eol-style=native;svn:mime-type=text/plain
+*.TXT           = svn:eol-style=native;svn:mime-type=text/plain
+*.ver           = svn:eol-style=native;svn:mime-type=text/plain
+
+###############################################
+#XML Files                                     
+#xml real mime-type: application/xml ant others
+###############################################
+.classpath      = svn:eol-style=native;svn:mime-type=text/xml
+.project        = svn:eol-style=native;svn:mime-type=text/xml
+*.xml.template  = svn:eol-style=native;svn:mime-type=text/xml
+*.wsdd          = svn:eol-style=native;svn:mime-type=text/xml
+*.xml           = svn:eol-style=native;svn:mime-type=text/xml
+*.xsd           = svn:eol-style=native;svn:mime-type=text/xml
+*.xsl           = svn:eol-style=native;svn:mime-type=text/xml
+
+###############################################
+#Images                                        
+###############################################
+*.gif           = svn:mime-type=image/gif      
+*.ico           = svn:mime-type=image/x-icon   
+*.jpg           = svn:mime-type=image/jpeg     
+*.svg           = svn:mime-type=image/svg+xml  
+*.tif           = svn:mime-type=image/tiff     
+*.xcf           = svn:mime-type=application/x-xcf
+
+###############################################
+#Other file types
+###############################################
+*.cfm           = svn:eol-style=native;svn:mime-type=magnus-internal/cold-fusion
+*.cfs           = svn:eol-style=native;svn:mime-type=magnus-internal/cfxscript
+*.class         = svn:mime-type=application/java-vm
+*.css           = svn:eol-style=native;svn:mime-type=text/css
+Thumbs.db       = svn:mime-type=application/octet-stream
+*.dll           = svn:mime-type=application/x-msdos-program
+*.doc           = svn:mime-type=application/msword
+*.exe           = svn:mime-type=application/x-msdos-program
+*.html          = svn:eol-style=native;svn:mime-type=text/html
+*.jar           = svn:mime-type=application/java-archive
+*.java          = svn:eol-style=native;svn:mime-type=text/x-java
+*.odg           = svn:mime-type=application/vnd.oasis.opendocument.graphics
+*.odt           = svn:mime-type=application/vnd.oasis.opendocument.text
+*.pdf           = svn:mime-type=application/pdf
+*.png           = svn:mime-type=image/png
+*.sh            = svn:eol-style=native;svn:mime-type=text/x-sh;svn:executable
+*.swf           = svn:mime-type=application/x-shockwave-flash
+*.sxd           = svn:mime-type=application/vnd.sun.xml.draw
+*.sxw           = svn:mime-type=application/vnd.sun.xml.writer
+*.zip           = svn:mime-type=application/zip
+vslist          = svn:eol-style=native;svn:mime-type=text/x-sh;svn:executable
+crontab         = svn:eol-style=native;svn:mime-type=text/plain

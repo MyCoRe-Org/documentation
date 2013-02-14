@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Die Frontend-Komponenten</title>
+    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten verschiedener Anwenderzugänge wie die MyCoRe-Kommandozeile und die Webanwendung.</abstract>
+  </header>
+<body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+
+   <section>
+   <title>Der Layout-Service</title>
+   <p>
+     ToDo: Allgemeine Beschreibung des Layout-Services
+   </p>
+   </section>
+
+   <section>
+    <title>Das Zusammenspiel der Servlets mit dem MCRServlet</title>
+    <p>
+    Als übergeordnetes Servlet mit einigen grundlegenden Funktionalitäten dient die Klasse <code>MCRServlet</code>. Die
+    Hauptaufgabe von <code>MCRServlet</code> ist dabei die Herstellung der Verbindung zur Sessionverwaltung
+    (siehe Abschnitt <a href="site:sessions_2_1">Die Session-Verwaltung</a>). Das Zusammenspiel der relevanten Klassen ist im Klassendiagramm
+    (Abbildung 2.5) verdeutlicht.
+    </p>
+
+    <img src="images/progguide_2frontend_mcrservlet.jpg" alt="Java-Klassen" title="Java-Klassen"/>
+    <p class="klein"><strong>Abbildung 2.5:</strong> Klassendiagramm <code>Common Servlets</code></p>
+
+    <p>
+    Wie an anderen Stellen im MyCoRe-System auch, kann auf Konfigurationsparameter wie zum Beispiel den Einstellungen
+    für das Logging über das statische Attribut <code>MCRConfiguration</code> zugegriffen werden.
+    </p>
+    <p>
+    <code>MCRServlet</code> selbst ist direkt von <code>HttpServlet</code> abgeleitet. Sollen andere Servlets im
+    MyCoRe-Softwaresystem die von MCRServlet angebotenen Funktionen automatisch nutzen, so müssen sie von
+    <code>MCRServlet</code> abgeleitet werden. Im Klassendiagramm ist das durch die stellvertretende Klasse
+    <code>MCRAnyOtherServlet</code> angedeutet. Es wird empfohlen, dass die abgeleiteten Servlets die Methoden
+    <code>doGet()</code> und <code>doPost()</code> nicht überschreiben, denn dadurch werden bei einem eingehenden
+    Request auf jeden Fall die Methoden von <code>MCRServlet</code> ausgeführt.
+    </p>
+    <p>
+    Der Programmablauf innerhalb von <code>MCRServlet</code> ist im folgenden Sequenzdiagramm (siehe Abbildung 2.6)
+    dargestellt. Bei einem eingehenden Request (<code>doGet()</code> oder <code>doPost()</code>) wird zunächst
+    an <code>MVRServlet.doGetPost()</code> delegiert. (Bei dieser Delegation wird ein Parameter mitgeführt, über den
+    feststellbar ist, ob es sich um einen GET- oder POST-Request gehandelt hat.)
+    </p>
+
+    <img src="images/progguide_2frontend_mcrservletsequenz.jpg" alt="Common Servlets" title="Common Servlets"/>
+    <p class="klein"><strong>Abbildung 2.6:</strong> Sequenzdiagramm <code>Common Servlets</code></p>
+
+    <p>
+    Falls nicht schon aus vorhergehenden Anfragen an das <code>MCRServlet</code> bekannt, werden in
+    <code>doGetPost()</code> die Base-URL und die Servlet-URL des Systems bestimmt. Dabei besteht die Servlet-URL
+    aus der Base-URL und dem angehängten String '<code>servlets/</code>'. Darauf folgend wird die für diese Session
+    zugehörige Instanz von <code>MCRSession</code> bestimmt. Das Verfahren dazu ist im Ablaufdiagramm (Abbildung 2.7)
+    dargestellt.
+    </p>
+    <p>
+    Die Session kann bereits durch vorhergehende Anfragen existieren. Falls dies der Fall ist, kann das zugehörige
+    Session-Objekt entweder über eine im <code>HttpServletRequest</code> mitgeführte SessionID identifiziert oder
+    direkt der HttpSession entnommen werden. Existiert noch keine Session, so wird ein neues Session-Objekt über den
+    Aufruf von <code>MCRSessionMgr.getCurrentSession()</code> erzeugt. Nachfolgend wird das Session-Objekt an den
+    aktuellen Thread gebunden und zusätzlich in der HttpSession abgelegt.
+    </p>
+    <p>Im Sequenzdiagramm gehen wir davon aus, dass die Sitzung neu ist und deswegen ein Session-Objekt über
+    <code>MCRSessionMgr.getCurrentSession()</code> erzeugt werden muss. Schließlich wird eine Instanz von
+    <code>MCRServletJob</code> erzeugt. Diese Klasse ist nichts weiter als ein Container für die aktuellen
+    HttpServletRequest und HttpServletResponse Objekte und hat keine weitere Funktionalität (siehe Klassendiagramm,
+    Abbildung 2.5). (Das Speichern des Session-Objekts in der HttpSession ist notwendig, weil in einer typischen
+    Servlet-Engine mit Thread-Pool Umgebung nicht davon ausgegangen werden darf, dass bei aufeinander folgenden Anfragen
+    aus demselben Kontext auch derselbe Thread zugewiesen wird.)
+    </p>
+
+    <img src="images/progguide_2frontend_mcrservletfluss.jpg" alt="MCRServlet.doGetPost()" title="MCRServlet.doGetPost()"/>
+    <p class="klein"><strong>Abbildung 2.7:</strong> Ablaufdiagramm für MCRServlet.doGetPost()</p>
+
+    <p>
+    An dieser Stelle wird der Programmfluss an das abgeleitete Servlet (in diesem Beispiel
+    <code>MCRAnyOtherServlet</code>) delegiert. Dazu muss das Servlet eine Methode mit der Signatur
+    </p>
+    <pre class="brush: java; gutter: false;">public void doGetPost(MCRServletJob job) {}</pre>
+    <p>
+    implementieren. Wie das Sequenzdiagramm beispielhaft zeigt, kann <code>MCRAnyOtherServlet</code> danach
+    gegebenenfalls auf das Session-Objekt und damit auf die Kontextinformationen zugreifen. Der Aufruf an den
+    SessionManager dazu wäre:
+    </p>
+    <pre class="brush: java; gutter: false;">MCRSession mcrSession=MCRSessionMgr.getCurrentSession();</pre>
+    <p>
+    Es sei bemerkt, dass dies nicht notwendigerweise genau so durchgeführt werden muss, da wegen der geschilderten
+    Probleme mit <code>threadlocal</code> Variablen in Servlet-Umgebungen das Session-Objekt auch in der HttpSession
+    abgelegt sein muss, könnte man die Kontextinformationen auch aus der übergebenen Instanz von
+    <code>MCRServletJob</code> gewinnen.
+    </p>
+   </section>
+
+   <section>
+    <title>Das Login-Servlet und MCRSession</title>
+    <p>
+    Das <code>LoginServlet</code>, implementiert durch die Klasse <code>MCRLoginServlet</code>, dient zum Anmelden
+    von Benutzern und Benutzerinnen über ein Web-Formular. Die Funktionsweise ist wie folgt: Wie in Abschnitt 3.7.2
+    empfohlen, überschreibt <code>MCRLoginServlet</code> nicht die von <code>MCRServlet</code> geerbten
+    Standard-Methoden <code>doGet()</code> und <code>doPost()</code>. Meldet sich ein Benutzer oder eine Benutzerin
+    über das <code>MCRLoginServlet</code> an, so wird daher zunächst die Funktionalität von <code>MCRServlet</code>
+    ausgenutzt und die in Abschnitt 3.7.2 beschriebene Verbindung zur Sessionverwaltung herstellt. Wie dort ebenfalls
+    beschrieben, wird der Programmfluss an das Login-Servlet über die Methode <code>MCRLoginServlet.doGetPost()</code>
+    delegiert. Der Ablauf in <code>doGetPost()</code> wird im Diagramm auf Abbildung 2.8 dargestellt und ist
+    selbsterklärend.
+    </p>
+
+    <img src="images/progguide_2frontend_mcrloginservletfluss.jpg" alt="MCRServlet.doGetPost()" title="MCRServlet.doGetPost()"/>
+    <p class="klein"><strong>Abbildung 2.8:</strong> Ablaufdiagramm für MCRServlet.doGetPost()</p>
+
+    <p>
+    Der resultierende XML Output-Stream muss vom zugehörigen Stylesheet verarbeitet werden und hat die in
+    Abbildung 2.9 gezeigte Syntax.
+    </p>
+
+    <img src="images/loginservletsoutput.jpg" alt="MCRServlet.doGetPost()" title="MCRServlet.doGetPost()"/>
+    <p class="klein"><strong>Abbildung 2.9:</strong> XML Output des LoginServlets</p>
+
+
+    <p>Bei einer missglückten Anmeldung wird der Grund dafür in Form eines Attributes gespeichert. Das Stylesheet kann
+    dann die entsprechende Meldung ausgeben. Die Gast-User-ID und das Gast-Passwort werden aus einer Konfigurationsdatei
+    gelesen. Die URL schließlich wird dem Http-Request entnommen und sollte dort von der aufrufenden Seite bzw. vom
+    aufrufenden Servlet gesetzt sein. Ist sie nicht gesetzt, so wird die Base-URL des MyCoRe-Systems verwendet.
+    </p>
+   </section>
+
+   <section>
+    <title>Generieren von Zip-Dateien</title>
+    <p>
+    Das Zip-Servlet, implementiert durch die Klasse <code>MCRZipServlet</code>, dient dem Ausliefern der Derivate und
+    der Objektmetadaten als gepackte Zip-Datei. Aus der Konfigurationsdatei <code>mycore.properties.zipper</code> holt
+    sich das Servlet über die Variable <code>MCR.zip.metadata.transformer</code> den Namen des Stylesheets, welches die
+    Metadatentransformation in das gewünschte Auslieferungsformat vornimmt. In DocPortal verwenden wir hierfür Qualified
+    Dublin Core.
+    </p>
+    <p>Aufrufmöglichkeiten des Servlets:</p>
+    <pre class="brush: java; gutter: false;">
+    $ServletsBaseURL/MCRZipServlet?id=MCRID
+
+    $ServletsBaseURL/MCRZipServlet?id=MCRID/foldername
+    </pre>
+    <p>
+    MCRID ist die ID eines Objekts vom Typ <code>&lt;mycoreobject&gt;</code> oder <code>&lt;mycorederivate&gt;</code>.
+    Im Fall von <code>&lt;mycoreobject&gt;</code> werden die Dateien aller dem Objekt zugeordneten Derivate und ein
+    XML-File mit den Metadaten des Objekts zusammengepackt. Im Fall von <code>&lt;mycorederivate&gt;</code> werden alle
+    Dateien des angegebenen Derivates zusammengepackt. Die Option <code>MCRID/foldername</code> ist nur zulässig, wenn
+    <code>MCRID</code> ein Objekt vom Typ <code>&lt;mycorederivate&gt;</code> bezeichnet. Dann wird nur der mit
+    <code>foldername</code> angegebene Ordner des betreffenden Derivats gezippt.
+    </p>
+    <p>
+    Wer geschützte Inhalte anbietet, sollte das Zip-Servlet erst dann in seine Anwendung integrieren, wenn die
+    Zugriffskontrolle in MyCoRe gewährleistet werden kann. Dies ist momentan (04.2005) noch nicht der Fall, das
+    Zip-Servlet lässt sich mit jeder MCRID aufrufen.
+    </p>
+   </section>
+
+   <section>
+   <title>Erweiterung des Commandline-Tools</title>
+   <p>
+   Dieser Abschnitt beschäftigt sich mit der Struktur des Commandline-Tools und dessen Erweiterung mit eigenen
+   Kommandos. Dem Leser sei vorab empfohlen, den entsprechenden Abschnitt im MyCoRe-UserGuide durchzuarbeiten.
+   </p>
+
+   <img src="images/progguide_commandlinetool.jpg" alt="Java-Klassen" title="Java-Klassen"/>
+    <p class="klein"><strong>Abbildung 2.4:</strong> Zusammenhang der Java-Klassen</p>
+
+    <p>
+    Das Commandline-Tool ist die Schnittstelle für eine interaktive Arbeit mit dem MyCoRe-System auf
+    Kommandozeilen-Basis. Sie können dieses System ebenfalls dazu verwenden, mittels Skript-Jobs ganze Arbeitsabläufe
+    zu automatisieren. Dies ist besonders bei der Massendatenverarbeitung sehr hilfreich. In DocPortal werden Ihnen
+    schon in den Verzeichnissen unixtools bzw. dostools eine ganze Reihe von hilfreichen Skripts für Unix bzw. MS
+    Windows mitgegeben.
+    </p>
+    <p>
+    All diese Skripte basieren auf dem Shell-Skript <code>bin/mycore.sh</code> bzw. <code>bin/mycore.cmd</code>,
+    welches im Initialisierungsprozess der Anwendung via ant mit gebaut wird (<code>ant create.unixtools</code> bzw.
+    <code>ant create.dostools</code>). Sollten Sie zu einem späteren Zeitpunkt eventuell einmal
+    <code>*.jar</code>-Dateien in den <code>lib</code>-Verzeichnissen ausgetauscht haben oder sonstige Änderungen
+    hinsichtlich des Java-CLASSPATH durchgeführt haben, so führen Sie für ein Rebuild des MyCoRe-Kommandos ein
+    <code>ant scripts</code> durch.</p><p>Die Abbildung 2.4 soll einen Überblick über die Zusammenhänge der einzelnen
+    Java-Klassen im Zusammenhang mit der nutzerseitigen Erweiterung des Commandline-Tools geben.
+    </p>
+    <p>
+    Es ist relativ einfach, weitere Kommandos hinzuzufügen. In DocPortal sind bereits alle nötigen Muster vorhanden.
+    </p>
+    <ol>
+    <li>Im Verzeichnis <code>~/docportal/sources/org/mycore/frontend/cli</code> finden Sie eine Java-Klasse
+    <code>MCRMyCommand.java</code>. Diese ist ein Muster, kopieren Sie sie in eine Java-Klasse z.B.
+    <code>MCRTestCommand.java</code>. Die Klasse kann im Package <code>org.mycore.frontend.cli</code> liegen, sie können
+    Sie aber auch in den Bereich tun, zu dem es logisch gehört.</li>
+    <li>Ersetzen Sie alle <code>MCRMyCommand</code>-String durch <code>MCRTestCommand</code>.</li>
+    <li>Im Konstruktor werden nun alle neuen Kommandos definiert. Hierzu werden der <code>ArrayList command</code>
+    jeweils zwei weitere Zeilen hinzugefügt. Die erste enthält den Text-String für das Kommando. Stellen, wo Parameter
+    eingefügt werden sollen, sind mit {...} zu markieren, wobei ... eine fortlaufende Nummer beginnend mit 0 ist
+    (siehe Beispielcode). In der zweiten Zeile ist nun der Methodenaufruf anzugeben. Für jeden Parameter ist das
+    Schlüsselwort <code>String</code> anzugeben.</li>
+    <li>Nun muss das eigentliche Kommando als Methode dieser Kommando-Klasse implementiert werden. Orientieren Sie sich
+    dabei am mitgelieferten Beispiel. (Die Methode <code>convertData</code> sollten Sie in Ihrer Klasse löschen. Ebenso
+    die Definition in der commands-ArrayList.)</li>
+    <li>Compilieren Sie nun die neue Klasse mit <code>cd ~/docportal</code>; <code>ant jar</code></li>
+    <li>Als letztes müssen Sie die Klasse in das System einbinden. Die mit dem MyCoRe-Kern mitgelieferten Kommandos sind
+    bis auf die Basis-Kommandos über die Property-Variable <code>MCR.internal_command_classes</code> in
+    <code>~/docportal/mycore.properties</code> dem System bekannt gemacht. Für externe Kommandos steht hierfür in der
+    Konfigurationsdatei <code>mycore.properties.application</code> die Variable <code>MCR.external_command_classes</code>
+    zur Verfügung. Hier können Sie eine mit Komma getrennte Liste Ihrer eigenen Kommando-Java-Klassen angeben.</li>
+    <li>Wenn Sie nun <code>mycore.sh</code> bzw. <code>mycore.cmd</code> starten und DEBUG für den Logger eingeschaltet
+    haben, so sehen Sie Ihre neu integrierten Kommandos.</li>
+    </ol>
+   </section>
+
+
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
+ 
+</body>
+</document>
+

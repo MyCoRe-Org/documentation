@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document xml:lang="en">
+<header>
+ <title>Download: Overview</title>
+</header>
+ 
+ <body>
+
+  <div style="margin-bottom:50px;">
+    <p>
+      You can download the latest MyCoRe version (release 2.1-fixes) from  
+      <a href="http://sourceforge.net/projects/mycore" title="MyCoRe at SourceForge">Sourceforge </a>
+    </p>
+    <p>
+      <a href="http://sourceforge.net/projects/mycore/files/docportal/2.1/"
+        ><img src="/images/download_mcr_21.png" alt="SF download link" style="float:right;" /></a>
+      Besides the official current release, the developer team 
+      provides prereleases from time to time: 
+    </p>
+    <ul>
+      <li><!-- a href="site:prerelease" -->Prerelease<!-- /a--> - not available at the moment</li>
+      <li><a href="site:archive">Archive</a></li>
+    </ul>
+    <div style="float:right;">
+      <script type="text/javascript" src="http://www.ohloh.net/p/16348/widgets/project_basic_stats.js"></script>
+    </div>     
+    <p>
+      The latest sources can be accessed using our version management system:
+    </p>
+    <ul>
+      <li><a href="site:subversion">Subversion access</a></li>
+      <li><a href="site:changelog">ChangeLog</a></li>
+    </ul>
+    <p>
+      MyCoRe uses Maven together with Jenkins as Continuous Integration environment. 
+      Successful Builds are published in out Maven repository: 
+    </p>
+    <ul>
+      <li><a href="site:jenkins">Jenkins (Continuous Integration)</a></li>
+      <li><a href="site:artifactory">Artifactory (Maven Repository)</a></li>
+    </ul>
+    </div>
+</body>
+</document>

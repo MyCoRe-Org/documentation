@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document>
+<header>
+ <title>Changes</title></header>
+ 
+ <body>
+  
+  <section>
+  <title>Changes in MyCoRe</title> 
+  
+  <section>
+  <title>Version 2.2 (current head tree)</title>
+  <ul>
+    
+    <li>Components</li>
+    <ul>
+      <li>Add basket to common component</li>
+      <li>...</li>
+    </ul>
+    
+  </ul>
+  </section>
+  
+  
+  <section>
+  <title>Version 2.1</title>
+  <p>see also <a href="http://www.mycore.de/generated/mycore-2.1.0/changelog.html">maven site</a></p>
+  <ul>
+    
+    <li>New features:</li>
+    <ul>
+      <li>readded support for operators: &lt;, &lt;=, =&gt;, &gt; on field types text, index, identifier</li>
+      <li>METS-editor: validate generated METS document</li>
+      <li>MCRMETSGenerator: do not return jdom Document but METS document from interface</li>
+      <li>add create category method to category DAO</li>
+      <li>new OAI implementation</li>
+      <li>add Method addParent(String), addParent(MCRObjectID) to MCRObjectStructure</li>
+      <li>added NISS implementation based on UUID random generator</li>
+      <li>added mycore-mods component renamed mycore-metsmods to mycore-mets</li>
+      <li>improved MyCoReWebPageProvider to handle real xml data,
+        added updateMeta method to update the meta element of a webpage</li>
+      <li>added method isInCategory to quickly determine if a object is in a specific category</li>
+      <li>added mycore-media component</li>
+      <li>Add a component to handle with METS / MODS files</li>
+      <li>Add a component to show images with Zoomify</li>
+      <li>Synchronize labels of a mycorederivate with the entry of a mycoreobject derivate refernce.</li>
+    </ul>
+    
+    <li>Fixed Bugs:</li>
+    <ul>
+      <li>MCRZipServlet does not check access rights 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3301497">3301497</a></li>
+      <li>Do not allow metadata objects with int id "0" to be saved in store</li>
+      <li>href attr. in file section of a mets document is url encoded 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3301079">3301079</a></li>
+      <li>METS-editor:decoding label and path to image 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3300479">3300479</a></li>
+      <li>404 Error lead to infinite loop on startup 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3297504">3297504</a></li>
+      <li>Wrong MCRApplicationBaseURL
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=328566">328566</a></li>
+      <li>High load due to upload? try to get rid of infinitive loop on HashMap.get() 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3266973">3266973</a></li>
+      <li>Unexpected result after search about index of documents
+        The "contains" mode in IndexBrowser is now mapped to the "contains" query operator. 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=2799965">2799965</a></li>
+      <li>lucene.store.AlreadyClosedException: this IndexReader is closed 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3204324">3204324</a></li>
+      <li>org.hibernate.SessionException: Session is closed! 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3198245">3198245</a></li>
+      <li>removed inclusion of non existing files info.gif and sound.js 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3252038">3252038</a></li>
+      <li>Clicking on empty Folder in Iview-Chapter caused site reload 
+        - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3194981">3194981</a></li>
+      <li>fixed multiselect in METS - editor </li>
+    </ul>
+    
+    <li>Changes:</li>
+    <ul>
+      <li>removed web directory under modules/iview2
+        subfolders are moved to modules/iview2</li>
+      <li>Always trim() input coming from editor form.
+        That means one can not input text with leading or trailing whitespace any more.</li>
+      <li>refactored iview2:
+        <ul>
+          <li>jQuery Eventing is used for all JS code</li>
+          <li>Added component for dynamic change of translations</li>
+          <li>Capsulation of Functions</li>
+        </ul></li>
+      <li>renamed IFS classes according to mycore class naming standard</li>
+      <li>removed MCRPropertyFunctions</li>
+      <li>renamed URN and METS classes according to mycore class naming standard</li>
+      <li>refactored mycore CLI</li>
+    </ul>
+    
+  </ul>
+  </section>
+  
+  <section>
+  <title>Version 2.0</title>
+  <ul>
+    
+    <li>Build process</li>
+    <ul>
+      <li>Refactoring the build process for the application. Split to a source, a build and a data tree. Now we use the concept of mycore.jar for integration the core. Define new common
+        build targets. </li>
+      <li>Split the searchfield.xml in a independent part in mycore an a datamodel part in the application.</li>
+      <li>Added stylesheet to generate search masks from searchfields.xml</li>
+      <li>The documentation of MyCoRe is now complete in Forrest.</li>
+    </ul>
+    
+    <li>Core</li>
+    <ul>
+      <li>Make the datamodel sensitive for selection of MyCoReObjectID.Base() for better splitting data types of different application clients.</li>
+      <li>LayoutServlet removed, replaced by MCRLayoutService</li>
+      <li>Use the IBM ICU library to handle calendars in MCRMetaHistoryDate. Now the searchable integer of 
+        this metadata element is the Julian Day number.</li>
+      <li>Move the classes of org.mycore.user2 to org.mycore.user.</li>
+      <li>Add a WebService and URIResolver access to the MCRLinkTable.</li>
+      <li>Removed support for MCRSessionID request parameter: use HttpSession to access MCRSession.</li>
+      <li>MCRMailer: retry sending mails if first attempt fails.</li>
+      <li>New Classification editor with less database commits.</li>
+      <li>Upgrade to FCK-Editor 2.4.</li>
+      <li>Code compiles on Java 6.</li>
+      <li>Add the item 'base' in the searchfield.xml for MCRObjectID.Base().</li>
+      <li>Faster repair of search index.</li>
+    </ul>
+    
+    <li>Components</li>
+    <ul>
+      <li>Change the concept from modules to componetes with intergation in mycore.jar.</li>
+      <li>Move editor configurations for ACL and Derivates from the application to the SWF component.</li>
+      <li>Use a new name definition for all I18N properties of components.</li>
+      <li>New classifikation browser based on AJAX with a fast integration in web sites.</li>
+      <li>Command to optimize the search in the Lucene index.</li>
+      <li>Support of namespaces in the searchfields.</li>
+      <li>Better layout performance.</li>
+    </ul>
+    
+    <li>Editor</li>
+    <ul>
+      <li>Added input validation using XSL condition for a complete panel.</li>
+      <li>Support of XML Namespaces</li>
+      <li>Use CSS class und style attributes in editor forms.</li>
+      <li>Better performance when show forms.</li>
+      <li>More then one default values for select lists.</li>
+      <li>HTML ancor for Repeater, if you click on +/- button.</li>
+    </ul>
+    
+    <li>Miscellaneous</li>
+    <ul>
+      <li>Add default stylesheets to save data with CLI in mycore. They are obsolete in application now.</li>
+    </ul>
+    
+    <li>Removed code and deprecates</li>
+    <ul>
+      <li>removed MCRCStoreLocalFileSystem and MCRCStoreRemoteFTP</li>
+      <li>removed MCRJDOMTransformXPathToJDOM</li>
+      <li>removed org.mycore.backend.remote package</li>
+      <li>removed org.mycore.backend.xmldb package</li>
+      <li>removed org.mycore.user package and dependencies</li>
+      <li>removed org.mycore.services.query package and dependencies</li>
+      <li>removed MCRXMLContainer and dependencies</li>
+      <li>marked MCRArgumentChecker as deprecated</li>
+      <li>marked MCRDefaults as deprecated</li>
+      <li>removed MCRUploadServlet2</li>
+    </ul>
+    
+  </ul>
+  </section>
+  
+  <section>
+  <title>Version 1.3</title>
+  <ul>
+    <li>Removed the old persistence layer</li>
+    <li>Changed CreateDatabase to the CM8 tree only.</li>
+    <li>Redesign of the CM8 persitence</li>
+    <li>Changed search persistence to use EventHandler model.</li>
+    <li>Added an EventHandler for the LinkTableManager</li>
+    <li>Removed TypedContent construct from the datamodelclasses.</li>
+    <li>Added MCRMetaISO8601Date as replacement for MCRMetaDate.</li>
+    <li>Added the new Access Controll system as replacement for the old user privilege system.</li>
+    <li>Built a new small user administartion system without privileges and memberships of groups.</li>
+    <li>Complete redesign and reimplementation of the query system.</li>
+    <li>Redesign of remote access. Now WebServices, OAI and Z3950 is used</li>
+    <li>Separated the content store from the content indexer and build it in the new search engine.</li>
+    <li>Moved the IBM CM8 code to a separate uninstalled module.</li>
+    <li>The remote access can serve WebService as default and has an interface for user access classes.</li>
+    <li>The UploadApplet uses I18N and has a configurable background color.</li>
+    <li>Added event handler implementation to extract technical metadata from MCRFile's content</li>
+    <li>Added ID3v1/ID3v2/LyricsV3 metadata extraction from MP3 files</li>
+    <li>Added EXIF/IPTC metadata extraction from JPEG files</li>
+    <li>Added metadata extraction from PDF files</li>
+  </ul>
+  </section>
+  
+  
+  <section>
+  <title>Version 1.2</title>
+  <ul>
+    <li>Implement a first model of EventHandler for the backend solutions.</li>
+    <li>Add a character normalization for the XML:DB and JDOM backend.</li>
+  </ul>
+  </section>
+  
+  <section>
+  <title>Version 1.1</title>
+  <ul>
+    <li>Added a module which will contain the editors for the user management GUI. The first editor for 
+    creating new users is funtional. More are upcoming.</li>
+    <li>Add a first version of the EventHandler to reorganized the store and search in the persitence layers.</li>
+    <li>Add a SimpleWorkflow module to administrate the content objects in simple form</li>
+    <li>Refactoring the commandline tool. Now the commands are all extern defined. Add a simple help mechanism.</li>
+    <li>MCRClassification methods where redesigned. This change require an update of all classifications 
+    to put them in an additional database table.</li>
+    <li>Bugfix: (#1211852) WebSphere is able to track the session now</li>
+    <li>MCRURIResolver now handles the 'query:' protocol to save http request to the MCRQueryServlet</li>
+    <li>Move the configuration from bin to the config directory.</li>
+    <li>Add the MCRIndexServlet to create searchable pages for robots.</li>
+  </ul>
+  </section>
+  
+  <section>
+  <title>Version 1.0</title>
+  <ul>
+    <li>initial release</li>
+  </ul>
+ </section>
+ </section>
+ 
+ <section>
+  <title>Changes in DocPortal</title>
+
+  <section>
+  <title>Version 2.2 (current head tree)</title>
+  <ul>
+    <li>New Features:</li>
+    <ul>
+      <li>...</li>
+    </ul>
+    <li>Changes:</li>
+    <ul>
+      <li>..</li>
+    </ul>
+  </ul>
+  
+  </section>
+
+  <section>
+  <title>Version 2.1</title>
+  <ul>
+    <li>Build process</li>
+    <ul>
+      <li>Change build.xml to handle more then one applets.</li>
+    </ul>
+    <li>Components integration</li>
+    <ul>
+      <li>Include METS/MODS component for sample presentation of images</li>
+    </ul>
+   </ul> 
+   </section>
+
+  <section>
+  <title>Version 2.0</title>
+  <ul>
+    
+    <li>Build process</li>
+    <ul>
+      <li>Refactoring the build process for the application. Split to a source, a build and a data tree.</li>
+      <li>Split the searchfield.xml in a independent part in mycore an a datamodel part</li>
+      <li>Complete installation via ant install.xml</li>
+    </ul>
+    
+    <li>Data modeling</li>
+    <ul>
+      <li>Added "ant create.searchmask" to generate search masks from searchfields.xml</li>
+      <li>Remove the parasearch and textsearch attributes from the MyCoRe data types.</li>
+      <li>Make the datamodel sensitive for selection of MyCoReObjectID.Base() for better splitting data types of different application clients.</li>
+    </ul>
+    
+    <li>Design and layout</li>
+    <ul>
+      <li>Replaced MyCoRe-Logo in upper left corner by DocPortal logo.</li>
+      <li>Change the syntax of the section element in MyCoReWebPage to use I18n.</li>
+      <li>Add a global variable direction in the layout process to choose the language direction LTR or RTL.</li>
+      <li>Show files of a document they have a hit.</li>
+      <li>Generate PDF documents over XSL stylesheets via XSL:FO and Apache FOP.</li>
+      <li>Presentation of hits as RSS feed or PDF document.</li>
+    </ul>
+    
+    <li>Miscellaneous</li>
+    <ul>
+      <li>Move scripts of Unix and Windows from bin to there directories.</li>
+    </ul>
+    
+  </ul>
+  </section>
+  
+  
+  <section>
+  <title>Version 1.3</title>  
+  <ul>
+    <li>image-viewer module added</li>
+    <li>Remove the old persitence layer.</li>
+    <li>Change the CreateDatebase to the CM8 tree only.</li>
+    <li>Redesign the CM8 persitence.</li>
+    <li>Change the search perstence to EventHandler model.</li>
+    <li>Add an EventHandler for the LinkTableManager.</li>
+    <li>Remove the TypedContent construct from teh datamodel classes.</li>
+  </ul>
+  </section>
+  
+  <section>
+  <title>Version 1.2</title>
+  <ul>
+    <li>mycoresample and docportal merged to one sample application</li>
+    <li>docportal initial works with HSQLDB and JDOM, no additional installations are nessesary</li>
+  </ul>
+  </section>
+  
+  <section>
+  <title>Version 1.1</title>
+  <ul>
+    <li>Move the sample data th a separarte CVS tree.</li>
+    <li>Add commands to create the SQL tables.</li>
+    <li>Stylesheets make use of the 'query:' protocol to save http request to the MCRQueryServlet.</li>
+    <li>Add the configuration for the MCRIndexServlet to support robots.</li>
+  </ul>
+  </section>
+  
+  <section>
+  <title>Version 1.0</title>
+  <ul>
+    <li>initial release</li>
+  </ul>
+  </section>
+  </section>
+ 
+ </body>
+</document>

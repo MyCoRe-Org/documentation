@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+	<header>
+		<title>Build Tools</title>
+	</header>
+	<body>
+		<p>
+        In diesem Abschnitt werden eigene ANT-Tasks beschrieben, die helfen, 
+        den Build-Prozess zu vereinfachen.
+     	 </p>
+      <section id="mergesearchfields">
+      	<title>MergeSearchfieldsXML</title>
+      	<p> Mit diesem <strong>Task</strong> kann die Datei <code>searchfields.xml</code> aus einem Modul mit der Datei <code>searchfields.xml</code> der 
+      		<em>Hauptanwendung</em> vereinigt werden.
+      		
+      	</p>
+      	<section id="mergesearchfields.call">
+      		<title>Aufruf</title>
+      		<p>Das folgende Codefragment zeigt, wie der Task in eine <em>ANT-Builddatei</em> integriert werden kann:</p>
+      		<source><![CDATA[<path id="classpath_buildtools">
+	<fileset dir="${env.MYCORE_HOME}/lib" includes="*.jar" />
+</path>
+<target name="test">
+	<taskdef name="mergesearchfields" 
+	         classname="org.mycore.buildtools.anttasks.MCRMergeSearchfieldsXMLTask"
+	classpathref="classpath_buildtools" /> 
+	<copy file="searchfields.demo.org.xml" tofile="searchfields.demo.xml" />
+	<mergesearchfields basefile="searchfields.demo.xml"
+	                   deltafile="searchfields.demo.delta.xml" /> 
+</target>]]></source>
+      </section>
+      <section id="mergesearchfields.parameter">
+      	<title>Parameter</title>
+      	<dl>
+      		<dt><code>basefile</code></dt>
+      		<dd>Pfad zur Datei, die angepasst werden soll</dd>
+      		<dt><code>deltafile</code></dt>
+      		<dd>Pfad zur Datei, die die Änderungen enthält</dd>
+      		<dt><code>overwrite</code></dt>
+      		<dd><code>(true | false)</code> Sollen Pfade überschrieben oder zusammengefügt werden? (default: false)</dd>
+      	</dl>
+      </section>
+      <section id="mergesearchfields.whathappens">
+      <title>Funktionalität</title>
+      <fixme author="mcrsteph">Link zum Kapitel im DeveloperGuide hinzufügen!</fixme>
+      <p>
+      	Der Aufbau der <code>searchfields.xml</code>-Datei wurde im Application Developer's Guide beschrieben.
+      	Die zu ändernden Suchfelder werden im <code>deltafile</code> unter ihrem zugehörigen Index spezifiziert. 
+      	Werden <code>source</code> und <code>type</code>-Attribute angegeben, müssen Sie mit den entsprechenden Attributen im
+      	<code>basefile</code> übereinstimmen. Ansonsten bricht der Build-Prozess mit einer Fehlermeldung ab.
+      	Der Inhalt des Attributes <code>objects</code> wirden an den Inhalt des selben Attributes im <code>basefile</code> angehängt.
+      	Die Pfadangaben der Attribute <code>xpath</code> und <code>value</code> werden mit den Pfadangaben im <code>basefile</code> mit dem
+      	ODER-Operator (<code>|</code>) verbunden. Dabei werden Dubletten automatisch entfernt.
+      	Wird der Parameter <code>overwrite</code> gesetzt, so werden die Pfade und Objektnamen nicht vereinigt sondern überschrieben.
+      	</p>
+		<section>
+			<title>Beispiel:</title>
+		<dl>
+			<dt><strong><code>basefile</code>:</strong></dt>
+			<dd><source><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<searchfields xmlns="http://www.mycore.org/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.mycore.org/ searchfields.xsd">
+  <index id="metadata">
+    <field name="identifier" objects="document" type="identifier"
+           source="objectMetadata" value="text()"
+           xpath="/mycoreobject/metadata/identifiers/identifier"/>
+    <field name="ddc" objects="document" type="identifier"
+            source="objectCategory" value="@ID"
+            xpath="/mycoreobject/metadata/subjects/subject"/>
+  </index>
+</searchfields>]]></source><p> </p></dd>
+     	<dt><strong><code>deltafile</code>:</strong></dt>
+     	<dd><source><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<searchfields xmlns="http://www.mycore.org/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.mycore.org/ searchfields.xsd">
+  <index id="metadata">
+    <field name="identifier" objects="disshab" />
+    <field name="ddc" objects="disshab"
+           value="@ID" xpath="/mycoreobject/metadata/ddcs/ddc"/>
+  </index>
+</searchfields>]]></source><p> </p></dd>
+     	<dt><strong>Ergebnis:</strong></dt>
+     	<dd><source><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<searchfields xmlns="http://www.mycore.org/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.mycore.org/ searchfields.xsd">
+  <index id="metadata">
+    <field name="identifier" objects="document disshab"
+           source="objectMetadata" type="identifier" value="text()"
+           xpath="/mycoreobject/metadata/identifiers/identifier"/>
+    <field name="ddc" objects="document disshab" 
+           source="objectCategory" type="identifier" value="@ID"
+           xpath="/mycoreobject/metadata/subjects/subject | 
+                  /mycoreobject/metadata/ddcs/ddc"/>
+  </index>
+</searchfields>]]></source><p> </p></dd>
+	  </dl>
+     </section>
+     
+    </section>
+  </section></body>
+</document>

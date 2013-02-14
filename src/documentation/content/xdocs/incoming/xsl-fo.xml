@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>PDF-Dateien über XSL generieren</title>
+  </header>
+  <body>
+    <section id="xslfo">
+      <title>PDF-Dateien über XSL generieren</title>
+      <p>
+        Das HTML der Webseiten einer MyCoRe-Anwendung wird serverseitig durch XSL Stylesheets erzeugt.
+        Es ist nun aber auch möglich, über XSL Stylesheets statt HTML-Seiten ein PDF-Dokument zu erzeugen.
+        Dazu schreibt man ein Stylesheet, das XSL:FO statt HTML erzeugt. Weiterhin muss das Stylesheet
+        <code>&lt;xsl:output media-type="application/pdf" ... /&gt;</code> setzen. Der LayoutService 
+        transformiert das durch das Stylesheet erzeugte XSL:FO Dokument mittels Apache FOP automatisch in
+        eine PDF-Datei, die dann an den Browser gesendet wird. 
+      </p>
+    </section>
+  </body>
+</document>

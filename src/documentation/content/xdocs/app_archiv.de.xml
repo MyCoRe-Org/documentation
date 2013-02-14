@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document xml:lang="de">
+<header>
+ <title>Anwendungen - Archiv</title>
+ <abstract>
+   Archiv der in der Vergangenheit vorgestellten Dokumentenserver, Archive, Bilddatenbanken oder
+   Bibliotheks-Anwendungen, die auf MyCoRe bzw. MILESS basieren.
+</abstract>
+</header>
+ <body>
+
+    <section>
+     <title>NS-Raubgut</title>
+      
+      <img class="float2" src="images/ns-raubgut.jpg" width="50%" alt="NS-Raubgut Screenshot"/> 
+      
+     <div class="marginbottom">
+        Das Projekt „NS-Raubgut“ wurde an der Universitätsbibliothek Leipzig (<a
+        href="http://www.ub.uni-leipzig.de/site.php?page=projekte/andere/nsraubgut"
+        title="Link zur Projektseite  NS-Raubgut an der Universitätsbibliothek Leipzig">ubl</a>) vorgestellt: 
+        In die MyCoRe-Anwendung werden Metadaten aus <acronym title="Citavi ist ein Literaturverwaltungsprogramm">Citavi</acronym> 
+        mit Titeln aus den Beständen der Universitätsbibliothek Leipzig importiert, 
+        die im Verdacht stehen in der Zeit des Nationalsozialismus unrechtmäßig erworben zu sein. Individuelle Provenienzvermerke (mit <a title="Link zu einem Datensatz des Projektes NS-Raubgut" href="http://nsraubgut.ub.uni-leipzig.de/receive/NSRaubgutInventar_nsraubgut_00002707">Abbildungen</a>) sollen darüber hinaus 
+        der Vorbereitung auf eine mögliche Restitution dienen. Das Projekt wurde gefördert 
+        aus dem Haushalt des Beauftragten der Bundesregierung für Kultur und Medien&thinsp;/&thinsp;Arbeitsstelle für Provenienzrecherche/-forschung. Implementiert wurde es am Universitätsrechenzentrum (<a href="http://wwwurz.uni-leipzig.de/digicollection.html" title="Link zum Universitätsrechenzentrum Leipzig">URZ</a>) und der ubl.
+        (Website des Projektes: <a href="http://nsraubgut.ub.uni-leipzig.de/" 
+        title="Link zur Anwendung NS-Raubgut">nsraubgut.ub.uni-leipzig.de</a>)
+       </div>
+    </section>
+
+    <section>
+     <title>Islamische Handschriften</title>
+     <p>
+     Projekte zur datenbankgestützten Erschließung und digitalen Bereitstellung arabischer, persischer und türkischer
+     Handschriften
+     </p>
+     
+     <img class="float" src="images/islamicmss.png" title="Screenshot Islamische Handschriften" alt="Screenshot Islamische Handschriften"/>
+     
+     <p>
+     Begonnen hat die Projektgruppe mit dem Kooperationsprojekt des Orientalischen Instituts mit der 
+     Universitätsbibliothek Leipzig und dem Universitätsrechenzentrums Leipzig als Teil des 
+     Förderprogramms "Kulturelle Überlieferung" im Bereich der "Wissenschaftlichen Literaturversorgungs- 
+     und Informationssysteme" (LIS) der Deutschen Forschungsgemeinschaft (DFG). Der Prototyp IslamHS widmet sich der 
+     datenbankgestützten Erschließung und digitalen Publikation einer Gruppe von arabischen, persischen und 
+     türkischen Handschriften, welche die Universitätsbibliothek 1995 und 1996 erworben hat.
+     </p>  
+     <p> 
+     Das Projekt hatte Modellcharakter, da erstmals die arabische Schrift in Verbindung mit den deutschen und 
+     englischen wissenschaftlichen Transskriptionssystemen in eine Datenbank integriert wurden. Zugleich wird
+     ein bislang völlig unbekannter Fundus orientalischer Handschriften der internationalen 
+     Arabistik/Orientalistik zur Verfügung gestellt. Die im Rahmen des Projekts zu bearbeitenden Kodizes 
+     weisen ein erstaunlich breites inhaltliches Spektrum auf, das fast alle traditionellen islamischen 
+     Wissensgebiete umfasst.
+     </p>
+     <p>
+     Etliche Handschriften zeichnen sich durch die frühen Lebensdaten ihrer Autoren aus (9./10. bis 18. Jh. 
+     n. Chr. mit Schwerpunkt im 13. bis 15. Jh. n. Chr.) sowie durch das teilweise sehr hohe Alter der 
+     Abschriften, die bis in das 12. Jahrhundert n. Chr. zurückreichen: Besonders wertvoll ist dabei eine 
+     Kopie des bekannten Werkes Kitāb az-Zīna des ismā'īlītischen Autors Abū &#x1E24;ātim ar-Rāzī (st. 322 H. / 
+     934 n.Chr), die ca. 200 Jahre nach seinem Tod in der Nähe seines Wohnorts Rayy im Iran vorgenommen wurde.
+     </p>
+     <p>
+     Die guten Erfahrungen bei der Nutzung des Prototypes, inzwischen in MyIHS umbenannt, führten zu drei weiteren 
+     Projekten, welche den bestehenden Codestand nachnutzen und diesen aktualisieren und erweitern. Zum einen werden
+     mit Hilfe der Software Handschriften der Regionen Banda Aceh und Zentraljava (Indonesien) katalogisiert. Dieses Projekt ist
+     gefördert vom Auswertigen Amt und erweitert den Prototypen um die indonesische Sprache. Daneben wird die
+     indonesische Handschriftenorganisation Manassa eine eigene Instanz in Jakarta betreiben. Auch 
+     das Orientalische Institut Leipzig hat zusammen mit den bewährten Partnern ein weiteres Projekt gestartet:
+     die Katalogisierung und Digitalisierung der Handschriften der Privatbibliothek Refaiya. Der Prototyp MyIHS ist 
+     unterdessen als eigenständige 
+     <a href="http://myihs.dl.uni-leipzig.de/" target="_blank" title="Link zum Prototyp MyIHS">Demo-Version</a> verfügbar.
+     </p>
+     <p>
+     <table>
+      <tr>
+       <td><b>IslamHS</b></td><td>Laufzeit: 01.08.2006-31.01.2008</td><td><a href="http://islamicmss.dl.uni-leipzig.de/" target="_blank" alt="Link zur MyCoRe-Anwendung IslamHS" title="Link zur MyCoRe-Anwendung IslamHS">http://islamicmss.dl.uni-leipzig.de/</a></td>
+      </tr>
+      <tr>
+       <td><b>Banda Aceh</b></td><td>Laufzeit: 01.01.2008-31.12.2009</td><td><a href="http://www.manuscripts-aceh.org/" target="_blank" alt="Link zur MyCoRe-Anwendung Banda Aceh" title="Link zur MyCoRe-Anwendung Banda Aceh">http://www.manuscripts-aceh.org/</a></td>
+      </tr>
+      <tr>
+       <td><b>Refaiya</b></td><td>Laufzeit: 01.10.2008-30.09.2010</td><td><a href="http://www.refaiya.uni-leipzig.de/" target="_blank" alt="Link zur MyCoRe-Anwendung Refaiya" title="Link zur MyCoRe-Anwendung Refaiya">http://www.refaiya.uni-leipzig.de/</a></td>
+      </tr>
+      <tr>
+       <td><b>Zentraljava</b></td><td>Laufzeit: 01.01.2009-31.12.2010</td><td><a href="http://www.manuscripts-java.org/" target="_blank" alt="Link zur MyCoRe-Anwendung Zentraljava" title="Link zur MyCoRe-Anwendung Zentraljava">http://www.manuscripts-java.org/</a></td>
+      </tr>
+      <tr>
+       <td><b>MyIHS</b></td><td>Laufzeit: wird ständig verbessert</td><td><a href="http://myihs.dl.uni-leipzig.de/" target="_blank" alt="Link zur MyCoRe-Anwendung MyIHS" title="Link zur MyCoRe-Anwendung MyIHS">http://myihs.dl.uni-leipzig.de/</a></td>
+      </tr>
+     </table>
+     </p>
+    </section>
+
+    <section>
+     <title>Papyri</title>
+     <p>
+     Die Gruppe der <b>Papyrus-Projekte</b> umfasst mittlerweile eine ganze Gruppe von DFG-geförderten Anwendungen, 
+     welche zum einen die Restaurierung, Katalogisierung und Digitalisierung von Papyrus-Sammlungen zum Ziel hat. Diese
+     Anwendungen werden überspannt vom <b>Papyrus-Portal</b>, welches neben den MyCoRe-Anwendungen auch solche auf
+     FileMaker-Basis erschließt und Recherchierbar macht.
+     </p>
+     
+     <p>
+     <div class="float">
+     <img src="images/ebers-pap.png" alt="Ebers-Papyrus" title="Ebers-Papyrus"/>
+     </div>
+     
+     Begonnen wurde bereits 2003 mit den Sammlungen <b>Halle, Jena und Leipzig</b>. MyCoRe gestattete erstmals
+     völlig neuartige Techniken wie die Vererbung oder das virtuelle Zusammenführen von Fragmenten unterschiedlicher
+     Sammlungen. Innovationen aus MyCoRe flossen und fließen immer noch in die Gestaltung des Projektes ein.
+     Die Entwicklung der Anwendungen wurde wesentlich von Professor Scholl und Universitätsrechenzentrum Leipzig
+     konzipiert und vorangetrieben. Das Papyrus-Projekt Halle-Jena-Leipzig war die erste nicht-Dokumenten-Server 
+     Anwendung von MyCoRe. Inzwischen wurde drei weitere, technisch gleiche Applikationen für Würzburg, Köln und Erlangen
+     aufgesetzt. Ab 2009 ist eine Erweiterung des Halle-Jena-Leipzig Projektes um die Erfassung von
+     ca. 1500 Ostraka in Arbeit.
+     <br/>
+     <p class="klein">P. Lips. Inv. 546 = P. Lips. I 2 (Griechisch)</p><br/>
+     <br/>
+     <br/>
+     <br/>
+     </p>
+     
+     <p> 
+     <div class="float">
+     <img src="images/papyrusportal.jpg" alt="Papyrus-Portal Logo" title="Papyrus-Portal Logo"/>
+     </div>
+        
+     Einen neuen Meilenstein stellt das am 27.10.2008 eingeweihte Papyrus-Portal dar. Mit dieser Anwendung wurde
+     eine gemeinsame Plattform aller bisher in Deutschland katalogisierten und digitalisierten Sammlungen geschaffen,
+     über welche auch eine einheitliche Recherche möglich ist. Das Programm nutzt im Gegensatz zu allen anderen
+     vor allem die MyCoRe-Funktionalitäten der Suche über entfernte Hosts. 
+     </p>
+     <p>
+     <table>
+      <tr>
+       <td><b>Papyrus-Portal</b></td><td>Laufzeit: 01.11.2007-30.10.2008</td><td><a href="http://www.papyrusportal.de/" target="_blank" alt="Link zur MyCoRe-Anwendung Papyrus-Portal" title="Link zur MyCoRe-Anwendung Papyrus-Portal">http://www.papyrusportal.de/</a></td>
+      </tr>
+      <tr>
+       <td><b>Halle-Jena-Leipzig</b></td><td>Laufzeit: 01.08.2004-</td><td><a href="http://papyri-leipzig.dl.uni-leipzig.de/" target="_blank" alt="Link zur MyCoRe-Papyrus-Anwendung Halle-Jena-Leipzig" title="Link zur MyCoRePapyrus-Anwendung Halle-Jena-Leipzig">http://papyri-leipzig.dl.uni-leipzig.de/</a></td>
+      </tr>
+      <tr>
+       <td><b>Würzburg</b></td><td>Laufzeit: abgeschlossen</td><td><a href="http://papyri-wuerzburg.dl.uni-leipzig.de/" target="_blank" alt="Link zur MyCoRe-Papyrus-Anwendung Würzburg" title="Link zur MyCoRe-Papyrus-Anwendung Würzburg ">http://papyri-wuerzburg.dl.uni-leipzig.de/</a></td>
+      </tr>
+      <tr>
+       <td><b>Köln</b></td><td>Laufzeit: fortlaufend</td><td><a href="http://papyri-koeln.dl.uni-leipzig.de//" target="_blank" alt="Link zur MyCoRe-Papyrus-Anwendung Köln" title="Link zur MyCoRe-Papyrus-Anwendung Köln">http://papyri-koeln.dl.uni-leipzig.de/</a></td>
+      </tr>
+      <tr>
+       <td><b>Erlangen</b></td><td>Laufzeit: fortlaufend</td><td><a href="http://papyri-erlangen.dl.uni-leipzig.de/" target="_blank" alt="Link zur MyCoRe-Papyrus-Anwendung Erlangen" title="Link zur MyCoRe-Papyrus-Anwendung Erlangen">http://papyri-erlangen.dl.uni-leipzig.de/</a></td>
+      </tr>
+     </table>
+     </p>
+    </section>
+
+
+    <section>
+     <title>DocPortal (Demo)</title>
+      
+      <img class="float2" src="images/docportalscreen.png" alt="DocPortal Screenshot" title="DocPortal Screenshot"/> 
+      
+     <div class="marginbottom">
+       DocPortal ist eine einfache Beispiel-Anwendung für MyCoRe, die einen Dokumentenserver mit typischen Dublin Core
+       Metadatenfeldern und den drei Objekttypen document, author und institution implementiert. Diese Anwendung ist als
+       Beispiel und Referenz zu sehen, keineswegs als direkt produktiv nutzbarer Dokumentenserver. Sie können aber
+       DocPortal als Ausgangssystem zur Entwicklung eigener Anwendungen nutzen.<br/>
+       <a href="http://www.mycore.de:8291/" target="_blank" title="Link zu DocPortal" 
+       alt="Link zu DocPortal">Live-Demo der DocPortal Beispiel-Anwendung</a>
+       </div>
+    </section>
+
+    <section>
+     <title>KiBiDaNo</title>
+     <p class="fett">Kieler Bilddatenbank Naher Osten</p>
+     <p>
+     Institut für Alttestamentliche Wissenschaft und Biblische Archäologie der Christian-Albrechts-Universität<br />
+      Lehrstuhl Prof. Bartelmus
+      </p>
+      <p>
+      URL: <a href="http://www.uni-kiel.de/kibidano/" alt="Link zur Bilddatenbank KiBiDaNO" title="Link zur Bilddatenbank KiBiDaNO">http://www.uni-kiel.de/kibidano</a><br />
+      Kontakt: <a href="mailto:kibidano@email.uni-kiel.de"  title="E-Mailadresse">kibidano@email.uni-kiel.de</a> oder    
+      <a href="mailto:rbartelmus@email.uni-kiel.de" title="E-Mailadresse">rbartelmus@email.uni-kiel.de</a>
+      </p>
+      <p>
+      KiBiDaNo ist eine vom Institut für Alttestamentliche Wissenschaft und Biblische Archäologie der 
+      Christian-Albrechts-Universität zu <strong>Ki</strong>el (Lehrstuhl Prof. Bartelmus) initiierte und   
+      verantwortlich betreute <strong>Bi</strong>ld<strong>da</strong>tenbank zum <strong>N</strong>ahen 
+      <strong>O</strong>sten (Irak, Iran, Israel, Jordanien, Libanon, Palästina,Syrien, Türkei - später auch 
+      Ägypten), deren Bilder <em>in der veröffentlichten Form</em> von jedermann privat oder in Zusammenhang 
+      mit Lehrveranstaltungen <em>kostenlos</em> genutzt werden können. Der primäre Adressatenkreis ergibt 
+      sich aus der letzteren Bemerkung: Für Lehrende und Lernende, die in irgendeiner Form mit dem Nahen   
+      Osten zu tun haben - seien sie kulturwissenschaftlich, geographisch oder wirtschaftswissenschaftlich 
+      interessiert - soll ein umfassendes Set an Bildmaterial aus dieser in ihrer Bedeutung  kaum zu 
+      überschätzenden Region zur Verfügung gestellt werden. Dementsprechend enthält die Datenbank gelegentlich 
+      auch mehrere ähnliche Bilder von ein- und demselben Objekt - die unterschiedlichen Versionen 
+      repräsentieren unterschiedliche Sichtweisen. Vorlesungen, Seminarvorträge, Schulstunden o.ä. können mit 
+      Hilfe von KiBiDaNO ohne größeren Arbeitsaufwand um eine visuelle Komponente ergänzt werden: Die 
+      Datenqualität der mit dem Farbprofil Adobe RGB (1998) generierten Bilder ist so bemessen, daß die 
+      ausgewählten und - in der vergrößerten Form (vgl. die Lupe unter den Bildern) - auf den eigenen Rechner 
+      heruntergeladenen Objekte problemlos mit einem Datenprojektor (Beamer) in guter Qualität vorgeführt 
+      werden können, sofern die Vergrößerung nicht auf eine Fläche von mehr als ca. 1,5 x 2 m erfolgt. Zum 
+      Ausdruck in kommerziell vertriebenen Veröffentlichungen können alle Bilder auch in besserer Qualität   
+      [jpg- oder tif-Format, ggf. gewandelt in den Arbeitsfarbraum CMYK (Euroscale Coated v2) mit einer 
+      Auflösung von bis zu 4000 Pixel pro inch] gegen Bezahlung bestellt werden: Dabei erzielte Einnahmen 
+      werden im Rahmen des Projekts   zur Beschaffung neuen Materials bzw. einer verbesserten Präsentation 
+      genutzt - KIBIDANO ist ein Non-Profit-Projekt, das von der CAU Kiel unter erheblichem finanziellen 
+      Aufwand auf den Weg gebracht wurde, das sich aber längerfristig selbst tragen soll.
+      </p>
+      <p>
+      Die ältesten in KiBiDaNO publizierten Bilder sind Reproduktionen von Photographien vom Beginn des 20. 
+      Jahrhunderts, andere stammen aus den fünfziger Jahren des selben Jahrhunderts, viele aus den sechziger 
+      und siebziger Jahren, so daß KiBiDaNO nicht nur aktuelles Bildmaterial zur Verfügung stellt, sondern 
+      auch historische   Bilder von Objekten, die infolge von Naturkatastrophen (Erdbeben, Überschwemmungen), 
+      kriegerischen Ereignissen oder sonstigen menschlichen Eingriffen inzwischen nicht mehr existieren oder   
+      aber stark verändert wurden. Nach <strong>Stand von Oktober 2007</strong> präsentiert KiBiDaNO Bilder 
+      von folgenden Photographen: Afshin Bakhtiar, Alexa Bartelmus, Corinna Bartelmus, Heide Bartelmus, 
+      Rüdiger Bartelmus, Bernd Bäss (†), Barbara Hertenberger, Ulrich Hübner, Jens Kamlah, Christiane 
+      Krolovitsch, Jascha Lemburg, Claas Oberbeck, Taghi Rahnemai, Werner Riedel,Christian Rose, Günter 
+      Schiemenz, Hans-Joachim Stoebe (†), Ina Willi-Plein - weitere Beiträger sind jederzeit willkommen. An 
+      der technischen und wissenschaftlichen Bearbeitung der Bilder beteiligt waren/sind: Carsten Binder,   
+      Christian Demandt, Corinna Felsch, Tom Fleischer, Sybille Kambeck, Christiane Krolovitsch, Mareike Meier, 
+      Jan Marr, Tilman   Neuschild, Christian Rose, Sven Lesemann, Moya Tönnies. Wissenschaftlich beratend 
+      tätig waren / sind (neben den Wissenschaftlern unter den Photographen): Silke Göttsch-Elten (Volkskunde), 
+      Anja Pistor-Hatam (Islamwissenschaft), Horst Sterr (Geographie), Josef Wiesehöfer (Alte Geschichte). 
+      Die technische Betreuung des Projekts liegt bei Dirk Krämer vom Rechenzentrum der CAU.
+      </p>
+      <img class="float" src="images/kibidano_klein.png" alt="Kibidano Screenshot" title="KiBiDaNo Screenshot"/>
+      <p>
+      Die Publikation der derzeit vorhandenen rund 12000 Bilder (10000 davon sind bereits in elektronischer 
+      Form verfügbar, mehr als 5200 publiziert) erfolgt sukzessive und (aus arbeitstechnischen Gründen) in 
+      unterschiedlichen Stufen (»nur Bild« / »vorläufig bearbeitet« / »veröffentlicht«). Schwerpunktmäßig 
+      begonnen wurde mit Bildern aus dem Iran und der Ost-Türkei. Inzwischen sind auch zahlreiche Bilder aus 
+      Syrien bzw. Jerusalem publiziert, dazu einige wenige aus dem Irak. Bilder aus Jordanien und dem Libanon 
+      sind dagegen bisher zumeist nur im Status »nur Bild« zugänglich. Da bei einem derart breit angelegten 
+      Projekt Fehler bzw. Ungenauigkeiten naturgemäß nicht zu vermeiden sind, sind alle Nutzer dringend 
+      gebeten, das am Ende jeder Bildbeschreibung positionierte Feld »Kommentar« für Korrekturen bzw. 
+      Verbesserungsvorschläge zu verwenden.
+      </p>
+      <p>
+      Ein Spezifikum von KiBiDaNO stellt der Versuch dar, zu jedem Objekt neben der üblichen deutschen   
+      Bezeichnung auch eine in der Landessprache zu verzeichnen, sowie nach Möglichkeit alle in Lexika, 
+      wissenschaftlichen Publikationen, Reiseführern etc. verwendeten Namensformen zu sammeln: Die 
+      verwendeten Zeichen sind Unicode-Zeichen, deren Darstellbarkeit von der Qualität des verwendeten 
+      Browsers bzw. den auf dem Rechner installierten Schriften abhängt. (Der Browser sollte bei der 
+      Zeichencodierung auf Westlich ISO-8859-1 bzw. Unicode UTF-8 eingestellt sein). Listen mit 
+      Namensvarianten finden sich in der jedem publizierten Bild beigefügten   Beschreibung unter den 
+      Kategorien »Objektsynonyme« bzw. »Ortslagesynonyme«. Der Nutzen dieser (bei der Suchfunktion   
+      berücksichtigten) Synonymlisten erschließt sich jedem Nutzer sehr schnell - gibt es doch keine 
+      universell gültigen Konventionen, nach denen arabische oder persische Namen in lateinischer Schrift 
+      wiedergegeben werden, und weiß doch jeder, daß die verschiedenen Ortslagen im Verlauf der Geschichte 
+      ihre Namen immer wieder gewechselt haben. Beim Suchen ist man somit nicht darauf angewiesen, eine 
+      bestimmte »richtige« Namensform ins Suchfeld einzugeben: Man wird automatisch zu allen Bildern geleitet, 
+      die zu einer Ortslage vorhanden sind, und kann sich über die Listen unter »Objektsynonyme« bzw. 
+      »Ortslagesynonyme« kundig machen,   welche anderen Namen bzw. Schreibweisen noch vorkommen. So bietet 
+      KiBiDaNO als eine Art Nebeneffekt die Möglichkeit, gegebenenfalls wissenschaftliche Recherchen in 
+      Lexika oder anderen Publikationen unter Verwendung eines anderen (dem Sucher bis dahin möglicherweise 
+      gar nicht geläufigen) Terminus fortzusetzen.
+      </p>
+      <p class="klein">(Stand: November 2007)</p>
+     </section>
+
+    <section>
+     <title>LexM</title>
+     
+     <img class="float2" alt="LexM Screenshot" src="images/lexm_screenshot2_klein.jpg" title="LeXM Screenshot"/>
+     
+     <p class="fett">Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit</p>
+     <p>
+     ab 2005 an der Universität Hamburg herausgegeben von   <br/>
+     Claudia Maurer Zenck und Peter Petersen   <br/>
+     unter Mitarbeit von Sophie Fetthauer
+     </p>
+     <p>
+     URL: <a href="http://www.lexm.uni-hamburg.de/" alt="Link zum Lexikon LexM" title="Link zum Lexikon LexM">http://www.lexm.uni-hamburg.de</a><br/>
+     Kontakt: <a href="mailto:sophie.fetthauer@uni-hamburg.de" title="E-Mailadresse">sophie.fetthauer@uni-hamburg.de</a>
+     </p>
+     <p>
+     Das Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit stellt Biographien von Musikern und 
+     Musikerinnen vor, die 1933-1945 aus „rassischen“, politischen, kulturellen, religiös-weltanschaulichen 
+     oder anderen Gründen verfolgt waren. Im Mittelpunkt stehen damit Lebenswege, die durch Diskriminierung, 
+     Beraubung, Inhaftierung in Ghettos und KZs, durch Versteck oder Exil tiefe Einschnitte erfahren haben. 
+     In das Lexikon aufgenommen werden Personen aller Altersgruppen, sofern sie professionelle Musiker waren, 
+     zu den vom NS-Staat Verfolgten gehörten und in Deutschland oder Österreich wirkten oder bekannt waren. 
+     Dabei werden von der Komposition, Interpretation, Pädagogik, Wissenschaft bis zum Musikmanagement alle 
+     Bereiche des Musiklebens einbezogen. Ziel ist es, eine Grundlage für die Forschungsfelder Musik im 
+     NS-Staat und Exilmusik und die damit zusammenhängenden Fragen nach zerstörerischen Effekten der 
+     Verfolgung bzw. nach konstruktiven Effekten der Migration für die Musikkultur als Ganzes zu schaffen. 
+     Dies bedeutet eine Vervollständigung der bisherigen, in Bezug auf NS-Verfolgung und Exil lückenhaften 
+     Musikgeschichtsschreibung des 20. Jahrhunderts, die Möglichkeit, gegenwärtige Konstellationen im 
+     Musikleben besser zu verstehen sowie vergessene Musiker/innen wiederzuentdecken. Es werden dabei zwei 
+     Ziele verfolgt: Einerseits soll mit dem Lexikon über das Einzelschicksal informiert werden, andererseits 
+     soll es als Forschungsinstrument für weitergehende Fragestellungen dienen.
+     </p>
+     <p>
+     Das Lexikon enthält zwei Typen von Datensätzen: erstens Datensätze zu Musikern und Musikerinnen 
+     („Personen“), 2. Datensätze zu Literatur und Quellen („Bibliographie“). Die Personendatensätze sind in 
+     eine Biographie sowie Stichwörter zu Personendaten, Berufen/Tätigkeiten und Verfolgung/Exil gegliedert. 
+     Zu unterscheiden sind dabei frei formulierter Text und vorformulierte Listen mit Schlagwörtern zu 
+     einzelnen Themen. Verzeichnisse von Werken, Quellen, Bild- und Notenbeispiele sowie Linksammlungen 
+     runden die einzelnen Artikel ab. Derzeit sind rund 2.700 Personendatensätze im Lexikon enthalten, 
+     darunter etwa 400 ausführliche Artikel und etwa 2.300 Kurzartikel (Stand: 17. Dez. 2009). 
+     Auf lange Sicht sollen es ca. 5.000 werden. Die Bibliographie verzeichnet Einträge zu Literatur 
+     (Bücher, Aufsätze, Zeitungsartikel usw.) ebenso wie Archivbestände zu einzelnen Personen. 
+     Momentan sind über die Bibliographie rund 8.400 Einträge abrufbar (Stand: 17. Dez. 2009).
+     </p>
+     <p>
+     Das Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit verwendet MyCoRe (Version 2.0) in einem 
+     wissenschaftlichen Kontext. Wissenschaftliche Texte zu Musikern und Musikerinnen werden in dem Lexikon 
+     nach Themen systematisiert dargeboten, verbunden mit der Möglichkeit, Referenzen einzufügen (Links zu 
+     Literatur- und Quellenverweisen sowie anderen Personenartikeln) und den gesamten Datenbestand mittels 
+     detaillierter Suchfunktionen zu durchsuchen.
+     </p>
+     <p>
+     Autoren des Lexikons sind die Herausgeber, die wissenschaftliche Mitarbeiterin und die studentischen 
+     Hilfskräfte des Lexikon, darüber hinaus werden Artikel vor allem von externen Wissenschaftlern und 
+     Wissenschaftlern zu dem Lexikon beigetragen. Die Redaktion der Artikel liegt in den Händen der 
+     Herausgeber und der wissenschaftlichen Mitarbeiterin. Letztere nimmt in Absprache mit den Autoren 
+     Korrekturen und Ergänzungen an den Artikeln vor und gibt sie in das Lexikon ein. Das Lexikon ist als 
+     Informationsquelle für die Fachöffentlichkeit, namentlich Universitäten, Musikhochschulen, 
+     Forschungseinrichtungen, Opernhäuser, Konzertagenturen, Verleger, Tonträgerindustrie, Rundfunkanstalten 
+     usw., konzipiert, ebenso wie für die interessierte Öffentlichkeit.
+     </p>
+    </section>
+
+    <section>
+     <title>MILESS</title>
+     <p>
+     MILESS ist ein an der Universität Duisburg-Essen entwickelter Dokumenten- und Publikationsserver, und 
+     <strong>der "Urvater" von MyCoRe</strong>. Aus der Nachnutzung von MILESS ist die MyCoRe Community 
+     entstanden. MILESS besitzt nach wie vor eigene Software-Anteile, aber der überwiegende Teil der 
+     Funktionalität stammt inzwischen aus dem gemeinsam entwickelten MyCoRe Kern. MILESS ist funktional 
+     vergleichbar mit der Referenzapplikation DocPortal. MILESS kann separat heruntergeladen und installiert 
+     werden, alle MyCoRe-Pakete sind in der Distribution bereits integriert (siehe unten).
+     </p>
+     
+     <img class="float" src="images/miless-dokument.png" title="Screenshot MILESS-Dokument" alt="Screenshot MILESS-Dokument"/>
+     
+     <p> 
+     In MILESS werden elektronische <strong>Publikationen</strong>, <strong>Dissertationen</strong>, aber auch 
+     multimediale Lehr- und <strong>Lernmaterialien</strong> wie <strong>Animationen</strong>, Simulationen, 
+     <strong>Audio-</strong> und <strong>Videomaterial</strong> archiviert und verwaltet. Nutzer erhalten so 
+     einen einheitlichen und systematischen Zugang zu <strong>Skripten</strong>, <strong>Vorlesungsfolien</strong> 
+     und anderen digitalen Dokumenten, die im Dokumentenserver archiviert und dauerhaft verfügbar gemacht 
+     werden. MILESS verwaltet daher nicht nur beschreibende Metadaten nach <strong>Dublin-Core-Standard</strong>, 
+     sondern legt auch die dazugehörigen Dateien selbst dauerhaft in einer internen Struktur ab, so dass die 
+     Verfügbarkeit für die Vor- und Nachbereitung oder den direkten Einsatz in der Lehrveranstaltung 
+     garantiert werden  kann.
+     </p>
+     <p>
+     Nutzer können über verschiedene <strong>Suchmasken</strong> nach Inhalten recherchieren. Alternativ ist 
+     eine <strong>Navigation</strong> durch die Organisationsstruktur, über hierarchische Fachklassifikationen 
+     oder einen <strong>Personenindex</strong> von A-Z möglich. Auch der direkte Zugriff auf einzelne 
+     Dokumente und Dateien ist über eine fixe URL   oder ID möglich. MILESS verwaltet beliebige Dateitypen, die auch   gepackt als    
+     <strong>ZIP-Datei</strong> heruntergeladen werden können. Über die Web-Oberfläche können Autoren 
+     jederzeit selbständig von Ihrem Arbeitsplatz aus ihre Dokumente und Dateien einstellen und pflegen. 
+     </p>
+     
+     <img class="float2" src="images/miless-semesterapparat.png" title="Screenshot MILLESS-Semesterapparat" alt="Screenshot MILLESS-Semesterapparat"/>
+     
+     <p>
+     Über das Modul <strong>"Online-Semesterapparate"</strong> können Dozenten Literaturlisten, Links, 
+     digitalisierte Volltexte von Zeitschriftenartikeln und Buchauszügen sowie eigene Dateien bereitstellen. 
+     Dozenten pflegen die Inhalte über einfache Formulare, die in der Bibliothek die notwendigen 
+     Dienstleistungen wie Buchausleihe oder Digitalisierung anstoßen. Kenntnisse zur Gestaltung von 
+     Internetseiten sind nicht erforderlich.
+     </p>
+     <img class="float" src="images/miless-bearbeiten.png" title="Screenshot MILESS-Eingabemaske" alt="Screenshot MILESS-Eingabemaske"/>
+     <p>
+     MILESS verfügt über eine Schnittstelle für das Metadata   Harvesting Protokoll der <strong>Open Archives 
+     Initiative</strong> (OAI-PMH 2.0). Die Metadaten und Volltexte von Dissertationen und anderen 
+     Publikationen können über diese Schnittstelle (OAI Data Provider)   bereitgestellt, national und 
+     international durch OAI Service Provider gesammelt und damit auch auf internationaler Ebene recherchierbar 
+     gemacht werden. MILESS unterstützt die OAI-Profile <strong>XMetaDiss</strong> und <strong>XEpicur</strong> 
+     als Schnittstelle zur Deutschen Nationalbibliothek. Weiterhin ist ein direkter Zugang für 
+     <strong>Suchmaschinen</strong>-Robots realisiert, über den MILESS-Inhalte durch Internet-Suchmaschinen 
+     wie Google gefunden und indiziert werden. MILESS verfügt ebenfalls über eine 
+     <strong>Web-Services</strong>-Schnittstelle für Suche, Retrieval und Bearbeiten von Inhalten, über die 
+     eine direkte Integration externer Systemen ermöglicht wird. MILESS erfüllt als Dokumenten- und 
+     Publikationsserver die vom Wissenschaftsrat (WR) gegebenen  Empfehlungen zur digitalen 
+     Informationsversorgung durch Hochschulbibliotheken.
+     </p>
+     <p class="fett">Neue Funktionen in der Version 2.1:</p>
+     <ul>
+     <li>
+     Web Services zur Integration in externe Systeme, z. B. Lern-Management-Systeme: Erstellen, Bearbeiten, 
+     Upload und Suche in Inhalten über SOAP-Schnittstellen
+     </li>
+     <li>
+     Archivierung von SCORM-Modulen: Inhaltsbasierte Suche in den Metadaten von E-Learning-Paketen, 
+     integrierter SCORM Viewer
+     </li>
+     <li>
+     Vergabe von Persistent Identifiern (URNs, urn:nbn:de) für Publikationen und Meldung an die Deutsche 
+     Nationalbibliothek über EMail oder OAI-Schnittstelle
+     </li>
+     <li>
+     Workflow zur Freigabe von Publikationen: Self-Archiving und Self-Publishing 
+     </li>
+     <li>
+     Animierte Tutorials für Autoren: Einfach ansehen, wie es gemacht wird!
+     </li>
+     <li>
+     Individuelle Zugriffsstatistik für jedes Dokument: Wie wird Ihr Material genutzt?
+     </li>
+     <li>
+     Online-WYSIWYG-HTML-Editor für Semesterapparate: Inhalte flexibel gestalten
+     </li>
+     </ul>
+     <p>
+     MILESS ist unter Sun Solaris 9 oder höher, Windows XP, Linux und IBM AIX 5 oder höher lauffähig. Es wurde 
+     getestet mit <strong>MySQL</strong> 4.0 oder höher, IBM DB2 8.2 oder höher sowie Oracle 8 oder höher. 
+     Sie benötigen ein <strong>Java 2</strong> SDK, Standard Edition, Version 1.5 oder höher, sowie das 
+     Java-Build-Werkzeug Apache Ant Version 1.6.2 oder höher. MILESS ist eine Java-Servlet-Anwendung, die in 
+     einem Servlet Container wie Apache <strong>Tomcat</strong> 5.0.28 (empfohlen), oder auch in IBM  
+     WebSphere oder anderen Servlet Containern läuft. Wenn Sie einen Real 
+     Server 8, <strong>Helix Universal Server</strong> 9 oder höher, oder einen IBM VideoCharger Server 
+     Version 7 oder höher haben, kann MILESS Audio-/Video-Dateien automatisch (d. h. für den Anwender 
+     transparent) auf diesem Server speichern und von dort z. B. Lehrvideos und Mitschnitte von 
+     Veranstaltungen streamen.
+     </p>
+     <p>
+     Weitere Informationen zu Download und Installation von MILESS finden Sie im World Wide Web unter  
+     <a href="http://duepublico.uni-duisburg-essen.de/about/nachnutzung.xml" alt="Link zur Seite Nachnutzung in DuEPublico" title="Link zur Seite Nachnutzung in DuEPublico">
+     http://duepublico.uni-duisburg-essen.de/about/nachnutzung.xml</a>
+     </p>
+     <p>MILESS wird an mehreren Universitäten eingesetzt:</p>
+     <ul>
+     <li>Universität Duisburg-Essen: <a href="http://duepublico.uni-duisburg-essen.de" title="DuEPublico Duisburg-Essen Publications Online" target="_blank">DuEPublico</a></li>
+     <li>Universität Münster: <a href="http://miami.uni-muenster.de/" title="miami münstersches informations- und archivsystem für multimediale inhalte" target="_blank">MIAMI</a></li>
+     <li>Universität Jena: <a href="http://www.db-thueringen.de/" title="dbt Digitale Bibliothek Thüringen" target="_blank">Digitale Bibliothek Thüringen</a></li>
+     <li>Universität Freiburg: <a href="http://freimore.uni-freiburg.de/" title="FreiMORE FREIburgerMultimediaObjectREpostitory" target="_blank">FreiMORE</a></li>
+     <li>Universität Düsseldorf: <a href="http://docserv.uni-duesseldorf.de/" title="Düsseldorfer Dokumenten- und Publikationsservice" target="_blank">Düsseldorfer Dokumenten- und Publikationsservice</a></li>
+     <li>Universität Paderborn: <a href="http://ubdok.uni-paderborn.de/semapp/" title="Dokumenten- und Publikationsservice eSeminarapparate" target="_blank">eSeminarapparate</a></li>
+     <li>Universität Bochum: <a href="http://miless.rub.de/" title="BO-MILESS Multimedialer Lehr- und Lernserver" target="_blank">BO-MILESS</a></li>
+     <li>Universität Giessen: <a href="http://semapp.ub.uni-giessen.de/semapp/index.xml" title="Giessener Elektronische Bibliothek Lehrmaterial &amp; Publikationen" target="_blank">Giessener Elektronische Bibliothek</a></li>
+      <li>Universität Wuppertal: <a href="http://elpub.bib.uni-wuppertal.de" title="Hochschulschriften-Server der Bergischen Universität Wuppertal" target="_blank">Hochschulschriften-Server</a></li>
+     </ul>
+    </section>
+
+
+    <anchor id="zs" />
+    <section>
+     <title>Zeitschriften-Portal</title>
+     <p>
+     An der Thüringer Universitäts- und Landesbibliothek (ThULB) in Jena werden innerhalb des Projektes UrMEL 
+     (University Multimedia Electronic Library) <strong>Zeitschriften digital publiziert</strong>.
+     </p>
+     
+     <img class="float2" src="images/master.gif" title="Screenshot Zeitschriften-Portal" alt="Screenshot Zeitschriften-Portal"/>
+     <img class="float" src="images/zeischriften.gif" title="Screenshot Zeitschriften" alt="Screenshot Zeitschriften"/>
+     
+     <p>
+     In dem so genannten <strong>Journals@UrMEL</strong>-Portal werden sowohl aktuelle E-Journals als auch  
+     retrodigitalisierte historische Zeitschriften angeboten.
+     </p>
+     <p>
+     URL: <a href="http://zs.thulb.uni-jena.de" alt="Link zur MyCoRe-Anwendung Journals@UrMEL" title="Link zur MyCoRe-Anwendung Journals@UrMEL">http://zs.thulb.uni-jena.de</a> <br/>
+     Kontakt: <a href="http://zs.thulb.uni-jena.de/content/main/contact.xml" alt="Link zu Kontaktdaten in Jena" title="Link zu Kontaktdaten in Jena">Adressinformationen</a>
+     </p>
+     <p>Das Portal ist eine MyCoRe-Applikation auf der Basis von MyCoRe 2.0.</p>
+     
+     
+     
+     <p>
+     Die Applikation hebt sich insofern von den herkömmlichen Anwendungen ab, als das innerhalb desselben 
+     Systems, eigenständige "<strong>Virtuelle-Applikationen</strong>" über ein <strong>Cooperate-Design</strong> 
+     gekoppelt werden können.
+     </p>
+     <p>
+     Einzelne Zeitschriften erscheinen im <strong>eigenen Outfit</strong>, haben eine eigene  
+     <strong>Webseitenstruktur</strong> und <strong>Rechteverwaltung</strong> sind aber technisch alle 
+     Bestandteil <em>einer</em> MyCoRe-Anwendung.<br/>
+     Auf diese Weise ist es mit sehr geringem Aufwand möglich, <strong>Portal-ähnliche Strukturen</strong> 
+     aufzubauen - neue Zeitschriften können per Mausklick in das System eingepflegt werden.
+     </p>
+      <br />
+    </section>
+
+    <anchor id="cpr" />
+    <section>
+     <title>Catalogus Professorum Rostochiensium (CPR)</title>
+     <img class="float2" src="images/cpr_screenshot.png" alt="CPR Screenshot" title="CPR Screenshot"/>
+     <p>
+        Der <b>Rostocker Professorenkatalog</b> ist ein Projekt der Forschungsstelle Universitätsgeschichte,
+        der Bibliothek und des Archivs der Universität Rostock im Hinblick auf das Universitätsjubiläum
+        2019. Im Catalogus sollen alle Professoren der Universität Rostock seit 1419 dokumentiert werden. 
+    </p>
+     <img src="images/cpr_logo.jpg" alt="CPR Logo" title="CPR Logo"/>
+
+    <p>
+         URL: <a href="http://cpr.uni-rostock.de" alt="Link zum Rostocker Professorenkatalog" title="Link zum Rostocker Professorenkatalog">http://cpr.uni-rostock.de</a> <br/>
+         Kontakt: <a href="mailto:unigeschichte@uni-rostock.de"  title="E-Mailadresse">unigeschichte@uni-rostock.de</a>
+    </p>
+     
+    <p>
+        Zurzeit befinden sich über 900 Einträge im Catalogus. Die Rostocker Professoren 
+        seit 1992/93 bis 2007 sind bereits vollständig und die Professoren der DDR-Zeit (1946 bis 1990/92) 
+        zu einem großen Teil enthalten. Für die Professoren vor 1945 finden sich bisher nur einzelne 
+        Einträge.
+    </p>
+    <p>
+        Die Katalogeinträge umfassen den Zeitraum, das Fachgebiet und die institutionelle Zuordnung der 
+        Professur. Dazu kommen wenn möglich Angaben zur Biographie, zum wissenschaftlichen Profil und zu 
+        den Aktivitäten an der Rostocker Hochschule. Beigefügt sind Bilder, Lebensläufe, 
+        Schriftenverzeichnisse und sonstige Dokumente zur Person. Die Einträge werden verknüpft mit 
+        weiteren Internet-Ressourcen.
+    </p> 
+    <p>
+        Die momentan an der Universität Rostock wirkenden Professoren und die Emeriti wurden seit 2006 
+        angeschrieben und stellen ihre Angaben für den Catalogus selbst zusammen. Erfolgt keine Rückmeldung
+        können nur Kurzeinträge erstellt werden. Die Informationen zu den &quot;historischen&quot; Professoren 
+        seit 1419 erarbeiten Mitarbeiter der Forschungsstelle unter Verwendung bereits bestehender 
+        Verzeichnisse. 
+    </p>
+      <p>Der Catalogus ist eine MyCoRe-Applikation, die auf dem JSPDocportal basiert.</p>
+      <br />
+    </section>
+
+</body>
+</document>

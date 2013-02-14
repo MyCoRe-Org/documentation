@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<catalogue xml:lang="de">
+  <message key="MyCoRe Documentation">MyCoRe Documentation</message>
+  <message key="Willkommen bei MyCoRe">Willkommen bei MyCoRe</message>
+  <message key="Aktuelles">Aktuelles </message>
+  <message key="Meldungen Archiv">Meldungen Archiv</message>
+  <message key="Über MyCoRe">Über MyCoRe</message>
+  <message key="Lizenzbedingungen">Lizenzbedingungen</message>
+  <message key="Voraussetzungen">Voraussetzungen</message>
+  <message key="Funktionalität">Funktionalität</message>
+  <message key="Anwendungen">Anwendungen</message>
+  <message key="Veröffentlichungen">Veröffentlichungen</message>
+  <message key="Präsentationen">Präsentationen</message>
+  <message key="Team">Team</message>
+  <message key="Sitemap">Sitemap</message>
+  <message key="Demo-Version">Demo-Version</message>
+  <message key="DocPortal">DocPortal</message>
+  <message key="Download">Download</message>
+  <message key="Übersicht">Übersicht</message>
+  <message key="Subversion">Subversion</message>
+  <message key="Änderungen">Änderungen</message>
+  <message key="Snapshot">Snapshot</message>
+  <message key="Snapshot-Archiv">Snapshot-Archiv</message>
+  <message key="Release">Release</message>
+  <message key="Dokumentation">Dokumentation</message>  
+  <message key="User Guide">User Guide</message>
+  <message key="Programmer Guide">Programmer Guide</message>
+  <message key="Allgemeines">Allgemeines</message>
+  <message key="Funktionsprinzipien">Funktionsprinzipien</message>
+  <message key="Module">Module</message>
+  <message key="Anmerkungen">Anmerkungen</message>
+  <message key="Developer Guide">Developer Guide</message>
+  <message key="HowTo's">HowTo's</message>
+  <message key="JavaDoc API Referenz">JavaDoc API Referenz</message>
+  <message key="Dokumentation als PDF">Dokumentation als PDF</message>
+  <message key="Support &amp; Kontakt">Support & Kontakt</message>
+  <message key="Mailing-Listen">Mailing-Listen</message>
+  <message key="Geschäftsstelle">Geschäftsstelle</message>
+  <message key="FAQs">FAQs</message>
+  <message key="Bug melden">Bug melden</message>
+  <message key="Feature Request">Feature Request</message>
+  <message key="MyCoRe Wiki">MyCoRe Wiki</message>
+  <message key="Impressum">Impressum</message>
+</catalogue>
