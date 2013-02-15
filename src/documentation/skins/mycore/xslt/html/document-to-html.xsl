@@ -95,6 +95,7 @@ imported document-to-html.xsl for details.
     var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
     piwikTracker.trackPageView();
     piwikTracker.enableLinkTracking();
+    piwikTracker.setDownloadExtensions( "7z|aac|arc|arj|asf|asx|avi|bin|bz|bz2|csv|deb|dmg|doc|exe|flv|gif|gz|gzip|hqx|jar|jpg|jpeg|js|mp2|mp3|mp4|mpg|mpeg|mov|movie|msi|msp|odb|odf|odg|odp|ods|odt|ogg|ogv|pdf|phps|png|ppt|qt|qtm|ra|ram|rar|rpm|sea|sit|tar|tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd|z|zip" );
     } catch( err ) {}
     </script><noscript><p><img src="http://esx-179.gbv.de/piwik/piwik/piwik.php?idsite=3" style="border:0" alt="" /></p></noscript -->
     <!-- End Piwik Tracking Code -->
