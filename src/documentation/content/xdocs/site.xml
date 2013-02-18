@@ -22,7 +22,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 -->
 <site label="MyCoRe Website" href="" xmlns="http://apache.org/forrest/linkmap/1.0">
 
-  <welcome         label="Willkommen bei MyCoRe" href="index.html" tab="x" />
+  <welcome         label="Home" href="index.html" tab="welcome" />
 
     <!-- news          label="Aktuelles"          href="index.html" />
     <workshop      label="Anwenderworkshop"   href="workshop.html" />
@@ -52,7 +52,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   <demo label="Demo" href="demo/index.html" tab="demo" />
 
-  <download      label="Software"        href="download/" tab="download">
+  <download      label="Download"        href="download/" tab="download">
     <howtoget    label="Übersicht"       href="index.html" />
     <release     label="Release 2.1"     href="release.html" />
     <!-- prerelease    label="Prerelease"        href="prerelease.html" / -->
