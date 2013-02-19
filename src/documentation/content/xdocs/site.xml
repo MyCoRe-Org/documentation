@@ -48,7 +48,15 @@ See http://forrest.apache.org/docs/linking.html for more info
     <docportal label="DocPortal" href="http://www.mycore.de:8291/" />
   </demo -->
 
-  <features label="Features" href="features/index.html" tab="features" />
+  <features     label="Features"       href="features/" tab="features">
+    <index      label="inArbeit"       href="index.html" />
+    <acl        label="ACL"            href="acl.html" />
+    <datamodel  label="Datenmodell"    href="datamodel.html" />
+    <derivates  label="Derivate"       href="derivates.html" />
+    <frontend   label="Frontend"       href="frontend.html" />
+    <interfaces label="Schnittstellen" href="interfaces.html" />
+    <search     label="Suche"          href="search.html" />
+  </features>
 
   <demo label="Demo" href="demo/index.html" tab="demo" />
 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+
+<header>
+  <title>MyCoRe Datenmodellierung</title>
+</header>
+
+<body>
+
+    <section>
+     <title>Metadatenmodell für Objekte</title>
+     <p>
+       Das Metadatenmodell soll eine flexible Modellierung von Metadaten bei möglichst geringem Arbeitsaufwand für
+       die Einzelanwendung gestatten. Um dies zu realisieren wurden die Ansätze implementiert:
+     </p>
+     <ul>
+       <li>Die interne Speicherung und Darstellung der Metadaten erfolgt im XML-Format</li>
+       <li>Die eigentlichen Metadaten werden in ein Framework zur Objektverwaltung integriert.</li>
+       <li>Es erfolgt eine Gestaltung eines XML-Schemas von Typen für die allgemein gültigen und oft gebrauchten Metadaten.</li>
+     </ul>
+     <p>Ein MyCoRe-Metadaten-Objekt besteht aus den drei Teilen</p>
+     <dl>
+       <dt><code>structure</code></dt>
+       <dd>Hier werden Informationen zur Einordnung des Datensatzes in eine logische Struktur festgehalten. Dies umfasst
+       Verweise zu Eltern- und Kind-Metadaten-Sätzen. Weiterhin werden in dem Abschnitt Referenzen zu den
+       eigentlichen digitalen Objekte gespeichert.</dd>
+     </dl>
+     <dl>
+       <dt><code>metadata</code></dt>
+       <dd>In diesem Bereich werden die Metadaten gemäß des Datenmodells abgelegt. Jeder
+       MyCoRe-Metadaten-Typ kann hier als eine Liste von Elementen angegeben werden. Jeder Metadaten-Typ hat
+       mindestens folgende Eigenschaften:
+       <ul>
+       <li>Er hat einen Schalter, ob er vererbt werden darf.</li>
+       <li>Er hat einen Schalter, ob er selbst erben darf.</li>
+       <li>Bei einigen Elementen kann die zugehörige Sprache angegeben werden.</li>
+       <li>Jedes Element kann einen Attribut 'type' haben.</li>
+     </ul>
+     </dd>
+     </dl>
+     <dl>
+     <dt><code>service</code></dt>
+     <dd>Der letzte Abschnitt enthält Informationen zur Verwaltung des Metadaten-Satzes wie Erstellungsdatum,
+     Zugriffsrechte (ACL's) oder Verwaltungs-Flags.</dd>
+     </dl>
+     <p>
+     Sollten die im MyCoRe-Kern angebotenen Datentypen zur Gestaltung eines Projektes nicht ausreichen, so besteht die
+     Möglichkeit, innerhalb der Anwendung eigene Typen zu kreieren und diese mit einzubinden. Somit ist MyCoRe auch für
+     Nutzungsbereiche offen, von denen die Autoren bisher nicht ausgegangen sind. Der Datenmodellierung sind in MyCoRe
+     kaum Grenzen gesetzt. Auch externe Speicher für die Speicherung von Daten in anderen Suchmechanismen (z. B.
+     Polygonsuche geographischer Daten) lassen sich problemlos integrieren.
+     </p>
+    </section>
+
+    <section>
+      <title>Vererbung</title>
+      <p>
+        In einigen Projekten ist es erforderlich, die Strukturierung der zu speichernden Objekte mit abzulegen. Eine
+        hierarchische Anordnung der Teilobjekte, z. B. der Kapitel eines Buches, soll zu einem effizienteren Zugriff auf
+        die gewünschten Objekte führen. Dabei sollen aber alle Metadaten-Informationen möglichst nicht redundant erfasst
+        werden.
+      </p>
+      <p>
+        In MyCoRe wurde ein Vererbungsmodell integriert, welches eine Verzahnung von
+        Metadaten gleichen Datentyps zulässt. Dabei können jedem Metadaten-Element Informationen mitgegeben werden, ob
+        es von Elementen eines Kind-Objektes geerbt werden kann oder diese von den Eltern erben soll. Auf diese Weise
+        lassen sich auch komplexere Strukturen relativ leicht abbilden. Die Informationen über den Strukturzusammenhang
+        einzelner Metadaten-Objekte werden im Frame-Bereich structure gespeichert und verwaltet. Abbildung 1.3 stellt das
+        Vererbungsmodell nochmal grafisch dar.
+      </p>
+      <img src="images/overview_vererbung_pic01.png" alt="Vererbungsmodell" title="Vererbungsmodell"/>
+      <p class="klein"><strong>Abbildung 1.3:</strong> Vererbungsmodell von MyCoRe</p>
+    </section>
+
+    <section>
+      <title>Hierarchisches Klassifikationssystem</title>
+      <p>
+        Um eine bessere Wiederauffindbarkeit von Informationen, besonders in großen Datenbeständen, zu erreichen, wurden in
+        allen Bereichen der Informationsverarbeitung Klassifikationen eingeführt. Dabei kann es sich um sehr allgemeine,
+        wie die einer Herkunft oder eines Dateiformat-Typs, oder aber fach- bzw. anwendungsspezifische Klassifikationen
+        z. B. eng begrenzte Wissenschafts- oder Sachgebiete, handeln. In beiden Fällen sollte es jedoch möglich sein, hier
+        auch eine Strukturierung der einzelnen Begriffe abbilden zu können.
+      </p>
+      <p>
+        MyCoRe implementiert ein Datenmodell mit folgenden Eigenschaften:</p>
+        <ul>
+          <li>Abbildung von hierarchischen Strukturen einer Klassifikation.</li>
+          <li>Eindeutige Identifizierung einer Kategorie.</li>
+          <li>Speicherung der Kategorie-Bezeichner in mehreren Sprachen.</li>
+          <li>Speicherung von Text-Beschreibungen zu den einzelnen Kategorien.</li>
+          <li>Speicherung einer URL zu jeder einzelnen Kategorie.</li>
+          <li>Jede Klassifikation kann mittels Online-Editor oder offline als XML-Datei bearbeitet werden.</li>
+        </ul>
+      <p>
+        Auf die im MyCoRe-Projekt gespeicherten Klassifikationen kann von den Metadaten aus via einer Referenz aus
+        Klassifikations- und Kategorie-ID zugegriffen werden. Neben der Einbindung der Klassifikationen in die Metadaten
+        des zu speichernden Objektes ist es auch möglich, Recherchen via Navigation über diese Klassifikationen
+        durchzuführen.
+      </p>
+      <img src="images/classificationdemo.png" alt="Klassifikation" title="Klassifikation und Klassifikationseditor"/>
+      <p class="klein"><strong>Abbildung 1.4:</strong> Beispiel einer Klassifikation und eines Klassifikations-Editors</p>
+    </section>
+    <section>
+      <title>Persistent Identifier (URNs)</title>
+      <p>
+        MyCoRe unterstützt die Generierung, Vergabe und Verwaltung von
+        <link href="http://www.persistent-identifier.de/" title="Persistent Identifier - Service der DNB">
+        Persistent Identifiers im Namensraum urn:nbn:de</link>,
+        wie sie etwa die Deutsche Nationalbibliothek für Online-Publikationen einsetzt. Dokumente erhalten so eine
+        dauerhafte, standardisierte und weltweit eindeutige Adresse, unter der sie erreichbar sind. Für die Generierung
+        von URNs stehen verschieden Algorithmen zur Verfügung, etwa auf Basis von Zeitstempeln oder fortlaufenden Zählern,
+        die auch miteinander kombiniert werden können. MyCoRe speichert die URN, berechnet und testet ggf. die zugehörige
+        Prüfsumme und implementiert einen lokalen URN-Resolver. Vergebene URNs können entweder über die OAI-Schnittstelle
+        mittels Epicur, oder über eine automatisch generierte E-Mail bei der Deutschen Nationalbibliothek registriert werden.
+      </p>
+    </section>
+
+</body>
+</document>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+
+<header>
+  <title>Benutzer- und Zugriffsrechteverwaltung</title>
+</header>
+
+<body>
+    <p>
+      Im Subsystem Benutzermanagement wird die Verwaltung derjenigen Personen geregelt, die mit dem System umgehen
+      (zum Beispiel als Autoren Dokumente einstellen). Dazu bietet die Benutzerverwaltung insbesondere die Möglichkeit,
+      dass sich Benutzer am System via Login authentifizieren können. Die Geschäftsprozesse einer Benutzerverwaltung wie zum
+      Beispiel das Anlegen neuer Benutzer, das Setzen von Passwörtern, die Aktivierung/Deaktivierung von Benutzern
+      usw. erfordern unterschiedliche Rechte. Diese können je nach Aufgaben festgelegt werden.
+    </p>
+    <p>
+      Benutzer können Gruppen zugeordnet werden, die den Rollen der Benutzer entsprechen. Zugriffsrechte wie Lesen,
+      Bearbeiten und Löschen von Dokumenten, enthaltenen Dateien und auch statischen Seiten der Weboberfläche können
+      einzelnen Benutzern oder bestimmten Gruppen zugeordnet werden. Die Zuordnung von Rechten zu Objekten erfolgt über
+      Access Control Listen. Alternativ kann auch auf Basis von IP-Adressbereichen Zugang zu Dokumenten oder anderen
+      Objekten gewährt werden.
+    </p>
+    <img src="images/accesscontrol.png" alt="Access Control" title="Access Control Online-Editor"/>
+    <p class="klein"><strong>Abbildung 1.14:</strong> Online-Editor: Access Control</p>
+
+
+</body>
+</document>

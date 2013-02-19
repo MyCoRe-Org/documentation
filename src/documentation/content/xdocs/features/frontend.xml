@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+
+<header>
+  <title>Weboberfläche, Benutzerschnittstellen</title>
+</header>
+
+<body>
+
+    <section>
+      <title>Datenpräsentation</title>
+      <p>
+        MyCoRe verwendet intern XML als Speicher- und Datenaustauschformat. Die Weboberfläche einer Anwendung
+        wird durch Java Servlets implementiert, die die Ergebnisse einer Anfrage als XML-Daten ausliefern. Diese
+        XML-Darstellung wird serverseitig mittels XSL-Stylesheets in eine Webseite im HTML-Format transformiert.
+        Auch andere Zielformate wie RSS, CSV oder PDF (mittels XSL-FO) sind leicht realisierbar. In MyCoRe integriert
+        ist etwa die Möglichkeit, XML-Dateien mittels eines XSL-Stylesheets als PDF-Datei auszugeben.
+      </p>
+      <p>
+        Durch Verwendung von XSL kann MyCoRe sehr flexibel unterschiedliche Darstellungen oder Layouts erzeugen, oder
+        mehrere XML-Quellen miteinander kombinieren. So kann nicht nur bei einem Verbund mehrerer Partner-Applikationen
+        jede ihr eigenes Layout zeigen, sondern die Präsentation an sich komplett geändert werden, wenn dies gewünscht ist.
+        Die Präsentationsschicht erstreckt sich in MyCoRe von einfachen Web-Seiten über Trefferlisten und Resultats- bzw.
+        Dokumentanzeigen bis hin zu Komponenten der Nutzerverwaltung.
+      </p>
+      <img src="images/xmlxslhtml.png" alt="Aus xml und xsl wird html" title="Aus xml und xsl wird html"/>
+      <p class="klein"><strong>Abbildung 1.7:</strong> Aus xml und xsl wird html</p>
+      <p>
+        Alternativ kann auch ein anderer Ansatz zur Realisierung der Weboberfläche gewählt werden. So steht die Referenzanwendung
+        <a href="http://www.mycore.de:8291/" target="_blank" title="MyCoRe-Demoanwendung DocPortal">DocPortal</a> auch in einer auf Java Server Pages (JSP)
+        basierenden Variante zur Verfügung.
+      </p>
+    </section>
+    <section>
+      <title>Mehrsprachigkeit</title>
+      <p>
+        MyCoRe unterstützt mehrsprachige Weboberflächen. Einzelne Abschnitte oder ganze Webseiten können in verschiedenen
+        Sprachen hinterlegt werden. Bezeichnungen von Such- oder Eingabefeldern werden in sprachabhängigen, einfach anpassbaren
+        Konfigurationsdateien verwaltet. Bei der Ein- und Ausgabe von Datums- und Zahlenwerten werden verschiedene Formate
+        unterstützt. Auch der Textfluss ist z. B. für das Arabische von rechts nach links umkehrbar.
+      </p>
+      <img src="images/i18n.png" alt="Islamische Handschriften" title="Islamische Handschriften"/>
+      <p class="klein"><strong>Abbildung 1.8:</strong> Beispiel für Mehrsprachigkeit: Islamische Handschriften</p>
+    </section>
+    <section>
+      <title>Web Content Management Modul</title>
+      <p>
+        Über das integrierte WCMS-Modul können das Navigationsmenü und die statischen Webseiten einer MyCoRe-Anwendung
+        online erstellt und über einen <link href="http://www.fckeditor.net/" target="_blank" title="CKEditor">WYSIWYG-Editor</link> bearbeitet werden.
+        Es gibt eine Übersetzungsfunktion zur Realisierung mehrsprachiger Webseiten. Das WCMS-Modul generiert automatisch
+        eine Sitemap Ihres Servers und speichert die Änderungshistorie an den Seiten. Auch ein Upload von Bildern ist möglich.
+        Bestimmten Seiten oder Bereichen kann ein Layout-Template auf CSS-Basis zugewiesen werden, so dass innerhalb eines
+        Anwendungsservers verschiedene Bereiche mit unterschiedlichem Layout gepflegt werden können.
+      </p>
+      <img src="images/wcms.png" alt="WCMS-Modul" title="Das MyCoRe WCMS-Modul" />
+      <p class="klein"><strong>Abbildung 1.9:</strong> WCMS-Modul</p>
+    </section>
+    <section>
+      <title>Autoreninterface</title>
+      <p>
+        Das MyCoRe-System bietet einen Schnittstelle für die Dateneingabe durch berechtigte Anwender. Hier ist das zentrale
+        Glied das MCREditorServlet und die zugehörigen XSL-Stylesheets. Das System ist eine Mischung aus
+        Konfigurationsdateien und anwendungsbezogenen Servlets. Dem Ideenreichtum bei der Gestaltung des Editors und der
+        Prüfung der Daten entsprechend des Datenmodells sind kaum Grenzen gesetzt.
+        Derzeit wird eine einfache Workflow-Implementation als Modul angeboten, welche die zu bearbeitenden Metadaten und
+        Objekte auf einem Plattenbereich zwischenspeichert, und so einen typischen zweistufigen Workflow (Eingabe durch
+        den Autor, Prüfung und Korrektur durch die betreibende Institution) realisiert.
+      </p>
+      <p>
+        Autoren können die beschreibenden Daten ihrer Dokumente selbst über Online-Formulare eingeben, und im Anschluss die
+        dazugehörenden Dateien über ein HTML-Formular oder ein Java Applet hochladen.
+      </p>
+    </section>
+    <section>
+      <title>Eingabemasken</title>
+      <p>
+        Die freie Konfigurierbarkeit des Datenmodells erfordert eine flexible Möglichkeit, eigene Such- und Eingabemasken zu
+        gestalten. Dies wird durch das MyCoRe Editor Framework realisiert. Metadaten und Suchanfragen werden in MyCoRe intern als
+        XML-Dokumente dargestellt. Das Editor Framework ordnet Eingabefeldern in Formularen daher bestimmten XML-Elementen zu.
+        So können auch komplexe Formulare individuell realisiert werden. Das Editor Framework unterstützt mehrsprachige
+        Bezeichner, wiederholbare Felder und Panels, Online-Hilfetexte und umfangreiche Regeln zur Eingabevalidierung.
+      </p>
+      <img src="images/entry_mask.png" alt="Eingabemaske" title="DocPortal Eingabemaske"/>
+      <p class="klein"><strong>Abbildung 1.10:</strong> Beispiel: Eingabemaske</p>
+    </section>
+    <section>
+      <title>Command Line Interface (CLI)</title>
+      <p>
+        Neben der Weboberfläche verfügt MyCoRe für administrative Zwecke über eine Benutzerschnittstelle auf Kommandozeilenbasis.
+        Über diese Schnittstelle können insbesondere große Datenmengen, z. B. Metadaten im XML-Format,
+        importiert und exportiert werden, oder Suchindizes nach geänderter Systemkonfiguration neu aufgebaut werden.
+        Die Schnittstelle unterstützt den Batchimport großer Datenmengen.
+      </p>
+    </section>
+
+</body>
+</document>

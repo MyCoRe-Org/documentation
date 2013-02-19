@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+
+<header>
+  <title>Standardisierte Schnittstellen</title>
+</header>
+
+<body>
+
+    <section>
+      <title>Open Archives Initiative OAI-PMH 2.0</title>
+      <p>
+        MyCoRe bietet eine Schnittstelle entsprechend dem "Metadata Harvesting Protocol" der
+        <link href="http://www.openarchives.org" target="_blank" title=" OAI - Open Archives Initiative">
+        Open Archives Initiative</link> in der aktuellen Protokoll-Version 2.0.
+        Über die OAI-Schnittstelle  werden Metadaten von Dokumentenservern frei verfügbar gemacht und durch
+        OAI Service Provider gesammelt und weltweit zugänglich. Die OAI-Schnittstelle ist frei konfigurierbar,
+        unterstützt Sets, Resumption Tokens und beliebige Metadatenformate. OAI Sets werden auf MyCoRe Klassifikationen abgebildet.
+      </p>
+      <p>
+        Implementierungen für die Metadatenformate
+        <link href="http://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank"
+        title="The Open Archives Initiative Protocol for Metadata Harvesting">Dublin Core</link>
+        und <link href="http://www.d-nb.de/standards/xmetadiss/xmetadiss.htm" target="_blank"
+        title="XMetaDiss Format des Metadatensatzes der Deutschen Nationalbibliothek für Online-Hochschulschriften">
+        XMetaDiss</link> zur Meldung von Dissertationen an die
+        <link href="http://www.d-nb.de/" target="_blank" title=" DNB Deutsche Nationalbibliothek">
+        Deutsche Nationalbibliothek</link> sind verfügbar. Über das OAI-Format
+        <link href="http://www.d-nb.de/wir/projekte/epicur.htm" target="_blank"
+        title="EPICUR (Enhancement of Persistent Identifier Services - Comprehensive Method for unequivocal Resource Identification)">
+        Epicur</link> können die
+        <link href="http://www.persistent-identifier.de/" target="_blank"
+        title="Persistent Identifier, der Service der DNB">Persistent Identifier (URNs)</link> Ihrer
+        Dokumente bei der Deutschen Nationalbibliothek automatisiert registriert werden.
+      </p>
+    </section>
+    <section>
+      <title>Zugang für Robots, Google</title>
+      <p>
+        MyCoRe bietet eine spezielle Schnittstelle, über die ein vollständiger Index enthaltener Objekte
+        für die Indizierung durch Suchmaschinen-Robots generiert wird. Suchmaschinen wie Google und andere können so
+        Metadaten und Volltexte frei zugänglicher, MyCoRe-basierter Dokumentenserver indizieren und weltweit
+        auffindbar machen. MyCoRe implementiert ausserdem das
+        <link href="https://www.google.com/webmasters/tools" target="_blank" title="Google webmaster-tools">Google Sitemap Protocol</link>.
+      </p>
+    </section>
+    <section>
+      <title>Web Services (SOAP)</title>
+      <p>
+        MyCoRe bietet eine <link href="http://de.wikipedia.org/wiki/SOAP" target="_blank" title="Wikipedia-Beitrag zu SOAP">
+        SOAP</link>-Schnittstelle für die Suche im
+        Objektbestand, über die auch eine verteilte Suche über mehrere MyCoRe-Server konfiguriert werden kann.
+      </p>
+    </section>
+    <section>
+      <title>z39.50 Schnittstelle</title>
+      <p>
+        MyCoRe bietet eine <link href="http://de.wikipedia.org/wiki/Z39.50" target="_blank" title="Wikipedia-Beitrag zur Z39.50">
+        z39.50</link> Schnittstelle,
+        über die einfache Suchanfragen im z39.50 Prefix Query Format (PQF) gestellt
+        und beantwortet werden. Über diese Schnittstelle kann etwa ein MyCoRe-basierter Dokumentenserver an einen
+        Bibliothekskatalog angebunden werden.
+      </p>
+    </section>
+    <section>
+      <title>XML-Schnittstelle</title>
+      <p>
+        MyCoRe verwendet intern das XML-Format zur Speicherung von Metadaten und zum Datenaustausch. Metadaten können daher
+        im XML-Format importiert und exportiert werden. Über Java Servlets sind diese XML-Daten auch externen Systemen
+        via HTTP zugänglich.
+      </p>
+    </section>
+
+</body>
+</document>

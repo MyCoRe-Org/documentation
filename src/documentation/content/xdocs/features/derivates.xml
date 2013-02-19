@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+
+<header>
+  <title>Dateiverwaltung, Streaming, Viewer</title>
+</header>
+
+<body>
+
+    <section>
+      <title>Internes Dateisystem (IFS)</title>
+      <p>
+        MyCoRe verwaltet nicht nur Metadaten, sondern auch die dazugehörenden Dateien intern. Die zu einem Metadatenobjekt
+        gehörenden Dateien werden in das System importiert bzw. über den Browser hochgeladen und diesem als sogenanntes Derivat
+        (Dateibereich) zugeordnet. So können z.B. Varianten eines Dokumentes in PDF- und HTML-Form existieren, die jeweils ein
+        Derivat mit ein oder mehreren Dateien bilden.
+      </p>
+      <p>
+        MyCoRe besitzt zu diesem Zweck ein Internes Dateisystem (Internal Filesystem, IFS), das die gewohnte Sicht
+        der Derivate von Dateien und Verzeichnisse präsentiert. Gleichzeitig erlaubt das IFS aber Dateien aufgrund eines
+        Regelwerks an physisch unterschiedlichen Orten vorzuhalten, um z.B. Videos auf einem Streaming-Server abzulegen.
+        Über eine API stellt das IFS alle notwendigen Dateisystemoperationen dem Anwendungsentwickler zur Verfügung.
+      </p>
+      <p>
+        Sowohl über die MyCoRe-Kommandozeile (Command Line Interface) als auch über die Web-Schnittstelle können Derivate,
+        d. h. Einzeldateien oder Dateibündel, die zu einem Dokument gehören, importiert oder aktualisiert werden.
+        Ein Java Applet ermöglicht den Upload auch großer Dateien oder kompletter Verzeichnisse.
+        Die Verzeichnisstruktur bleibt im internen Derivat erhalten, so dass auch umfangreiche HTML-Bäume importiert werden können.
+        Über ein Servlet werden Dateien und Verzeichnisse im Browser angezeigt und ausgeliefert. Dabei können Dateien
+        oder Verzeichnisse auch on demand als ZIP-Datei ausgeliefert werden.
+      </p>
+      <p>
+        Die beschreibenden und technischen Daten zu Dateien und Verzeichnissen werden in einer Datenbank abgelegt.
+        Die Dateiinhalte dagegen werden getrennt davon in einem sog. FileContentStore gespeichert und verwaltet. Derzeit gibt
+        es eine Reihe von Implementierungen eines FileContentStores, die je nach Konfiguration des Systems auch gleichzeitig
+        eingesetzt werden können, z. B. ein lokales oder entferntes, via SFTP/Samba/CIFS angebundenes Dateisystem,
+        oder ein Video Streaming Server.
+        Anhand von Regeln wird für die importierte Datei ein entsprechender Content Store gewählt. So können etwa
+        Audio-/Videodateien anhand ihrer Dateiendung automatisch beim Upload auf einem Video Streaming Server abgelegt werden.
+      </p>
+    </section>
+
+    <section>
+      <title>Audio-/Video-Streaming</title>
+      <p>
+        MyCoRe kann transparent einen Audio-/Video-Streaming-Server als Ablageort für Dateien integrieren. Der Nutzer importiert
+        eine Datei bzw. lädt sie über den Webbrowser hoch. Anhand der Dateiendung und hinterlegter Regeln wählt MyCoRe dann
+        automatisch den Streamingserver als Speicherort. Die Audio-/Videodatei kann dann über den Streaming Server wiedergegeben
+        werden, ohne dass ein Download erforderlich ist. Der Nutzer kann frei im Videostrom navigieren oder direkt über die URL
+        bestimmte Stellen ansteuern. In der Weboberfläche können aus dem Streaming Server gewonnene technische Metadaten wie
+        Bitrate, Framerate und Abspieldauer angezeigt werden.
+        </p>
+        <img src="images/videostreaming.png" alt="Video-Streaming" title="Video-Streaming"/>
+        <p class="klein"><strong>Abbildung 1.5:</strong> Anzeige Real-Player und Metadaten</p>
+      <p>
+        Unterstützt wird der <link href="https://helix-server.helixcommunity.org/" title="Helix Community" target="_blank">
+        Helix-Server (Real)</link>
+        (Streaming von Real Audio/Video, Windows Media, MP3, AVI, Quicktime u.a.) oder der
+        <link href="http://www-306.ibm.com/software/data/videocharger/" title="IBM Content Manager VideoCharger" target="_blank">
+        IBM VideoCharger Server</link>
+       (Streaming von MPEG 1 und 2, Quicktime u.a.).
+      </p>
+    </section>
+
+    <section>
+      <title>Viewer für Bilder und Digitalisate</title>
+      <p>
+        Das MyCoRe Image Viewer Modul realisiert einen Bildbetrachter für große Grafikdateien wie Landkarten, oder hochauflösende
+        Digitalisate. Über die Java Advanced Imaging API können Formate wie TIFF serverseitig zu in jedem Browser
+        betrachtbaren JPEG-Dateien konvertiert werden. Der Image Viewer erlaubt das Skalieren von Bildern (Zoomen), und das
+        Bereitstellen von Ausschnitten. Über ein Thumbnail kann in großen Bildern navigiert werden.
+        Der Image Viewer kann einfach in einen Dokumentenserver integriert werden. Beim Import eines Bildes werden erforderliche
+        Zoomstufen automatisch von MyCoRe generiert und intern zwischengespeichert.
+        </p>
+        <img src="images/imageviewer.png" alt="Image Viewer" title="Image Viewer"/>
+        <p class="klein"><strong>Abbildung 1.6:</strong> Modul: Image Viewer</p>
+    </section>
+
+</body>
+</document>
