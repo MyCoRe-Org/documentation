@@ -50,48 +50,46 @@
   <h2 class="underlined_10">Aktuelles</h2>
 
   <div style="margin-top: 20px;zoom:1;">
-    <img alt="Stabi Berlin" title="Berlin" 
-    class="float" src="images/SBB-Logo.png" />
+    <a href="http://www.uni-leipzig.de/~ubbid/t3/index.php?id=23" title="Link zum BID-Kongress">
+    <img alt="5. BID-Kongress in Leipzig" class="float" src="images/bid-logo.png" />
+    </a>
     
-    <p class="fett">MyCoRe-Workshop 2012 und Entwicklerkonferenz fanden an der SBB in Berlin statt</p>
+    <p class="fett">MyCoRe ist zum Bibliothekskongress 2013 in Leipzig </p>
     
     <p>
-      Die MyCoRe-Community und an MyCoRe Interessierte trafen sich dieses Jahr (am 12./13. November 2012)
-      zu einem Workshop in Berlin. Gastgeberin war die „Staatsbibliothek zu Berlin - Preussischer Kulturbesitz“ 
-      (<a href="http://staatsbibliothek-berlin.de/die-staatsbibliothek/abteilungen/orient/aktuelles/" 
-      title="SBB">SBB</a>), wo in der MyCoRe-Anwendung „MySBB“
-      <a href="http://orient-digital.staatsbibliothek-berlin.de/content/main/search-islamhs.xml" 
-      title="Orientalische Handschriften der SBB">orientalische Handschriften</a> digital erfasst werden.
-      Weitere MyCoRe-User zeigten ihre Anwendungen, Fragen wurden geklärt,
-      Ideen wurden diskutiert und die Entwickler präsentierten neue MyCoRe-Features. 
-      Im Anschluß daran fand die Entwicklerkonferenz statt. 
-      Sie diente dem Ziel, das nächste Release vorzubereiten.
+      MyCoRe wird auf dem <a href="http://www.uni-leipzig.de/~ubbid/t3/index.php?id=23" 
+      title="Link zum BID-Kongress">5. Kongress Bibliothek  &#38; 
+      Information Deutschland (BID)</a> in Leipzig präsent sein. Am 
+      Stand des GBV (in Hall CCL+1-+35) besteht die Möglichkeit
+       MyCoRe-Partner zu treffen. Außerdem wird am 12. Februar ein 
+      MyCoRe-Poster präsentiert. Der Kongress findet vom 
+      11. bis 14. Februar 2013 im Congress Center Leipzig statt. 
     </p>
     
-    <p class="kleinRight">15. November 2012, Wiebke Oeltjen</p>
+    <p class="kleinRight">26. Februar 2013, Wiebke Oeltjen</p>
   </div>
  
   <div style="clear: both;" />
 
   <div>
-    <a href="http://www.fz-juelich.de/zb/DE/WissKom2012/WissKom2012_node.html" title="Link zur WissKom-Konferenz">
-    <img alt="WissKom Konferenz in Jülich" class="float" src="images/WissKom.png" /></a>
+    <img alt="Augustusplatz in Leipzig" title="Augustusplatz in Leipzig" 
+    class="float" src="images/augustusplatz_leipzig.png" />
     
-    <p class="fett">MyCoRe auf der WissKom2012</p>
+    <p class="fett">MyCoRe-Entwickler-Konferenz in Leipzig</p>
     
     <p>
-      MyCoRe wurde auf der Konferenz „<a 
-      href="http://www.fz-juelich.de/zb/DE/WissKom2012/WissKom2012_node.html" 
-      title="Link zur WissKom-Konferenz">WissKom 2012</a>“ in Jülich präsentiert. Die
-      6. Konferenz der Zentralbibliothek des Forschungszentrums Jülich fand
-      vom 5. bis 7. November 2012 statt. Das Schwerpunktthema lautete 
-      „Vernetztes Wissen – Daten, Menschen, Systeme“. Es gab einen Vortrag
-      über verschiedene Aspekte der Vernetzung mit MyCoRe und 
-      ein Poster zur Vernetzung biographischer Online-Ressourcen 
-      mit der MyCoRe-Anwendung „Catalogus Professorum Rostochiensium“.
+      Das Frühjahrstreffen der MyCoRe-Entwickler findet dieses Jahr
+      in Leipzig statt. Ausgerichtet wird die Veranstaltung vom
+      <a href="http://www.urz.uni-leipzig.de/start/" 
+      title="Link zum Universitätsrechenzentrum (URZ) der Universität Leipzig">
+      Universitätsrechenzentrum (URZ)</a> der Universität Leipzig.
+      Themen werden sein: das neue Layout der
+      MycoRe-Homepage, die Planung des Release, die Entwicklung
+      einer neuen Beipielapplikation zur Ablösung des "DocPortal"
+      Erste Ergebnisse werden schon bald zu sehen sein!   
     </p>
     
-    <p class="kleinRight">8. November 2012, Wiebke Oeltjen</p>
+    <p class="kleinRight">26. Februar 2013, Wiebke Oeltjen</p>
   </div>
   
   <div style="clear: both;" />  
