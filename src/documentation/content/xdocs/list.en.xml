@@ -8,14 +8,14 @@
 </header>
 
 <body>
-	<p>
+  <p>
         Currently are several hundred MyCoRe or Miless applications running on
         more than 20 locations in Germany. This list gives you an overview. New
         projects are described more detailed at the
-		<a href="site:applications">application site</a>.
+    <a href="site:applications">application site</a>.
         For further information please contact the particular project teams at
         the specific location.
-	</p>
+  </p>
 
 <script type='text/javascript' src='http://www.stepmap.de/js/stepmapexport.js'></script>
 <div style='height:220px;float:right;margin-bottom:25px;margin-left:25px;'><div><img src='http://www.stepmap.de/getmapimg.php?id=136849&uml;w=220&uml;m=3' width='220' border='0' alt='MyCoRe/Miless-Standorte in Deutschland' usemap='#stepmapexportimg136849_220' /><br /><a href='http://www.stepmap.de' target='_blank'>Map</a> from StepMap <br /> <map name='stepmapexportimg136849_220'><area shape='rect' coords='177,207,217,217' href='http://www.stepmap.de' alt='StepMap' title='StepMap' target='_blank' /> <script type='text/javascript' src='http://www.stepmap.de/getmapjs2.php?id=136849&uml;w=220'></script> <area shape='rect' coords='0,0,220,220' href='http://www.stepmap.de/karte/mycore-miless-standorte-in-deutschland-136849' alt='MyCoRe/Miless-Standorte in Deutschland' title='MyCoRe/Miless-Standorte in Deutschland' target='_blank' /></map></div></div>
@@ -37,15 +37,15 @@
                 </li>
             </ul>
         </dd>
-		<dd>
-			Staatsbibliothek zu Berlin – Preußischer Kulturbesitz (in Kooperation mit der Universität Leipzig)
-			<ul>
+    <dd>
+      Staatsbibliothek zu Berlin – Preußischer Kulturbesitz (in Kooperation mit der Universität Leipzig)
+      <ul>
         <li>Projekt zur Einführung des Katalogprogrammes MyIHS zur <a href="http://orient-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der SBB">Erschließung orientalischer Handschriften an der
           Staatsbibliothek Berlin</a></li>
         <li>Projekt zur Einführung des Katalogprogrammes MyIHS zur <a href="http://turfan-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der SBB">Erschließung Turfan Handschriften der KOHD
           </a></li>
-			</ul>
-		</dd>
+      </ul>
+    </dd>
         <dt>
             <strong>Bonn</strong>
         </dt>
@@ -441,20 +441,6 @@
             </ul>
         </dd>
         <dt>
-            <strong>Paderborn</strong>
-        </dt>
-        <dd>
-            Universität Paderborn (Universitätsbibliothek)
-            <ul>
-                <li>
-                    Dokumenten- und Publikationsservice
-                    <a href="http://ubdok.uni-paderborn.de"
-                        title="Dokumenten- und Publikationsservice DuPS der Universitätsbibliothek Paderborn">
-                        DuPS</a>
-                </li>
-            </ul>
-        </dd>
-        <dt>
             <strong>Rostock</strong>
         </dt>
         <dd>
@@ -481,10 +467,10 @@
             <ul>
               <li>
                 <a href="http://mvdok.lbmv.de/" title="Dokumentenserver der Landesbibliothek MV"
-                  >MVDok</a> - Dokumentenserver der Landesbibliothek MV 
+                  >MVDok</a> - Dokumentenserver der Landesbibliothek MV
               </li>
               <li>
-                Stettiner Ansichten - Erfassung digitalisierter Postkarten mit Motiven der Altstadt, des Hafens sowie aus Handel und Gewerbe der alten Hansestadt Stettin. 
+                Stettiner Ansichten - Erfassung digitalisierter Postkarten mit Motiven der Altstadt, des Hafens sowie aus Handel und Gewerbe der alten Hansestadt Stettin.
               </li>
             </ul>
         </dd>
