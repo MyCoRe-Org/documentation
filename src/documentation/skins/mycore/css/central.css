@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* css framework */
+@import url(bootstrap.min.css);
+
+/* old styles
+@import url(basic.css);
+@import url(screen.css);
+@import url(print.css);
+@import url(profile.css); */
+
+@import url(mycore.css);
+
+/* syntax highlight
+@import url(shCore.css);
+@import url(shThemeEclipse.css); */
