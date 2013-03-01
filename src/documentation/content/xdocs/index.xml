@@ -12,22 +12,5 @@
     </div>
 
 
-    <div class="float">
-        <a class="icon" href="/demo" title="Beispiele">
-            <img style="margin:20px;padding:5px;border:3px solid #C0C0C0;" src="//c.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg/182/137" width="100"  alt="Beispiele"/>
-        </a>
-        <a class="icon" href="/features" title="Landkarte">
-            <img style="margin:20px;padding:5px;border:3px solid #C0C0C0;" src="//c.fsdn.com/con/app/proj/mycore/screenshots/300687.jpg/182/137" width="100"  alt="Landkarte"/>
-        </a>
-        <a class="icon" href="/documentation" title="Einsteigen">
-            <img style="margin:20px;padding:5px;border:3px solid #C0C0C0;" src="//c.fsdn.com/con/app/proj/mycore/screenshots/300673.jpg/182/137" width="100"  alt="Einsteigen"/>
-        </a>
-        <a class="icon" href="/documentation" title="Mitmachen">
-            <img style="margin:20px;padding:5px;border:3px solid #C0C0C0;" src="//c.fsdn.com/con/app/proj/mycore/screenshots/300677.jpg/182/137" width="100"  alt="Mitmachen"/>
-        </a>
-    </div>
-
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
 </body>
 </document>
