@@ -24,7 +24,7 @@
     This can be used to enable other sites and services to reuse the
     xml format for their uses. Keep this disabled if you don't want other
     sites to easily reuse your pages.-->
-  <disable-xml-link>false</disable-xml-link>
+  <disable-xml-link>true</disable-xml-link>
   <!-- Disable navigation icons on all external links? -->
   <disable-external-link-image>true</disable-external-link-image>
   <!-- Disable w3c compliance links?

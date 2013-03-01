@@ -296,6 +296,18 @@
         </ul>
     </xsl:template>
 
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    pdf link
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <xsl:template match="div[@id='skinconf-pdflink']">
+        <xsl:if test="not($config/disable-pdf-link) or $disable-pdf-link = 'false'">
+          <div class="pdflink" style="position: relative;float: right;" title="Portable Document Format"><a style="display: block;text-align: center;" href="{$filename-noext}.pdf" class="dida">
+            <img class="skin" style="display: block;" src="{$skin-img-dir}/pdfdoc.gif" alt="PDF -icon" /></a>
+          </div>
+        </xsl:if>
+      </xsl:template>
+
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
