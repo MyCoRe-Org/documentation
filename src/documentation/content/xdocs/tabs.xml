@@ -13,11 +13,12 @@
     be displayed when their parent tab is selected.
   -->
   <tab id="welcome"        dir=""              label="Home" />
-
   <tab id="features"       dir="features"      label="Features" />
   <tab id="demo"           dir="demo"          label="Demo" />
   <tab id="download"       dir="download"      label="Download" />
+  <tab id="about"          dir="about"         label="Über uns" />
   <tab id="documentation"  dir="documentation" label="Hilfe" />
-  <tab id="support"        dir="support"       label="Kontakt" />
-  <!--  tab id="impressum"      dir="impressum"     label="Impressum" / -->
+
+  <!-- tab id="support"        dir="support"       label="Kontakt" />
+  <tab id="impressum"      dir="impressum"     label="Impressum" / -->
 </tabs>

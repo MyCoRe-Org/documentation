@@ -5,31 +5,31 @@
 <header>
  <title>Download: Übersicht</title>
 </header>
- 
+
  <body>
 
   <div style="margin-bottom:50px;">
     <p>
-      Die aktuelle MyCoRe-Version (<a href="site:release">Release 2.1-fixes</a>) ist auf der  
-      <a href="http://sourceforge.net/projects/mycore" 
+      Die aktuelle MyCoRe-Version (<a href="site:release">Release 2.1-fixes</a>) ist auf der
+      <a href="http://sourceforge.net/projects/mycore"
       title="Link zum MyCoRe-Projekt auf Sourceforge">Sourceforge-Projektseite</a>
       zu finden.
     </p>
     <p>
       <a href="http://sourceforge.net/projects/mycore/files/docportal/2.1/"
         ><img src="/images/download_mcr_21.png" alt="Link zum SF-Download" style="float:right;" /></a>
-      Neben dem aktuellen Release stellt das Entwickler-Team in unregelmäßigen Abständen 
+      Neben dem aktuellen Release stellt das Entwickler-Team in unregelmäßigen Abständen
       auch Vorabversionen zum nächsten Release (prereleases) zur Verfügung. Diese sind
       weitgehend stabil, es gibt jedoch noch bekannte Fehler und es können Funktionen
       für das nächste Release fehlen. Alte Versionen (Prerelease und Release) werden archiviert.
     </p>
     <ul>
-      <li><!-- a href="site:prerelease" -->Vorabversion zum nächsten Release<!-- /a --> - stehen momentan nicht zur Verfügung</li>
+      <li><a href="site:prerelease">Vorabversion zum nächsten Release</a></li>
       <li><a href="site:archive">Archiv</a></li>
     </ul>
     <div style="float:right;">
       <script type="text/javascript" src="http://www.ohloh.net/p/16348/widgets/project_basic_stats.js"></script>
-    </div>    
+    </div>
     <p>
       Den aktuellsten Codestand finden Sie in unserem Versionsmanagementsystem:
     </p>
@@ -38,8 +38,8 @@
       <li><a href="site:changelog">ChangeLog</a></li>
     </ul>
     <p>
-      MyCoRe verwendet Maven in Verbindung mit Jenkins als Continuous Integration Umgebung. 
-      Erfolgreiche Builds werden in unserem Maven Repository verfügbar gemacht: 
+      MyCoRe verwendet Maven in Verbindung mit Jenkins als Continuous Integration Umgebung.
+      Erfolgreiche Builds werden in unserem Maven Repository verfügbar gemacht:
     </p>
     <ul>
       <li><a href="site:jenkins">Jenkins (Continuous Integration)</a></li>

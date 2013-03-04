@@ -5,33 +5,33 @@
   <header>
     <title>Allgemeine Umgebungs- und Softwarevoraussetzungen</title>
     <abstract>
-	   <p>
-	   In der nachfolgenden Beschreibung wird davon ausgegangen, dass alle Arbeiten unter UNIX/Mac OS 
-	   durch einen anzulegenden Benutzer <code>mcradmin</code> ausgeführt werden. Für die Benutzung von 
-	   MyCoRe/DocPortal muss der Benutzer die nachfolgend gelistete Software verwenden können. Die in MyCoRe enthaltenen 
-	   UNIX-Skripte erwarten die <code>bash</code>-Shell unter <code>/bin/bash</code>. 
-	   Diese muss entsprechend zur Verfügung stehen oder die Skripte müssen von Hand angepasst werden. Für den Benutzer 
-	   definiert der Administrator weiterhin einige Umgebungsvariablen. Hinzu kommen eine Reihe von optionalen Anwendungen, 
-	   die dem MyCoRe-Benutzer bei Bedarf ebenfalls zu Verfügung stehen sollten. 
-	   </p>
-	   <p>
-	   Unter MS Windows ist kein spezieller Benutzer vorgesehen. Trotzdem sind eine Reihe von Softwareprodukten erforderlich. 
-	   Umgebungsvariablen sind ebenfalls in diesem Zusammenhang zu definieren. Für die Nutzung alternativer Komponenten gibt 
-	   es in diesem Kapitel (wie zu allen anderen Punkten) Hinweise.
-	   </p>
+     <p>
+     In der nachfolgenden Beschreibung wird davon ausgegangen, dass alle Arbeiten unter UNIX/Mac OS
+     durch einen anzulegenden Benutzer <code>mcradmin</code> ausgeführt werden. Für die Benutzung von
+     MyCoRe/DocPortal muss der Benutzer die nachfolgend gelistete Software verwenden können. Die in MyCoRe enthaltenen
+     UNIX-Skripte erwarten die <code>bash</code>-Shell unter <code>/bin/bash</code>.
+     Diese muss entsprechend zur Verfügung stehen oder die Skripte müssen von Hand angepasst werden. Für den Benutzer
+     definiert der Administrator weiterhin einige Umgebungsvariablen. Hinzu kommen eine Reihe von optionalen Anwendungen,
+     die dem MyCoRe-Benutzer bei Bedarf ebenfalls zu Verfügung stehen sollten.
+     </p>
+     <p>
+     Unter MS Windows ist kein spezieller Benutzer vorgesehen. Trotzdem sind eine Reihe von Softwareprodukten erforderlich.
+     Umgebungsvariablen sind ebenfalls in diesem Zusammenhang zu definieren. Für die Nutzung alternativer Komponenten gibt
+     es in diesem Kapitel (wie zu allen anderen Punkten) Hinweise.
+     </p>
     </abstract>
   </header>
 <body>
 
-   <section>  
-  <title>Erforderliche und zusätzliche Softwareprodukte</title>  
-  <table>  
+   <section>
+  <title>Erforderliche und zusätzliche Softwareprodukte</title>
+  <table>
   <tr>
   <th>Produkt</th>
   <th>UNIX/MacOS/MS Windows</th>
   </tr>
   <tr>
-  <td><a title="Java" href="http://java.sun.com/">Java 2 Plattform, SE, 1.6.x (J2SE)</a> oder höher </td>
+  <td><a title="Java" href="http://java.sun.com/">Java 2 Plattform, SE, 1.7.x (J2SE)</a> oder höher </td>
   <td>erforderlich</td>
   </tr>
   <tr>
@@ -57,9 +57,9 @@
   </table>
   <p class="klein"><strong>Tabelle 2.1:</strong> Softwarevoraussetzungen</p>
   <p>
-  Unter Linux sind die meisten Programme in den gängigen Distributionen enthalten. 
-  Für das Betriebssystem AIX stellt die Firma IBM verschiedene Software-Downloads unter 
-  <a title="IBM" href="http://ftp.software.ibm.com/">http://ftp.software.ibm.com/</a> bereit. 
+  Unter Linux sind die meisten Programme in den gängigen Distributionen enthalten.
+  Für das Betriebssystem AIX stellt die Firma IBM verschiedene Software-Downloads unter
+  <a title="IBM" href="http://ftp.software.ibm.com/">http://ftp.software.ibm.com/</a> bereit.
   Unter MS Windows können die Installationspakete von den angegebenen Webseiten geholt werden.
   </p>
   </section>
@@ -68,7 +68,7 @@
     <p>
     Folgende Umgebungsvariable kann für die Arbeit mit MyCoRe definiert werden:
     </p>
-    <table>    
+    <table>
     <tr>
     <th>Variable</th>
     <th>Verweis auf ...</th>
@@ -91,12 +91,12 @@
     <section>
     <title>Hinweise zur Installation von Apache Tomcat</title>
       <p>
-      Tomcat kann als Alternative zum in DocPortal mitgelieferten Jetty eingesetzt werden. Tomcat ist ebenfalls ein 
+      Tomcat kann als Alternative zum in DocPortal mitgelieferten Jetty eingesetzt werden. Tomcat ist ebenfalls ein
       Webanwendungs-Server, der besonders bei größeren Installationen Verwendung findet.
       </p>
       <p>
-      MyCoRe arbeitet beim Encoding der Zeichen standardmäßig mit UTF-8. Für eine korrekte Darstellung passen Sie die 
-      Datei <code>%CATALINA_HOME%/conf/server.xml</code> an, indem Sie das Tag für den Connector um das Attribut 
+      MyCoRe arbeitet beim Encoding der Zeichen standardmäßig mit UTF-8. Für eine korrekte Darstellung passen Sie die
+      Datei <code>%CATALINA_HOME%/conf/server.xml</code> an, indem Sie das Tag für den Connector um das Attribut
       <code>URIEncoding='UTF-8'</code> ergänzen. Weitere Informationen dazu finden Sie auf der <a href="http://tomcat.apache.org/"
       title="Link zur Tomcat-Seite">Webseite von Apache Tomcat</a>.
       </p>

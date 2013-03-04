@@ -7,39 +7,24 @@
   </header>
   <body>
 
-    <section id="documentation_2_1">
-      <title>Dokumentation zu MyCoRe 2.1</title>
-      <ul>
-        <li>
-          <a href="site:chapter1_ug21">User Guide</a> - <a href="site:wholedoc_ug21">als PDF</a>
-          <p>beschreibt Schritt für Schritt Installation und Konfiguration des MyCoRe-Kerns und der Referenz- und
-            Beispielanwendung DocPortal, sowie die Integration in die eigene Systemumgebung.</p>
-        </li>
-        <li>
-          <a href="site:chapter1_pg21">Programmer Guide</a> - <a href="site:wholedoc_pg21">als PDF</a>
-          <p>ist für Entwickler eigener Anwendungen auf Basis des MyCoRe-Kerns gedacht und beschreibt die Funktionsweise
-            und Nutzung einzelner Kernkomponenten, z. B. das Query-System, das Datenmodell, das Editor Framework zur
-            Erstellung eigener Such- und Eingabemasken etc.</p>
-        </li>
-        <li>
-          <a href="site:mcrdev_2_1">Developer Guide</a>
-          <p>beschreibt die Hinweise und Festlegungen für die am Projekt beteiligten Entwickler.</p>
-        </li>
-      </ul>
-    </section>
-
     <section id="documentation_2_2">
       <title>Dokumentation zu MyCoRe 2.2</title>
       <p>Das Release 2.2 ist in Arbeit. Alle neuen Funktionen sind entsprechend in der neuen Version der Dokumentation zu finden:</p>
       <ul>
         <li>
           <a href="site:chapter1_ug22">User Guide</a> - <a href="site:wholedoc_ug22">als PDF</a>
+          <p>beschreibt Schritt für Schritt Installation und Konfiguration des MyCoRe-Kerns und der Referenz- und
+            Beispielanwendung DocPortal, sowie die Integration in die eigene Systemumgebung.</p>
         </li>
         <li>
           <a href="site:chapter1_pg22">Programmer Guide</a> - <a href="site:wholedoc_pg22">als PDF</a>
+          <p>ist für Entwickler eigener Anwendungen auf Basis des MyCoRe-Kerns gedacht und beschreibt die Funktionsweise
+            und Nutzung einzelner Kernkomponenten, z. B. das Query-System, das Datenmodell, das Editor Framework zur
+            Erstellung eigener Such- und Eingabemasken etc.</p>
         </li>
         <li>
           <a href="site:mcrdev_2_2">Developer Guide</a>
+          <p>beschreibt die Hinweise und Festlegungen für die am Projekt beteiligten Entwickler.</p>
         </li>
       </ul>
     </section>
@@ -84,12 +69,15 @@
         </li>
       </ul>
     </section>
-    
+
     <section id="doc_archive">
       <title>Archiv</title>
       <p>Alte Dokumentation wird hier aufbewahrt und steht somit Anwendern vergangener Release-Versionen
       auch weiterhin zur Verfügung. Wir empfehlen jedoch ein baldmögliches Update auf das aktuelle
       Release.</p>
+      <ul>
+        <li>Dokumentation zum <a href="site:version_2_1">Release 2.1</a></li>
+      </ul>
       <ul>
         <li>Dokumentation zum <a href="site:mcruse">Release 2.0</a></li>
       </ul>

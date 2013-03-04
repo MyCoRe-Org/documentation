@@ -8,15 +8,15 @@
 <body>
 
    <p>
-   Sind Java 1.6, Ant 1.7.1 und ein SVN-Client (siehe auch <a href="site:chapter2_ug21">02
+   Sind Java 1.7, Ant 1.7.1 und ein SVN-Client (siehe auch <a href="site:chapter2_ug21">02
    Voraussetzungen</a>) auf Ihrem Rechner installiert, können
-   Sie mit wenigen Schritten ein DocPortal installieren. Während der Installation werden 
+   Sie mit wenigen Schritten ein DocPortal installieren. Während der Installation werden
    alle erforderlichen Daten und Programme (Bibliotheken, inkl. mycore.jar) für die Beispielanwendung
    DocPortal von www.mycore.de geholt. Es ist also eine Internetverbindung erforderlich.
    Zur Speicherung der Klassifikationen und Benutzerdaten wird standardmässig HSQLDB, für
    die Metadaten und Inhalte (Bilder, Texte, etc.) das lokale Dateisystem verwendet.</p>
 
-   <p>Legen Sie ein Verzeichnis mit dem absoluten Pfad &lt;pfad&gt; an und führen Sie in dem 
+   <p>Legen Sie ein Verzeichnis mit dem absoluten Pfad &lt;pfad&gt; an und führen Sie in dem
    Verzeichnis die folgenden Kommandos aus (achten Sie dabei unter Windows den Pfad  &lt;pfad&gt;
    in Unix-Schreibweise anzugeben, also z.B. c:/Programme/docportal):
    </p>
@@ -40,14 +40,14 @@
    in Unix-Schreibweise anzugeben, also z.B. c:/Programme/docportal):</li>
    <li>ant -Ddestdir=&lt;pfad&gt; -f install.xml</li>
    </ol>
-   
-   <p> 
+
+   <p>
    Das zweite Kommando dauert etwa 10 Minuten. Die Installation war erfolgreich, wenn sich im Verzeichnis
-   &lt;pfad&gt; die Datei homepage.html befindet. 
-   Die Datenbank HSQLDB und und der Jetty-Webserver werden vom Installationsskript (<code>install.xml</code>) gestartet, so dass die 
-   MyCoRe-Anwendung <a href="http://localhost:8291/" title="Link zur MyCoRe-Anwendung DocPortal">DocPortal</a> 
-   dann im Browser aufgerufen werden kann. 
-   </p> 
+   &lt;pfad&gt; die Datei homepage.html befindet.
+   Die Datenbank HSQLDB und und der Jetty-Webserver werden vom Installationsskript (<code>install.xml</code>) gestartet, so dass die
+   MyCoRe-Anwendung <a href="http://localhost:8291/" title="Link zur MyCoRe-Anwendung DocPortal">DocPortal</a>
+   dann im Browser aufgerufen werden kann.
+   </p>
 
    <h3>Start von DocPortal</h3>
    <p>
@@ -73,7 +73,7 @@
 
    <p>
    Hiermit erhalten Sie einen ersten Eindruck von MyCoRe/DocPortal. Sollten Sie eine eigene Anwendung mit einem
-   eigenen Datenmodell planen, führen Sie die im folgenden beschriebene Installation durch. 
+   eigenen Datenmodell planen, führen Sie die im folgenden beschriebene Installation durch.
    </p>
 
 </body>
