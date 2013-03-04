@@ -45,9 +45,11 @@
             <div class="row">
                 <div id="main" class="span12">
 
-                        <div class="row">
-                            <div id="subnav" class="span3">
-                                <xsl:if test="div[@id='menu']/ul/li">
+                    <div class="row">
+                        <!-- use 3 columns for menu, if there is one -->
+                        <xsl:choose>
+                            <xsl:when test="div[@id='menu']/ul/li">
+                                <div id="subnav" class="span3">
                                     <xsl:call-template name="menu"/>
                                     <script type="text/javascript"
                                             language="javascript">
@@ -57,17 +59,26 @@
                                                 });
                                             });
                                     </script>
-                                </xsl:if>
-                            </div>
+                                </div>
 
-                            <div id="content" class="span8">
-                                <xsl:apply-templates select="div[@id='content']"/>
-                            </div>
+                                <div id="content" class="span8">
+                                    <xsl:apply-templates select="div[@id='content']"/>
+                                </div>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <div id="lefty" class="span1">
 
-                            <div id="righty" class="span1">
+                                </div>
+                                <div id="content" class="span10">
+                                    <xsl:apply-templates select="div[@id='content']"/>
+                                </div>
+                            </xsl:otherwise>
+                        </xsl:choose>
 
-                            </div>
+                        <div id="righty" class="span1">
+
                         </div>
+                    </div>
 
                 </div>
             </div>
