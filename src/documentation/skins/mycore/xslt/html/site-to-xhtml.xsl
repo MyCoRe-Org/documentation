@@ -49,6 +49,14 @@
                             <div id="subnav" class="span3">
                                 <xsl:if test="div[@id='menu']/ul/li">
                                     <xsl:call-template name="menu"/>
+                                    <script type="text/javascript"
+                                            language="javascript">
+                                            $(function() {
+                                                $("ul li div").click(function() {
+                                                    $(this).parent().children("ul").slideToggle();
+                                                });
+                                            });
+                                    </script>
                                 </xsl:if>
                             </div>
 
@@ -142,6 +150,9 @@
     meta-script
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template name="meta-script">
+        <script type="text/javascript"
+                language="javascript"
+                src="{$root}skin/jquery-1.7.1.min.js"></script>
 <!--
         <script type="text/javascript"
                 language="javascript"
@@ -208,41 +219,47 @@
 <!-- menu title -->
         <xsl:choose>
           <xsl:when test="$position = 1">
-            <!-- do nothing -->
+            <xsl:call-template name = "innermenulientry" >
+              <xsl:with-param name="id"         select="$id"/>
+              <xsl:with-param name="tagid"      select="$tagid"/>
+              <xsl:with-param name="whichGroup" select="'mastergroup'"/>
+            </xsl:call-template>
           </xsl:when>
           <xsl:otherwise>
-            <li class="menutitle"
-                 id="{$tagid}Title"
-                 onclick="SwitchMenu('{$tagid}', '{$root}skin/')">
-
-                <xsl:if test="contains($tagid, '_selected_')" >
-                    <xsl:attribute name="style">
-                        <xsl:text>background-image: url('</xsl:text>
-                        <xsl:value-of select="$root"/>
-                        <xsl:text>skin/images/chapter_open.gif');</xsl:text>
-                    </xsl:attribute>
-                </xsl:if>
-
-                <xsl:value-of select="h1"/>
-            </li>
+              <li id="{$tagid}Title">
+                  <xsl:choose>
+                    <xsl:when test="$whichGroup = 'selectedmenuitemgroup'">
+                        <xsl:attribute name="class">menutitle active</xsl:attribute>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:attribute name="class">menutitle</xsl:attribute>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                  <div class="block_title"><xsl:value-of select="h1"/></div>
+                  <xsl:call-template name = "innermenulientry" >
+                    <xsl:with-param name="id"         select="$id"/>
+                    <xsl:with-param name="tagid"      select="$tagid"/>
+                    <xsl:with-param name="whichGroup" select="$whichGroup"/>
+                  </xsl:call-template>
+              </li>
           </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="innermenulientry">
+        <xsl:param name="id"/>
+        <xsl:param name="tagid"/>
+        <xsl:param name="whichGroup" />
 
 <!-- menu entry -->
         <ul class="{$whichGroup}" id="{$tagid}">
-
-            <xsl:if test="contains($tagid, '_selected_')" >
-                <xsl:attribute name="style">
-                    <xsl:text>display: block;</xsl:text>
-                </xsl:attribute>
-            </xsl:if>
 
             <xsl:for-each select= "ul/li">
                 <xsl:choose>
 
     <!-- linked entry -->
                     <xsl:when test="a">
-                        <div class="menuitem">
+                        <li class="menuitem">
                             <a>
                                 <xsl:attribute name="href">
                                     <xsl:value-of select="a/@href"/>
@@ -254,21 +271,21 @@
                                 </xsl:if>
                                 <xsl:value-of select="a"/>
                             </a>
-                        </div>
+                        </li>
                     </xsl:when>
 
     <!-- active entry -->
                     <xsl:when test="div/@class='current'">
-                        <li class="menupage">
-                            <div class="menupagetitle">
+                        <li class="menupage active">
+                            <div class="menupagetitle active">
                                 <xsl:value-of select="div" />
                             </div>
                             <xsl:if test="$config/toc/@max-depth > 0
                                           and contains($minitoc-location,'menu')
                                           and count(//tocitems/tocitem) >= $config/toc/@min-sections">
-                                <ul class="menupageitemgroup">
+                                <ul class="menupageitemgroup active">
                                     <xsl:for-each select = "//tocitems/tocitem">
-                                        <li class="menupageitem">
+                                        <li class="menupageitem active">
                                             <xsl:choose>
                                                 <xsl:when test="string-length(@title)>15"><a href="{@href}" title="{@title}">
                                                     <xsl:value-of select="substring(@title,0,20)" />...</a>

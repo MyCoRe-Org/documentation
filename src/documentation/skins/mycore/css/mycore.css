@@ -1,67 +1,134 @@
 @media screen
 {
-    body {
+    body
+    {
         overflow-y: scroll;     /* always show right scrollbar */
+        background-color: #ffffff;
+        background-image: url("../images/background_white_to_gray.jpg");
+        background-repeat: repeat-x;
+        background-attachment: fixed;
+        background-position: 0px 100%;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-size: auto auto;
+    }
+    #header {
+        margin-top: 10px;
+        height: 80px;
+        background-color: transparent;
+        background-image: url("../images/background_header_blue_xml.png");
+        background-repeat: repeat-none;
+    }
+    #topnav {
+        height: 27px;
+        background-color: transparent;
+        background-image: url("../images/background_dark_blue.png");
+        background-repeat: repeat-none;
     }
     #main {
-        min-height: 300px;
+        min-height: 400px;
+        background-color: transparent;
+        background-image: url("../images/background_gray_stripes_shadowfree.png");
+        background-repeat: repeat-y;
+        padding: 20px 0px;
     }
-body
-{
-    background-color: #ffffff;
-    background-image: url("../images/background_white_to_gray.jpg");
-    background-repeat: repeat-x;
-    background-attachment: fixed;
-    background-position: 0px 100%;
-    background-clip: border-box;
-    background-origin: padding-box;
-    background-size: auto auto;
-}
-#header {
-    margin-top: 10px;
-    height: 80px;
-    background-color: transparent;
-    background-image: url("../images/background_header_blue_xml.png");
-    background-repeat: repeat-none;
-}
-#topnav {
-    height: 27px;
-    background-color: transparent;
-    background-image: url("../images/background_dark_blue.png");
-    background-repeat: repeat-none;
-}
-#main {
-    min-height: 400px;
-    background-color: transparent;
-    background-image: url("../images/background_gray_stripes_shadowfree.png");
-    background-repeat: repeat-y;
-}
-#footer {
-    height: 31px;
-    background-color: transparent;
-    background-image: url("../images/background_footer_blue_xml.png");
-    background-repeat: repeat-none;
-}
-.rounded {
-    -moz-border-radius:10px; /* Firefox */
-    -webkit-border-radius:10px; /* Safari, Chrome */
-    -khtml-border-radius:10px; /* Konqueror */
-    border-radius:10px; /* CSS3 */
-}
+    #main div.row {}
+    #subnav {
+        min-height: 360px;
+        border-right: 1px solid #ccc;
+    }
+    #content {}
+    #righty {}
+    #footer {
+        height: 31px;
+        background-color: transparent;
+        background-image: url("../images/background_footer_blue_xml.png");
+        background-repeat: repeat-none;
+    }
+    .rounded {
+        -moz-border-radius:10px; /* Firefox */
+        -webkit-border-radius:10px; /* Safari, Chrome */
+        -khtml-border-radius:10px; /* Konqueror */
+        border-radius:10px; /* CSS3 */
+    }
 
-/*
-div#topnav
-div#navblock
-ul#tabs
-li.active
-a.unselected
-a.selected
-*/
-div#nav_block { margin: auto auto; width:500px;}
-ul#tabs { margin: 4px 0 0 0; padding: 0;}
-ul#tabs li { float: left; list-style: none; margin: 0 10px 0 10px; }
-ul#tabs a { text-decoration: none; color: white; padding: 0px 10px 2px 10px; }
-ul#tabs a:hover { border-bottom: 2px solid white; }
-ul#tabs li.active a { border-bottom: 2px solid #ff9600; }
+    /* top menu
+        div#topnav
+        div#navblock
+        ul#tabs
+        li.active
+        a.unselected
+        a.selected
+    */
+    div#nav_block { margin: auto auto; width:500px;}
+    ul#tabs { margin: 4px 0 0 0; padding: 0;}
+    ul#tabs li { float: left; list-style: none; margin: 0 10px 0 10px; }
+    ul#tabs a { text-decoration: none; color: white; padding: 0px 10px 2px 10px; }
+    ul#tabs a:hover { border-bottom: 2px solid white; }
+    ul#tabs li.active a { border-bottom: 2px solid #ff9600; }
 
+
+
+/* ----------------------------------------------------------------------------
+    sub menu
+------------------------------------------------------------------------------
+    html structure:
+
+        div#menu
+            ul.menuitemgroup
+               li.menutitle
+               ul.menuitemgroup
+                   li.menuitem
+
+---------------------------------------------------------------------------- */
+
+/* menu global * /
+    /* list */
+    #menu ul {
+        list-style: none;
+        padding: 0;
+        margin:0;
+    }
+    /* list item */
+    #menu li {
+        margin: 0;
+        padding: 0;
+        padding-left: 10px;
+    }
+    /* active list item */
+    #menu li.active {
+        background-image: url("../images/background_rectangle_orange.png");
+        background-position: left -10px;
+        background-repeat: no-repeat;
+    }
+/* menu 1th list hierarchy */
+    #menu>ul {
+        margin: 10px 0 0 20px;
+     }
+
+/* menu 2th list hierarchy */
+    /* list item */
+    #menu ul ul li {
+        padding-left: 30px;
+        margin-left: -10px;
+    }
+    /* active list item */
+    #menu ul ul li.active {
+        background-image: url("../images/background_triangle_orange.png");
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+    #menu .menuitemgroup {
+        display: none;
+    }
+    #menu .block_title {
+        cursor:pointer;
+        text-transform:uppercase;
+    }
+    #menu .menutitle {
+
+    }
+    #menu .block_title:hover {
+        text-decoration:underline;
+    }
 }
