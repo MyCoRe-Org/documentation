@@ -39,14 +39,15 @@ See http://forrest.apache.org/docs/linking.html for more info
     </whos_using>
   </about>
 
-  <features     label="Features"        href="features/" tab="features">
-    <index      label="Übersicht"       href="index.html" />
-    <acl        label="ACL"             href="acl.html" />
-    <datamodel  label="Datenmodell"     href="datamodel.html" />
-    <derivates  label="Dateiverwaltung" href="derivates.html" />
-    <frontend   label="Präsentation"    href="frontend.html" />
-    <interfaces label="Schnittstellen"  href="interfaces.html" />
-    <search     label="Suche"           href="search.html" />
+  <features     label="Features"         href="features/" tab="features">
+    <index      label="Übersicht"        href="index.html" />
+    <datamodel  label="Datenmodell"      href="datamodel.html" />
+    <search     label="Suche"            href="search.html" />
+    <frontend   label="Präsentation"     href="frontend.html" />
+    <interfaces label="Schnittstellen"   href="interfaces.html" />
+    <derivates  label="Dateiverwaltung"  href="derivates.html" />
+    <acl        label="Rechteverwaltung" href="acl.html" />
+
   </features>
 
   <demo label="Demo" href="demo/index.html" tab="demo" />
