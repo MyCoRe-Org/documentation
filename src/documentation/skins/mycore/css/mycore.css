@@ -33,10 +33,7 @@
         padding: 20px 0px;
     }
     #main div.row {}
-    #subnav {
-        min-height: 360px;
-        border-right: 1px solid #ccc;
-    }
+    #subnav {}
     #content {}
     #righty {}
     #footer {
@@ -75,60 +72,115 @@
     html structure:
 
         div#menu
-            ul.menuitemgroup
-               li.menutitle
-               ul.menuitemgroup
-                   li.menuitem
+            ul.mastergroup
+                li.menuitem
+                li.menutitle
+                    div.block_title
+                    ul.menuitemgroup
+                        li.menuitem
 
 ---------------------------------------------------------------------------- */
-
-/* menu global * /
-    /* list */
+/* submenu container */
+    #menu {
+        color: #666;
+        }
+/* all lists */
     #menu ul {
         list-style: none;
         padding: 0;
         margin:0;
-    }
-    /* list item */
-    #menu li {
-        margin: 0;
-        padding: 0;
-        padding-left: 10px;
-    }
-    /* active list item */
-    #menu li.active {
-        background-image: url("../images/background_rectangle_orange.png");
-        background-position: left -10px;
-        background-repeat: no-repeat;
-    }
-/* menu 1th list hierarchy */
+        }
+/* all links */
+    #menu a {
+        color: #666;
+        display:block;
+        }
+/* list level one */
     #menu>ul {
-        margin: 10px 0 0 20px;
-     }
-
-/* menu 2th list hierarchy */
-    /* list item */
+        border-right: 1px solid #ddd;
+        margin: 10px 20px 0px 20px;
+        }
+/* all list entries */
+    #menu li {
+        margin: 8px 0 8px 0;
+        padding: 0;
+        padding-left: 13px;
+        }
+    #menu li:hover {
+        background-image: url("../images/background_rectangle_gray.png");
+        background-position: 2px -10px;
+        background-repeat: no-repeat;
+        }
+    #menu li.active,
+    #menu li.active:hover {
+        background-image: url("../images/background_rectangle_orange.png");
+        background-position: 2px -10px;
+        background-repeat: no-repeat;
+        }
+/* all entry links */
+    #menu li:hover a {
+        text-decoration: none;
+        color: #666;
+        }
+/* all title entries */
+    #menu li.menutitle {
+        }
+    #menu li.menutitle:hover {
+        background-image: url("../images/background_plus_gray.png");
+        background-repeat: no-repeat;
+        background-position: 0px 6px;
+        }
+    #menu li.menutitle.active {
+        background-image: url("../images/background_plus_orange.png");
+        background-repeat: no-repeat;
+        background-position: 0px 6px;
+        }
+/* all titles */
+    #menu div.block_title {
+        cursor:pointer;
+        }
+    #menu div.block_title:hover {
+        }
+    #menu li.active div {
+        color: #15516e;
+        }
+/* container level 2+ */
+    #menu .menuitemgroup {
+        display: none;
+        }
+/* titles level 2+ (should not exist) */
+    #menu ul li ul li div {
+        font-size: 83%;
+        }
+/* entry level 2+ */
     #menu ul ul li {
         padding-left: 30px;
-        margin-left: -10px;
-    }
-    /* active list item */
+        margin: 3px 0 3px -10px;
+        background-image: url("../images/background_rectangle_grayy.png");
+        background-repeat: no-repeat;
+        background-position: left top;
+        }
+    #menu li li:hover {
+        background-image: url("../images/background_rectangle_gray.png");
+        background-repeat: no-repeat;
+        background-position: left -15px;
+        }
     #menu ul ul li.active {
         background-image: url("../images/background_triangle_orange.png");
         background-repeat: no-repeat;
-        background-position: left top;
-    }
-    #menu .menuitemgroup {
-        display: none;
-    }
-    #menu .block_title {
-        cursor:pointer;
-        text-transform:uppercase;
-    }
-    #menu .menutitle {
-
-    }
-    #menu .block_title:hover {
-        text-decoration:underline;
-    }
+        background-position: left -15px;
+        }
+    #menu li li.active,
+    #menu li li.active:hover {
+        background-image: url("../images/background_triangle_orange.png");
+        background-repeat: no-repeat;
+        background-position: left -15px;
+        }
+/* link level 2+ */
+    #menu ul li ul li a {
+        font-size: 83%;
+        }
+    #menu ul li ul li.active a {
+        color: #15516e;
+        }
 }
