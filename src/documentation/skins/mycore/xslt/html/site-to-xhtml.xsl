@@ -61,7 +61,7 @@
                                     </script>
                                 </div>
 
-                                <div id="content" class="span8">
+                                <div id="content_block" class="span8">
                                     <xsl:apply-templates select="div[@id='content']"/>
                                 </div>
                             </xsl:when>
@@ -190,7 +190,7 @@
     sub menu block
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template name="menu">
-        <div id="menu">
+        <div id="submenu">
             <xsl:for-each select = "div[@id='menu']/ul/li">
                 <xsl:call-template name = "innermenuli" >
                     <xsl:with-param name="id" select="concat('1_', position())"/>
@@ -222,8 +222,8 @@
 
         <xsl:variable name="whichGroup">
             <xsl:choose>
-                <xsl:when test="descendant-or-self::node()/li/div/@class='current'">selectedmenuitemgroup</xsl:when>
-                <xsl:otherwise>menuitemgroup</xsl:otherwise>
+                <xsl:when test="descendant-or-self::node()/li/div/@class='current'">block_level_two_active</xsl:when>
+                <xsl:otherwise>block_level_two</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
 
@@ -233,17 +233,17 @@
             <xsl:call-template name = "innermenulientry" >
               <xsl:with-param name="id"         select="$id"/>
               <xsl:with-param name="tagid"      select="$tagid"/>
-              <xsl:with-param name="whichGroup" select="'mastergroup'"/>
+              <xsl:with-param name="whichGroup" select="'block_level_one'"/>
             </xsl:call-template>
           </xsl:when>
           <xsl:otherwise>
               <li id="{$tagid}Title">
                   <xsl:choose>
-                    <xsl:when test="$whichGroup = 'selectedmenuitemgroup'">
-                        <xsl:attribute name="class">menutitle active</xsl:attribute>
+                    <xsl:when test="$whichGroup = 'block_level_two_active'">
+                        <xsl:attribute name="class">menu_entry_block_active</xsl:attribute>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:attribute name="class">menutitle</xsl:attribute>
+                        <xsl:attribute name="class">menu_entry_block</xsl:attribute>
                     </xsl:otherwise>
                   </xsl:choose>
                   <div class="block_title"><xsl:value-of select="h1"/></div>
@@ -270,7 +270,7 @@
 
     <!-- linked entry -->
                     <xsl:when test="a">
-                        <li class="menuitem">
+                        <li class="menu_entry">
                             <a>
                                 <xsl:attribute name="href">
                                     <xsl:value-of select="a/@href"/>
@@ -287,10 +287,10 @@
 
     <!-- active entry -->
                     <xsl:when test="div/@class='current'">
-                        <li class="menupage active">
-                            <div class="menupagetitle active">
-                                <xsl:value-of select="div" />
-                            </div>
+                        <li class="menu_entry_active">
+                            <div class="block_title"><xsl:value-of select="div" /></div>
+
+<!--  whats that for?
                             <xsl:if test="$config/toc/@max-depth > 0
                                           and contains($minitoc-location,'menu')
                                           and count(//tocitems/tocitem) >= $config/toc/@min-sections">
@@ -309,6 +309,8 @@
                                     </xsl:for-each>
                                 </ul>
                             </xsl:if>
+ -->
+
                         </li>
                     </xsl:when>
 

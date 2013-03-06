@@ -11,176 +11,180 @@
         background-clip: border-box;
         background-origin: padding-box;
         background-size: auto auto;
-    }
+        }
     #header {
         margin-top: 10px;
         height: 80px;
         background-color: transparent;
         background-image: url("../images/background_header_blue_xml.png");
         background-repeat: repeat-none;
-    }
+        }
     #topnav {
         height: 27px;
         background-color: transparent;
         background-image: url("../images/background_dark_blue.png");
         background-repeat: repeat-none;
-    }
+        }
     #main {
         min-height: 400px;
         background-color: transparent;
         background-image: url("../images/background_gray_stripes_shadowfree.png");
         background-repeat: repeat-y;
         padding: 20px 0px;
-    }
-    #main div.row {}
-    #subnav {}
-    #content {}
-    #righty {}
+        }
     #footer {
         height: 31px;
         background-color: transparent;
         background-image: url("../images/background_footer_blue_xml.png");
         background-repeat: repeat-none;
-    }
-    .rounded {
-        -moz-border-radius:10px; /* Firefox */
-        -webkit-border-radius:10px; /* Safari, Chrome */
-        -khtml-border-radius:10px; /* Konqueror */
-        border-radius:10px; /* CSS3 */
-    }
+        }
 
-    /* top menu
+/* ----------------------------------------------------------------------------
+    top menu
+------------------------------------------------------------------------------
+    html structure:
+
         div#topnav
-        div#navblock
-        ul#tabs
-        li.active
-        a.unselected
-        a.selected
-    */
-    div#nav_block { margin: auto auto; width:520px;}
-    ul#tabs { margin: 4px 0 0 0; padding: 0;}
-    ul#tabs li { float: left; list-style: none; margin: 0 10px 0 10px; }
-    ul#tabs a { text-decoration: none; color: white; padding: 0px 10px 2px 10px; }
-    ul#tabs a:hover { border-bottom: 2px solid white; }
-    ul#tabs li.active a { border-bottom: 2px solid #ff9600; }
-
-
+            div#navblock
+                ul#tabs
+                    li
+                    li.active
+                        a.unselected
+                        a.selected
+---------------------------------------------------------------------------- */
+    div#nav_block {
+        margin: auto auto;              /* center top menu */
+        width:520px;                    /* set size top menu */
+        }
+    ul#tabs {
+        margin: 4px 0 0 0;              /* align adjustment */
+        padding: 0;
+        }
+    ul#tabs li {
+        float: left;
+        list-style: none;
+        margin: 0 10px 0 10px;          /* some space between the entries */
+        }
+    ul#tabs a {
+        text-decoration: none;
+        color: white;
+        padding: 0px 10px 2px 10px;     /* space for the active marker*/
+        }
+    ul#tabs a:hover {
+        border-bottom: 2px solid white; /* active tab marker */
+        }
+    ul#tabs li.active a {
+        border-bottom: 2px solid #ff9600;
+        }
 
 /* ----------------------------------------------------------------------------
     sub menu
 ------------------------------------------------------------------------------
     html structure:
 
-        div#menu
-            ul.mastergroup
-                li.menuitem
-                li.menutitle
+        div#submenu
+            ul.block_level_one
+                li.menu_entry
+                li.menu_entry_active
+                li.menu_entry_block
                     div.block_title
-                    ul.menuitemgroup
-                        li.menuitem
+                    ul.block_level_two
+                        li.menu_entry
+                li.menu_entry_block_active
+                    div.block_title
+                    ul.block_level_two_active
+                        li.menu_entry
+                        li.menu_entry_active
 
+    TODO: Find a way to select external links and mark them with an arrow..
 ---------------------------------------------------------------------------- */
 /* submenu container */
-    #menu {
-        color: #666;
+    #submenu {
+        color: #666;                    /* normal menu color */
         }
 /* all lists */
-    #menu ul {
-        list-style: none;
-        padding: 0;
+    #submenu ul {
+        list-style: none;               /* no list dots */
+        padding: 0;                     /* reset */
         margin:0;
         }
 /* all links */
-    #menu a {
-        color: #666;
-        display:block;
+    #submenu a {
+        color: #666;                    /* normal menu color */
+        display: block;                 /* use full list entry width */
+        padding-left: 13px;             /* space for background image*/
+        text-decoration: none;
         }
 /* list level one */
-    #menu>ul {
-        border-right: 1px solid #ddd;
-        margin: 10px 20px 0px 20px;
+    #submenu ul.block_level_one {
+        border-right: 1px solid #ddd;   /* gray stroke to the right */
+        margin: 10px 20px 0px 20px;     /* for stroke position only */
         }
 /* all list entries */
-    #menu li {
-        margin: 8px 0 8px 0;
-        padding: 0;
-        padding-left: 13px;
+    #submenu li {
+        margin: 8px 0 8px 0;            /* space between the entries */
+        background-position: 3px -10px; /* background adjustment */
+        background-repeat: no-repeat;
         }
-    #menu li:hover {
+    #submenu li:hover {
         background-image: url("../images/background_rectangle_gray.png");
-        background-position: 2px -10px;
-        background-repeat: no-repeat;
         }
-    #menu li.active,
-    #menu li.active:hover {
+    #submenu li.menu_entry_active,
+    #submenu li.menu_entry_active:hover {
         background-image: url("../images/background_rectangle_orange.png");
-        background-position: 2px -10px;
-        background-repeat: no-repeat;
-        }
-/* all entry links */
-    #menu li:hover a {
-        text-decoration: none;
-        color: #666;
         }
 /* all title entries */
-    #menu li.menutitle {
+    #submenu li.menu_entry_block:hover,
+    #submenu li.menu_entry_block_active {
+        background-position: 0px 6px;   /* background adjustment */
+        background-repeat: no-repeat;
         }
-    #menu li.menutitle:hover {
+    #submenu li.menu_entry_block:hover {
         background-image: url("../images/background_plus_gray.png");
-        background-repeat: no-repeat;
-        background-position: 0px 6px;
         }
-    #menu li.menutitle.active {
+    #submenu li.menu_entry_block_active {
         background-image: url("../images/background_plus_orange.png");
-        background-repeat: no-repeat;
-        background-position: 0px 6px;
         }
 /* all titles */
-    #menu div.block_title {
-        cursor:pointer;
+    #submenu div.block_title {
+        cursor: pointer;                /* fake linke */
+        padding-left: 13px;             /* space for background image*/
         }
-    #menu div.block_title:hover {
+    #submenu div.block_title:hover {
         }
-    #menu li.active div {
-        color: #15516e;
+    #submenu li.menu_entry_active {
+        color: #15516e;                 /* active menu entry */
         }
 /* container level 2+ */
-    #menu .menuitemgroup {
-        display: none;
+    #submenu ul.block_level_two {
+        display: none;                  /* hide all level 2+ menus */
         }
-/* titles level 2+ (should not exist) */
-    #menu ul li ul li div {
+/* all entries level 2+  */
+    #submenu ul.block_level_two li,
+    #submenu ul.block_level_two_active li {
         font-size: 83%;
+        margin: 3px 0 3px 0px;          /* space between the entries */
+        background-position: 3px -15px; /* background adjustment */
         }
-/* entry level 2+ */
-    #menu ul ul li {
-        padding-left: 30px;
-        margin: 3px 0 3px -10px;
-        background-image: url("../images/background_rectangle_grayy.png");
-        background-repeat: no-repeat;
-        background-position: left top;
-        }
-    #menu li li:hover {
+    #submenu ul.block_level_two li:hover,
+    #submenu ul.block_level_two_active li:hover {
         background-image: url("../images/background_rectangle_gray.png");
-        background-repeat: no-repeat;
-        background-position: left -15px;
         }
-    #menu ul ul li.active {
+    #submenu ul.block_level_two_active li.menu_entry_active,
+    #submenu ul.block_level_two_active li.menu_entry_active:hover {
         background-image: url("../images/background_triangle_orange.png");
-        background-repeat: no-repeat;
-        background-position: left -15px;
         }
-    #menu li li.active,
-    #menu li li.active:hover {
-        background-image: url("../images/background_triangle_orange.png");
-        background-repeat: no-repeat;
-        background-position: left -15px;
+    #submenu ul.block_level_two li a,
+    #submenu ul.block_level_two_active li a,
+    #submenu ul.block_level_two div.block_title,
+    #submenu ul.block_level_two_active div.block_title {
+        padding-left: 30px;             /* space for background image*/
         }
-/* link level 2+ */
-    #menu ul li ul li a {
-        font-size: 83%;
-        }
-    #menu ul li ul li.active a {
-        color: #15516e;
-        }
+/* entry level 3+ (should not exists) */
+    #submenu ul.block_level_two li.menu_entry_block div.block_title,
+    #submenu ul.block_level_two_active li.menu_entry_block_active div.block_title,
+    #submenu ul.block_level_two li.menu_entry_block div.block_title,
+    #submenu ul.block_level_two_active li.menu_entry_block div.block_title {
+        color:red;                                  /* mark all level 3+*/
+    }
 }
