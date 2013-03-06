@@ -3,46 +3,48 @@
 
 <document>
   <header>
-    <title>Your Repository Framework!</title>
+    <title></title>
   </header>
   <body>
 
-    <div id="main_content" class="span5">
-      <h3>MyCoRe ...</h3>
-      <p>
-        ... ist ein System zur Entwicklung von Dokumenten- und Publikationsservern, Archivanwendungen,
-        Sammlungen von Digitalisaten oder vergleichbaren Repositorien. Auf MyCoRe basierende Anwendungen
-        nutzen einen gemeinsamen Kern, der die typischerweise für solche Anwendungen erforderliche
-        Funktionalität wie Metadatenverwaltung, Suchfunktionen, OAI-Schnittstelle, ein Bildbetrachtungsmodul
-        etc. bereitstellt.
-      </p>
-    </div>
-    <div id="news" class="span4">
-      <h3>Aktuelles</h3>
-        <ul>
-         <li>
-           26. Februar 2013, Wiebke Oeltjen
-           <br /><a href="#" class="latestnews">
-           Entwickler-Konferenz</a>
-        </li>
-         <li>
-           26. Februar 2013, Wiebke Oeltjen
-           <br /><a href="#" class="latestnews">
-           Bibliothekskongress 2013 in Leipzig</a>
-        </li>
-         <li>
-           18. Jannuar 2013, Thomas Scheffler
-           <br /><a href="site:prerelease" class="latestnews">
-           MyCoRe 2.1.80 (Beta 1) released</a>
-        </li>
-      </ul>
-    </div>
-    <div class="span9">
-      <a href="#" title=""><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 160px;" class="img-polaroid" /></a>
-      <a href="#" title=""><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 160px;" class="img-polaroid" /></a>
-      <a href="#" title=""><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 160px;" class="img-polaroid" /></a>
-      <a href="#" title=""><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 160px;" class="img-polaroid" /></a>
-    </div>
+    <div class="row-fluid">
+        <div class="span9">
 
+            <h3>MyCoRe ...</h3>
+            <p>
+                ... ist ein System zur Entwicklung von Dokumenten- und Publikationsservern, Archivanwendungen,
+                Sammlungen von Digitalisaten oder vergleichbaren Repositorien. Auf MyCoRe basierende Anwendungen
+                nutzen einen gemeinsamen Kern, der die typischerweise für solche Anwendungen erforderliche
+                Funktionalität wie Metadatenverwaltung, Suchfunktionen, OAI-Schnittstelle, ein Bildbetrachtungsmodul
+                etc. bereitstellt.
+            </p>
+            <p style="text-align: center;">
+                <a href="#" title=""><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" /></a>
+                <a href="#" title=""><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" /></a>
+                <a href="#" title=""><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" /></a>
+                <a href="#" title=""><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" /></a>
+            </p>
+        </div>
+        <div class="span3">
+            <h3>Aktuelles</h3>
+            <ul>
+                <li>
+                    26. Februar 2013, Wiebke Oeltjen
+                    <br /><a href="#" class="latestnews">
+                    Entwickler-Konferenz</a>
+                </li>
+                <li>
+                    26. Februar 2013, Wiebke Oeltjen
+                    <br /><a href="#" class="latestnews">
+                    Bibliothekskongress 2013 in Leipzig</a>
+                </li>
+                <li>
+                    18. Jannuar 2013, Thomas Scheffler
+                    <br /><a href="site:prerelease" class="latestnews">
+                    MyCoRe 2.1.80 (Beta 1) released</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 </document>

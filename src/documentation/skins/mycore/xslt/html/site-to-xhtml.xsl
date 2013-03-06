@@ -60,24 +60,17 @@
                                             });
                                     </script>
                                 </div>
-
-                                <div id="content_block" class="span8">
+                                <div id="sub_content" class="span9">
                                     <xsl:apply-templates select="div[@id='content']"/>
                                 </div>
+
                             </xsl:when>
                             <xsl:otherwise>
-                                <div id="lefty" class="span1">
-
-                                </div>
-                                <div id="content" class="span10">
+                                <div id="big_content" class="span12">
                                     <xsl:apply-templates select="div[@id='content']"/>
                                 </div>
                             </xsl:otherwise>
                         </xsl:choose>
-
-                        <div id="righty" class="span1">
-
-                        </div>
                     </div>
 
                 </div>
@@ -271,6 +264,11 @@
     <!-- linked entry -->
                     <xsl:when test="a">
                         <li class="menu_entry">
+                            <xsl:if test="not(contains(a/@href, '..'))">
+                                <xsl:attribute name="class">
+                                    <xsl:value-of select="'menu_entry external'"/>
+                                </xsl:attribute>
+                            </xsl:if>
                             <a>
                                 <xsl:attribute name="href">
                                     <xsl:value-of select="a/@href"/>

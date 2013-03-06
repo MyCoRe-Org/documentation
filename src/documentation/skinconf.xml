@@ -9,7 +9,8 @@
     no search box. @domain will enable sitesearch for the specific domain with google.
     In other words google will search the @domain for the query string.
   -->
-  <search name="MyCoRe" domain="www.mycore.de/documentation" provider="google" /> <!-- filetype:html -->
+  <!-- search name="MyCoRe" domain="www.mycore.de/documentation" provider="google" / --> <!-- filetype:html -->
+  <search name="MyCoRe" provider="lucene" />
   <!-- Disable the print link? If enabled, invalid HTML 4.0.1 -->
   <disable-print-link>true</disable-print-link>
   <!-- Disable the PDF link? -->
@@ -26,7 +27,7 @@
     sites to easily reuse your pages.-->
   <disable-xml-link>true</disable-xml-link>
   <!-- Disable navigation icons on all external links? -->
-  <disable-external-link-image>true</disable-external-link-image>
+  <disable-external-link-image>false</disable-external-link-image>
   <!-- Disable w3c compliance links?
     Use e.g. align="center" to move the compliance links logos to
     an alternate location default is left.
