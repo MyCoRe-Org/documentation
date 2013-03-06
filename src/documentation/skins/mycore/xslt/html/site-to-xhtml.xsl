@@ -288,29 +288,9 @@
     <!-- active entry -->
                     <xsl:when test="div/@class='current'">
                         <li class="menu_entry_active">
-                            <div class="block_title"><xsl:value-of select="div" /></div>
-
-<!--  whats that for?
-                            <xsl:if test="$config/toc/@max-depth > 0
-                                          and contains($minitoc-location,'menu')
-                                          and count(//tocitems/tocitem) >= $config/toc/@min-sections">
-                                <ul class="menupageitemgroup active">
-                                    <xsl:for-each select = "//tocitems/tocitem">
-                                        <li class="menupageitem active">
-                                            <xsl:choose>
-                                                <xsl:when test="string-length(@title)>15"><a href="{@href}" title="{@title}">
-                                                    <xsl:value-of select="substring(@title,0,20)" />...</a>
-                                                </xsl:when>
-                                                <xsl:otherwise><a href="{@href}">
-                                                    <xsl:value-of select="@title" /></a>
-                                                </xsl:otherwise>
-                                            </xsl:choose>
-                                        </li>
-                                    </xsl:for-each>
-                                </ul>
-                            </xsl:if>
- -->
-
+                            <div class="block_title">
+                                <xsl:value-of select="div" />
+                            </div>
                         </li>
                     </xsl:when>
 
