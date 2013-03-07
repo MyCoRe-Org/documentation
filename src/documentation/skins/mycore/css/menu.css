@@ -15,10 +15,10 @@
 ---------------------------------------------------------------------------- */
     div#nav_block {
         margin: auto auto;              /* center top menu */
-        width:520px;                    /* set size top menu */
+        width:580px;                    /* set size top menu */
         }
     ul#tabs {
-        margin: 3px 0 0 0;              /* align adjustment */
+        margin: 4px 0 0 0;              /* align adjustment */
         padding: 0;
         }
     ul#tabs li {
@@ -27,15 +27,16 @@
         margin: 0 10px 0 10px;          /* some space between the entries */
         }
     ul#tabs a {
+        font-size: 14px;
         text-decoration: none;
         color: white;
         padding: 0px 10px 2px 10px;     /* space for the active marker*/
         }
     ul#tabs a:hover {
-        border-bottom: 3px solid white; /* active tab marker */
+        border-bottom: 2px solid white; /* active tab marker */
         }
     ul#tabs li.active a {
-        border-bottom: 3px solid #ff9600;
+        border-bottom: 2px solid #ff9600;
         }
 
 /* ----------------------------------------------------------------------------
