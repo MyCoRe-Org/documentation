@@ -31,6 +31,7 @@
             <div class="row">
                 <div id="header" class="span12">
                     <xsl:call-template name="site-logo" />
+                    <xsl:call-template name="search" />
                 </div>
             </div>
 
@@ -78,6 +79,9 @@
 
             <div class="row">
                 <div id="footer" class="span12">
+                    <xsl:call-template name="feedback" />
+                    <xsl:call-template name="footer_menu"/>
+
                 </div>
             </div>
 
@@ -157,17 +161,6 @@
         <script type="text/javascript"
                 language="javascript"
                 src="{$root}skin/jquery-1.7.1.min.js"></script>
-<!--
-        <script type="text/javascript"
-                language="javascript"
-                src="{$root}skin/getBlank.js"></script>
-        <script type="text/javascript"
-                language="javascript"
-                src="{$root}skin/getMenu.js"></script>
-        <script type="text/javascript"
-                language="javascript"
-                src="{$root}skin/fontsize.js"></script>
--->
     </xsl:template>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -264,7 +257,7 @@
     <!-- linked entry -->
                     <xsl:when test="a">
                         <li class="menu_entry">
-                            <xsl:if test="not(contains(a/@href, '..'))">
+                            <xsl:if test="contains(a/@href, 'http://')">
                                 <xsl:attribute name="class">
                                     <xsl:value-of select="'menu_entry external'"/>
                                 </xsl:attribute>
@@ -307,9 +300,7 @@
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     pdf link
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
 <!-- TODO: remove inline styles -->
-
     <xsl:template match="div[@id='skinconf-pdflink']">
         <xsl:if test="not($config/disable-pdf-link) or $disable-pdf-link = 'false'">
             <div class="pdflink" style="position: relative;float: right;" title="Portable Document Format">
@@ -318,6 +309,40 @@
                 </a>
             </div>
         </xsl:if>
+    </xsl:template>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    search
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <xsl:template name="search">
+        <form method="get"
+              action="http://www.google.com/search"
+              class="navbar-search pull-right">
+            <input type="hidden"
+                   name="sitesearch"
+                   value="{$config/search/@domain}"/>
+            <input type="text"
+                   id="query"
+                   name="q"
+                   size="25"
+                   value = ""
+                   placeholder="Seite mit Google durchsuchen" />
+            <button type="submit"
+                    class="btn">
+                <i class="icon-search icon-white"></i>
+            </button>
+        </form>
+    </xsl:template>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    footer menu
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <xsl:template name="footer_menu">
+        <div id="footer_menu" class="pull-right">
+            <a href="/support/index.html">Kontakt</a> |
+            <a href="/impressum/index.html">Impressum</a>
+        </div>
+
     </xsl:template>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
