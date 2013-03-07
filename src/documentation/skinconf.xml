@@ -9,8 +9,8 @@
     no search box. @domain will enable sitesearch for the specific domain with google.
     In other words google will search the @domain for the query string.
   -->
-  <!-- search name="MyCoRe" domain="www.mycore.de/documentation" provider="google" / --> <!-- filetype:html -->
-  <search name="MyCoRe" provider="lucene" />
+  <search name="MyCoRe" domain="www.mycore.de/documentation" provider="google" /> <!-- filetype:html -->
+  <!-- search name="MyCoRe" provider="lucene" /-->
   <!-- Disable the print link? If enabled, invalid HTML 4.0.1 -->
   <disable-print-link>true</disable-print-link>
   <!-- Disable the PDF link? -->
@@ -103,7 +103,6 @@
   -->
   <feedback to="info@mycore.de"
     href="mailto:info@mycore.de?subject=MyCoRe+Dokumentation&#160;">
-    Haben Sie Fragen zu MyCoRe? Schicken Sie eine E-Mail an
   </feedback>
   <!-- Optional message of the day (MOTD).
     Note: This is only implemented in the pelt skin.
