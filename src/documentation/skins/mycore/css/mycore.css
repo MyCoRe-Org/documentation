@@ -11,7 +11,14 @@
         background-clip: border-box;
         background-origin: padding-box;
         background-size: auto auto;
+        font-family: 'Sintony', sans-serif;
         }
+    h1, h2, h3, h4, h5 {font-family: 'Lato', sans-serif;}
+    h1 {font-size:28px;}
+    h2 {font-size:24px;}
+    h3 {font-size:20px;}
+    h4 {font-size:16px;}
+    h5 {font-size:14px;}
     #header {
         margin-top: 10px;
         height: 80px;
@@ -20,9 +27,9 @@
         background-repeat: repeat-none;
         }
     #topnav {
-        height: 27px;
+        height: 30px;
         background-color: transparent;
-        background-image: url("../images/background_dark_blue.png");
+        background-image: url("../images/background_dark_blue_30.png");
         background-repeat: repeat-none;
         }
     #main {
@@ -56,6 +63,7 @@
         width: 250px;
 
         /* overwrite bootstrap settings */
+        font-family: 'Sintony', sans-serif;
         font-size: 12px;
         line-height: 16px;
         height: 16px;
