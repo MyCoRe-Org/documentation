@@ -7,44 +7,41 @@
   </header>
   <body>
     <homepage>
-      <div class="row-fluid">
-          <div class="span9">
-              <h3>MyCoRe ...</h3>
-              <p>
-                  ... ist ein System zur Entwicklung von Dokumenten- und Publikationsservern, Archivanwendungen,
-                  Sammlungen von Digitalisaten oder vergleichbaren Repositorien. Auf MyCoRe basierende Anwendungen
-                  nutzen einen gemeinsamen Kern, der die typischerweise für solche Anwendungen erforderliche
-                  Funktionalität wie Metadatenverwaltung, Suchfunktionen, OAI-Schnittstelle, ein Bildbetrachtungsmodul
-                  etc. bereitstellt.
-              </p>
-              <p style="text-align: center;">
-                  <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Beispiele" /></a>
-                  <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Landkarte" /></a>
-                  <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Einsteigen" /></a>
-                  <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Mitmachen" /></a>
-              </p>
-          </div>
-          <div class="span3">
-              <h3>Aktuelles</h3>
-              <ul>
-                  <li>
-                      <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/MaerzTreffen13" class="latestnews">Entwicklerkonferenz vom 18.-20.03.2013 in Leipzig</a>
-                      <br />
-                      <span style="font-size:10px;">(26. Februar 2013, Wiebke Oeltjen)</span>
-                  </li>
-                  <li>
-                      <a href="http://www.bid-kongress-leipzig.de/" class="latestnews">Bibliothekskongress 2013 in Leipzig vom 11.-14.03.</a>
-                      <br />
-                      <span style="font-size:10px;">(26. Februar 2013, Wiebke Oeltjen)</span>
-                  </li>
-                  <li>
-                      <a href="site:prerelease" class="latestnews">Prerelease: 2.1.80 (Beta 1) erschienen</a>
-                      <br />
-                      <span style="font-size:10px;">(18. Januar 2013, Thomas Scheffler)</span>
-                  </li>
-              </ul>
-          </div>
-      </div>
+      <title>MyCoRe ...</title>
+      <text>
+        ... ist ein System zur Entwicklung von Dokumenten- und Publikationsservern, Archivanwendungen,
+        Sammlungen von Digitalisaten oder vergleichbaren Repositorien. Auf MyCoRe basierende Anwendungen
+        nutzen einen gemeinsamen Kern, der die typischerweise für solche Anwendungen erforderliche
+        Funktionalität wie Metadatenverwaltung, Suchfunktionen, OAI-Schnittstelle, ein Bildbetrachtungsmodul
+        etc. bereitstellt.
+      </text>
+      <images>
+          <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Beispiele" /></a>
+          <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Landkarte" /></a>
+          <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Einsteigen" /></a>
+          <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Mitmachen" /></a>
+      </images>
+
+      <news>
+        <newsentry>
+          <message>Entwicklerkonferenz vom 18.-20.03.2013 in Leipzig</message>
+          <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/MaerzTreffen13</url>
+          <date>26. Februar 2013</date>
+          <author>Wiebke Oeltjen</author>
+        </newsentry>
+        <newsentry>
+          <message>Bibliothekskongress 2013 in Leipzig vom 11.-14.03.</message>
+          <url>http://www.bid-kongress-leipzig.de/</url>
+          <date>26. Februar 2013</date>
+          <author>Wiebke Oeltjen</author>
+        </newsentry>
+        <newsentry>
+          <message>Prerelease: 2.1.80 (Beta 1) erschienen</message>
+          <url>site:prerelease</url>
+          <date>18. Januar 2013</date>
+          <author>Thomas Scheffler</author>
+        </newsentry>
+      </news>
     </homepage>
   </body>
 </document>
