@@ -52,6 +52,7 @@
     #sub_content #content {
         margin: 0 35px 0 0;
         }
+        #mycore_home .pdflink { display:none; }
 /* ----------------------------------------------------------------------------
     search
 ------------------------------------------------------------------------------*/
@@ -144,4 +145,61 @@
     .dropdown-submenu:focus > a > [class*=" icon-"] {
        background-image: url("../images/glyphicons-halflings-white.png");
        }
+/* ----------------------------------------------------------------------------
+    news
+------------------------------------------------------------------------------
+---------------------------------------------------------------------------- */
+    #news h3 {
+        color: #15516e;
+        font-weight: normal;
+        font-family: 'Sintony',sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 10px 20px 0px 20px;
+        padding: 0 0 0 18px;
+        border-right: 1px solid #ddd;       /* gray stroke to the right */
+        background-position: 0px 6px;       /* background adjustment */
+        background-repeat: no-repeat;
+        background-image: url("../images/icon_arrow_down_orange.png");
+        }
+    #news a {
+        color: #666;                        /* normal menu color */
+        display: block;                     /* use full list entry width */
+        padding-left: 18px;                 /* space for background image*/
+        text-decoration: none;
+        background-position: 0px 5px;       /* background adjustment */
+        background-repeat: no-repeat;
+        }
+    #news a:hover {
+        background-image: url("../images/icon_bracket_gray.png");
+        }
+    #news a.external:hover {
+        background-image: url("../images/icon_arrow_gray.png");
+        }
+    #news ul {
+        list-style: none;                   /* no list dots */
+        padding: 20px 10px 20px 0;             /* reset */
+        border-right: 1px solid #ddd;       /* gray stroke to the right */
+        margin: 0px 20px 0px 20px;          /* for stroke position only */
+        }
+    #news li {
+        margin: 0px 0 20px 0;               /* space between the entries */
+        line-height: 14px;
+        font-size: 10px;
+        color: #999;
+        text-align: left;
+        }
+    #news .message {
+        color: #666;
+        font-size: 13px;
+        line-height: 20px;
+        margin: 0 0 4px 0;
+        display:block;
+        }
+    #news .author,
+    #news .date {
+        white-space: nowrap;
+        display: block;
+        padding-left: 18px;
+        }
 }

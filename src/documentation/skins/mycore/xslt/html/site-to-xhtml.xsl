@@ -13,6 +13,14 @@
 
     <xsl:template match="site">
 
+        <xsl:variable name="page_name">
+            <xsl:choose>
+                <xsl:when test="$path = 'index.html'"><xsl:value-of select="'home'" /></xsl:when>
+                <xsl:otherwise><xsl:value-of select="$path" /></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+
+
 <xsl:call-template name="doctype" />
 
 <html>
@@ -28,6 +36,19 @@
     </head>
 
     <body>
+
+        <xsl:if test="$page_name = 'home'">
+            <xsl:attribute name="id">
+                <xsl:value-of select="'mycore_home'"/>
+            </xsl:attribute>
+        </xsl:if>
+
+        <xsl:if test="$path = 'index.html'">
+            <xsl:attribute name="id">
+                <xsl:value-of select="'mycore_home'"/>
+            </xsl:attribute>
+        </xsl:if>
+
         <div class="container">
 
             <div class="row">
@@ -48,33 +69,37 @@
             <div class="row">
                 <div id="main" class="span12">
 
-                    <div class="row">
                         <!-- use 3 columns for menu, if there is one -->
                         <xsl:choose>
                             <xsl:when test="div[@id='menu']/ul/li">
-                                <div id="subnav" class="span3">
-                                    <xsl:call-template name="menu"/>
-                                    <script type="text/javascript"
-                                            language="javascript">
-                                            $(function() {
-                                                $("ul li div").click(function() {
-                                                    $(this).parent().children("ul").slideToggle();
+                                <div class="row">
+                                    <div id="subnav" class="span3">
+                                        <xsl:call-template name="menu"/>
+                                        <script type="text/javascript"
+                                                language="javascript">
+                                                $(function() {
+                                                    $("ul li div").click(function() {
+                                                        $(this).parent().children("ul").slideToggle();
+                                                    });
                                                 });
-                                            });
-                                    </script>
+                                        </script>
+                                    </div>
+                                    <div id="sub_content" class="span9">
+                                        <xsl:apply-templates select="div[@id='content']"/>
+                                    </div>
                                 </div>
-                                <div id="sub_content" class="span9">
-                                    <xsl:apply-templates select="div[@id='content']"/>
-                                </div>
-
+                            </xsl:when>
+                            <xsl:when test="$page_name = 'home'">
+                                <xsl:apply-templates select="div[@id='content']"/>
                             </xsl:when>
                             <xsl:otherwise>
-                                <div id="big_content" class="span12">
-                                    <xsl:apply-templates select="div[@id='content']"/>
+                                <div class="row">
+                                    <div id="big_content" class="span12">
+                                        <xsl:apply-templates select="div[@id='content']"/>
+                                    </div>
                                 </div>
                             </xsl:otherwise>
                         </xsl:choose>
-                    </div>
 
                 </div>
             </div>
@@ -83,7 +108,6 @@
                 <div id="footer" class="span12">
                     <xsl:call-template name="feedback" />
                     <xsl:call-template name="footer_menu"/>
-
                 </div>
             </div>
 
@@ -92,7 +116,6 @@
 </html>
 
     </xsl:template>
-
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     doctype

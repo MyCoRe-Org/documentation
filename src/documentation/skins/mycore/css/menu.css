@@ -81,6 +81,7 @@
     #submenu ul.block_level_one {
         border-right: 1px solid #ddd;   /* gray stroke to the right */
         margin: 10px 20px 0px 20px;     /* for stroke position only */
+        padding: 0 0 20px 0;
         }
 /* all list entries */
     #submenu li {
