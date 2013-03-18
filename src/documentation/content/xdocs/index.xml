@@ -7,21 +7,51 @@
   </header>
   <body>
     <homepage>
-      <title>MyCoRe ...</title>
+      <title>MyCoRe</title>
       <text>
-        ... ist ein System zur Entwicklung von Dokumenten- und Publikationsservern, Archivanwendungen,
-        Sammlungen von Digitalisaten oder vergleichbaren Repositorien. Auf MyCoRe basierende Anwendungen
-        nutzen einen gemeinsamen Kern, der die typischerweise für solche Anwendungen erforderliche
-        Funktionalität wie Metadatenverwaltung, Suchfunktionen, OAI-Schnittstelle, ein Bildbetrachtungsmodul
-        etc. bereitstellt.
+        Das Framework zur Präsentation und Verwaltung digitaler Inhalte
       </text>
       <images>
-          <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Beispiele" /></a>
-          <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Landkarte" /></a>
-          <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Einsteigen" /></a>
-          <a href="#"><img src="http://a.fsdn.com/con/app/proj/mycore/screenshots/300675.jpg" style="width: 120px;" class="img-polaroid" title="Mitmachen" /></a>
+        <image>
+          <title>vielseitig</title>
+          <path>gray_1x1.png</path>
+          <link>site:features</link>
+          <description>
+            Das ist voll toller Blindtext der dann über maximal vier Zeilen geht.
+            <!-- Zur Erstellung von Dokumenten- und Publikationsservern, Archiv- anwendungen,
+            Sammlungen von Digitalisaten und ähnlichen An- wendungen durch Bereitstellung
+            verschiedener Komponenten wie Metadatenverwaltung, Suchfunk- tionen,
+            OAI-Schnittstelle, Bildbetrachtung. -->
+          </description>
+        </image>
+        <image>
+          <title>verbreitet</title>
+          <path>gray_1x1.png</path>
+          <link>site:map</link>
+          <description>
+            Hier ist Platz für die Beschreibuung der MyCoRe-Nutzer Landkarte
+            <!-- Mehr als xx Anwendungen im deutschsprachigen Raum. -->
+          </description>
+        </image>
+        <image>
+          <title>dokumentiert</title>
+          <path>gray_1x1.png</path>
+          <link>site:documentation</link>
+          <description>
+            Vielleicht ein wenig frech aber schlimmer geht immer: Protzen nicht meckern!
+            <!-- Schritt für Schritt zum eigenen Repository -->
+          </description>
+        </image>
+        <image>
+          <title>nachhaltig</title>
+          <path>gray_1x1.png</path>
+          <link>site:community</link>
+          <description>
+            Eigentlich ein Link zur Community. Vielleicht noch nicht ideal getroffen.
+            <!-- Wie erreiche ich die Community? Und wie kann ich mitmachen? -->
+          </description>
+        </image>
       </images>
-
       <news>
         <newsentry>
           <message>Entwicklerkonferenz vom 18.-20.03.2013 in Leipzig</message>

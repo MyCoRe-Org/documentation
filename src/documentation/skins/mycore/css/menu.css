@@ -15,7 +15,7 @@
 ---------------------------------------------------------------------------- */
     div#nav_block {
         margin: auto auto;              /* center top menu */
-        width:580px;                    /* set size top menu */
+        width:560px;                    /* set size top menu */
         }
     ul#tabs {
         margin: 4px 0 0 0;              /* align adjustment */
