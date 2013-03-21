@@ -52,7 +52,8 @@
         text-align: center;
         font-size: 50px;
         font-weight: bold;
-        margin-top: 30px;
+        margin-top: 20px;
+
         }
     #content_home p#short_description {
         text-align: center;
@@ -60,12 +61,16 @@
         font-size: 20px;
 
         }
-    #content_home img {
+    #content_home img.img-circle {
         width: 100px;
         height: 100px;
         }
+    #content_home img.img-rounded {
+        width: 40px;
+        height: 40px;
+        }
     #content_home #short_features {
-        margin: 0px 0 40px 0;
+        margin: 0px 0 20px 0;
         }
     #big_content #content {
         margin: 0 35px 0 35px;
@@ -223,4 +228,122 @@
         display: block;
         padding-left: 18px;
         }
+
+/* ----------------------------------------------------------------------------
+    Standorte
+------------------------------------------------------------------------------
+---------------------------------------------------------------------------- */
+    #verbreitung {
+        height: 30px;
+    }
+    #standorte,
+    #mitglieder,
+    #karte {
+        float: left;
+    }
+    #standorte {
+        width: 150px;
+        border-right: 1px solid #ccc;
+        margin-right: 55px;
+        Line-height: 30px;
+    }
+    #standorte #nummer{
+        font-size: 26px;
+        font-weight: bold;
+        color: orange;
+        display:block;
+        float:left;
+    }
+    #standorte #label{
+        font-size: 16px;
+        color: #666;
+        padding: 0 0 0px 5px;
+    }
+    #mitglieder  {
+        width: 480px;
+    }
+    #mitglieder img {
+        margin: -5px 55px 0 0;
+    }
+    #mitglieder img#last {
+        margin: -5px 0px 0 0;
+    }
+    #karte {
+        font-size: 16px;
+        width: 100px;
+        float: right;
+        border-left: 1px solid #ccc;
+        color: #666;
+        Line-height: 30px;
+        padding-left: 20px;
+    }
+    #karte img {
+        margin: -5px 0px 0 10px;
+    }
+/* ----------------------------------------------------------------------------
+    news at footer
+------------------------------------------------------------------------------
+---------------------------------------------------------------------------- */
+#news_down {        overflow: hidden;}
+    #news_down a {
+        color: #444;                        /* normal menu color */
+        display: block;                     /* use full list entry width */
+        padding-left: 18px;                 /* space for background image*/
+        text-decoration: none;
+        background-position: 0px 5px;       /* background adjustment */
+        background-repeat: no-repeat;
+
+        }
+    #news_down a:hover {
+        background-image: url("../images/icon_bracket_gray.png");
+        }
+    #news_down a.external:hover {
+        background-image: url("../images/icon_arrow_gray.png");
+        }
+    #news_down ul {
+        list-style: none;                   /* no list dots */
+        padding: 0px 0px 0px 0;             /* reset */
+        border-right: 0px solid #ddd;       /* gray stroke to the right */
+        margin: 0px 0px 0px 0px;          /* for stroke position only */
+        }
+    #news_down li {
+        margin: 0px 0 20px 0;               /* space between the entries */
+        line-height: 14px;
+        font-size: 10px;
+        color: #888;
+        text-align: left;
+        display:block;
+        float:left;
+        width:240px;
+border: 1px solid #ccc;
+-moz-border-radius:10px; /* Firefox */
+-webkit-border-radius:10px; /* Safari, Chrome */
+-khtml-border-radius:10px; /* Konqueror */
+border-radius:10px; /* CSS3 */
+        height: 90px;
+        margin: 0 32px 0 0;
+        padding:10px;
+        }
+    #news_down li#entry_2 {
+                margin: 0 0px 0 0;
+    }
+    #news_down li#entry_3 {
+                margin: 0 0px 0 0;
+                float:right;
+    }
+    #news_down .message {
+        color: #666;
+        font-size: 13px;
+        line-height: 20px;
+        margin: 0 0 4px 0;
+        display:block;
+        }
+    #news_down .author,
+    #news_down .date {
+        white-space: nowrap;
+        display: block;
+        padding-left: 18px;
+        }
+
+
 }

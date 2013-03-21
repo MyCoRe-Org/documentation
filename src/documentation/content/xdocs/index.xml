@@ -24,17 +24,19 @@
             OAI-Schnittstelle, Bildbetrachtung. -->
           </description>
         </image>
+<!--
         <image>
           <title>verbreitet</title>
           <path>gray_1x1.png</path>
           <link>site:map</link>
           <description>
             Hier ist Platz für die Beschreibuung der MyCoRe-Nutzer Landkarte
-            <!-- Mehr als xx Anwendungen im deutschsprachigen Raum. -->
+            <!- Mehr als xx Anwendungen im deutschsprachigen Raum. ->
           </description>
         </image>
+-->
         <image>
-          <title>dokumentiert</title>
+          <title>anpassbar</title>
           <path>gray_1x1.png</path>
           <link>site:documentation</link>
           <description>
