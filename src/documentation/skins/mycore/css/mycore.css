@@ -339,7 +339,7 @@ border-radius:10px; /* CSS3 */
         height: 160px;
         margin: 0 32px 0 0;
         padding:10px;
-        background-image: url("../images/background_newspaper.png");
+        background-image: url("images/background_newspaper.png");
         background-position: bottom right;
         }
     #news_down li#entry_2 {

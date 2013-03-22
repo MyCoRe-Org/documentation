@@ -93,7 +93,7 @@
  -->
 
    <xsl:template match="newsentry">
-    <li id="entry_{position()}" style="background-image: url(../images/background_{image}.png);">
+    <li id="entry_{position()}" style="background-image: url(images/background_{image}.png);">
         <span class="message">
             <a href="{url}" class="latestnews">
                 <xsl:if test="contains(url, 'http://')">
