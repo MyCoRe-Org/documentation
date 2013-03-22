@@ -21,41 +21,31 @@
                 <div class="well">
                     <div id="verbreitung">
                         <div id="standorte" class="">
-                            <span id="nummer">20+</span>
-                            <span id="label">Standorte</span>
+                            <span id="nummer"><a href="#" title="Liste aller Standorte ansehen">20+</a></span>
+                            <span id="label"><a href="#" title="Liste aller Standorte ansehen">Standorte</a></span>
                         </div>
                         <div id="mitglieder" class="">
-                            <a href="#"><img src = "images/gray_1x1.png"
-                                 class="img-rounded"
-                                 title="Link zum Standort"
+                            <a href="#"><img src = "images/logo_essen.png"
+                                 class=""
+                                 title="Zum Standort Duisburg Essen"
                                  id  = ""
                                  alt = "" /></a>
-                            <a href="#"><img src = "images/gray_1x1.png"
-                                 class="img-rounded"
-                                 title="Link zum Standort"
+                            <a href="#"><img src = "images/logo_jena.png"
+                                 class=""
+                                 title="Zum Standort Jena"
                                  id  = ""
                                  alt = "" /></a>
-                            <a href="#"><img src = "images/gray_1x1.png"
-                                 class="img-rounded"
-                                 title="Link zum Standort"
+                            <a href="#"><img src = "images/logo_leipzig.png"
+                                 class=""
+                                 title="Zum Standort Leipzig"
                                  id  = ""
                                  alt = "" /></a>
-                            <a href="#"><img src = "images/gray_1x1.png"
-                                 class="img-rounded"
-                                 title="Link zum Standort"
-                                 id  = ""
-                                 alt = "" /></a>
-                            <a href="#"><img src = "images/gray_1x1.png"
-                                 class="img-rounded"
-                                 title="Link zum Standort"
-                                 alt = "last"
-                                 id=""/></a>
-                        </div>
+                         </div>
                         <div id="karte" class="">
-                            <span id="label">Karte</span>
-                            <a href="#"><img src = "images/gray_1x1.png"
-                                 class="img-rounded"
-                                 title="Link zur Karte"
+                            <span id="label"><a href="#">Karte</a></span>
+                            <a href="#"><img src = "images/icon_karte.png"
+                                 class=""
+                                 title="Standorte auf einer Karte anzeigen"
                                  id  = ""
                                  alt = "" /></a>
                         </div>
@@ -71,8 +61,8 @@
   <xsl:template match="image">
     <div class="span4 text-center">
       <a href="{link}"><img src = "images/{path}"
-                            class="img-circle"
-                             id  = "xxx"
+                            class=""
+                             id  = ""
                              alt = "xxx" /></a>
       <h3><xsl:value-of select="title" /></h3>
       <p><xsl:value-of select="description" /></p>
@@ -103,7 +93,7 @@
  -->
 
    <xsl:template match="newsentry">
-    <li id="entry_{position()}">
+    <li id="entry_{position()}" style="background-image: url(../images/background_{image}.png);">
         <span class="message">
             <a href="{url}" class="latestnews">
                 <xsl:if test="contains(url, 'http://')">

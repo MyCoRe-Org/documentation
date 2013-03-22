@@ -14,10 +14,10 @@
       <images>
         <image>
           <title>vielseitig</title>
-          <path>gray_1x1.png</path>
+          <path>abbildung_vielseitig.jpg</path>
           <link>site:features</link>
           <description>
-            Das ist voll toller Blindtext der dann über maximal vier Zeilen geht.
+            Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht.
             <!-- Zur Erstellung von Dokumenten- und Publikationsservern, Archiv- anwendungen,
             Sammlungen von Digitalisaten und ähnlichen An- wendungen durch Bereitstellung
             verschiedener Komponenten wie Metadatenverwaltung, Suchfunk- tionen,
@@ -37,19 +37,19 @@
 -->
         <image>
           <title>anpassbar</title>
-          <path>gray_1x1.png</path>
+          <path>abbildung_anpassbar.jpg</path>
           <link>site:documentation</link>
           <description>
-            Vielleicht ein wenig frech aber schlimmer geht immer: Protzen nicht meckern!
+            Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht.
             <!-- Schritt für Schritt zum eigenen Repository -->
           </description>
         </image>
         <image>
           <title>nachhaltig</title>
-          <path>gray_1x1.png</path>
+          <path>abbildung_nachhaltig.jpg</path>
           <link>site:community</link>
           <description>
-            Eigentlich ein Link zur Community. Vielleicht noch nicht ideal getroffen.
+            Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht.
             <!-- Wie erreiche ich die Community? Und wie kann ich mitmachen? -->
           </description>
         </image>
@@ -60,18 +60,21 @@
           <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/MaerzTreffen13</url>
           <date>26. Februar 2013</date>
           <author>Wiebke Oeltjen</author>
+          <image>newspaper</image>
         </newsentry>
         <newsentry>
           <message>Bibliothekskongress 2013 in Leipzig vom 11.-14.03.</message>
           <url>http://www.bid-kongress-leipzig.de/</url>
           <date>26. Februar 2013</date>
           <author>Tilo Sehrlangername</author>
+          <image>bid</image>
         </newsentry>
         <newsentry>
           <message>Prerelease: 2.1.80 (Beta 1) erschienen</message>
           <url>site:prerelease</url>
           <date>18. Januar 2013</date>
           <author>Thomas Scheffler</author>
+          <image>sf</image>
         </newsentry>
       </news>
     </homepage>

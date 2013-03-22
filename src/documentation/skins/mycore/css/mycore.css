@@ -70,7 +70,7 @@
         height: 40px;
         }
     #content_home #short_features {
-        margin: 0px 0 20px 0;
+        margin: 0px 0 40px 0;
         }
     #big_content #content {
         margin: 0 35px 0 35px;
@@ -235,6 +235,7 @@
 ---------------------------------------------------------------------------- */
     #verbreitung {
         height: 30px;
+
     }
     #standorte,
     #mitglieder,
@@ -244,7 +245,7 @@
     #standorte {
         width: 150px;
         border-right: 1px solid #ccc;
-        margin-right: 55px;
+        margin-right: 25px;
         Line-height: 30px;
     }
     #standorte #nummer{
@@ -254,16 +255,27 @@
         display:block;
         float:left;
     }
+    #standorte #nummer a{
+        color: orange;
+    }
+    #verbreitung a:hover{
+        text-decoration:none;
+    }
     #standorte #label{
         font-size: 16px;
-        color: #666;
         padding: 0 0 0px 5px;
     }
+    #standorte #label a{
+        color: #666;
+    }
+         #standorte #label a:hover{
+        text-decoration:none;
+    }
     #mitglieder  {
-        width: 480px;
+        width: 525px;
     }
     #mitglieder img {
-        margin: -5px 55px 0 0;
+        margin: -5px 15px 0 0;
     }
     #mitglieder img#last {
         margin: -5px 0px 0 0;
@@ -277,16 +289,20 @@
         Line-height: 30px;
         padding-left: 20px;
     }
+    #karte a{
+        color: #666;
+    }
     #karte img {
         margin: -5px 0px 0 10px;
     }
+    .well { padding-right:0; margin-bottom: 30px;}
 /* ----------------------------------------------------------------------------
     news at footer
 ------------------------------------------------------------------------------
 ---------------------------------------------------------------------------- */
-#news_down {        overflow: hidden;}
+#news_down {        overflow: hidden; }
     #news_down a {
-        color: #444;                        /* normal menu color */
+        color: #000;                        /* normal menu color */
         display: block;                     /* use full list entry width */
         padding-left: 18px;                 /* space for background image*/
         text-decoration: none;
@@ -295,10 +311,10 @@
 
         }
     #news_down a:hover {
-        background-image: url("../images/icon_bracket_gray.png");
+        background-image: url("../images/icon_bracket_orange.png");
         }
     #news_down a.external:hover {
-        background-image: url("../images/icon_arrow_gray.png");
+        background-image: url("../images/icon_arrow_orange.png");
         }
     #news_down ul {
         list-style: none;                   /* no list dots */
@@ -310,7 +326,7 @@
         margin: 0px 0 20px 0;               /* space between the entries */
         line-height: 14px;
         font-size: 10px;
-        color: #888;
+        color: #444;
         text-align: left;
         display:block;
         float:left;
@@ -320,9 +336,11 @@ border: 1px solid #ccc;
 -webkit-border-radius:10px; /* Safari, Chrome */
 -khtml-border-radius:10px; /* Konqueror */
 border-radius:10px; /* CSS3 */
-        height: 90px;
+        height: 160px;
         margin: 0 32px 0 0;
         padding:10px;
+        background-image: url(../images/background_newspaper.png);
+        background-position: bottom right;
         }
     #news_down li#entry_2 {
                 margin: 0 0px 0 0;
@@ -332,7 +350,7 @@ border-radius:10px; /* CSS3 */
                 float:right;
     }
     #news_down .message {
-        color: #666;
+        color: #444;
         font-size: 13px;
         line-height: 20px;
         margin: 0 0 4px 0;
