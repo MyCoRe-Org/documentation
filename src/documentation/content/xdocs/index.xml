@@ -56,13 +56,15 @@
       </images>
       <news>
         <newsentry>
-          <message>Entwicklerkonferenz vom 18.-20.03.2013 in Leipzig</message>
+          <title>Konferenz</title>
+          <message>Am 18. März ist es wieder soweit. Die Entwickler treffen sich in Leipzig.</message>
           <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/MaerzTreffen13</url>
           <date>26. Februar 2013</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
         <newsentry>
+          <title>Kongress</title>
           <message>Bibliothekskongress 2013 in Leipzig vom 11.-14.03.</message>
           <url>http://www.bid-kongress-leipzig.de/</url>
           <date>26. Februar 2013</date>
@@ -70,7 +72,16 @@
           <image>bid</image>
         </newsentry>
         <newsentry>
+          <title>Prerelease</title>
           <message>Prerelease: 2.1.80 (Beta 1) erschienen</message>
+          <url>site:prerelease</url>
+          <date>18. Januar 2013</date>
+          <author>Thomas Scheffler</author>
+          <image>sf</image>
+        </newsentry>
+        <newsentry>
+          <title>Viersich</title>
+          <message>Aller guten Dinge sind vier. Daher gibt es noch eine Nachricht. Und um sich vom Rest abzuheben, natürlich.</message>
           <url>site:prerelease</url>
           <date>18. Januar 2013</date>
           <author>Thomas Scheffler</author>

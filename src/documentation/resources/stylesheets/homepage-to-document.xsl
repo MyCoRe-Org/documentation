@@ -21,31 +21,32 @@
                 <div class="well">
                     <div id="verbreitung">
                         <div id="standorte" class="">
-                            <span id="nummer"><a href="#" title="Liste aller Standorte ansehen">20+</a></span>
-                            <span id="label"><a href="#" title="Liste aller Standorte ansehen">Standorte</a></span>
+                            <span id="nummer"><a href="#" title="Liste aller Standorte ansehen">60+</a></span>
+                            <span id="label"><a href="#" title="Liste aller Standorte ansehen">Projekte</a></span>
                         </div>
                         <div id="mitglieder" class="">
-                            <a href="#"><img src = "images/logo_essen.png"
-                                 class=""
-                                 title="Zum Standort Duisburg Essen"
-                                 id  = ""
-                                 alt = "" /></a>
-                            <a href="#"><img src = "images/logo_jena.png"
-                                 class=""
-                                 title="Zum Standort Jena"
-                                 id  = ""
-                                 alt = "" /></a>
-                            <a href="#"><img src = "images/logo_leipzig.png"
-                                 class=""
-                                 title="Zum Standort Leipzig"
-                                 id  = ""
-                                 alt = "" /></a>
+                            <ul>
+                                <li title="Zum Dokumentenserver der Universität Duisburg-Essen">
+                                    <a href="http://duepublico.uni-duisburg-essen.de/">DuEPublico</a>
+                                </li>
+                                <li title="Zum Zeitschriftenserver der Thüringer Universitäts- und Landesbibliothek Jena (ThULB)">
+                                    <a href="http://zs.thulb.uni-jena.de">Journals@UrMEL</a>
+                                </li>
+                                <li title="Zum Dissertationsserver der FU Berlin">
+                                    <a href="http://www.diss.fu-berlin.de/diss">Dissertationen Online</a>
+                                </li>
+                                <li title="Zu den Islamistische Handschriften der Universitätsbibliothek Leipzig">
+                                    <a href="http://www.islamic-manuscripts.net">Islamistische Handschriften</a>
+                                </li>
+                                <li title="Zum Professorenkatalog der Universität Rostock">
+                                    <a href="http://cpr.uni-rostock.de">Rostocker Professorenkatalog</a>
+                                </li>
+                            </ul>
                          </div>
                         <div id="karte" class="">
-                            <span id="label"><a href="#">Karte</a></span>
-                            <a href="#"><img src = "images/icon_karte.png"
+                            <span id="label"><a href="#" title="Alle Projekte auf einer Karte anzeigen">Karte</a></span>
+                            <a href="#" title="Alle Projekte auf einer Karte anzeigen"><img src = "images/icon_karte.png"
                                  class=""
-                                 title="Standorte auf einer Karte anzeigen"
                                  id  = ""
                                  alt = "" /></a>
                         </div>
@@ -93,16 +94,16 @@
  -->
 
    <xsl:template match="newsentry">
-    <li id="entry_{position()}" style="background-image: url(images/background_{image}.png);">
-        <span class="message">
+    <li id="entry_{position()}" style="background-image: url(images/background_.png);">
             <a href="{url}" class="latestnews">
                 <xsl:if test="contains(url, 'http://')">
                     <xsl:attribute name="class">
                         <xsl:value-of select="'external'"/>
                     </xsl:attribute>
                 </xsl:if>
-                <xsl:value-of select="message" />
-            </a>
+        <h4><xsl:value-of select="title" /></h4>
+        <span class="message">
+            <xsl:value-of select="message" />
         </span>
         <span class="date">
             vom <xsl:value-of select="date" />
@@ -110,6 +111,11 @@
         <span class="author">
             durch <xsl:value-of select="author" />
         </span>
+
+
+            </a>
+
+
     </li>
   </xsl:template>
 

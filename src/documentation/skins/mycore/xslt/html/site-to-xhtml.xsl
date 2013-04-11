@@ -25,8 +25,8 @@
 
 <html>
     <head>
+        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css' />
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
         <xsl:call-template name="html-meta" />
         <xsl:call-template name="meta-data" />
         <xsl:call-template name="meta-title" />
