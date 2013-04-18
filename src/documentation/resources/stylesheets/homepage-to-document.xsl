@@ -35,8 +35,8 @@
                                 <li title="Zum Dissertationsserver der FU Berlin">
                                     <a href="http://www.diss.fu-berlin.de/diss">Dissertationen Online</a>
                                 </li>
-                                <li title="Zu den Islamistische Handschriften der Universitätsbibliothek Leipzig">
-                                    <a href="http://www.islamic-manuscripts.net">Islamistische Handschriften</a>
+                                <li title="Zu den Islamische Handschriften der Universitätsbibliothek Leipzig">
+                                    <a href="http://www.islamic-manuscripts.net">Islamische Handschriften</a>
                                 </li>
                                 <li title="Zum Professorenkatalog der Universität Rostock">
                                     <a href="http://cpr.uni-rostock.de">Rostocker Professorenkatalog</a>
