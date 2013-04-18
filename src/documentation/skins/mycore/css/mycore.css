@@ -129,6 +129,7 @@
         }
     #feedback a {
             color: white;
+            font-size:12px;
         }
 /* ----------------------------------------------------------------------------
     footer menu
@@ -293,7 +294,7 @@
     }
 
     #mitglieder a {
-        color: #999;
+        color: #666;
         font-family: 'Source Code Pro', sans-serif;
         padding-left: 20px;
     }
@@ -393,5 +394,9 @@
         display:none;
         }
 
-
+    .fix {
+        position:fixed;
+        top:0;
+        z-index:9999;
+        }
 }

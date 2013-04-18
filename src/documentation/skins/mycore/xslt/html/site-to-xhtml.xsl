@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row"  id="topnavrow">
                 <div id="topnav" class="span12">
                     <div id="nav_block">
                         <xsl:apply-templates select="ul[@id='tabs']"/>
@@ -112,6 +112,51 @@
             </div>
 
         </div>
+
+<script type="text/javascript" language="javascript">
+<![CDATA[
+$(document).ready(function() {
+
+    var domscripts = {
+
+        init: function init () {
+            var self = this;
+            self.installStickyMenu();
+        },
+
+        installStickyMenu: function installStickyMenu () {
+
+            var header      = $('div#header'),
+                nav         = $('div#topnavrow'),
+                stickyClass = 'fix';
+
+                $(document).bind('scroll',function(){
+                    var hOffset = header.offset().top+header.height(),
+                        top     = $(document).scrollTop()
+
+                    // make it sticky ...
+                    if (hOffset < top) {
+                        if (nav.data(stickyClass) !== true) {
+                            nav.addClass(stickyClass).data(stickyClass,true);
+                        }
+                    } else {
+                        if (nav.data(stickyClass) !== false) {
+                            nav.removeClass(stickyClass).data(stickyClass,false);
+                        }
+                    }
+
+
+                });
+
+                // initial check for scroll-status ...
+                $(document).trigger('scroll');
+        }
+    }
+    domscripts.init();
+});
+]]>
+</script>
+
     </body>
 </html>
 
