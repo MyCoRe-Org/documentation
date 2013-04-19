@@ -22,9 +22,9 @@ See http://forrest.apache.org/docs/linking.html for more info
 -->
 <site label="MyCoRe Website" href="" xmlns="http://apache.org/forrest/linkmap/1.0">
 
-  <welcome         label="Home" href="index.html" tab="welcome" />
+  <welcome         label="Start" href="index.html" tab="welcome" />
 
-  <about label="Community"        href="about/" tab="about">
+  <about label="Organisation"        href="about/" tab="about">
     <index         label="Über MyCoRe"        href="index.html" />
     <license       label="Lizenzbedingungen"  href="/license.html" />
     <publications  label="Veröffentlichungen" href="/publications.html" />
@@ -39,7 +39,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     </whos_using>
   </about>
 
-  <features     label="Features"         href="features/" tab="features">
+  <features     label="Funktionen"         href="features/" tab="features">
     <index      label="Übersicht"        href="index.html" />
     <datamodel  label="Datenmodell"      href="datamodel.html" />
     <search     label="Suche"            href="search.html" />
@@ -63,7 +63,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <artifactory label="Artifactory"       href="http://www.mycore.de/artifactory/" />
   </download>
 
-  <documentation label="Hilfe"          href="documentation/" tab="documentation">
+  <documentation label="Dokumentation"          href="documentation/" tab="documentation">
     <overview    label="Übersicht"              href="index.html" />
     <whats_new_2_2 label="Was ist neu?"                 href="version22/whats_new.html" />
     <mcruse_2_2  label="User Guide"                     href="version22/userguide/">
@@ -213,7 +213,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <team          label="Team"               href="team.html" />
     <sitemap       label="Sitemap"            href="linkmap.html" />
 
-  <demo label="Demo-Version">
+  <demo label="Beispiele">
     <docportal label="DocPortal" href="http://www.mycore.de:8291/" />
   </demo -->
 

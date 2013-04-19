@@ -12,6 +12,6 @@
 @import url(menu.css);
 @import url(mycore.css);
 
-/* syntax highlight
+/* syntax highlight */
 @import url(shCore.css);
-@import url(shThemeEclipse.css); */
+@import url(shThemeEclipse.css);
