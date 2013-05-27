@@ -18,84 +18,59 @@
     etc. bereitstellt.
   </p>
   <br /> <br /> <br />
- <!--
+
   <h2 class="underlined_10"> Ankündigung </h2>
   
   <div style="margin-top: 20px;zoom:1;">
-    <img alt="Stabi Berlin" title="Berlin" 
-    class="float" src="images/SBB-Logo.png" />
+    <img alt="Augustusplatz in Leipzig" title="Augustusplatz in Leipzig" 
+    class="float" src="images/augustusplatz_leipzig.png" />
     
-    <p class="fett">Einladung zum Miless-/MyCoRe-Workshop 2012 in Berlin</p>
+    <p class="fett">Termin steht fest für MyCoRe-Anwenderworkshop 2013!</p>
     
     <p>
-      Die MyCoRe-Entwickler laden alle Miless-/MyCoRe-Anwender und Interessierte
-      zu einem Workshop nach Berlin ein. Am 12. und 13. November 2012 sind wir zu Gast
-      in der  „Staatsbibliothek zu Berlin - Preussischer Kulturbesitz“ 
-      (siehe <a href="http://staatsbibliothek-berlin.de/die-staatsbibliothek/abteilungen/orient/aktuelles/" 
-      title="Ankündigung der SBB">Ankündigung der SBB</a>) und geben 
-      Gelegenheit zum Austausch mit anderen Anwendern, Interessierten
-      und den Entwicklern. Fragen, Anregungen und Themenwünsche sind willkommen 
-      und können an die <a href="site:office">MyCoRe Geschäftsstelle</a> 
-      geschickt werden.<br/> Weitere <b><a title="Weitere Informationen" href="site:workshop">
-      Informationen zum Workshop finden Sie hier</a></b> und im <a title="AnwenderWorkshop2012" 
-      href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2012">MyCoRe-Wiki</a>.
+      Der Termin für den Anwenderworkshop im Herbst 2013 steht fest: Am 13./14. November wird die MyCoRe-Community zu Gast
+      in der <a href="http://www.uni-leipzig.de/" title="Link zur Website der Universität Leipzig">
+      Universität Leipzig</a> sein. Ausgerichtet wird der Workshop vom Universitätsrechenzentrum Leipzig. 
+      Das Treffen gibt allen MyCoRe-Anwenderinnen, Anwendern und Interessierten die Gelegenheit zum Austausch mit den
+      MyCoRe-Entwickler. Fragen, Anregungen und Themenwünsche können schon jetzt 
+      an die <a href="site:office">MyCoRe Geschäftsstelle</a> 
+      geschickt werden. Weitere Informationen zum <a title="AnwenderWorkshop2013" 
+      href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013">MyCoRe-Workshop</a> 
+      werden rechtzeitig vorher bekannt gegeben.
     </p>
     
-    <p class="kleinRight">15. Oktober 2012, Wiebke Oeltjen</p>
+    <p class="kleinRight">27. Mai 2013, Wiebke Oeltjen</p>
   </div>
  
   <div style="clear: both;" />
--->
+
 
   <h2 class="underlined_10">Aktuelles</h2>
 
   <div style="margin-top: 20px;zoom:1;">
-    <a href="http://www.uni-leipzig.de/~ubbid/t3/index.php?id=23" title="Link zum BID-Kongress">
-    <img alt="5. BID-Kongress in Leipzig" class="float" src="images/bid-logo.png" />
+    <a href="http://www.kulturwerte-mv.de/cms2/LAKD1_prod/LAKD1/de/Landesbibliothek/index.jsp?pid=48843" 
+    title="Postkarte von Stettin">
+    <img alt="Postkarte von Stettin" class="float" src="images/stettin.png" />
     </a>
     
-    <p class="fett">MyCoRe auf dem Bibliothekskongress 2013 in Leipzig </p>
+    <p class="fett">Neue MyCoRe-Anwendung: Postkartenprojekt „Stettiner Ansichten“ </p>
     
     <p>
-      MyCoRe wurde auf dem <a href="http://www.uni-leipzig.de/~ubbid/t3/index.php?id=23" 
-      title="Link zum BID-Kongress">5. Kongress Bibliothek  &#38; 
-      Information Deutschland</a> (BID) in Leipzig präsentiert. Am 
-      Stand des GBV wurde eine neue MyCoRe-Anwendung vorgestellt 
-      und am 12. Februar gab es bei einer Posterpräsentation
-      Gelegenheit zum Austausch über MyCoRe. Ca. 3500 Teilnehmerinnen 
-      und Teilnehmer aus Bibliotheken, Hochschulen und Wirtschaft 
-      trafen sich vom 11. bis 14. Februar 2013 
-      im Congress Center Leipzig. 
+      Eine neue MyCoRe-Anwendung ist online gegangen:
+      Die „<a href="http://esx-171.gbv.de:8291/content/below/index.xml" title="Link zur MyCoRe-Anwendung">
+      Stettiner Ansichten</a>“ zeigen historische Ansichtskarten. 
+      Mehr als 1300 Postkarten werden mit Motiven der alten Hansestadt und Grüßen aus Stettin erfasst. 
+      Die Freischaltung geschah zeitgleich mit der Ausstellungseröffnung: „<a href="http://www.kulturwerte-mv.de/cms2/LAKD1_prod/LAKD1/de/Landesbibliothek/index.jsp?pid=48843">Ansichten aus dem alten Stettin</a>“. 
+      Im Foyer der Landesbibliothek Mecklenburg-Vorpommern werden großformatige Reproduktionen 
+      von Ansichtskarten mit Motiven von Stettiner Stadtmotiven aus ihrer Blütezeit 
+      noch bis zum 13. Juli gezeigt. 
     </p>
     
-    <p class="kleinRight">15. März 2013, Wiebke Oeltjen</p>
+    <p class="kleinRight">27. Mai 2013, Wiebke Oeltjen</p>
   </div>
  
   <div style="clear: both;" />
 
-  <div>
-    <img alt="Augustusplatz in Leipzig" title="Augustusplatz in Leipzig" 
-    class="float" src="images/augustusplatz_leipzig.png" />
-    
-    <p class="fett">MyCoRe-Entwickler-Konferenz</p>
-    
-    <p>
-      Das Frühjahrstreffen der MyCoRe-Entwickler fand dieses Jahr
-      vom 11. bis 13. März 2013 in Leipzig statt. 
-      Ausgerichtet wurde die Veranstaltung vom
-      <a href="http://www.urz.uni-leipzig.de/start/" 
-      title="Link zum Universitätsrechenzentrum (URZ) der Universität Leipzig">
-      Universitätsrechenzentrum</a> (URZ) der Universität Leipzig.
-      Themen waren unter anderem: Das neue Layout der
-      MyCoRe-Homepage, die Planung des Release, die Entwicklung
-      einer neuen Beispielapplikation zur Ablösung des "DocPortal".
-      Erste Ergebnisse werden schon bald zu sehen sein!   
-    </p>
-    
-    <p class="kleinRight">22. März 2013, Wiebke Oeltjen</p>
-  </div>
-  
-  <div style="clear: both;" />  
 
   <h2 class="underlined_10">Weitere Links</h2> 
   <p>
