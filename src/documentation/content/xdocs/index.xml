@@ -17,7 +17,8 @@
           <path>abbildung_vielseitig.jpg</path>
           <link>site:features</link>
           <description>
-            Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht.
+            ... einsetzbar für Online-Archive, Dokumentenserver oder Bildersammlungen etc.
+            <!-- Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht. -->
             <!-- Zur Erstellung von Dokumenten- und Publikationsservern, Archiv- anwendungen,
             Sammlungen von Digitalisaten und ähnlichen An- wendungen durch Bereitstellung
             verschiedener Komponenten wie Metadatenverwaltung, Suchfunk- tionen,
@@ -40,7 +41,8 @@
           <path>abbildung_anpassbar.jpg</path>
           <link>site:documentation</link>
           <description>
-            Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht.
+            ... an die eigenen Anforderungen, Datenmodelle und Objekte hin zum eigenen Repository.
+            <!-- Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht. -->
             <!-- Schritt für Schritt zum eigenen Repository -->
           </description>
         </image>
@@ -49,7 +51,8 @@
           <path>abbildung_nachhaltig.jpg</path>
           <link>site:community</link>
           <description>
-            Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht.
+            ... zum Bewahren historischer Dokumente, digitaler Abbildungen von Papyri oder anderen Digitalisaten.
+            <!-- Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht. -->
             <!-- Wie erreiche ich die Community? Und wie kann ich mitmachen? -->
           </description>
         </image>
@@ -57,34 +60,34 @@
       <news>
         <newsentry>
           <title>Konferenz</title>
-          <message>Am 18. März ist es wieder soweit. Die Entwickler treffen sich in Leipzig.</message>
-          <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/MaerzTreffen13</url>
-          <date>26. Februar 2013</date>
+          <message>Im Juli ist es wieder soweit. Die Entwickler treffen sich in Göttingen.</message>
+          <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/JuliTreffen13</url>
+          <date>27. Mai 2013</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Kongress</title>
-          <message>Bibliothekskongress 2013 in Leipzig vom 11.-14.03.</message>
-          <url>http://www.bid-kongress-leipzig.de/</url>
-          <date>26. Februar 2013</date>
-          <author>Tilo Sehrlangername</author>
+          <title>Workshop</title>
+          <message>Der Termin steht fest: 13./14. November 2013 MyCoRe-User-Workshop in Leipzig. </message>
+          <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013</url>
+          <date>27. Mai 2013</date>
+          <author>Wiebke Oeltjen</author>
           <image>bid</image>
         </newsentry>
         <newsentry>
           <title>Prerelease</title>
-          <message>Prerelease: 2.1.80 (Beta 1) erschienen</message>
+          <message>Prerelease: MyCoRe 2013.05 (Beta 2) erschienen</message>
           <url>site:prerelease</url>
-          <date>18. Januar 2013</date>
+          <date>15. Mai 2013</date>
           <author>Thomas Scheffler</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Viersich</title>
-          <message>Aller guten Dinge sind vier. Daher gibt es noch eine Nachricht. Und um sich vom Rest abzuheben, natürlich.</message>
-          <url>site:prerelease</url>
-          <date>18. Januar 2013</date>
-          <author>Thomas Scheffler</author>
+          <title>Beispiel</title>
+          <message>Eine neue MyCoRe-Anwendung geht an den Start: Die „Stettiner Ansichten“ .</message>
+          <url>http://esx-171.gbv.de:8291/content/below/index.xml</url>
+          <date>27. Mai 2013</date>
+          <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
       </news>
