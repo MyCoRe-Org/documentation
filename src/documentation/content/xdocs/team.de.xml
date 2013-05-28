@@ -9,19 +9,18 @@
  
  <body>
  
-  <p class="fett">Das MyCoRe-Team von A bis Z</p>
-  <p>
-  Diese Liste erhebt keinen Anspruch auf Vollständigkeit. Viele andere Personen haben mit Tests, 
-  Bugfixes, Anregungen und in der Anwendungsentwicklung zu MyCoRe beigetragen. Wenn Sie Fragen zu 
-  speziellen Funktionen von MyCoRe haben, können Sie sich gern <strong>direkt</strong> an eine der hier 
-  aufgeführten Personen wenden. Alternativ steht Ihnen, insbesondere für allgemeine Informationen, die 
-  <a href="site:office" title="Link zur MyCoRe-Geschäftsstelle">MyCoRe-Geschäftsstelle</a> zur Verfügung.</p>
-  <hr/>
+  <p><strong>Das MyCoRe-Team von A bis Z</strong>
   <br/>
-  <p class="fett">Matthias Eichner</p>
-  <p>
-  Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br />
-  matthias.eichner (at) uni-jena.de, Tel. 03641 / 94 - 0027
+    Diese Liste erhebt keinen Anspruch auf Vollständigkeit. Viele andere Personen haben mit Tests, 
+    Bugfixes, Anregungen und in der Anwendungsentwicklung zu MyCoRe beigetragen. Wenn Sie Fragen zu 
+    speziellen Funktionen von MyCoRe haben, können Sie sich gern <strong>direkt</strong> an eine der hier 
+    aufgeführten Personen wenden. Alternativ steht Ihnen, insbesondere für allgemeine Informationen, die 
+    <a href="site:office" title="Link zur MyCoRe-Geschäftsstelle">MyCoRe-Geschäftsstelle</a> zur Verfügung.
+  </p>
+  <hr/>
+  <p><strong>Matthias Eichner</strong><br/>
+    Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br/>
+    matthias.eichner (at) uni-jena.de, Tel. 03641 / 94 - 0027 
   </p>
   <ul>
     <li>Klassifikationseditor</li>
@@ -29,19 +28,18 @@
     <li>Anwendungsentwicklung in Jena</li>
   </ul>
   <br/>
-  <p class="fett">Stefan Freitag</p>
-  <p>
-  Universität Leipzig, Universitätsbibliothek  <br />
-  freitag (at) rz.uni-leipzig.de, Tel. 0341 / 97 30841</p>
+  <p><strong>Stefan Freitag</strong><br/>
+    Universität Leipzig, Universitätsbibliothek  <br/>
+    freitag (at) rz.uni-leipzig.de, Tel. 0341 / 97 30841
+  </p>
   <ul>
     <li>Zoomify Einbindung</li>
     <li>Anwendungsentwicklung in Leipzig</li>
   </ul>
   <br/>
-  <p class="fett">Silvio Hermann</p>
-  <p>
-  Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br />
-  s.hermann (at) uni-jena.de, Tel. 03641 / 94 - 0019
+  <p><strong>Silvio Hermann</strong><br/>
+    Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br/>
+    s.hermann (at) uni-jena.de, Tel. 03641 / 94 - 0019
   </p>
   <ul>
     <li>OAI</li>
@@ -50,19 +48,18 @@
     <li>Anwendungsentwicklung in Jena</li>
   </ul>
   <br/>
-  <p class="fett">Kathleen Neumann</p>
-  <p>
-  Verbundzentrale des GBV (VZG) <br />
-  Kathleen.Neumann (at) gbv.de</p>
+  <p><strong>Kathleen Neumann</strong><br/>
+    Verbundzentrale des GBV (VZG) <br/>
+    Kathleen.Neumann (at) gbv.de</p>
   <ul>
     <li>Anwendungsentwicklung</li>
     <li>Dokumentation</li>
   </ul>
   <br/>
-  <p class="fett">Jens Kupferschmidt</p>
-  <p>
-  Universität Leipzig, Universitätsrechenzentrum  <br />
-  kupferschmidt (at) rz.uni-leipzig.de, Tel. 0341 / 97 33348</p>
+  <p><strong>Jens Kupferschmidt</strong><br/>
+    Universität Leipzig, Universitätsrechenzentrum  <br/>
+    kupferschmidt (at) rz.uni-leipzig.de, Tel. 0341 / 97 33348
+  </p>
   <ul>
     <li>User system</li>
     <li>Commandline tools</li>
@@ -72,10 +69,10 @@
     <li>Anwendungsentwicklung in Leipzig</li>
   </ul>
   <br/>
-  <p class="fett">Frank Lützenkirchen</p>
-  <p>
-  Universität Duisburg-Essen, Universitätsbibliothek   <br />
-  luetzenkirchen (at) ub.uni-duisburg-essen.de, Tel. 0201 / 183 - 2124</p>
+  <p><strong>Frank Lützenkirchen</strong><br/>
+    Universität Duisburg-Essen, Universitätsbibliothek   <br/>
+    luetzenkirchen (at) ub.uni-duisburg-essen.de, Tel. 0201 / 183 - 2124
+  </p>
   <ul>
     <li>
       <strong>Leitung des MyCoRe Architekturboards</strong></li>
@@ -87,20 +84,18 @@
     <li>Anwendungsentwicklung „DuEPublico“ (Dokumenten- und  Publikationsserver)</li>
   </ul>
   <br/>
-  <p class="fett">Dr. Wiebke Oeltjen</p>
-  <p>
-  Universität Hamburg, Regionales Rechenzentrum  <br />
-  wiebke.oeltjen (at) rrz.uni-hamburg.de, Tel. 040 / 42838 - 2652
+  <p><strong>Dr. Wiebke Oeltjen</strong><br/>
+    Universität Hamburg, Regionales Rechenzentrum  <br/>
+    wiebke.oeltjen (at) uni-hamburg.de, Tel. 040 / 42838 - 2652
   </p>
   <ul>
     <li><strong>MyCoRe-Geschäftsstelle</strong></li>
-    <li>Anwendungsentwicklung</li>
+    <li>Projektmoderation</li>
   </ul>
   <br/>
-  <p class="fett">Thomas Scheffler </p>
-  <p>
-  Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek <br />
-  thomas.scheffler (at) uni-jena.de, Tel. 03641 / 94 - 0027
+  <p><strong>Thomas Scheffler</strong><br/>
+    Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek <br/>
+    thomas.scheffler (at) uni-jena.de, Tel. 03641 / 94 - 0027
   </p>
   <ul>
     <li>Anwendungsentwicklung der Jenaer Archive und Handschriftensammlungen „Collections@UrMEL“</li>
@@ -113,29 +108,28 @@
     <li>URI-Resolver</li>
   </ul>
   <br/>
-  <p class="fett">Robert Stephan </p>
-  <p>
-  Universität Rostock, Universitätsbibliothek   <br />
-  robert.stephan (at) uni-rostock.de, Tel. 0381 / 498 86 25</p>
+  <p><strong>Robert Stephan</strong><br/>
+    Universität Rostock, Universitätsbibliothek   <br/>
+    robert.stephan (at) uni-rostock.de, Tel. 0381 / 498 86 25
+  </p>
   <ul>
     <li>Anwendungsentwicklung „JSPDocPortal“</li>
     <li>OAI-PHM 2.0 Data Provider</li>
   </ul>
   <br/>
-  <p class="fett">Nils Verheyen</p>
-  <p>
-  Universität Duisburg-Essen, Universitätsbibliothek   <br />
-  nils.verheyen (at) uni-due.de, Tel. 0201 / 183 - 2134</p>
+  <p><strong>Nils Verheyen</strong><br/>
+    Universität Duisburg-Essen, Universitätsbibliothek   <br/>
+    nils.verheyen (at) uni-due.de, Tel. 0201 / 183 - 2134
+  </p>
   <ul>
     <li>SWORD-Schnittstelle</li>
     <li>Statistiken</li>
     <li>Anwendungsentwicklung „DuEPublico“ (Dokumenten- und Publikationsserver)</li>
   </ul>
   <br/> 
-  <p class="fett">Huu Chi Vu</p>
-  <p>
-  Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br />
-  huu.chi.vu (at) uni-jena.de, Tel. 03641 / 94 - 0019
+  <p><strong>Huu Chi Vu</strong><br/>
+    Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br/>
+    huu.chi.vu (at) uni-jena.de, Tel. 03641 / 94 - 0019
   </p>
   <ul>
     <li>Anwendungsentwicklung des Jenaer Zeitschriftenservers „Journals@UrMEL“ </li>
@@ -145,26 +139,24 @@
     <li>IFS2</li>
   </ul>
   <br/>
-
-  <p class="fett">Ehemalige Mitentwickler</p>
-  <p>
-  Sie haben vieles Wertvolle beigetragen, sind aber zur Zeit nicht aktiv an der Weiterentwicklung beteiligt:
+  <p><strong>Ehemalige Mitentwickler</strong><br/>
+    Sie haben viel Wertvolles beigetragen, sind aber zur Zeit nicht aktiv an der Weiterentwicklung beteiligt:
   </p>
   <ul>
-    <li>Dr. Detlev Degenhardt (Albert-Ludwigs-Universität Freiburg, Rechenzentrum) <br />
+    <li>Dr. Detlev Degenhardt (Albert-Ludwigs-Universität Freiburg, Rechenzentrum) <br/>
         Benutzerverwaltung und Gruppenverwaltung, Anwendungsentwicklung Freimore</li>
-    <li>Dr. Stefan Gradmann (Universität Hamburg, RRZ) <br />
+    <li>Dr. Stefan Gradmann (Universität Hamburg, RRZ) <br/>
         Koordination der MyCoRe/IBM Kooperation</li>
-    <li>Werner Greßhoff, Benno Süselbeck (ULB Münster): <br />
+    <li>Werner Greßhoff, Benno Süselbeck (ULB Münster): <br/>
         OAI-Schnittstelle, URN-Implementierung, Rechteverwaltung</li>
-    <li>Heiko Helmbrecht, Arne Seifert, Matthias Kramm (TU München): <br />
+    <li>Heiko Helmbrecht, Arne Seifert, Matthias Kramm (TU München): <br/>
         ACL-System, Hibernate- und SQL-Backend, OAI-Schnittstelle</li>
-    <li>Kerstin Ponten (Universität Duisburg-Essen, Universitätsbibliothek)<br />
+    <li>Kerstin Ponten (Universität Duisburg-Essen, Universitätsbibliothek)<br/>
         Unterstützung der MyCoRe Geschäftsstelle, Tests    </li>
-    <li>Harald Richter (Universität Duisburg-Essen, Universitätsbibliothek):<br />
+    <li>Harald Richter (Universität Duisburg-Essen, Universitätsbibliothek):<br/>
         Lucene-Implementierung der Suche, Web Services, Z39.50, Anwendungsentwicklung</li>
     <li>Anja Schaar (Universität Rostock, Universitätsbibliothek)</li>
-    <li>Andreas Trappe (Friedrich-Schiller-Universität Jena, ThULB)<br />
+    <li>Andreas Trappe (Friedrich-Schiller-Universität Jena, ThULB)<br/>
         Image Viewer Modul (Bildbetrachter), WCMS Modul, Anwendungsentwicklung</li>
   </ul>
   

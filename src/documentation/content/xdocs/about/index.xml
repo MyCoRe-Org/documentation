@@ -22,7 +22,7 @@
         einerseits als Demonstrations- und Testumgebung dient, andererseits als Vorlage 
         und Anwendungsgerüst für eigene MyCoRe-basierte Anwendungen verwendet werden kann.
       </p>
-      <img src="images/mycore_architecture.jpg" alt="MyCoRe-Achitektur" style="margin:20px 40px;" width="650px"/>
+      <img src="images/mycore_architecture.jpg" alt="MyCoRe-Achitektur" style="margin:20px 0px;" width="650px"/>
       <p>
         MyCoRe ist also keine vollständige, unmittelbar einsetzbare Repository-Software 
         wie etwa OPUS oder EPrints, sondern stellt eine API zur Erstellung solcher und 

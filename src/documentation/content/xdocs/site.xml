@@ -30,6 +30,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <publications  label="Veröffentlichungen" href="/publications.html" />
     <presentations label="Präsentationen"     href="/presentations.html" />
     <team          label="Team"               href="/team.html" />
+    <workshop      label="Workshop"           href="/workshop.html" />
     <whos_using label="Wer nutzt MyCoRe?">
       <applications  label="Neuste Anwendungen"        href="/applications.html" >
         <journals  href="#zs" />
@@ -39,7 +40,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     </whos_using>
   </about>
 
-  <features     label="Funktionen"         href="features/" tab="features">
+  <features     label="Funktionen"       href="features/" tab="features">
     <index      label="Übersicht"        href="index.html" />
     <datamodel  label="Datenmodell"      href="datamodel.html" />
     <search     label="Suche"            href="search.html" />
@@ -55,7 +56,7 @@ See http://forrest.apache.org/docs/linking.html for more info
   <download      label="Download"        href="download/" tab="download">
     <howtoget    label="Übersicht"       href="index.html" />
     <release     label="Release 2.1"     href="release.html" />
-    <prerelease    label="Prerelease"        href="prerelease.html" />
+    <prerelease    label="Prerelease"      href="prerelease.html" />
     <archive     label="Archiv"            href="archive.html" />
     <subversion  label="Subversion"        href="subversion.html" />
     <changelog   label="ChangeLog"         href="changelog.html" />
