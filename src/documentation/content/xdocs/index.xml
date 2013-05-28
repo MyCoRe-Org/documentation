@@ -15,7 +15,7 @@
         <image>
           <title>vielseitig</title>
           <path>abbildung_vielseitig.jpg</path>
-          <link>site:features</link>
+          <link>site:features/index</link>
           <description>
             ... einsetzbar für Online-Archive, Dokumentenserver oder Bildersammlungen etc.
             <!-- Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht. -->
@@ -39,7 +39,7 @@
         <image>
           <title>anpassbar</title>
           <path>abbildung_anpassbar.jpg</path>
-          <link>site:documentation</link>
+          <link>site:documentation/overview</link>
           <description>
             ... an die eigenen Anforderungen, Datenmodelle und Objekte hin zum eigenen Repository.
             <!-- Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht. -->
@@ -49,7 +49,7 @@
         <image>
           <title>nachhaltig</title>
           <path>abbildung_nachhaltig.jpg</path>
-          <link>site:community</link>
+          <link>site:team</link>
           <description>
             ... zum Bewahren historischer Dokumente, digitaler Abbildungen von Papyri oder anderen Digitalisaten.
             <!-- Das ist voll toller Blindtext der dann über maximal zwei Zeilen geht. -->
@@ -76,7 +76,7 @@
         </newsentry>
         <newsentry>
           <title>Prerelease</title>
-          <message>Prerelease: MyCoRe 2013.05 (Beta 2) erschienen</message>
+          <message>Das Prerelease „MyCoRe 2013.05“ (Beta 2) ist erschienen. </message>
           <url>site:prerelease</url>
           <date>15. Mai 2013</date>
           <author>Thomas Scheffler</author>
