@@ -8,7 +8,7 @@
   <body>
     <!-- div style="float:right;border:solid 1px gray;">
       <script type="text/javascript" src="http://www.ohloh.net/p/16348/widgets/project_factoids.js"></script>
-    </div -->  
+    </div -->
   <p>
     MyCoRe ist ein System zur Entwicklung von Dokumenten- und Publikationsservern,
     Archivanwendungen, Sammlungen von Digitalisaten oder vergleichbaren Repositorien.
@@ -20,59 +20,59 @@
   <br /> <br /> <br />
 
   <h2 class="underlined_10"> Ankündigung </h2>
-  
+
   <div style="margin-top: 20px;zoom:1;">
-    <img alt="Augustusplatz in Leipzig" title="Augustusplatz in Leipzig" 
+    <img alt="Augustusplatz in Leipzig" title="Augustusplatz in Leipzig"
     class="float" src="images/augustusplatz_leipzig.png" />
-    
+
     <p class="fett">Termin steht fest für MyCoRe-Anwenderworkshop 2013!</p>
-    
+
     <p>
       Der Termin für den Anwenderworkshop im Herbst 2013 steht fest: Am 13./14. November wird die MyCoRe-Community zu Gast
       in der <a href="http://www.uni-leipzig.de/" title="Link zur Website der Universität Leipzig">
-      Universität Leipzig</a> sein. Ausgerichtet wird der Workshop vom Universitätsrechenzentrum Leipzig. 
+      Universität Leipzig</a> sein. Ausgerichtet wird der Workshop vom Universitätsrechenzentrum Leipzig.
       Das Treffen gibt allen MyCoRe-Anwenderinnen, Anwendern und Interessierten die Gelegenheit zum Austausch mit den
-      MyCoRe-Entwickler. Fragen, Anregungen und Themenwünsche können schon jetzt 
-      an die <a href="site:office">MyCoRe Geschäftsstelle</a> 
-      geschickt werden. Weitere Informationen zum <a title="AnwenderWorkshop2013" 
-      href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013">MyCoRe-Workshop</a> 
+      MyCoRe-Entwickler. Fragen, Anregungen und Themenwünsche können schon jetzt
+      an die <a href="site:office">MyCoRe Geschäftsstelle</a>
+      geschickt werden. Weitere Informationen zum <a title="AnwenderWorkshop2013"
+      href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013">MyCoRe-Workshop</a>
       werden rechtzeitig vorher bekannt gegeben.
     </p>
-    
+
     <p class="kleinRight">27. Mai 2013, Wiebke Oeltjen</p>
   </div>
- 
+
   <div style="clear: both;" />
 
 
   <h2 class="underlined_10">Aktuelles</h2>
 
   <div style="margin-top: 20px;zoom:1;">
-    <a href="http://www.kulturwerte-mv.de/cms2/LAKD1_prod/LAKD1/de/Landesbibliothek/index.jsp?pid=48843" 
+    <a href="http://www.kulturwerte-mv.de/cms2/LAKD1_prod/LAKD1/de/Landesbibliothek/index.jsp?pid=48843"
     title="Postkarte von Stettin">
     <img alt="Postkarte von Stettin" class="float" src="images/stettin.png" />
     </a>
-    
+
     <p class="fett">Neue MyCoRe-Anwendung: Postkartenprojekt „Stettiner Ansichten“ </p>
-    
+
     <p>
-      Eine neue MyCoRe-Anwendung ist online gegangen:
-      Die „<a href="http://esx-171.gbv.de:8291/content/below/index.xml" title="Link zur MyCoRe-Anwendung">
-      Stettiner Ansichten</a>“ zeigen historische Ansichtskarten. 
-      Mehr als 1300 Postkarten werden mit Motiven der alten Hansestadt und Grüßen aus Stettin erfasst. 
-      Die Freischaltung geschah zeitgleich mit der Ausstellungseröffnung: „<a href="http://www.kulturwerte-mv.de/cms2/LAKD1_prod/LAKD1/de/Landesbibliothek/index.jsp?pid=48843">Ansichten aus dem alten Stettin</a>“. 
-      Im Foyer der Landesbibliothek Mecklenburg-Vorpommern werden großformatige Reproduktionen 
-      von Ansichtskarten mit Motiven von Stettiner Stadtmotiven aus ihrer Blütezeit 
-      noch bis zum 13. Juli gezeigt. 
+      Die MyCoRe-Anwendung „<a href="http://esx-171.gbv.de:8291/content/below/index.xml" title="Link zur MyCoRe-Anwendung">
+      Stettiner Ansichten</a>“ zeigt seit gut einem Jahr historische Ansichtskarten.
+      Mehr als 1300 Postkarten sind bereits mit Motiven der alten Hansestadt und Grüßen aus Stettin erfasst.
+      Mit der Ausstellungseröffnung: „<a href="http://www.kulturwerte-mv.de/cms2/LAKD1_prod/LAKD1/de/Landesbibliothek/index.jsp?pid=48843">Ansichten aus dem alten Stettin</a>“
+      wird nun auch die Web-Ausstellung stärker in den Focus der Öffentlichkeit gerückt.
+      Im Foyer der Landesbibliothek Mecklenburg-Vorpommern werden großformatige Reproduktionen
+      von Ansichtskarten mit Motiven von Stettiner Stadtmotiven aus ihrer Blütezeit
+      noch bis zum 13. Juli gezeigt.
     </p>
-    
+
     <p class="kleinRight">27. Mai 2013, Wiebke Oeltjen</p>
   </div>
- 
+
   <div style="clear: both;" />
 
 
-  <h2 class="underlined_10">Weitere Links</h2> 
+  <h2 class="underlined_10">Weitere Links</h2>
   <p>
     <a href="site:archive">Weitere Nachrichten</a> <br/>
     <a href="site:about">Was ist MyCoRe?</a>
