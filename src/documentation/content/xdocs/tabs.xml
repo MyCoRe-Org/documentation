@@ -18,7 +18,6 @@
   <!-- tab id="about"          dir="about"         label="Organisation" / -->
   <tab id="download"       dir="download"      label="Download" />
   <tab id="documentation"  dir="documentation" label="Dokumentation" />
-
-  < tab id="support"        dir="support"       label="Kontakt" />
+  <tab id="support"        dir="support"       label="Kontakt" />
   <!-- tab id="impressum"      dir="impressum"     label="Impressum" / -->
 </tabs>
