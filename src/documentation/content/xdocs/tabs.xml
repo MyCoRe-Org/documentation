@@ -15,10 +15,10 @@
   <tab id="welcome"        dir=""              label="Start" />
   <tab id="features"       dir="features"      label="Funktionen" />
   <tab id="demo"           dir="demo"          label="Beispiele" />
-  <tab id="about"          dir="about"         label="Organisation" />
+  <!-- tab id="about"          dir="about"         label="Organisation" / -->
   <tab id="download"       dir="download"      label="Download" />
   <tab id="documentation"  dir="documentation" label="Dokumentation" />
 
-  <!-- tab id="support"        dir="support"       label="Kontakt" />
-  <tab id="impressum"      dir="impressum"     label="Impressum" / -->
+  < tab id="support"        dir="support"       label="Kontakt" />
+  <!-- tab id="impressum"      dir="impressum"     label="Impressum" / -->
 </tabs>

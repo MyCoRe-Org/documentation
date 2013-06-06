@@ -24,7 +24,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   <welcome         label="Start" href="index.html" tab="welcome" />
 
-  <about label="Organisation"        href="about/" tab="about">
+<!--  <about label="Organisation"        href="about/" tab="about">
     <index         label="Über MyCoRe"        href="index.html" />
     <license       label="Lizenzbedingungen"  href="/license.html" />
     <publications  label="Veröffentlichungen" href="/publications.html" />
@@ -38,7 +38,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <list         label="Vollständige Liste"        href="/list.html" />
       <app_archiv   label="Archiv"                    href="/app_archiv.html" />
     </whos_using>
-  </about>
+  </about> -->
 
   <features     label="Funktionen"       href="features/" tab="features">
     <index      label="Übersicht"        href="index.html" />
@@ -57,6 +57,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <howtoget    label="Übersicht"       href="index.html" />
     <release     label="Release 2.1"     href="release.html" />
     <prerelease    label="Prerelease"      href="prerelease.html" />
+    <license       label="Lizenzbedingungen"  href="/license.html" />
     <archive     label="Archiv"            href="archive.html" />
     <subversion  label="Subversion"        href="subversion.html" />
     <changelog   label="ChangeLog"         href="changelog.html" />
@@ -191,9 +192,9 @@ See http://forrest.apache.org/docs/linking.html for more info
   </documentation>
 
   <support label="Kontakt" href="support/" tab="support">
-    <email      label="Mailing-Listen"   href="index.html" />
-    <office     label="Geschäftsstelle"  href="office.html" />
-    <faqs       label="FAQs"             href="faqs.html" />
+    <office     label="Geschäftsstelle"  href="index.html" />
+    <email      label="Mailing-Listen"   href="email.html" />
+    <team       label="Team"             href="team.html" />
     <bugs       label="Bug melden"       href="http://sourceforge.net/tracker/?group_id=92005&amp;atid=599192" />
     <featurereq label="Feature Request"  href="http://sourceforge.net/tracker/?group_id=92005&amp;atid=599195" />
     <wiki       label="MyCoRe Wiki"      href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
