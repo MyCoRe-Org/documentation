@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document xml:lang="en">
+<header>
+ <title>Team</title></header>
+ 
+
+ 
+ <body>
+ 
+  <p><strong>The MyCoRe team from A to Z</strong>
+  <br/>
+    This list makes no claim to be complete. Many others contributed with tests, bugfixes, proposals and application development. If you have a question regarding a specific 
+    function of MyCoRe, you can <strong>directly</strong> contact one of the developers listed here. Alternatively, or for general information on MyCoRe, you can get in contact 
+    with the <a href="site:office" title="Link to the MyCoRe Office">MyCoRe Office</a>.</p>
+  <hr/>
+  <br/>
+  <p><strong>Matthias Eichner</strong><br/>
+  Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br />
+  matthias.eichner (at) uni-jena.de, Tel. 03641 / 94 - 0027
+  </p>
+  <ul>
+    <li>Classification editor</li>
+    <li>WCMS</li>
+    <li>Application development in Jena</li>
+  </ul>
+  <br/>
+  <p><strong>Stefan Freitag</strong><br/>
+  University of Leipzig, University Library  <br />
+  freitag (at) rz.uni-leipzig.de, Tel. 0341 / 97 30841</p>
+  <ul>
+    <li>Zoomify Integration</li>
+    <li>Application development in Leipzig</li>
+  </ul>
+  <br/>
+  <p><strong>Silvio Hermann</strong><br/>
+  Friedrich-Schiller-University Jena, University Library<br />
+  s.hermann (at) uni-jena.de, Tel. 03641 / 94 - 0019
+  </p>
+  <ul>
+    <li>OAI</li>
+    <li>Import tools for MyCoRe/Docportal (SRU, Opac and Pica+)</li>
+    <li>METS/MODS Components</li>
+    <li>Application development</li>
+  </ul>
+  <br/>
+  <p><strong>Kathleen Neumann</strong><br/>
+  GBV Common Library Network (VZG) <br />
+  kathleen.neumann (at) gbv.de</p>
+  <ul>
+    <li>Application development</li>
+    <li>Documentation</li>
+  </ul>
+  <br/>
+  <p><strong>Jens Kupferschmidt</strong><br/>
+  University of Leipzig, Computer Center  <br />
+  kupferschmidt (at) rz.uni-leipzig.de, Tel. 0341 / 97 33348</p>
+  <ul>
+    <li>User system</li>
+    <li>Commandline tools</li>
+    <li>Simple Workflow</li>
+    <li>Multiple languages</li>
+    <li>Distribution</li>
+    <li>Application development in Leipzig</li>
+  </ul>
+  <br/>
+  <p><strong>Frank Lützenkirchen</strong><br/>
+  University of Duisburg-Essen, University Library  <br />
+  luetzenkirchen (at) ub.uni-duisburg-essen.de, Tel. 0201 / 183 - 2124</p>
+  <ul>
+    <li><strong>Head of MyCoRe architecture board</strong></li>
+    <li>Query framework (search functionality)</li>
+    <li>Internal filesystem (IFS) and file upload    </li>
+    <li>Editor framework (creation of search masks and input forms)</li>
+    <li>Integration of Audio/Video streaming servers    </li>
+    <li>Persistent identifier (urn:nbn:de support)</li>
+    <li>Application development „DuEPublico“ (Institutional content repository software)</li>
+  </ul>
+  <br/>
+  <p><strong>Dr. Wiebke Oeltjen</strong><br/>
+  University of Hamburg, Computer center  <br />
+  wiebke.oeltjen (at) rrz.uni-hamburg.de, Tel. 040 / 42838 - 2652
+  </p>
+  <ul>
+    <li><strong>MyCoRe Office</strong></li> 
+    <li>Project management</li>   
+  </ul>
+  <br/>
+  <p><strong>Thomas Scheffler</strong><br/>
+  Friedrich-Schiller-University Jena, University Library<br />
+  thomas.scheffler (at) uni-jena.de, Tel. 03641 / 94 - 0027
+  </p>
+  <ul>
+    <li>Application development „Collections@UrMEL“ (collections and achives)</li>
+    <li>Filters for text extraction (fulltext search in PDF, Word, OpenOffice etc.)</li>
+    <li>Internationalization and multi-language support (I18N)</li>
+    <li>IBM Content Manager backend integratoin</li>
+    <li>Classification browser and editor    </li>
+    <li>Webinterface for user management</li>
+    <li>XSL</li>
+    <li>URI-Resolver</li>
+  </ul>
+  <br/>
+  <p><strong>Robert Stephan</strong><br/>
+  University of Rostock, University library  <br />
+  robert.stephan (at) uni-rostock.de, Tel. 0381 / 498 86 25</p>
+  <ul>
+    <li>Application development JSPDocPortal</li>
+    <li>OAI-PHM 2.0 Data Provider</li>
+  </ul>
+  <br/>
+  <p><strong>Nils Verheyen</strong><br/>
+  University of Duisburg-Essen, University Library  <br />
+  nils.verheyen (at) uni-due.de, Tel. 0201 / 183 - 2134</p>
+  <ul>
+    <li>SWORD-Interface</li>
+    <li>Statistics</li>
+    <li>Application development „DuEPublico“ (Institutional content repository software)</li>
+  </ul>
+  <br/>  
+  <p><strong>Huu Chi Vu</strong><br/>
+  Friedrich-Schiller-University Jena, University Library<br />
+  huu.chi.vu (at) uni-jena.de, Tel. 03641 / 94 - 0019
+  </p>
+  <ul>
+    <li>Application development of the journal server „Journals@UrMEL“ </li>
+    <li>Classification Editor </li>
+    <li>ACL Editor</li>
+    <li>Imaging Modul</li>
+    <li>IFS2</li>
+  </ul>
+  <br/>
+  <p><strong>Alumni</strong><br/>
+  They contributed much, but are currently not involved in further development:  
+  </p>
+  <ul>
+    <li>Dr. Detlev Degenhardt (Albert-Ludwigs-University Freiburg, Computer center ) <br />
+        User and group management, Application development Freimore</li>
+    <li>Heiko Helmbrecht, Arne Seifert, Matthias Kramm (TU München): <br />
+        ACL system, Hibernate- and SQL-backend, OAI interface</li>
+    <li>Dr. Stefan Gradmann (University of Hamburg, Computer Center) <br />
+        Coordination of the MyCoRe/IBM cooperation</li>
+    <li>Werner Greßhoff, Benno Süselbeck (ULB Münster): <br />
+        OAI interface, URN implementation, permission management</li>
+    <li>Kerstin Ponten (University of Duisburg-Essen, University Library):<br />
+        Assistance for the MyCoRe Office, Tests</li>
+    <li>Harald Richter (University of Duisburg-Essen, University library):<br />
+        Lucene implementation of query functions, Web services (SOAP), Z39.50 interface, Application development </li>
+    <li>Anja Schaar (University of Rostock, University library)</li>
+    <li>Andreas Trappe (Friedrich-Schiller-University of Jena, University library)<br />
+        Image Viewer module, WCMS modul, Application development</li>
+  </ul>
+  
+</body>
+</document>
