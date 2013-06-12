@@ -48,6 +48,25 @@
   <h2 class="underlined_10">Aktuelles</h2>
 
   <div style="margin-top: 20px;zoom:1;">
+ <a href="https://www.destatis.de/GPStatistik/" title="Link zur Statistischen Bibliothek der Statistischen Ämter des Bundes und der Länder">
+<img alt="Statistische Bibliothek der Statistischen Ämter des Bundes und der Länder" class="float" src="images/statistische-Bibliothek.png" />
+</a>
+<p class="fett">Statistische Ämter des Bundes und der Länder setzen MyCoRe ein </p>
+
+    <p>
+      Die <a href="https://www.destatis.de/DE/PresseService/Bibliothek/Bibliothek.html" title="Link zur Pressemitteilung der Bibliothek des Statistischen Bundesamtes">Bibliothek des Statistischen Bundesamtes </a> teilt mit, dass die Statistischen Ämter des Bundes und der Länder eine „<a href="https://www.destatis.de/GPStatistik/" title="Link zur Statistischen Bibliothek">Statistische Bibliothek</a>“ auf der Basis von MyCoRe aufbauen. 
+      In dem gemeinsamen Archiv werden alle statistischen Online-Publikationen &#8212; Berichte, 
+      Monatszeitschriften und Jahrbücher &#8212; im Format <acronym title="PDF/A ist ein genormtes Format zur Langzeitarchivierung digitaler Dokumente. Level B sichert eindeutige visuelle Reproduzierbarkeit zu.">PDF/A-1b</acronym> archiviert und zum Download angeboten.
+      Recherchiert werden kann in den Titeldaten nach Herausgeber, Regionen, Themenbereichen 
+      und Schlüsselwörtern. Darüber hinaus ermöglicht die Volltextsuche eine inhaltliche 
+      Erschließung der statistischen Monatszeitschriften. 
+    </p>
+    <p class="kleinRight">12. Juni 2013, Wiebke Oeltjen</p>  <br /> 
+  </div>
+
+  <div style="clear: both;" />
+
+  <div>
     <a href="http://www.kulturwerte-mv.de/cms2/LAKD1_prod/LAKD1/de/Landesbibliothek/index.jsp?pid=48843"
     title="Postkarte von Stettin">
     <img alt="Postkarte von Stettin" class="float" src="images/stettin.png" />
@@ -56,8 +75,8 @@
     <p class="fett">Neue MyCoRe-Anwendung: Postkartenprojekt „Stettiner Ansichten“ </p>
 
     <p>
-      Die MyCoRe-Anwendung „<a href="http://esx-171.gbv.de:8291/content/below/index.xml" title="Link zur MyCoRe-Anwendung">
-      Stettiner Ansichten</a>“ zeigt seit gut einem Jahr historische Ansichtskarten.
+      Die MyCoRe-Anwendung „<a href="http://esx-171.gbv.de:8291/content/below/index.xml" 
+      title="Link zur MyCoRe-Anwendung">Stettiner Ansichten</a>“ zeigt seit gut einem Jahr historische Ansichtskarten.
       Mehr als 1300 Postkarten sind bereits mit Motiven der alten Hansestadt und Grüßen aus Stettin erfasst.
       Mit der Ausstellungseröffnung: „<a href="http://www.kulturwerte-mv.de/cms2/LAKD1_prod/LAKD1/de/Landesbibliothek/index.jsp?pid=48843">Ansichten aus dem alten Stettin</a>“
       wird nun auch die Web-Ausstellung stärker in den Focus der Öffentlichkeit gerückt.
