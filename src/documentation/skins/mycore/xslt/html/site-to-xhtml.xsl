@@ -35,7 +35,7 @@
         <xsl:call-template name="meta-script" />
     </head>
 
-    <body onload="init()">
+    <body>
 
         <xsl:if test="$page_name = 'home'">
             <xsl:attribute name="id">
@@ -239,7 +239,7 @@ $(document).ready(function() {
           <script type="text/javascript">
 <![CDATA[
       var map, select;
-      function init() {
+      $(document).ready(function() {
         map = new OpenLayers.Map('map_div',{
           projection: new OpenLayers.Projection("EPSG:900913"),
               displayProjection: new OpenLayers.Projection("EPSG: 4326"),
@@ -262,7 +262,7 @@ $(document).ready(function() {
                       projection: new OpenLayers.Projection("EPSG:4326"),
                     strategies: [new OpenLayers.Strategy.Fixed()],
                     protocol: new OpenLayers.Protocol.HTTP({
-                      url: "http://rosdok.uni-rostock.de/data/temp/mycore/mycore-standorte.kml",
+                      url: "map/mycore-standorte.kml",
                         format: new OpenLayers.Format.KML({
                             extractStyles: true,
                             extractAttributes: true
@@ -285,7 +285,7 @@ $(document).ready(function() {
                 new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
                 new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
               ), 6); // Zoom level
-      } //END init
+      }); //END ready
 
       function onPopupClose(evt) {
               select.unselectAll();

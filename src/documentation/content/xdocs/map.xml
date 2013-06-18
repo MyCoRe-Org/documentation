@@ -10,9 +10,5 @@
       <div id="map_contribution" style="width: 450px; font-size: 70%; text-align:right;">
         Map Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> <img style="padding-top:3px;" src="http://developer.mapquest.com/content/osm/mq_logo.png" />
       </div>
-      <div style="margin-top: 32px">
-      Standorte (KML): <br />
-      <a href="http://rosdok.uni-rostock.de/data/temp/mycore/mycore-standorte.kml">http://rosdok.uni-rostock.de/data/temp/mycore/mycore-standorte.kml</a>
-      </div>
   </body>
 </document>
