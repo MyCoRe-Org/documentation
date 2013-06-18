@@ -222,7 +222,7 @@ $(document).ready(function() {
         <link href = "{$root}skin/central.css"
               type = "text/css"
               rel  = "stylesheet" />
-        <xsl:if test="$path = 'map.html'">
+        <xsl:if test="$path = 'demo/map.html'">
           <link rel="stylesheet" href="{$root}skin/mycore-standorte.css" type="text/css" />
         </xsl:if>
     </xsl:template>
@@ -234,7 +234,7 @@ $(document).ready(function() {
         <script type="text/javascript"
                 language="javascript"
                 src="{$root}skin/jquery-1.7.1.min.js"></script>
-        <xsl:if test="$path = 'map.html'">
+        <xsl:if test="$path = 'demo/map.html'">
           <script type="text/javascript" src="{$root}skin/OpenLayers-2.12/OpenLayers.js"></script>
           <script type="text/javascript">
 <![CDATA[
@@ -262,7 +262,7 @@ $(document).ready(function() {
                       projection: new OpenLayers.Projection("EPSG:4326"),
                     strategies: [new OpenLayers.Strategy.Fixed()],
                     protocol: new OpenLayers.Protocol.HTTP({
-                      url: "map/mycore-standorte.kml",
+                      url: "demo/map/mycore-standorte.kml",
                         format: new OpenLayers.Format.KML({
                             extractStyles: true,
                             extractAttributes: true

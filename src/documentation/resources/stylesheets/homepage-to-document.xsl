@@ -21,8 +21,8 @@
                 <div class="well">
                     <div id="verbreitung">
                         <div id="standorte" class="">
-                            <span id="nummer"><a href="#" title="Liste aller Standorte ansehen">60+</a></span>
-                            <span id="label"><a href="#" title="Liste aller Standorte ansehen">Projekte</a></span>
+                            <span id="nummer"><a href="site:list" title="Liste aller Standorte ansehen">60+</a></span>
+                            <span id="label"><a href="site:list" title="Liste aller Standorte ansehen">Projekte</a></span>
                         </div>
                         <div id="mitglieder" class="">
                             <ul>
@@ -45,7 +45,7 @@
                          </div>
                         <div id="karte" class="">
                             <span id="label"><a href="#" title="Alle Projekte auf einer Karte anzeigen">Karte</a></span>
-                            <a href="#" title="Alle Projekte auf einer Karte anzeigen"><img src = "images/icon_karte.png"
+                            <a href="site:map" title="Alle Projekte auf einer Karte anzeigen"><img src = "images/icon_karte.png"
                                  class=""
                                  id  = ""
                                  alt = "" /></a>
