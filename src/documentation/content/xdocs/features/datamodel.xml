@@ -28,8 +28,8 @@
         <li>
           Objekte können untereinander in einer <strong>Beziehung</strong> stehen. 
           Dies kann ein Verweis sein (z. B. "Publikation" verweist auf "Person"), 
-          oder eine Vater-Kind-Beziehung ("ist-Teil-von", "besteht aus") mit Existenzabhängigkeit, 
-          z. B. Objekt "Zeitschrift" enthält "Artikel".
+          oder eine Vater-Kind-Beziehung ("ist-Teil-von", "besteht aus") mit Existenzabhängigkeit 
+          (z. B. Objekt "Zeitschrift" enthält "Artikel").
         </li>
         <li>
           <strong>Beispiel:</strong>
@@ -68,11 +68,16 @@
         zur Beschreibung von Objekten verwendet werden.
       </p>
       <p>
-        <a href="http://www.loc.gov/standards/mods/‎">MODS</a> (Metadata Object Description Schema) 
+        <link href="http://www.loc.gov/standards/mods/‎">MODS</link> (Metadata Object Description Schema) 
         ist ein XML-basiertes Metadatenschema der Library of Congress, für das MyCoRe bereits eine
         spezielle Unterstützung mit vordefinierter Funktionalität bietet. 
         Dazu gehören etwa der direkte Import von MODS-Metadaten als MyCoRe Objekte
         und die Abbildung auf MyCoRe Klassifikationen.
+      </p>
+      <p>
+        MODS wird zukünftig das von MyCoRe empfohlene Metadatenformat für Publikationsserver werden,
+        dem wir besondere Aufmerksamkeit und Funktionalität widmen. So wird die MyCoRe Beispielanwendung "DocPortal"
+        bald durch eine MODS-basierte Anwendung abgelöst.  
       </p>
     </section>
     <section>
@@ -128,7 +133,7 @@
       </p>
       <p>
         Klassifikationen können über eine XML-Struktur über Kommandozeilen-Befehle <strong>importiert und exportiert</strong> werden. 
-        Darüber hinaus gibt es auch einen <strong>Online-Editor</strong>, um Klassifikationen anzulegen und Kategorien zu bearbeiten.
+        Darüber hinaus gibt es auch einen <strong>Online-Klassifikationseditor</strong>, um Klassifikationen anzulegen und Kategorien zu bearbeiten.
         Mehrere in Publikationsservern häufig verwendete Klassifikationen stehen vordefiniert zur Verfügung, z. B.
         die ersten Ebenen der DDC, das Gemeinsame Vokabular, eine Liste der Sprachen nach RFC4646 und weitere.  
       </p>
@@ -150,14 +155,17 @@
       </p>
       <p>
         MyCoRe unterstützt direkt die Generierung, Vergabe und Verwaltung von
-        <link href="http://www.persistent-identifier.de/" title="Persistent Identifier - Service der DNB">
-        URNs - Persistent Identifiern im Namensraum urn:nbn:de</link>,
+        <link href="http://www.persistent-identifier.de/">URNs</link>,
+         Persistent Identifiern im Namensraum urn:nbn:de,
         wie sie die Deutsche Nationalbibliothek für E-Publikationen einsetzt. Für die Generierung
         von URNs stehen verschieden Algorithmen zur Verfügung, etwa auf Basis von Zeitstempeln oder fortlaufenden
         Zählern, die auch miteinander kombiniert werden können. MyCoRe speichert die URN, berechnet und testet 
         ggf. die zugehörige Prüfsumme und implementiert einen lokalen URN-Resolver. 
         Zugewiesene URNs können über die <strong>OAI-Schnittstelle</strong> im Datenformat <strong>Epicur</strong> an die
         Deutsche Nationalbibliothek gemeldet werden.
+      </p>
+      <p>
+        Eine vergleichbare, direktere Unterstützung für das Handle System ist in Entwicklung.
       </p>
     </section>
 

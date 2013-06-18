@@ -7,10 +7,10 @@
   </header>
   <body>
     <ul>
-      <li><a href="site:datamodel">Datenmodellierung</a></li>
+      <li><a href="site:datamodel">Das MyCoRe Datenmodell</a></li>
       <li><a href="site:search">Suche in Metadaten und Volltext</a></li>
       <li><a href="site:frontend">Weboberfläche, Benutzerschnittstellen</a></li>
-      <li><a href="site:interfaces">Standardisierte Schnittstellen (OAI-PMH 2.0, SOAP, z39.50, XML, Suchmaschinen)</a></li>
+      <li><a href="site:interfaces">Standardisierte Schnittstellen (OAI, SOAP, z39.50, XML, Suchmaschinen)</a></li>
       <li><a href="site:derivates">Dateiverwaltung, Streaming, Viewer</a></li>
       <li><a href="site:acl">Benutzer- und Zugriffsrechteverwaltung</a></li>
     </ul>
