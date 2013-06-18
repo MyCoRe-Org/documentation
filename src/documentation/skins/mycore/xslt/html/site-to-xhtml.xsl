@@ -35,7 +35,7 @@
         <xsl:call-template name="meta-script" />
     </head>
 
-    <body>
+    <body onload="init()">
 
         <xsl:if test="$page_name = 'home'">
             <xsl:attribute name="id">
@@ -48,7 +48,6 @@
                 <xsl:value-of select="'mycore_home'"/>
             </xsl:attribute>
         </xsl:if>
-
         <div class="container">
 
             <div class="row">
@@ -201,6 +200,7 @@ $(document).ready(function() {
                     </xsl:choose>
                 </xsl:for-each>
             </xsl:if>
+            <xsl:text> | MyCoRe</xsl:text>
         </title>
     </xsl:template>
 
@@ -222,6 +222,9 @@ $(document).ready(function() {
         <link href = "{$root}skin/central.css"
               type = "text/css"
               rel  = "stylesheet" />
+        <xsl:if test="$path = 'map.html'">
+          <link rel="stylesheet" href="{$root}skin/mycore-standorte.css" type="text/css" />
+        </xsl:if>
     </xsl:template>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -231,6 +234,94 @@ $(document).ready(function() {
         <script type="text/javascript"
                 language="javascript"
                 src="{$root}skin/jquery-1.7.1.min.js"></script>
+        <xsl:if test="$path = 'map.html'">
+          <script type="text/javascript" src="{$root}skin/OpenLayers-2.12/OpenLayers.js"></script>
+          <script type="text/javascript">
+<![CDATA[
+      var map, select;
+      function init() {
+        map = new OpenLayers.Map('map_div',{
+          projection: new OpenLayers.Projection("EPSG:900913"),
+              displayProjection: new OpenLayers.Projection("EPSG: 4326"),
+        });
+        var mapquestLayer = new OpenLayers.Layer.XYZ(
+            "MapQuest",
+                [
+                  "http://otile1.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
+                    "http://otile2.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
+                    "http://otile3.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
+                    "http://otile4.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png"
+                ],
+                {
+                  transitionEffect: "resize"
+                }
+        );
+        map.addLayer(mapquestLayer);
+
+        var kml =  new OpenLayers.Layer.Vector("MyCoRe Standorte", {
+                      projection: new OpenLayers.Projection("EPSG:4326"),
+                    strategies: [new OpenLayers.Strategy.Fixed()],
+                    protocol: new OpenLayers.Protocol.HTTP({
+                      url: "http://rosdok.uni-rostock.de/data/temp/mycore/mycore-standorte.kml",
+                        format: new OpenLayers.Format.KML({
+                            extractStyles: true,
+                            extractAttributes: true
+                        })
+                    })
+              });
+              map.addLayer(kml);
+
+              select = new OpenLayers.Control.SelectFeature(kml);
+            kml.events.on({
+                    "featureselected": onFeatureSelect,
+                    "featureunselected": onFeatureUnselect,
+                });
+
+              map.addControl(select);
+              select.activate();
+
+          map.setCenter(new OpenLayers.LonLat(10.25,51.5) // Center of the map
+              .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+              ), 6); // Zoom level
+      } //END init
+
+      function onPopupClose(evt) {
+              select.unselectAll();
+          }
+
+          function onFeatureSelect(event) {
+              var feature = event.feature;
+              // Since KML is user-generated, do naive protection against
+              // Javascript.
+              var content = "<h2>"+feature.attributes.name + "</h2>" + feature.attributes.description;
+              if (content.search("<script") != -1) {
+                  content = "Content contained Javascript! Escaped content below.<br>" + content.replace(/</g, "&lt;");
+              }
+              var pos = feature.geometry.getBounds().getCenterLonLat();
+              var popup = new OpenLayers.Popup.FramedCloud("mycoreapps",
+                  pos,
+                      null,
+                      content,
+                      null, true, onPopupClose);
+              popup.autoSize=true;
+              popup.maxSize =  new OpenLayers.Size(330,800);
+              feature.popup = popup;
+              map.addPopup(popup);
+          }
+
+          function onFeatureUnselect(event) {
+              var feature = event.feature;
+              if(feature.popup) {
+                  map.removePopup(feature.popup);
+                  feature.popup.destroy();
+                  delete feature.popup;
+              }
+          }
+]]>
+          </script>
+        </xsl:if>
     </xsl:template>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -38,9 +38,9 @@ imported document-to-html.xsl for details.
         </h1>
       </xsl:if>
       <xsl:if test="normalize-space(header/subtitle)!=''">
-        <h3>
+        <h2>
           <xsl:value-of select="header/subtitle"/>
-        </h3>
+        </h2>
       </xsl:if>
 <!--
       <xsl:apply-templates select="header/type"/>

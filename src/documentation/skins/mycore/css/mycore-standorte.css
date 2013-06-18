@@ -1,0 +1,63 @@
+/******************************************************
+ * CSS Stylesheet fuer MyCoRe Standort-Karte          *
+ ******************************************************/
+
+.olFramedCloudPopupContent{
+  font-size: 12px;
+  height: auto !important;
+}
+
+.olPopup h2 {
+  font-size: 1.2em;
+  margin-top:0px;
+}
+
+.olPopup h3{
+  font-size:100%;
+  font-weight: normal;
+  margin-top:12px;
+  margin-bottom:4px;
+}
+
+.olPopup p {
+  margin: 0px;
+  font-size: .9em;
+}
+
+
+div.mcrmap_item{
+  margin-bottom:4px;
+  width:100%;
+  display:table
+}
+
+
+div.mcrmap_item span{
+  display:table-cell;
+  vertical-align: middle;
+}
+
+div.mcrmap_item a{
+  display:table-cell;
+  vertical-align: middle;
+  text-decoration: none;
+  color: darkblue;
+}
+
+div.mcrmap_item a:FIRST-CHILD{
+  width:32px;
+}
+
+div.mcrmap_item a:VISITED{
+  text-decoration: none;
+}
+
+div.mcrmap_item img.icon{
+  margin-right:12px;
+  vertical-align: middle;
+  height:24px;
+}
+
+div.mcrmap_item img.info{
+  vertical-align: middle;
+}

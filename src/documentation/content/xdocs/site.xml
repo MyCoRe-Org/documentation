@@ -23,6 +23,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 <site label="MyCoRe Website" href="" xmlns="http://apache.org/forrest/linkmap/1.0">
 
   <welcome         label="Start" href="index.html" tab="welcome" />
+  <map             label="Karte" href="map.html" tab="welcome" />
 
 <!--  <about label="Organisation"        href="about/" tab="about">
     <index         label="Über MyCoRe"        href="index.html" />
