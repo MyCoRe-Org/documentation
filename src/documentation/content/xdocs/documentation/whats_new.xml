@@ -4,18 +4,22 @@
 <document>
   <header>
     <title>Was ist neu in Version 2013.06?</title>
-    <abstract>Nicht nur der Name hat sich mit dem aktuellen Release geändert. Die neue MyCoRe-Version
-    steht ganz im Zeichen von MODS und SOLR.</abstract>
+    <abstract>Der Name ist sicher die augenscheinlichste Änderung beim neuen MyCoRe-Release. Ab
+    sofort werden die Versionen nach Jahr.Monat.xx benannt. Aber auch funktional hat sich seit dem
+    letzten Release vieles getan. So gibt es viele Neuerungen im Bildbetrachter, eine umfassende
+    Unterstützung des MODS-Standards und alternativ zu Lucene kann ab sofort SOLR als Suchengine
+    eingesetzt werden.</abstract>
   </header>
   <body>
 
-    <h2>MODS</h2>
+    <h2>Unterstützung des MODS-Standards</h2>
     <dl>
       <dt>Beschreibung:</dt>
       <dd>
         Um den immer komplexer werdenen Anforderungen an Datenmodelle in Repositories gerecht zu werden,
-        unterstützt MyCoRe ab sofort MODS als Datenmodell. Man kann nun nicht nur MODS-Dokumente importieren,
-        sondern es steht auch alles für die Darstellung und den Umgang mit MODS-Dokumenten zur Verfügung.
+        unterstützt MyCoRe ab sofort MODS als Datenmodell (standardisiertes XML-Format für bibliografische
+        Metadaten). Man kann nun nicht nur MODS-Dokumente importieren, sondern es steht auch alles für
+        die Darstellung und den Umgang mit MODS-Dokumenten zur Verfügung.
         <br />
         <br />
       </dd>
@@ -23,7 +27,7 @@
       <dd>Thomas Scheffler, Frank Lützenkirchen und Kathleen Neumann</dd>
     </dl>
 
-    <h2>Bildbetrachter</h2>
+    <h2>Erweiterung des Bildbetrachters</h2>
     <dl>
       <dt>Beschreibung:</dt>
       <dd>
@@ -47,7 +51,7 @@
       <dd>Frank Lützenkirchen</dd>
     </dl>
 
-    <h2>Nutzerverwaltung </h2>
+    <h2>Neue Nutzerverwaltung </h2>
     <dl>
       <dt>Beschreibung:</dt>
       <dd>
@@ -59,7 +63,7 @@
       <dd>Thomas Scheffler</dd>
     </dl>
 
-    <h2>SOLR</h2>
+    <h2>SOLR als Alternative zu Lucene</h2>
     <dl>
       <dt>Beschreibung:</dt>
       <dd>

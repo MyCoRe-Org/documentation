@@ -25,13 +25,13 @@
 
   <p>
     Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
-    pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2013.06</strong> angepasst werden:
+    pom.xml (zu finden unter docportal/config) die MyCoRe-Version angepasst werden:
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2013.06.0&lt;/version>
+&lt;version>2013.06&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>

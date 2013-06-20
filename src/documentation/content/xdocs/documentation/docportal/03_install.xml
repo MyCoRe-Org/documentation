@@ -3,10 +3,10 @@
 
 <document>
   <header>
-    <title>Installation</title>
+    <title>Installation der MyCoRe-Beispielanwendung DocPortal</title>
   </header>
 <body>
-   <h2>der MyCoRe-Beispielanwendung DocPortal</h2>
+
    <p>
    Sind Java 1.7, Ant 1.7.1 und ein SVN-Client (siehe auch <a href="site:chapter2_ug21">02
    Voraussetzungen</a>) auf Ihrem Rechner installiert, können
@@ -28,14 +28,14 @@
    <note label="Warnung">Sie installieren auf diese Weise die aktuelle Entwicklungsversion. Diese ist
      nicht immer frei von Fehlern!</note>
    <p>
-   <a href="#"
+   <a href="http://sourceforge.net/projects/mycore/files/docportal/2.1/"
       ><img src="/images/download_mcr_21.png" alt="Link zum SF-Download" style="float:right;margin-left:20px;" /></a>
    Alternativ können Sie die Daten auch direkt bei Sourceforge herunterladen, dafür ist kein
-   SVN-Client notwendig. Momentan steht hier das aktuelle <a href="#"
-   >Release 2013.06</a> zum Download zur Verfügung. Nachdem Sie die Datei heruntergeladen
+   SVN-Client notwendig. Momentan steht hier das aktuelle <a href="http://sourceforge.net/projects/mycore/files/docportal/2.1/"
+   >Release 2.1-fixes</a> zum Download zur Verfügung. Nachdem Sie die Datei heruntergeladen
    haben, gehen Sie wie folgt vor:</p>
    <ol>
-   <li>Entpacken von docportal_RELEASE_201306.zip in das gewünschte Zielverzeichnis &lt;pfad&gt;</li>
+   <li>Entpacken von docportal_RELEASE_21_fixes.zip in das gewünschte Zielverzeichnis &lt;pfad&gt;</li>
    <li>Wechseln in dieses Verzeichnis und Aufruf von (achten Sie auch hierbei unter Windows den Pfad  &lt;pfad&gt;
    in Unix-Schreibweise anzugeben, also z.B. c:/Programme/docportal):</li>
    <li>ant -Ddestdir=&lt;pfad&gt; -f install.xml</li>
