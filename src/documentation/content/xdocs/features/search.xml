@@ -18,17 +18,17 @@
         das XML-Element <code>/metadata/titles/title</code> auf ein Suchfeld <code>title</code> abgebildet.
       </p>
       <img src="images/searchfield.png" alt="searchfield" title="searchfield.xml"/>
-      <p class="klein"><strong>Abbildung 1.11:</strong> Datei: searchfields.xml</p>
+      <p class="klein"><strong>Abbildung 1:</strong> Auszug aus der Datei searchfields.xml</p>
       <p>
         Dabei können auch komplexe Suchanfragen mit booleschen Ausdrücken (und/oder/nicht), Platzhaltern und Suchoperatoren
         gestellt werden. Der Datentyp eines Suchfeldes (ID, Name, Text, Zahl, Datum etc.) bestimmt die bei der Suche
         einsetzbaren Operatoren (z.B. Phrasensuche, Trunkierung, &lt;, &gt;, ...).
       </p>
-      <img src="images/mcrql.png" alt="MCR Query Language" title="Suchausdruck in MCR Query Language"/>
-      <p class="klein"><strong>Abbildung 1.12:</strong> Expertensuche: MCR Query Language</p>
+      <img src="images/mcrql.png" alt="MCR Query Language" title="Suchausdruck in MCRQueryLanguage"/>
+      <p class="klein"><strong>Abbildung 2:</strong> Expertensuche mit der MyCoRe-Anfragesprache</p>
       <p>
         Die Suche in MyCoRe ist auf Basis von
-        <link href="http://lucene.apache.org" target="_blank" title="Apache Lucene Home">Apache Lucene</link>
+        <link href="http://lucene.apache.org" title="Apache Lucene Home">Apache Lucene</link>
         realisiert. Obwohl auch andere Implementierungen denkbar sind, ist dies
         die zur Zeit einzige Implementierung der MyCoRe Suche, die für den Produktionseinsatz sinnvoll ist.
         Über Lucene durchlaufen indizierte Texte ggf. verschiedene Normalisierungsschritte wie Stammwortreduktion (Stemming) und
@@ -42,8 +42,8 @@
         Suchmasken bis hin zu frei formulierbaren Experten-Abfragen in der MyCoRe Query Language (MCRQL). Suchmasken können
         selbst erstellt oder aus einer Konfiguration von Suchfeldern automatisch generiert werden.
       </p>
-      <img src="images/searchmask.png" alt="Suchmaske" title="DocPortal Suchmaske"/>
-      <p class="klein"><strong>Abbildung 1.13:</strong> Beipsiel: Suchmaske</p>
+      <img src="images/searchmask.png" alt="Suchmaske" title="DuEPublico Suchmaske"/>
+      <p class="klein"><strong>Abbildung 3:</strong> Beispiel einer Suchmaske</p>
       <p>
         Trefferlisten sind auf- oder absteigend nach mehreren Feldern beliebig sortierbar. Die ursprüngliche Suche kann angezeigt
         ("Sie haben gesucht nach: ...") oder noch einmal verfeinert werden (Rückkehr zum Suchformular mit Anpassung der

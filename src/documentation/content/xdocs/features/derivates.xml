@@ -52,7 +52,7 @@
         Bitrate, Framerate und Abspieldauer angezeigt werden.
         </p>
         <img src="images/videostreaming.png" alt="Video-Streaming" title="Video-Streaming"/>
-        <p class="klein"><strong>Abbildung 1.5:</strong> Anzeige Real-Player und Metadaten</p>
+        <p class="klein"><strong>Abbildung 4:</strong> Anzeige Real-Player und Metadaten</p>
       <p>
         Unterstützt wird der <link href="https://helix-server.helixcommunity.org/" title="Helix Community" target="_blank">
         Helix-Server (Real)</link>
@@ -73,8 +73,8 @@
         Der Image Viewer kann einfach in einen Dokumentenserver integriert werden. Beim Import eines Bildes werden erforderliche
         Zoomstufen automatisch von MyCoRe generiert und intern zwischengespeichert.
         </p>
-        <img src="images/imageviewer.png" alt="Image Viewer" title="Image Viewer"/>
-        <p class="klein"><strong>Abbildung 1.6:</strong> Modul: Image Viewer</p>
+        <img src="images/imageviewer.png" alt="Bildbetrachter (iView2)" title="Beispiel aus der Anwendung HisBest"/>
+        <p class="klein"><strong>Abbildung 5:</strong> Bildbetrachter</p>
     </section>
 
 </body>
