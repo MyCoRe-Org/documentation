@@ -1,0 +1,402 @@
+@media screen
+{
+    body
+    {
+        overflow-y: scroll;     /* always show right scrollbar */
+        background-color: #ffffff;
+        background-image: url("../images/background_white_to_gray.jpg");
+        background-repeat: repeat-x;
+        background-attachment: fixed;
+        background-position: 0px 100%;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-size: auto auto;
+        font-family: 'Sintony', sans-serif;
+        }
+    /*
+    h1, h2, h3, h4, h5 {font-family: 'Source Code Pro', sans-serif; font-weight: normal;}*/
+    h1 {font-size:28px;}
+    h2 {font-size:24px;}
+    h3 {font-size:20px;}
+    h4 {font-size:16px;}
+    h5 {font-size:14px;}
+    #header {
+        margin-top: 10px;
+        height: 80px;
+        background-color: transparent;
+        background-image: url("../images/background_header_blue_xml.png");
+        background-repeat: repeat-none;
+        }
+    #topnav {
+        height: 30px;
+        background-color: transparent;
+        background-image: url("../images/background_dark_blue_30.png");
+        background-repeat: repeat-none;
+        }
+    #main {
+        min-height: 400px;
+        background-color: transparent;
+        background-image: url("../images/background_gray_stripes_shadowfree.png");
+        background-repeat: repeat-y;
+        padding: 20px 0px;
+        }
+    #footer {
+        height: 31px;
+        background-color: transparent;
+        background-image: url("../images/background_footer_blue_xml.png");
+        background-repeat: no-repeat;
+        }
+    #content_home {
+        margin: 0 45px 0 45px;
+        }
+    #content_home h1#project_name {
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 20px;
+
+        }
+    #content_home p#short_description {
+        text-align: center;
+        margin: 30px 0 40px 0;
+        font-size: 20px;
+
+        }
+    #content_home img.img-circle {
+        width: 100px;
+        height: 100px;
+        }
+    #content_home img.img-rounded {
+        width: 40px;
+        height: 40px;
+        }
+    #content_home #short_features {
+        margin: 0px 0 40px 0;
+        }
+    #big_content #content {
+        margin: 0 35px 0 35px;
+        }
+    #sub_content #content {
+        margin: 0 35px 0 0;
+        }
+        #mycore_home .pdflink { display:none; }
+/* ----------------------------------------------------------------------------
+    search
+------------------------------------------------------------------------------*/
+    .navbar-search {
+        margin: 26px 35px 0 0;
+        }
+    .navbar-search input {
+        margin: 0;
+        width: 250px;
+
+        /* overwrite bootstrap settings */
+        font-family: 'Sintony', sans-serif;
+        font-size: 12px;
+        line-height: 16px;
+        height: 16px;
+        padding: 2px 6px;
+        line-height: 16px;
+        border: 1px solid #354953;
+        }
+    .navbar-search .btn {
+        margin: 0 0 0 -40px;
+
+        /* overwrite bootstrap settings */
+        background-color: #15516e;
+        *background-color: #15516e;
+        background-image: -moz-linear-gradient(top, #15516e, #354953);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#15516e), to(#354953));
+        background-image: -webkit-linear-gradient(top, #15516e, #354953);
+        background-image: -o-linear-gradient(top, #15516e, #354953);
+        background-image: linear-gradient(to bottom, #15516e, #354953);
+        border-bottom-color: #444;
+        padding: 2px 12px;
+        font-size: 12px;
+        line-height: 16px;
+        }
+/* ----------------------------------------------------------------------------
+    feedback
+------------------------------------------------------------------------------
+    html structure:
+
+        div#feedback
+            a
+---------------------------------------------------------------------------- */
+    #feedback {
+            margin: 2px 0 0 35px;
+            float: left;
+        }
+    #feedback a {
+            color: white;
+            font-size:12px;
+        }
+/* ----------------------------------------------------------------------------
+    footer menu
+------------------------------------------------------------------------------
+    html structure:
+
+        div#footer_menu
+            a
+---------------------------------------------------------------------------- */
+    #footer_menu {
+            color: #ccc;
+            margin: 2px 35px 0 0px;
+        }
+    #footer_menu a {
+            color: white;
+            font-size:12px;
+        }
+/* ----------------------------------------------------------------------------
+    icons - bootstrap path replacement
+------------------------------------------------------------------------------*/
+    [class^="icon-"],
+    [class*=" icon-"] {
+       background-image: url("../images/glyphicons-halflings.png");
+       }
+    .icon-white,
+    .nav-pills > .active > a > [class^="icon-"],
+    .nav-pills > .active > a > [class*=" icon-"],
+    .nav-list > .active > a > [class^="icon-"],
+    .nav-list > .active > a > [class*=" icon-"],
+    .navbar-inverse .nav > .active > a > [class^="icon-"],
+    .navbar-inverse .nav > .active > a > [class*=" icon-"],
+    .dropdown-menu > li > a:hover > [class^="icon-"],
+    .dropdown-menu > li > a:focus > [class^="icon-"],
+    .dropdown-menu > li > a:hover > [class*=" icon-"],
+    .dropdown-menu > li > a:focus > [class*=" icon-"],
+    .dropdown-menu > .active > a > [class^="icon-"],
+    .dropdown-menu > .active > a > [class*=" icon-"],
+    .dropdown-submenu:hover > a > [class^="icon-"],
+    .dropdown-submenu:focus > a > [class^="icon-"],
+    .dropdown-submenu:hover > a > [class*=" icon-"],
+    .dropdown-submenu:focus > a > [class*=" icon-"] {
+       background-image: url("../images/glyphicons-halflings-white.png");
+       }
+/* ----------------------------------------------------------------------------
+    news
+------------------------------------------------------------------------------
+---------------------------------------------------------------------------- */
+    #news h3 {
+        color: #15516e;
+        font-weight: normal;
+        font-family: 'Sintony',sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 10px 20px 0px 20px;
+        padding: 0 0 0 18px;
+        border-right: 1px solid #ddd;       /* gray stroke to the right */
+        background-position: 0px 6px;       /* background adjustment */
+        background-repeat: no-repeat;
+        background-image: url("../images/icon_arrow_down_orange.png");
+        }
+    #news a {
+        color: #444;                        /* normal menu color */
+        display: block;                     /* use full list entry width */
+        padding-left: 18px;                 /* space for background image*/
+        text-decoration: none;
+        background-position: 0px 5px;       /* background adjustment */
+        background-repeat: no-repeat;
+        }
+    #news a:hover {
+        background-image: url("../images/icon_bracket_gray.png");
+        }
+    #news a.external:hover {
+        background-image: url("../images/icon_arrow_gray.png");
+        }
+    #news ul {
+        list-style: none;                   /* no list dots */
+        padding: 20px 10px 20px 0;             /* reset */
+        border-right: 1px solid #ddd;       /* gray stroke to the right */
+        margin: 0px 20px 0px 20px;          /* for stroke position only */
+        }
+    #news li {
+        margin: 0px 0 20px 0;               /* space between the entries */
+        line-height: 14px;
+        font-size: 10px;
+        color: #888;
+        text-align: left;
+        }
+    #news .message {
+        color: #666;
+        font-size: 13px;
+        line-height: 20px;
+        margin: 0 0 4px 0;
+        display:block;
+        }
+    #news .author,
+    #news .date {
+        white-space: nowrap;
+        display: block;
+        padding-left: 18px;
+        }
+
+/* ----------------------------------------------------------------------------
+    Standorte
+------------------------------------------------------------------------------
+---------------------------------------------------------------------------- */
+    #verbreitung {
+        height: 30px;
+
+    }
+    #standorte,
+    #mitglieder,
+    #karte {
+        float: left;
+    }
+    #standorte {
+        width: 140px;
+        border-right: 1px solid #ccc;
+        margin-right: 0px;
+        Line-height: 30px;
+    }
+    #standorte #nummer{
+        font-size: 26px;
+        font-weight: bold;
+        color: orange;
+        display:block;
+        float:left;
+    }
+    #standorte #nummer a{
+        color: orange;
+    }
+    #verbreitung a:hover{
+        text-decoration:none;
+    }
+    #standorte #label{
+        font-size: 16px;
+        padding: 0 0 0px 5px;
+    }
+    #standorte #label a{
+        color: #666;
+    }
+         #standorte #label a:hover{
+        text-decoration:none;
+    }
+    #mitglieder  {
+        width: 550px;
+        text-align: center;
+        margin-top: -8px;
+        line-height: 24px;
+    }
+    #mitglieder ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+    }
+    #mitglieder li {
+        margin: 0;
+        padding: 0;
+        display: inline;
+        margin-left: 10px;
+
+    }
+
+    #mitglieder a {
+        color: #666;
+        font-family: 'Source Code Pro', sans-serif;
+        padding-left: 20px;
+    }
+    #mitglieder a:hover {
+        color: black;
+        background-image: url("../images/icon_arrow_orange.png");
+        background-repeat: no-repeat;
+        background-position: 0 3px;
+    }
+    #karte {
+        font-size: 16px;
+        width: 100px;
+        float: right;
+        border-left: 1px solid #ccc;
+        color: #666;
+        Line-height: 30px;
+        padding-left: 20px;
+    }
+    #karte a{
+        color: #666;
+    }
+    #karte img {
+        margin: -5px 0px 0 10px;
+    }
+    .well { padding-right:0; margin-bottom: 30px;}
+/* ----------------------------------------------------------------------------
+    news at footer
+------------------------------------------------------------------------------
+---------------------------------------------------------------------------- */
+#news_down {        overflow: hidden; }
+    #news_down h4 {
+        text-align: center;
+        }
+    #news_down a {
+        /*background-image: url("../images/icon_bracket_gray.png");*/
+        text-decoration: none;
+        color: #666;
+        display:block;
+        background-repeat: no-repeat;
+        background-position: 0px 6px;       /* background adjustment */
+        }
+    #news_down a.external {
+        /*background-image: url("../images/icon_arrow_gray.png");*/
+        }
+    #news_down a:hover {
+        background-image: url("../images/icon_bracket_orange.png");
+        background-repeat: no-repeat;
+        text-decoration: none;
+        color: #000;
+        }
+    #news_down a.external:hover {
+        background-image: url("../images/icon_arrow_orange.png");
+        }
+    #news_down ul {
+        list-style: none;                   /* no list dots */
+        padding: 0px 0px 0px 0;             /* reset */
+        border-right: 0px solid #ddd;       /* gray stroke to the right */
+        margin: 0px 0px 0px 0px;          /* for stroke position only */
+        }
+    #news_down li {
+        line-height: 14px;
+        font-size: 10px;
+        text-align: left;
+        display:block;
+        float:left;
+        width:190px;
+        min-height: 120px;
+        margin: 0 0px 0 0;
+        padding:10px;
+        background-image: url("images/background_newspaper.png");
+        background-position: bottom right;
+        border-right: 1px solid #ccc;
+        }
+    #news_down li#entry_2 {
+                margin: 0 0px 0 0;
+    }
+    #news_down li#entry_3 {
+                margin: 0 0px 0 0;
+    }
+    #news_down li#entry_4 {
+                margin: 0 0px 0 0;
+                float:right;
+                border-right: 0px solid #ccc;
+    }
+    #news_down .message {
+        font-size: 13px;
+        line-height: 20px;
+        margin: 0 0 4px 0;
+        display:block;
+        text-align: center;
+        }
+    #news_down .author,
+    #news_down .date {
+        white-space: nowrap;
+        display: block;
+        padding-left: 18px;
+        display:none;
+        }
+
+    .fix {
+        position:fixed;
+        top:0;
+        z-index:9999;
+        }
+}

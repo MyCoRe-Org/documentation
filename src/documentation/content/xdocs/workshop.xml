@@ -3,59 +3,59 @@
 
 <document>
   <header>
-    <title>MyCoRe-Workshop </title>
-    <subtitle> am 12./13. November 2012 in Berlin </subtitle>
+    <title>MyCoRe-Workshop 2013</title>
+    <subtitle>12./13. November in Leipzig</subtitle>
   </header>
 <body>
 
-<section>
- <title>Einladung</title>
-
+<p><strong>Ankündigung</strong></p>
   
-<p>Die MyCoRe-Community lädt alle MyCoRe-Anwender und Interessierten zum Workshop ein! <br />
+<p>Der MyCoRe-User-Workshop findet dieses Jahr in Leizig statt. 
+   An zwei halben Tagen &#8211; Mittwochnachmittag, dem 13.11. und Donnerstagvormittag, 
+   dem 14.11. &#8211; sind wir zu Gast an der Universität Leipzig.
    Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen den MyCoRe-Anwendern und Interessierten zu 
    ermöglichen und Gelegenheit für Fragen an die Entwickler zu bieten. <br/>
-   Die Themen des Workshops werden noch gesammelt. Anregungen und Vorschläge können im 
+   Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben. Anregungen und Vorschläge können im 
    <a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" target="_blank">
    MyCoRe-Wiki</a> eingetragen werden. 
 </p>
-<p>
+<!--<p>
   <a href="http://www.mycore.de:8291/content/below/workshop.xml?xsl=workshop&amp;goto=http%3A%2F%2Fcmswiki.rrz.uni-hamburg.de%2Fhummel%2FMyCoRe%2FOrganisation%2FAnwenderWorkshop2012"><strong><font color="darkred">Hier können Sie sich für den Workshop anmelden!</font></strong></a>
-</p> 
-</section>
+</p> -->
 
-<section>
-  <title>Weitere Informationen</title>  
-  <p>Weitere Informationen werden in Kürze bekannt gegeben. Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:office" target="_blank">MyCoRe Geschäftsstelle</a>.</p>
- </section>
 
+<p><strong>Weitere Informationen</strong></p>
+  <p>Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:office" target="_blank">MyCoRe Geschäftsstelle</a>.</p>
+
+<!--
 <section>
 <title>Wegbeschreibung</title>
   
 <p>
-Der Workshop findet an der <strong><a title=" Staatsbibliothek zu Berlin" href="http://staatsbibliothek-berlin.de/">Staatsbibliothek zu Berlin</a></strong> im Haus <strong><a title=" Staatsbibliothek zu Berlin" href="http://staatsbibliothek-berlin.de/vor-ort/standorte/anfahrt-anreise/lageplan/">Potsdamer Straße</a></strong> im <strong>Hörsaal 320</strong> statt. 
+Der Workshop findet an der <strong><a title="Universität Leipzig" href="http://staatsbibliothek-berlin.de/">Universität Leipzig</a></strong> im <strong>Raum A 120</strong> statt. 
 <p class="fett">Adresse</p>
-    Staatsbibliothek zu Berlin - Preussischer Kulturbesitz<br />
-    Potsdamer Str. 33<br />
-    10785 Berlin <br />
+    <br />
+    <br />
+    Leipzig<br />
 </p>
 <p class="fett">Siehe <a title="Anfahrt zum Haus Potsdamer Straße" target="_blank" href="http://staatsbibliothek-berlin.de/vor-ort/standorte/anfahrt-anreise/">Anfahrt</a> zum Haus Potsdamer Straße.</p>
 
 </section>
+-->
 
-<section>
-<title>Hotelinformationen</title>
+<p><strong>Hotelinformationen</strong></p>
 <p>
-    <a title="Auswahl an Hotels im Wiki" target="_blank" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2012#Hotelinformationen">Hotelinformationen im Wiki</a>
+    <a title="Auswahl an Hotels im Wiki" target="_blank" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013#Hotelinformationen">Hotelinformationen im Wiki</a>
   </p>
-</section>
 
+<!--
 <section>
  <title>Anmeldung</title>
+
  <p> Bitte melden Sie sich 
-   <strong><a href="http://www.mycore.de:8291/content/below/workshop.xml?xsl=workshop&amp;goto=http%3A%2F%2Fcmswiki.rrz.uni-hamburg.de%2Fhummel%2FMyCoRe%2FOrganisation%2FAnwenderWorkshop2012">hier</a></strong> an.
+   <strong><a href="http://www.mycore.de:8291/content/below/workshop.xml?xsl=workshop&amp;goto=http%3A%2F%2Fcmswiki.rrz.uni-hamburg.de%2Fhummel%2FMyCoRe%2FOrganisation%2FAnwenderWorkshop2013">hier</a></strong> an.
  </p>
-</section> 
+</section> -->
 </body>
 </document>
 

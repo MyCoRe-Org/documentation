@@ -2,30 +2,108 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
 
 <document>
-<header> 
+<header>
  <title>Archiv</title>
  <abstract>Hier sind seit 2006 alle Snapshots gelistet. Ebenfalls archiviert ist das
  Release 2.0. Danach wurde die Benennung geändert, so gibt es jetzt statt eines
  Snapshots in regelmäßigen Abständen Prereleases. Auch diese sind in diesem Archiv zu
  finden.</abstract>
 </header>
- 
+
  <body>
- 
+
+  <section>
+    <title>Prerelease 2.1.80 (Beta 1)</title>
+    <p>
+      Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
+      pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2.1.80</strong> angepasst werden:
+      <source>
+    &lt;groupId>org.mycore&lt;/groupId>
+    &lt;artifactId>application-model&lt;/artifactId>
+    &lt;version>2.1.80&lt;/version></source>
+
+      Anschliessend muss die Anwendung neu erstellt werden (<code>ant resolve create.jar create.scripts create.webapp</code>).
+    </p>
+
+    <p>
+      <a href="#"
+        ><img src="/images/download_mcr_rc20.png" alt="Link zum SF-Download" style="float:right;" /></a>
+      Alternativ steht DocPortal mit dem aktuellen <a href="#"
+      >Release-Candidate 2.1.80</a> zum Download zur Verfügung. Die dazugehörige Installationsanleitung finden Sie
+     im <a href="site:chapter3_ug22">UserGuide</a>.
+    </p>
+
+    <h2>Changes in this version include</h2>
+    <h3>New features</h3>
+    <ul>
+      <li>?XSL.Style=versions on "/receive/*" URLs displays version information</li>
+      <li>added mycore-solr to add Apache SOLR support</li>
+      <li>added MCRIFSCommands to operate on IFS from CLI</li>
+      <li>added MCRLockServlet to lock metadata update forms</li>
+      <li>added mycore-classeditor - a new classeditor that uses RESTful web services</li>
+      <li>added JAX-RS support via Apache Jersey</li>
+      <li>added mycore-migration21-22 component</li>
+      <li>added mycore-wfc (workflow component)</li>
+      <li>added MCRContent and MCRContentTransformer classes</li>
+      <li>added mycore-user2 component</li>
+      <li>added org.mycore.datamodel.language.* for code-independent representation for languages used in datamodels</li>
+      <li>added MCRLoggingCommands to change log levels through webcli</li>
+      <li>added MCRTarServlet to generate tar files</li>
+      <li>added many editor forms for different mods document types</li>
+      <li>added MCRPersistentServlet to circumvent mycore-swf</li>
+      <li>all deleted items are stored in table MCRDELETEDITEMS</li>
+      <li>added MCRExternalProcess to launch command line processes</li>
+      <li>added support to generate PDF documents in image viewer.
+          see: <a href="http://www.mycore.de/svn/maven/mets-printer/">http://www.mycore.de/svn/maven/mets-printer/</a></li>
+      <li>Added templates for share/subscribe buttons. See share.xsl and document metadata details view in DocPortal for an example.</li>
+      <li>Added basket functionality to web front end. A basket collects objects in the user's session.
+          Objects can be added, removed, their order can be changed and the basket can be cleared completely.
+          There can be different baskets for different purposes within the same session.</li>
+      <li>added MODS datamodel support through mycore-mods</li>
+    </ul>
+
+    <h3>Fixed Bugs</h3>
+    <ul>
+      <li>instances of MCRSession are bound to the first IP address (see <a href="http://sourceforge.net/p/mycore/bugs/570/">#570</a>)</li>
+      <li>MyCoRe is fully xlink 1.1 conform (see <a href="http://sourceforge.net/p/mycore/bugs/516/">#516</a>)</li>
+    </ul>
+
+    <h3>Changes</h3>
+    <ul>
+      <li>MCRLayoutService uses MCRContent and MCRXSLTransformer to pipe XML through a set of XSL templates.</li>
+      <li>mycore-media: many improvements</li>
+      <li>new OAI implementation</li>
+      <li>mycore-mets: many improvements to mets editor</li>
+      <li>mycore-iview2: many improvements</li>
+      <li>update to maven 3</li>
+      <li>MCRURIResolver now implements EntityResolver2</li>
+      <li>added support to switch XSL-FO implementation</li>
+    </ul>
+
+    <h3>Removed</h3>
+    <ul>
+      <li>removed MCRFSMapperServlet</li>
+      <li>removed old OAI implementation</li>
+      <li>removed mycore-imaging, mycore-iview and mycore-migration20-21 component</li>
+    </ul>
+
+
+  </section>
+
    <section>
    <title>Prerelease 2.0.94</title>
   <p>
     Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
     pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2.0.94</strong> angepasst werden:
-    
+
     <source>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>application-model&lt;/artifactId>
   &lt;version>2.0.94&lt;/version></source>
-  
+
     Anschliessend muss die Anwendung neu erstellt werden.
   </p>
-  
+
   <p>
     <a href="http://sourceforge.net/projects/mycore/files/docportal/rc/docportal-2.0.94.zip/download"
       ><img src="/images/download_mcr_rc20.png" alt="Link zum SF-Download" style="float:right;" /></a>
@@ -50,7 +128,7 @@
       </ul>
     </li>
   </ul>
-  
+
   <h3>Fixed Bugs</h3>
   <ul>
     <li>Validation fails when creating new user account (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3118487&amp;group_id=92005&amp;atid=599192">3118487</a>)</li>
@@ -75,14 +153,14 @@
     <li>Adding manager class for creating, get, removing store in IFS2. MCRStore is no longer responsible for these operations.</li>
     <li>Merged mycore-useradmin and mycore-userlogin component into mycore-user moved user system related code from mycore-base to mycore-user.</li>
     <li>Separate ACL system from User system
-        MCRUserMagr.login() now actually logs a (MCR) user in 
+        MCRUserMagr.login() now actually logs a (MCR) user in
         Guest User is not physically stored in database anymore
         A default group for new users can be configured via property (defaults to "users"):
         MCR.Users.DefaultGroupName.
     </li>
-  </ul> 
+  </ul>
    </section>
- 
+
   <section>
    <title>Prerelease 2.0.93</title>
    <p>
@@ -95,12 +173,12 @@
    <p>
      Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
      pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2.0.93</strong> angepasst werden:
-    
+
     <source>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>application-model&lt;/artifactId>
   &lt;version>2.0.93&lt;/version></source>
-  
+
      Anschliessend muss die Anwendung neu erstellt werden.
    </p>
    <p>
@@ -120,7 +198,7 @@
      <li>Added xsl templates "derivateView" and "derivateLinkView" as an adapter for IView and IView2</li>
      <li>Added MCRApplicationModuleSelector to detect mycore application modules.</li>
    </ul>
-   
+
    <h3>Fixed Bugs</h3>
    <ul>
      <li>Renamed property URN.Enabled.Objects to MCR.URN.Enabled.Objects</li>
@@ -130,89 +208,89 @@
          See "create.users" target in docportal module as example.
        </p>
      </li>
-   </ul> 
+   </ul>
 
    <h3>Changes</h3>
    <p>mycore-migration20-21 classes are now in package org.mycore.migration20_21</p>
   </section>
 
   <section>
-	  <title>Release 2.0</title>
-	  <p>Die MyCoRe-Version 2.0 besteht aus zwei Teilen:</p>
-	  <ol>
-	    <li><strong>MyCoRe:</strong><br />
-	    Der MyCoRe "Kern" beinhaltet eine Reihe von Komponenten, die grundlegende Funktionen zur Bildung von 
-	    digitalen Archiven und Sammlungen bereitstellen. Er ist gleich für alle Anwendungen und unterstützt 
-	    verschiedene Backends. Lucene wird als Such-Engine für Metadaten und 
-	    Volltextinhalte verwendet. In der Standardkonfiguration greift MyCoRe mittels des Open Source 
-	    Produktes Hibernate auf entsprechend unterstützte Datenbanksysteme (HSQLDB, MySQL, PostgreSQL, DB2 
-	    u.v.a.m.) zu. Als Katalog (Speicher für Metadaten, ACLs, Administrative Informationen) kann neben der 
-	    frei verfügbaren Kombination Lucene  + Open-Source-DBS auch der IBM Content Manager v8.x + DB2 
-	    verwendet werden.</li>
-	    <li><strong>DocPortal Beispielanwendung:</strong>  <br />
-	    DocPortal ist eine Beispielanwendung eines Dokument-Servers. Die Anwendung implementiert 
-	    ein Archiv für digitale, multimediale Dokumente und kann als Publikationsserver eingesetzt werden. 
-	    Sie verwendet ein Dublin Core Datenmodell.    
-	    <a target="_blank" href="http://www.mycore.de:8291/" title="Link zur MyCoRe-Beispielanwendung DocPortal">
-	    Klicken Sie hier, um DocPortal in Aktion zusehen.</a> Beachten Sie 
-	    bitte, dass dies nur eine Demonstration ist, um einen Eindruck zu vermitteln, welche Art von Anwendung 
-	    Sie mit MyCoRe aufbauen können. Es ist keinesfalls alle denkbaren Einsatzgebiete von MyCoRe ab.</li>
-	  </ol>
-	
-	  <p class="fett">Andere auf MyCoRe basierende Applikationen:</p> 
-	  <p> 
-	  Es existieren zahlreiche auf MyCoRe basierende Anwendungen, die auch selbst Open Source Produkte sind, 
-	  aber nicht Teil dieser Distribution sind. Eine <a href="site:applications" 
-	  title="Link zu den MyCoRe-basierten Anwendungen">Übersicht finden Sie hier</a>.
-	  </p>
-	
-	  <p class="fett">Dokumentation und Start</p>
-	  <p>
-	  Wenn Sie MyCoRe bzw. die Beispielanwendung DocPortal testen wollen, oder einfach nur mal sehen wollen, 
-	  was MyCoRe eigentlich ist, empfehlen wir die Binärdistribution. Zur Anwendungsentwicklung und weiteren 
-	  Arbeit mit MyCoRe starten Sie am besten mit der Dokumentation.
-	  </p>
-	  <p class="break">Sie können die <a href="site:overview" title="MyCoRe-Dokumentation">Dokumentation online</a> lesen</p>
-	  <p>
-	  Momentan steht die Dokumentation leider nur in deutsch zur Verfügung, eine englische Version ist geplant.
-	  </p>
-	
-	  <p>
-	  <strong>Option 1: MyCoRe von unserem Subversion Repository auschecken</strong><br />
-	  Wir empfehlen MyCoRe und DocPortal direkt von unserem Subversion Repository zu laden. Sie benötigen 
-	  dafür einen  <a href="http://subversion.apache.org/" target="_blank" title="Subversion">frei verfügbaren Subversion 
-	  Client</a>, um auf das Repository anonym im read-only Modus zugreifen zu können:
-	  </p>
-	
-	  <source>
-	  svn checkout http://www.mycore.de/svn/mycore/branches/release_2_0_fixes/ mycore
-	  svn checkout http://www.mycore.de/svn/docportal/branches/release_2_0_fixes/ docportal</source>
-	
-	  <p>
-	  <strong>Option 2: Download MyCoRe als tar.gz oder zip Archiv</strong> <br />
-	  Alternativ können Sie auch die folgenden zwei tar Archive bei  
-	  <a target="_blank" href="http://sourceforge.net/projects/mycore/" title="Das MyCoRe-Projekt bei Sourceforge"> 
-	  Sourceforge</a> herunterladen und in 
-	  Ihrem lokalen Verzeichnis auf einem Linux, Sun Solaris oder IBM AIX System extrahieren. Für das 
-	  Extrahieren empfehlen wir aufgrund der Verwendung langer Filenamen GNU tar.
-	  </p>
-	  <ul>
-	      <li><a href="http://prdownloads.sourceforge.net/mycore/mycore-RELEASE_2.0.2.tar.gz?download">mycore-RELEASE_2.0.2.tar.gz</a></li>
-	      <li><a href="http://prdownloads.sourceforge.net/mycore/docportal-RELEASE_2.0.2.tar.gz?download">docportal-RELEASE_2.0.2.tar.gz</a></li>
-	  </ul>
-	
-	  <p>
-	  Für die Installation auf einem Windows System können Sie alternativ diese zwei ZIP Archive 
-	  herunterladen und extrahieren.
-	  </p>
-	    <ul>
-	      <li><a href="http://prdownloads.sourceforge.net/mycore/mycore-RELEASE_2.0.2.zip?download">mycore-RELEASE_2.0.2.zip</a></li>
-	      <li><a href="http://prdownloads.sourceforge.net/mycore/docportal-RELEASE_2.0.2.zip?download">docportal-RELEASE_2.0.2.zip</a></li>
-	    </ul>
-	
+    <title>Release 2.0</title>
+    <p>Die MyCoRe-Version 2.0 besteht aus zwei Teilen:</p>
+    <ol>
+      <li><strong>MyCoRe:</strong><br />
+      Der MyCoRe "Kern" beinhaltet eine Reihe von Komponenten, die grundlegende Funktionen zur Bildung von
+      digitalen Archiven und Sammlungen bereitstellen. Er ist gleich für alle Anwendungen und unterstützt
+      verschiedene Backends. Lucene wird als Such-Engine für Metadaten und
+      Volltextinhalte verwendet. In der Standardkonfiguration greift MyCoRe mittels des Open Source
+      Produktes Hibernate auf entsprechend unterstützte Datenbanksysteme (HSQLDB, MySQL, PostgreSQL, DB2
+      u.v.a.m.) zu. Als Katalog (Speicher für Metadaten, ACLs, Administrative Informationen) kann neben der
+      frei verfügbaren Kombination Lucene  + Open-Source-DBS auch der IBM Content Manager v8.x + DB2
+      verwendet werden.</li>
+      <li><strong>DocPortal Beispielanwendung:</strong>  <br />
+      DocPortal ist eine Beispielanwendung eines Dokument-Servers. Die Anwendung implementiert
+      ein Archiv für digitale, multimediale Dokumente und kann als Publikationsserver eingesetzt werden.
+      Sie verwendet ein Dublin Core Datenmodell.
+      <a target="_blank" href="http://www.mycore.de:8291/" title="Link zur MyCoRe-Beispielanwendung DocPortal">
+      Klicken Sie hier, um DocPortal in Aktion zusehen.</a> Beachten Sie
+      bitte, dass dies nur eine Demonstration ist, um einen Eindruck zu vermitteln, welche Art von Anwendung
+      Sie mit MyCoRe aufbauen können. Es ist keinesfalls alle denkbaren Einsatzgebiete von MyCoRe ab.</li>
+    </ol>
+
+    <p class="fett">Andere auf MyCoRe basierende Applikationen:</p>
+    <p>
+    Es existieren zahlreiche auf MyCoRe basierende Anwendungen, die auch selbst Open Source Produkte sind,
+    aber nicht Teil dieser Distribution sind. Eine <a href="site:applications"
+    title="Link zu den MyCoRe-basierten Anwendungen">Übersicht finden Sie hier</a>.
+    </p>
+
+    <p class="fett">Dokumentation und Start</p>
+    <p>
+    Wenn Sie MyCoRe bzw. die Beispielanwendung DocPortal testen wollen, oder einfach nur mal sehen wollen,
+    was MyCoRe eigentlich ist, empfehlen wir die Binärdistribution. Zur Anwendungsentwicklung und weiteren
+    Arbeit mit MyCoRe starten Sie am besten mit der Dokumentation.
+    </p>
+    <p class="break">Sie können die <a href="site:overview" title="MyCoRe-Dokumentation">Dokumentation online</a> lesen</p>
+    <p>
+    Momentan steht die Dokumentation leider nur in deutsch zur Verfügung, eine englische Version ist geplant.
+    </p>
+
+    <p>
+    <strong>Option 1: MyCoRe von unserem Subversion Repository auschecken</strong><br />
+    Wir empfehlen MyCoRe und DocPortal direkt von unserem Subversion Repository zu laden. Sie benötigen
+    dafür einen  <a href="http://subversion.apache.org/" target="_blank" title="Subversion">frei verfügbaren Subversion
+    Client</a>, um auf das Repository anonym im read-only Modus zugreifen zu können:
+    </p>
+
+    <source>
+    svn checkout http://www.mycore.de/svn/mycore/branches/release_2_0_fixes/ mycore
+    svn checkout http://www.mycore.de/svn/docportal/branches/release_2_0_fixes/ docportal</source>
+
+    <p>
+    <strong>Option 2: Download MyCoRe als tar.gz oder zip Archiv</strong> <br />
+    Alternativ können Sie auch die folgenden zwei tar Archive bei
+    <a target="_blank" href="http://sourceforge.net/projects/mycore/" title="Das MyCoRe-Projekt bei Sourceforge">
+    Sourceforge</a> herunterladen und in
+    Ihrem lokalen Verzeichnis auf einem Linux, Sun Solaris oder IBM AIX System extrahieren. Für das
+    Extrahieren empfehlen wir aufgrund der Verwendung langer Filenamen GNU tar.
+    </p>
+    <ul>
+        <li><a href="http://prdownloads.sourceforge.net/mycore/mycore-RELEASE_2.0.2.tar.gz?download">mycore-RELEASE_2.0.2.tar.gz</a></li>
+        <li><a href="http://prdownloads.sourceforge.net/mycore/docportal-RELEASE_2.0.2.tar.gz?download">docportal-RELEASE_2.0.2.tar.gz</a></li>
+    </ul>
+
+    <p>
+    Für die Installation auf einem Windows System können Sie alternativ diese zwei ZIP Archive
+    herunterladen und extrahieren.
+    </p>
+      <ul>
+        <li><a href="http://prdownloads.sourceforge.net/mycore/mycore-RELEASE_2.0.2.zip?download">mycore-RELEASE_2.0.2.zip</a></li>
+        <li><a href="http://prdownloads.sourceforge.net/mycore/docportal-RELEASE_2.0.2.zip?download">docportal-RELEASE_2.0.2.zip</a></li>
+      </ul>
+
    </section>
- 
- 
+
+
    <section>
    <title>Snapshot 20090121</title>
    <p>
@@ -225,7 +303,7 @@
      svn checkout http://www.mycore.de/svn/docportal/tags/SNAPSHOT_20090121 docportal
    </p>
   </section>
-  
+
   <section>
   <title>Snapshot 20081111</title>
   <p>
@@ -249,7 +327,7 @@
   <p>Diese Beta-Version ersetzt den vorhergehenden Snapshot.
 Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
 
-  <p class="fett">MyCoRe:</p>  
+  <p class="fett">MyCoRe:</p>
   <ul>
    <li>Batch-Prozesse wurden für Lucene und Hibernate optimiert</li>
    <li>Es wurde ein Speicherleck im Web-Commandline-Interface (WebCLI-Komponente) geschlossen</li>
@@ -273,12 +351,12 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
 
   <p class="fett">Schritte für Migration:</p>
   <note label="Migration">
-    Die Migration von Version 1.3 nach 2.0 ist auf der 
+    Die Migration von Version 1.3 nach 2.0 ist auf der
     <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20"
-    target="_blank" title="Migration von Version 1.3 nach 2.0 im MyCoRe-Wiki">MyCoRe-Wiki-Seite</a> skizziert.    
+    target="_blank" title="Migration von Version 1.3 nach 2.0 im MyCoRe-Wiki">MyCoRe-Wiki-Seite</a> skizziert.
     Fragen zur Migration bitte an &lt;info&#64;mycore.de&gt; oder an die
     Mailingliste &lt;mycore-user&#64;lists.sourceforge.net&gt;.
-  </note> 
+  </note>
   <p class="fett">Download über Subversion:</p>
   <p>
    svn checkout http://www.mycore.de/svn/mycore/tags/SNAPSHOT_20081111 mycore <br/>
@@ -289,12 +367,12 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   <section>
   <title>Snapshot 20080912</title>
   <p>
-   Die Entwicklergemeinde von MyCoRe und DocPortal hat eine neue Momentaufnahme 
+   Die Entwicklergemeinde von MyCoRe und DocPortal hat eine neue Momentaufnahme
    des Entwicklungszweiges veröffentlicht. Es ist die Version vom 12.09.2008.
-   Gegenüber dem letzten Snapshot vom 05.05.2008 sind hauptsächlich folgende Neuerungen 
+   Gegenüber dem letzten Snapshot vom 05.05.2008 sind hauptsächlich folgende Neuerungen
    hinzugekommen:
   </p>
-  <p class="fett">MyCoRe:</p>  
+  <p class="fett">MyCoRe:</p>
   <ul>
    <li>Unterstützung für PDF-Erzeugung vom Stylesheet aus</li>
    <li>MCR.baseurl wurde weitgehend ersetzt durch wahre Request-URL,
@@ -333,18 +411,18 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
        (nicht mehr nach WEB-INF/stylesheets)   </li>
      <li>Build-Targets der Anwendung überarbeiten   </li>
      <li>Editor-Formulare ggf. mit CSS anreichern   </li>
-     <li>Nicht gewünschte MyCoRe-Komponenten in der 
+     <li>Nicht gewünschte MyCoRe-Komponenten in der
        Konfigurationsdatei mycore.properties.private
        bei Property MCR.Components.Exclude eintragen   </li>
     </ul>
-  </note> 
+  </note>
   <p>
-   Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als 
-   offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese 
-   Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren 
+   Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als
+   offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese
+   Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren
    möchten.
   </p>
-  
+
   <p class="fett">Download über Subversion:</p>
   <p>
   svn checkout http://server.mycore.de/svn/mycore/tags/SNAPSHOT_20080912 mycore <br/>
@@ -354,14 +432,14 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
  <section>
   <title>Snapshot 20080505</title>
   <p>
-   Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme 
+   Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme
    des Entwicklungszweiges veröffentlicht. Es ist die Version vom Montag, den 05.05.2008.
   </p>
   <p>
-   Gegenüber dem letzten Snapshot vom 06.03.2008 sind hauptsächlich folgende Neuerungen 
+   Gegenüber dem letzten Snapshot vom 06.03.2008 sind hauptsächlich folgende Neuerungen
    hinzugekommen:
   </p>
-  <p class="fett">MyCoRe (r13480):</p>  
+  <p class="fett">MyCoRe (r13480):</p>
   <ul>
    <li>Classification2-System aktiviert und altes Klassifikationssystem entfernt</li>
    <li>accessadmin Modul entfernt</li>
@@ -386,62 +464,62 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   <p class="break">Weiterhin viele Bugfixes.</p>
   <p class="fett">Schritte für Migration:</p>
   <ul>
-   <li>Für das neue Klassifikations-System gibt es ein CLI-Kommando "migrate classifications", dass die 
+   <li>Für das neue Klassifikations-System gibt es ein CLI-Kommando "migrate classifications", dass die
    Umstellung automatisch vornimmt (DB-Backup empfohlen).</li>
   </ul>
-  
+
   <note label="1. Hinweis:">
-   Im neuen Klassifikationssystem müssen IDs nicht mehr zwangsweise MCRObjectID sein, weswegen z. B. 
-   "Docportal_class_003" nicht mehr zu "Docportal_class_00000003" normalisiert wird. In eigenen 
+   Im neuen Klassifikationssystem müssen IDs nicht mehr zwangsweise MCRObjectID sein, weswegen z. B.
+   "Docportal_class_003" nicht mehr zu "Docportal_class_00000003" normalisiert wird. In eigenen
    Anwendungen kann dies Umbauten erforderlich machen.
   </note>
-  
+
   <note label="2. Hinweis:">
-   Wer bislang die nicht dokumentierte Möglichkeit genutzt hatte über "mcrobject: " an die 
-   Metadaten-Ansicht der Klassifikation zukommen, muss diese Aufrufe auf den 
+   Wer bislang die nicht dokumentierte Möglichkeit genutzt hatte über "mcrobject: " an die
+   Metadaten-Ansicht der Klassifikation zukommen, muss diese Aufrufe auf den
    "classfication:"-URIResolver-Syntax umstellen.
-  </note> 
-  
+  </note>
+
   <note label="3. Hinweis:">
-   Mit Hilfe ein paar Datenbank-Indizes kann man Abfragen an die Datenbank, die jetzt häufiger zum Zuge 
-   kommt, beschleunigen.<br/> 
-   <strong>Hinweise dazu im Wiki:</strong><br/> 
+   Mit Hilfe ein paar Datenbank-Indizes kann man Abfragen an die Datenbank, die jetzt häufiger zum Zuge
+   kommt, beschleunigen.<br/>
+   <strong>Hinweise dazu im Wiki:</strong><br/>
    <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo/DatenbankIndizes" target="_blank">
    http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo/DatenbankIndizes</a>
-  </note> 
-  
+  </note>
+
   <note label=" 4. Hinweis:">
    Kategorie-IDs und Klassifikation-IDs sind auf 32 Zeichen begrenzt
-  </note> 
-  
+  </note>
+
   <ul>
    <li>
-    Das neue userlogin-Modul muss jeweils in MyCoRe und DocPortal aktiviert sein, damit 
+    Das neue userlogin-Modul muss jeweils in MyCoRe und DocPortal aktiviert sein, damit
     der Login-Prozess funktioniert.
    </li>
    <li>
-    Eigene Docportal-Module bedürfen einer Umstellung, da Variablen mit "docportal.*" umbenannt worden 
+    Eigene Docportal-Module bedürfen einer Umstellung, da Variablen mit "docportal.*" umbenannt worden
     sind in "application.*"
    </li>
   </ul>
   <p>
-   Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als 
-   offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese 
-   Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren 
+   Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als
+   offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese
+   Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren
    möchten.
   </p>
-  
+
   <p class="fett">Download über Subversion:</p>
   <p>
   svn checkout http://server.mycore.de/svn/mycore/tags/SNAPSHOT_20080505 \ mycore<br/>
   svn checkout http://server.mycore.de/svn/docportal/tags/SNAPSHOT_20080505 \ docportal
   </p>
  </section>
- 
+
  <section>
   <title>Snapshot 20080306</title>
   <p>
-  Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des 
+  Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des
   Entwicklungszweiges veröffentlicht. Es ist die Version vom Donnerstag, den 06.03.2007.
   </p>
   <p>
@@ -452,7 +530,7 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
    <li>xslStyle:-URI-Resolver hinzugefügt</li>
    <li>update zu Lucene 2.3.1, JDOM 1.1 und Ant 1.7</li>
    <li>neues Module-Konzept (Einbindung über build.properties)</li>
-   <li>Transaktionen können vorzeitig geschlossen werden, beschleunigte Freigabe in 
+   <li>Transaktionen können vorzeitig geschlossen werden, beschleunigte Freigabe in
    MCRFileNodeServlet-ContentManager-Unterstützung entfernt</li>
    <li>Wartungsmodus eingeführt (Schreibschutz der Webanwendung)</li>
    <li>Super-User kann sich selbst einschränken (ACL)</li>
@@ -471,8 +549,8 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
    <li>Es sollte keine Migration nötig sein.</li>
   </ul>
   <p>
-  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als 
-  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese Version 
+  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als
+  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese Version
   ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren möchten.
   </p>
   <p class="fett">Download über Subversion:</p>
@@ -481,15 +559,15 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   svn checkout http://server.mycore.de/svn/docportal/tags/SNAPSHOT_20080306 \ docportal
   </p>
  </section>
- 
+
  <section>
   <title>Snapshot 20071001</title>
   <p>
-  DocPortal hat heute eine neue Momentaufnahme des Entwicklungszweiges veröffentlicht. Es ist die Version 
+  DocPortal hat heute eine neue Momentaufnahme des Entwicklungszweiges veröffentlicht. Es ist die Version
   vom Montag, den 01.10.2007 den Eröffnungstag der Anwenderschulung in Hamburg.
   </p>
   <p>Gegenüber dem letzten Snapshot vom 24.08. sind hauptsächlich folgende Neuerungen hinzugekommen:</p>
-  <p class="fett">MyCoRe:</p> 
+  <p class="fett">MyCoRe:</p>
   <ul>
    <li>"save" Kommandos heißen jetzt "export" bei MCRUser &amp; CO.</li>
    <li>Migrationstool für WCMS von Snapshot 13.03. (und davor) fertiggestellt</li>
@@ -499,48 +577,48 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   <ul>
    <li>DocPortal-spezifische Daten in Modul ausgelagert (Nutzer, Datenmodell etc.)</li>
    <li>searchfields.xml und navigation.xml sind noch nicht durch Module anpassbar</li>
-   <li>mycore.properties Datei in build/config und build/webapps/WEB-INF/classes wird generiert aus allen 
+   <li>mycore.properties Datei in build/config und build/webapps/WEB-INF/classes wird generiert aus allen
    mycore.properties-Dateien</li>
    <li>WCMS: Editor für Lese- und Schreibrechte</li>
   </ul>
   <p class="break">Weiterhin viele Bugfixes.</p>
   <p class="fett">Schritte für Migration:</p>
   <ul>
-   <li>Es sollte keine Migration nötig sein.</li> 
+   <li>Es sollte keine Migration nötig sein.</li>
   </ul>
   <p>
-  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als 
-  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. 
-  Diese Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen 
+  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als
+  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen.
+  Diese Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen
   ausprobieren möchten
   </p>
   <p class="fett">Download über CVS:</p>
   <p>
-  cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20071001 \ mycore<br/> 
+  cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20071001 \ mycore<br/>
   cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20071001 \ docportal
   </p>
  </section>
- 
+
  <section>
   <title>Snapshot 20070824</title>
-  <p>Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des 
+  <p>Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des
   Entwicklungszweiges veröffentlicht.
   </p>
   <p>Gegenüber dem letzten Snapshot vom 13.03. sind hauptsächlich folgende Neuerungen hinzugekommen:</p>
-  <p class="fett">MyCoRe</p>  
+  <p class="fett">MyCoRe</p>
   <ul>
    <li>Hibernate-Backend überarbeitet (Konfiguration ausgelagert, bessere<br/> Performance)</li>
    <li>Export von Datenbanktabellen als XML (Import noch nicht 100% fertig)</li>
    <li>Editoren können in dynamischen Webseiten verwendet werden</li>
    <li>MBeans hinzugefügt, um Wartungsarbeiten im laufenden Betrieb zu ermöglichen</li>
    <li>Sprachen werden jetzt ohne Einschränkungen unterstützt</li>
-   <li>CLI-Kommandos können andere CLI-Kommandos auslösen (load all objects from directory ... --- n* 
+   <li>CLI-Kommandos können andere CLI-Kommandos auslösen (load all objects from directory ... --- n*
    ---&gt; load object from file ...), um in Falle eines Fehlers an der Stelle weiterzumachen</li>
    <li>Eventhandler für MCRSession-Aktionen (neu,aktiviert,passiviert,abgelaufen)</li>
    <li>Editoren unterstützen einen Tabulatorindex, um z.B. Hilfe-Knöpfe zu überspringen</li>
    <li>Modul um Nachrichten an Nutzer zu verschicken hinzugefügt</li>
    <li>Klassifikationen sind ACL geschützt</li>
-  </ul>  
+  </ul>
   <p class="fett">DocPortal:</p>
   <ul>
    <li>Weboberfläche für die Verwaltung von Gruppen</li>
@@ -563,9 +641,9 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
    <li>Editoren müssen überarbeitet werden, wenn sie "token" bei "source" benutzen.</li>
   </ul>
   <p>
-  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als 
-  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese 
-  Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren 
+  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als
+  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese
+  Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren
   möchten.
   </p>
   <p class="fett">Download über CVS:</p>
@@ -577,7 +655,7 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
  <section>
   <title>Snapshot 20070313</title>
   <p>
-  Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des 
+  Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des
   Entwicklungszweiges veröffentlicht.
   </p>
   <p>
@@ -585,7 +663,7 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   </p>
   <p class="fett">MyCoRe:</p>
   <ul>
-   <li>Use the IBM ICU library to handle calendars in MCRMetaHistoryDate. Now the searchable integer of 
+   <li>Use the IBM ICU library to handle calendars in MCRMetaHistoryDate. Now the searchable integer of
    this metadata element is the Julian Day number.</li>
    <li>move the classes of org.mycore.user2 to org.mycore.user</li>
    <li>add a WebService and URIResolver access to the MCRLinkTable</li>
@@ -606,28 +684,28 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   <p class="fett">Schritte für Migration:</p>
   <ul>
    <li>Vorhandene Daten sollten nicht migriert werden müssen.</li>
-   <li>In "mycore.properties.private" muss<br/>       
-       MCR.userstore_class_name=org.mycore.backend.hibernate.MCRHIBUserStore2<br/>       
-       geändert werden in:<br/>       
+   <li>In "mycore.properties.private" muss<br/>
+       MCR.userstore_class_name=org.mycore.backend.hibernate.MCRHIBUserStore2<br/>
+       geändert werden in:<br/>
        MCR.userstore_class_name=org.mycore.backend.hibernate.MCRHIBUserStore</li>
    <li>Eigene Anwendungen müssen die Änderungen messages_*.properties beachten.</li>
   </ul>
   <p>
-  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als 
-  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese 
-  Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren 
+  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als
+  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese
+  Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren
   möchten.
   </p>
   <p class="fett">Download über CVS:</p>
   <p>
-  cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20070313 \ mycore<br/> 
+  cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20070313 \ mycore<br/>
   cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20070313 \ docportal
   </p>
  </section>
  <section>
   <title>Snapshot 20061130</title>
   <p>
-  Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des 
+  Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des
   Entwicklungszweiges veröffentlicht.
   </p>
   <p>
@@ -646,21 +724,21 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   <p>
   Vorhandene Daten sollten nicht migriert werden müssen.
   </p>
-  <p>Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als 
-  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese 
-  Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren 
+  <p>Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als
+  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese
+  Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren
   möchten.
   </p>
   <p class="fett">Download über CVS:</p>
   <p>
-  cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20061130 \ mycore<br/> 
+  cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20061130 \ mycore<br/>
   cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20061130 \ docportal
   </p>
  </section>
  <section>
   <title>Snapshot 20061115</title>
   <p>
-  Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des 
+  Die Entwicklergemeinde von MyCoRe und DocPortal hat heute eine neue Momentaufnahme des
   Entwicklungszweiges veröffentlicht.
   </p>
   <p>
@@ -677,18 +755,18 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   <p class="fett">Schritte für Migration:</p>
   <p>Vorhandene Daten sollten nicht migriert werden müssen.</p>
   <p>
-  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als 
-  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese 
-  Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren 
+  Da es sich um eine Momentaufnahme des Entwicklungszweiges handelt, sollte diese Version nicht als
+  offizielle Version verstanden werden. Trotzdem würden wir uns über Fehlermeldungen freuen. Diese
+  Version ist vielmehr für Anwendungsentwickler gedacht, die oben aufgeführte Neuerungen ausprobieren
   möchten.
   </p>
   <p class="fett">Download über CVS:</p>
   <p>
-  cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20061115 \ mycore<br/> 
+  cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20061115 \ mycore<br/>
   cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20061115 \ docportal
   </p>
  </section>
- 
+
 </body>
 
 </document>

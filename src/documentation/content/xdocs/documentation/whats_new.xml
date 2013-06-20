@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Was ist neu in Version 2013.06?</title>
+    <abstract>Der Name ist sicher die augenscheinlichste Änderung beim neuen MyCoRe-Release. Ab
+    sofort werden die Versionen nach Jahr.Monat.xx benannt. Aber auch funktional hat sich seit dem
+    letzten Release vieles getan. So gibt es viele Neuerungen im Bildbetrachter, eine umfassende
+    Unterstützung des MODS-Standards und alternativ zu Lucene kann ab sofort SOLR als Suchengine
+    eingesetzt werden.</abstract>
+  </header>
+  <body>
+
+    <h2>Unterstützung des MODS-Standards</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Um den immer komplexer werdenen Anforderungen an Datenmodelle in Repositories gerecht zu werden,
+        unterstützt MyCoRe ab sofort MODS als Datenmodell (standardisiertes XML-Format für bibliografische
+        Metadaten). Man kann nun nicht nur MODS-Dokumente importieren, sondern es steht auch alles für
+        die Darstellung und den Umgang mit MODS-Dokumenten zur Verfügung.
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Thomas Scheffler, Frank Lützenkirchen und Kathleen Neumann</dd>
+    </dl>
+
+    <h2>Erweiterung des Bildbetrachters</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Druckfunktion (Ausgabe in PDF) im Bildbetrachter und viele Anpassungen an aktuelle Browser.
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Thomas Scheffler</dd>
+    </dl>
+
+    <h2>Korbfunktion</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Korbfunktion zum Sammeln von Metadatenobjekten in der Web-Session, speicherbar, dokumentiert
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Frank Lützenkirchen</dd>
+    </dl>
+
+    <h2>Neue Nutzerverwaltung </h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Nutzerverwaltung von miless in MyCoRe übernehmen
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Thomas Scheffler</dd>
+    </dl>
+
+    <h2>SOLR als Alternative zu Lucene</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Mittelfristig soll Lucene als Suchengine durch SOLR abgelöst werden, um die facettierte Suche,
+        Markierungen der Suchbegriffe und vieles andere mehr zu ermöglichen. Mit diesem Release besteht
+        nun bereits die Möglichkeit SOLR als Alternative zu Lucene zu nutzen.
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Silvio Hermann, Matthias Eichner und Thomas Scheffler</dd>
+    </dl>
+
+    <!-- h2>Titel der Änderung</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        xxx
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>xxx</dd>
+    </dl -->
+  </body>
+</document>

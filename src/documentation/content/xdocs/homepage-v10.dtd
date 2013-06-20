@@ -1,0 +1,43 @@
+<!-- ===================================================================
+
+Homepage Doc format
+
+PURPOSE:
+This DTD provides simple extensions on the Apache DocumentV11 format layout
+the MyCoRe homepage
+
+TYPICAL INVOCATION:
+
+<!DOCTYPE document PUBLIC "-//MyCoRe//DTD Download Documentation V1.0//EN"
+"homepage-v10.dtd">
+
+==================================================================== -->
+
+
+<!-- =============================================================== -->
+<!-- Include the Common ISO Character Entity Sets -->
+<!-- =============================================================== -->
+
+<!ENTITY % common-charents PUBLIC
+"-//APACHE//ENTITIES Common Character Entity Sets V1.0//EN"
+"common-charents-v10.mod">
+%common-charents;
+
+<!-- =============================================================== -->
+<!-- Document -->
+<!-- =============================================================== -->
+
+<!ENTITY % document PUBLIC "-//APACHE//ENTITIES Documentation V2.0//EN"
+"document-v20.mod">
+
+<!-- Override this entity so that 'release' is allowed below 'section' -->
+<!ENTITY % local.body "|homepage">
+
+%document;
+
+<!ELEMENT homepage (div)>
+
+
+<!-- =============================================================== -->
+<!-- End of DTD -->
+<!-- =============================================================== -->

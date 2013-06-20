@@ -9,15 +9,14 @@
  
  <body>
  
-  <p class="fett">The MyCoRe team from A to Z</p>
-  <p>
-  This list makes no claim to be complete. Many others contributed with tests, bugfixes, proposals and application development. If you have a question regarding a specific 
-  function of MyCoRe, you can <strong>directly</strong> contact one of the developers listed here. Alternatively, or for general information on MyCoRe, you can get in contact 
-  with the <a href="site:office" title="Link to the MyCoRe Office">MyCoRe Office</a>.</p>
+  <p><strong>The MyCoRe team from A to Z</strong>
+  <br/>
+    This list makes no claim to be complete. Many others contributed with tests, bugfixes, proposals and application development. If you have a question regarding a specific 
+    function of MyCoRe, you can <strong>directly</strong> contact one of the developers listed here. Alternatively, or for general information on MyCoRe, you can get in contact 
+    with the <a href="site:office" title="Link to the MyCoRe Office">MyCoRe Office</a>.</p>
   <hr/>
   <br/>
-  <p class="fett">Matthias Eichner</p>
-  <p>
+  <p><strong>Matthias Eichner</strong><br/>
   Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br />
   matthias.eichner (at) uni-jena.de, Tel. 03641 / 94 - 0027
   </p>
@@ -27,8 +26,7 @@
     <li>Application development in Jena</li>
   </ul>
   <br/>
-  <p class="fett">Stefan Freitag</p>
-  <p>
+  <p><strong>Stefan Freitag</strong><br/>
   University of Leipzig, University Library  <br />
   freitag (at) rz.uni-leipzig.de, Tel. 0341 / 97 30841</p>
   <ul>
@@ -36,8 +34,7 @@
     <li>Application development in Leipzig</li>
   </ul>
   <br/>
-  <p class="fett">Silvio Hermann</p>
-  <p>
+  <p><strong>Silvio Hermann</strong><br/>
   Friedrich-Schiller-University Jena, University Library<br />
   s.hermann (at) uni-jena.de, Tel. 03641 / 94 - 0019
   </p>
@@ -48,8 +45,7 @@
     <li>Application development</li>
   </ul>
   <br/>
-  <p class="fett">Kathleen Neumann</p>
-  <p>
+  <p><strong>Kathleen Neumann</strong><br/>
   GBV Common Library Network (VZG) <br />
   kathleen.neumann (at) gbv.de</p>
   <ul>
@@ -57,8 +53,7 @@
     <li>Documentation</li>
   </ul>
   <br/>
-  <p class="fett">Jens Kupferschmidt</p>
-  <p>
+  <p><strong>Jens Kupferschmidt</strong><br/>
   University of Leipzig, Computer Center  <br />
   kupferschmidt (at) rz.uni-leipzig.de, Tel. 0341 / 97 33348</p>
   <ul>
@@ -70,8 +65,7 @@
     <li>Application development in Leipzig</li>
   </ul>
   <br/>
-  <p class="fett">Frank Lützenkirchen</p>
-  <p>
+  <p><strong>Frank Lützenkirchen</strong><br/>
   University of Duisburg-Essen, University Library  <br />
   luetzenkirchen (at) ub.uni-duisburg-essen.de, Tel. 0201 / 183 - 2124</p>
   <ul>
@@ -84,18 +78,16 @@
     <li>Application development „DuEPublico“ (Institutional content repository software)</li>
   </ul>
   <br/>
-  <p class="fett">Dr. Wiebke Oeltjen</p>
-  <p>
+  <p><strong>Dr. Wiebke Oeltjen</strong><br/>
   University of Hamburg, Computer center  <br />
   wiebke.oeltjen (at) rrz.uni-hamburg.de, Tel. 040 / 42838 - 2652
   </p>
   <ul>
     <li><strong>MyCoRe Office</strong></li> 
-    <li>Application development</li>   
+    <li>Project management</li>   
   </ul>
   <br/>
-  <p class="fett">Thomas Scheffler </p>
-  <p>
+  <p><strong>Thomas Scheffler</strong><br/>
   Friedrich-Schiller-University Jena, University Library<br />
   thomas.scheffler (at) uni-jena.de, Tel. 03641 / 94 - 0027
   </p>
@@ -110,8 +102,7 @@
     <li>URI-Resolver</li>
   </ul>
   <br/>
-  <p class="fett">Robert Stephan </p>
-  <p>
+  <p><strong>Robert Stephan</strong><br/>
   University of Rostock, University library  <br />
   robert.stephan (at) uni-rostock.de, Tel. 0381 / 498 86 25</p>
   <ul>
@@ -119,8 +110,7 @@
     <li>OAI-PHM 2.0 Data Provider</li>
   </ul>
   <br/>
-  <p class="fett">Nils Verheyen</p>
-  <p>
+  <p><strong>Nils Verheyen</strong><br/>
   University of Duisburg-Essen, University Library  <br />
   nils.verheyen (at) uni-due.de, Tel. 0201 / 183 - 2134</p>
   <ul>
@@ -129,8 +119,7 @@
     <li>Application development „DuEPublico“ (Institutional content repository software)</li>
   </ul>
   <br/>  
-  <p class="fett">Huu Chi Vu</p>
-  <p>
+  <p><strong>Huu Chi Vu</strong><br/>
   Friedrich-Schiller-University Jena, University Library<br />
   huu.chi.vu (at) uni-jena.de, Tel. 03641 / 94 - 0019
   </p>
@@ -142,8 +131,7 @@
     <li>IFS2</li>
   </ul>
   <br/>
-  <p class="fett">Alumni</p>
-  <p>
+  <p><strong>Alumni</strong><br/>
   They contributed much, but are currently not involved in further development:  
   </p>
   <ul>

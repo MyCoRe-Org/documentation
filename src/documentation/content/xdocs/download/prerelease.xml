@@ -4,13 +4,13 @@
 <document>
 <header>
  <title>Prerelease</title></header>
- <abstract>MyCoRe-2.0.94 (Beta 4) der aktuelle "Release Candidate" für die Version <strong>MyCoRe 2.1</strong>.
-  Das Release soll in Kürze veröffentlicht werden. Bitte melden Sie daher alle noch 
+ <abstract>MyCoRe-2013.05 (Beta 2) der aktuelle "Release Candidate" für die Version <strong>MyCoRe 2013.06</strong>.
+  Das Release soll in Kürze veröffentlicht werden. Bitte melden Sie daher alle noch
   auftretenden Fehler umgehend an die Community, um ein optimales Release zu gewährleisten.</abstract>
  <body>
- 
+
   <p>
-  Neben dem aktuellen Release stellt das Entwickler-Team in unregelmäßigen Abständen auch Vorabversionen 
+  Neben dem aktuellen Release stellt das Entwickler-Team in unregelmäßigen Abständen auch Vorabversionen
   zum nächsten Release, sogenannte Prereleases, zur Verfügung. Auf diesem Wege sollen die Benutzer unseres
   Projektes die Möglichkeit haben, rasch neue Entwicklungsschritte in ihre eigenen Anwendungen integrieren
   zu können.
@@ -18,70 +18,108 @@
 
   <p>
     Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
-    pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2.0.94</strong> angepasst werden:
-    
+    pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2013.05</strong> angepasst werden:
+
     <source>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>application-model&lt;/artifactId>
-  &lt;version>2.0.94&lt;/version></source>
-  
+  &lt;version>2013.05&lt;/version></source>
+
     Anschliessend muss die Anwendung neu erstellt werden (<code>ant resolve create.jar create.scripts create.webapp</code>).
   </p>
-  
+
   <p>
-    <a href="http://sourceforge.net/projects/mycore/files/docportal/rc/docportal-2.0.94.zip/download"
+    <a href="#"
       ><img src="/images/download_mcr_rc20.png" alt="Link zum SF-Download" style="float:right;" /></a>
-    Alternativ steht DocPortal mit dem aktuellen <a href="http://sourceforge.net/projects/mycore/files/docportal/rc/docportal-2.0.94.zip/download"
-    >Release-Candidate 2.0.94</a> zum Download zur Verfügung. Die dazugehörige Installationsanleitung finden Sie
-   im <a href="site:chapter3_ug21">UserGuide</a>.
+    Alternativ steht DocPortal mit dem aktuellen <a href="#"
+    >Release-Candidate 2013.05</a> zum Download zur Verfügung. Die dazugehörige Installationsanleitung finden Sie
+   im <a href="site:chapter3_ug22">UserGuide</a>.
   </p>
 
   <h2>Changes in this version include</h2>
   <h3>New features</h3>
   <ul>
-    <li>Added functionality to disable editing of a textfield and set it read-only with @disabled="true", same as for list elements.</li>
-    <li>Added MCRLocalServlet to allow multi lingual javascript applications.</li>
-    <li>Added two command 'list' and 'restore' to handle revision of a metadata object.</li>
-    <li>Added METS editor.</li>
-    <li>Added a new Toolbar-API to modify ImageViewer toolbar.</li>
-    <li>
-      ImageViewer uses structure information of METS-files for "chapter overview" using
-      <ul>
-        <li>jsTree (<a href="http://www.jstree.com/">http://www.jstree.com/</a>)</li>
-        <li>fg-menu 3.0 (<a href="http://www.filamentgroup.com/lab/jquery_ipod_style_and_flyout_menus/">http://www.filamentgroup.com/lab/jquery_ipod_style_and_flyout_menus/</a>)</li>
-      </ul>
-    </li>
+    <li>ClassificationBrowser implementation for solr</li>
+    <li>I18N support to mycore-user2</li>
+    <li>MCRXSL2JAXBTransformer to generate JAVA Objects via XSLT</li>
+    <li>command "delete index part for type {0}" in mycore-solr</li>
+    <li>MCRListeningPriorityExecutorService where tasks can be prioritized and listened</li>
+    <li>MCRSolrSelectProxyServlet supports "wt" parameter of SOLR</li>
+    <li>support for canvas HTML element in mycore-iview2 (adds rotate function)</li>
+    <li>Handle support</li>
+    <li>mycore-xeditor component</li>
+    <li>MCRObjectTypeStrategy allows "default_class" rules for classifications</li>
+    <li>Added commands to check consistency of classifications and fix any errors found
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/606">606</a>)</li>
+    <li>MCRXMLFunctions.encodeURIPath(String path, boolean asciiOnly) to ensure that encoded path contains only ASCII characters. Thanks to Frank Lützenkirchen.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/610">610</a>)</li>
+    <li>MCRXMLFunctions.normalizeAbsoluteURL(String) to ensure that a absolute URL is RFC 2396 compliant. Thanks to Frank Lï¿½tzenkirchen.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/607">607</a>)</li>
+    <li>MCRURNManager.assignURN(String urn, String derivateID, String path)</li>
+    <li>MCRXSLInfoServlet generates graphs that display call-template calls: XSL.mode=uses</li>
+    <li>o.m.d.m.MCRMetadataManager.getObjectId(MCRObjectID, long) to retrieve objectID of metadata object for derivate id</li>
+    <li>MCRCache added getIfUpToDate() with lazy determination of last modified timestamp of cache value</li>
+
   </ul>
-  
+
   <h3>Fixed Bugs</h3>
   <ul>
-    <li>Validation fails when creating new user account (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3118487&amp;group_id=92005&amp;atid=599192">3118487</a>)</li>
-    <li>password of a user should always be changeable (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3152882&amp;group_id=92005&amp;atid=599192">3152882</a>)</li>
-    <li>MCRSessionListingServlet throws NullPointerException (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3118486&amp;group_id=92005&amp;atid=599192">3118486</a>)</li>
-    <li>"MCR.editor_" + type + "_directory" (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3164569&amp;group_id=92005&amp;atid=599192">3164569</a>)</li>
-    <li>Error while tranforming XML workflow file (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3164572&amp;group_id=92005&amp;atid=599192">3164572</a>)</li>
-    <li>ErrorServlet has wrong WebAppBaseURL (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3118439&amp;group_id=92005&amp;atid=599192">3118439</a>)</li>
-    <li>IView permalink doens't work with space characters in file (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3189052&amp;group_id=92005&amp;atid=599192">3189052</a>)</li>
-    <li>MCRMETSServlet (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3185631&amp;group_id=92005&amp;atid=599192">3185631</a>)</li>
-    <li>Sorting of a fulltext search result has no effect. (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3189936&amp;group_id=92005&amp;atid=599192">3189936</a>)</li>
-    <li>"ant resolve" override pom.xml (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3199545&amp;group_id=92005&amp;atid=599192">3199545</a>)</li>
-    <li>DocPortal does not index content of A. Hohlfeld (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3204336&amp;group_id=92005&amp;atid=599192">3204336</a>)</li>
-    <li>WCMS "save changes" doesn't work (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3177246&amp;group_id=92005&amp;atid=599192">3177246</a>)</li>
+    <li>The login page should be accessible only through https Thanks to Silvio Hermann.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/608">608</a></li>
+    <li>WCMS: Assigning read and write permissions does not work
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/628">628</a>
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/617">617</a></li>
+    <li>Mets Editor does not support files with blanks
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/625">625</a></li>
+    <li>wait for index process to complete on shutdown (lucene &amp; solr)</li>
+    <li>MCRSearchServlet: on redirect pass XSL.Transformer parameter</li>
+    <li>Editor: &lt;hidden var="..." descendants="true" /> may duplicate data when attribute predicates are used in xpath
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/622">622</a></li>
+    <li>Editing user data produces erroneous links in "Search and manage users" Thanks to Frank Lützenkirchen.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/606">606</a></li>
+    <li>Password hint is not displayed Thanks to Matthias Eichner.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/613">613</a></li>
+    <li>Workflow looses action and type Thanks to Kathleen Neumann.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/611">611</a></li>
+    <li>Categories have wrong left-/right- values when using new classification editor Thanks to Matthias Eichner.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/612">612</a></li>
+    <li>ClassificationEditor does not work for non super users. Thanks to Marcus Mï¿½ller.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/609">609</a></li>
+    <li>Mets-Editor: order label is not displayed in the mets-editor
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/601">601</a></li>
+    <li>foliation in METS editor does not work on Mac OS
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/595">595</a></li>
+    <li>do not remove URN information if file content is updated</li>
+    <li>fixed multi thread access to SAXBuilder Thanks to Silvio Hermann.
+  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/598">598</a></li>
   </ul>
 
   <h3>Changes</h3>
   <ul>
-    <li>Moved all webcli classes in package org.mycore.webcli.</li>
-    <li>Added option to initialize all hits of a lucene query: MCR.Searcher.{ID}.initializeResult=true.</li>
-    <li>Enable storing of fields of type long and date, so they can be use for sorting.</li>
-    <li>Adding manager class for creating, get, removing store in IFS2. MCRStore is no longer responsible for these operations.</li>
-    <li>Merged mycore-useradmin and mycore-userlogin component into mycore-user moved user system related code from mycore-base to mycore-user.</li>
-    <li>Separate ACL system from User system
-        MCRUserMagr.login() now actually logs a (MCR) user in 
-        Guest User is not physically stored in database anymore
-        A default group for new users can be configured via property (defaults to "users"):
-        MCR.Users.DefaultGroupName.
-    </li>
-  </ul> 
+    <li>MCRSearchServlet parameter numPerPage defaults to "10" (was "0")</li>
+    <li>better statistics for mycore-solr component</li>
+    <li>use Google guava cache for for MCRObjectIDPool and MCRCache</li>
+    <li>refactored mycore-solr component</li>
+    <li>bootstraped editor forms of mycore-user2</li>
+    <li>MCRLayoutService: buffer output gives about 30% faster downloads and big improvements in browser render speed on fast connections.</li>
+    <li>Speed up XSL Transformations: XSL files are checked for changes after
+        "MCR.LayoutService.LastModifiedCheckPeriod" ms (default 10000).</li>
+    <li>improved speed of MCRCache</li>
+    <li>moved results-commandlinequery.xsl to MyCoRe - it is independent of any application</li>
+    <li>update to Java 7</li>
+    <li>update to JDOM 2</li>
+    <li>moved many stream related classes to new package org.mycore.common.content.stream</li>
+    <li>updated dependencies</li>
+  </ul>
+
+  <h3>Removed</h3>
+  <ul>
+    <li>removed applet from mycore-mets and removed mycore-zoomify component</li>
+    <li>removed mycore-user component.
+        Use "migrate users" from mycore-migration21-22 to transfer your old
+        users.</li>
+    <li>removed componente mycore-classhandler (old classification browser and editor)</li>
+  </ul>
+
 </body>
 </document>
