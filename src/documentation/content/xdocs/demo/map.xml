@@ -2,11 +2,11 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 <document>
   <header>
-    <title>Karte aller Anwendungen</title>
+    <title>Karte deutscher Anwendungen</title>
   </header>
   <body>
-      <div id="map_div" style="width: 400px; height: 600px; border: 1px solid grey;"></div>
-      <div id="map_contribution" style="width: 450px; font-size: 70%; text-align:right;">
+      <div id="map_div" style="width: 600px; height: 600px; border: 1px solid grey;"></div>
+      <div id="map_contribution" style="width: 600px; font-size: 70%; text-align:right;">
         Map Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> <img style="padding-top:3px;" src="http://developer.mapquest.com/content/osm/mq_logo.png" />
       </div>
   </body>
