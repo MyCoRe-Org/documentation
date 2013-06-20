@@ -3,11 +3,11 @@
 
 <document xml:lang="en">
 <header>
- <title>Release MyCoRe Version 2.1.1</title>
+ <title>Release MyCoRe Version 2013.06</title>
 </header>
- 
+
  <body>
-   
+
    <!-- Include required JS files -->
    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
    <!--
@@ -15,41 +15,47 @@
     language you want to highlight
     -->
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   
+
   <p>
-    MyCoRe 2.1.1 (or 2.1-fixes) is a release of the <em>new Version</em>. This new release 2.1.1 comes with a new
-    version of the image viewer (IView2), with a new conception of the Internal File System (IFS2) and a
-    new implementation of the OAI interface (OAI2). 
-    Furthermore the module concept has been improved and now Maven is integrated.
+    MyCoRe 2013.06 ...
     You can find an overview of all innovations on the documentation site
-    <a href="site:whats_new_2_1">"Was ist neu?"</a>. A detailed list of changes
+    <a href="site:whats_new">"Was ist neu?"</a>. A detailed list of changes
     is provided in the <a href="site:changelog">Changelog</a>.
   </p>
-       
+
   <p>
-    If you have your application already near version 2.1.1, you only have to update
+    If you have your application already near version 2013.06, you only have to update
     your pom.xml (docportal/config):
-    
+
     <pre class="brush: xml;gutter: false;">
+[...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2.1.1-SNAPSHOT&lt;/version></pre>
-  
+&lt;version>2013.06.0&lt;/version>
+[...]
+&lt;dependency>
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>2013.06.0&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
+
     In the next step you have to build your application again (<code>ant resolve create.jar
     create.scripts create.webapp</code>).
   </p>
-  
+
   <p>
-    <a href="http://sourceforge.net/projects/mycore/files/docportal/2.1/"
+    <a href="#"
       ><img src="/images/download_mcr_21.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
-    As an alternative DocPortal is available as download with <a href="http://sourceforge.net/projects/mycore/files/docportal/2.1/"
-    >Release 2.1.1</a>. You can find the corresponding installation guidelines 
-    in the <a href="site:chapter3_ug21">UserGuide</a>. There are instructions for the 
-    <a href="site:migrate20_21">Migration</a> as well provided.
+    As an alternative DocPortal is available as download with <a href="#"
+    >Release 2013.06</a>. You can find the corresponding installation guidelines
+    in the <a href="site:install">UserGuide</a>. There are instructions for the
+    <a href="site:migrate21_2013.06">Migration</a> as well provided.
   </p>
   <p>
-    Furthermore there is a MyCoRe 
-    <a href="http://sourceforge.net/projects/mycore/files/mycore/2.1/">jar file</a> 
+    Furthermore there is a MyCoRe
+    <a href="#">jar file</a>
     ready for download, therewith you can use the MyCoRe kernel in your own application
     independent from DocPortal. MyCoRe can be integrated as well via Maven.
   </p>
