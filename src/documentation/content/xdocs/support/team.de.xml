@@ -4,23 +4,23 @@
 <document xml:lang="de">
 <header>
  <title>Team</title></header>
- 
 
- 
+
+
  <body>
- 
+
   <p><strong>Das MyCoRe-Team von A bis Z</strong>
   <br/>
-    Diese Liste erhebt keinen Anspruch auf Vollständigkeit. Viele andere Personen haben mit Tests, 
-    Bugfixes, Anregungen und in der Anwendungsentwicklung zu MyCoRe beigetragen. Wenn Sie Fragen zu 
-    speziellen Funktionen von MyCoRe haben, können Sie sich gern <strong>direkt</strong> an eine der hier 
-    aufgeführten Personen wenden. Alternativ steht Ihnen, insbesondere für allgemeine Informationen, die 
-    <a href="site:office" title="Link zur MyCoRe-Geschäftsstelle">MyCoRe-Geschäftsstelle</a> zur Verfügung.
+    Diese Liste erhebt keinen Anspruch auf Vollständigkeit. Viele andere Personen haben mit Tests,
+    Bugfixes, Anregungen und in der Anwendungsentwicklung zu MyCoRe beigetragen. Wenn Sie Fragen zu
+    speziellen Funktionen von MyCoRe haben, können Sie sich gern <strong>direkt</strong> an eine der hier
+    aufgeführten Personen wenden. Alternativ steht Ihnen, insbesondere für allgemeine Informationen, die
+    <a href="site:contact" title="Link zur MyCoRe-Geschäftsstelle">MyCoRe-Geschäftsstelle</a> zur Verfügung.
   </p>
   <hr/>
   <p><strong>Matthias Eichner</strong><br/>
     Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br/>
-    matthias.eichner (at) uni-jena.de, Tel. 03641 / 94 - 0027 
+    matthias.eichner (at) uni-jena.de, Tel. 03641 / 94 - 0027
   </p>
   <ul>
     <li>Klassifikationseditor</li>
@@ -126,7 +126,7 @@
     <li>Statistiken</li>
     <li>Anwendungsentwicklung „DuEPublico“ (Dokumenten- und Publikationsserver)</li>
   </ul>
-  <br/> 
+  <br/>
   <p><strong>Huu Chi Vu</strong><br/>
     Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br/>
     huu.chi.vu (at) uni-jena.de, Tel. 03641 / 94 - 0019
@@ -159,6 +159,6 @@
     <li>Andreas Trappe (Friedrich-Schiller-Universität Jena, ThULB)<br/>
         Image Viewer Modul (Bildbetrachter), WCMS Modul, Anwendungsentwicklung</li>
   </ul>
-  
+
 </body>
 </document>

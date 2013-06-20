@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Die Session-Verwaltung</title>
+    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten</abstract>
+  </header>
+<body>
+    <section>
+     <title>Allgemein</title>
+     <p>Mehrere BenutzerInnen (oder allgemeiner Prinzipale) können gleichzeitig Sitzungen mit dem MyCoRe-Softwaresystem
+     eröffnen. Während einer Sitzung werden in der Regel nicht nur eine, sondern mehrere Anfragen bearbeitet. Es ist
+     daher sinnvoll, kontextspezifische Informationen wie die UserID, die gewünschte Sprache usw. für die Dauer der
+     Sitzung mitzuführen. Da das MyCoRe-System mit mehreren gleichzeitigen Sitzungen konfrontiert werden kann, die zudem
+     über verschiedene Zugangswege etabliert sein können (z.B. Servlets, Kommandozeilenschnittstelle oder Webservices),
+     muss das System einen allgemein verwendbaren Kontextwechsel ermöglichen.
+     </p>
+     <p>
+     Bei der Bearbeitung einer Anfrage oder Transaktion muss nicht jede einzelne Methode oder Klasse Kenntnis über die
+     Kontextinformationen besitzen. Daher ist es sinnvoll, die Übergabe des Kontextes als Parameter von Methode zu
+     Methode bzw. von Klasse zu Klasse zu vermeiden. Eine Möglichkeit, dies zu bewerkstelligen ist der Einsatz von sog.
+     Thread Singletons oder thread-local Variablen. Die Idee dabei ist, den Thread der den Request bearbeitet als
+     Repräsentation des Request selbst anzusehen. Dazu müssen die Kontextinformationen allerdings an den Thread
+     angebunden werden, was seit Java 1.2 mit Hilfe der Klassen <code>java.lang.ThreadLocal</code> bzw.
+     <code>java.lang.InheritableThreadLocal</code> möglich ist. Jeder Thread hat dabei seine eigene unabhängig
+     initialisierte Kopie der Variable. Die <code>set()</code> und <code>get()</code> Methoden der Klasse
+     <code>ThreadLocal</code> setzen bzw. geben die Variable zurück, die zum gerade ausgeführten Thread gehört. Die
+     Klassen der Sessionverwaltung von MyCoRe sind auf Basis dieser Technologie implementiert (siehe Abbildung 1.5).
+     </p>
+
+     <img src="images/progguide_2session_classes.jpg" alt="Sessionverwaltungs-Klassen" title="Sessionverwaltungs-Klassen"/>
+     <p class="klein"><strong>Abbildung 1.5:</strong> Die Klassen der Sessionverwaltung</p>
+
+     <p>
+     Klienten der Sessionverwaltung sind alle Klassen, die Kontextinformationen lesen oder modifizieren wollen, wie zum
+     Beispiel <code>MCRCommandLineInterface</code> und <code>MCRServlet</code>. Kontextinformationen werden als Instanzen
+     der Klasse <code>MCRSession</code> abgelegt. Diese Klasse bietet Methoden zum Setzen und Lesen der Informationen,
+     wie z.B. der UserID der aktuellen Benutzerin, der gewünschten Sprache usw.
+     </p>
+     <p>
+     Die Klasse <code>MCRSession</code> besitzt einen statischen Cache, realisiert durch die Klasse <code>MCRCache</code>.
+     Bei der Konstruktion einer Instanz von <code>MCRSession</code> wird zunächst über die Methode
+     <code>buildSessionID()</code> eine eindeutige Id erzeugt und diese als Schlüssel zusammen mit dem Session-Objekt
+     selbst im Cache abgelegt. Auf diese Weise hat man über die statische Methode <code>getSession()</code> Zugriff auf
+     die zu einer bestimmten SessionID gehörende Instanz.
+     </p>
+     <p>
+     Damit die Instanzen von <code>MCRSession</code> als thread-local Variablen an den aktuellen Thread angebunden
+     werden können, werden sie nicht direkt, sondern über die statische Methode <code>getCurrentSession()</code> der
+     Klasse <code>MCRSessionMgr</code> erzeugt und später gelesen. Beim ersten Aufruf von <code>getCurrentSession()</code>
+     in einem Thread wird über die von <code>java.lang.ThreadLocal</code> erbende, statische innere Klasse
+     <code>ThreadLocalSession</code> gewährleistet, dass eine eindeutige Instanz von <code>MCRSession</code> erzeugt und
+     als thread-local Variable abgelegt wird. Der Zugriff auf die thread-local Variablen eines Threads kann nur über die
+     Klasse <code>ThreadLocal</code> (bzw. <code>InheritableThreadLocal</code>) erfolgen. Auf diese Weise ist
+     sichergestellt, dass bei nachfolgenden Aufrufen von <code>getCurrentSession()</code> genau die zum aktuellen Thread
+     gehörende Referenz auf die Instanz von <code>MCRSession</code> zurückgegeben wird.
+     </p>
+     <p>
+     Mit der statischen Methode <code>MCRSessionMgr.setCurrentSession()</code> ist es möglich, ein bereits vorhandenes
+     Session-Objekt explizit als thread-local Variable an den aktuellen Thread zu binden. Dies ist z.B. In einer
+     Servlet-Umgebung notwendig, wenn die Kontextinformationen in einem Session-Objekt über eine http-Session mitgeführt
+     werden. (Aktuelle Servlet-Engines verwenden in der Regel zwar Thread-Pools für die Bearbeitung der Requests, aber
+     es ist in keiner Weise sichergestellt, dass aufeinanderfolgende Requests mit dem selben Kontext wieder den selben
+     Thread zugewiesen bekommen. Daher muss der Kontext in einer http-Session gespeichert werden.)
+     </p>
+     <p>
+     Die Methode <code>MCRSessionMgr.releaseCurrentSession()</code> sorgt dafür, dass das thread-local Session-Objekt
+     eines Threads durch ein neues, leeres Objekt ersetzt wird. Dies ist in Thread-Pool-Umgebungen wichtig, weil es
+     sonst möglich bzw. sogar wahrscheinlich ist, dass Kontextinformationen an einem Thread angebunden sind, dieser
+     Thread aber bei seiner Wiederverwendung in einem ganz anderen Kontext arbeitet. Code-Beispiele zur Verwendung der
+     Session-Verwaltung finden sich in <code>org.mycore.frontend.servlets.MCRServlet.doGetPost()</code>.
+     </p>
+     </section>
+
+     <section>
+      <title>Variablenwerte in der Session speichern</title>
+      <p>
+      Sie können über den Webclient (Browser) Werte in der aktuellen Session speichern. Sie können so über einen Link
+      (URL, HTTP GET) oder das Absenden eines Formulars (HTTP POST) einen Wert an den Server senden, der dann in der
+      Session abgelegt wird. Dazu muss die folgende Syntax für den HTTP Request Parameter verwendet werden:
+      </p>
+      <p class="break"><code>XSL.&lt;name&gt;.SESSION=&lt;wert&gt;</code></p>
+      <p>z.B.</p>
+      <p class="break"><code>http://.../seite.xml?XSL.mode.SESSION=active</code></p>
+      <p>In der MCRSession wird so z.B. der Variablenwert mode=active abgelegt. Sie können dann in Java-Code über</p>
+      <p class="break"><code>MCRSessionMgr.getCurrentSession().get(“mode“)</code></p>
+      <p>
+      darauf zugreifen, oder in einem beliebigen Stylesheet diese Variable verwenden. Dazu muss sie im Kopf des
+      Stylesheets deklariert werden:
+      </p>
+      <p class="break"><code>&lt;xsl:param name=“mode“ /&gt;</code></p>
+     </section>
+
+</body>
+</document>
+

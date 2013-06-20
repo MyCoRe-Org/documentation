@@ -4,16 +4,16 @@
 <document xml:lang="en">
 <header>
  <title>Team</title></header>
- 
 
- 
+
+
  <body>
- 
+
   <p><strong>The MyCoRe team from A to Z</strong>
   <br/>
-    This list makes no claim to be complete. Many others contributed with tests, bugfixes, proposals and application development. If you have a question regarding a specific 
-    function of MyCoRe, you can <strong>directly</strong> contact one of the developers listed here. Alternatively, or for general information on MyCoRe, you can get in contact 
-    with the <a href="site:office" title="Link to the MyCoRe Office">MyCoRe Office</a>.</p>
+    This list makes no claim to be complete. Many others contributed with tests, bugfixes, proposals and application development. If you have a question regarding a specific
+    function of MyCoRe, you can <strong>directly</strong> contact one of the developers listed here. Alternatively, or for general information on MyCoRe, you can get in contact
+    with the <a href="site:contact" title="Link to the MyCoRe Office">MyCoRe Office</a>.</p>
   <hr/>
   <br/>
   <p><strong>Matthias Eichner</strong><br/>
@@ -83,8 +83,8 @@
   wiebke.oeltjen (at) rrz.uni-hamburg.de, Tel. 040 / 42838 - 2652
   </p>
   <ul>
-    <li><strong>MyCoRe Office</strong></li> 
-    <li>Project management</li>   
+    <li><strong>MyCoRe Office</strong></li>
+    <li>Project management</li>
   </ul>
   <br/>
   <p><strong>Thomas Scheffler</strong><br/>
@@ -118,7 +118,7 @@
     <li>Statistics</li>
     <li>Application development „DuEPublico“ (Institutional content repository software)</li>
   </ul>
-  <br/>  
+  <br/>
   <p><strong>Huu Chi Vu</strong><br/>
   Friedrich-Schiller-University Jena, University Library<br />
   huu.chi.vu (at) uni-jena.de, Tel. 03641 / 94 - 0019
@@ -132,7 +132,7 @@
   </ul>
   <br/>
   <p><strong>Alumni</strong><br/>
-  They contributed much, but are currently not involved in further development:  
+  They contributed much, but are currently not involved in further development:
   </p>
   <ul>
     <li>Dr. Detlev Degenhardt (Albert-Ludwigs-University Freiburg, Computer center ) <br />
@@ -151,6 +151,6 @@
     <li>Andreas Trappe (Friedrich-Schiller-University of Jena, University library)<br />
         Image Viewer module, WCMS modul, Application development</li>
   </ul>
-  
+
 </body>
 </document>

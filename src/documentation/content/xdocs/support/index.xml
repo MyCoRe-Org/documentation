@@ -2,35 +2,20 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
 
 <document>
-<header> 
- <title>Geschäftsstelle</title>
-</header>
+  <header>
+    <title>MyCoRe-Community</title>
+  </header>
 
- <body>
- 
-  <p><strong>Fragen Sie uns!</strong></p> 
-  <p>
-    Wenn Sie Fragen zu MyCoRe haben, oder weitere Informationen wünschen, steht Ihnen die 
-    <a href="mailto:info@mycore.de">MyCoRe Geschäftsstelle</a> zur Verfügung. Die Geschäftsstelle berät 
-    Interessenten, steht bei der Lösung von Problemen der Anwender zur Verfügung, unterstützt und 
-    koordiniert die gemeinsame Weiterentwicklung des Systems und übernimmt redaktionelle Arbeiten an 
-    Dokumentation und Webauftritt. Wenn Sie spezielle Fragen zu einzelnen Funktionen von MyCoRe haben, 
-    können Sie sich alternativ auch <a href="site:team" title="Das MyCoRe-Team von A bis Z">gern direkt an einen der Entwickler wenden</a>.
-  </p>
-  <br/>
-  <p><strong>MyCoRe Geschäftsstelle</strong></p> 
- <p>
- am Regionalen Rechenzentrum der Universität Hamburg<br/> 
- <em>Dr. Wiebke Oeltjen</em><br/>
-  Email: <a href="mailto:info@mycore.de">info@mycore.de</a><br/>
-  <br/> 
-  Postanschrift:<br/>
-  Schlüterstr. 70<br/>
-  D-20146 Hamburg<br/>
-  <br/>
-  Tel: +49 (0)40-42838-2652<br/>
-  Fax: +49 (0)40-42838-3284
-  </p>
-  
- </body> 
+  <body>
+
+    <p>
+      Die MyCoRe-Community erreichen Sie über verschiedene <a href="site:email">Mailing-Listen</a> oder
+      Sie wenden sich direkt an einen <a href="site:team">zuständigen Entwickler</a>. MyCoRe ist eine bei
+      <a href="https://sourceforge.net/p/mycore">Sourceforge</a> gehostete Software und nutzt die dortige
+      Infrakstruktur für Tickets. Fehler und Feature-Requests stellen Sie daher am besten direkt dort. Im
+      <a href="site:wiki">MyCoRe-Wiki</a> diskutieren die Entwickler neue Ideen und deren Umsetzung. Auch
+      verschiedene HowTos von Anwendern für Anwender geschrieben sind im Wiki zu finden.
+    </p>
+
+  </body>
 </document>

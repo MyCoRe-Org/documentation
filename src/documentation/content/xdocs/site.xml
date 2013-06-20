@@ -69,69 +69,90 @@ See http://forrest.apache.org/docs/linking.html for more info
     <artifactory label="Artifactory"       href="http://www.mycore.de/artifactory/" />
   </download>
 
-  <documentation label="Dokumentation"          href="documentation/" tab="documentation">
-    <overview    label="Übersicht"              href="index.html" />
-    <whats_new_2_2 label="Was ist neu?"                 href="version22/whats_new.html" />
-    <mcruse_2_2  label="User Guide"                     href="version22/userguide/">
-      <chapter1_ug22  label="1. Über MyCoRe"            href="01_about.html" as_pdf="true" />
-      <chapter2_ug22  label="2. Voraussetzungen"        href="02_prereq.html" as_pdf="true" />
-      <chapter4_ug22  label="3. DocPortal"              href="04_docportal.html" as_pdf="true" />
-      <chapter3_ug22  label="4. Installation"           href="03_install.html" as_pdf="true" />
-      <chapter45_ug22 label="5. Konfiguration"          href="45_configuration.html" as_pdf="true" />
-      <chapter5_ug22  label="6. Datenmodell"            href="05_datamodel.html" as_pdf="true" />
-      <chapter6_ug22  label="7. Umgang"                 href="06_use_docportal.html" as_pdf="true">
-        <cmd_iview_ug22      href="#cmd_iview" />
-        <classif_editor_ug22 href="#classif_editor" />
-      </chapter6_ug22>
-      <chapter7_ug22  label="8. Komponenten"            href="07_optional_components.html" as_pdf="true" />
-      <chapter8_ug22  label="9. Aufbau"                 href="08_more_information.html" as_pdf="true" />
-      <chapter9_ug22  label="10. Tipps"                 href="09_tips.html" as_pdf="true" />
-      <wholedoc_ug22  label="als PDF"                   href="/mcr_user_guide_22.pdf" />
-    </mcruse_2_2>
-    <appdev_2_2  label="Programmer Guide"               href="version22/programmerguide/" >
-      <chapter1_pg22  label="1. Allgemeines"            href="01_general.html" as_pdf="true" />
-      <chapter2_pg22  label="2. Funktionsweisen"        href="02_principles/">
-          <section01_ch2_pg22 label="2.1 Allgemeine Klassen"    href="01_classes.html" as_pdf="true" />
-          <section02_ch2_pg22 label="2.2 Session-Verwaltung"    href="02_session_handling.html" as_pdf="true" />
-          <section03_ch2_pg22 label="2.3 EventHandler"          href="03_event_handler.html" as_pdf="true" />
-          <section04_ch2_pg22 label="2.4 Datenmodell"           href="04_datamodel.html" as_pdf="true" />
-          <section05_ch2_pg22 label="2.5 Query-Service"         href="05_query_service.html" as_pdf="true" />
-          <section06_ch2_pg22 label="2.6 Extrahieren"           href="06_extract.html" as_pdf="true" />
-          <section07_ch2_pg22 label="2.7 Link-Tabellen"         href="07_link_tables.html" as_pdf="true" />
-          <section08_ch2_pg22 label="2.8 Benutzerverwaltung"    href="08_user_management.html" as_pdf="true" />
-          <section09_ch2_pg22 label="2.9 ACL-Integration"       href="09_acl_integration.html" as_pdf="true" />
-          <section10_ch2_pg22 label="2.10 Backend"              href="10_backend.html" as_pdf="true" />
-          <section11_ch2_pg22 label="2.11 Frontend"             href="11_frontend.html" as_pdf="true" />
-          <section12_ch2_pg22 label="2.12 XML-Funktionalität"   href="12_xml_functionality.html" as_pdf="true" />
-          <section13_ch2_pg22 label="2.13 Editor-Framework"     href="13_editor_framework.html" as_pdf="true" />
-          <section14_ch2_pg22 label="2.14 Klassifikationen"     href="14_classification.html" as_pdf="true" />
-          <section15_ch2_pg22 label="2.15 Nützliche Klassen"    href="15_useful_classes.html" as_pdf="true" />
-      </chapter2_pg22>
-      <chapter3_pg22  label="3. Komponenten"            href="03_components.html" as_pdf="true">
-          <iview_pg22 href="#Bildbetrachter" />
-      </chapter3_pg22>
-      <chapter4_pg22  label="4. Schnittstellen"            href="04_interfaces/">
-          <section01_ch4_pg22 label="4.1 OAI"    href="01_oai.html" as_pdf="true" />
-          <section04_ch4_pg22 label="4.2 SWORD"    href="04_sword.html" as_pdf="true" />
-      </chapter4_pg22>
-      <chapter5_pg22  label="5. Anmerkungen"            href="05_comments.html" as_pdf="true" />
-      <wholedoc_pg22  label="als PDF"                   href="/mcr_programmer_guide_22.pdf" />
-    </appdev_2_2>
-    <mcrdev_2_2  label="Developer Guide"        href="version22/mcrdev_2_2.html">
-        <codestyle_dev22 href="#CodeStyle" />
-    </mcrdev_2_2>
-    <migrate label="Migration" href="migrate/">
-      <migrate21_22   label="2.1 -> 2.2"        href="migrate21_22.html" />
-      <migrate20_21   label="2.0 -> 2.1"        href="migrate20_21.html" />
-      <migrate13_20   label="1.3 -> 2.0"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
-      <migrate12_13   label="1.2 -> 1.3"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
+  <documentation           label="Dokumentation"     href="documentation/" tab="documentation">
+    <overview              label="Übersicht"         href="index.html" />
+    <whats_new_201306      label="Was ist neu?"      href="whats_new.html" />
+    <installation          label="Installation"      href="install.html" />
+    <principles            label="Funktionsweisen"   href="principles/">
+      <section01 label="1 Allgemeine Klassen"    href="01_classes.html" as_pdf="true" />
+      <section02 label="2 Session-Verwaltung"    href="02_session_handling.html" as_pdf="true" />
+      <section03 label="3 EventHandler"          href="03_event_handler.html" as_pdf="true" />
+      <section04 label="4 Datenmodell"           href="04_datamodel.html" as_pdf="true" />
+      <section05 label="5 Query-Service"         href="05_query_service.html" as_pdf="true" />
+      <section06 label="6 Extrahieren"           href="06_extract.html" as_pdf="true" />
+      <section07 label="7 Link-Tabellen"         href="07_link_tables.html" as_pdf="true" />
+      <section08 label="8 Benutzerverwaltung"    href="08_user_management.html" as_pdf="true" />
+      <section09 label="9 ACL-Integration"       href="09_acl_integration.html" as_pdf="true" />
+      <section10 label="10 Backend"              href="10_backend.html" as_pdf="true" />
+      <section11 label="11 Frontend"             href="11_frontend.html" as_pdf="true" />
+      <section12 label="12 XML-Funktionalität"   href="12_xml_functionality.html" as_pdf="true" />
+      <section13 label="13 Editor-Framework"     href="13_editor_framework.html" as_pdf="true" />
+      <section14 label="14 Klassifikationen"     href="14_classification.html" as_pdf="true" />
+      <section15 label="15 Nützliche Klassen"    href="15_useful_classes.html" as_pdf="true" />
+    </principles>
+    <components            label="Komponenten"       href="components.html" />
+    <migrate               label="Migration"         href="migrate/">
+      <migrate21_2013.06   label="2.1 -> 2013.06"    href="migrate21_201306.html" />
+      <migrate20_21        label="2.0 -> 2.1"        href="migrate20_21.html" />
+      <migrate13_20        label="1.3 -> 2.0"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
+      <migrate12_13        label="1.2 -> 1.3"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
     </migrate>
-    <howtos   label="HowTo's"            href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo" />
-    <maven       label="Maven Site"      href="http://www.mycore.de/generated/" />
-    <apidocs     label="Javadocs"        href="http://www.mycore.de/generated/mycore/apidocs/" />
+    <howtos                label="HowTo's"           href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo" />
+    <maven                 label="Maven Site"        href="http://www.mycore.de/generated/" />
+    <apidocs               label="Javadocs"          href="http://www.mycore.de/generated/mycore/apidocs/" />
 
     <doc_archive label="Archiv">
-      <version_2_1 label="MyCoRe 2.1" href="version21/">
+      <version_2_2 label="MyCoRe 2.2" href="archiv/version22/">
+        <mcruse_2_2  label="User Guide"                     href="userguide/">
+          <chapter1_ug22  label="1. Über MyCoRe"            href="01_about.html" as_pdf="true" />
+          <chapter2_ug22  label="2. Voraussetzungen"        href="02_prereq.html" as_pdf="true" />
+          <chapter4_ug22  label="3. DocPortal"              href="04_docportal.html" as_pdf="true" />
+          <chapter3_ug22  label="4. Installation"           href="03_install.html" as_pdf="true" />
+          <chapter45_ug22 label="5. Konfiguration"          href="45_configuration.html" as_pdf="true" />
+          <chapter5_ug22  label="6. Datenmodell"            href="05_datamodel.html" as_pdf="true" />
+          <chapter6_ug22  label="7. Umgang"                 href="06_use_docportal.html" as_pdf="true">
+            <cmd_iview_ug22      href="#cmd_iview" />
+            <classif_editor_ug22 href="#classif_editor" />
+          </chapter6_ug22>
+          <chapter7_ug22  label="8. Komponenten"            href="07_optional_components.html" as_pdf="true" />
+          <chapter8_ug22  label="9. Aufbau"                 href="08_more_information.html" as_pdf="true" />
+          <chapter9_ug22  label="10. Tipps"                 href="09_tips.html" as_pdf="true" />
+          <wholedoc_ug22  label="als PDF"                   href="/mcr_user_guide_22.pdf" />
+        </mcruse_2_2>
+        <appdev_2_2  label="Programmer Guide"               href="programmerguide/" >
+          <chapter1_pg22  label="1. Allgemeines"            href="01_general.html" as_pdf="true" />
+          <chapter2_pg22  label="2. Funktionsweisen"        href="02_principles/">
+            <section01_ch2_pg22 label="2.1 Allgemeine Klassen"    href="01_classes.html" as_pdf="true" />
+            <section02_ch2_pg22 label="2.2 Session-Verwaltung"    href="02_session_handling.html" as_pdf="true" />
+            <section03_ch2_pg22 label="2.3 EventHandler"          href="03_event_handler.html" as_pdf="true" />
+            <section04_ch2_pg22 label="2.4 Datenmodell"           href="04_datamodel.html" as_pdf="true" />
+            <section05_ch2_pg22 label="2.5 Query-Service"         href="05_query_service.html" as_pdf="true" />
+            <section06_ch2_pg22 label="2.6 Extrahieren"           href="06_extract.html" as_pdf="true" />
+            <section07_ch2_pg22 label="2.7 Link-Tabellen"         href="07_link_tables.html" as_pdf="true" />
+            <section08_ch2_pg22 label="2.8 Benutzerverwaltung"    href="08_user_management.html" as_pdf="true" />
+            <section09_ch2_pg22 label="2.9 ACL-Integration"       href="09_acl_integration.html" as_pdf="true" />
+            <section10_ch2_pg22 label="2.10 Backend"              href="10_backend.html" as_pdf="true" />
+            <section11_ch2_pg22 label="2.11 Frontend"             href="11_frontend.html" as_pdf="true" />
+            <section12_ch2_pg22 label="2.12 XML-Funktionalität"   href="12_xml_functionality.html" as_pdf="true" />
+            <section13_ch2_pg22 label="2.13 Editor-Framework"     href="13_editor_framework.html" as_pdf="true" />
+            <section14_ch2_pg22 label="2.14 Klassifikationen"     href="14_classification.html" as_pdf="true" />
+            <section15_ch2_pg22 label="2.15 Nützliche Klassen"    href="15_useful_classes.html" as_pdf="true" />
+          </chapter2_pg22>
+          <chapter3_pg22  label="3. Komponenten"            href="03_components.html" as_pdf="true">
+            <iview_pg22 href="#Bildbetrachter" />
+          </chapter3_pg22>
+          <chapter4_pg22  label="4. Schnittstellen"            href="04_interfaces/">
+            <section01_ch4_pg22 label="4.1 OAI"    href="01_oai.html" as_pdf="true" />
+            <section04_ch4_pg22 label="4.2 SWORD"    href="04_sword.html" as_pdf="true" />
+          </chapter4_pg22>
+          <chapter5_pg22  label="5. Anmerkungen"            href="05_comments.html" as_pdf="true" />
+          <wholedoc_pg22  label="als PDF"                   href="/mcr_programmer_guide_22.pdf" />
+        </appdev_2_2>
+        <mcrdev_2_2  label="Developer Guide"        href="mcrdev_2_2.html">
+          <codestyle_dev22 href="#CodeStyle" />
+        </mcrdev_2_2>
+      </version_2_2>
+      <version_2_1 label="MyCoRe 2.1" href="archiv/version21/">
         <whats_new_2_1 label="Was ist neu?" href="whats_new.html" />
         <mcruse_2_1  label="User Guide"                href="userguide/">
           <chapter1_ug21  label="1. Über MyCoRe"            href="01_about.html" as_pdf="true" />
@@ -180,7 +201,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         </appdev_2_1>
         <mcrdev_2_1  label="Developer Guide"        href="mcrdev_2_1.html" />
       </version_2_1>
-      <version_2_0 label="MyCoRe 2.0" href="version20/">
+      <version_2_0 label="MyCoRe 2.0" href="archiv/version20/">
           <mcruse      label="User Guide"             href="mcruse.html" />
           <appdev      label="Programmer Guide"       href="appdev.html">
             <chapter1  label="Allgemeines"            href="#Allgemeines+zur+Implementierung" />
@@ -195,16 +216,17 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   </documentation>
 
-  <support label="Kontakt" href="support/" tab="support">
-    <office     label="Geschäftsstelle"  href="index.html" />
+  <support label="Organisation" href="support/" tab="support">
+    <community  label="Community"        href="index.html" />
     <email      label="Mailing-Listen"   href="email.html" />
     <team       label="Team"             href="team.html" />
-    <bugs       label="Bug melden"       href="http://sourceforge.net/tracker/?group_id=92005&amp;atid=599192" />
-    <featurereq label="Feature Request"  href="http://sourceforge.net/tracker/?group_id=92005&amp;atid=599195" />
+    <bugs       label="Bug melden"       href="http://sourceforge.net/p/mycore/bugs/" />
+    <featurereq label="Feature Request"  href="https://sourceforge.net/p/mycore/feature-requests/" />
     <wiki       label="MyCoRe Wiki"      href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
   </support>
 
   <impressum label="Impressum" href="impressum/index.html" tab="impressum" />
+  <contact   label="Kontakt"   href="contact/index.html"   tab="contact" />
 
 
     <!-- news          label="Aktuelles"          href="index.html" />

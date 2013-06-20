@@ -500,7 +500,7 @@ $(document).ready(function() {
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template name="footer_menu">
         <div id="footer_menu" class="pull-right">
-            <a href="{$root}support/index.html">Kontakt</a> |
+            <a href="{$root}contact/index.html">Kontakt</a> |
             <a href="{$root}impressum/index.html">Impressum</a>
         </div>
 
