@@ -42,7 +42,7 @@
         Suchmasken bis hin zu frei formulierbaren Experten-Abfragen in der MyCoRe Query Language (MCRQL). Suchmasken können
         selbst erstellt oder aus einer Konfiguration von Suchfeldern automatisch generiert werden.
       </p>
-      <img src="images/searchmask.png" alt="Suchmaske" title="DuEPublico Suchmaske"/>
+      <img src="images/searchmask.png" alt="Suchmaske" title="OpenAgrar Suchmaske"/>
       <p class="klein"><strong>Abbildung 3:</strong> Beispiel einer Suchmaske</p>
       <p>
         Trefferlisten sind auf- oder absteigend nach mehreren Feldern beliebig sortierbar. Die ursprüngliche Suche kann angezeigt

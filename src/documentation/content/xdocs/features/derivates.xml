@@ -52,7 +52,7 @@
         Bitrate, Framerate und Abspieldauer angezeigt werden.
         </p>
         <img src="images/videostreaming.png" alt="Video-Streaming" title="Video-Streaming"/>
-        <p class="klein"><strong>Abbildung 4:</strong> Anzeige Real-Player und Metadaten</p>
+        <p class="klein"><strong>Abbildung 4:</strong> Anzeige multimedialer Daten</p>
       <p>
         Unterstützt wird der <link href="https://helix-server.helixcommunity.org/" title="Helix Community" target="_blank">
         Helix-Server (Real)</link>
@@ -74,7 +74,7 @@
         Zoomstufen automatisch von MyCoRe generiert und intern zwischengespeichert.
         </p>
         <img src="images/imageviewer.png" alt="Bildbetrachter (iView2)" title="Beispiel aus der Anwendung HisBest"/>
-        <p class="klein"><strong>Abbildung 5:</strong> Bildbetrachter</p>
+        <p class="klein"><strong>Abbildung 5:</strong> Anzeige verschiedener Bildformate im Bildbetrachter</p>
     </section>
 
 </body>
