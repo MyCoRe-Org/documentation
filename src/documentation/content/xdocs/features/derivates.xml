@@ -22,7 +22,7 @@
         ein oder mehreren Dateien bilden.
       </p>
     </section>
-    
+
     <section>
       <title>Content Stores</title>
       <p>
@@ -30,12 +30,12 @@
         insbesondere eine MD5 Prüfsumme zur Konsistenzprüfung. Als physisches Speichermedium dient ein separater Bereich
         im lokalen Dateisystem, auf den der Browser des Anwenders nur indirekt über Java Servlets zugreift.
         So kann die Anwendung sicherstellen, dass Zugriffsberechtigungen nicht umgangen werden. Neben dem <strong>lokalen Dateisystem</strong>
-        unterstützt MyCoRe über das <link href="http://commons.apache.org/proper/commons-vfs/filesystems.html">Apache Commons Virtual Fileystems</link> 
-        auch direkt die Speicherung auf entfernten Dateisystemen via <strong>FTP, SFTP oder CIFS</strong>. 
+        unterstützt MyCoRe über das <link href="http://commons.apache.org/proper/commons-vfs/filesystems.html">Apache Commons Virtual Fileystems</link>
+        auch direkt die Speicherung auf entfernten Dateisystemen via <strong>FTP, SFTP oder CIFS</strong>.
       </p>
       <p>
         MyCoRe kann mehrere solcher Speicherorte für Dateien (Content Stores) parallel verwenden.
-        Anhand von Regeln wird für die importierte Datei ein entsprechender Content Store gewählt. 
+        Anhand von Regeln wird für die importierte Datei ein entsprechender Content Store gewählt.
         So können etwa Audio-/Videodateien anhand ihrer Dateiendung automatisch beim Upload auf
         einem Video Streaming Server abgelegt werden.
       </p>
@@ -44,16 +44,16 @@
     <section>
       <title>Import und Export von Dateien</title>
       <p>
-        Import und Export von Dateien und Dateibereichen ist sowohl über die 
-        MyCoRe-Kommandozeile (Command Line Interface) für Batch-Verarbeitung, 
+        Import und Export von Dateien und Dateibereichen ist sowohl über die
+        MyCoRe-Kommandozeile (Command Line Interface) für Batch-Verarbeitung,
         als auch über die Web-Schnittstelle möglich.
         Einfache Dateien laden Autoren direkt über ein HTML-Formular hoch.
         Für den Upload großer Dateien mit bis zu mehreren Gigabyte oder ganzer Verzeichnisbäume
-        steht ein Java Applet zur Verfügung. Die so importierte Verzeichnisstruktur bleibt im internen Derivat erhalten, 
+        steht ein Java Applet zur Verfügung. Die so importierte Verzeichnisstruktur bleibt im internen Derivat erhalten,
         so dass auch umfangreiche HTML-Bäume archiviert und dargestellt werden können.
       </p>
       <p>
-        Über ein Servlet werden Dateien und Verzeichnisse im Browser angezeigt und ausgeliefert. 
+        Über ein Servlet werden Dateien und Verzeichnisse im Browser angezeigt und ausgeliefert.
         Dabei ist auch die dynamische Generierung einer ZIP-Datei möglich.
       </p>
     </section>
@@ -62,15 +62,17 @@
       <title>Image Viewer</title>
       <p>
         Das MyCoRe Image Viewer Modul realisiert einen Bildbetrachter für
-        hochauflösende Digitalisate oder große Grafikdateien (z. B. Landkarten). 
-        Formate wie hochauflösende TIFF Dateien werden direkt in MyCoRe importiert und 
-        serverseitig automatisch in verschiedenen Zoom-Stufen gekachelt. 
-        Der in JavaScript implementierte, integrierte Image Viewer zeigt die Grafik dann in jedem aktuellen Browser an. 
-        Der Image Viewer erlaubt das Skalieren von Bildern (Zoomen) und das Blättern durch die Bilder eines Dateibereichs. 
+        hochauflösende Digitalisate oder große Grafikdateien (z. B. Landkarten).
+        Formate wie hochauflösende TIFF Dateien werden direkt in MyCoRe importiert und
+        serverseitig automatisch in verschiedenen Zoom-Stufen gekachelt.
+        Der in JavaScript implementierte, integrierte Image Viewer zeigt die Grafik dann in jedem aktuellen Browser an.
+        Der Image Viewer erlaubt das Skalieren von Bildern (Zoomen) und das Blättern durch die Bilder eines Dateibereichs.
         Über ein Thumbnail kann in großen Bildern navigiert werden.
       </p>
+      <img src="images/imageviewer.png" alt="Bildbetrachter (iView2)" title="Beispiel aus der Anwendung HisBest"/>
+      <p class="klein"><strong>Abbildung 4:</strong> Anzeige verschiedener Bildformate im Bildbetrachter</p>
     </section>
-    
+
     <section>
       <title>METS-Editor</title>
       <p>
@@ -80,7 +82,7 @@
         um durch ein Digitalisat zu blättern und ein Inhaltsverzeichnis anzuzeigen.
       </p>
       <p>
-        Das über MyCoRe erstellte METS Dokument ist auch kompatibel zum DFG-Viewer, über den Digitalisate 
+        Das über MyCoRe erstellte METS Dokument ist auch kompatibel zum DFG-Viewer, über den Digitalisate
         so alternativ dargestellt werden können.
       </p>
     </section>
@@ -88,18 +90,20 @@
     <section>
       <title>Audio-/Video-Streaming</title>
       <p>
-        MyCoRe kann transparent einen Audio-/Video-Streaming-Server als Ablageort für Dateien integrieren. 
-        Der Nutzer importiert eine Datei bzw. lädt sie über den Webbrowser hoch. 
+        MyCoRe kann transparent einen Audio-/Video-Streaming-Server als Ablageort für Dateien integrieren.
+        Der Nutzer importiert eine Datei bzw. lädt sie über den Webbrowser hoch.
         Anhand der Dateiendung und hinterlegter Regeln wählt MyCoRe dann
         automatisch den Streamingserver als Speicherort. Die Audio-/Videodatei kann dann über den
-        Streaming Server wiedergegeben  werden, ohne dass ein Download erforderlich ist. 
+        Streaming Server wiedergegeben  werden, ohne dass ein Download erforderlich ist.
         Der Nutzer kann frei im Videostrom navigieren oder direkt über die URL
         bestimmte Stellen ansteuern. In der Weboberfläche können aus dem
         Streaming Server gewonnene technische Metadaten wie Bitrate, Framerate und Abspieldauer angezeigt werden.
       </p>
+      <img src="images/videostreaming.png" alt="Video-Streaming" title="Video-Streaming"/>
+      <p class="klein"><strong>Abbildung 5:</strong> Anzeige multimedialer Daten</p>
       <p>
-        Unterstützt wird zur Zeit der 
-        <link href="https://helix-server.helixcommunity.org/" title="Helix Community" target="_blank">Helix Universal Server (Real)</link> 
+        Unterstützt wird zur Zeit der
+        <link href="https://helix-server.helixcommunity.org/" title="Helix Community" target="_blank">Helix Universal Server (Real)</link>
         zum Streaming von Real Audio/Video, Windows Media, Flash, MPEG 4, MP3, AVI, Quicktime und anderen Formaten.
       </p>
     </section>
