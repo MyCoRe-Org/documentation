@@ -51,11 +51,11 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   </features>
 
-  <demo    label="Beispiele"          href="demo/" tab="demo">
-    <index label="Demo"               href="index.html" />
-    <map   label="Karte"              href="map.html" />
-    <list  label="Vollständige Liste" href="list.html" />
-  </demo>
+  <applications    label="Beispiele"              href="applications/" tab="applications">
+    <index         label="Demo"                   href="index.html" />
+    <map           label="Karte"                  href="map.html" />
+    <list          label="Anwendungen von A-Z"        href="list.html" />
+  </applications>
 
   <download      label="Download"        href="download/" tab="download">
     <howtoget    label="Übersicht"       href="index.html" />

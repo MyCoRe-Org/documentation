@@ -14,7 +14,7 @@
   -->
   <tab id="welcome"        dir=""              label="Start" />
   <tab id="features"       dir="features"      label="Funktionen" />
-  <tab id="demo"           dir="demo"          label="Beispiele" />
+  <tab id="applications"   dir="applications"  label="Beispiele" />
   <tab id="download"       dir="download"      label="Download" />
   <tab id="documentation"  dir="documentation" label="Dokumentation" />
   <tab id="support"        dir="support"       label="Organisation" />
