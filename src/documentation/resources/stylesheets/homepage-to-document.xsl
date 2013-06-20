@@ -44,7 +44,7 @@
                             </ul>
                          </div>
                         <div id="karte" class="">
-                            <span id="label"><a href="#" title="Alle Projekte auf einer Karte anzeigen">Karte</a></span>
+                            <span id="label"><a href="site:map" title="Alle Projekte auf einer Karte anzeigen">Karte</a></span>
                             <a href="site:map" title="Alle Projekte auf einer Karte anzeigen"><img src = "images/icon_karte.png"
                                  class=""
                                  id  = ""
