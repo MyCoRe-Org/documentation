@@ -3,10 +3,86 @@
 
 <document>
   <header>
-    <title>Was ist neu in Version 2.2?</title>
-    <abstract>Die neue MyCoRe-Version steht ganz im Zeichen von MODS ...</abstract>
+    <title>Was ist neu in Version 2013.06?</title>
+    <abstract>Nicht nur der Name hat sich mit dem aktuellen Release geändert. Die neue MyCoRe-Version
+    steht ganz im Zeichen von MODS und SOLR.</abstract>
   </header>
   <body>
-    <p>Details folgen!</p>
+
+    <h2>MODS</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Um den immer komplexer werdenen Anforderungen an Datenmodelle in Repositories gerecht zu werden,
+        unterstützt MyCoRe ab sofort MODS als Datenmodell. Man kann nun nicht nur MODS-Dokumente importieren,
+        sondern es steht auch alles für die Darstellung und den Umgang mit MODS-Dokumenten zur Verfügung.
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Thomas Scheffler, Frank Lützenkirchen und Kathleen Neumann</dd>
+    </dl>
+
+    <h2>Bildbetrachter</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Druckfunktion (Ausgabe in PDF) im Bildbetrachter und viele Anpassungen an aktuelle Browser.
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Thomas Scheffler</dd>
+    </dl>
+
+    <h2>Korbfunktion</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Korbfunktion zum Sammeln von Metadatenobjekten in der Web-Session, speicherbar, dokumentiert
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Frank Lützenkirchen</dd>
+    </dl>
+
+    <h2>Nutzerverwaltung </h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Nutzerverwaltung von miless in MyCoRe übernehmen
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Thomas Scheffler</dd>
+    </dl>
+
+    <h2>SOLR</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        Mittelfristig soll Lucene als Suchengine durch SOLR abgelöst werden, um die facettierte Suche,
+        Markierungen der Suchbegriffe und vieles andere mehr zu ermöglichen. Mit diesem Release besteht
+        nun bereits die Möglichkeit SOLR als Alternative zu Lucene zu nutzen.
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>Silvio Hermann, Matthias Eichner und Thomas Scheffler</dd>
+    </dl>
+
+    <!-- h2>Titel der Änderung</h2>
+    <dl>
+      <dt>Beschreibung:</dt>
+      <dd>
+        xxx
+        <br />
+        <br />
+      </dd>
+      <dt>Realisiert von:</dt>
+      <dd>xxx</dd>
+    </dl -->
   </body>
 </document>
