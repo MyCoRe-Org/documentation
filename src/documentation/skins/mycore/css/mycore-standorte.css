@@ -61,3 +61,5 @@ div.mcrmap_item img.icon{
 div.mcrmap_item img.info{
   vertical-align: middle;
 }
+
+#map_div img { max-width:none; }

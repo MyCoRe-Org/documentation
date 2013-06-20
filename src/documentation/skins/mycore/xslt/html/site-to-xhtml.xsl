@@ -235,7 +235,7 @@ $(document).ready(function() {
                 language="javascript"
                 src="{$root}skin/jquery-1.7.1.min.js"></script>
         <xsl:if test="$path = 'demo/map.html'">
-          <script type="text/javascript" src="{$root}skin/OpenLayers-2.12/OpenLayers.js"></script>
+          <script type="text/javascript" src="http://dev.openlayers.org/releases/OpenLayers-2.12/OpenLayers.js"></script>
           <script type="text/javascript">
 <![CDATA[
       var map, select;
@@ -248,9 +248,9 @@ $(document).ready(function() {
             "MapQuest",
                 [
                   "http://otile1.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                    "http://otile2.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                    "http://otile3.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                    "http://otile4.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png"
+                  "http://otile2.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
+                  "http://otile3.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
+                  "http://otile4.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png"
                 ],
                 {
                   transitionEffect: "resize"
@@ -259,28 +259,28 @@ $(document).ready(function() {
         map.addLayer(mapquestLayer);
 
         var kml =  new OpenLayers.Layer.Vector("MyCoRe Standorte", {
-                      projection: new OpenLayers.Projection("EPSG:4326"),
-                    strategies: [new OpenLayers.Strategy.Fixed()],
-                    protocol: new OpenLayers.Protocol.HTTP({
-                      url: "demo/map/mycore-standorte.kml",
-                        format: new OpenLayers.Format.KML({
-                            extractStyles: true,
-                            extractAttributes: true
-                        })
-                    })
-              });
-              map.addLayer(kml);
+                     projection: new OpenLayers.Projection("EPSG:4326"),
+                     strategies: [new OpenLayers.Strategy.Fixed()],
+                     protocol: new OpenLayers.Protocol.HTTP({
+                       url: "map/mycore-standorte.kml",
+                       format: new OpenLayers.Format.KML({
+                         extractStyles: true,
+                         extractAttributes: true
+                       })
+                     })
+                   });
+        map.addLayer(kml);
 
-              select = new OpenLayers.Control.SelectFeature(kml);
-            kml.events.on({
+        select = new OpenLayers.Control.SelectFeature(kml);
+        kml.events.on({
                     "featureselected": onFeatureSelect,
                     "featureunselected": onFeatureUnselect,
-                });
+        });
 
-              map.addControl(select);
-              select.activate();
+        map.addControl(select);
+        select.activate();
 
-          map.setCenter(new OpenLayers.LonLat(10.25,51.5) // Center of the map
+        map.setCenter(new OpenLayers.LonLat(10.25,51.5) // Center of the map
               .transform(
                 new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
                 new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
@@ -500,8 +500,8 @@ $(document).ready(function() {
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template name="footer_menu">
         <div id="footer_menu" class="pull-right">
-            <a href="/support/index.html">Kontakt</a> |
-            <a href="/impressum/index.html">Impressum</a>
+            <a href="{$root}support/index.html">Kontakt</a> |
+            <a href="{$root}impressum/index.html">Impressum</a>
         </div>
 
     </xsl:template>
