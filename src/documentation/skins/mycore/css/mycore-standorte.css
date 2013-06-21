@@ -62,4 +62,15 @@ div.mcrmap_item img.info{
   vertical-align: middle;
 }
 
-#map_div img { max-width:none; }
+#map_div {
+  width: 600px;
+  height: 600px;
+  border: 1px solid #dddddd;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+#map_div img {
+  max-width:none;
+}

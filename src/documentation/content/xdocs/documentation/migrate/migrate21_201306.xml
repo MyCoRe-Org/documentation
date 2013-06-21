@@ -187,6 +187,12 @@
           vermerkt sind, aber noch Platz wegnehmen.
         </p>
       </section>
+      <section>
+        <title>Weitere Workflowkomponente</title>
+        <p>
+          Es steht nun neben dem SimpleWorkflow eine weitere Workflowkomponente zur Verfügung ...
+        </p>
+      </section>
     </section>
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
  <script type="text/javascript">

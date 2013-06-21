@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document>
+<header>
+ <title>Logos</title>
+</header>
+
+<body>
+  <div id="logos">
+    <ul>
+      <li>MyCoRe-Logo 110x19 (transparenter Hintergrund) <br />
+        <img src="/images/mycore_logo_110x19_blaue_schrift_frei.png"  alt="MyCoRe-Logo 110x19" title="110x19_blaue_schrift_frei" />
+      </li>
+      <li>MyCoRe-Logo 110x19 (transparenter Hintergrund) <br />
+        <img src="/images/mycore_logo_110x19_weisse_schrift_frei.png" alt="MyCoRe-Logo 110x19" title="110x19_weisse_schrift_frei" />
+      </li>
+      <li>MyCoRe-Logo 129x34 <br />
+        <img src="/images/mycore_logo_129x34_knopf_dunkel.png"        alt="MyCoRe-Logo 129x34" title="129x34_knopf_dunkel" />
+      </li>
+      <li>MyCoRe-Logo 129x34 <br />
+        <img src="/images/mycore_logo_129x34_knopf_hell.png"          alt="MyCoRe-Logo 129x34" title="129x34_knopf_hell" />
+      </li>
+      <li>MyCoRe-Logo 170x40 (transparenter Hintergrund) <br />
+        <img src="/images/mycore_logo_170x40_frei.png"                alt="MyCoRe-Logo 170x40" title="170x40_frei" />
+      </li>
+      <li>MyCoRe-Logo 170x40 (weisser Hintergrund) <br />
+        <img src="/images/mycore_logo_170x40_weiss.jpg"               alt="MyCoRe-Logo 170x40" title="170x40_weiss" />
+      </li>
+      <li>powered-by-Logo 120x30 (transparenter Hintergrund) <br />
+        <img src="/images/mycore_logo_powered_120x30_blaue_schrift_frei.png" alt="powered-by-Logo 120x30" title="powered_120x30_blaue_schrift_frei" />
+      </li>
+      <li>powered-by-Logo 129x34 <br />
+        <img src="/images/mycore_logo_powered_129x34_knopf_dunkel.png" alt="powered-by-Logo 129x34" title="powered_129x34_knopf_dunkel" />
+      </li>
+      <li>powered-by-Logo 129x34 <br />
+        <img src="/images/mycore_logo_powered_129x34_knopf_hell.png"   alt="powered-by-Logo 129x34" title="powered_129x34_knopf_hell" />
+      </li>
+      <li>powered-by-Logo 175x55 (transparenter Hintergrund) <br />
+        <img src="/images/mycore_logo_powered_175x55_frei.png"         alt="powered-by-Logo 175x55" title="powered_175x55_frei" />
+      </li>
+      <li>powered-by-Logo 175x55 (weisser Hintergrund) <br />
+        <img src="/images/mycore_logo_powered_175x55_weiss.jpg"        alt="powered-by-Logo 175x55" title="powered_175x55_weiss" />
+      </li>
+    </ul>
+  </div>
+</body>
+</document>
