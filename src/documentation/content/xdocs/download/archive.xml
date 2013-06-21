@@ -12,6 +12,11 @@
 
  <body>
 
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+
   <section>
     <title>Prerelease 2.1.80 (Beta 1)</title>
     <p>
@@ -98,10 +103,19 @@
     Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
     pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2.0.94</strong> angepasst werden:
 
-    <source>
+    <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2.0.94&lt;/version>
+[...]
+&lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
-  &lt;artifactId>application-model&lt;/artifactId>
-  &lt;version>2.0.94&lt;/version></source>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>2.0.94&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
 
     Anschliessend muss die Anwendung neu erstellt werden.
   </p>
@@ -176,10 +190,20 @@
      Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
      pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2.0.93</strong> angepasst werden:
 
-    <source>
+    <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2.0.93&lt;/version>
+[...]
+&lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
-  &lt;artifactId>application-model&lt;/artifactId>
-  &lt;version>2.0.93&lt;/version></source>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>2.0.93&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
+
 
      Anschliessend muss die Anwendung neu erstellt werden.
    </p>
@@ -768,6 +792,11 @@ Als wesentliche Änderungen zum SNAPSHOT_20080912 sind zu nennen:</p>
   cvs -d :pserver:anoncvs@server.mycore.de:/cvs export -r SNAPSHOT_20061115 \ docportal
   </p>
  </section>
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
 
 </body>
 
