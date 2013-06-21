@@ -48,10 +48,10 @@
       </p>
       <ul>
         <li><a alt="Link zum MyCoRe-Datenblatt (PDF-File)" title="Link zum MyCoRe-Datenblatt (PDF-File)" 
-            href="filecollection/MyCoRe_Datenblatt.pdf">MyCoRe-Datenblatt</a> deutsch</li>
+            href="/filecollection/MyCoRe_Datenblatt.pdf">MyCoRe-Datenblatt</a> deutsch</li>
         <li><a alt="Link to the MyCoRe-Datasheet (PDF-File, engl. version)"
             title="Link to the MyCoRe-Datasheet (PDF-File, engl. version)" 
-            href="filecollection/MyCoRe_datasheet.pdf">MyCoRe datasheet</a> englisch</li>
+            href="/filecollection/MyCoRe_datasheet.pdf">MyCoRe datasheet</a> englisch</li>
       </ul>
 
   </body>
