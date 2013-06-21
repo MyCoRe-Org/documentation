@@ -131,7 +131,7 @@ $(document).ready(function() {
 
                 $(document).bind('scroll',function(){
                     var hOffset = header.offset().top+header.height(),
-                        top     = $(document).scrollTop()
+                        top     = $(document).scrollTop() + nav.height()
 
                     // make it sticky ...
                     if (hOffset < top) {
