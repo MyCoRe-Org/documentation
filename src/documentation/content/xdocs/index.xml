@@ -16,6 +16,8 @@
           <title>vielseitig</title>
           <path>abbildung_vielseitig.jpg</path>
           <link>site:features/index</link>
+          <id>sphere_manysided</id>
+          <alt>Kugel mit vielen farbigen Flächen</alt>
           <description>
             für Online-Archive, Dokumentenserver, Bildersammlungen uvm.
           </description>
@@ -24,6 +26,8 @@
           <title>anpassbar</title>
           <path>abbildung_anpassbar.jpg</path>
           <link>site:documentation/overview</link>
+          <id>sphere_adaptable</id>
+          <alt>Kugel mit mathematischen Formeln</alt>
           <description>
             mit eigenem Datenmodell, Suche, Layout hin zum eigenen Repository
           </description>
@@ -32,6 +36,8 @@
           <title>nachhaltig</title>
           <path>abbildung_nachhaltig.jpg</path>
           <link>site:team</link>
+          <id>sphere_lasting</id>
+          <alt>Weltkugel mit Wald und Wasser</alt>
           <description>
             kontinuierliche Community-Entwicklung über mehr als 10 Jahre
           </description>
@@ -63,7 +69,7 @@
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Statistische Bibliothek</title>
+          <title>Anwendung</title>
           <message>Statistische Ämter des Bundes und der Länder setzen MyCoRe ein.</message>
           <url>https://www.destatis.de/GPStatistik/</url>
           <date>12. Juni 2013</date>

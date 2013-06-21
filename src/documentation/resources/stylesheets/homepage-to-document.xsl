@@ -61,10 +61,10 @@
 
   <xsl:template match="image">
     <div class="span4 text-center">
-      <a href="{link}"><img src = "images/{path}"
-                            class=""
-                             id  = ""
-                             alt = "xxx" /></a>
+      <a href="{link}"><img src   = "images/{path}"
+                            class = "sphere"
+                            rel   = "{id}"
+                            alt   = "{alt}" /></a>
       <h3><xsl:value-of select="title" /></h3>
       <p><xsl:value-of select="description" /></p>
     </div>
