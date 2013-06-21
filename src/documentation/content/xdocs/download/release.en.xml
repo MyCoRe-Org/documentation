@@ -17,7 +17,6 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <p>
-    MyCoRe 2013.06 ...
     You can find an overview of all innovations on the documentation site
     <a href="site:whats_new">"Was ist neu?"</a>. A detailed list of changes
     is provided in the <a href="site:changelog">Changelog</a>.
@@ -46,16 +45,16 @@
   </p>
 
   <p>
-    <a href="#"
-      ><img src="/images/download_mcr_21.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
-    As an alternative DocPortal is available as download with <a href="#"
+    <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
+      ><img src="/images/download_docportal_201306.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
+    As an alternative DocPortal is available as download with <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
     >Release 2013.06</a>. You can find the corresponding installation guidelines
     in the <a href="site:install">UserGuide</a>. There are instructions for the
     <a href="site:migrate21_2013.06">Migration</a> as well provided.
   </p>
   <p>
     Furthermore there is a MyCoRe
-    <a href="#">jar file</a>
+    <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.06.0/">jar file</a>
     ready for download, therewith you can use the MyCoRe kernel in your own application
     independent from DocPortal. MyCoRe can be integrated as well via Maven.
   </p>

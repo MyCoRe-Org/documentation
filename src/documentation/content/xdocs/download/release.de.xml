@@ -17,7 +17,9 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <p>
-    Das aktuelle Release 2013.06 ...
+    Mit dem MyCoRe-Release 2013.06 kommt ein überarbeitetes Nutzersystem, die Unterstützung
+    des MODS-Standards. Aber auch neue Funktionen, wie beispielsweise ein Warenkorb und
+    eine weitere Workflowunterstützung sind Teil der neuen Version.
     Eine Übersicht aller Neuerungen ist unter Dokumentation - <a href="site:whats_new">"Was
     ist neu?"</a> zusammengestellt. Eine detaillierte Liste aller Neuerungen bietet das
     <a href="site:changelog">Changelog</a>.
@@ -45,15 +47,15 @@
   </p>
 
   <p>
-    <a href="#"
-      ><img src="/images/download_mcr_21.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
-    Alternativ steht DocPortal mit dem aktuellen <a href="#"
+    <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
+      ><img src="/images/download_docportal_201306.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
+    Alternativ steht DocPortal mit dem aktuellen <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
     >Release 2013.06</a> zum Download zur Verfügung. Die dazugehörige Installationsanleitung finden Sie
     unter <a href="site:install">Dokumentation</a>. Für die <a href="site:migrate21_2013.06">Migration</a> steht
     ebenfalls eine Anleitung zur Verfügung.
   </p>
   <p>
-    Weiterhin kann MyCoRe als <a href="#"
+    Weiterhin kann MyCoRe als <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.06.0/"
       >jar-Archiv</a> heruntergeladen und so der MyCoRe-Kern unabhängig
     von DocPortal für die eigene Anwendung genutzt werden. MyCoRe kann auch über Maven
     eingebunden werden.
