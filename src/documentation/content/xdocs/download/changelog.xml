@@ -4,31 +4,177 @@
 <document>
 <header>
  <title>Changes</title></header>
- 
+
  <body>
-  
+
   <section>
-  <title>Changes in MyCoRe</title> 
-  
+  <title>Changes in MyCoRe</title>
+
   <section>
-  <title>Version 2.2 (current head tree)</title>
+  <title>Version 2013.07 (current head)</title>
   <ul>
-    
+
     <li>Components</li>
     <ul>
-      <li>Add basket to common component</li>
+      <li>...</li>
       <li>...</li>
     </ul>
-    
+
   </ul>
   </section>
-  
-  
+
+  <section>
+  <title>Version 2013.06</title>
+  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0/changelog.html">maven site</a></p>
+  <ul>
+
+    <li>New features:
+      <ul>
+        <li>Added SOLR support for OAI (MCR.OAIDataProvider.XXX.Searcher=org.mycore.oai.MCROAISolrSearcher)</li>
+        <li>Added method getLocalFile() to the IFS1 MCRFile API.</li>
+        <li>Added support to browse through solr response and display single hits as "receive"-links.</li>
+        <li>Added commands to handle all tiles of an object.</li>
+        <li>auto-generate dynamic solr fields set 'MCR.Module-solr.DynamicFields=false' do deactivate</li>
+        <li>ClassificationBrowser implementation for solr</li>
+        <li>I18N support to mycore-user2</li>
+        <li>MCRXSL2JAXBTransformer to generate JAVA Objects via XSLT</li>
+        <li>command "delete index part for type {0}" in mycore-solr</li>
+        <li>MCRListeningPriorityExecutorService where tasks can be prioritized and listened</li>
+        <li>MCRSolrSelectProxyServlet supports "wt" parameter of SOLR</li>
+        <li>support for canvas HTML element in mycore-iview2 (adds rotate function)</li>
+        <li>Handle support</li>
+        <li>mycore-xeditor component</li>
+        <li>MCRObjectTypeStrategy allows "default_class" rules for classifications</li>
+        <li>Added commands to check consistency of classifications and fix any errors found
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/606">606</a>)</li>
+        <li>MCRXMLFunctions.encodeURIPath(String path, boolean asciiOnly) to ensure that encoded path contains only ASCII characters. Thanks to Frank Lützenkirchen.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/610">610</a>)</li>
+        <li>MCRXMLFunctions.normalizeAbsoluteURL(String) to ensure that a absolute URL is RFC 2396 compliant. Thanks to Frank Lï¿½tzenkirchen.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/607">607</a>)</li>
+        <li>MCRURNManager.assignURN(String urn, String derivateID, String path)</li>
+        <li>MCRXSLInfoServlet generates graphs that display call-template calls: XSL.mode=uses</li>
+        <li>o.m.d.m.MCRMetadataManager.getObjectId(MCRObjectID, long) to retrieve objectID of metadata object for derivate id</li>
+        <li>MCRCache added getIfUpToDate() with lazy determination of last modified timestamp of cache value</li>
+        <li>?XSL.Style=versions on "/receive/*" URLs displays version information</li>
+        <li>added mycore-solr to add Apache SOLR support</li>
+        <li>added MCRIFSCommands to operate on IFS from CLI</li>
+        <li>added MCRLockServlet to lock metadata update forms</li>
+        <li>added mycore-classeditor - a new classeditor that uses RESTful web services</li>
+        <li>added JAX-RS support via Apache Jersey</li>
+        <li>added mycore-migration21-22 component</li>
+        <li>added mycore-wfc (workflow component)</li>
+        <li>added MCRContent and MCRContentTransformer classes</li>
+        <li>added mycore-user2 component</li>
+        <li>added org.mycore.datamodel.language.* for code-independent representation for languages used in datamodels</li>
+        <li>added MCRLoggingCommands to change log levels through webcli</li>
+        <li>added MCRTarServlet to generate tar files</li>
+        <li>added many editor forms for different mods document types</li>
+        <li>added MCRPersistentServlet to circumvent mycore-swf</li>
+        <li>all deleted items are stored in table MCRDELETEDITEMS</li>
+        <li>added MCRExternalProcess to launch command line processes</li>
+        <li>added support to generate PDF documents in image viewer.
+            see: <a href="http://www.mycore.de/svn/maven/mets-printer/">http://www.mycore.de/svn/maven/mets-printer/</a></li>
+        <li>Added templates for share/subscribe buttons. See share.xsl and document metadata details view in DocPortal for an example.</li>
+        <li>Added basket functionality to web front end. A basket collects objects in the user's session.
+            Objects can be added, removed, their order can be changed and the basket can be cleared completely.
+            There can be different baskets for different purposes within the same session.</li>
+        <li>added MODS datamodel support through mycore-mods</li>
+      </ul>
+    </li>
+
+    <li>Fixed Bugs:
+      <ul>
+        <li>Fixed several bugs in mycore-solr</li>
+        <li>The login page should be accessible only through https Thanks to Silvio Hermann.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/608">608</a></li>
+        <li>WCMS: Assigning read and write permissions does not work
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/628">628</a>
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/617">617</a></li>
+        <li>Mets Editor does not support files with blanks
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/625">625</a></li>
+        <li>wait for index process to complete on shutdown (lucene &amp; solr)</li>
+        <li>MCRSearchServlet: on redirect pass XSL.Transformer parameter</li>
+        <li>Editor: &lt;hidden var="..." descendants="true" /> may duplicate data when attribute predicates are used in xpath
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/622">622</a></li>
+        <li>Editing user data produces erroneous links in "Search and manage users" Thanks to Frank Lützenkirchen.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/606">606</a></li>
+        <li>Password hint is not displayed Thanks to Matthias Eichner.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/613">613</a></li>
+        <li>Workflow looses action and type Thanks to Kathleen Neumann.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/611">611</a></li>
+        <li>Categories have wrong left-/right- values when using new classification editor Thanks to Matthias Eichner.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/612">612</a></li>
+        <li>ClassificationEditor does not work for non super users. Thanks to Marcus Mï¿½ller.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/609">609</a></li>
+        <li>Mets-Editor: order label is not displayed in the mets-editor
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/601">601</a></li>
+        <li>foliation in METS editor does not work on Mac OS
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/595">595</a></li>
+        <li>do not remove URN information if file content is updated</li>
+        <li>fixed multi thread access to SAXBuilder Thanks to Silvio Hermann.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/598">598</a></li>
+        <li>instances of MCRSession are bound to the first IP address (see <a href="http://sourceforge.net/p/mycore/bugs/570/">#570</a>)</li>
+        <li>MyCoRe is fully xlink 1.1 conform (see <a href="http://sourceforge.net/p/mycore/bugs/516/">#516</a>)</li>
+      </ul>
+    </li>
+
+    <li>Changes:
+      <ul>
+        <li>Forward "_session" parameter in MCRSolrLegacySearchServlet. Allows to refine a query.</li>
+        <li>Use MCRFile.getLocalFile() to get image for tiling. Should work with more content stores.</li>
+        <li>MCRURNEventhandler handles now object events to register URNs for MyCoRe objects, XPath expressions
+            to URNs must be specified in properties.</li>
+        <li>Speed up thumbnail servlet.</li>
+        <li>MCRSolrSelectProxyServlet is now MCRSolrProxyServlet and supports different request handler.
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/633">633</a></li>
+        <li>MCRSearchServlet parameter numPerPage defaults to "10" (was "0")</li>
+        <li>better statistics for mycore-solr component</li>
+        <li>use Google guava cache for for MCRObjectIDPool and MCRCache</li>
+        <li>refactored mycore-solr component</li>
+        <li>bootstraped editor forms of mycore-user2</li>
+        <li>MCRLayoutService: buffer output gives about 30% faster downloads and big improvements in browser render speed on fast connections.</li>
+        <li>Speed up XSL Transformations: XSL files are checked for changes after
+            "MCR.LayoutService.LastModifiedCheckPeriod" ms (default 10000).</li>
+        <li>improved speed of MCRCache</li>
+        <li>moved results-commandlinequery.xsl to MyCoRe - it is independent of any application</li>
+        <li>update to Java 7</li>
+        <li>update to JDOM 2</li>
+        <li>moved many stream related classes to new package org.mycore.common.content.stream</li>
+        <li>updated dependencies</li>
+        <li>MCRLayoutService uses MCRContent and MCRXSLTransformer to pipe XML through a set of XSL templates.</li>
+        <li>mycore-media: many improvements</li>
+        <li>new OAI implementation</li>
+        <li>mycore-mets: many improvements to mets editor</li>
+        <li>mycore-iview2: many improvements</li>
+        <li>update to maven 3</li>
+        <li>MCRURIResolver now implements EntityResolver2</li>
+        <li>added support to switch XSL-FO implementation</li>
+      </ul>
+    </li>
+
+    <li>Removed:
+      <ul>
+        <li>Removed hibernate implementation of the content store.</li>
+        <li>Removed javax.activation dependency as it is included in JRE since 1.6</li>
+        <li>removed applet from mycore-mets and removed mycore-zoomify component</li>
+        <li>removed mycore-user component.
+            Use "migrate users" from mycore-migration21-22 to transfer your old
+            users.</li>
+        <li>removed componente mycore-classhandler (old classification browser and editor)</li>
+        <li>removed MCRFSMapperServlet</li>
+        <li>removed old OAI implementation</li>
+        <li>removed mycore-imaging, mycore-iview and mycore-migration20-21 component</li>
+      </ul>
+    </li>
+  </ul>
+  </section>
+
+
   <section>
   <title>Version 2.1</title>
   <p>see also <a href="http://www.mycore.de/generated/mycore-2.1.0/changelog.html">maven site</a></p>
   <ul>
-    
+
     <li>New features:</li>
     <ul>
       <li>readded support for operators: &lt;, &lt;=, =&gt;, &gt; on field types text, index, identifier</li>
@@ -47,36 +193,36 @@
       <li>Add a component to show images with Zoomify</li>
       <li>Synchronize labels of a mycorederivate with the entry of a mycoreobject derivate refernce.</li>
     </ul>
-    
+
     <li>Fixed Bugs:</li>
     <ul>
-      <li>MCRZipServlet does not check access rights 
+      <li>MCRZipServlet does not check access rights
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3301497">3301497</a></li>
       <li>Do not allow metadata objects with int id "0" to be saved in store</li>
-      <li>href attr. in file section of a mets document is url encoded 
+      <li>href attr. in file section of a mets document is url encoded
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3301079">3301079</a></li>
-      <li>METS-editor:decoding label and path to image 
+      <li>METS-editor:decoding label and path to image
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3300479">3300479</a></li>
-      <li>404 Error lead to infinite loop on startup 
+      <li>404 Error lead to infinite loop on startup
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3297504">3297504</a></li>
       <li>Wrong MCRApplicationBaseURL
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=328566">328566</a></li>
-      <li>High load due to upload? try to get rid of infinitive loop on HashMap.get() 
+      <li>High load due to upload? try to get rid of infinitive loop on HashMap.get()
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3266973">3266973</a></li>
       <li>Unexpected result after search about index of documents
-        The "contains" mode in IndexBrowser is now mapped to the "contains" query operator. 
+        The "contains" mode in IndexBrowser is now mapped to the "contains" query operator.
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=2799965">2799965</a></li>
-      <li>lucene.store.AlreadyClosedException: this IndexReader is closed 
+      <li>lucene.store.AlreadyClosedException: this IndexReader is closed
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3204324">3204324</a></li>
-      <li>org.hibernate.SessionException: Session is closed! 
+      <li>org.hibernate.SessionException: Session is closed!
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3198245">3198245</a></li>
-      <li>removed inclusion of non existing files info.gif and sound.js 
+      <li>removed inclusion of non existing files info.gif and sound.js
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3252038">3252038</a></li>
-      <li>Clicking on empty Folder in Iview-Chapter caused site reload 
+      <li>Clicking on empty Folder in Iview-Chapter caused site reload
         - Issue: <a href="http://sourceforge.net/support/tracker.php?aid=3194981">3194981</a></li>
       <li>fixed multiselect in METS - editor </li>
     </ul>
-    
+
     <li>Changes:</li>
     <ul>
       <li>removed web directory under modules/iview2
@@ -94,14 +240,14 @@
       <li>renamed URN and METS classes according to mycore class naming standard</li>
       <li>refactored mycore CLI</li>
     </ul>
-    
+
   </ul>
   </section>
-  
+
   <section>
   <title>Version 2.0</title>
   <ul>
-    
+
     <li>Build process</li>
     <ul>
       <li>Refactoring the build process for the application. Split to a source, a build and a data tree. Now we use the concept of mycore.jar for integration the core. Define new common
@@ -110,12 +256,12 @@
       <li>Added stylesheet to generate search masks from searchfields.xml</li>
       <li>The documentation of MyCoRe is now complete in Forrest.</li>
     </ul>
-    
+
     <li>Core</li>
     <ul>
       <li>Make the datamodel sensitive for selection of MyCoReObjectID.Base() for better splitting data types of different application clients.</li>
       <li>LayoutServlet removed, replaced by MCRLayoutService</li>
-      <li>Use the IBM ICU library to handle calendars in MCRMetaHistoryDate. Now the searchable integer of 
+      <li>Use the IBM ICU library to handle calendars in MCRMetaHistoryDate. Now the searchable integer of
         this metadata element is the Julian Day number.</li>
       <li>Move the classes of org.mycore.user2 to org.mycore.user.</li>
       <li>Add a WebService and URIResolver access to the MCRLinkTable.</li>
@@ -127,7 +273,7 @@
       <li>Add the item 'base' in the searchfield.xml for MCRObjectID.Base().</li>
       <li>Faster repair of search index.</li>
     </ul>
-    
+
     <li>Components</li>
     <ul>
       <li>Change the concept from modules to componetes with intergation in mycore.jar.</li>
@@ -138,7 +284,7 @@
       <li>Support of namespaces in the searchfields.</li>
       <li>Better layout performance.</li>
     </ul>
-    
+
     <li>Editor</li>
     <ul>
       <li>Added input validation using XSL condition for a complete panel.</li>
@@ -148,12 +294,12 @@
       <li>More then one default values for select lists.</li>
       <li>HTML ancor for Repeater, if you click on +/- button.</li>
     </ul>
-    
+
     <li>Miscellaneous</li>
     <ul>
       <li>Add default stylesheets to save data with CLI in mycore. They are obsolete in application now.</li>
     </ul>
-    
+
     <li>Removed code and deprecates</li>
     <ul>
       <li>removed MCRCStoreLocalFileSystem and MCRCStoreRemoteFTP</li>
@@ -167,10 +313,10 @@
       <li>marked MCRDefaults as deprecated</li>
       <li>removed MCRUploadServlet2</li>
     </ul>
-    
+
   </ul>
   </section>
-  
+
   <section>
   <title>Version 1.3</title>
   <ul>
@@ -195,8 +341,8 @@
     <li>Added metadata extraction from PDF files</li>
   </ul>
   </section>
-  
-  
+
+
   <section>
   <title>Version 1.2</title>
   <ul>
@@ -204,16 +350,16 @@
     <li>Add a character normalization for the XML:DB and JDOM backend.</li>
   </ul>
   </section>
-  
+
   <section>
   <title>Version 1.1</title>
   <ul>
-    <li>Added a module which will contain the editors for the user management GUI. The first editor for 
+    <li>Added a module which will contain the editors for the user management GUI. The first editor for
     creating new users is funtional. More are upcoming.</li>
     <li>Add a first version of the EventHandler to reorganized the store and search in the persitence layers.</li>
     <li>Add a SimpleWorkflow module to administrate the content objects in simple form</li>
     <li>Refactoring the commandline tool. Now the commands are all extern defined. Add a simple help mechanism.</li>
-    <li>MCRClassification methods where redesigned. This change require an update of all classifications 
+    <li>MCRClassification methods where redesigned. This change require an update of all classifications
     to put them in an additional database table.</li>
     <li>Bugfix: (#1211852) WebSphere is able to track the session now</li>
     <li>MCRURIResolver now handles the 'query:' protocol to save http request to the MCRQueryServlet</li>
@@ -221,7 +367,7 @@
     <li>Add the MCRIndexServlet to create searchable pages for robots.</li>
   </ul>
   </section>
-  
+
   <section>
   <title>Version 1.0</title>
   <ul>
@@ -229,7 +375,7 @@
   </ul>
  </section>
  </section>
- 
+
  <section>
   <title>Changes in DocPortal</title>
 
@@ -245,7 +391,7 @@
       <li>..</li>
     </ul>
   </ul>
-  
+
   </section>
 
   <section>
@@ -259,27 +405,27 @@
     <ul>
       <li>Include METS/MODS component for sample presentation of images</li>
     </ul>
-   </ul> 
+   </ul>
    </section>
 
   <section>
   <title>Version 2.0</title>
   <ul>
-    
+
     <li>Build process</li>
     <ul>
       <li>Refactoring the build process for the application. Split to a source, a build and a data tree.</li>
       <li>Split the searchfield.xml in a independent part in mycore an a datamodel part</li>
       <li>Complete installation via ant install.xml</li>
     </ul>
-    
+
     <li>Data modeling</li>
     <ul>
       <li>Added "ant create.searchmask" to generate search masks from searchfields.xml</li>
       <li>Remove the parasearch and textsearch attributes from the MyCoRe data types.</li>
       <li>Make the datamodel sensitive for selection of MyCoReObjectID.Base() for better splitting data types of different application clients.</li>
     </ul>
-    
+
     <li>Design and layout</li>
     <ul>
       <li>Replaced MyCoRe-Logo in upper left corner by DocPortal logo.</li>
@@ -289,18 +435,18 @@
       <li>Generate PDF documents over XSL stylesheets via XSL:FO and Apache FOP.</li>
       <li>Presentation of hits as RSS feed or PDF document.</li>
     </ul>
-    
+
     <li>Miscellaneous</li>
     <ul>
       <li>Move scripts of Unix and Windows from bin to there directories.</li>
     </ul>
-    
+
   </ul>
   </section>
-  
-  
+
+
   <section>
-  <title>Version 1.3</title>  
+  <title>Version 1.3</title>
   <ul>
     <li>image-viewer module added</li>
     <li>Remove the old persitence layer.</li>
@@ -311,7 +457,7 @@
     <li>Remove the TypedContent construct from teh datamodel classes.</li>
   </ul>
   </section>
-  
+
   <section>
   <title>Version 1.2</title>
   <ul>
@@ -319,7 +465,7 @@
     <li>docportal initial works with HSQLDB and JDOM, no additional installations are nessesary</li>
   </ul>
   </section>
-  
+
   <section>
   <title>Version 1.1</title>
   <ul>
@@ -329,7 +475,7 @@
     <li>Add the configuration for the MCRIndexServlet to support robots.</li>
   </ul>
   </section>
-  
+
   <section>
   <title>Version 1.0</title>
   <ul>
@@ -337,6 +483,6 @@
   </ul>
   </section>
   </section>
- 
+
  </body>
 </document>
