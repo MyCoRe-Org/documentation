@@ -17,20 +17,22 @@
     <p>
       Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
       pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2.1.80</strong> angepasst werden:
-      <source>
-    &lt;groupId>org.mycore&lt;/groupId>
-    &lt;artifactId>application-model&lt;/artifactId>
-    &lt;version>2.1.80&lt;/version></source>
+
+    <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2.1.80&lt;/version>
+[...]
+&lt;dependency>
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>2.1.80&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
 
       Anschliessend muss die Anwendung neu erstellt werden (<code>ant resolve create.jar create.scripts create.webapp</code>).
-    </p>
-
-    <p>
-      <a href="#"
-        ><img src="/images/download_mcr_rc20.png" alt="Link zum SF-Download" style="float:right;" /></a>
-      Alternativ steht DocPortal mit dem aktuellen <a href="#"
-      >Release-Candidate 2.1.80</a> zum Download zur Verfügung. Die dazugehörige Installationsanleitung finden Sie
-     im <a href="site:chapter3_ug22">UserGuide</a>.
     </p>
 
     <h2>Changes in this version include</h2>
