@@ -230,13 +230,14 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   </documentation>
 
-  <support label="Organisation" href="support/" tab="support">
-    <community  label="Community"        href="index.html" />
-    <email      label="Mailing-Listen"   href="email.html" />
-    <team       label="Team"             href="team.html" />
-    <bugs       label="Bug melden"       href="http://sourceforge.net/p/mycore/bugs/" />
-    <featurereq label="Feature Request"  href="https://sourceforge.net/p/mycore/feature-requests/" />
-    <wiki       label="MyCoRe Wiki"      href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
+  <support      label="Organisation"       href="support/" tab="support">
+    <community  label="Community"          href="index.html" />
+    <email      label="Mailing-Listen"     href="email.html" />
+    <team       label="Team"               href="team.html" />
+    <bugs       label="Bug melden"         href="http://sourceforge.net/p/mycore/bugs/" />
+    <featurereq label="Feature Request"    href="https://sourceforge.net/p/mycore/feature-requests/" />
+    <wiki       label="MyCoRe Wiki"        href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
+    <archive    label="Meldungen Archiv"   href="archive.html" />
   </support>
 
   <impressum label="Impressum" href="impressum/index.html" tab="impressum" />
