@@ -44,7 +44,7 @@
     </Placemark>
 
     <Placemark>
-      <name>Hamburg (9)</name>
+      <name>Hamburg (10)</name>
       <description><![CDATA[
             <h3>Universität Hamburg<br />(Regionales Rechenzentrum)</h3>
             <div class="mcrmap_item">
@@ -74,6 +74,10 @@
             <div class="mcrmap_item">
                 <a href="http://mycms.rrz.uni-hamburg.de/domlib"><img class="icon" alt="icon" src="map/icons/icon_hamburg_aai.png" /></a>
                 <a href="http://mycms.rrz.uni-hamburg.de/domlib">Digital Oriental Manuscript Library (DOMLib)</a>
+            </div>
+            <div class="mcrmap_item">
+                <a href="http://mycms3.rrz.uni-hamburg.de/sfb950"><img class="icon" alt="icon" src="map/icons/icon_hamburg_sfb.png" /></a>
+                <a href="http://mycms3.rrz.uni-hamburg.de/sfb950">Manuskriptkulturen in Asien, Afrika und Europa (SFB950)</a>
             </div>
             <div class="mcrmap_item">
                 <a href="http://www.josta.uni-hamburg.de/"><img class="icon" alt="icon" src="map/icons/icon_hamburg_josta.png" /></a>
@@ -241,7 +245,7 @@
     <Placemark>
       <name>Leipzig (12)</name>
       <description><![CDATA[
-            <h3>Universität Leipzig<br />(Universitätsrechenzentrum /-bibliothek)</h3>
+            <h3>Universität Leipzig<br />(URZ/Universitätsbibliothek)</h3>
             <div class="mcrmap_item">
                 <a href="http://papyri-leipzig.dl.uni-leipzig.de/"><img class="icon" alt="icon" src="map/icons/icon_diverse_papyrus1.png" /></a>
                 <a href="http://papyri-leipzig.dl.uni-leipzig.de/">Papyrus und Ostraka Projekt<br /> (Halle-Jena-Leipzig)</a>
@@ -589,10 +593,10 @@
     <Placemark>
       <name>Wiesbaden</name>
       <description><![CDATA[
-            <h3>Statistisches Bundesamt</h3>
+            <h3>Statistisches Bundesamt (DESTATIS)</h3>
             <div class="mcrmap_item">
-                <img class="icon" alt="icon" src="map/icons/icon_wiesbaden_destatis.png" />
-                Publikationsserver (im Aufbau)
+                <a href="https://www.destatis.de/GPStatistik/" title="Link zur Statistischen Bibliothek"><img class="icon" alt="icon" src="map/icons/icon_wiesbaden_destatis.png" /></a>
+                <a href="https://www.destatis.de/GPStatistik/" title="Link zur Statistischen Bibliothek">Die "Statistische Bibliothek" der Statistischen Ämter des Bundes und der Länder</a>
             </div>
           ]]>
         </description>
