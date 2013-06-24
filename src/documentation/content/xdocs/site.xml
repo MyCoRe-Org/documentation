@@ -29,8 +29,6 @@ See http://forrest.apache.org/docs/linking.html for more info
     <license       label="Lizenzbedingungen"  href="/license.html" />
     <publications  label="Veröffentlichungen" href="/publications.html" />
     <presentations label="Präsentationen"     href="/presentations.html" />
-    <team          label="Team"               href="/team.html" />
-    <workshop      label="Workshop"           href="/workshop.html" />
     <whos_using label="Wer nutzt MyCoRe?">
       <applications  label="Neuste Anwendungen"        href="/applications.html" >
         <journals  href="#zs" />
@@ -234,8 +232,9 @@ See http://forrest.apache.org/docs/linking.html for more info
     <community  label="Community"          href="index.html" />
     <email      label="Mailing-Listen"     href="email.html" />
     <team       label="Team"               href="team.html" />
+    <workshop   label="Workshop"           href="workshop.html" />
     <bugs       label="Bug melden"         href="http://sourceforge.net/p/mycore/bugs/" />
-    <featurereq label="Feature Request"    href="https://sourceforge.net/p/mycore/feature-requests/" />
+    <featurereq label="Feature Request"    href="http://sourceforge.net/p/mycore/feature-requests/" />
     <wiki       label="MyCoRe Wiki"        href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
     <archive    label="Meldungen Archiv"   href="archive.html" />
   </support>
