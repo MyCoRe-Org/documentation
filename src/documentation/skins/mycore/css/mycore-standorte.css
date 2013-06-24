@@ -8,15 +8,17 @@
 }
 
 .olPopup h2 {
-  font-size: 1.2em;
-  margin-top:0px;
+  font-size: 14px;
+  margin-top: 0px;
+  font-weight: bold;
 }
 
-.olPopup h3{
-  font-size:100%;
+.olPopup h3 {
+  font-size: 14px;
   font-weight: normal;
-  margin-top:12px;
-  margin-bottom:4px;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  line-height: 150%;
 }
 
 .olPopup p {
