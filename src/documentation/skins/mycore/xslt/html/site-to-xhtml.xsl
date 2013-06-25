@@ -20,9 +20,6 @@
             </xsl:choose>
         </xsl:variable>
 
-
-<xsl:call-template name="doctype" />
-
 <html>
     <head>
         <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css' />
@@ -159,15 +156,6 @@ $(document).ready(function() {
     </body>
 </html>
 
-    </xsl:template>
-
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    doctype
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <xsl:template name="doctype">
-        <xsl:variable name="doc_string"><![CDATA[<!DOCTYPE html>]]>
-</xsl:variable>
-        <xsl:value-of select="$doc_string" disable-output-escaping = "yes" />
     </xsl:template>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

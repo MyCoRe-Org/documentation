@@ -24,6 +24,9 @@
   
   <target name="config-fop" description="configure FOP for PDF support" >
     <echo append="false" file="src/documentation/resources/schema/symbols-project-v10.ent"><![CDATA[<!ENTITY pdf-config-file "${fop.config.location}">
+<!ENTITY dispatcher-output-serializer "html">
+<!ENTITY serializer-html-doctype-public "">
+<!ENTITY serializer-html-doctype-system "about:legacy-compat">
 ]]></echo>
   </target>
 
