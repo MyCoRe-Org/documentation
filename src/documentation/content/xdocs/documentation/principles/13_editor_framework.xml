@@ -243,34 +243,32 @@
      <table><tr><th>Start-Parameter für das Lesen der zu bearbeitenden XML-Quelle:</th></tr><tr><td></td></tr></table>
      
      <p>
-     Über XSL-Parameter kann beim Aufruf des Editors gesteuert werden, ob bzw. aus welcher Quelle die zu bearbeitenden
-     XML-Daten gelesen werden. Die zu bearbeitenden XML-Daten werden von einer URL gelesen. Falls die URL mit
-     <code>http://</code> oder <code>https://</code> beginnt, wird sie als absolute URL direkt verwendet, andernfalls
-     wird die URL als relativ zur <code>WebApplicationBaseURL</code> (context root), dem Startpunkt der
-     WebApplication,interpretiert. Es gibt die folgenden vier Optionen:
+     Über Request Parameter kann beim Aufruf des Editors gesteuert werden, ob bzw. aus welcher Quelle die zu bearbeitenden
+     XML-Daten gelesen werden. Die zu bearbeitenden XML-Daten werden von einer beliebigen URI gelesen, die durch den MyCoRe
+     URI Resolver unterstützt wird, z. B. <code>mcrobject:[ID]</code> um die Metadaten eines MyCoRe Objektes einzulesen, oder
+     <code>webapp:[Pfad]</code>, um eine statische XML-Datei aus der Web Applikation einzulesen. 
      </p>
      <p>
-     <ol>
-     <li><code>XSL.editor.source.new=true</code><br/>
-     Es wird das Formular mit leeren Datenfeldern gestartet.</li>
-     <li>Statische URL eines XML-Dokumentes (z.B. eines Metadaten-Templates), die in der Editor-Definition als
-     Top-Level-Element angegeben ist (d.h. auf gleicher Ebene wie die target-Deklaration), z.B.<br/>
-     <code>&lt;source url="templates/document.xml" /&gt;</code></li>
-     <li>URL, die durch ein Servlet oder Stylesheet zur Laufzeit gebildet wird, und die beim Aufruf des Editors über
-     einen XSL Parameter übergeben wird:<br/><code>XSL.editor.source.url=templates/document.xml</code></li>
-     <li>URL, die aus einer Kombination einer statischen URL und eines ID-Tokens gebildet wird, das beim Aufruf des
-     Editors über einen XSL Parameter übergeben wird. Im folgenden Beispiel wird zur Laufzeit das Token XXX durch den
-     Parameterwert 4711 ersetzt:<br/>
-     <code>XSL.editor.source.id=4711</code><br/>
-     <code>&lt;source url="servlets/SomeServlet?id=XXX" token="XXX" /&gt;</code></li>
-     </ol>
+     In der Editor-Definition gibt man dazu ein oder mehrere URIs an, die als Quelle gelesen werden. Wenn keine Source URI
+     definiert wird, startet das Formular leer. In der Regel werden die URIs ein oder mehrere Platzhalter für Parameter enthalten,
+     die beim Aufruf durch HTTP Request Parameter ersetzt werden. Die erste Source URI, bei der alle Parameter durch den Aufruf
+     ersetzt werden können, wird verwendet. Man kann auch die gesamte URI als Parameter übergeben, d.h. eine Source URI definieren,
+     die nur aus einem Parameter besteht. Dazu einige Beispiele:   
      </p>
+     <dl>
+       <dt><code>&lt;source uri="{sourceUri}" /&gt;</code></dt>
+       <dd>liest die zu bearbeitende XML-Quelle aus dem HTTP Request Parameter sourceUri, wenn dieser der bei Aufruf übergeben wird.</dd>
+       <dt><code>&lt;source uri="mcrobject:{mcrId}" /&gt;</code></dt>
+       <dd>liest die Metadaten eines MyCoRe-Objektes als zu bearbeitende XML-Quelle. Die ID wird als Request Parameter mcrId übergeben.</dd>
+       <dt><code>&lt;source uri="webapp:templates/document.xml" /&gt;</code></dt>
+       <dd>liest die statische XML-Datei document.xml, die im Verzeichnis templates der Web-Applikation hinterlegt ist.</dd>
+     </dl>
 
      <table><tr><th>Start-Parameter für die Definition des Abbrechen-Buttons:</th></tr><tr><td></td></tr></table>
      <p>
-     <code>XSL.editor.cancel.url/XSL.editor.cancel.id</code><br/>
      Diese Parameter werden im Abschnitt zur Verwendung eines Cancel-Buttons (Abbrechen-Knopf) erläutert, sie steuern
-     die URL, zu der bei Klick auf einen „Abbrechen“ Button zurückgekehrt wird.
+     die URL, zu der bei Klick auf einen „Abbrechen“ Button zurückgekehrt wird. Auch hier ist die Verwendung von Request Parametern
+     in der URL möglich.
      </p>
      <table><tr><th>Start-Parameter für die Weitergabe an das Zielservlet:</th></tr><tr><td></td></tr></table>
      <p>
@@ -579,26 +577,29 @@
      <p class="klein"><strong>Abbildung 2.39:</strong> Syntax des Cancel-Buttons</p>
 
      <p>
-     Die Ziel-URL des Buttons kann auf drei verschiedene Weisen gebildet werden. Falls die URL mit
-     „<code>http://</code>“ oder „<code>https://</code>“ beginnt, wird sie als absolute URL direkt verwendet,
-     andernfalls wird die URL als relativ zur <code>WebApplicationBaseURL</code> (<code>context root</code>), dem
-     Startpunkt der WebApplication, interpretiert.
-     </p>
-     <p>
-     Statische URL, die in der Editor-Definition als Top-Level-Element angegeben ist (d.h. auf gleicher Ebene wie die
+     Die Ziel-URL des Buttons kann auf verschiedene Weisen gebildet werden, z. B. im einfachsten Fall 
+     als statische URL, die in der Editor-Definition als Top-Level-Element angegeben ist (d.h. auf gleicher Ebene wie die
      target-Deklaration), z.B.<br/>
      <code>&lt;cancel url="pages/goodbye.html" /&gt;</code>
      </p>
-     <ol>
-     <li>URL, die durch ein Servlet oder Stylesheet zur Laufzeit gebildet wird, und die beim Aufruf des Editors über
-     einen XSL-Parameter übergeben wird:<br/>
-     <code>XSL.editor.cancel.url=pages/goodbye.html</code></li>
-     <li>URL, die aus einer Kombination einer statischen URL und eines ID=Tokens gebildet wird, das beim Aufruf des
-     Editors über einen XSL Parameter übergeben wird. Im folgenden Beispiel wird zur Laufzeit das Token XXX durch den
-     Parameterwert 4711 ersetzt:<br/>
-     <code>XSL.editor.cancel.id=4711</code><br/>
-     <code>&lt;cancel url="servlets/SomeServlet?id=XXX" token="XXX" /&gt;</code></li>
-     </ol>
+     <p>
+     Alternativ oder zusätzlich ist auch die Verwendung von Request Parametern wie bei der Source URI möglich,
+     so dass die URL dynamisch gebaut wird. Gegeben sei z. B. ein Formular zur Bearbeitung von Objekt-Metadaten.  
+     </p>
+     <code>&lt;cancel url="receive/{mcrId}" /&gt;</code><br /><br/>
+     <code>&lt;cancel url="content/main/authorsArea.xml" /&gt;</code><br />
+     <ul>
+       <li>
+         Wenn das Formular ohne Request Parameter aufgerufen wird, wird die zweite URL verwendet,
+         und bei Klick auf den Abbrechen-Button auf die Seite content/main/authorsArea.xml geleitet.
+       </li>
+       <li>
+         Wenn das Formular beim Aufruf mit dem Request Parameter <code>formular.xml?mcrId=DocPortal_document_00410901</code> aufgerufen wird,
+         wird dieser in die erste URL eingesetzt und diese verwendet. Es wird dann auf die Anzeige der Metadaten eines
+         bestimmten Objektes geleitet: <code>receive/DocPortal_document_00410901</code>  
+       </li>
+     </ul>
+     
      <p class="fett">Ausgabe von Werten aus dem Quelldokument</p>
      <p>
      Das Element <code>output</code> kann bei der Bearbeitung einer existierenden XML-Quelle verwendet werden, um den
@@ -699,10 +700,25 @@
      </p>
      <p class="fett">Integration externer Datenquellen</p>
      <p>
-     Das Editor-Framework gestattet die Einbindung externer Datenquellen in das Formular. Dies ermöglicht eine flexible
-     Gestaltung von Eingabewerten zur Laufzeit. Dabei werden Teile der Formulardefinition „on the fly“ erzeugt und im
-     Moment der Darstellung erst integriert.
+     Das Editor-Framework gestattet es, Teile der Formular-Definition auszulagern und über eine 
+     <code>include</code> Anweisung einzubinden. Dies ermöglicht es, in mehreren Formularen oder an verschiedenen
+     Stellen eines Formulars verwendete Teile wiederzuverwenden und nur einmal zu definieren. 
+     Eine <code>include</code> Anweisung kann an beliebiger Stelle eines Formulars stehen.
      </p>
+     <p>
+     Die <code>include</code> Anweisung liest einen Teil der Editor-Definition von einer beliebigen URI, 
+     die durch den MyCoRe URI Resolver unterstützt wird. Beispiele:
+     </p>
+     <dl>
+       <dt><code>&lt;include uri="classification:editor:-1:children:marcrelator" /&gt;</code></dt>
+       <dd>liest über den Klassifikations-Resolver die Kategorien der Klassifikation mit ID "marcrelator" ein,
+       um sie in das Formular als Auswahlwerte einer Dropdown-Liste anzubieten.</dd>
+       <dt><code>&lt;include uri="webapp:editor-includes.xml" ref="cancel.submit" /&gt;</code></dt>
+       <dd>liest die statische XML-Datei editor-includes.xml aus der Webapplikation, und nimmt daraus den Inhalt eines
+       XML-Elementes mit der ID "cancel.submit". Dies könnte etwa die Definition des Speichern- und Abbrechen-Buttons sein,
+       der in mehreren Formularen verwendet wird und in der Datei editor-includes.xml nur einmal definiert wird..</dd>
+     </dl>
+     
      <table><tr><th>Einfügen eines Request aus einem Servlet</th></tr><tr><td></td></tr></table>
      <p>Dieses Beispiel zeigt den Zugriff auf ein Servlet zur Laufzeit. Dabei werden die Ausgabedaten der
      Servlet-Antwort vor der Integration in das Framework mittels XSLT in eine passende Form gebracht. Im Beispiel
@@ -723,6 +739,22 @@
 
      <img src="images/java_code_session.png" alt="Java-Code" title="Java-Code"/>
      <p class="klein"><strong>Abbildung 2.44:</strong> Java-Code</p>
+
+     <table><tr><th>Formularteile dynamisch abhängig von Request Parametern integrieren</th></tr><tr><td></td></tr></table>
+     <p>
+     Ähnlich wie bei der Source URI und Cancel URI kann auch bei der <code>include</code> Anweisung ein HTTP Request Parameter
+     verwendet werden, um Formularteile abhängig davon nachzuladen und so ein dynamisch aufgebautes Formular zu erzeugen. In
+     diesem Fall muss allerdings der Request Parameter <strong>immer</strong> übergeben werden. Beispiel: 
+     </p>
+     <code>&lt;include uri="webapp:editor-includes.xml" ref="{mode}" /&gt;</code>
+     <p>
+     Wird das Formular mit dem Parameter <code>?mode=simple</code> aufgerufen, wird an dieser Stelle aus der Datei editor-includes.xml
+     der Inhalt eines Elementes mit der ID "simple" eingebunden. Wird das Formular mit dem Parameter <code>?mode=advanced</code> aufgerufen, 
+     wird an dieser Stelle der Inhalt eines Elementes mit der ID "advanced" eingebunden.
+     </p>
+     <p>Platzhalter für Request Parameter stehen in geschweiften Klammern und können sowohl im <code>uri</code> Attribut als auch im
+     <code>ref</code> Attribut verwendet werden.
+     </p>
 
     </section>
 
