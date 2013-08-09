@@ -62,10 +62,10 @@
         </newsentry>
         <newsentry>
           <title>Release</title>
-          <message>„MyCoRe 2013.06“ ist erschienen und bringt viele Neuerungen mit.</message>
+          <message>Für „MyCoRe 2013.06“<em> gibt es „Long Term Support“</em>. Aktuell ist Version 2013.08 veröffentlicht.</message>
           <url>site:release</url>
-          <date>20. Juni 2013</date>
-          <author>Thomas Scheffler</author>
+          <date>9. August 2013</date>
+          <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
