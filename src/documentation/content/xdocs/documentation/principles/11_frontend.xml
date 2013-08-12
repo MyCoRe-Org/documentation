@@ -3,10 +3,13 @@
 
 <document>
   <header>
-    <title>Die Frontend-Komponenten</title>
-    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten verschiedener Anwenderzugänge wie die MyCoRe-Kommandozeile und die Webanwendung.</abstract>
+    <title>Das Frontend</title>
+    <abstract>
+      Das Frontend ist Teil der Basiskomponente (mycore-base) und beinhaltet unter anderem die allgemeine Logik
+      zur Erstellung der Webinhalte und für die Kommandozeile.
+    </abstract>
   </header>
-<body>
+  <body>
 
    <!-- Include required JS files -->
    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
@@ -22,9 +25,42 @@
    <section>
    <title>Der Layout-Service</title>
    <p>
-     ToDo: Allgemeine Beschreibung des Layout-Services
+      Der Layout-Service ist Teil der MyCoRe-Basiskomponente (mycore-base) und bildet das Herzstück zum Aufbau der
+      Webanwendung. Er erstellt mit Hilfe der XSL-Stylesheets aus XML entsprechende Webseiten. Mit Hilfe des
+      Layout-Services können jedoch auch beliebige andere XSL-Transformationen durchgeführt werden, zum Beispiel
+      in Export-Formate.
    </p>
-   
+
+   <section>
+     <title>Mehrstufiger Layoutprozess (ab 2013.06)</title>
+      <p>
+        Mithilfe des neuen Layoutprozesses können XSL-Stylesheets auf effiziente Weise verkettet werden. Das führt zu
+        schlankeren und wiederverwendbaren Stylesheets und unter Umständen schnelleren Layoutprozessen. Die
+        MCRContentTransformerPipe ermöglicht es verschieden MCRContentTransformer hintereinander zuhängen, was die
+        Wiederverwendbarkeit erhöht. ("Write simple parts connected by clean interfaces.") Weiterhin gibt es keine
+        Beschränkung der Layout-Ausgabe via XSL mehr, sondern es können z.B. auch externe Werkzeuge genutzt werden
+        (z.B. bibutils als Exportwerkzeug).
+      </p>
+      <p>
+        Als Beispiel für die Konfiguration von ContentTransformer soll die
+        <a href="http://www.mycore.de/viewvc/viewvc.cgi/mycore/trunk/mycore-mods/src/main/resources/components/mods/config/mycore.properties?revision=24755&amp;view=markup">
+        mycore.properties von mycore-mods</a> dienen.
+      </p>
+      <p>
+        Die Transformer-ID hat folgenden Aufbau, wenn man das Fallback-Verhalten überschreiben will:
+      </p>
+      <pre class="brush: xml; gutter: false;">{XML-Root-Tag}[-{XSL.Style-Parameter}]</pre>
+      <p>
+        Außerdem gibt es jetzt einen "XSL.Transformer"-Parameter mit dem man den Transformer direkt auswählen kann.
+        Beim MCRObjectServlet kann man so mittels "?XSL.Transformer=bibtex" direkt Bibtex von einem MODS-Datensatz
+        ausgeben lassen.
+      </p>
+      <p>
+        Dank MCRContentTransformer bekommen die so generierten Daten sinnvolle Dateinamen. Im eben erwähnten
+        Bibtex-Fall "{MCRObjectID}.bib". Bei der Standard-HTML-Ausgabe eben *.html. Mit "XSL.FileName" lässt
+        sich der Name festlegen und hat dann Vorrang.
+      </p>
+   </section>
    <section>
    <title>XSL-Info-Servlet</title>
    <p>
@@ -77,7 +113,7 @@
      >http://www.mycore.de:8291/servlets/MCRXSLInfoServlet</a>
    </p>
    </section>
-   
+
      <section>
        <title>XSL-FO</title>
        <p>
@@ -94,7 +130,7 @@
        </p>
        <pre class="brush: bash">
 ##############################################################################
-# XSL-FO Formatter            
+# XSL-FO Formatter
 ##############################################################################
 
   # Class that implements MCRFoFormatterInterface
@@ -103,7 +139,7 @@
   MCR.LayoutService.FoFormatter.FOP.config=myConfigFile
       </pre>
       <p>
-        Für FOP kann noch eine Konfigurationsdatei im Classpath angegeben werden, die 
+        Für FOP kann noch eine Konfigurationsdatei im Classpath angegeben werden, die
         z. B. andere Fonts einsetzt.</p>
      </section>
    </section>
@@ -310,7 +346,7 @@
  <script type="text/javascript">
      SyntaxHighlighter.all()
  </script>
- 
+
 </body>
 </document>
 
