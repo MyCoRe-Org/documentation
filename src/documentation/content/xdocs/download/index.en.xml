@@ -10,17 +10,17 @@
 
   <div style="margin-bottom:50px;">
     <p>
-      You can download the latest MyCoRe version (release 2013.06) from
-      <a href="http://sourceforge.net/projects/mycore" title="MyCoRe at SourceForge">Sourceforge </a>
+      You can integrate the latest MyCoRe version <a href="site:release">Release 2013.08</a> in your application
+      using maven.
     </p>
     <p>
       <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/">
       <img src="/images/download_docportal_201306.png" alt="SF download link" style="float:right;" /></a>
-      Besides the official current release, the developer team
-      provides prereleases from time to time:
+      Besides the official current release, you can also use our long term support release (LTS) 2013.06, which
+      is supported for a year. All older versions are archived:
     </p>
     <ul>
-      <li><a href="site:prerelease">Prerelease</a></li>
+      <li><a href="site:lts_release">Long-Term-Support-Release</a></li>
       <li><a href="site:archive">Archive</a></li>
     </ul>
     <div style="float:right;">

@@ -7,7 +7,8 @@
  <abstract>Hier sind seit 2006 alle Snapshots gelistet. Ebenfalls archiviert ist das
  Release 2.0. Danach wurde die Benennung geändert, so gibt es jetzt statt eines
  Snapshots in regelmäßigen Abständen Prereleases. Auch diese sind in diesem Archiv zu
- finden.</abstract>
+ finden. Mit dem Prerelease 2013.05 ist die Benennung nun nach Jahr.Monat geändert worden.
+ Ab sofort gibt es LTS-Releases und 'normale' Releases.</abstract>
 </header>
 
  <body>
@@ -15,6 +16,116 @@
    <!-- Include required JS files -->
    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+  <section>
+    <title>Prerelease 2013.05 (Beta 2)</title>
+    <p>
+      Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
+      pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2013.05</strong> angepasst werden:
+
+      <pre class="brush: xml;gutter: false;">
+  [...]
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>application-model&lt;/artifactId>
+  &lt;version>2013.05&lt;/version>
+  [...]
+  &lt;dependency>
+    &lt;groupId>org.mycore&lt;/groupId>
+    &lt;artifactId>mycore-complete&lt;/artifactId>
+    &lt;version>2013.05&lt;/version>
+    &lt;optional>false&lt;/optional>
+  &lt;/dependency>
+  [...]</pre>
+
+      Anschliessend muss die Anwendung neu erstellt werden (<code>ant resolve create.jar create.scripts create.webapp</code>).
+    </p>
+
+    <h2>Changes in this version include</h2>
+    <h3>New features</h3>
+    <ul>
+      <li>ClassificationBrowser implementation for solr</li>
+      <li>I18N support to mycore-user2</li>
+      <li>MCRXSL2JAXBTransformer to generate JAVA Objects via XSLT</li>
+      <li>command "delete index part for type {0}" in mycore-solr</li>
+      <li>MCRListeningPriorityExecutorService where tasks can be prioritized and listened</li>
+      <li>MCRSolrSelectProxyServlet supports "wt" parameter of SOLR</li>
+      <li>support for canvas HTML element in mycore-iview2 (adds rotate function)</li>
+      <li>Handle support</li>
+      <li>mycore-xeditor component</li>
+      <li>MCRObjectTypeStrategy allows "default_class" rules for classifications</li>
+      <li>Added commands to check consistency of classifications and fix any errors found
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/606">606</a>)</li>
+      <li>MCRXMLFunctions.encodeURIPath(String path, boolean asciiOnly) to ensure that encoded path contains only ASCII characters. Thanks to Frank Lützenkirchen.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/610">610</a>)</li>
+      <li>MCRXMLFunctions.normalizeAbsoluteURL(String) to ensure that a absolute URL is RFC 2396 compliant. Thanks to Frank Lï¿½tzenkirchen.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/607">607</a>)</li>
+      <li>MCRURNManager.assignURN(String urn, String derivateID, String path)</li>
+      <li>MCRXSLInfoServlet generates graphs that display call-template calls: XSL.mode=uses</li>
+      <li>o.m.d.m.MCRMetadataManager.getObjectId(MCRObjectID, long) to retrieve objectID of metadata object for derivate id</li>
+      <li>MCRCache added getIfUpToDate() with lazy determination of last modified timestamp of cache value</li>
+
+    </ul>
+
+    <h3>Fixed Bugs</h3>
+    <ul>
+      <li>The login page should be accessible only through https Thanks to Silvio Hermann.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/608">608</a></li>
+      <li>WCMS: Assigning read and write permissions does not work
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/628">628</a>
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/617">617</a></li>
+      <li>Mets Editor does not support files with blanks
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/625">625</a></li>
+      <li>wait for index process to complete on shutdown (lucene &amp; solr)</li>
+      <li>MCRSearchServlet: on redirect pass XSL.Transformer parameter</li>
+      <li>Editor: &lt;hidden var="..." descendants="true" /> may duplicate data when attribute predicates are used in xpath
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/622">622</a></li>
+      <li>Editing user data produces erroneous links in "Search and manage users" Thanks to Frank Lützenkirchen.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/606">606</a></li>
+      <li>Password hint is not displayed Thanks to Matthias Eichner.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/613">613</a></li>
+      <li>Workflow looses action and type Thanks to Kathleen Neumann.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/611">611</a></li>
+      <li>Categories have wrong left-/right- values when using new classification editor Thanks to Matthias Eichner.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/612">612</a></li>
+      <li>ClassificationEditor does not work for non super users. Thanks to Marcus Mï¿½ller.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/609">609</a></li>
+      <li>Mets-Editor: order label is not displayed in the mets-editor
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/601">601</a></li>
+      <li>foliation in METS editor does not work on Mac OS
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/595">595</a></li>
+      <li>do not remove URN information if file content is updated</li>
+      <li>fixed multi thread access to SAXBuilder Thanks to Silvio Hermann.
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/598">598</a></li>
+    </ul>
+
+    <h3>Changes</h3>
+    <ul>
+      <li>MCRSearchServlet parameter numPerPage defaults to "10" (was "0")</li>
+      <li>better statistics for mycore-solr component</li>
+      <li>use Google guava cache for for MCRObjectIDPool and MCRCache</li>
+      <li>refactored mycore-solr component</li>
+      <li>bootstraped editor forms of mycore-user2</li>
+      <li>MCRLayoutService: buffer output gives about 30% faster downloads and big improvements in browser render speed on fast connections.</li>
+      <li>Speed up XSL Transformations: XSL files are checked for changes after
+          "MCR.LayoutService.LastModifiedCheckPeriod" ms (default 10000).</li>
+      <li>improved speed of MCRCache</li>
+      <li>moved results-commandlinequery.xsl to MyCoRe - it is independent of any application</li>
+      <li>update to Java 7</li>
+      <li>update to JDOM 2</li>
+      <li>moved many stream related classes to new package org.mycore.common.content.stream</li>
+      <li>updated dependencies</li>
+    </ul>
+
+    <h3>Removed</h3>
+    <ul>
+      <li>removed applet from mycore-mets and removed mycore-zoomify component</li>
+      <li>removed mycore-user component.
+          Use "migrate users" from mycore-migration21-22 to transfer your old
+          users.</li>
+      <li>removed componente mycore-classhandler (old classification browser and editor)</li>
+    </ul>
+
+  </section>
 
 
   <section>

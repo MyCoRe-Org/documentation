@@ -62,7 +62,7 @@
         </newsentry>
         <newsentry>
           <title>Release</title>
-          <message>Für „MyCoRe 2013.06“<em> gibt es „Long Term Support“</em>. Aktuell ist Version 2013.08 veröffentlicht.</message>
+          <message>Dem LTS-Release „MyCoRe 2013.06“ folgt nun Version 2013.08.</message>
           <url>site:release</url>
           <date>9. August 2013</date>
           <author>Wiebke Oeltjen</author>

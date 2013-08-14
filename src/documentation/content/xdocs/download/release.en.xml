@@ -3,7 +3,7 @@
 
 <document xml:lang="en">
 <header>
- <title>Release MyCoRe Version 2013.06</title>
+ <title>Release 2013.08 (Codenamed 'Old Pascas')</title>
 </header>
 
  <body>
@@ -17,25 +17,21 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <p>
-    You can find an overview of all innovations on the documentation site
-    <a href="site:whats_new">"Was ist neu?"</a>. A detailed list of changes
-    is provided in the <a href="site:changelog">Changelog</a>.
-  </p>
-
-  <p>
-    If you have your application already near version 2013.06, you only have to update
+    MyCoRe 2013.08 is now on servlet standard 3.0, so the usage of a corresponding servlet
+    engine (eg Apache Tomcat 7) is mandatory. All changes, new features etc. are summerized below.
+    If you have your application already near version 2013.08, you only have to update
     your pom.xml (docportal/config):
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2013.06&lt;/version>
+&lt;version>2013.08&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>2013.06.0&lt;/version>
+  &lt;version>2013.08&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -44,20 +40,80 @@
     create.scripts create.webapp</code>).
   </p>
 
-  <p>
-    <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
-      ><img src="/images/download_docportal_201306.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
-    As an alternative DocPortal is available as download with <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
-    >Release 2013.06</a>. You can find the corresponding installation guidelines
-    in the <a href="site:install">UserGuide</a>. There are instructions for the
-    <a href="site:migrate21_2013.06">Migration</a> as well provided.
-  </p>
-  <p>
+  <!-- p>
     Furthermore there is a MyCoRe
     <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.06.0/">jar file</a>
     ready for download, therewith you can use the MyCoRe kernel in your own application
     independent from DocPortal. MyCoRe can be integrated as well via Maven.
-  </p>
+  </p -->
+
+  <h2>Changes in this version include</h2>
+  <h3>New features</h3>
+  <ul>
+    <li>mycore-base: add a command to move files from one store to an other</li>
+    <li>mycore-base: add MCRObjectBaseStrategy</li>
+    <li>mycore-mods: added stylesheet to export to Dublin Core</li>
+    <li>added MCRURL class to parse http parameters</li>
+    <li>added mycore component: mycore-acl-editor2</li>
+    <li>batch user import/update support</li>
+  </ul>
+
+  <h3>Fixed Bugs</h3>
+  <ul>
+    <li>mycore-mods: fixed export of serveral mycore objects as a MODS collection  (2013-08-07)</li>
+    <li>mycore-classeditor: fix haslink is not set for root categories via get request  (2013-08-07)</li>
+    <li>SearchURL from BasketServlet is not UTF-8 encoded Thanks to Kathleen Neumann.  (2013-08-05
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/646">646</a>)</li>
+    <li>xeditor don't allow dot in element name  (2013-07-30
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/644">644</a>)</li>
+    <li>fixed NonUniqueObjectException on object import with URN  (2013-07-26)</li>
+    <li>accept different exit code for newer versions of "pdftotext" tool  (2013-07-26)</li>
+    <li>MCRUploadHandlerIFS leaks JDBC Connection  (2013-07-22
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/643">643</a>)</li>
+    <li>mycore-mods: updated to recent zdb format changes  (2013-07-09)</li>
+    <li>Editor Framework changes HTML button element in static webpages  (2013-07-02
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/639">639</a>)</li>
+    <li>content length header of MCRFileNodeServlets handles files over 2 GB
+        correctly. Thanks to Nils.  (2013-07-02)</li>
+    <li>mycore-mods: fixed typo in solr field for identifier</li>
+  </ul>
+
+  <h3>Changes</h3>
+  <ul>
+    <li>mycore-iview2: added compatibility to jQuery 1.10</li>
+    <li>mycore-classeditor: use new dojo store api to hold tree data</li>
+    <li>use annotated style (@MCRCommandGroup, @MCRCommand) for commands (old style is still working)
+        removed support for MCR.CLI.Classes.Annotated</li>
+    <li>update classification editor to dojo 1.9.1</li>
+    <li>use order to specify the order of command invocation per @MCRCommandGroup</li>
+    <li>refactored MCRTarServlet and MCRZipServlet:<br />
+        fixed permission checking and removed redundant code;<br />
+        MCRTarServlet supports the same requests as MCRZipServlet;<br />
+        added pathInfo support (makes 'id' parameter supported but obsolete)</li>
+    <li>mycore-complete does only contain mycore components but no external libraries</li>
+    <li>added cache for MCRXMLFunctions.isDisplayedEnabledDerivate(String)</li>
+    <li>Simplify MCRExportServlet by letting MCRLayoutService do the layout and transformation job. This
+        allows to use MCRParameterizedTransformers like XSL Transformer with http request parameters. So we now can pass "XSL." parameters
+        to stylesheets in export transformers.</li>
+    <li>Better error pages for TransformerExceptions (displays source)</li>
+    <li>editor framework: added support for request parameters in include/@uri and @ref (as in source/@uri)
+        to allow dynamic includes</li>
+    <li>MCRISO8601Date: omit the '-' when the era designator is present in the format value (B.C.)</li>
+    <li>CLI command "init hibernate" is required to update database schema</li>
+    <li>update to hibernate 4.2.2 (prevents usage of hsqldb 1.8.x)</li>
+    <li>moved content of jar internal web folder to META-INF/resources as defined by Servlet 3.0 standard.</li>
+    <li>use web-fragment.xml as defined by Servlet 3.0 standard
+        (Issue: <a href="https://sourceforge.net/p/mycore/bugs/226">226</a>)</li>
+    <li>updated dependencies</li>
+  </ul>
+
+  <h3>Removed</h3>
+  <ul>
+    <li>mycore-webcli: removed "add commands" command an related classes</li>
+    <li>MCRHibImpExTools is no longer needed</li>
+    <li>removed mycore-doubletfinder and mycore-importer components</li>
+    <li>removed dom4j dependency</li>
+  </ul>
 
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
   <script type="text/javascript">
