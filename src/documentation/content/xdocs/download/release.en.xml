@@ -3,7 +3,7 @@
 
 <document xml:lang="en">
 <header>
- <title>Release 2013.08 (Codenamed 'Old Pascas')</title>
+ <title>Release 2013.08 (Codename ‘Old Pascas’)</title>
 </header>
 
  <body>
@@ -18,8 +18,8 @@
 
   <p>
     MyCoRe 2013.08 is now on servlet standard 3.0, so the usage of a corresponding servlet
-    engine (eg Apache Tomcat 7) is mandatory. All changes, new features etc. are summerized below.
-    If you have your application already near version 2013.08, you only have to update
+    engine (eg Apache Tomcat 7) is mandatory. All changes, new features etc. are summarized below.
+    If your application is already near version 2013.08, you only have to update
     your pom.xml (docportal/config):
 
     <pre class="brush: xml;gutter: false;">
