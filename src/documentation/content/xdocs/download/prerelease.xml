@@ -3,10 +3,11 @@
 
 <document>
 <header>
- <title>Prerelease</title></header>
+ <title>Prerelease</title>
  <abstract>MyCoRe-2013.05 (Beta 2) der aktuelle "Release Candidate" für die Version <strong>MyCoRe 2013.06</strong>.
   Das Release soll in Kürze veröffentlicht werden. Bitte melden Sie daher alle noch
   auftretenden Fehler umgehend an die Community, um ein optimales Release zu gewährleisten.</abstract>
+</header>
  <body>
 
    <!-- Include required JS files -->
