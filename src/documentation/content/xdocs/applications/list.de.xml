@@ -57,7 +57,7 @@
         </ul>
       </dd>
       <dt>
-        <strong>Duisburg</strong>
+        <strong>Duisburg / Essen</strong>
       </dt>
       <dd>
         Universität Duisburg-Essen (Universitätsbibliothek, ZIM - Zentrum für
@@ -85,12 +85,6 @@
               title="Düsseldorfer Dokumenten- und Publikationsservice: Semesterapparate">Hochschulschriften, Semesterapparate</a>
           </li>
         </ul>
-      </dd>
-      <dt>
-        <strong>Essen</strong>
-      </dt>
-      <dd>
-        Dokumenten- und Publikationsserver DuEPublico (siehe Duisburg)
       </dd>
       <dt>
         <strong>Freiburg</strong>
@@ -297,6 +291,35 @@
         </ul>
       </dd>
       <dt>
+        <strong>Hamburg</strong>
+      </dt>
+      <dd>
+        Universität Hamburg (Regionales Rechenzentrum)
+        <ul>
+          <li>
+            „Nepalese-German Manuscript Cataloguing Project“
+            <a href="http://mycms.rrz.uni-hamburg.de/ngmcp" title="The Nepalese-German Manuscript Cataloguing Project">NGMCP</a>
+          </li>
+          <li>
+            „Manuscript Cultures in Asia and Africa“ (Library Catalogue)
+            <a href="http://mycms.rrz.uni-hamburg.de/mcaa"
+              title="Manuscript Cultures in Asia and Africa, Library Catalogue">MCAA</a>
+          </li>
+          <li>
+            „Encyclopaedia Aethiopica“
+            <a href="http://mycms.rrz.uni-hamburg.de/eae" title="Encyclopaedia Aethiopica">EAE</a>
+          </li>
+          <li>
+            Mehrsprachiges Glossar des Asien-Afrika-Instituts
+            <a href="http://mycms.rrz.uni-hamburg.de/mcglossary" title="Mehrsprachiges Glossar des Asien-Afrika-Instituts">MCGlossary</a>
+          </li>
+          <li>
+            „Digital Oriental Manuscript Library“
+            <a href="http://mycms.rrz.uni-hamburg.de/domlib" title="Digital Oriental Manuscript Library">DOMLib</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>
         <strong>Jena</strong>
       </dt>
       <dd>
@@ -339,6 +362,21 @@
           <li>
             <a href="http://archive.thulb.uni-jena.de/StdAEbg/" title="Link zum Stadtarchiv Eisenberg">Stadtarchiv
               Eisenberg</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>
+        <strong>Kiel</strong>
+      </dt>
+      <dd>
+        Christian-Albrechts-Universität (Rechenzentrum, Bibliothek)
+        <ul>
+          <li>
+            <a href="http://www.wandmalerei-luebeck.de"
+              title="Link zum Projekt WAND- UND DECKENMALEREI IN LÜBECKER HÄUSERN">„Wand- und Deckenmalerei in Lübecker Häusern“</a>,
+            ein Gemeinschaftsprojekt mit dem Bereich Archäologie und
+            Denkmalpflege der Hansestadt Lübeck und dem Kunsthistorischen
+            Institut der Universität Kiel
           </li>
         </ul>
       </dd>
@@ -477,6 +515,40 @@
     </dl>
   </section><!-- Ende - Zeitschriftenserver -->
 
+<!-- Fachdatenrepositorium -->
+  <section>
+    <title>Fachdatenrepositorium</title>
+    <dl>
+      <dt>
+        <strong>Hamburg</strong>
+      </dt>
+      <dd>
+        Universität Hamburg (Regionales Rechenzentrum)
+        <ul>
+          <li>
+            „Online-Lexikon exilierter Musiker und Musikerinnen der NS-Zeit“
+            <a href="http://www.lexm.uni-hamburg.de/"
+              title="Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit LexM">LexM</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>
+        <strong>Rostock</strong>
+      </dt>
+      <dd>
+        Universität Rostock (Bibliothek, Informatik, Rechenzentrum)
+        <ul>
+          <li>
+            <a href="http://cpr.uni-rostock.de" title="Rostocker Professorenkatalog">
+              Catalogus Professorum Rostochiensium</a>
+            (Katalog über alle an der Universität Rostock tätigen Professoren,
+            seit ihrer Gründung 1419)
+          </li>
+        </ul>
+      </dd>
+    </dl>
+  </section><!-- Ende - Fachdatenrepositorium -->
+
 <!-- Bilddatenbanken -->
   <section>
     <title>Bilddatenbanken</title>
@@ -491,13 +563,6 @@
             <a href="http://www.uni-kiel.de/kibidano" title="KiBiDaNo Kieler Datenbank Naher Osten">KiBiDaNo</a>
             - Kieler Bilddatenbank Naher Osten
           </li>
-          <li>
-            <a href="http://www.wandmalerei-luebeck.de"
-              title="Link zum Projekt WAND- UND DECKENMALEREI IN LÜBECKER HÄUSERN">„Wand- und Deckenmalerei in Lübecker Häusern“</a>,
-            ein Gemeinschaftsprojekt mit dem Bereich Archäologie und
-            Denkmalpflege der Hansestadt Lübeck und dem Kunsthistorischen
-            Institut der Universität Kiel
-          </li>
         </ul>
       </dd>
     </dl>
@@ -508,13 +573,42 @@
     <title>Sonstiges</title>
     <dl>
       <dt>
+        <strong>Hamburg</strong>
+      </dt>
+      <dd>
+        Universität Hamburg (Regionales Rechenzentrum)
+        <ul>
+          <li>
+            „Die mittelalterlichen Statuten des Johanniterordens“
+            <a href="http://www.josta.uni-hamburg.de/" title="JoSta">JoSta</a>
+          </li>
+          <li>
+            „Die mittelalterlichen Schuld- und Rechnungsbücher des Deutschen
+            Ordens um 1400“
+            <a href="http://www.schuredo.uni-hamburg.de/" title="SchuReDO">SchuReDO</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>
         <strong>Leipzig</strong>
       </dt>
       <dd>
         Universität Leipzig (Universitätsrechenzentrum / -bibliothek)
         <ul>
           <li>
-            Die <a href="http://139.18.24.5:8861/" title="Forschungsdatenbank DGPuK">Forschungsdatenbank DGPuK</a>
+            Die <a href="http://139.18.24.5:8861/" title="Forschungsdatenrepositorium DGPuK">Forschungsdatenrepositorium DGPuK</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>
+        <strong>Maria Veen</strong>
+      </dt>
+      <dd>
+        Schulbibliothek des Gymnasiums der Mariannhiller Missionare Maria Veen (<a href="http://www.schule1.de">www.schule1.de</a>)
+        <ul>
+          <li>
+            CMMLib, eine Medienverwaltung für die Schulbibliothek des Gymnasiums der Mariannhiller Missionare Maria Veen
+            nutzt kleine Teile von MyCoRe, nämlich das Editor Framework und den LayoutService.
           </li>
         </ul>
       </dd>
@@ -539,67 +633,9 @@
           </li>
         </ul>
       </dd>
-      <dt>
-        <strong>Rostock</strong>
-      </dt>
-      <dd>
-        Universität Rostock (Bibliothek, Informatik, Rechenzentrum)
-        <ul>
-          <li>
-            <a href="http://cpr.uni-rostock.de" title="Rostocker Professorenkatalog">
-              Catalogus Professorum Rostochiensium</a>
-            (Katalog über alle an der Universität Rostock tätigen Professoren,
-            seit ihrer Gründung 1419)
-          </li>
-        </ul>
-      </dd>
-      <dt>
-        <strong>Hamburg</strong>
-      </dt>
-      <dd>
-        Universität Hamburg (Regionales Rechenzentrum)
-        <ul>
-          <li>
-            „Online-Lexikon exilierter Musiker und Musikerinnen der NS-Zeit“
-            <a href="http://www.lexm.uni-hamburg.de/"
-              title="Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit LexM">LexM</a>
-          </li>
-          <li>
-            „Nepalese-German Manuscript Cataloguing Project“
-            <a href="http://mycms.rrz.uni-hamburg.de/ngmcp" title="The Nepalese-German Manuscript Cataloguing Project">NGMCP</a>
-          </li>
-          <li>
-            „Manuscript Cultures in Asia and Africa“ (Library Catalogue)
-            <a href="http://mycms.rrz.uni-hamburg.de/mcaa"
-              title="Manuscript Cultures in Asia and Africa, Library Catalogue">MCAA</a>
-          </li>
-          <li>
-            „Encyclopaedia Aethiopica“
-            <a href="http://mycms.rrz.uni-hamburg.de/eae" title="Encyclopaedia Aethiopica">EAE</a>
-          </li>
-          <li>
-            Mehrsprachiges Glossar des Asien-Afrika-Instituts
-            <a href="http://mycms.rrz.uni-hamburg.de/mcglossary" title="Mehrsprachiges Glossar des Asien-Afrika-Instituts">MCGlossary</a>
-          </li>
-          <li>
-            „Digital Oriental Manuscript Library“
-            <a href="http://mycms.rrz.uni-hamburg.de/domlib" title="Digital Oriental Manuscript Library">DOMLib</a>
-          </li>
-          <li>
-            „Die mittelalterlichen Statuten des Johanniterordens“
-            <a href="http://www.josta.uni-hamburg.de/" title="JoSta">JoSta</a>
-          </li>
-          <li>
-            „Die mittelalterlichen Schuld- und Rechnungsbücher des Deutschen
-            Ordens um 1400“
-            <a href="http://www.schuredo.uni-hamburg.de/" title="SchuReDO">SchuReDO</a>
-          </li>
-        </ul>
-      </dd>
     </dl>
   </section><!-- Ende - Sonstiges -->
 
-<!-- CMMLib, eine Medienverwaltung für die Schulbibliothek des Gymnasiums der Mariannhiller Missionare Maria Veen (www.schule1.de)
- diese nutzt aber nur kleine Teile von MyCoRe, nämlich das Editor Framework und den LayoutService. Muss aus meiner sicht allerhöchstens unter ferner liefen gelistet werden.-->
+<!-- -->
 </body>
 </document>
