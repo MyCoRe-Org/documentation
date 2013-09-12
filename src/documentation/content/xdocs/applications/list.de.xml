@@ -280,16 +280,6 @@
             Universitätspressestelle</li>
         </ul>
       </dd>
-      <dd>
-        Friedrich-Ebert-Stiftung (FES)
-        <ul>
-          <li>
-            Das
-            <a href="http://library.fes.de/afs-online/inhalt/online.htm" title="Link zum Archiv für Sozialgeschichte">Archiv
-              für Sozialgeschichte</a> als Volltext im Netz
-          </li>
-        </ul>
-      </dd>
       <dt>
         <strong>Hamburg</strong>
       </dt>
@@ -469,9 +459,12 @@
         <ul>
           <li>
             <a href="http://library.fes.de/angestelltenpresse/content/below/index.xml" title="Link zur Startseite des Portals">Das
-              gedruckte Gedächtnis der Tertiarisierung</a>
-            ist ein Pilotprojekt zur Sicherung und Demokratisierung zentraler Quellen der Angestelltenbewegung. Das Portal basiert
-            auf dem Zeitschriftenserver der ThULB (Jena) und umfasst aktuell 6 Quellen.
+            gedruckte Gedächtnis der Tertiarisierung</a> ist ein Pilotprojekt zur Sicherung und Demokratisierung zentraler Quellen
+            der Angestelltenbewegung. Das Portal basiert auf dem Zeitschriftenserver der ThULB (Jena) und umfasst aktuell 6 Quellen.
+          </li>
+          <li>
+            Das <a href="http://library.fes.de/afs-online/inhalt/online.htm" title="Link zum Archiv für Sozialgeschichte">Archiv
+            für Sozialgeschichte</a> als Volltext im Netz
           </li>
         </ul>
       </dd>
@@ -515,9 +508,9 @@
     </dl>
   </section><!-- Ende - Zeitschriftenserver -->
 
-<!-- Fachdatenrepositorium -->
+<!-- Biografische Informationssysteme -->
   <section>
-    <title>Fachdatenrepositorium</title>
+    <title>Biografische Informationssysteme</title>
     <dl>
       <dt>
         <strong>Hamburg</strong>
@@ -536,18 +529,20 @@
         <strong>Rostock</strong>
       </dt>
       <dd>
-        Universität Rostock (Bibliothek, Informatik, Rechenzentrum)
+        Universität Rostock (Forschungsstelle Universitätsgeschichte und Universitätsbibliothek)
         <ul>
           <li>
             <a href="http://cpr.uni-rostock.de" title="Rostocker Professorenkatalog">
-              Catalogus Professorum Rostochiensium</a>
+            Catalogus Professorum Rostochiensium</a>
             (Katalog über alle an der Universität Rostock tätigen Professoren,
             seit ihrer Gründung 1419)
           </li>
         </ul>
       </dd>
     </dl>
-  </section><!-- Ende - Fachdatenrepositorium -->
+  </section><!-- Ende - Biografische Informationssysteme -->
+
+<!-- Fachdatenrepositorium als Überbegriff für "Biografische Informationssysteme" findet derzeit jedoch keine weiteren Mitstreiter in dieser Gruppe -->
 
 <!-- Bilddatenbanken -->
   <section>
@@ -636,6 +631,5 @@
     </dl>
   </section><!-- Ende - Sonstiges -->
 
-<!-- -->
 </body>
 </document>

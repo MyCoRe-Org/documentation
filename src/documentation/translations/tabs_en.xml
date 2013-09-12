@@ -16,10 +16,10 @@
   limitations under the License.
 -->
 <catalogue xml:lang="en">
-  <message key="Willkommen">Welcome</message>
+  <message key="Start">Welcome</message>
+  <message key="Funktionen">Features</message>
+  <message key="Beispiele">Applications</message>
   <message key="Download">Download</message>
-  <message key="Dokumentation">Documentation</message>
-  <message key="Support &amp; Kontakt">Support &amp; contact</message>
-  <message key="Impressum">Imprint</message>  
-  
+  <message key="Dokumentation">Docu</message>
+  <message key="Organisation">Community</message>
 </catalogue>
