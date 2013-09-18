@@ -127,19 +127,22 @@ $(document).ready(function() {
                 stickyClass = 'fix';
 
                 $(document).bind('scroll',function(){
-                    var hOffset = header.offset().top+header.height(),
-                        top     = $(document).scrollTop() + nav.height()
+                    var hOffset = header.offset().top+header.height();
+                    var top = $(document).scrollTop();
 
                     // make it sticky ...
-                    if (hOffset < top) {
-                        if (nav.data(stickyClass) !== true) {
-                            nav.addClass(stickyClass).data(stickyClass,true);
+                        if (hOffset < top) {
+                            if (nav.data(stickyClass) !== true) {
+                                nav.addClass(stickyClass).data(stickyClass,true);
+                                $('div#content').css('margin-top', nav.height());
+                            }
+                        } else {
+                            if (nav.data(stickyClass) !== false) {
+                                nav.removeClass(stickyClass).data(stickyClass,false);
+                                $('div#content').css('margin-top', 0);
+                            }
                         }
-                    } else {
-                        if (nav.data(stickyClass) !== false) {
-                            nav.removeClass(stickyClass).data(stickyClass,false);
-                        }
-                    }
+
 
 
                 });
