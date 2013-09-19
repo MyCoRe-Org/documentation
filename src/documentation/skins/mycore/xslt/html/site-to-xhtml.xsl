@@ -142,9 +142,6 @@ $(document).ready(function() {
                                 $('div#content').css('margin-top', 0);
                             }
                         }
-
-
-
                 });
 
                 // initial check for scroll-status ...
