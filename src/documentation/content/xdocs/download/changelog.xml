@@ -11,7 +11,7 @@
   <title>Changes in MyCoRe</title>
 
   <section>
-  <title>Version 2013.07 (current head tree)</title>
+  <title>Version 2013.09 (current head tree)</title>
   <ul>
 
     <li>Components</li>
@@ -19,6 +19,134 @@
       <li>...</li>
       <li>...</li>
     </ul>
+
+  </ul>
+  </section>
+
+  <section>
+  <title>Version 2013.08</title>
+  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.08/changelog.html">maven site</a></p>
+  <ul>
+
+    <li>New features:
+      <ul>
+        <li>mycore-base: add a command to move files from one store to an other</li>
+        <li>mycore-base: add MCRObjectBaseStrategy</li>
+        <li>mycore-mods: added stylesheet to export to Dublin Core</li>
+        <li>added MCRURL class to parse http parameters</li>
+        <li>added mycore component: mycore-acl-editor2</li>
+        <li>batch user import/update support</li>
+      </ul>
+    </li>
+
+    <li>Fixed Bugs:
+      <ul>
+        <li>mycore-mods: fixed export of serveral mycore objects as a MODS collection  (2013-08-07)</li>
+        <li>mycore-classeditor: fix haslink is not set for root categories via get request  (2013-08-07)</li>
+        <li>SearchURL from BasketServlet is not UTF-8 encoded Thanks to Kathleen Neumann.  (2013-08-05)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/646">646</a></li>
+        <li>xeditor don't allow dot in element name  (2013-07-30)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/644">644</a></li>
+        <li>fixed NonUniqueObjectException on object import with URN  (2013-07-26)</li>
+        <li>accept different exit code for newer versions of "pdftotext" tool  (2013-07-26)</li>
+        <li>MCRUploadHandlerIFS leaks JDBC Connection  (2013-07-22)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/643">643</a></li>
+        <li>mycore-mods: updated to recent zdb format changes  (2013-07-09)</li>
+        <li>Editor Framework changes HTML button element in static webpages  (2013-07-02)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/639">639</a></li>
+        <li>content length header of MCRFileNodeServlets handles files over 2 GB
+            correctly. Thanks to Nils.  (2013-07-02)</li>
+        <li>mycore-mods: fixed typo in solr field for identifier</li>
+      </ul>
+    </li>
+
+    <li>Changes:
+      <ul>
+        <li>mycore-iview2: added compatibility to jQuery 1.10</li>
+        <li>mycore-classeditor: use new dojo store api to hold tree data</li>
+        <li>use annotated style (@MCRCommandGroup, @MCRCommand) for commands (old style is still working)
+            removed support for MCR.CLI.Classes.Annotated</li>
+        <li>update classification editor to dojo 1.9.1</li>
+        <li>use order to specify the order of command invocation per @MCRCommandGroup</li>
+        <li>refactored MCRTarServlet and MCRZipServlet: <br/>
+              fixed permission checking and removed redundant code; <br/>
+              MCRTarServlet supports the same requests as MCRZipServlet; <br/>
+              added pathInfo support (makes 'id' parameter supported but obsolete)</li>
+        <li>mycore-complete does only contain mycore components but no external libraries</li>
+        <li>added cache for MCRXMLFunctions.isDisplayedEnabledDerivate(String)</li>
+        <li>Simplify MCRExportServlet by letting MCRLayoutService do the layout and transformation job. This
+            allows to use MCRParameterizedTransformers like XSL Transformer with http request parameters. So we now can pass "XSL." parameters
+            to stylesheets in export transformers.</li>
+        <li>Better error pages for TransformerExceptions (displays source)</li>
+        <li>editor framework: added support for request parameters in include/@uri and @ref (as in source/@uri)
+            to allow dynamic includes</li>
+        <li>MCRISO8601Date: omit the '-' when the era designator is present in the format value (B.C.)</li>
+        <li>CLI command "init hibernate" is required to update database schema</li>
+        <li>update to hibernate 4.2.2 (prevents usage of hsqldb 1.8.x)</li>
+        <li>moved content of jar internal web folder to META-INF/resources as defined by Servlet 3.0 standard.</li>
+        <li>use web-fragment.xml as defined by Servlet 3.0 standard.
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/226">226</a></li>
+        <li>updated dependencies</li>
+      </ul>
+    </li>
+
+    <li>Removed:
+      <ul>
+        <li>mycore-webcli: removed "add commands" command an related classes</li>
+        <li>MCRHibImpExTools is no longer needed</li>
+        <li>removed mycore-doubletfinder and mycore-importer components</li>
+        <li>removed dom4j dependency</li>
+      </ul>
+    </li>
+
+  </ul>
+  </section>
+
+  <section>
+  <title>Version 2013.06.0.1</title>
+  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0.1/changelog.html">maven site</a></p>
+  <ul>
+
+    <li>New features:
+      <ul>
+        <li>added stylesheet: mods 3.4 to dublin core (from loc) (merged revision 27603 from trunk)</li>
+        <li>refactured derivate view, display URN (merged revision 27377 from trunk)</li>
+        <li>added message property for poster in conference (merged revision 27360 from trunk)</li>
+        <li>Added support for request parameters in include/@uri and @ref (as in source/@uri) to allow dynamic includes (merged revision 27273 from trunk)</li>
+      </ul>
+    </li>
+
+    <li>Fixed Bugs:
+      <ul>
+        <li>fixed mods collection export (merged revision 27612 from trunk)</li>
+        <li>highwire press tags now also matches mods:dateXXX without @encoding (workaround for now)</li>
+        <li>SearchURL from BasketServlet is not UTF-8 encoded Thanks to Kathleen Neumann.
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/646">646</a></li>
+        <li>Fix for bug #644 (xeditor don't allow dot in element name) and another bug
+            (xed:bind/@value sets the value not only for the last generated node, but
+            for all generated parent elements also) (merged revision 27513 and 27518 from trunk)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/644">644</a></li>
+        <li>fixed NonUniqueObjectException on object import with URN (merged revision 27501 from trunk)</li>
+        <li>accept different exit code for newer versions of "pdftotext" tool (merged revision 27500 and 27502 from trunk)</li>
+        <li>MCRUploadHandlerIFS leaks JDBC Connection (merged revision 27461 and 27461 from trunk)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/643">643</a></li>
+        <li>refactured derivate and document options (merged revision 27385, 27389 and 27390 from trunk)</li>
+        <li>forward validation parameter to XML parser in MCRBase.setFromXML() (merged revision 27383 from trunk)</li>
+        <li>bugfix: check *all* issn entries in sherpa/romeo list (merged revision 27375 from trunk)</li>
+        <li>updated to recent zdb format changes (merged revision 27351 from trunk)</li>
+        <li>Fix for bug #639 Editor Framework changes HTML button element in static webpages (merged revision 27294 from trunk)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/639">639</a></li>
+        <li>content length header of MCRFileNodeServlets handles files over 2 GB correctly. (merged revision 27286 from trunk) Thanks to Nils.</li>
+        <li>fixed typo in solr field for identifier (merged revision 27261 from trunk)</li>
+        <li>fixed handling of resources in MCRStaticXMLFileServlet (merged revision 27235 from trunk)</li>
+      </ul>
+    </li>
+
+    <li>Changes:
+      <ul>
+        <li>show derivate urn in derivate section (merged revision 27411 from trunk)</li>
+      </ul>
+    </li>
 
   </ul>
   </section>
@@ -380,7 +508,7 @@
   <title>Changes in DocPortal</title>
 
   <section>
-  <title>Version 2013.07 (current head tree)</title>
+  <title>Version 2013.09 (current head tree)</title>
   <ul>
     <li>New Features:</li>
     <ul>
