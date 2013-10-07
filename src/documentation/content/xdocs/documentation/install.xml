@@ -28,10 +28,10 @@
    <note label="Warnung">Sie installieren auf diese Weise die aktuelle Entwicklungsversion. Diese ist
      nicht immer frei von Fehlern!</note>
    <p>
-   <a href="#"
-      ><img src="/images/download_mcr_21.png" alt="Link zum SF-Download" style="float:right;margin-left:20px;" /></a>
+   <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
+      ><img src="/images/download_docportal_201306.png" alt="Link zum SF-Download" style="float:right;margin-left:20px;" /></a>
    Alternativ können Sie die Daten auch direkt bei Sourceforge herunterladen, dafür ist kein
-   SVN-Client notwendig. Momentan steht hier das aktuelle <a href="#"
+   SVN-Client notwendig. Momentan steht hier das aktuelle <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
    >Release 2013.06</a> zum Download zur Verfügung. Nachdem Sie die Datei heruntergeladen
    haben, gehen Sie wie folgt vor:</p>
    <ol>
