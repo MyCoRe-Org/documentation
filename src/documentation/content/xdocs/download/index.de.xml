@@ -10,16 +10,20 @@
 
   <div style="margin-bottom:50px;">
     <p>
-      Die aktuelle MyCoRe-Version <a href="site:release">Release 2013.08</a> kann direkt via Maven bezogen werden.
+      <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.08/">
+      <img src="/images/download_docportal_201308.png" alt="Link zum SF-Download" style="float:right;" /></a>
+      Die aktuelle MyCoRe-Version <a href="site:release">Release 2013.08</a> kann direkt via Maven oder auf
+      <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.08/">Sourceforge</a> bezogen werden.
+      Alternativ steht DocPortal inkl. MyCoRe v2013.08 zum Download zur Verfügung.
     </p>
     <p>
-      <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/">
-      <img src="/images/download_docportal_201306.png" alt="Link zum SF-Download" style="float:right;" /></a>
       Neben dem aktuellen Release, das max. monatlich erscheint, stellt das Entwickler-Team ein sogenanntes
-      Long-Term-Support-Release (aktuell LTS-Release 2013.06) zur Verfügung, dieses wird 1 Jahr lang gepflegt. Alte Versionen
-      (Release und LTS-Release) werden archiviert.
+      Long-Term-Support-Release (aktuell <a href="site:lts_release">LTS-Release 2013.06</a>) bereit. Dieses
+      wird bis zum nächsten LTS-Release gepflegt (ca. 1 Jahr). Alte Versionen (Release und LTS-Release)
+      werden archiviert.
     </p>
     <ul>
+      <li><a href="site:release">Release</a></li>
       <li><a href="site:lts_release">Long-Term-Support-Release</a></li>
       <li><a href="site:archive">Archiv</a></li>
     </ul>

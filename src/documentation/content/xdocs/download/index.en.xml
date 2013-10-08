@@ -10,16 +10,21 @@
 
   <div style="margin-bottom:50px;">
     <p>
+      <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.08/" title="DocPortal download on sourceforge">
+      <img src="/images/download_docportal_201308.png" alt="DocPortal download on sourceforge"
+      style="float:right;margin:0px 0px 10px 10px;" title="DocPortal download on sourceforge" /></a>
       You can integrate the latest MyCoRe version <a href="site:release">Release 2013.08</a> in your application
-      using maven.
+      using maven or as download on <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.08/"
+      >Sourceforge</a>. An alternative is DocPortal, the sample application including MyCoRe v2013.08, which is
+      also available on Sourceforge.
     </p>
     <p>
-      <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/">
-      <img src="/images/download_docportal_201306.png" alt="SF download link" style="float:right;" /></a>
-      Besides the official current release, you can also use our long term support release (LTS) 2013.06, which
-      is supported for a year. All older versions are archived:
+      Besides the official current release, you can also use our long term support release (LTS)
+      <a href="site:lts_release">2013.06</a>, which is supported til next LTS (ca. 1 year). All older versions
+      are archived.
     </p>
     <ul>
+      <li><a href="site:release">Release</a></li>
       <li><a href="site:lts_release">Long-Term-Support-Release</a></li>
       <li><a href="site:archive">Archive</a></li>
     </ul>
