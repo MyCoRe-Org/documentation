@@ -8,16 +8,17 @@
   </header>
 <body>
 
-<p><strong>Ankündigung</strong></p>
+<section>
+<title>Ankündigung</title>
   
 <p>Der MyCoRe-User-Workshop findet dieses Jahr in Leizig statt. 
    An zwei halben Tagen &#8211; Mittwochnachmittag, dem 13.11. und Donnerstagvormittag, 
    dem 14.11. &#8211; sind wir zu Gast an der Universität Leipzig.
    Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen den MyCoRe-Anwendern und Interessierten zu 
    ermöglichen und Gelegenheit für Fragen an die Entwickler zu bieten. <br/>
-   Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben. Anregungen und Vorschläge können im 
-   <a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" target="_blank">
-   MyCoRe-Wiki</a> eingetragen werden. 
+   Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben. 
+   Anregungen und Vorschläge können im MyCoRe-Wiki auf der
+   <a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" target="_blank">Themenvorschlagsseite</a> eingetragen werden. 
 </p>
 <p>
   Hier können Sie sich für den Workshop <a href="http://www.mycore.de:8291/content/below/workshop.xml?xsl=workshop&amp;goto=http%3A%2F%2Fcmswiki.rrz.uni-hamburg.de%2Fhummel%2FMyCoRe%2FOrganisation%2FAnwenderWorkshop2013"><strong><font color="darkred">anmelden!</font></strong></a>
@@ -25,8 +26,8 @@
 
 
 <p><strong>Weitere Informationen</strong></p>
-  <p>Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:office" target="_blank">MyCoRe Geschäftsstelle</a>.</p>
-
+  <p>Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:contact" target="_blank">MyCoRe Geschäftsstelle</a>.</p>
+</section>
 <section>
 <title>Wegbeschreibung</title>
   
@@ -50,8 +51,9 @@ Der Workshop findet an der <strong><a title="Universität Leipzig" href="https:/
 <section>
  <title>Anmeldung</title>
 
- <p> Bitte melden Sie sich 
-   <strong><a href="http://www.mycore.de:8291/content/below/workshop.xml?xsl=workshop&amp;goto=http%3A%2F%2Fcmswiki.rrz.uni-hamburg.de%2Fhummel%2FMyCoRe%2FOrganisation%2FAnwenderWorkshop2013">hier</a></strong> an.
+ <p> Bitte melden Sie sich entweder mit dem  
+   <strong><a href="http://www.mycore.de:8291/content/below/workshop.xml?xsl=workshop&amp;goto=http%3A%2F%2Fcmswiki.rrz.uni-hamburg.de%2Fhummel%2FMyCoRe%2FOrganisation%2FAnwenderWorkshop2013">Anmeldeformular</a></strong> an
+   oder schicken Sie eine Nachricht an die <a title="Geschäftsstelle" href="site:contact" target="_blank">MyCoRe Geschäftsstelle</a>. 
  </p>
 </section> 
 </body>
