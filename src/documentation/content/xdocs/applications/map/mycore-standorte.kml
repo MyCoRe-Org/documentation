@@ -427,16 +427,12 @@
     </Placemark>
 
     <Placemark>
-      <name>Halle (2)</name>
+      <name>Halle (1)</name>
       <description><![CDATA[
             <h3>Martin-Luther-Universität Halle-Wittenberg</h3>
              <div class="mcrmap_item">
                 <a href="http://papyri-leipzig.dl.uni-leipzig.de/"><img class="icon" alt="icon" src="map/icons/icon_diverse_papyrus1.png" /></a>
                 <a href="http://http://papyri-leipzig.dl.uni-leipzig.de/">Papyrus und Ostraka Projekt<br /> (Halle-Jena-Leipzig)</a>
-            </div>
-            <div class="mcrmap_item">
-                <a href="http://edoc.bibliothek.uni-halle.de/"><img class="icon" alt="icon" src="map/icons/icon_halle_menalib.png" /></a>
-                <a href="http://edoc.bibliothek.uni-halle.de/">MENALIB - Die Virtuelle Fachbibliothek Vorderer Orient</a>
             </div>
           ]]>
         </description>
