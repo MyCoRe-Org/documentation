@@ -459,19 +459,23 @@
    In MyCoRe gibt es im Indexing-Module ein kleines Servlet, welches eine Datei erzeugt, die den Konventionen des
    <a title="Link zu Google" href="https://www.google.com/webmasters/sitemaps/docs/de/protocol.html">Sitemap-Protokolls</a>
    von Google entspricht. Der Zugriff vom Internet aus erfolgt mit der <em>URL http://myhost/sitemap_google.xml</em>.
-   Für die Konfiguration dieser XML-Ausgabe stehen in den Property-Dateien zwei Werte zur Verfügung.
+   Für die Konfiguration dieser XML-Ausgabe stehen folgende Properties zur Verfügung:
    </p>
    <dl>
    <dt><code>MCR.GoogleSitemap.Types</code></dt>
-   <dd>Liste von mit Komma getrennten MyCoRe-Objekttypen – Standard ist document</dd>
+   <dd>Liste von mit Komma getrennten MyCoRe-Objekttypen</dd>
    <dt><code>MCR.GoogleSitemap.Freq</code></dt>
    <dd>Zugriffsfrequenz von Google – Standard ist monthly – weiter möglich sind: allways / hourly / daily / weekly /
    monthly / yearly / never</dd>
+   <dt><code>MCR.GoogleSitemap.Directory</code></dt>
+   <dd>Verzeichnis (relativ zum Webapplication-Verzeichnis) in dem die generierten sitemap-Dateien gespeichert werden sollen - Standard ist keine Angabe</dd>
+   <dt><code>MCR.GoogleSitemap.Style</code></dt>
+   <dd>Layout-Angabe für Ausgabe (?XSL.Style={style}) - Standard ist keine Angabe</dd>
    <dt><code>MCR.GoogleSitemap.ObjectPath</code></dt>
    <dd>Pfad (Teil nach Anwendungs URL) unter dem die Detailansicht der Objekte abgerufen werden kann.
    - Standard ist: <code>receive/</code></dd>
    <dt><code>MCR.GoogleSitemap.NumberOfURLs</code></dt>
-   <dd>Maximale Anzahl der Einträge pro Sitemap Datei. - Standard ist: <code>50.000</code></dd>
+   <dd>Maximale Anzahl der Einträge pro Sitemap Datei. - Standard ist: <code>10.000</code></dd>
    </dl>
    <p>
    Entsprechend der <a href="http://www.sitemaps.org/protocol.html#submit_robots">offiziellen Dokumentation auf sitemaps.org</a>,
