@@ -174,4 +174,12 @@ imported document-to-html.xsl for details.
       </img>
     </div>
   </xsl:template>
+
+  <xsl:template match="code">
+    <xsl:apply-templates select="@id"/>
+    <code>
+      <xsl:copy-of select="@id"/>
+      <xsl:value-of select="."/>
+    </code>
+  </xsl:template>
 </xsl:stylesheet>
