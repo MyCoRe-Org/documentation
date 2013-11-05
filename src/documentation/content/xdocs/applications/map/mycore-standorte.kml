@@ -207,17 +207,21 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>Duisburg-Essen (2)</name>
+      <name>Duisburg-Essen (3)</name>
       <description><![CDATA[
             <h3>Universität Duisburg-Essen<br />(Universitätsbibliothek)</h3>
             <div class="mcrmap_item">
                 <a href="http://duepublico.uni-duisburg-essen.de/"><img class="icon" alt="icon" src="map/icons/icon_duisburg-essen_duepublico.png" /></a>
                 <a href="http://duepublico.uni-duisburg-essen.de/">DuEPublico</a>
             </div>
+            <div class="mcrmap_item">
+                <img class="icon" alt="icon" src="map/icons/icon_duisburg-essen_metropolenzeichen.png" />
+                Bilddatenbank "Metropolenzeichen - Visuelle Mehrsprachigkeit in der Metropole Ruhr" 
+            </div>
             <h3>Universitätsallianz Metropole Ruhr<br />(AG der Medienzentren an Hochschulen e.V.)</h3>
             <div class="mcrmap_item">
                 <a href="http://muvin.uamr.de/"><img class="icon" alt="icon" src="map/icons/icon_duisburg-essen_muvin.png" /></a>
-                <a href="hhttp://muvin.uamr.de/">MUVIN Video Server</a>
+                <a href="http://muvin.uamr.de/">MUVIN Video Server</a>
             </div>
           ]]>
         </description>
