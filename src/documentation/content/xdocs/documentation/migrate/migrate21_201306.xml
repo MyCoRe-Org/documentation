@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -6,8 +6,8 @@
     <title>Migrationsanleitung von 2.1 auf 2013.06</title>
     <abstract>
       Trotz der vielen Neuerungen ist die Migration von der Version 2.1 auf die Version 2013.06 deutlich
-      überschaubarer und leichter zu realisieren als frühere Migrationen. Die in Version 2.1 hinzugekommene
-      Verwendung von Maven macht dies unter anderem möglich!
+      Ã¼berschaubarer und leichter zu realisieren als frÃ¼here Migrationen. Die in Version 2.1 hinzugekommene
+      Verwendung von Maven macht dies unter anderem mÃ¶glich!
     </abstract>
   </header>
   <body>
@@ -22,7 +22,7 @@
    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
 
       <note label="Hinweis">Die Migrationsanleitung geht von MyCoRe 2.1 oder
-      höher als Ausgangsbasis aus.</note>
+      hÃ¶her als Ausgangsbasis aus.</note>
 
 
     <section id="start">
@@ -36,14 +36,14 @@
       <section>
         <title>Umstellung auf das neue Nutzersystem</title>
         <p>
-          Die Migrations-Komponente darf dafür nicht ausgenommen werden! Zur Umstellung muss
+          Die Migrations-Komponente darf dafÃ¼r nicht ausgenommen werden! Zur Umstellung muss
           diese Komponente in den mycore.properties.private aus dem Exclude herausgenommen werden.
 <pre>
 #exclude these mycore components
 #MCR.Components.Exclude=migration21-22
 </pre>
           Danach steht ein entsprechendes Migrationskommando in der MyCoRe-Kommandozeile (CLI)
-          zur Verfügung. Mehr erfahren Sie mit Hilfe des Aufrufs:
+          zur VerfÃ¼gung. Mehr erfahren Sie mit Hilfe des Aufrufs:
           <pre>help migrate</pre>
         </p>
       </section>
@@ -56,10 +56,10 @@
           Das ist an sich noch nie eine gute Idee gewesen.
         </p>
         <p>
-          Ursprünglich wurde die MCRSession geschlossen und der Benutzer war
+          UrsprÃ¼nglich wurde die MCRSession geschlossen und der Benutzer war
           abgemeldet, d.h. ein Benutzer der "Suche verfeinern" anklickt,
           verliert seine Daten. Die Verwendung eines URIResolvers behebt dieses
-          unerwünschte Verhalten.
+          unerwÃ¼nschte Verhalten.
         </p>
         <p>
           Migration: z. B. via sed per Skript alle Vorkommen von
@@ -75,7 +75,7 @@
         <p>
           Kategorie-IDs (categID) mit ":" sind nicht mehr erlaubt, da der
           Doppelpunkt als Trenner zwischen classID und categID verwendet wird. Alle
-          Doppelpunkte müssen daher ersetzt werden. Das CLI-Kommando
+          Doppelpunkte mÃ¼ssen daher ersetzt werden. Das CLI-Kommando
           <pre>fix colone in categID</pre>
           ersetzt den ":" entsprechend durch ein "-".
         </p>
@@ -84,12 +84,12 @@
       <section>
         <title>Klassifikationsbrowser</title>
         <p>
-          Dem Klassifikationsbrowser muss für das Layout der Name des verwendeten
+          Dem Klassifikationsbrowser muss fÃ¼r das Layout der Name des verwendeten
           Templates als Parameter mitgegeben werden. In den entsprechenden
           content-Dateien, in denen das &lt;classificationbrowser />-Tag genutzt wird,
-          ist dies entsprechend zu ergänzen:
+          ist dies entsprechend zu ergÃ¤nzen:
           <pre>&lt;classificationbrowser ... addParameter="XSL.template=template_clausthal" /></pre>
-          Welche Parameter der Klassifikationsbrowser noch bietet, können Sie in der
+          Welche Parameter der Klassifikationsbrowser noch bietet, kÃ¶nnen Sie in der
           <a href="site:section14">Dokumentation</a> nachlesen.
         </p>
       </section>
@@ -97,8 +97,8 @@
       <section>
         <title>Klassifikationseditor</title>
         <p>
-          Es steht ein neuer Klassifikationseditor zur Verfügung. In der eigenen Anwendung
-          muss der Link zum Klassifikationseditor dafür angepasst werden (meist in der navigation.xml):
+          Es steht ein neuer Klassifikationseditor zur VerfÃ¼gung. In der eigenen Anwendung
+          muss der Link zum Klassifikationseditor dafÃ¼r angepasst werden (meist in der navigation.xml):
           <pre>/modules/classeditor/classificationEditor.xml</pre>
           Details zum neuen Editor finden Sie in der <a href="site:section14">Dokumentation</a>.
         </p>
@@ -107,17 +107,17 @@
       <section>
         <title>Verwendung von objectTypes.xsl</title>
         <p>
-          Die Stylesheets für die Darstellung der MyCoRe-Objekttypen werden nicht mehr über
+          Die Stylesheets fÃ¼r die Darstellung der MyCoRe-Objekttypen werden nicht mehr Ã¼ber
           objectTypes.xsl eingebunden. Statt dessen wird der xslInclude-URIResolver benutzt.
           Falls Sie in Ihrer Anwendung mycoreobject.xsl und results.xsl oder andere Dateien
-          überschreiben, müssen Sie dort das xsl:include ändern (siehe auch <a href=
+          Ã¼berschreiben, mÃ¼ssen Sie dort das xsl:include Ã¤ndern (siehe auch <a href=
           "http://www.mycore.de/viewvc/viewvc.cgi?view=revision&amp;revision=24483">SVN</a>).
           Statt <pre>&lt;xsl:include href="objecttypes.xsl" /></pre>
           muss es nun heissen: <pre>&lt;xsl:include href="xslInclude:objectTypes" /></pre>
         </p>
         <p>
           Falls Sie das "addObjectType"-Target von docportal in eigenen build.xml-Dateien verwenden,
-          dann müssen Sie dieses jetzt in der config-Phase aufrufen und nicht mehr in der webapp-Phase.
+          dann mÃ¼ssen Sie dieses jetzt in der config-Phase aufrufen und nicht mehr in der webapp-Phase.
         </p>
       </section>
 
@@ -133,7 +133,7 @@
       <title>Optionale Erweiterungen</title>
       <p>
         Mit dem Release sind auch viele neue Funktionen hinzugekommen. Wie diese in die eigene Anwendung integriert
-        werden können soll in diesem Abschnitt kurz erläutert werden. Mehr Details erfahren Sie in der Dokumentation
+        werden kÃ¶nnen soll in diesem Abschnitt kurz erlÃ¤utert werden. Mehr Details erfahren Sie in der Dokumentation
         oder auf der Mailing-Liste.
       </p>
       <section>
@@ -158,13 +158,38 @@
         siehe <a href="/documentation/principles/11_frontend.html#XSL-Info-Servlet">Dokumentation</a>
         </p>
       </section>
+      <section>
+        <title>Umstellung auf SOLR</title>
+        <p>
+          Um statt Lucene die neue SOLR-Implementierung fÃ¼r die Suche zu verwenden, muss die eigene Anwendung
+          entsprechend konfiguriert werden. Die Anzeige der Klassifikationen und die Trefferliste basieren
+          auf der jeweiligen RÃ¼ckgabe aus dem Index, weswegen hierfÃ¼r neue Stylesheets erstellt bzw. bestehende
+          angepasst werden mÃ¼ssen.
+        </p>
+        <p>
+          Bevor auf SOLR umgestiegen werden soll, ist es ratsam die entsprechende
+          <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/SOLR">Dokumentation im Wiki</a>
+          zu lesen. FÃ¼r die eigene Anwendung â€šmyappâ€˜ (bzw. das eigene Anwendungsmodul) sind die folgenden Dateien anzupassen
+          bzw. neu zu erstellen:
+        </p>
+        <ul>
+          <li>build.xml -> config angepasst</li>
+          <li>config/mycore.properties</li>
+          <li>config/solr-home</li>
+          <li>xsl/classificationBrowserData-myapp.xsl</li>
+          <li>xsl/myapp-solr.xsl</li>
+          <li>xsl/response-myapp.xsl</li>
+          <li>xsl/solr-response.xsl</li>
+          <li>content/classification.xsl</li>
+        </ul>
+      </section>
     </section>
 
 
     <section id="new">
-      <title>Allgemeine Neuerungen</title>
+      <title>Weitere Neuerungen</title>
       <p>
-        Abschliessend folgt ein Überblick über Neuerungen, die ohne weitere Anpassungen genutzt werden können.
+        Abschliessend folgt ein Ãœberblick Ã¼ber Neuerungen, die ohne weitere Anpassungen genutzt werden kÃ¶nnen.
       </p>
       <section>
         <title>Neue CLI-Befehle</title>
@@ -178,19 +203,19 @@
           Content-Stores alphabetisch sortiert mit MD5 Summer hinterlegt sind.
         </p>
         <p>
-          Diese MD5-Datei kann man mit <pre>"md5sum -c &lt;Datei.md5>"</pre> zum Überprüfen aller
-          Dateien benutzen, um so Änderungen oder fehlende Dateien feststellen zu können.
+          Diese MD5-Datei kann man mit <pre>"md5sum -c &lt;Datei.md5>"</pre> zum ÃœberprÃ¼fen aller
+          Dateien benutzen, um so Ã„nderungen oder fehlende Dateien feststellen zu kÃ¶nnen.
         </p>
         <p>
           Mit einer sortierten Liste (z.B. per find) der Dateien im Content-Store, kann man mit
-          einem Script zusätzlich noch leicht herausfinden, welche Dateien in der Datenbank nicht
+          einem Script zusÃ¤tzlich noch leicht herausfinden, welche Dateien in der Datenbank nicht
           vermerkt sind, aber noch Platz wegnehmen.
         </p>
       </section>
       <section>
         <title>Weitere Workflowkomponente</title>
         <p>
-          Es steht nun neben dem SimpleWorkflow eine weitere Workflowkomponente zur Verfügung ...
+          Es steht nun neben dem SimpleWorkflow eine weitere Workflowkomponente zur VerfÃ¼gung ...
         </p>
       </section>
     </section>
