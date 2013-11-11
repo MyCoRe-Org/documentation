@@ -204,7 +204,7 @@ Disallow: /
 #
 # This is a production host
 # list only disallowed paths
-# 
+#
 
 User-agent: *
 Disallow: /viewvc/
@@ -212,6 +212,7 @@ Disallow: /svn/
 Disallow: /jenkins/
 Disallow: /hudson/
 Disallow: /artifactory/
+Disallow: /documentation/archiv/
 #
 # Limit the Crawl-speed
 # delay in seconds
