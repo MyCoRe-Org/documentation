@@ -10,11 +10,11 @@
 
   <div style="margin-bottom:50px;">
     <p>
-      <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.08/">
-      <img src="/images/download_docportal_201308.png" alt="Link zum SF-Download" style="float:right;" /></a>
-      Die aktuelle MyCoRe-Version <a href="site:release">Release 2013.08</a> kann direkt via Maven oder auf
-      <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.08/">Sourceforge</a> bezogen werden.
-      Alternativ steht DocPortal inkl. MyCoRe v2013.08 zum Download zur Verfügung.
+      <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.11/">
+      <img src="/images/download_docportal_201311.png" alt="Link zum SF-Download" style="float:right;" /></a>
+      Die aktuelle MyCoRe-Version <a href="site:release">Release 2013.11</a> kann direkt via Maven oder auf
+      <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.11/">Sourceforge</a> bezogen werden.
+      Alternativ steht DocPortal inkl. MyCoRe v2013.11 zum Download zur Verfügung.
     </p>
     <p>
       Neben dem aktuellen Release, das max. monatlich erscheint, stellt das Entwickler-Team ein sogenanntes

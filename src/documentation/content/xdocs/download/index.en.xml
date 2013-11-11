@@ -10,12 +10,12 @@
 
   <div style="margin-bottom:50px;">
     <p>
-      <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.08/" title="DocPortal download on sourceforge">
-      <img src="/images/download_docportal_201308.png" alt="DocPortal download on sourceforge"
+      <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.11/" title="DocPortal download on sourceforge">
+      <img src="/images/download_docportal_201311.png" alt="DocPortal download on sourceforge"
       style="float:right;margin:0px 0px 10px 10px;" title="DocPortal download on sourceforge" /></a>
-      You can integrate the latest MyCoRe version <a href="site:release">Release 2013.08</a> in your application
-      using maven or as download on <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.08/"
-      >Sourceforge</a>. An alternative is DocPortal, the sample application including MyCoRe v2013.08, which is
+      You can integrate the latest MyCoRe version <a href="site:release">Release 2013.11</a> in your application
+      using maven or as download on <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.11/"
+      >Sourceforge</a>. An alternative is DocPortal, the sample application including MyCoRe v2013.11, which is
       also available on Sourceforge.
     </p>
     <p>
