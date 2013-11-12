@@ -1,6 +1,173 @@
 XEditor-Dokumentation [Draft]
 =============================
 
+<xed:bind />
+============
+
+Legt die Abbildung zwischen Eingabe-Komponenten im HTML Formular und Knoten im XML-Dokument fest.
+
+Syntax: <xed:bind xpath="..." default="..." initially="..." set="..." />
+
+Das Attribut @xpath kann ein beliebiger XPath 1.0 Ausdruck sein, der ein oder mehrere Elemente oder Attribute im zu bearbeiteten XML selektiert.
+Das Element drückt aus, dass alle durch das <xed:bind /> umschlossenene Bereiche des Formulars sich auf die selektierten Elemente und Attribute beziehen.
+Innerhalb des <xed:bind /> Elementes können beliebige HTML- oder XEditor-Elemente ineinander geschachtelt werden, so dass sich eine hierachische Abbildung zwischen
+XML-Dokumente und HTML-Formular ergibt.
+
+Beispiel:
+
+<xed:bind xpath="mods:titleInfo">
+  <xed:bind xpath="mods:title">
+    <div>
+      <label for="title">Titel:</label>
+      <input id="title" type="text" />
+    </div>
+  </xed:bind>
+  <xed:bind xpath="mods:subtitle">
+    <div>
+      <label for="subtitle">Untertitel:</label>
+      <input id="subtitle" type="text" />
+    </div>
+  </xed:bind>
+</xed:bind>  
+  
+In diesem Beispiel bezieht sich das Eingabefeld mit der ID "title" auf das XML Element mods:titleInfo/mods:title, 
+das Eingabefeld mit der ID "subtitle" auf das XML Element mods:titleInfo/mods:subtitle. Der XEditor setzt dabei für HTML input-Elemente vom Typ 
+text, password, hidden, file, color, date, datetime, datetime-local, email, month, number, range, search, tel, time, url, week automatisch die 
+@name und @value Attribute, für HTML checkbox- und radio-Elemente die @name und @checked Attribute, sowie für HTML select/option Elemente die @name bzw. @selected 
+Attribute. Das Attribut @name der Eingabekomponente wird dabei auf den absoluten XPath des XML Knotens gesetzt, der durch das aktuelle Bindung durch die verschachtelten
+<xed:bind /> Elemente ausgewählt wurde. Die Attribute @value bzw. @selected oder @checked werde so gesetzt, dass ihr Wert dem Inhalt des selektierten Knotens entspricht.
+
+Ein XEditor-Formular kann also so gestaltet werden, dass man den Entwurf mit einem HTML-Formular beginnt, dann die @name, @value, @checked, @selected Attribute der 
+Eingabekomponenten entfernt und diese funktional duch umgebende <xed:bind /> Elemente ersetzt.
+
+Beispiel:
+
+XML-Dokument, das durch das Formular bearbeitet wird:
+
+<document>
+  <title>Titel der Publikation</title>
+  <services>
+    <service>OAI</service>
+  <services>
+</document>
+
+XEditor, der dieses Dokument bearbeitet:
+
+<xed:bind xpath="document">
+  <xed:bind xpath="title">
+    <div>
+      <label>Titel:</label>
+      <input type="text" />
+    </div>
+  </xed:bind>
+  <xed:bind xpath="services/service">
+    <div>
+      <label>Dienste:</label>
+      <input type="checkbox" value="OAI" />Über OAI-Schnittstelle publizieren
+      <input type="checkbox" value="POD" />Print on Demand anbieten 
+    </div>
+  </xed:bind>
+</xed:bind>
+
+Resultierendes HTML:
+
+<div>
+  <label>Titel:</label>
+  <input type="text" name="/document/title" value="Titel der Publikation" />
+</div>
+<div>
+  <label>Dienste:</label>
+  <input type="checkbox" value="OAI" name="/document/service" checked="checked" />Über OAI-Schnittstelle publizieren
+  <input type="checkbox" value="POD" name="/document/service" />Print on Demand anbieten 
+</div>
+
+Der XPath-Ausdruck kann beliebige Prädikate enthalten, z. B.
+
+<xed:bind xpath="mods:titleInfo[@type='translated'][@xml:lang='en']/mods:title">
+  <div>
+    <label for="title_en">Englische Übersetzung des Titels:</label>
+    <input id="title_en" type="text" />
+  </div>
+</xed:bind>
+
+Falls der angegebene XPath-Ausdruck keinen bereits existierenden XML Knoten selektiert, wird dieser automatisch generiert. Dabei werden auch alle angegebenen Prädikate
+berücksichtigt. Es gilt die Einschränkung, dass der XPath-Ausdruck nur Elemente und Attribute auf der Child-Achse generieren kann und keine XPath Funktionen verwenden darf.
+Ausdrücke oder Prädikate, die nicht generiert werden können, werden ignoriert.
+  
+Beispiel:
+
+<xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='aut']/mods:displayForm">
+  <label>Autor:</label>
+  <input type="text" ... />
+</xed:bind>  
+  
+erzeugt, falls kein mods:name Element existiert, das alle Prädikate erfüllt, folgende XML Elemente:
+
+<mods:name type="personal">
+  <mods:role>
+    <mods:roleTerm type="code" authority="marcrelator">aut</mods:roleTerm>
+  </mods:role>
+  <mods:displayForm />
+</mods:name>
+   
+Gleichzeitig wird dem Eingabefeld das Attribut @name=".../mods:name/mods:displayForm" zugewiesen.
+
+Die Generierung fehlender XML-Elemente und -Attribute erfolgt bereits im Moment der Verarbeitung des XEditor Formulars, 
+schon vor der Darstellung im Browser. D.h. dass sich zum Zeitpunkt der Anzeige des HTML Formulars alle im Formular enthaltenen Eingabekomponenten auf bereits
+existierende oder neue, leer generierte Elemente oder Attribute beziehen. Beim Abschicken des Formulars werden die Textknoten der XML Element bzw. die Werte der Attribute
+entsprechend aus den abgeschickten Formularwerten gesetzt.
+
+Es ist auch möglich, leere <xed:bind /> Elemente zu verwenden, um XML Knoten nur zu generieren oder deren Existenz sicherzustellen, ohne dafür Eingabekomponenten im
+HTML Formular zu definieren. Beispiel:
+
+<xed:bind xpath="sortBy">
+  <xed:bind xpath="field[@name='year'][@order='descending']" />
+  <xed:bind xpath="field[@name='title'][@order='ascending']" />
+</xed:bind>
+
+Das optionale Attribut @default legt einen Wert fest, der als Default-Wert verwendet wird, wenn der XML Knoten neu generiert wird, oder aber vor oder nach 
+der Bearbeitung im Formular leer ist, d.h. keinen Textwert hat. Beispiele:
+
+<xed:bind xpath="@numPerPage" default="10">
+  <select id="numPerPage">
+    <option>5</option>
+    <option>10</option>
+    <option>20</option>
+    <option>50</option>
+  </select>
+</xed:bind>
+  
+<xed:bind xpath="mods:genre" default="article" />
+
+Das optionale Attribut @initially legt einen Wert fest, der nur dann als initialer Wert verwendet wird, falls der XML Knoten nicht bereits existiert und neu generiert wird.
+Im Gegensatz zu @default wird dieser Wert aber nicht gesetzt, wenn der Knoten existiert oder wenn er durch die Eingabe leer gesetzt wird. Das ist insbesondere bei einzeln 
+stehenden Checkboxen als Sonderfall erforderlich:
+
+<xed:bind xpath="@publish" initially="true" default="false">
+  <input type="checkbox" value="true" /> Dokument publizieren
+</xed:bind>
+
+* Sofern das Attribut @publish im bearbeiteten XML noch nicht existiert, wird es als @publish="true" generiert. Die Checkbox ist dann aktiviert, da sie den @value="true" hat.
+* Sofern das Attribut @publish im bearbeiteten XML schon existiert (mit entweder "true" oder "false", wird es mit dem existierenden Wert im Formular übernommen. 
+Die Checkbox ist aktiviert, falls das existierende Attribut den Wert "true" hat, ansonsten ist sie nicht aktiviert.
+* Wenn vor Absenden des Formulars die Checkbox deaktiviert wurde, übermittelt der Browser beim Absenden keinen Wert. 
+In diesem Fall setzt der XEditor als Default-Wert @publish="false", da das Attribut leer übermittelt wird.  
+
+Das optionale Attribut @set legt einen Wert fest, der beim Aufbau des Formulars immer als initialer Wert gesetzt wird, und der den bisherigen Wert überschreibt, 
+auch wenn der XML Knoten bereits existiert. Beispiel:
+
+<xed:bind xpath="version" set="2.0" />
+
+setzt in jedem Fall das XML Element auf <version>2.0</version>, auch wenn bereits ein <version /> Element mit anderem Wert existierte.
+
+Der XPath-Ausdruck und die weiteren Attribute von <xed:bind /> können auch auf Variablen zugreifen, 
+wobei HTTP Request Parameter aus der URL des Aufrufs, Konfigurationswerte aus mycore.properties oder Werte aus der MCRSession verwendet werden können. Beispiel:
+
+<xed:bind xpath="mods:titleInfo[@xml:lang=$DefaultLang]/mods:title">...</xed:bind>
+
+<xed:bind xpath="mods:genre" initially="{$genre}" />
+setzt bei Aufruf des Formulars mit [Seite].xed?genre=article das Element <mods:genre>article</mods:genre>, sofern noch kein mods:genre Element existiert. 
+
 
 <xed:source />
 ==============
