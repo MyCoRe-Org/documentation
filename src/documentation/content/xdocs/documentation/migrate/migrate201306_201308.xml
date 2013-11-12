@@ -38,7 +38,6 @@ build.xml anpassen
 pom.xml anpassen
         </pre>
       </section>
-    </section>
 
       <section>
         <title>Anpassung an aktuelle SOLR-Version</title>
