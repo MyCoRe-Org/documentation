@@ -456,5 +456,4 @@
     ul.minitoc ul.minitoc li {
         margin-left: 20px;
         }
-    a[name]:after {content:" "; display:block; padding:10px;}
 }
