@@ -410,4 +410,45 @@
     #logos ul li {
         padding-bottom:10px;
     }
+    div.abstract {
+        margin: 20px 0 20px 0;
+        }
+    ul.minitoc {
+        margin: 10px 0 30px 0;
+        list-style: none;
+        }
+    .skinconf-heading-1 h1 {
+        margin: 30px 0 20px -10px;
+        color: white;
+        font-size: 160%;
+        padding-left: 10px;
+        border-radius: 4px;
+        background-color: #2F647E;
+        }
+    h2 {
+        margin: 30px 0 10px -10px;
+        color: #444;
+        padding-left: 10px;
+        font-size: 140%;
+        border-radius: 4px;
+        background-color: #eee;}
+    ul.minitoc li {
+        margin: 4px 0 4px 0px;
+        }
+    ul.minitoc li a {
+        padding: 0px 0 0px 18px;
+        background-position: 0px 5px;
+        background-repeat: no-repeat;
+        }
+    ul.minitoc li a {
+        /* background-image: url("../images/icon_bracket_gray.png");*/
+        }
+    ul.minitoc li a:hover {
+        background-image: url("../images/icon_arrow_down_orange.png");
+        }
+    ul.minitoc li a:hover {
+        text-decoration:none;
+        color:#0088cc;
+        }
+    a[name]:after {content:" "; display:block; padding:10px;}
 }
