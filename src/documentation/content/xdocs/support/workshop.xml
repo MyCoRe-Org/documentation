@@ -4,43 +4,41 @@
 <document>
   <header>
     <title>MyCoRe-Workshop 2013</title>
-    <subtitle>13./14. November in Leipzig</subtitle>
+    <subtitle>13./14. November 2013 in Leipzig</subtitle>
   </header>
 <body>
 
-<section>
-<title>Ankündigung</title>
+<!-- <section> -->
+<!-- <title>Ankündigung</title> -->
 
 <p>Der MyCoRe-User-Workshop findet dieses Jahr in Leizig statt.
    An zwei halben Tagen &#8211; Mittwochnachmittag, dem 13.11. und Donnerstagvormittag,
    dem 14.11. &#8211; sind wir zu Gast an der Universität Leipzig.
    Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen den MyCoRe-Anwendern und Interessierten zu
    ermöglichen und Gelegenheit für Fragen an die Entwickler zu bieten. <br/>
-   Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben.
+   <!-- Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben.
    Anregungen und Vorschläge können im MyCoRe-Wiki auf der
-   <a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a> eingetragen werden.
+   <a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a> eingetragen werden. -->
 </p>
-<p>
+<!-- <p>
   Hier können Sie sich für den Workshop <a href="http://www.mycore.de:8291/content/below/workshop.xed?XSL.template.SESSION=template_mycore-de"><strong style="color:darkred;">anmelden!</strong></a>
-</p>
-
+</p> -->
 
 <p><strong>Weitere Informationen</strong></p>
-  <p>Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
-</section>
-<section>
-<title>Wegbeschreibung</title>
+  <p>   Die Agenda des Workshops kann im <a title="MyCoRe-Wiki Workshop 2013 Agenda" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013" >Wiki</a> eingesehen werden. 
+  Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
 
 <p>
-Der Workshop findet an der <strong><a title="Universität Leipzig" href="https://www.urz.uni-leipzig.de/start/">Universität Leipzig</a></strong> im <strong>Beratungsraum A120 </strong> statt. Ausgerichtet wird der Workshop vom URZ &#8211; Universitätsrechenzentrum.
-<p class="fett">Adresse</p>
+    Der Workshop findet an der <strong><a title="Universität Leipzig" href="https://www.urz.uni-leipzig.de/start/">Universität Leipzig</a></strong> im <strong>Beratungsraum A120 </strong> statt. Ausgerichtet wird der Workshop vom URZ &#8211; Universitätsrechenzentrum.
+
+  <p><strong>Adresse</strong></p>
     URZ &#8211; Universitätsrechenzentrum <br />
     Augustusplatz 10 <br />
     Leipzig<br />
 </p>
 <p class="fett">Siehe <a title="Ortsbeschreibung im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013#Ort:_Leipzig">Ortsbeschreibung im Wiki</a>.</p>
 
-</section>
+<!-- </section> -->
 
 
 <p><strong>Hotelinformationen</strong></p>
@@ -48,14 +46,14 @@ Der Workshop findet an der <strong><a title="Universität Leipzig" href="https:/
     <a title="Auswahl an Hotels im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013#Hotelinformationen">Hotelinformationen im Wiki</a>
   </p>
 
-<section>
+<!-- <section>
  <title>Anmeldung</title>
 
  <p> Bitte melden Sie sich entweder mit dem
    <strong><a href="http://www.mycore.de:8291/content/below/workshop.xed?XSL.template.SESSION=template_mycore-de">Anmeldeformular</a></strong> an
    oder schicken Sie eine Nachricht an die <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.
  </p>
-</section>
+</section> -->
 </body>
 </document>
 
