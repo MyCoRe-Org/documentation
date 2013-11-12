@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Migrationsanleitung von 2013.06 auf 2013.08</title>
+    <abstract>
+      xxx
+    </abstract>
+  </header>
+  <body>
+    <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+      <note label="Hinweis">Die Migrationsanleitung geht von MyCoRe 2013.06 oder
+      höher als Ausgangsbasis aus.</note>
+
+
+    <section id="start">
+      <title>Allgemeine Schritte zur Anwendungsmigration</title>
+      <p>
+        xxx
+      </p>
+
+      <section>
+        <title>Umstellung auf Servlet 3</title>
+        <pre>
+web -> META-INF
+template_module.xsl -> resources/xsl/
+build.xml anpassen
+pom.xml anpassen
+        </pre>
+      </section>
+    </section>
+
+      <section>
+        <title>Anpassung an aktuelle SOLR-Version</title>
+         xxx
+      </section>
+    </section>
+
+    <section id="new">
+      <title>Weitere Neuerungen</title>
+      <p>
+        Abschliessend folgt ein Überblick über Neuerungen, die ohne weitere Anpassungen genutzt werden können.
+      </p>
+      <section>
+        <title>Neue CLI-Befehle</title>
+        <p>
+        xxx
+        </p>
+      </section>
+    </section>
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
+
+  </body>
+</document>
