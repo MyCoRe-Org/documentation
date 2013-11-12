@@ -3,79 +3,237 @@
 
 <document>
   <header>
-    <title>Was ist neu in Version 2013.06?</title>
-    <abstract>Der Name ist sicher die augenscheinlichste Änderung beim neuen MyCoRe-Release. Ab
-    sofort werden die Versionen nach Jahr.Monat.xx benannt. Aber auch funktional hat sich seit dem
-    letzten Release vieles getan. So gibt es viele Neuerungen im Bildbetrachter, eine umfassende
-    Unterstützung des MODS-Standards und alternativ zu Lucene kann ab sofort SOLR als Suchengine
-    eingesetzt werden.</abstract>
+    <title>Was ist neu bei MyCoRe</title>
+    <abstract>Diese Seite gibt eine Übersicht der Neuerungen mit dem aktuellen Long-Term-Release und allen darauf aufbauenden
+    Zwischenreleases.</abstract>
   </header>
   <body>
 
-    <h2>Unterstützung des MODS-Standards</h2>
-    <dl>
-      <dt>Beschreibung:</dt>
-      <dd>
-        Um den immer komplexer werdenen Anforderungen an Datenmodelle in Repositories gerecht zu werden,
-        unterstützt MyCoRe ab sofort MODS als Datenmodell (standardisiertes XML-Format für bibliografische
-        Metadaten). Man kann nun nicht nur MODS-Dokumente importieren, sondern es steht auch alles für
-        die Darstellung und den Umgang mit MODS-Dokumenten zur Verfügung.
-        <br />
-        <br />
-      </dd>
-      <dt>Realisiert von:</dt>
-      <dd>Thomas Scheffler, Frank Lützenkirchen und Kathleen Neumann</dd>
-    </dl>
 
-    <h2>Erweiterung des Bildbetrachters</h2>
-    <dl>
-      <dt>Beschreibung:</dt>
-      <dd>
-        Druckfunktion (Ausgabe in PDF) im Bildbetrachter und viele Anpassungen an aktuelle Browser.
-        <br />
-        <br />
-      </dd>
-      <dt>Realisiert von:</dt>
-      <dd>Thomas Scheffler</dd>
-    </dl>
+    <section>
+      <title>Release 2013.11</title>
+      <p>
+        Der bereits mehrfach vorgestellte und angekündigte XEditor ist nun für den Produktivbetrieb verfügbar.
+        Weiterhin wurde im Rahmen des Releases auf <a href="http://getbootstrap.com/">Bootstrap 3</a> umgestellt
+        immer mehr MyCoRe-Komponenten nutzen das CSS-Framework.
+      </p>
+      <h2>XEditor</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Der XEditor ist eine vollständige Überarbeitung des Editor-Frameworks. Grundidee ist, dass man
+          ganz normale HTML-Formulare für Such- und Eingabemasken erstellen kann und diese dann mit der
+          XEditor-Syntax anreichert. Dies bietet deutlich mehr Flexibitität bei der Formular-Erstellung und
+          ermöglich nun auch barrierefreie Such- und Eingabemasken.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Frank Lützenkirchen</dd>
+      </dl>
+      <h2>Neue Prüf-Kommandos</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Für Test und Reparaturen an Anwendungsdaten im laufenden Produktivbetrieb waren weitere Kommandos
+          notwendig, mit deren Hilfe Metadaten und Inhalte im IFS (Internal File System) auf Konsistenz und
+          Fehlerfreiheit geprüft werden können.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt</dd>
+      </dl>
+      <h2>Hierarchische SOLR-Indizierung</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Damit Metadaten nicht redundant sowohl in Eltern (z.B. Buch, Serie), als auch in Kind-Objekten
+          (z.B. Kapitel) gehalten werden müssen, um dann darüber suchen zu können, wurde für das MODS-Datenmodell
+          eine Erweiterung erstellt, die die Metadaten der Kindobjekte mit den Metadaten der Eltern-Objekte beim
+          Speichern anreichert. Die Inhalte werden dann mit indiziert und ermöglichen so eine verknüpfte Suche über
+          Eltern-Kind-Informationen (z.B. das <a href="http://de.wikipedia.org/wiki/Schiller-R%C3%A4uber-Problem"
+          >Schiller-Räuber-Problem</a>)
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+      <h2>Neue ACL-Strategie: SubmitterCreatorRule</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Um noch mehr Möglichkeiten im Rahmen des internen Workflows zu haben, wurde eine erweiterte
+          <a href="principles/09_acl_integration.html#Methode+2%3A+Objekt-Typ">ObjektTyp-Strategie</a>
+          erstellt. Diese prüft, ob der Nutzer Ersteller des aktuellen Dokumentes ist
+          und sich das Dokument noch im Zustand "eingereicht" befindet. Ist dem so, kann der Nutzer das
+          Dokument bearbeiten.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Kathleen Neumann, Thomas Scheffler</dd>
+      </dl>
+    </section>
 
-    <h2>Korbfunktion</h2>
-    <dl>
-      <dt>Beschreibung:</dt>
-      <dd>
-        Korbfunktion zum Sammeln von Metadatenobjekten in der Web-Session, speicherbar, dokumentiert
-        <br />
-        <br />
-      </dd>
-      <dt>Realisiert von:</dt>
-      <dd>Frank Lützenkirchen</dd>
-    </dl>
+    <section>
+      <title>Release 2013.08</title>
+      <p>
+        Mit dem August-Release (Codename ‚Old Pascas‘) stellt MyCoRe auf den Servlet-3.0-Standard um. Die Verwendung einer
+        entsprechenden Servlet-Engine (z.B. Tomcat 7) wird damit verpflichtend. Die wichtigsten Neuerungen und Ansprechpartner
+        dazu sind nachfolgend aufgelistet. Alle Details zum Release stehen unter <a href="site:dl_archive">Download</a>.
+      </p>
+      <h2>Umstellung auf Servlet3</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Der bereits seit 2009 verfügbare Servlet-3.0-Standard wird nun auch von MyCoRe unterstützt. Dadurch ist eine
+          entsprechende Servlet-Engine als Laufzeitumgebung zwingend.<br />
+          Durch die Umstellung konnte der Build-Prozess deutlich vereinfacht werden, da viele Dateien nicht mehr
+          entpackt werden müssen, sondern direkt aus den jar-Archiven gelesen werden können. Desweiteren können in den
+          einzelnen MyCoRe-Komponenten und Anwendungsmodulen nun web-fragment.xml-Dateien genutzt werden. Ein
+          Zusammenführen einzelner web.xml-Dateien wird so unnötig.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+      <h2>Neuer ACL-Editor</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Auf Basis von <a href="http://dojotoolkit.org/">Dojo</a> und <a href="http://getbootstrap.com/">Bootstrap</a>
+          wurde der ACL-Regel- und Rechte-Editor überarbeitet. Durch die Überarbeitung gewinnt der Editor vor allem
+          an Übersicht und Benutzbarkeit. Die funktionale Mächtigkeit bleibt dabei erhalten.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Matthias Eichner, et al.</dd>
+      </dl>
+      <h2>Einführung des CSS-Frameworks Bootstrap</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Um den Anwendungsentwicklern eine strukturierte und dokumentierte Layout-Basis zur Verfügung zu stellen,
+          hat sich die Community entschieden das CSS-Framework <a href="http://getbootstrap.com/">Bootstrap</a>
+          einzusetzen. Nach und nach werden die MyCoRe-Komponenten entsprechend umgestellt. Für die Anwendungsentwickler
+          wird die Bootstrap-Nutzung dadurch nicht verpflichtend, aber empfohlen.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler, et al.</dd>
+      </dl>
+      <h2>Neues CLI-Objekt-Kommando</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Ein neues CLI-Kommando, um Dateien von einem FileStore in einen anderen zu verschieben wurde
+          entwickelt.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt</dd>
+      </dl>
+      <h2>Neue ACL-Strategie: MCRObjectBaseStrategy</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Als Spezialisierung der <a href="principles/09_acl_integration.html#Methode+2%3A+Objekt-Typ">ObjektTyp-Strategie</a>
+          steht mit der MCRObjectBaseStrategy eine ACL-Strategie zur Verfügung, die erst prüft, ob Regeln für
+          die gegebene ObjektID oder die BaseID verfügbar sind, bevor das Standardverhalten der Objekttyp-Strategie
+          greift.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt</dd>
+      </dl>
+    </section>
 
-    <h2>Neue Nutzerverwaltung </h2>
-    <dl>
-      <dt>Beschreibung:</dt>
-      <dd>
-        Nutzerverwaltung von miless in MyCoRe übernehmen
-        <br />
-        <br />
-      </dd>
-      <dt>Realisiert von:</dt>
-      <dd>Thomas Scheffler</dd>
-    </dl>
+    <section>
+      <title>Long-Term-Release 2013.06</title>
+      <p>
+        Der Name ist sicher die augenscheinlichste Änderung beim neuen MyCoRe-Release. Ab
+        sofort werden die Versionen nach Jahr.Monat.xx benannt. Aber auch funktional hat sich seit dem
+        letzten Release vieles getan. So gibt es viele Neuerungen im Bildbetrachter, eine umfassende
+        Unterstützung des MODS-Standards und alternativ zu Lucene kann ab sofort SOLR als Suchengine
+        eingesetzt werden.
+      </p>
 
-    <h2>SOLR als Alternative zu Lucene</h2>
-    <dl>
-      <dt>Beschreibung:</dt>
-      <dd>
-        Mittelfristig soll Lucene als Suchengine durch SOLR abgelöst werden, um die facettierte Suche,
-        Markierungen der Suchbegriffe und vieles andere mehr zu ermöglichen. Mit diesem Release besteht
-        nun bereits die Möglichkeit SOLR als Alternative zu Lucene zu nutzen.
-        <br />
-        <br />
-      </dd>
-      <dt>Realisiert von:</dt>
-      <dd>Silvio Hermann, Matthias Eichner und Thomas Scheffler</dd>
-    </dl>
+      <h2>Unterstützung des MODS-Standards</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Um den immer komplexer werdenen Anforderungen an Datenmodelle in Repositories gerecht zu werden,
+          unterstützt MyCoRe ab sofort MODS als Datenmodell (standardisiertes XML-Format für bibliografische
+          Metadaten). Man kann nun nicht nur MODS-Dokumente importieren, sondern es steht auch alles für
+          die Darstellung und den Umgang mit MODS-Dokumenten zur Verfügung.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler, Frank Lützenkirchen und Kathleen Neumann</dd>
+      </dl>
+
+      <h2>Erweiterung des Bildbetrachters</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Der Bildbetrachter (IView 2) wurde an die aktuellen Browserversionen angepasst und stellt nun auch
+          eine Druckfunktion (Ausgabe in PDF) zur Verfügung.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+
+      <h2>Korbfunktion</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die neue Korbfunktion ermöglicht das Sammeln von Metadatenobjekten in der Web-Session. Das
+          Ergebnis kann dann z.B. exportiert oder gedruckt werden. Das Speichern als ein neues MyCoRe-Objekt
+          ist ebenfalls möglich.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Frank Lützenkirchen</dd>
+      </dl>
+
+      <h2>Neue Nutzerverwaltung </h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Miless verfügt über eine Nutzerverwaltung, die einen komfortablen Umgang mit mehrerern Tausend
+          Nutzern ermöglicht. Diese Verwaltung soll daher aus Miless in den MyCoRe-Kern übernommen werden.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+
+      <h2>SOLR als Alternative zu Lucene</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Mittelfristig soll Lucene als Suchengine durch SOLR abgelöst werden, um die facettierte Suche,
+          Markierungen der Suchbegriffe und vieles andere mehr zu ermöglichen. Mit diesem Release besteht
+          nun bereits die Möglichkeit SOLR als Alternative zu Lucene zu nutzen.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Silvio Hermann, Matthias Eichner und Thomas Scheffler</dd>
+      </dl>
+    </section>
 
     <!-- h2>Titel der Änderung</h2>
     <dl>
