@@ -466,6 +466,71 @@ Beispiele:
 <img alt="{i18n:image.title,title[@type='main']} src="{@href}" />
 
 
+<xed:include />
+===============
+
+Fügt an der verwendeten Stelle Komponenten in das Formular ein, indem sie über eine ID referenziert werden, und/oder von einer externen URI nachgeladen werden.  
+
+Syntax: <xed:include uri="..." ref="..." static="true|false" />
+
+Wird das Attribut @uri angegeben, wird ein XML-Element von der angegebenen URI geladen, und der Inhalt (nicht das Wurzelelement selbst) an dieser Stelle eingefügt.
+@uri kann jede URI sein, die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:, xslStyle:).
+
+Wird das Attribut @ref angegeben, wird der Inhalt desjenigen XML-Elements eingefügt, dessen ID (@id) dem Wert von @ref entspricht. 
+
+Die Attribute @uri und @ref sind kombinierbar. Sie können XPath-Ausdrücke oder Verweise auf Variablen enthalten. D.h. man kann über <xed:include /> Teile des Formulars
+dynamisch nachladen, die abhängig vom bearbeiteten XML und/oder von Request Parametern bei Aufruf des Formulars sind. 
+
+Beispiel: Nachladen von Klassifikationskategorien als Auswahl in einer Select-Box:
+
+<select>
+  <option value="">Bitte wählen...</option>
+  <xed:include uri="xslStyle:items2options:classification:editor:-1:children:modsgenre" />
+</select>
+
+Die URI "xslStyle:items2options:classification:editor:-1:children:modsgenre" lädt die Klassifikation "modsgenre" und transformiert alle Kategorien in
+<option /> Auswahloptionen in der HTML-Syntax.
+
+Beispiel: Nachladen von Teilen eines Formulars abhängig von Request Parametern:
+
+<xed:include uri="webapp:ubo/editor/editor-genres.xed" ref="{$genre}" />   
+
+Wird das Formular z. B. mit [Seite].xed?genre=article aufgerufen, wird an dieser Stelle der Inhalt des Elementes mit @id='article' eingefügt.
+
+Das inkludierte XML sollte von einem Element <xed:template /> umschlossen sein. 
+Der XEditor ignoriert solche Bereiche, wenn sie nicht durch <xed:include /> referenziert werden. 
+
+Beispiel: Suchmaske, Auswahl Erscheinungsjahr
+
+<label>Suche nach Erscheinungsjahr:</label>
+zwischen
+<xed:bind xpath="condition[@field='year'][1]">
+  <xed:bind xpath="@operator" default="&gt;=" />
+  <xed:include ref="year.input" />
+</xed:bind>
+und
+<xed:bind xpath="condition[@field='year'][2]">
+  <xed:bind xpath="@operator" default="&lt;=" />
+  <xed:include ref="year.input" />
+</xed:bind>
+
+<xed:template id="year.input">
+  <xed:bind xpath="@operator">
+    <select>
+      <option>=</option>
+      <option>&gt;</option>
+      <option>&gt;=</option>
+      <option>&lt;</option>
+      <option>&lt;=</option>
+    </select>
+  </xed:bind>
+  <xed:bind xpath="@value">
+    <input type="text" placeholder="{i18n:ubo.placeholder.year}" />
+  </xed:bind>
+</xed:template>
+
+Hier wird eine Vorlage für die Auswahl des Suchoperators (<, >, = etc.) und die Eingabe der Jahreszahl an zwei Stellen wiederverwendet. 
+
 <xed:if />
 ==========
 
@@ -551,3 +616,33 @@ Beispiel:
   </xed:lang>
 </xed:multi-lang>
 
+
+<xed:load-resource />
+=====================
+
+Lädt ein XML-Dokument von einer URI und stellt es in einer Variablen bereit, um in XPath-Ausdrücken darauf zuzugreifen.
+
+Syntax: <xed:load-resource name="..." uri="..." />
+ 
+Das Attribut @name gibt den Namen der Variablen an, unter dem das XML Element bereitgestellt werden soll.
+Das Attribut @uri gibt die URI an, von der das XML geladen werden soll. Dies kann eine beliebige URI sein, 
+die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:.) Innerhalb des Attributes
+@uri kann auch auf XPath Ausdrücke oder Variablen zugregriffen werden. 
+
+<xed:load-resource /> kann in Kombination mit <xed:output /> verwendet werden, um Werte im Formular auszugeben, die sowohl
+vom bearbeiteten XML als auch von Parametern oder externen XML-Ressourcen abhängen. 
+Beispielsweise kann man Bezeichnungen von Klassifikationskategorien im Formular ausgeben, wobei die IDs der Kategorien im
+im bearbeiteten XML Dokument liegen, die Bezeichnungen aber in der Klassifikation verwaltet werden:
+
+<xed:load-resource name="genres" uri="classification:metadata:-1:children:modsgenre" /> 
+
+lädt die Klassifikation "modsgenre" und stellt sie in einer Variablen $genres bereit. 
+
+<xed:bind xpath="mods:genre" name="genre" />
+
+wählt das Element mods:genre und stellt es in der  Variablen $genre bereit.
+
+<xed:output value="$genres//category[@ID=$genre]/label[lang($CurrentLang)]/@text" />
+
+gibt dann die Bezeichnung der Kategorie aus der Klassifikation aus, deren ID der Wert von <mods:genre /> ist, in der aktuellen Sprache.
+ 
