@@ -6,7 +6,7 @@ XEditor-Dokumentation [Draft]
 
 Legt die Abbildung zwischen Eingabe-Komponenten im HTML Formular und Knoten im XML-Dokument fest.
 
-Syntax: <xed:bind xpath="..." default="..." initially="..." set="..." />
+Syntax: <xed:bind xpath="..." default="..." initially="..." set="..." name="..." />
 
 Das Attribut @xpath kann ein beliebiger XPath 1.0 Ausdruck sein, der ein oder mehrere Elemente oder Attribute im zu bearbeiteten XML selektiert.
 Das Element drückt aus, dass alle durch das <xed:bind /> umschlossenene Bereiche des Formulars sich auf die selektierten Elemente und Attribute beziehen.
@@ -167,6 +167,20 @@ wobei HTTP Request Parameter aus der URL des Aufrufs, Konfigurationswerte aus my
 
 <xed:bind xpath="mods:genre" initially="{$genre}" />
 setzt bei Aufruf des Formulars mit [Seite].xed?genre=article das Element <mods:genre>article</mods:genre>, sofern noch kein mods:genre Element existiert. 
+
+Die durch <xed:bind /> ausgewählten XML Elemente oder Attribute können unter einer Variablen abgelegt werden, die an nachfolgender Stelle in XPath-Ausdrücken
+wiederverwendet werden kann. Das Attribut @name spezifiziert den Namen der Variablen. Beispiel:
+
+<xed:bind xpath="mods:name">
+  <xed:bind xpath="@ID" name="id_name" />
+  Name: <input type="text" />
+  <xed:bind xpath="../mods:note[@xlink:href=$id_name]>
+    Notiz: <input type="text" />
+  </xed:bind>
+</xed:bind>
+
+Im Beispiel wird der Wert von mods:name/@ID in der Variablen $id_name abgelegt, und später das entsprechende mods:note Element selektiert, das
+in seinem Attribut @xlink:href diese ID referenziert. 
 
 
 <xed:source />
@@ -531,6 +545,17 @@ und
 
 Hier wird eine Vorlage für die Auswahl des Suchoperators (<, >, = etc.) und die Eingabe der Jahreszahl an zwei Stellen wiederverwendet. 
 
+Häufig verändern sich über eine URI inkludierte Vorlagen über die gesamte Laufzeit der Anwendungen nicht. Solche statischen Vorlagen können mit
+
+<xed:include static="true" ... />
+
+markiert werden. Der XEditor wird die externe Ressource (z. B. eine statische XML-Datei aus der Webapplikation) nur einmal einlesen, in einem
+Cache aufbewahren und wiederverwenden. 
+
+Für Ressourcen, die sich über die Laufzeit der Applikation ändern, z. B. Klassifikationen, bei denen nachträglich Kategorien online ergänzt werden, 
+sollte @static nicht gesetzt sein.   
+  
+
 <xed:if />
 ==========
 
@@ -657,7 +682,7 @@ Die Validierungsregeln beziehen sich auf die Knoten des bearbeiteten XML-Dokumen
 resultierenden XML, nicht auf einzelne Eingabefelder. Dies erleichtert es besonders, Validierungsregeln an unterschiedlichen Stellen oder in
 verschiedenen Formularen wiederzuverwenden.
  
-Wenn das Formular abgeschickt wird, werden alle gesetzten Validierungsregeln serverseitig geprüft. Schlägt die Validierung fehl, wird das Formualr
+Wenn das Formular abgeschickt wird, werden alle gesetzten Validierungsregeln serverseitig geprüft. Schlägt die Validierung fehl, wird das Formular
 erneut angezeigt. Es besteht die Möglichkeit, an beliebiger Stelle Meldungen auszugeben, um anzuzeigen, welche Regeln nicht erfüllt sind.
  
  
@@ -788,7 +813,7 @@ MCR.XEditor.Validation.Marker.error=has-error
 MCR.XEditor.Validation.Marker.success=has-success
 MCR.XEditor.Validation.Marker.default=
 
-Der Wert von MCR.XEditor.Validation.Marker.error wird gesetzt, wenn die Validierungsregel verletzt ist.
+Wenn die Validierungsregel verletzt ist, wird die Variable $xed-validation-marker auf den Wert von MCR.XEditor.Validation.Marker.error gesetzt.
 Der Wert von MCR.XEditor.Validation.Marker.success wird gesetzt, wenn die Validierungsregel erfüllt ist, d.h. es wurde validiert und der XML Knoten ist valide. 
 Der Wert von MCR.XEditor.Validation.Marker.default wird gesetzt, wenn die Eingabekomponente nicht validiert wurde (z. B. weil keine Regel angegeben ist).
 
