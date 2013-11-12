@@ -646,3 +646,174 @@ wählt das Element mods:genre und stellt es in der  Variablen $genre bereit.
 
 gibt dann die Bezeichnung der Kategorie aus der Klassifikation aus, deren ID der Wert von <mods:genre /> ist, in der aktuellen Sprache.
  
+ 
+Eingabevalidierung
+==================
+
+Die Eingabevalidierung erfolgt im XEditor Framework serverseitig nach Absenden des Formulars. Davon unberührt bleibt die Möglichkeit, mit
+eigenen Mitteln (HTML5, JavaScript) zusätzlich eine clientseitige Validierung im Browser zu implementieren.
+
+Die Validierungsregeln beziehen sich auf die Knoten des bearbeiteten XML-Dokumentes, d.h. auf die Werte von XML Elementen und Attributen im
+resultierenden XML, nicht auf einzelne Eingabefelder. Dies erleichtert es besonders, Validierungsregeln an unterschiedlichen Stellen oder in
+verschiedenen Formularen wiederzuverwenden.
+ 
+Wenn das Formular abgeschickt wird, werden alle gesetzten Validierungsregeln serverseitig geprüft. Schlägt die Validierung fehl, wird das Formualr
+erneut angezeigt. Es besteht die Möglichkeit, an beliebiger Stelle Meldungen auszugeben, um anzuzeigen, welche Regeln nicht erfüllt sind.
+ 
+ 
+<xed:validate />
+================
+
+Setzt eine Validierungsregel. Die Validierungsmethode wird durch ein oder mehrere kombinierbare Attribute spezifiziert. 
+
+Auf welchen XML Knoten sich die Validierungsregel bezieht, kann auf zwei Weisen festgelegt werden:
+
+Lokale Validierungsregeln stehen innerhalb eines <xed:bind /> Elementes und beziehen sich auf das dadurch gebundene XML. Beispiel:
+
+<xed:bind xpath="mods:dateIssued">
+  <input type="text" ... />
+  <xed:validate required="true" />
+</xed:bind> 
+ 
+oder auch unabhängig von der Position des konkreten Eingabefeldes
+
+<xed:bind xpath="mods:dateIssued">
+  <xed:validate required="true" />
+</xed:bind>
+... 
+<xed:bind xpath="mods:dateIssued">
+  <input type="text" ... />
+</xed:bind> 
+ 
+Globale Validierungsregeln stehen an beliebiger Stelle im Formular und beziehen sich auf die durch das Attribut @xpath ausgewählten XML-Knoten. Beispiel:
+
+<xed:validate xpath="//mods:identifier[@type='issn']" matches="[\dX]{4}\-[\dX]{4}" />
+
+validiert die Syntax aller auftretenden mods:identifier[@type='issn'] Elemente. Globale Validierungsregeln erleichtern die Wiederverwendung und können bevorzugt für
+Syntaxprüfungen verwendet werden. 
+ 
+Ist das Attribut @required="true" gesetzt, ist das gewählte Element ein Pflichfeld, d.h. es muss mindestens ein nicht leerer Wert (bei wiederholten Elementen) auftreten.
+
+Das Attribut @matches gibt einen regulären Ausdruck in der Syntax von java.util.regex.Pattern an, gegen den der Text des XML Elementes oder Attributes validiert wird.
+
+Beispiel: <xed:validate xpath="//mods:identifier[@type='issn']" matches="[\dX]{4}\-[\dX]{4}" />
+
+Das Attribut @test gibt einen XPath Test an, gegen den ein XML Knoten validiert wird. Beispiel:
+
+<xed:validate xpath="/document/validTo" test="(string-length(.) = 0) or (number(.) >= number(../validFrom))" />
+
+prüft, ob /document/validTo >= /document/validFrom ist.
+
+<xed:validate xpath="/user" test="password = passwordRepeated" />
+
+prüft, ob das eingegebene Passwort mit dessen Wiederholung identisch ist.
+
+Die Attribute @maxLength, @minLenght, @min, @max @type, @class, @method und @format validieren auf die gleiche Weise wie im alten Editor Framework (siehe dort).
+Beispiele:
+ 
+<xed:validate xpath="document/yearIssued" min="2000" type="integer" />
+
+stellt sicher, dass es sich beim Erscheinungsjahr um eine ganze Zahl >= 2000 handelt.
+
+<xed:validate xpath="//mods:*[@encoding='w3cdtf']" matches="\d{4}(\-d{2}(\-d{2})?)?" type="datetime" format="yyyy;yyyy-MM;yyyy-MM-dd" />
+
+validiert alle Datumsangaben, so dass sie entweder nur das Jahr, Jahr plus Monat oder Jahr, Monat und Tag in MODS W3CDTF Syntax enthalten.
+ 
+
+Validierungsmeldungen ausgeben
+==============================
+
+Wenn die Eingabevalidierung fehlschlägt, wird die Variable $xed-validation-failed='true' gesetzt. Beispiel:
+
+<xed:if test="$xed-validation-failed">
+ Bitte korrigieren Sie die fehlerhaften Eingaben!
+</xed:if>
+
+Das Attribut xed:validate/@display definiert, an welcher Stelle die Validierungsnachricht ausgegeben werden soll, falls die Validierungsregel nicht erfüllt ist. 
+
+@display="here" 
+Ausgabe der Meldung an genau dieser Stelle, d.h. dort, wo die Validierungsregel im Formular definiert ist.
+
+@display="local"
+Ausgabe der Meldung an einer lokalen Stelle in der Nähe der Eingabekomponente. Die Meldung wird dort ausgegeben, wo das umgebende <xed:bind /> den nicht validen
+XML Knoten selektiert, und wo darin enthalten das Element <xed:display-validation-message /> angegeben ist. Beispiel:
+
+<xed:bind xpath="title">
+  <xed:display-validation-message />
+  <input type="text" />
+  <xed:validate display="local" required="true">Bitte geben Sie einen Titel ein!</xed:validate>
+</xed:bind>
+
+@display="global"
+Ausgabe der Meldung an globaler Stelle, gesammelt mit anderen Meldungen. Die Meldung wird dort ausgegeben, wo das Element <xed:display-validation-messages />
+auftritt. Beispiel:
+
+<xed:if test="$xed-validation-failed">
+  Bitte korrigieren Sie die folgenden fehlerhaften Eingaben:
+  <xed:display-validation-messages />
+ </xed:if>
+...
+<xed:bind xpath="title">
+  <input type="text" />
+  <xed:validate display="global" required="true">Bitte geben Sie einen Titel ein!</xed:validate>
+</xed:bind>
+
+Es ist auch möglich, die Fehlermeldung an mehreren Stellen auszugeben, indem man mehrere Werte im Attribut @display durch Leerzeichen getrennt angibt.
+
+Die Fehlermeldung wird entweder durch das von <xed:validate /> umschlossene HTML gebildet, oder über einen i18n-Schlüssel mehrsprachig aus den 
+messages-*.properties Dateien gelesen. Beispiel:
+
+<xed:validate ... required="true" i18n="editor.title.required" />
+
+<xed:validate ... required="true">
+  Dieses Feld ist ein <strong>Pflichtfeld</strong>!
+</xed:validate>
+
+HTML Formatierung und Layout der Fehlermeldung werden durch XSL Templates in xeditor-custom.xsl definiert und können durch lokales Überschreiben in der eigenen
+Webanwendung beliebig angepasst werden. Beispiel:
+
+<xsl:template match="xed:validate" mode="message">
+  <span class="help-inline">
+    <xsl:apply-templates select="node()" mode="xeditor" />
+  </span>
+</xsl:template>
+
+umgibt alle ausgegebenen Fehlermeldungen mit einem <span class="help-inline" />.
+
+Eingabekomponenten mit fehlerhaften Eingaben können ausserdem markiert werden, z. B. mit eigenen CSS-Klassen oder Stilen. Dazu wird für jeden validierten XML Knoten
+die Variable $xed-validation-marker gesetzt. Der Wert, der in dieser Variable enthalten ist, ist über die mycore.properties konfigurierbar und wird typischerweise ein oder
+mehrere CSS Klassen enthalten:
+
+MCR.XEditor.Validation.Marker.error=has-error
+MCR.XEditor.Validation.Marker.success=has-success
+MCR.XEditor.Validation.Marker.default=
+
+Der Wert von MCR.XEditor.Validation.Marker.error wird gesetzt, wenn die Validierungsregel verletzt ist.
+Der Wert von MCR.XEditor.Validation.Marker.success wird gesetzt, wenn die Validierungsregel erfüllt ist, d.h. es wurde validiert und der XML Knoten ist valide. 
+Der Wert von MCR.XEditor.Validation.Marker.default wird gesetzt, wenn die Eingabekomponente nicht validiert wurde (z. B. weil keine Regel angegeben ist).
+
+Die Werte können auch leer sein, um z. B. nur fehlerhafte Komponenten zu markieren.
+
+Beispiel:
+
+<xed:bind xpath="year">
+  <div class="form-group {$xed-validation-marker}">
+    <input type="text" />
+    <xed:validate display="here" required="true">Bitte Jahr eingeben!</xed:validate>
+  </div>
+</xed:bind>
+
+Wenn das Element <year /> nicht eingegeben wird, bekommt das umgebende <div /> Element die CSS Klassen @class="form-group has-error".
+Wenn das Jahr eingegeben und validiert wurde, aber das Formular noch einmal angezeigt wird, z. B. weil andere Komponenten nicht valide sind,
+bekommt das umgebende <div /> Element im Beispiel die CSS Klassen @class="form-group has-success".
+
+Die Anwendung beschränkt sich nicht auf CSS Klassen oder Stile. Je nach Definition in mycore.properties 
+könnte z. B. auch ein placeholder gesetzt oder anderes HTML generiert werden. Beispiel:
+
+<xed:bind xpath="year">
+  <xed:if test="$xed-validation-marker = 'has-error'">
+    Vielleicht sollten Sie mal die <a href="anleitung.html">Anleitung</a> lesen.
+  </xed:if>
+  ...
+</xed:bind>
+   
