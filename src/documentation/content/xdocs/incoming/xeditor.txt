@@ -1,12 +1,98 @@
 XEditor-Dokumentation [Draft]
 =============================
 
+Das MyCoRe XEditor-Framework stellt Funktionen zur Gestaltung von HTML Formularen bereit, die XML Dokumente bearbeiten oder erstellen.
+Die Formulardefinition enthält dazu Regeln zur Abbildung zwischen Eingabefeldern im Formular und XML Elementen und Attributen im bearbeiteten Dokument.
+Solche Formulare werden insbesondere zur Gestaltung von Eingabemasken für Metadaten und für komplexe Suchformulare verwendet.  
+
+
+Architektur und Funktionsweise
+==============================
+
+XEditor-Formulare werden als MyCoReWebPage mit der Endung *.xed definiert. Die statische Webseite enthält neben anderen Elementen an einer Stelle ein
+<xed:form /> Element, das das gesamte XEditor-Formular umschließt. Es ist derzeit nicht möglich, mehr als ein XEditor Formular in der gleichen Webseite zu verwenden. 
+
+Ein XEditor-Formular besteht aus einer Kombination von HTML Elementen und speziellen XEditor-Elementen. 
+
+Die HTML-Elemente definieren Struktur und Layout des Formulars und werden vom XEditor-Framework weitgehend unverändert belassen.
+
+Zusätzliche XEditor-Elemente und -Attribute mit Namespace xmlns:xed="http://www.mycore.de/xeditor" definieren die Abbildung zwischen Eingabefeldern im HTML-Formular
+und Elementen und Attributen in dem XML Dokument, das mit dem Formular bearbeitet oder erstellt wird. Weitere XEditor-Elemente regeln die Nachbearbeitung des resultierenden XMLs, steuern die Eingabevalidierung oder stellen Funktionen für dynamische Elemente wie z. B.
+wiederholbare Bereiche bereit.
+
+Wird eine Seite aufgerufen, die ein XEditor-Formular enthält, werden die speziellen XEditor-Element serverseitig in HTML Strukturen transformiert und jedem Eingabefeld
+ein Element oder Attribut im bearbeiteten XML Dokument zugeordnet. Browserseitig erscheint ein reines HTML Formular.
+
+Das Formular kann entweder leer starten, so dass beim Aufbau des Formulars ein neues XML Dokument generiert wird, oder es kann ein vorhandenes XML Dokument 
+aus beliebiger Quelle laden und dessen Werte in den Eingabefeldern zur Bearbeitung bereitstellen. Elemente und Attribute, die nicht bestimmten Eingabefeldern im
+Formular zugeordnet sind, bleiben dabei unverändert im XML Dokument erhalten.
+
+Bestimmte Bereiche des Formulars, einzelne Eingabefelder oder ganze Panels können wiederholt werden und entsprechen wiederholbaren Elementen im XML Dokument.
+In einem Formular für Publikationsdaten kann z. B. ein Bereich zur Eingabe der Autoren wiederholbar gestaltet werden. Der Benutzer kann über Buttons Felder hinzufügen, 
+entfernen oder vertauschen.  
+
+Beim Abschicken des Formulars werden die Werte zunächst an das XEditor Servlet übermittelt. Dort werden sie in das XML Dokument eingefügt. Das resultierende XML wird
+zusammen mit den abgeschickten Request Parametern aus dem Formular via Request Dispatching an das eigentliche Zielservlet weitergeleitet. 
+
+Wenn Validierungsregeln definiert sind, erfolgt zuvor eine serverseitig Eingabevalidierung. Schlägt die Validierung fehl, wird die Formularseite erneut angezeigt und
+dabei konfigurierbare Meldungen ausgegeben, damit der Benutzer die Eingabefehler korrigieren kann. Die Eingabevalidierung erfolgt immer serverseitig nach Abschicken des 
+Formulars. Der Entwickler kann jedoch zusätzlich mit den üblichen Mitteln (HTML5, JavaScript) eine clientseitige Eingabevalidierung im Browser implementieren. 
+
+Bereinigungsregeln (Cleanup Rules) dienen der Nachbearbeitung des resultierenden XML Dokumentes und ermöglichen es, logisch leere Elemente und Attribute zu entfernen,
+für die z. B. zwar ein Eingabefeld angeboten wurde, aber kein Wert eingegeben wurde.
+
+Bei Aufruf der Seite können Request Parameter verwendet werden. Diese Parameter sind, zusammen mit Konfigurationswerten aus mycore.properties oder Variablen aus der
+Session des Benutzers (MCRSession) an vielen Stellen im Formular verwendbar, um dessen Aufbau zu steuern. 
+Alle Request Parameter aus dem ursprünglichen Aufruf der Seite werden zusätzlich zu den Formularwerten auch an das Zielservlet durchgereicht.
+
+Über die Elemente <xed:if />, <xed:choose /> und <xed:include /> können Formular dynamisch gestaltet werden, so dass sie abhängig von Aufruf- oder 
+Konfigurationsparametern Teilbereiche unterschiedlich darstellen oder aus Teilen zusammensetzen.
+
+Beschriftungen und Texte im Formular können über messages-*.properties Dateien mehrsprachig ausgegeben werden. 
+
+
+Konfiguration
+=============
+
+In einer eigenen Anwendung müssen nur wenige Properties ggf. angepasst werden.
+
+Wird ein XEditor Formular aufgerufen, speichert das Framework das bearbeitete XML und weitere Informationen serverseitig in der Session des Benutzers.
+
+MCR.XEditor.MaxEditorsInSession=50
+
+definiert, wie viele Formulare maximal vorgehalten werden.   
+
+Das Layout von Validierungsmeldungen und Buttons zur Steuerung wiederholter Bereiche ist frei anpassbar. Hierzu kann die vorhandene Datei xeditor-custom.xsl
+aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt werden, das eigene Templates für diese Elemente enthält.
+
+MCR.URIResolver.xslIncludes.xeditor=xeditor-custom.xsl
+
+Webseiten, die XEditor-Formulare enthalten, müssen bei Aufruf durch das MCRStaticXEditorFileServlet verarbeitet werden. Das Standard-Mapping hierfür ist
+
+<servlet-mapping>
+  <servlet-name>MCRStaticXEditorFileServlet</servlet-name>
+  <url-pattern>*.xed</url-pattern>
+</servlet-mapping>
+
+
+<xed:form />
+============
+
+umschliesst das gesamte XEditor-Formular, entspricht dem HTML <form /> Element und wird in ein solches transformiert. 
+Das XEditor Framework setzt das Attribut @action des <form /> Elementes, damit die Formularwerte an das XEditor Servlet gesendet werden.
+Bei Absenden des Formulars werden die Werte zunächst vom XEditor Servlet verarbeitet und danach ggf. an das eigentliche Zielservlet per Request Dispatching
+als XML Dokument weitergegeben. Weitere optionale Attribute werden 1:1 von <xed:form /> zu <form /> kopiert.
+
+Sollen im bearbeiteten XML Dokument zusätzliche Namespaces verwendet werden, sollten diese als Namespace Attribute (xmlns:...) beim <xed:form /> Element
+definiert werden. Die in MyCoRe häufig verwendeten Namespaces für MyCoRe, MODS, METS, XLink etc. sind bereits vordefiniert und müssen nicht angegeben werden.
+
+
 <xed:bind />
 ============
 
 Legt die Abbildung zwischen Eingabe-Komponenten im HTML Formular und Knoten im XML-Dokument fest.
 
-Syntax: <xed:bind xpath="..." default="..." initially="..." set="..." name="..." />
+Syntax: <xed:bind xpath="..." default="..." initially="..." set="..." name="...">
 
 Das Attribut @xpath kann ein beliebiger XPath 1.0 Ausdruck sein, der ein oder mehrere Elemente oder Attribute im zu bearbeiteten XML selektiert.
 Das Element drückt aus, dass alle durch das <xed:bind /> umschlossenene Bereiche des Formulars sich auf die selektierten Elemente und Attribute beziehen.
@@ -91,8 +177,8 @@ Der XPath-Ausdruck kann beliebige Prädikate enthalten, z. B.
 </xed:bind>
 
 Falls der angegebene XPath-Ausdruck keinen bereits existierenden XML Knoten selektiert, wird dieser automatisch generiert. Dabei werden auch alle angegebenen Prädikate
-berücksichtigt. Es gilt die Einschränkung, dass der XPath-Ausdruck nur Elemente und Attribute auf der Child-Achse generieren kann und keine XPath Funktionen verwenden darf.
-Ausdrücke oder Prädikate, die nicht generiert werden können, werden ignoriert.
+berücksichtigt. Es gilt die Einschränkung, dass der XPath-Ausdruck nur Elemente und Attribute auf der Child-Achse generieren kann und keine XPath Funktionen 
+oder Operatoren (bis auf den Vergleichsoperator) verwenden darf. Ausdrücke oder Prädikate, die nicht generiert werden können, werden ignoriert.
   
 Beispiel:
 
@@ -111,6 +197,14 @@ erzeugt, falls kein mods:name Element existiert, das alle Prädikate erfüllt, f
 </mods:name>
    
 Gleichzeitig wird dem Eingabefeld das Attribut @name=".../mods:name/mods:displayForm" zugewiesen.
+
+Beispiel: <xed:bind xpath="mods:name[@type='personal'][contains('aut edt',mods:role/mods:roleTerm)] />
+
+Falls kein mods:name Element existiert, das alle diese Prädikate erfüllt, wird ein neues Element
+<mods:name type="personal" /> generiert. Aus dem zweiten Prädikat kann wegen der Verwendung der contains() Funktion nicht allgemeingültig abgeleitet werden,
+welche XML Knoten zu generieren wären, damit es erfüllt ist. Dieses Prädikat wird daher ignoriert. Bei der Implementierung des Formulars muss
+der Entwickler selbst sicherstellen, dass diese Bedingung nachträglich auch für neu generierte Knoten erfüllt wird, in diesem Fall z. B. indem für
+mods:roleTerm eine Auswahlliste angeboten wird. 
 
 Die Generierung fehlender XML-Elemente und -Attribute erfolgt bereits im Moment der Verarbeitung des XEditor Formulars, 
 schon vor der Darstellung im Browser. D.h. dass sich zum Zeitpunkt der Anzeige des HTML Formulars alle im Formular enthaltenen Eingabekomponenten auf bereits
@@ -181,6 +275,85 @@ wiederverwendet werden kann. Das Attribut @name spezifiziert den Namen der Varia
 
 Im Beispiel wird der Wert von mods:name/@ID in der Variablen $id_name abgelegt, und später das entsprechende mods:note Element selektiert, das
 in seinem Attribut @xlink:href diese ID referenziert. 
+
+
+<xed:repeat />
+==============
+
+Variante von <xed:bind /> für wiederholbare Formularbereiche, die einem wiederholbaren Element im bearbeiteten XML-Dokument entsprechen. 
+In einem Formular für Publikationsdaten können so z. B. Eingabebereiche für die Daten mehrerer Autoren wiederholt werden.
+Der Benutzer kann über Buttons die wiederholten Abschnitte vertauschen, einzelne entfernen oder weitere einfügen.
+
+Syntax: <xed:repeat xpath="..." min="..." max="...">...</xed:repeat>
+
+Das Attribut @xpath kann ein beliebiger XPath 1.0 Ausdruck sein, der ein oder mehrere wiederholte Elemente im zu bearbeiteten XML selektiert.
+
+Der durch <xed:repeat /> umschlossene Bereich wird so oft im Formular wiederholt eingefügt, wie die Anzahl der durch den XPath-Ausdruck selektierten Elemente.
+Ist das Attribut @min angegeben, wird der Bereich mindestens so oft wie darin angegeben wiederholt. Selektiert der XPath-Ausdruck weniger als @min Elemente,
+wird das letzte selektierte Element so oft im bearbeiteten XML Dokument geklont, dass @min Elemente vorhanden sind.  
+
+Beispiel:
+
+<xed:repeat xpath="mods:name[@type='personal']" min="2">
+  <div>
+    <xed:bind xpath="mods:namePart[@type='given']">
+      <label>Vorname:</label><input type="text" />
+    </xed:bind />
+    <br />
+    <xed:bind xpath="mods:namePart[@type='family']">
+      <label>Nachname:</label><input type="text" />
+    </xed:bind>
+  </div>
+</xed:repeat> 
+
+Das Beispiel wiederholt einen Bereich zur Eingabe von Personen im MODS Datenmodell mit Vorname und Nachname. 
+Wenn im bearbeiteten XML drei mods:name[@type='personal'] Elemente vorhanden sind, wird der Bereich dreimal wiederholt und jeder wiederholte Abschnitt an das
+entsprechende XML Element gebunden. 
+Wenn aktuell nur ein mods:name[@type='personal'] vorhanden ist, wird dieses geklont, da @min="2", und es werden zwei Bereiche für Personennamen im Formular dargestellt.  
+
+Das Attribut @max gibt an, wie oft der Bereich maximal wiederholt werden kann, wenn der Benutzer einen Button zum Einfügen einer weiteren Wiederholung klickt.
+Allerdings wird immer mindestens so oft wiederholt, wie bereits Elemente im bearbeiteten XML Dokument vorhanden sind.
+
+<xed:controls />
+================
+
+Bestimmt Art und Position der Buttons zur Bearbeitung des wiederholten Bereiches. Diese Buttons werden als Submit Buttons implementiert, d.h. bei 
+Klick auf den Button wird das Formular abgeschickt, die Änderung serverseitig durchgeführt und im Anschluss das veränderte Formular neu dargestellt.
+ 
+Die Position der Buttons kann an beliebiger Stelle innerhalb des durch <xed:repeat /> umschlossenen Bereiches frei bestimmt werden. 
+Das Element <xed:controls /> wird an der Position eingefügt, wo die Buttons erscheinen sollen.
+Der Text von <xed:controls /> bestimmt, welche Buttons an der jeweiligen Stelle erscheinen. Möglich sind ein oder mehrere durch Leerzeichen getrennte Werte:
+
+* Ein "up" Button erscheint ab dem zweiten Element und vertauscht es im Formular und im bearbeiteten XML Dokument mit seinem Vorgänger.
+* Ein "down" Button erscheint bei allen bis auf das letzte Element und vertauscht es im Formular und im bearbeiteten XML Dokument mit seinem Nachfolger.
+* Ein "remove" Button entfernt das aktuelle Elemente im Formular und im XML Dokument.
+* Ein "insert" Button fügt hinter dem aktuellen Element einen Klon dieses Elementes ein und stellt es im Formular dar.
+* Ein "append" Button kann als Alternative zu "insert" verwendet werden und erscheint nur für das letzte Element, um nur am Ende ein weiteres Element einzufügen.
+
+Ein leeres <xed:controls /> Element entspricht der Standard-Auswahl <xed:controls>insert remove up down</xed:controls>   
+Sollen keine Buttons erscheinen, lässt man das <xed:controls /> Element weg. Sollen nur bestimmte Buttons erscheinen, gibt man diese im Text des Elementes an.
+Beispiel:
+
+<xed:repeat xpath="mods:name[@type='personal']" min="2">
+  <div>
+    ...
+    <xed:controls>append remove up down</xed:controls>
+  </div>
+</xed:repeat> 
+
+HTML Formatierung und Layout der Buttons werden durch ein XSL Template in xeditor-custom.xsl definiert und können durch lokales Überschreiben in der eigenen
+Webanwendung beliebig angepasst werden. Das Template wird für jeden Button einzeln aufgerufen. Das Template muss einen Parameter $name als Name des Buttons
+setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als HTML <button />, <input type="submit" /> oder <input type="image" /> implementiert werden.
+Beispiel:
+
+<xsl:template match="text()" mode="xed.control">  <!-- append insert remove up down -->
+  <xsl:param name="name" /> <!-- name to submit as request parameter when button/image is clicked -->
+  
+  <xsl:if test=".='append'">
+    <input type="submit" value="+" name="{$name}" />
+  </xsl:if>
+  ...
+</xsl:template>
 
 
 <xed:source />
@@ -275,10 +448,11 @@ Alle weiteren Eigenschaften der Buttons werden über gewöhnliche HTML Syntax ge
 
 Vordefiniert sind die folgenden Ziele:
 
-xed:target="cancel"		Bearbeitung abbrechen
-xed:target="debug"		Für das Debugging, zeigt das bearbeitete XML und die Bearbeitungsschritte im Browser an
-xed:target="layout"		Für das Debugging, zeigt das bearbeitete XML über den MyCoRe LayoutService an (d.h. durch einen Transformer, der üblicherweise via XSL Stylesheet zu HTML rendert)
-xed:target="servlet"	Sendet das resultierende XML-Dokument an ein Servlet
+xed:target="cancel"		 Bearbeitung abbrechen
+xed:target="debug"		 Für das Debugging, zeigt das bearbeitete XML und die Bearbeitungsschritte im Browser an
+xed:target="layout"		 Für das Debugging, zeigt das bearbeitete XML über den MyCoRe LayoutService an (d.h. durch einen Transformer, der üblicherweise via XSL Stylesheet zu HTML rendert)
+xed:target="servlet"	 Sendet das resultierende XML-Dokument an ein Servlet
+xed:target="subselect" Externe Auswahl von Werten, siehe unter Subselects
 
 
 Abbrechen-Buttons definieren
@@ -842,3 +1016,67 @@ könnte z. B. auch ein placeholder gesetzt oder anderes HTML generiert werden. B
   ...
 </xed:bind>
    
+   
+Subselects
+==========
+
+Subselects dienen der externen Auswahl ein oder mehrerer Werte, z. B. Suche einer Person im Personalverzeichnis der Einrichtung, und Übername von Name und Personalnummer in das Autorenfeld einer Publikation.
+
+Subselects werden als spezielle Submit-Buttons im Formular definiert. Bei Klick auf den Button werden alle aktuellen Formularwerte serverseitig zwischengespeichert. 
+Dann wird zu einer beliebigen externen URL umgeleitet. Diese URL kann durch ein eigenes Servlet implementiert sein, das die Auswahl oder Eingabe von Werten geeignet
+steuert. Die resultierenden Werte werden nach Abschluss der Auswahl als Request an das XEditor Servlet zurückübermittelt. Dieses baut die Werte in das bearbeitete XML Dokument ein 
+und stellt das Formular erneut dar. 
+  
+Syntax: <input type="submit|image" xed:target="subselect" xed:href="..." ... /> oder <button type="submit" xed:target="subselect" xed:href="..." ... />
+
+Das Attribut @xed:href gibt die URL an, die aufgerufen werden soll. Diese kann auch XPath-Ausdrücke enthalten, die auf das bearbeitete XML Dokument zugreifen, oder Variablen referenzieren, 
+die aus Aufruf- oder Konfigurationsparametern stammen. Beispiel:
+
+<xed:bind xpath="mods:name[@type='personal']>
+  <input type="submit" xed:target="subselect" xed:href="../ubo/lsfSearch.html?lastName={mods:namePart[@type='family']}" value="{i18n:button.selectPerson}" />
+  <xed:output value="concat(mods:namePart[@type='family'],', ',mods:namePart[@type='given'])" />
+</xed:bind>
+ 
+Das Beispiel veranschaulicht die externe Auswahl einer Person zur Übernahme in ein mods:name Element. Das <xed:output /> Element gibt, sofern bereits vorhanden oder
+schon zuvor ausgewählt, Vor- und Nachname der Person im Formular aus.
+
+Bei Klick auf den Button wird das Formular abgeschickt, die Werte zwischengespeichert und die URL ../ubo/lsfSearch.html aufgerufen.
+Dabei wird auch ein Request Parameter übermittelt, der den aktuell im XML gesetzten Nachnamen überträgt: ?lastName={mods:namePart[@type='family']}
+
+Die externe Seite könnte den übermittelten Namen suchen und/oder ein Suchfeld bereitstellen. Neben dem angegebenen Parameter lastName bekommt die Seite einen weiteren Parameter
+_xed_subselect_session übermittelt, der als Rückreferenz dient und die Session ID des Formulars enthält, z. B.
+
+../ubo/lsfSearch.html?lastName=Doe&_xed_subselect_session=123-456
+
+Nach erfolgter Auswahl muss die externe Seite diesen Parameter zusammen mit den gewünschten Werten als Request an das XEditorServlet rückübermitteln, z. B.
+durch Aufruf von 
+
+servlets/XEditor? _xed_submit_return= & _xed_session=123-456 & mods:namePart[@type='family']=Doe & mods:namePart[@type='given']=John
+
+Zur besseren Lesbarkeit sind die Parameter in obiger URL hier nicht UTF-8 encoded dargestellt. Eine reale Anwendung müsste sowohl Parameter Namen als auch die
+Werte UTF-8 kodiert übermitteln
+
+Alle Parameter ausser _xed_submit_return und _xed_session (mit dem Wert von _xed_subselect_session) werden als relative XPath-Ausdrücke interpretiert.
+Im Beispiel sind diese relativ zu der Stelle im Formular, an der der Subselect Button auftritt, und zu dem dort via <xed:bind /> selektierten XML Element.
+In diesem Fall ist das ein mods:name[@type='personal'] Element, in dem Werte eingefügt werden. Die Parameternamen verhalten sich damit so, als ob sie 
+XPath-Ausdrücke in einem <xed:bind /> Element unterhalb von <mods:name /> wären.
+ 
+Das XEditor Servlet baut die übermittelten Werte in das bearbeitete XML Dokumen ein 
+ 
+<mods:name type="personal">
+  <mods:namePart type="family">Doe</mods:namePart>
+  <mods:namePart type="given">John</mods:namePart>
+</mods:name> 
+ 
+und stellt das Formular per Redirect im Anschluss erneut dar. Das <xed:output /> Element würde im Beispiel dann an dieser Stelle neben dem Subselect-Button den
+Wert "Doe, John" ausgeben.
+
+
+Eigene Erweiterungen
+====================
+
+* TODO: Eine eigene Template-Sprache definieren, vgl. MIR Modul in MyCoRe oder UBO Modul in miless
+* TODO: Eigene Targets für Submit Buttons definieren
+
+
+    
