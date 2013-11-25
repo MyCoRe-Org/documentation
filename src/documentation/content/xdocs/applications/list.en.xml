@@ -278,11 +278,11 @@
         <strong>Berlin</strong>
       </dt>
       <dd>
-        Staatsbibliothek zu Berlin – Preußischer Kulturbesitz (in Kooperation mit der Universität Leipzig)
+        Staatsbibliothek zu Berlin – Preußischer Kulturbesitz (in cooperation with Leipzig University)
         <ul>
-          <li>Projekt zur Einführung des Katalogprogrammes MyIHS zur <a href="http://orient-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der SBB">Erschließung orientalischer Handschriften an der
-            Staatsbibliothek Berlin</a></li>
-          <li>Projekt zur Einführung des Katalogprogrammes MyIHS zur <a href="http://turfan-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der SBB">Erschließung Turfan Handschriften der KOHD
+          <li>MyIHS project part for <a href="http://orient-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der SBB">cataloguing of oriental manuscripts on the
+            Staatsbibliothek zu Berlin</a></li>
+          <li>MyIHS project part for <a href="http://turfan-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der KOHD">cataloguing of Turfan manuscripts of the KOHD
             </a></li>
         </ul>
       </dd>
@@ -294,6 +294,18 @@
         <ul>
           <li>Digitalisierung des Bildarchives der
             Universitätspressestelle</li>
+        </ul>
+      </dd>
+      <dt>
+        <strong>Cambridge University (UK)</strong>
+      </dt>
+      <dd>
+        The Islamic Manuscript Association 
+        <ul>
+          <li>
+            <a href="http://www.manuscript-treasury.net/" title="The Islamic Manuscript Association">The Islamic Manuscript Association
+              </a>
+          </li>
         </ul>
       </dd>
       <dt>
@@ -389,17 +401,13 @@
       <dt>
         <strong>Leipzig</strong>
       </dt>
-      <dd> Universität Leipzig (Universitätsrechenzentrum / -bibliothek)
+      <dd> Universität Leipzig (University library)
         <ul>
           <li>
             <a href="http://nsraubgut.ub.uni-leipzig.de/" title="Die Anwendung NS-Raubgut">NS-Raubgut</a>
           </li>
           <li>
-            <a href="http://nachlass-karl-buecher.ub.uni-leipzig.de/" title="Der Nachlass von Karl Bücher">Nachlass von
-              Karl Bücher</a>
-          </li>
-          <li>
-            <a href="http://histbest.ub.uni-leipzig.de/" title="Historische Bestände der UBL">Historische Bestände der UBL</a>
+            <a href="http://histbest.ub.uni-leipzig.de/" title="Historische Bestände und Nachlässe der UBL">Historische Bestände und Nachlässe der UBL</a>
           </li>
           <li> Der
             <a href="http://jbmk.dl.uni-leipzig.de/" title="Jahresbibliographie Massenkommunikation 1974/75 bis 2003">Digitalisierungsserver</a> - Jahresbibliographie Massenkommunikation
@@ -418,7 +426,7 @@
         bereitgestellt durch die Universität Leipzig (Universitätsrechenzentrum / -bibliothek)
         <ul>
           <li>
-            <a href="http://papyri-erlangen.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Erlangen">Erlangen</a>
+            <a href="http://papyri-collection.dl.uni-leipzig.de/" title="Eine Kollektion verschiedener deutscher Papyrussammlungen">Eine Kollektion verschiedener deutscher Papyrussammlungen</a>
           </li>
           <li>
             <a href="http://papyri-giessen.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Gießen">Gießen</a>
@@ -426,12 +434,6 @@
           <li>
             <a href="http://papyri-leipzig.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Halle-Jena-Leipzig">
               Halle-Jena-Leipzig</a>
-          </li>
-          <li>
-            <a href="http://papyri-koeln.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Köln">Köln</a>
-          </li>
-          <li>
-            <a href="http://papyri-wuerzburg.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Würzburg">Würzburg</a>
           </li>
           <li>
             Das <a href="http://www.papyrusportal.de/" title="Papyrus Portal">Papyrus Portal</a> als einheitliche
@@ -453,11 +455,8 @@
               Familienbibliothek Refaiya an der UBL</a>
           </li>
           <li>
-            <a href="http://www.manuscripts-aceh.org/" title="Historische Handschriften von Aceh">Handschriften der Region
-              Aceh (Indonesien)</a> (als Kooperationsprojekte mit dem auswärtigen Amt) </li>
-          <li>
-            <a href="http://www.manuscripts-java.org/" title="Historische Handschriften der Region Zentral Java">Handschriften der Region
-              Zentral Java (Indonesien)</a> (als Kooperationsprojekte mit dem auswärtigen Amt) </li>
+            <a href="http://nusantara.dl.uni-leipzig.de/" title="Historische Handschriften Indonesien">Historische Handschriften 
+              Indonesien</a> (Entstanden aus den Kooperationsprojekten 'Banda Aceh' und 'Java' des auswärtigen Amts) </li>
         </ul>
       </dd>
     </dl>
