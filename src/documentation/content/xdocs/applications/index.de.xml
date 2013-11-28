@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Demo</title>
+  </header>
+  <body>
+    <p>
+    Derzeit arbeiten die Entwickler an einer neuen Beispielanwendung.
+    Diese soll Ende 2013 zur Verfügung stehen. Bis dahin kann Ihnen
+    <a href="http://www.mycore.de:8291">DocPortal</a> einen ersten Einblick
+    in eine Repository-Anwendung geben.
+    </p>
+    <h3>Anmeldung</h3>
+    <p>
+    Nutzername: administrator<br />
+    Passwort: alleswirdgut
+    </p>
+
+    <h2>Weitere Beispiele</h2>
+    <p>Die <a href="site:map">Karte</a> gibt eine Übersicht über MyCoRe-Anwendungen der Community. Hier
+    können Sie sich selbst passende Beispiele suchen und Kontakt zu den
+    Entwicklern aufnehmen.</p>
+  </body>
+</document>
