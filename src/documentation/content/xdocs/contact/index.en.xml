@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document>
+  <header>
+    <title>Contact</title>
+  </header>
+
+  <body>
+    <h2>Please ask us!</h2>
+    <p>
+      If you have any questions about MyCoRe or if you want more information, please contact the 
+      <a href="mailto:info@mycore.de">MyCoRe office</a>. The office advises interested 
+      users, provides support for MyCoRe users, helps to find solutions with MyCoRe applications  
+      and coordinates the shared development of the system. The office is also doing editorial work for
+      documentation und website. If you have specific questions about certain MyCoRe features,
+      please contact <a href="site:team" title="The MyCoRe team from A to Z">the developer</a>.
+    </p>
+
+    <h2>MyCoRe Office</h2>
+    <p>
+      at the Regional Computer Center, Universität Hamburg<br/>
+      <em>Dr. Wiebke Oeltjen</em><br/>
+      Email: <a href="mailto:info@mycore.de">info@mycore.de</a><br/>
+      <br/>
+      Post address:<br/>
+      Schlüterstr. 70<br/>
+      20146 Hamburg<br/>
+      Germany
+      <br/>
+      Tel: +49 (0)40-42838-2652<br/>
+      Fax: +49 (0)40-42838-3284
+    </p>
+
+  </body>
+</document>
