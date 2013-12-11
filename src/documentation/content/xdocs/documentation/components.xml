@@ -534,41 +534,6 @@ public class MCRStartEditorServletMyToDo extends MCRStartEditorServlet {
    </section>
    </section>
    
-   <section>
-     <title>Der Zoomify-Bildbetrachter</title>
-     
-     <section><title>Allgemein</title>
-     <p>Die Firma Zoomify Inc. bietet einen Web-basierten Bildbetrachter an, der auf der Grundlage von gekachelten Bilder basiert
-     und diese "on-demand" nachlädt. Innerhalb des Bildausschnitt kann stufenlos gezoomt werden.
-     </p>
-     </section>
-     
-     <section><title>Grundlagen</title>
-     <p>Um ein Bild über den Zoomify-Viewer anzeigen zu können, muss dieses zunächst aufbereitet werden. In Windows existiert dafür
-     ein Midlet, in Linux kann ein Phyton-Skript genutzt werden. Bei der Datenaufbereitung werden Ausschnittbilder in verschiedenen
-     Auflösungen erzeugt und in Ordnern abgelegt. Für das Zoomify-Servlet in MyCoRe kann der so entstandene Datenbestand in Zip-Archive
-     verpackt werden (jedoch ohne Archiv-Kompression!). Somit wird das Handling extrem vereinfacht. Die Zip-Dateien werden dann als Derivat hochgeladen.
-     </p>
-     </section>
-         
-     <section><title>Bilder anzeigen</title>
-     <p>Für die Bildanzeige wird das Zoomify-Express-Plugin erwartet. Über das MCRStartZoomifyServlet wird die Anzeige der Bilder gesteuert.
-       Zur Zeit findet sich eine adäquate Navigation wie beim IView zur Bildsteuerung im Servlet-Menü. Die Bilder werden über das  MCRZipFileNodeServlet
-       automatisch an das Plugin übergeben. Die Anzeigereihenfolge wird über die Mets/Mods-Datei definiert und ist zwingend erforderlich (siehe dazu
-       den Abschnitt über das Mets/Mods-Modul).
-     </p>
-     </section>
-     
-     <section><title>Konfiguration</title>
-     <p>In der mycore.properties-Datei kann über die folgende Variable der Titel des Bildes in Abhängigkeit des zugrunde gelegten Objektes
-       angezeigt werden:</p>    
-     <pre class="brush: shell; gutter: false">MCR.Component.Zoomify.[type].identifier=[field of datamodel]</pre>
-     <p>
-       Hierbei steht [type] für den Objekttyp und [field of datamodel] für ein verknüpftes Feld aus dem Datenmodell.
-     </p>
-     </section>
-   </section>   
-  
   <section>
     <title>Die Mets-Komponente</title>
     <section>
