@@ -529,9 +529,21 @@ MyCoRe:> check user data consistency]]></source>
     <dt><code>show loadable derivate of {0} to directory {1}</code></dt>
     <dd>das Kommando speichert den Content des Derivates vom Objekt mit der <code>MCRObjectID {0}</code> in das 
     Verzeichnis <code>{1}</code>.</dd>
+    <dt><code>select objects with query {0}</code></dt>
+    <dd>selektiert Objekte via MCRQL und speichert sie in eine temporäre Liste. Jeder Aufruf des Kommandos
+    überschreibt die Liste.</dd>
+    <dt><code>execute for selected {0}</code></dt>
+    <dd>führt das angegebene Kommando <code>{0}</code> mit allen selektierten Objekten aus. Im Kommando muss die
+    zu ersetzende ID mit <code>{x}</code> angegeben werden. Ein Beispiel: <code>execute for selected set parent
+    of {x} to DocPortal_document_00000001</code></dd>
+    <dt><code>xslt {0} with file {1}</code></dt>
+    <dd>Transformiert das angegebene MyCoRe Objekt <code>{0}</code> mit einer XSL-Datei <code>{1}</code>. Das
+    Kommando ist hilfreich um fehlerhafte Datenbestände zu reparieren. Selektieren sie dazu zuerst alle
+    fehlerhaften Objekte mit dem <code>select objects with query {0}</code> Kommando. Anschließend können
+    sie mit 'execute for selected xslt {x} with file myfix.xsl' die Objekte reparieren.</dd>
     </dl>
    </section>
-   
+
    <section id="cmd_iview">
     <title>Kommandos zur Arbeit mit dem ImageViewer</title>
     <dl>
