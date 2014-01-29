@@ -3,29 +3,31 @@
 
 <document>
   <header>
-    <title>MyCoRe-Workshop 2013</title>
-    <subtitle>13./14. November 2013 in Leipzig</subtitle>
+    <title>MyCoRe-Workshop 2014</title>
+    <abstract>Der diesjährige Anwenderworkshop findet voraussichtlich im November statt. Genaue
+    Informationen zu Ort und Zeit, sowie die Agenda werden rechtzeitig an dieser Stelle bekannt gegeben.</abstract>
   </header>
 <body>
 
 <!-- <section> -->
 <!-- <title>Ankündigung</title> -->
 
+   <!--
 <p>Der MyCoRe-User-Workshop findet dieses Jahr in Leizig statt.
    An zwei halben Tagen &#8211; Mittwochnachmittag, dem 13.11. und Donnerstagvormittag,
    dem 14.11. &#8211; sind wir zu Gast an der Universität Leipzig.
    Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen den MyCoRe-Anwendern und Interessierten zu
    ermöglichen und Gelegenheit für Fragen an die Entwickler zu bieten. <br/>
-   <!-- Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben.
+   Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben.
    Anregungen und Vorschläge können im MyCoRe-Wiki auf der
-   <a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a> eingetragen werden. -->
+   <a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a> eingetragen werden.
 </p>
-<!-- <p>
+ <p>
   Hier können Sie sich für den Workshop <a href="http://www.mycore.de:8291/content/below/workshop.xed?XSL.template.SESSION=template_mycore-de"><strong style="color:darkred;">anmelden!</strong></a>
-</p> -->
+</p>
 
 <p><strong>Weitere Informationen</strong></p>
-  <p>   Die Agenda des Workshops kann im <a title="MyCoRe-Wiki Workshop 2013 Agenda" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013" >Wiki</a> eingesehen werden. 
+  <p>   Die Agenda des Workshops kann im <a title="MyCoRe-Wiki Workshop 2013 Agenda" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013" >Wiki</a> eingesehen werden.
   Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
 
 <p>
@@ -37,15 +39,15 @@
     Leipzig<br />
 </p>
 <p class="fett">Siehe <a title="Ortsbeschreibung im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013#Ort:_Leipzig">Ortsbeschreibung im Wiki</a>.</p>
-
+-->
 <!-- </section> -->
 
-
+<!--
 <p><strong>Hotelinformationen</strong></p>
 <p>
     <a title="Auswahl an Hotels im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013#Hotelinformationen">Hotelinformationen im Wiki</a>
   </p>
-
+-->
 <!-- <section>
  <title>Anmeldung</title>
 
