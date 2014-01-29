@@ -11,7 +11,7 @@
   <title>Changes in MyCoRe</title>
 
   <section>
-  <title>Version 2013.09 (current head tree)</title>
+  <title>Version 2014.02 (current head tree)</title>
   <ul>
 
     <li>Components</li>
@@ -23,6 +23,95 @@
   </ul>
   </section>
 
+  <section>
+  <title>Version 2013.11</title>
+  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.11/changelog.html">maven site</a></p>
+  <ul>
+
+    <li>New features
+      <ul>
+        <li>added new strategy which allows submitter to change objects while status is submitted</li>
+        <li>mycore-acl-editor2: add button to go to selected rule in rule view</li>
+        <li>added mycore-migration-2014 component</li>
+        <li>added MCREntityResolver that uses XML Catalogs to resolve schema documents</li>
+        <li>mycore-xeditor: added functionality to load xml from any URI, store it under a variable, and use it in xed:output. See testLoadResources-editor.xml for example.</li>
+        <li>mycore-xeditor: Added support for subselects</li>
+        <li>mycore-xeditor: Enable usage of request parameters, configuration properties and session variables within XPath of xed:bind</li>
+        <li>mycore-solr: use "solr.phrase=fielName[,fieldName2]" to handle phrase queries (instead of single words)</li>
+        <li>added "check derivates of mcrfsnodes with project id {0}", "check mcrfsnodes of derivates with project id {0}",
+            "check derivate entries in objects for base {0}", "check object entries in derivates for base {0}"
+            commands to check IFS and metadata for a specific Project ID</li>
+        <li>mycore-xeditor: added xed:template element to wrap and ignore included code</li>
+        <li>mycore-xeditor: added MCRXMLCleaner to remove logically empty elements and attributes</li>
+        <li>mycore-xeditor: added support for button[@type='submit'] (required for Bootstrap 3)</li>
+        <li>mycore-xeditor: added items2option.xsl to transform list items from old editor framework to xeditor options</li>
+        <li>added support for servlet 3 programmatic login</li>
+      </ul>
+    </li>
+    <li>Fixed Bugs
+      <ul>
+        <li>MCRObjectTypeStrategy: fixed regular expression to get object type  (2013-11-08)</li>
+        <li>using MCR.GoogleSitemap.Directory causes errors Thanks to Kathleen Neumann.  (2013-11-04
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/663">663</a>)</li>
+        <li>synchronizing upload and finish upload  (2013-11-01)</li>
+        <li>Adding a new category with positionInParent is not working Thanks to Kathleen Keller.  (2013-10-30
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/644">644</a>)</li>
+        <li>mycore-solr: "lang" parameter should not be handled as search field in MCRSolrSearchServlet  (2013-10-22)</li>
+        <li>MCRURIResolverFilter should handle redirect correctly (do not write to ServletOutputStream).  (2013-10-22)</li>
+        <li>MCRURIResolverFilter could send incomplete data as Content-Length header was set to late.  (2013-10-22)</li>
+        <li>mycore-classeditor: fixed broken tree if new CategoryID starts with an old CategoryID Thanks to Thomas Scheffler.  (2013-10-11)</li>
+        <li>MCRURL: parameter removing causes invalid url if containing special signs  (2013-10-07)</li>
+        <li>editor framework: avoid conflicts with ordinary html textarea  (2013-10-01)</li>
+        <li>fixed "check classification {0}" when running against MySQL  (2013-09-27)</li>
+        <li>fixed handling of IPv6 adresses in MCRSession  (2013-09-24)</li>
+        <li>mycore-xeditor: Use hidden fields to mark controls that may not resubmit a value (unchecked checkboxes, select boxes without any selected options).  (2013-09-23)</li>
+        <li>track changes to be able to go back in time when user goes back in browser history and resubmits old state of a form Thanks to Thomas Scheffler.  (2013-09-18)</li>
+        <li>mycore-xeditor: fixed repeater if XPath contains predicate that can not be build automatically  (2013-09-13)</li>
+        <li>mycore-xeditor: fails to start if root element has children defined Thanks to Thomas Scheffler.  (2013-09-10
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/653">653</a>)</li>
+        <li>mycore-solr: get mods:dateIssued from parent for metadata view  (2013-08-26)</li>
+        <li>mycore-user2: fixed admin permission checking  (2013-08-19)</li>
+        <li>mycore-iview2: Fixed Prototyping in canvas.js  (2013-08-14)</li>
+        <li>mycore-solr: release MCRSession in MCRSolrIndexTask  (2013-08-14)</li>
+      </ul>
+    </li>
+    <li>Changes
+      <ul>
+        <li>migrated login form to Bootstrap 3</li>
+        <li>mycore-mods: moved originInfo/dateIssued directly to mods (is no longer part of relatedItem)</li>
+        <li>add "parent" relation to MCRLINKHREF table (update with "repair metadata search of type {0}")</li>
+        <li>mycore-mods: inherit metadata to children (better index and export)</li>
+        <li>make MCRObject inheritance configurable (see org.mycore.datamodel.metadata.inheritance.MCRInheritanceManagerFactory)</li>
+        <li>MCRURIResolver resolves scheme from 'base' if 'uri' is relative</li>
+        <li>mycore-xeditor: xed:include is resolved once per transformation process and once per application lifetime with @static=true</li>
+        <li>mycore-xeditor: Use @xed:href to specify target servlet for @xed:target="servlet". Use ":" as delimiter between target type and target href in general.</li>
+        <li>mycore-acl-editor2: update to Bootstrap 3, WCMS uses new ACL editor and many more</li>
+        <li>reversed import chain of "xslImport:" URIResolver to make importing simpler and more powerful</li>
+        <li>mycore-xeditor: allow to configure XSL process to support transformation chaining</li>
+        <li>support https throughout the web application</li>
+        <li>mycore-mets: display message on successful save</li>
+        <li>mycore-xeditor: replaced custom XPath parser with JAXEN</li>
+        <li>for every file added to solr use cache for field derivateModified</li>
+        <li>mycore-xeditor: allow to overwrite xed controls</li>
+        <li>MCRSearchServlet support mycore-xeditor submissions</li>
+        <li>Refactored XSL exception handling to give better error messages</li>
+        <li>mycore-xeditor: add mapping to handle "*.xed" files as XEditor files</li>
+        <li>mycore-solr: adapted pagination to Bootstrap 3</li>
+        <li>mycore-oai: make earliest date stamp field configurable (MCR.OAIDataProvider.*.EarliestDatestamp.fieldName)</li>
+        <li>mycore-solr: add MCRUserAgentFilter to SOLR Servlets to close sessions after robot requests</li>
+        <li>update dependencies</li>
+        <li>mycore-classeditor: use font-awesome (instead of modern-pictograms) and css-sprites to reduce requests</li>
+      </ul>
+    </li>
+    <li>Removed
+      <ul>
+        <li>properties for MCRHibCStore (class was removed rev. 27108 - 2013.06)</li>
+        <li>removed mycore-migration21-22</li>
+      </ul>
+    </li>
+
+  </ul>
+  </section>
   <section>
   <title>Version 2013.08</title>
   <p>see also <a href="http://www.mycore.de/generated/mycore-2013.08/changelog.html">maven site</a></p>
@@ -103,6 +192,55 @@
   </section>
 
   <section>
+  <title>Version 2013.06.0.2</title>
+  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0.2/changelog.html">maven site</a></p>
+  <ul>
+
+    <li>New features:
+      <ul>
+        <li>mods: added condition for conference title (merged revision 28542 and 28555)</li>
+        <li>inherit mods data from parent for indexing (merged revision 27984 from trunk)</li>
+        <li>allow phrase queries (merged revision 27966 and 27969 from trunk)</li>
+        <li>allow IPv6 addresses in MCRSession</li>
+      </ul>
+    </li>
+    <li>Fixed Bugs:
+      <ul>
+        <li>mods: show guests only published objects</li>
+        <li>ifs: Fixed bug <a href="https://sourceforge.net/p/mycore/bugs/666">666</a> (MD5 error in MCRFSNODES for IFS2). MessageDigest.digest() must be called only once. (merged revision 28764)</li>
+        <li>mods: fixed title layout for chapter (merged revision 28646)</li>
+        <li>mods: fixed genre xpath for kindOf (merged revision 28645)</li>
+        <li>fileupload: fixed bug <a href="https://sourceforge.net/p/mycore/bugs/668">668</a> (possible exploit via Java Applet) (merged revision 28493 and 28494)</li>
+        <li>mods: check only roleTerm for mods:mods/mods:name (merged revision 28332)</li>
+        <li>mods: fixed presentation of dateIssued and relatedItem[@type='isReferencedBy'] (merged revision 28317)</li>
+        <li>mods: moved originInfo/dateIssued directly to mods, is no longer part of relatedItem (merged revision 28316)</li>
+        <li>googlesitemap: fix bug <a href="https://sourceforge.net/p/mycore/bugs/663">663</a> using MCR.GoogleSitemap.Directory causes errors (merged revision 28258 and 28303)</li>
+        <li>mods: fixed volume and issue presentation and editor fields (merged revision 28097-28099)</li>
+        <li>Fixed command syntax: export classification ... to directory .... (merged revision 28093)</li>
+        <li>Avoid conflicts with ordinary html textarea (merged revision 28019)</li>
+        <li>fixed identifier options in mods editors</li>
+        <li>bugfix: load resources via https if needed (merged revision 27892 from trunk)</li>
+        <li>mycore-user2: fixed bug to show message if too many users would be displayed (merged revision 27887 from trunk)</li>
+        <li>mycore-mods: index and show dateIssued from book also in its corresponding chapters</li>
+        <li>mycore-mods: fixed solr index field mods.dateIssued</li>
+        <li>fixed buttons for users of different realms and fixed role name 'admin' needed for deletion of user (merged revision 27681 and 27684 from trunk)</li>
+        <li>release MCRSession in SolrIndexTask and added filter mappings for UserAgentFilter (merged revision 27665 and 27666 from trunk)</li>
+      </ul>
+    </li>
+    <li>Changes:
+      <ul>
+        <li>oai: make earliest date stamp field configurable (merged revision 27674 from trunk)</li>
+      </ul>
+    </li>
+    <li>Removed:
+      <ul>
+        <li>mods: removed 'please select' option for role, default is given (merged revision 28154)</li>
+      </ul>
+    </li>
+  </ul>
+  </section>
+
+  <section>
   <title>Version 2013.06.0.1</title>
   <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0.1/changelog.html">maven site</a></p>
   <ul>
@@ -122,7 +260,7 @@
         <li>highwire press tags now also matches mods:dateXXX without @encoding (workaround for now)</li>
         <li>SearchURL from BasketServlet is not UTF-8 encoded Thanks to Kathleen Neumann.
             - Issue: <a href="https://sourceforge.net/p/mycore/bugs/646">646</a></li>
-        <li>Fix for bug #644 (xeditor don't allow dot in element name) and another bug
+        <li>Fix for bug <a href="https://sourceforge.net/p/mycore/bugs/644">644</a> (xeditor don't allow dot in element name) and another bug
             (xed:bind/@value sets the value not only for the last generated node, but
             for all generated parent elements also) (merged revision 27513 and 27518 from trunk)
             - Issue: <a href="https://sourceforge.net/p/mycore/bugs/644">644</a></li>
@@ -508,7 +646,7 @@
   <title>Changes in DocPortal</title>
 
   <section>
-  <title>Version 2013.09 (current head tree)</title>
+  <title>Version 2014.02 (current head tree)</title>
   <ul>
     <li>New Features:</li>
     <ul>

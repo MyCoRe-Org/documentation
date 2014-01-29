@@ -18,9 +18,124 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <section>
+    <title>Release 2013.11 (Codename ‚Leila ? Helau!‘)</title>
+    <p>
+      All changes, new features etc. are summarized below.
+      If your application is already near version 2013.11, you only have to update
+      your pom.xml (docportal/config):
+
+      <pre class="brush: xml;gutter: false;">
+  [...]
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>application-model&lt;/artifactId>
+  &lt;version>2013.11&lt;/version>
+  [...]
+  &lt;dependency>
+    &lt;groupId>org.mycore&lt;/groupId>
+    &lt;artifactId>mycore-complete&lt;/artifactId>
+    &lt;version>2013.11&lt;/version>
+    &lt;optional>false&lt;/optional>
+  &lt;/dependency>
+  [...]</pre>
+
+      In the next step you have to build your application again: <code>ant resolve create.jar
+      create.scripts create.webapp</code>
+    </p>
+
+    <!-- p>
+      Furthermore there is a MyCoRe
+      <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.06.0/">jar file</a>
+      ready for download, therewith you can use the MyCoRe kernel in your own application
+      independent from DocPortal. MyCoRe can be integrated as well via Maven.
+    </p -->
+    <h2>Changes in this version include</h2>
+    <h3>New features</h3>
+    <ul>
+      <li>added new strategy which allows submitter to change objects while status is submitted</li>
+      <li>mycore-acl-editor2: add button to go to selected rule in rule view</li>
+      <li>added mycore-migration-2014 component</li>
+      <li>added MCREntityResolver that uses XML Catalogs to resolve schema documents</li>
+      <li>mycore-xeditor: added functionality to load xml from any URI, store it under a variable, and use it in xed:output. See testLoadResources-editor.xml for example.</li>
+      <li>mycore-xeditor: Added support for subselects</li>
+      <li>mycore-xeditor: Enable usage of request parameters, configuration properties and session variables within XPath of xed:bind</li>
+      <li>mycore-solr: use "solr.phrase=fielName[,fieldName2]" to handle phrase queries (instead of single words)</li>
+      <li>added "check derivates of mcrfsnodes with project id {0}", "check mcrfsnodes of derivates with project id {0}",
+          "check derivate entries in objects for base {0}", "check object entries in derivates for base {0}"
+          commands to check IFS and metadata for a specific Project ID</li>
+      <li>mycore-xeditor: added xed:template element to wrap and ignore included code</li>
+      <li>mycore-xeditor: added MCRXMLCleaner to remove logically empty elements and attributes</li>
+      <li>mycore-xeditor: added support for button[@type='submit'] (required for Bootstrap 3)</li>
+      <li>mycore-xeditor: added items2option.xsl to transform list items from old editor framework to xeditor options</li>
+      <li>added support for servlet 3 programmatic login</li>
+    </ul>
+
+    <h3>Fixed Bugs</h3>
+    <ul>
+      <li>MCRObjectTypeStrategy: fixed regular expression to get object type  (2013-11-08)</li>
+      <li>using MCR.GoogleSitemap.Directory causes errors Thanks to Kathleen Neumann.  (2013-11-04
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/663">663</a>)</li>
+      <li>synchronizing upload and finish upload  (2013-11-01)</li>
+      <li>Adding a new category with positionInParent is not working Thanks to Kathleen Keller.  (2013-10-30
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/644">644</a>)</li>
+      <li>mycore-solr: "lang" parameter should not be handled as search field in MCRSolrSearchServlet  (2013-10-22)</li>
+      <li>MCRURIResolverFilter should handle redirect correctly (do not write to ServletOutputStream).  (2013-10-22)</li>
+      <li>MCRURIResolverFilter could send incomplete data as Content-Length header was set to late.  (2013-10-22)</li>
+      <li>mycore-classeditor: fixed broken tree if new CategoryID starts with an old CategoryID Thanks to Thomas Scheffler.  (2013-10-11)</li>
+      <li>MCRURL: parameter removing causes invalid url if containing special signs  (2013-10-07)</li>
+      <li>editor framework: avoid conflicts with ordinary html textarea  (2013-10-01)</li>
+      <li>fixed "check classification {0}" when running against MySQL  (2013-09-27)</li>
+      <li>fixed handling of IPv6 adresses in MCRSession  (2013-09-24)</li>
+      <li>mycore-xeditor: Use hidden fields to mark controls that may not resubmit a value (unchecked checkboxes, select boxes without any selected options).  (2013-09-23)</li>
+      <li>track changes to be able to go back in time when user goes back in browser history and resubmits old state of a form Thanks to Thomas Scheffler.  (2013-09-18)</li>
+      <li>mycore-xeditor: fixed repeater if XPath contains predicate that can not be build automatically  (2013-09-13)</li>
+      <li>mycore-xeditor: fails to start if root element has children defined Thanks to Thomas Scheffler.  (2013-09-10
+    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/653">653</a>)</li>
+      <li>mycore-solr: get mods:dateIssued from parent for metadata view  (2013-08-26)</li>
+      <li>mycore-user2: fixed admin permission checking  (2013-08-19)</li>
+      <li>mycore-iview2: Fixed Prototyping in canvas.js  (2013-08-14)</li>
+      <li>mycore-solr: release MCRSession in MCRSolrIndexTask  (2013-08-14)</li>
+    </ul>
+
+    <h3>Changes</h3>
+    <ul>
+      <li>migrated login form to Bootstrap 3</li>
+      <li>mycore-mods: moved originInfo/dateIssued directly to mods (is no longer part of relatedItem)</li>
+      <li>add "parent" relation to MCRLINKHREF table (update with "repair metadata search of type {0}")</li>
+      <li>mycore-mods: inherit metadata to children (better index and export)</li>
+      <li>make MCRObject inheritance configurable (see org.mycore.datamodel.metadata.inheritance.MCRInheritanceManagerFactory)</li>
+      <li>MCRURIResolver resolves scheme from 'base' if 'uri' is relative</li>
+      <li>mycore-xeditor: xed:include is resolved once per transformation process and once per application lifetime with @static=true</li>
+      <li>mycore-xeditor: Use @xed:href to specify target servlet for @xed:target="servlet". Use ":" as delimiter between target type and target href in general.</li>
+      <li>mycore-acl-editor2: update to Bootstrap 3, WCMS uses new ACL editor and many more</li>
+      <li>reversed import chain of "xslImport:" URIResolver to make importing simpler and more powerful</li>
+      <li>mycore-xeditor: allow to configure XSL process to support transformation chaining</li>
+      <li>support https throughout the web application</li>
+      <li>mycore-mets: display message on successful save</li>
+      <li>mycore-xeditor: replaced custom XPath parser with JAXEN</li>
+      <li>for every file added to solr use cache for field derivateModified</li>
+      <li>mycore-xeditor: allow to overwrite xed controls</li>
+      <li>MCRSearchServlet support mycore-xeditor submissions</li>
+      <li>Refactored XSL exception handling to give better error messages</li>
+      <li>mycore-xeditor: add mapping to handle "*.xed" files as XEditor files</li>
+      <li>mycore-solr: adapted pagination to Bootstrap 3</li>
+      <li>mycore-oai: make earliest date stamp field configurable (MCR.OAIDataProvider.*.EarliestDatestamp.fieldName)</li>
+      <li>mycore-solr: add MCRUserAgentFilter to SOLR Servlets to close sessions after robot requests</li>
+      <li>update dependencies</li>
+      <li>mycore-classeditor: use font-awesome (instead of modern-pictograms) and css-sprites to reduce requests</li>
+    </ul>
+
+    <h3>Removed</h3>
+    <ul>
+      <li>properties for MCRHibCStore (class was removed rev. 27108 - 2013.06)</li>
+      <li>removed mycore-migration21-22</li>
+    </ul>
+
+
+  </section>
+  <section>
     <title>Release 2013.08 (Codename ‚Old Pascas‘)</title>
     <p>
-      Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
+      Um den Stand des Releases 2013.08 in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
       pom.xml (zu finden unter docportal/config) die entsprechende MyCoRe-Version auf <strong>2013.08</strong> angepasst werden:
 
       <pre class="brush: xml;gutter: false;">

@@ -28,14 +28,14 @@
    <note label="Warnung">Sie installieren auf diese Weise die aktuelle Entwicklungsversion. Diese ist
      nicht immer frei von Fehlern!</note>
    <p>
-   <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.11/"
-      ><img src="/images/download_docportal_201311.png" alt="Link zum SF-Download" style="float:right;margin-left:20px;" /></a>
+   <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.01/"
+      ><img src="/images/download_docportal_201401.png" alt="Link zum SF-Download" style="float:right;margin-left:20px;" /></a>
    Alternativ können Sie die Daten auch direkt bei Sourceforge herunterladen, dafür ist kein
-   SVN-Client notwendig. Momentan steht hier das aktuelle <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.11/"
-   >Release 2013.11</a> zum Download zur Verfügung. Nachdem Sie die Datei heruntergeladen
+   SVN-Client notwendig. Momentan steht hier das aktuelle <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.01/"
+   >Release 2014.01</a> zum Download zur Verfügung. Nachdem Sie die Datei heruntergeladen
    haben, gehen Sie wie folgt vor:</p>
    <ol>
-   <li>Entpacken von docportal_RELEASE_201311.zip in das gewünschte Zielverzeichnis &lt;pfad&gt;</li>
+   <li>Entpacken von docportal_RELEASE_201401.zip in das gewünschte Zielverzeichnis &lt;pfad&gt;</li>
    <li>Wechseln in dieses Verzeichnis und Aufruf von (achten Sie auch hierbei unter Windows den Pfad  &lt;pfad&gt;
    in Unix-Schreibweise anzugeben, also z.B. c:/Programme/docportal):</li>
    <li>ant -Ddestdir=&lt;pfad&gt; -f install.xml</li>
