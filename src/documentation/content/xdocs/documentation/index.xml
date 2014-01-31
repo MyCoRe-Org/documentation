@@ -21,15 +21,19 @@
     </section>
 
     <section id="migration">
-      <title>Migration</title>
+      <title>Migrationsanleitungen</title>
       <ul>
         <li>
+          <a href="site:migrate2013.08_11">Version 2013.08 -> Version 2013.11</a>
+        </li>
+        <li>
+          <a href="site:migrate2013.06_08">Version 2013.06 -> Version 2013.08</a>
+        </li>
+        <li>
           <a href="site:migrate21_2013.06">Version 2.1 -> Version 2013.06</a>
-          <p>Migrationsanleitung von einer MyCoRe-Anwendung auf Basis der Version 2.1 zu 2013.06</p>
         </li>
         <li>
           <a href="site:migrate20_21">Version 2.0 -> Version 2.1</a>
-          <p>Migrationsanleitung von einer MyCoRe-Anwendung auf Basis der Version 2.0 zu 2.1</p>
         </li>
         <li>
           <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20">Version 1.3 -> Version 2.0</a> (Wiki)
