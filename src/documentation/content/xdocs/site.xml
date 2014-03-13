@@ -89,7 +89,13 @@ See http://forrest.apache.org/docs/linking.html for more info
       <section14 label="14 Klassifikationen"     href="14_classification.html" />
       <section15 label="15 Nützliche Klassen"    href="15_useful_classes.html" />
     </principles>
-    <components            label="Komponenten"         href="components.html" />
+    <components            label="Komponenten"   href="components/">
+      <section01 label="1 Session Listing"    href="01_session_listing.html" />
+      <section02 label="2 IView2"    href="02_iview2.html" />
+      <section03 label="3 Broadcasting"    href="03_broadcasting.html" />
+      <section04 label="4 Basket"    href="04_basket.html" />
+    </components>
+    <componentes            label="alte Komponenten"         href="components.html" />
     <mymaker               label="DocPortal"           href="docportal/">
       <mm_about            label="1. Übersicht"        href="04_docportal.html" as_pdf="true" />
       <mm_configuration    label="2. Konfiguration"    href="45_configuration.html" as_pdf="true" />

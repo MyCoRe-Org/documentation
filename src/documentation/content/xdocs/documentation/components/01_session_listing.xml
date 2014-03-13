@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Das Session Listing (session-listing)</title>
+    <abstract>Beschreibung der Komponente session-listing</abstract>
+  </header>
+
+  <body>
+    <section>
+      <title>Allgemeines</title>
+
+      <p>
+        Die Komponente Session Listing ist relativ klein und einfach. Sie stellt lediglich die
+        Möglichkeit bereit, in der interaktiven Sitzung angezeigt zu bekommen, welche Sitzungen
+        für die MyCoRe-Anwendung aktiv sind. Die Anfrage an das Servlet liefert eine XML-Datei
+        zurück, welche über das mitgelieferte Stylesheet angezeigt wird. Ggf. kann dieses Stylesheet
+        durch eine eigene Variante überschrieben werden.
+      </p>
+    </section>
+
+    <section>
+      <title>Installation</title>
+
+      <p>
+        Der MyCoRe-Kern enthält schon alle Dateien für die Integration der Komponente. Sie muss
+        lediglich noch aufgerufen werden, z. B. in der navigation.xml mit
+        <code>href="/servlets/MCRSessionListingServlet"</code>
+        .
+      </p>
+    </section>
+  </body>
+</document>
