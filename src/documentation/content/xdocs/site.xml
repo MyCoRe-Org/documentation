@@ -94,6 +94,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <section02 label="2 IView2"    href="02_iview2.html" />
       <section03 label="3 Broadcasting"    href="03_broadcasting.html" />
       <section04 label="4 Basket"    href="04_basket.html" />
+      <section05 label="5 XEditor"    href="05_xeditor.html" />
     </components>
     <componentes            label="alte Komponenten"         href="components.html" />
     <mymaker               label="DocPortal"           href="docportal/">
