@@ -645,56 +645,55 @@ relevant, und sie wird durch die Bereinigungsregel entfernt.</p>
 </section>
 
 
-<!--
-<xed:include />
-===============
+<section>
+    <title><code>&lt;xed:include&gt;</code></title>
+<p>Fügt an der verwendeten Stelle Komponenten in das Formular ein, indem sie über eine ID referenziert werden, und/oder von einer externen URI nachgeladen werden. </p> 
+<p>Syntax:</p>
 
-Fügt an der verwendeten Stelle Komponenten in das Formular ein, indem sie über eine ID referenziert werden, und/oder von einer externen URI nachgeladen werden.  
+<pre class="brush: xml"><![CDATA[<xed:include uri="..." ref="..." static="true|false" />]]></pre>
 
-Syntax: <xed:include uri="..." ref="..." static="true|false" />
+<p>Wird das Attribut @uri angegeben, wird ein XML-Element von der angegebenen URI geladen, und der Inhalt (nicht das Wurzelelement selbst) an dieser Stelle eingefügt.
+@uri kann jede URI sein, die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:, xslStyle:).</p>
+<p>Wird das Attribut @ref angegeben, wird der Inhalt desjenigen XML-Elements eingefügt, dessen ID (@id) dem Wert von @ref entspricht. </p>
 
-Wird das Attribut @uri angegeben, wird ein XML-Element von der angegebenen URI geladen, und der Inhalt (nicht das Wurzelelement selbst) an dieser Stelle eingefügt.
-@uri kann jede URI sein, die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:, xslStyle:).
+<p>Die Attribute @uri und @ref sind kombinierbar. Sie können XPath-Ausdrücke oder Verweise auf Variablen enthalten. D.h. man kann über <code>&lt;xed:include /&gt;</code> Teile des Formulars
+dynamisch nachladen, die abhängig vom bearbeiteten XML und/oder von Request Parametern bei Aufruf des Formulars sind. </p>
+<p>Beispiel: Nachladen von Klassifikationskategorien als Auswahl in einer Select-Box:</p>
 
-Wird das Attribut @ref angegeben, wird der Inhalt desjenigen XML-Elements eingefügt, dessen ID (@id) dem Wert von @ref entspricht. 
-
-Die Attribute @uri und @ref sind kombinierbar. Sie können XPath-Ausdrücke oder Verweise auf Variablen enthalten. D.h. man kann über <xed:include /> Teile des Formulars
-dynamisch nachladen, die abhängig vom bearbeiteten XML und/oder von Request Parametern bei Aufruf des Formulars sind. 
-
-Beispiel: Nachladen von Klassifikationskategorien als Auswahl in einer Select-Box:
-
-<select>
+<pre class="brush: xml"><![CDATA[<select>
   <option value="">Bitte wählen...</option>
   <xed:include uri="xslStyle:items2options:classification:editor:-1:children:modsgenre" />
-</select>
+</select>]]></pre>
 
-Die URI "xslStyle:items2options:classification:editor:-1:children:modsgenre" lädt die Klassifikation "modsgenre" und transformiert alle Kategorien in
-<option /> Auswahloptionen in der HTML-Syntax.
+<p>Die URI "xslStyle:items2options:classification:editor:-1:children:modsgenre" lädt die Klassifikation "modsgenre" und transformiert alle Kategorien in
+<code>&lt;option /&gt;</code> Auswahloptionen in der HTML-Syntax.</p>
 
-Beispiel: Nachladen von Teilen eines Formulars abhängig von Request Parametern:
+<p>Beispiel: Nachladen von Teilen eines Formulars abhängig von Request Parametern:</p>
 
-<xed:include uri="webapp:ubo/editor/editor-genres.xed" ref="{$genre}" />   
+<pre class="brush: xml"><![CDATA[<xed:include uri="webapp:ubo/editor/editor-genres.xed" ref="{$genre}" /> ]]></pre>  
 
-Wird das Formular z. B. mit [Seite].xed?genre=article aufgerufen, wird an dieser Stelle der Inhalt des Elementes mit @id='article' eingefügt.
+<p>Wird das Formular z. B. mit [Seite].xed?genre=article aufgerufen, wird an dieser Stelle der Inhalt des Elementes mit @id='article' eingefügt.</p>
 
-Das inkludierte XML sollte von einem Element <xed:template /> umschlossen sein. 
-Der XEditor ignoriert solche Bereiche, wenn sie nicht durch <xed:include /> referenziert werden. 
+<p>Das inkludierte XML sollte von einem Element <code>&lt;xed:template /&gt;</code> umschlossen sein. 
+Der XEditor ignoriert solche Bereiche, wenn sie nicht durch <code>&lt;xed:include /&gt;</code> referenziert werden. </p>
 
-Beispiel: Suchmaske, Auswahl Erscheinungsjahr
+<p>Beispiel: Suchmaske, Auswahl Erscheinungsjahr</p>
 
-<label>Suche nach Erscheinungsjahr:</label>
+<pre class="brush: xml"><![CDATA[<label>Suche nach Erscheinungsjahr:</label>
 zwischen
-<xed:bind xpath="condition[@field='year'][1]">
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="condition[@field='year'][1]">
   <xed:bind xpath="@operator" default="&lt;=" />
   <xed:include ref="year.input" />
-</xed:bind>
-und
-<xed:bind xpath="condition[@field='year'][2]">
+</xed:bind>]]></pre>
+
+<p>und</p>
+
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="condition[@field='year'][2]">
   <xed:bind xpath="@operator" default="&gt;=" />
   <xed:include ref="year.input" />
-</xed:bind>
+</xed:bind>]]></pre>
 
-<xed:template id="year.input">
+<pre class="brush: xml"><![CDATA[<xed:template id="year.input">
   <xed:bind xpath="@operator">
     <select>
       <option>=</option>
@@ -707,62 +706,58 @@ und
   <xed:bind xpath="@value">
     <input type="text" placeholder="{i18n:ubo.placeholder.year}" />
   </xed:bind>
-</xed:template>
+</xed:template>]]></pre>
 
-Hier wird eine Vorlage für die Auswahl des Suchoperators (<, >, = etc.) und die Eingabe der Jahreszahl an zwei Stellen wiederverwendet. 
+<p>Hier wird eine Vorlage für die Auswahl des Suchoperators (&lt;, &gt;, = etc.) und die Eingabe der Jahreszahl an zwei Stellen wiederverwendet. </p>
+<p>Häufig verändern sich über eine URI inkludierte Vorlagen über die gesamte Laufzeit der Anwendungen nicht. Solche statischen Vorlagen können mit</p>
 
-Häufig verändern sich über eine URI inkludierte Vorlagen über die gesamte Laufzeit der Anwendungen nicht. Solche statischen Vorlagen können mit
+<pre class="brush: xml"><![CDATA[<xed:include static="true" ... />]]></pre>
 
-<xed:include static="true" ... />
+<p>markiert werden. Der XEditor wird die externe Ressource (z. B. eine statische XML-Datei aus der Webapplikation) nur einmal einlesen, in einem
+Cache aufbewahren und wiederverwenden. </p>
+<p>Für Ressourcen, die sich über die Laufzeit der Applikation ändern, z. B. Klassifikationen, bei denen nachträglich Kategorien online ergänzt werden, 
+sollte @static nicht gesetzt sein.</p>
+</section>
 
-markiert werden. Der XEditor wird die externe Ressource (z. B. eine statische XML-Datei aus der Webapplikation) nur einmal einlesen, in einem
-Cache aufbewahren und wiederverwenden. 
+<section>
+    <title><code>&lt;xed:if&gt;</code></title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[<xed:if test="...">...</xed:if>]]></pre>
 
-Für Ressourcen, die sich über die Laufzeit der Applikation ändern, z. B. Klassifikationen, bei denen nachträglich Kategorien online ergänzt werden, 
-sollte @static nicht gesetzt sein.   
-  
+<p>Ermöglicht es, einen Teil des Formulars nur unter einer bestimmten Bedingung auszuführen, die durch einen XPath-Test bestimmt wird. Der XPath-Test kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Nur wenn die Testbedingung erfüllt ist, wird der durch <code>&lt;xed:if /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt.</p>
 
-<xed:if />
-==========
+<p>Beispiele:</p>
 
-Syntax: <xed:if test="...">...</xed:if>
-
-Ermöglicht es, einen Teil des Formulars nur unter einer bestimmten Bedingung auszuführen, die durch einen XPath-Test bestimmt wird. Der XPath-Test kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Nur wenn die Testbedingung erfüllt ist, wird der durch <xed:if /> umschlossene Formularabschnitt verarbeitet und angezeigt.
-
-Beispiele:
-
-<xed:if test="string-length(@valueURI) &lt; 0">
+<pre class="brush: xml"><![CDATA[<xed:if test="string-length(@valueURI) &lt; 0">
   <a href="{@valueURI}">
         <xed:output value="concat(mods:namePart[@type='family'],', ',mods:namePart[@type='given'])" />
   </a>
-</xed:if>
+</xed:if>]]></pre>
 
-<xed:if test="$mode='advanced'">
+<pre class="brush: xml"><![CDATA[<xed:if test="$mode='advanced'">
   <h3>Erweiterter Modus mit zusätzlichen Eingabefeldern:</h3>
   ...
-</xed:if>
+</xed:if>]]></pre>
+</section>
 
-
-<xed:choose />
-==============
-
-Syntax: 
-
-<xed:choose>
+<section>
+    <title><code>&lt;xed:choose&gt;</code></title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[<xed:choose>
   <xed:when test="...">...</xed:when>
   <xed:when test="...">...</xed:when>
   <xed:otherwise>...</xed:otherwise>
-</xed:choose>
+</xed:choose>]]></pre>
 
-Ermöglicht es, abhängig von ein oder mehreren Bedingungen unterschiedliche Teile oder Varianten eines Formulars auszuführen. 
+<p>Ermöglicht es, abhängig von ein oder mehreren Bedingungen unterschiedliche Teile oder Varianten eines Formulars auszuführen. </p>
 
-Jedes <xed:when /> Element definiert einen XPath-Test. Der XPath-Test kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Nur wenn die Testbedingung erfüllt ist, wird der durch <xed:when /> umschlossene Formularabschnitt verarbeitet und angezeigt. Wenn mehrere <xed:when /> Elemente angegeben sind, wird nur das erste Element berücksichtigt, dessen Testbedingung erfüllt ist. 
+<p>Jedes <code>&lt;xed:when /&gt;</code> Element definiert einen XPath-Test. Der XPath-Test kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Nur wenn die Testbedingung erfüllt ist, wird der durch <code>&lt;xed:when /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt. Wenn mehrere <code>&lt;xed:when /&gt;</code> Elemente angegeben sind, wird nur das erste Element berücksichtigt, dessen Testbedingung erfüllt ist.</p> 
 
-Das Element <xed:otherwise /> ist optional. Es wird nur dann ausgeführt, wenn keine der Testbedingungen der vorangehenden <xed:when /> Elemente erfüllt ist. In diesem Fall wird der duch <xed:otherwise /> umschlossene Formularabschnitt verarbeitet und angezeigt.
+<p>Das Element <code>&lt;xed:otherwise /&gt;</code> ist optional. Es wird nur dann ausgeführt, wenn keine der Testbedingungen der vorangehenden <code>&lt;xed:when /&gt;</code> Elemente erfüllt ist. In diesem Fall wird der duch <code>&lt;xed:otherwise /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt.</p>
 
-Beispiel:
+<p>Beispiel:</p>
 
-<xed:choose>
+<pre class="brush: xml"><![CDATA[<xed:choose>
   <xed:when test="@status='new'">
         <label>Veröffentlichen am:</label>
         <xed:bind xpath="dateToPublish">
@@ -773,26 +768,25 @@ Beispiel:
         <label>Veröffentlichungsdatum: </label>
         <xed:output value="dateToPublished" />
   </xed:otherwise>
-</xed:choose>
+</xed:choose>]]></pre>
+</section>
 
+<section>
+    <title><code>&lt;xed:multi-lang&gt;</code></title>
+<p>Ermöglicht es, abhängig von der aktuell verwendeten Sprache (Variable $CurrentLang der MCRSession), Teile des Formulars in verschiedenen Varianten anzubieten.</p>
 
-<xed:multi-lang />
-==================
+<p>Syntax:</p>
 
-Ermöglicht es, abhängig von der aktuell verwendeten Sprache (Variable $CurrentLang der MCRSession), Teile des Formulars in verschiedenen Varianten anzubieten.
-
-Syntax:
-
-<xed:multi-lang>
+<pre class="brush: xml"><![CDATA[<xed:multi-lang>
   <xed:lang xml:lang="..."></xed:lang>
   <xed:lang xml:lang="..."></xed:lang>
-</xed:multi-lang>
+</xed:multi-lang>]]></pre>
 
-Das Attribut @xml:lang definiert die Sprache (nach IETF BCP 47), für die der umschlossene Block verarbeitet und angezeigt werden soll. Wenn kein <xed:lang /> Bereich für die aktuelle Sprache definiert ist, wird der Bereich verwendet, der für die Default-Sprache (MCR.Metadata.DefaultLang aus mycore.properties) definiert ist. Wenn auch für die Default-Sprache kein Bereich definiert ist, wird der erste <xed:lang /> Bereich verwendet.
+<p>Das Attribut @xml:lang definiert die Sprache (nach IETF BCP 47), für die der umschlossene Block verarbeitet und angezeigt werden soll. Wenn kein <code>&lt;xed:lang /&gt;</code> Bereich für die aktuelle Sprache definiert ist, wird der Bereich verwendet, der für die Default-Sprache (MCR.Metadata.DefaultLang aus mycore.properties) definiert ist. Wenn auch für die Default-Sprache kein Bereich definiert ist, wird der erste <code>&lt;xed:lang /&gt;</code> Bereich verwendet.</p>
 
-Beispiel:
+<p>Beispiel:</p>
 
-<xed:multi-lang>
+<pre class="brush: xml"><![CDATA[<xed:multi-lang>
   <xed:lang xml:lang="de">
      <label>Straße:</label>...
          <label>Hausnummer:</label>...
@@ -805,141 +799,138 @@ Beispiel:
          <label>City:</label>...
          <label>ZIP Code:</label>...
   </xed:lang>
-</xed:multi-lang>
+</xed:multi-lang>]]></pre>
+</section>
 
+<section>
+    <title><code>&lt;xed:load-resource&gt;</code></title>
+<p>Lädt ein XML-Dokument von einer URI und stellt es in einer Variablen bereit, um in XPath-Ausdrücken darauf zuzugreifen.</p>
 
-<xed:load-resource />
-=====================
+<p>Syntax:</p> 
 
-Lädt ein XML-Dokument von einer URI und stellt es in einer Variablen bereit, um in XPath-Ausdrücken darauf zuzugreifen.
-
-Syntax: <xed:load-resource name="..." uri="..." />
+<pre class="brush: xml"><![CDATA[<xed:load-resource name="..." uri="..." />]]></pre>
  
-Das Attribut @name gibt den Namen der Variablen an, unter dem das XML Element bereitgestellt werden soll.
+<p>Das Attribut @name gibt den Namen der Variablen an, unter dem das XML Element bereitgestellt werden soll.
 Das Attribut @uri gibt die URI an, von der das XML geladen werden soll. Dies kann eine beliebige URI sein, 
 die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:.) Innerhalb des Attributes
-@uri kann auch auf XPath Ausdrücke oder Variablen zugregriffen werden. 
+@uri kann auch auf XPath Ausdrücke oder Variablen zugregriffen werden. </p>
 
-<xed:load-resource /> kann in Kombination mit <xed:output /> verwendet werden, um Werte im Formular auszugeben, die sowohl
+<p><code>&lt;xed:load-resource /&gt;</code> kann in Kombination mit <code>&lt;xed:output /&gt;</code> verwendet werden, um Werte im Formular auszugeben, die sowohl
 vom bearbeiteten XML als auch von Parametern oder externen XML-Ressourcen abhängen. 
 Beispielsweise kann man Bezeichnungen von Klassifikationskategorien im Formular ausgeben, wobei die IDs der Kategorien im
-im bearbeiteten XML Dokument liegen, die Bezeichnungen aber in der Klassifikation verwaltet werden:
+im bearbeiteten XML Dokument liegen, die Bezeichnungen aber in der Klassifikation verwaltet werden:</p>
 
-<xed:load-resource name="genres" uri="classification:metadata:-1:children:modsgenre" /> 
+<pre class="brush: xml"><![CDATA[<xed:load-resource name="genres" uri="classification:metadata:-1:children:modsgenre" />]]></pre> 
 
-lädt die Klassifikation "modsgenre" und stellt sie in einer Variablen $genres bereit. 
+<p>lädt die Klassifikation "modsgenre" und stellt sie in einer Variablen $genres bereit. </p>
 
-<xed:bind xpath="mods:genre" name="genre" />
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="mods:genre" name="genre" />]]></pre>
 
-wählt das Element mods:genre und stellt es in der  Variablen $genre bereit.
+<p>wählt das Element mods:genre und stellt es in der  Variablen $genre bereit.</p>
 
-<xed:output value="$genres//category[@ID=$genre]/label[lang($CurrentLang)]/@text" />
+<pre class="brush: xml"><![CDATA[<xed:output value="$genres//category[@ID=$genre]/label[lang($CurrentLang)]/@text" />]]></pre>
 
-gibt dann die Bezeichnung der Kategorie aus der Klassifikation aus, deren ID der Wert von <mods:genre /> ist, in der aktuellen Sprache.
+<p>gibt dann die Bezeichnung der Kategorie aus der Klassifikation aus, deren ID der Wert von <code>&lt;mods:genre /&gt;</code> ist, in der aktuellen Sprache.</p>
  
- 
-Eingabevalidierung
-==================
+</section> 
+</section>
 
-Die Eingabevalidierung erfolgt im XEditor Framework serverseitig nach Absenden des Formulars. Davon unberührt bleibt die Möglichkeit, mit
-eigenen Mitteln (HTML5, JavaScript) zusätzlich eine clientseitige Validierung im Browser zu implementieren.
-
-Die Validierungsregeln beziehen sich auf die Knoten des bearbeiteten XML-Dokumentes, d.h. auf die Werte von XML Elementen und Attributen im
+<section>
+    <title>Eingabevalidierung</title>
+<p>Die Eingabevalidierung erfolgt im XEditor Framework serverseitig nach Absenden des Formulars. Davon unberührt bleibt die Möglichkeit, mit
+eigenen Mitteln (HTML5, JavaScript) zusätzlich eine clientseitige Validierung im Browser zu implementieren.</p>
+<p>Die Validierungsregeln beziehen sich auf die Knoten des bearbeiteten XML-Dokumentes, d.h. auf die Werte von XML Elementen und Attributen im
 resultierenden XML, nicht auf einzelne Eingabefelder. Dies erleichtert es besonders, Validierungsregeln an unterschiedlichen Stellen oder in
-verschiedenen Formularen wiederzuverwenden.
+verschiedenen Formularen wiederzuverwenden.</p>
+<p>Wenn das Formular abgeschickt wird, werden alle gesetzten Validierungsregeln serverseitig geprüft. Schlägt die Validierung fehl, wird das Formular
+erneut angezeigt. Es besteht die Möglichkeit, an beliebiger Stelle Meldungen auszugeben, um anzuzeigen, welche Regeln nicht erfüllt sind.</p>
  
-Wenn das Formular abgeschickt wird, werden alle gesetzten Validierungsregeln serverseitig geprüft. Schlägt die Validierung fehl, wird das Formular
-erneut angezeigt. Es besteht die Möglichkeit, an beliebiger Stelle Meldungen auszugeben, um anzuzeigen, welche Regeln nicht erfüllt sind.
- 
- 
-<xed:validate />
-================
+<section>
+    <title><code>&lt;xed:validate&gt;</code></title>
+<p>Setzt eine Validierungsregel. Die Validierungsmethode wird durch ein oder mehrere kombinierbare Attribute spezifiziert. </p>
+<p>Auf welchen XML Knoten sich die Validierungsregel bezieht, kann auf zwei Weisen festgelegt werden:</p>
+<p>Lokale Validierungsregeln stehen innerhalb eines <code>&lt;xed:bind /&gt;</code> Elementes und beziehen sich auf das dadurch gebundene XML. Beispiel:</p>
 
-Setzt eine Validierungsregel. Die Validierungsmethode wird durch ein oder mehrere kombinierbare Attribute spezifiziert. 
-
-Auf welchen XML Knoten sich die Validierungsregel bezieht, kann auf zwei Weisen festgelegt werden:
-
-Lokale Validierungsregeln stehen innerhalb eines <xed:bind /> Elementes und beziehen sich auf das dadurch gebundene XML. Beispiel:
-
-<xed:bind xpath="mods:dateIssued">
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="mods:dateIssued">
   <input type="text" ... />
   <xed:validate required="true" />
-</xed:bind> 
+</xed:bind> ]]></pre>
  
-oder auch unabhängig von der Position des konkreten Eingabefeldes
+<p>oder auch unabhängig von der Position des konkreten Eingabefeldes</p>
 
-<xed:bind xpath="mods:dateIssued">
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="mods:dateIssued">
   <xed:validate required="true" />
-</xed:bind>
+</xed:bind>]]></pre>
 ... 
-<xed:bind xpath="mods:dateIssued">
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="mods:dateIssued">
   <input type="text" ... />
-</xed:bind> 
+</xed:bind> ]]></pre>
  
-Globale Validierungsregeln stehen an beliebiger Stelle im Formular und beziehen sich auf die durch das Attribut @xpath ausgewählten XML-Knoten. Beispiel:
+<p>Globale Validierungsregeln stehen an beliebiger Stelle im Formular und beziehen sich auf die durch das Attribut @xpath ausgewählten XML-Knoten. Beispiel:</p>
 
-<xed:validate xpath="//mods:identifier[@type='issn']" matches="[\dX]{4}\-[\dX]{4}" />
+<pre class="brush: xml"><![CDATA[<xed:validate xpath="//mods:identifier[@type='issn']" matches="[\dX]{4}\-[\dX]{4}" />]]></pre>
 
-validiert die Syntax aller auftretenden mods:identifier[@type='issn'] Elemente. Globale Validierungsregeln erleichtern die Wiederverwendung und können bevorzugt für
-Syntaxprüfungen verwendet werden. 
+<p>validiert die Syntax aller auftretenden mods:identifier[@type='issn'] Elemente. Globale Validierungsregeln erleichtern die Wiederverwendung und können bevorzugt für
+Syntaxprüfungen verwendet werden. </p>
  
-Ist das Attribut @required="true" gesetzt, ist das gewählte Element ein Pflichfeld, d.h. es muss mindestens ein nicht leerer Wert (bei wiederholten Elementen) auftreten.
+<p>Ist das Attribut @required="true" gesetzt, ist das gewählte Element ein Pflichfeld, d.h. es muss mindestens ein nicht leerer Wert (bei wiederholten Elementen) auftreten.</p>
 
-Das Attribut @matches gibt einen regulären Ausdruck in der Syntax von java.util.regex.Pattern an, gegen den der Text des XML Elementes oder Attributes validiert wird.
+<p>Das Attribut @matches gibt einen regulären Ausdruck in der Syntax von java.util.regex.Pattern an, gegen den der Text des XML Elementes oder Attributes validiert wird.</p>
 
-Beispiel: <xed:validate xpath="//mods:identifier[@type='issn']" matches="[\dX]{4}\-[\dX]{4}" />
+<p>Beispiel: </p>
 
-Das Attribut @test gibt einen XPath Test an, gegen den ein XML Knoten validiert wird. Beispiel:
+<pre class="brush: xml"><![CDATA[<xed:validate xpath="//mods:identifier[@type='issn']" matches="[\dX]{4}\-[\dX]{4}" />]]></pre>
 
-<xed:validate xpath="/document/validTo" test="(string-length(.) = 0) or (number(.) >= number(../validFrom))" />
+<p>Das Attribut @test gibt einen XPath Test an, gegen den ein XML Knoten validiert wird. Beispiel:</p>
 
-prüft, ob /document/validTo >= /document/validFrom ist.
+<pre class="brush: xml"><![CDATA[<xed:validate xpath="/document/validTo" test="(string-length(.) = 0) or (number(.) >= number(../validFrom))" />]]></pre>
 
-<xed:validate xpath="/user" test="password = passwordRepeated" />
+<p>prüft, ob /document/validTo >= /document/validFrom ist.</p>
 
-prüft, ob das eingegebene Passwort mit dessen Wiederholung identisch ist.
+<pre class="brush: xml"><![CDATA[<xed:validate xpath="/user" test="password = passwordRepeated" />]]></pre>
 
-Die Attribute @maxLength, @minLenght, @min, @max @type, @class, @method und @format validieren auf die gleiche Weise wie im alten Editor Framework (siehe dort).
+<p>prüft, ob das eingegebene Passwort mit dessen Wiederholung identisch ist.</p>
+
+<p>Die Attribute @maxLength, @minLenght, @min, @max @type, @class, @method und @format validieren auf die gleiche Weise wie im alten Editor Framework (siehe dort).</p>
 Beispiele:
  
-<xed:validate xpath="document/yearIssued" min="2000" type="integer" />
+<pre class="brush: xml"><![CDATA[<xed:validate xpath="document/yearIssued" min="2000" type="integer" />]]></pre>
 
-stellt sicher, dass es sich beim Erscheinungsjahr um eine ganze Zahl >= 2000 handelt.
+<p>stellt sicher, dass es sich beim Erscheinungsjahr um eine ganze Zahl >= 2000 handelt.</p>
 
-<xed:validate xpath="//mods:*[@encoding='w3cdtf']" matches="\d{4}(\-d{2}(\-d{2})?)?" type="datetime" format="yyyy;yyyy-MM;yyyy-MM-dd" />
+<pre class="brush: xml"><![CDATA[<xed:validate xpath="//mods:*[@encoding='w3cdtf']" matches="\d{4}(\-d{2}(\-d{2})?)?" type="datetime" format="yyyy;yyyy-MM;yyyy-MM-dd" />]]></pre>
 
-validiert alle Datumsangaben, so dass sie entweder nur das Jahr, Jahr plus Monat oder Jahr, Monat und Tag in MODS W3CDTF Syntax enthalten.
- 
+<p>validiert alle Datumsangaben, so dass sie entweder nur das Jahr, Jahr plus Monat oder Jahr, Monat und Tag in MODS W3CDTF Syntax enthalten.</p>
+</section>
 
-Validierungsmeldungen ausgeben
-==============================
+<section>
+    <title>Validierungsmeldungen ausgeben</title>
+<p>Wenn die Eingabevalidierung fehlschlägt, wird die Variable $xed-validation-failed='true' gesetzt. Beispiel:</p>
 
-Wenn die Eingabevalidierung fehlschlägt, wird die Variable $xed-validation-failed='true' gesetzt. Beispiel:
-
-<xed:if test="$xed-validation-failed">
+<pre class="brush: xml"><![CDATA[<xed:if test="$xed-validation-failed">
  Bitte korrigieren Sie die fehlerhaften Eingaben!
-</xed:if>
+</xed:if>]]></pre>
 
-Das Attribut xed:validate/@display definiert, an welcher Stelle die Validierungsnachricht ausgegeben werden soll, falls die Validierungsregel nicht erfüllt ist. 
+<p>Das Attribut xed:validate/@display definiert, an welcher Stelle die Validierungsnachricht ausgegeben werden soll, falls die Validierungsregel nicht erfüllt ist. </p>
 
-@display="here" 
-Ausgabe der Meldung an genau dieser Stelle, d.h. dort, wo die Validierungsregel im Formular definiert ist.
+<p><code>@display="here"</code>
+Ausgabe der Meldung an genau dieser Stelle, d.h. dort, wo die Validierungsregel im Formular definiert ist.</p>
 
-@display="local"
-Ausgabe der Meldung an einer lokalen Stelle in der Nähe der Eingabekomponente. Die Meldung wird dort ausgegeben, wo das umgebende <xed:bind /> den nicht validen
-XML Knoten selektiert, und wo darin enthalten das Element <xed:display-validation-message /> angegeben ist. Beispiel:
+<p><code>@display="local"</code>
+Ausgabe der Meldung an einer lokalen Stelle in der Nähe der Eingabekomponente. Die Meldung wird dort ausgegeben, wo das umgebende <code>&lt;xed:bind /&gt;</code> den nicht validen
+XML Knoten selektiert, und wo darin enthalten das Element <code>&lt;xed:display-validation-message /&gt;</code> angegeben ist. Beispiel:</p>
 
-<xed:bind xpath="title">
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="title">
   <xed:display-validation-message />
   <input type="text" />
   <xed:validate display="local" required="true">Bitte geben Sie einen Titel ein!</xed:validate>
-</xed:bind>
+</xed:bind>]]></pre>
 
-@display="global"
-Ausgabe der Meldung an globaler Stelle, gesammelt mit anderen Meldungen. Die Meldung wird dort ausgegeben, wo das Element <xed:display-validation-messages />
-auftritt. Beispiel:
+<p><code>@display="global"</code>
+Ausgabe der Meldung an globaler Stelle, gesammelt mit anderen Meldungen. Die Meldung wird dort ausgegeben, wo das Element <code>&lt;xed:display-validation-message /&gt;</code>
+auftritt. Beispiel:</p>
 
-<xed:if test="$xed-validation-failed">
+<pre class="brush: xml"><![CDATA[<xed:if test="$xed-validation-failed">
   Bitte korrigieren Sie die folgenden fehlerhaften Eingaben:
   <xed:display-validation-messages />
  </xed:if>
@@ -947,68 +938,70 @@ auftritt. Beispiel:
 <xed:bind xpath="title">
   <input type="text" />
   <xed:validate display="global" required="true">Bitte geben Sie einen Titel ein!</xed:validate>
-</xed:bind>
+</xed:bind>]]></pre>
 
-Es ist auch möglich, die Fehlermeldung an mehreren Stellen auszugeben, indem man mehrere Werte im Attribut @display durch Leerzeichen getrennt angibt.
+<p>Es ist auch möglich, die Fehlermeldung an mehreren Stellen auszugeben, indem man mehrere Werte im Attribut @display durch Leerzeichen getrennt angibt.</p>
 
-Die Fehlermeldung wird entweder durch das von <xed:validate /> umschlossene HTML gebildet, oder über einen i18n-Schlüssel mehrsprachig aus den 
-messages-*.properties Dateien gelesen. Beispiel:
+<p>Die Fehlermeldung wird entweder durch das von <code>&lt;xed:validate /&gt;</code> umschlossene HTML gebildet, oder über einen i18n-Schlüssel mehrsprachig aus den 
+messages-*.properties Dateien gelesen. Beispiel:</p>
 
-<xed:validate ... required="true" i18n="editor.title.required" />
+<pre class="brush: xml"><![CDATA[<xed:validate ... required="true" i18n="editor.title.required" />]]></pre>
 
-<xed:validate ... required="true">
+<pre class="brush: xml"><![CDATA[<xed:validate ... required="true">
   Dieses Feld ist ein <strong>Pflichtfeld</strong>!
-</xed:validate>
+</xed:validate>]]></pre>
 
-HTML Formatierung und Layout der Fehlermeldung werden durch XSL Templates in xeditor-custom.xsl definiert und können durch lokales Überschreiben in der eigenen
-Webanwendung beliebig angepasst werden. Beispiel:
+<p>HTML Formatierung und Layout der Fehlermeldung werden durch XSL Templates in xeditor-custom.xsl definiert und können durch lokales Überschreiben in der eigenen
+Webanwendung beliebig angepasst werden. Beispiel:</p>
 
-<xsl:template match="xed:validate" mode="message">
+<pre class="brush: xml"><![CDATA[<xsl:template match="xed:validate" mode="message">
   <span class="help-inline">
     <xsl:apply-templates select="node()" mode="xeditor" />
   </span>
-</xsl:template>
+</xsl:template>]]></pre>
 
-umgibt alle ausgegebenen Fehlermeldungen mit einem <span class="help-inline" />.
+<p>umgibt alle ausgegebenen Fehlermeldungen mit einem <code>&lt;span class="help-inline" /&gt;</code>.</p>
 
-Eingabekomponenten mit fehlerhaften Eingaben können ausserdem markiert werden, z. B. mit eigenen CSS-Klassen oder Stilen. Dazu wird für jeden validierten XML Knoten
+<p>Eingabekomponenten mit fehlerhaften Eingaben können ausserdem markiert werden, z. B. mit eigenen CSS-Klassen oder Stilen. Dazu wird für jeden validierten XML Knoten
 die Variable $xed-validation-marker gesetzt. Der Wert, der in dieser Variable enthalten ist, ist über die mycore.properties konfigurierbar und wird typischerweise ein oder
-mehrere CSS Klassen enthalten:
+mehrere CSS Klassen enthalten:</p>
 
-MCR.XEditor.Validation.Marker.error=has-error
+<pre class="brush: xml"><![CDATA[MCR.XEditor.Validation.Marker.error=has-error
 MCR.XEditor.Validation.Marker.success=has-success
-MCR.XEditor.Validation.Marker.default=
+MCR.XEditor.Validation.Marker.default=]]></pre>
 
-Wenn die Validierungsregel verletzt ist, wird die Variable $xed-validation-marker auf den Wert von MCR.XEditor.Validation.Marker.error gesetzt.
+<p>Wenn die Validierungsregel verletzt ist, wird die Variable $xed-validation-marker auf den Wert von MCR.XEditor.Validation.Marker.error gesetzt.
 Der Wert von MCR.XEditor.Validation.Marker.success wird gesetzt, wenn die Validierungsregel erfüllt ist, d.h. es wurde validiert und der XML Knoten ist valide. 
-Der Wert von MCR.XEditor.Validation.Marker.default wird gesetzt, wenn die Eingabekomponente nicht validiert wurde (z. B. weil keine Regel angegeben ist).
+Der Wert von MCR.XEditor.Validation.Marker.default wird gesetzt, wenn die Eingabekomponente nicht validiert wurde (z. B. weil keine Regel angegeben ist).</p>
 
-Die Werte können auch leer sein, um z. B. nur fehlerhafte Komponenten zu markieren.
+<p>Die Werte können auch leer sein, um z. B. nur fehlerhafte Komponenten zu markieren.</p>
 
-Beispiel:
+<p>Beispiel:</p>
 
-<xed:bind xpath="year">
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="year">
   <div class="form-group {$xed-validation-marker}">
     <input type="text" />
     <xed:validate display="here" required="true">Bitte Jahr eingeben!</xed:validate>
   </div>
-</xed:bind>
+</xed:bind>]]></pre>
 
-Wenn das Element <year /> nicht eingegeben wird, bekommt das umgebende <div /> Element die CSS Klassen @class="form-group has-error".
-Wenn das Jahr eingegeben und validiert wurde, aber das Formular noch einmal angezeigt wird, z. B. weil andere Komponenten nicht valide sind,
-bekommt das umgebende <div /> Element im Beispiel die CSS Klassen @class="form-group has-success".
+<p>Wenn das Element <code>&lt;year /&gt;</code> nicht eingegeben wird, bekommt das umgebende <code>&lt;div /&gt;</code> Element die CSS Klassen @class="form-group has-error".</p>
+<p>Wenn das Jahr eingegeben und validiert wurde, aber das Formular noch einmal angezeigt wird, z. B. weil andere Komponenten nicht valide sind,
+bekommt das umgebende <code>&lt;div /&gt;</code> Element im Beispiel die CSS Klassen @class="form-group has-success".</p>
 
-Die Anwendung beschränkt sich nicht auf CSS Klassen oder Stile. Je nach Definition in mycore.properties 
-könnte z. B. auch ein placeholder gesetzt oder anderes HTML generiert werden. Beispiel:
+<p>Die Anwendung beschränkt sich nicht auf CSS Klassen oder Stile. Je nach Definition in mycore.properties 
+könnte z. B. auch ein placeholder gesetzt oder anderes HTML generiert werden. Beispiel:</p>
 
-<xed:bind xpath="year">
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="year">
   <xed:if test="$xed-validation-marker = 'has-error'">
     Vielleicht sollten Sie mal die <a href="anleitung.html">Anleitung</a> lesen.
   </xed:if>
   ...
-</xed:bind>
-   -->
-   
+</xed:bind>]]></pre>
+
+</section>
+</section>
+
 <section>
     <title>Subselects</title>
 <p>Subselects dienen der externen Auswahl ein oder mehrerer Werte, z. B. Suche einer Person im Personalverzeichnis der Einrichtung, und Übername von Name und Personalnummer in das Autorenfeld einer Publikation.</p>
@@ -1065,7 +1058,6 @@ XPath-Ausdrücke in einem <code>&lt;xed:bind /&gt;</code> Element unterhalb von 
 <p>und stellt das Formular per Redirect im Anschluss erneut dar. Das <code>&lt;xed:output /&gt;</code> Element würde im Beispiel dann an dieser Stelle neben dem Subselect-Button den
 Wert "Doe, John" ausgeben.</p>
 
-</section>
 </section>
 
    <section>
