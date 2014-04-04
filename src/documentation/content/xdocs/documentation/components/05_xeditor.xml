@@ -58,7 +58,7 @@ Konfigurationsparametern Teilbereiche unterschiedlich darstellen oder aus Teilen
 <p>Das Layout von Validierungsmeldungen und Buttons zur Steuerung wiederholter Bereiche ist frei anpassbar. Hierzu kann die vorhandene Datei xeditor-custom.xsl
 aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt werden, das eigene Templates für diese Elemente enthält.</p>
 <pre class="brush: xml">MCR.URIResolver.xslIncludes.xeditor=xeditor-custom.xsl</pre>
-<p>Webseiten, die XEditor-Formulare enthalten, müssen bei Aufruf durch das MCRStaticXEditorFileServlet verarbeitet werden. Das Standard-Mapping hierfür ist</p>
+<p>Webseiten, die XEditor-Formulare enthalten, müssen bei Aufruf durch das MCRStaticXEditorFileServlet verarbeitet werden. Das Standard-Mapping, welches bereits beim aktivieren des Moduls mit bereitgestellt wird, ist hierfür</p>
      <pre class="brush: xml"><![CDATA[<servlet-mapping>
   <servlet-name>MCRStaticXEditorFileServlet</servlet-name>
   <url-pattern>*.xed</url-pattern>
