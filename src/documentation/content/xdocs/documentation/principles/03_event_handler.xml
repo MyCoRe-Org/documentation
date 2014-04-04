@@ -125,9 +125,9 @@
         <th colspan="3">Beschreibung</th>
        </tr>
        <tr>
-        <td>MCRObject</td>
-        <td>010</td>
-        <td>org.mycore.access.MCRAccessEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td>optional<br/>010</td>
+        <td>Erforderlich bei Nutzung von mycore-swf<br/>org.mycore.access.MCRAccessEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -137,9 +137,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRObject</td>
-        <td>015</td>
-        <td>org.mycore.oai.classmapping.MCRClassificationMappingEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td>optional<br/>015</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.oai.classmapping.MCRClassificationMappingEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -148,9 +148,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRObject</td>
-        <td>017</td>
-        <td>org.mycore.datamodel.common.MCRServiceFlagEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td>optional<br/>017</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRServiceFlagEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -160,9 +160,9 @@
         </td>
        </tr>
         <tr>
-        <td>MCRObject</td>
-        <td>020</td>
-        <td>org.mycore.datamodel.common.MCRLinkTableEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td valign="top">020</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRLinkTableEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -173,9 +173,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRObject</td>
-        <td>030</td>
-        <td>org.mycore.datamodel.common.MCRXMLMetadataEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td valign="top">030</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRXMLMetadataEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -183,9 +183,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRObject</td>
-        <td>040</td>
-        <td>org.mycore.solr.index.MCRSolrIndexEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td>optional<br/>040</td>
+        <td>Enthalten in mycore-solr; erforderlich bei Nutzung von SOLR<br/>org.mycore.solr.index.MCRSolrIndexEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -194,9 +194,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRObject</td>
-        <td>050</td>
-        <td>org.mycore.frontend.indexbrowser.lucene.MCRIndexBrowserEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td>optional<br/>050</td>
+        <td>Enthalten in mycore-base; erforderlich bei Nutzung von Lucene<br/>org.mycore.frontend.indexbrowser.lucene.MCRIndexBrowserEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -204,9 +204,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRObject</td>
-        <td>060</td>
-        <td>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td valign="top">060</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -215,9 +215,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRObject</td>
-        <td>070</td>
-        <td>org.mycore.datamodel.common.MCRURNEventHandler</td>
+        <td valign="top">MCRObject</td>
+        <td>optional<br/>070</td>
+        <td>Enthalten in mycore-urn<br/>org.mycore.datamodel.common.MCRURNEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -225,7 +225,7 @@
         </td>
        </tr>
        <tr>
-        <td>MCRObject</td>
+        <td valign="top">MCRObject</td>
         <td>Alternative zu 010</td>
         <td>org.mycore.access.MCRRemoveAclEventHandler</td>
        </tr>
@@ -237,9 +237,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
+        <td valign="top">MCRObject</td>
         <td>Alternative<br/>zu 040</td>
-        <td>lucene-metadata</td>
+        <td>Enthalten in mycore-base; erforderlich bei Nutzung von Lucene<br/>lucene-metadata</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -261,9 +261,9 @@
         <th colspan="3">Beschreibung</th>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
-        <td>010</td>
-        <td>org.mycore.access.MCRAccessEventHandler</td>
+        <td valign="top">MCRDerivate</td>
+        <td>optional<br/>010</td>
+        <td>Erforderlich bei Nutzung von mycore-swf<br/>org.mycore.access.MCRAccessEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -273,9 +273,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
-        <td>020</td>
-        <td>org.mycore.datamodel.common.MCRXMLMetadataEventHandler</td>
+        <td valign="top">MCRDerivate</td>
+        <td valign="top">020</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRXMLMetadataEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -283,9 +283,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
-        <td>030</td>
-        <td>org.mycore.datamodel.common.MCRURNEventHandler</td>
+        <td valign="top">MCRDerivate</td>
+        <td valign="top">030</td>
+        <td>Enthalten in mycore-urn<br/>org.mycore.datamodel.common.MCRURNEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -293,9 +293,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
-        <td>040</td>
-        <td>org.mycore.datamodel.metadata.MCRFileMetaEventHandler</td>
+        <td valign="top">MCRDerivate</td>
+        <td>optional<br/>040</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.datamodel.metadata.MCRFileMetaEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -306,9 +306,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
+        <td valign="top">MCRDerivate</td>
         <td>050</td>
-        <td>org.mycore.mets.events.MCRUpdateMetsOnDerivateChangeEventHandler</td>
+        <td>Enthalten in mycore-mets<br/>org.mycore.mets.events.MCRUpdateMetsOnDerivateChangeEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -317,9 +317,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRFile</td>
-        <td>060</td>
-        <td>org.mycore.solr.index.MCRSolrIndexEventHandler</td>
+        <td valign="top">MCRFile</td>
+        <td>optional<br/>060</td>
+        <td>Enthalten in mycore-solr; erforderlich bei Nutzung von SOLR<br/>org.mycore.solr.index.MCRSolrIndexEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -328,9 +328,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
-        <td>070</td>
-        <td>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
+        <td valign="top">MCRDerivate</td>
+        <td valign="top">070</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -339,9 +339,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
+        <td valign="top">MCRDerivate</td>
         <td>Alternative<br/>zu 010</td>
-        <td>org.mycore.access.MCRRemoveAclEventHandler</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.access.MCRRemoveAclEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -351,7 +351,7 @@
         </td>
        </tr>
        <tr>
-        <td>MCRDerivate</td>
+        <td valign="top">MCRDerivate</td>
         <td>Alternative<br/>zu 060</td>
         <td>lucene-metadata</td>
        </tr>
@@ -375,9 +375,9 @@
         <th colspan="3">Beschreibung</th>
        </tr>
        <tr>
-        <td>MCRFile</td>
-        <td>010</td>
-        <td>org.mycore.solr.index.MCRSolrIndexEventHandler</td>
+        <td valign="top">MCRFile</td>
+        <td>optional<br/>010</td>
+        <td>Enthalten in mycore-solr; erforderlich bei Nutzung von SOLR<br/>org.mycore.solr.index.MCRSolrIndexEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -386,9 +386,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRFile</td>
-        <td>020</td>
-        <td>org.mycore.iview2.events.MCRImageTilerEventHandler</td>
+        <td valign="top">MCRFile</td>
+        <td>optional<br/>020</td>
+        <td>Enthalten in mycore-iview2; erforderlich bei Nutzung von IView2<br/>org.mycore.iview2.events.MCRImageTilerEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -397,9 +397,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRFile</td>
-        <td>030</td>
-        <td>org.mycore.datamodel.metadata.MCRFileMetaEventHandler</td>
+        <td valign="top">MCRFile</td>
+        <td>optional<br/>030</td>
+        <td>Enthalten in mycore-base<br/>org.mycore.datamodel.metadata.MCRFileMetaEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -410,9 +410,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRFile</td>
-        <td>035</td>
-        <td>org.mycore.datamodel.common.MCRURNEventHandler</td>
+        <td valign="top">MCRFile</td>
+        <td>optional<br/>035</td>
+        <td>Enthalten in mycore-urn<br/>org.mycore.datamodel.common.MCRURNEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -420,9 +420,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRFile</td>
-        <td>060</td>
-        <td>org.mycore.mets.events.MCRUpdateMetsOnDerivateChangeEventHandler</td>
+        <td valign="top">MCRFile</td>
+        <td>optional<br/>060</td>
+        <td>Enthalten in mycore-mets; erforderlich bei Nutzung von mets<br/>org.mycore.mets.events.MCRUpdateMetsOnDerivateChangeEventHandler</td>
        </tr>
        <tr>
         <td colspan="3">
@@ -431,9 +431,9 @@
         </td>
        </tr>
        <tr>
-        <td>MCRFile</td>
+        <td valign="top">MCRFile</td>
         <td>Alternative<br/>zu 010</td>
-        <td>lucene-content</td>
+        <td>Enthalten in mycore-base<br/>lucene-content</td>
        </tr>
        <tr>
         <td colspan="3">
