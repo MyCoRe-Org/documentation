@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+  <header>
+    <title>Gemeinsame Entwicklungsplattformen</title>
+  </header>
+  <body>
+
+      <section>
+        <title>SourceForge</title>
+        <p>
+          Für die Präsentation und den Download von Releases und Distributionen wurde ein Projekt auf den Server von
+          SourceForge eingerichtet. Hier können auch auftretende Bugs und Feature Request dokumentiert werden.
+          <br />
+          <a href="http://sourceforge.net/projects/mycore">http://sourceforge.net/projects/mycore</a>
+        </p>
+      </section>
+      <section>
+        <title>Subversion-Zugang</title>
+        <p> Der Quellcode der MyCoRe-Kerns und einiger Anwendungen, z. B. der Beispielanwendung DocPortal, wird auf
+          einem Subversion-Server an der Universität Duisburg-Essen verwaltet.
+        </p>
+        <p> Aktuell gib es zwei Zugangsmöglichkeiten: über HTTP im lesenden Zugriff und über SSH mit Schreibrechten
+          (sofern der Entwickler Zugang zum System hat [der Server wird von Frank Lützenkirchen verwaltet]).
+        </p>
+        <p class="kasten">
+          <a href="http://www.mycore.de/svn/">http://www.mycore.de/svn/</a>
+        </p>
+        <p class="kasten">svn+ssh://server.mycore.de/svn/ </p>
+        <p>
+          Der Code ist innerhalb eines Projektes in die Zweige branches – für Releases, tags – für Snapshots
+          und trunk - für den altuellen HEAD-Zweig unterteilt.
+        </p>
+        <note label="Hinweis für Kommandozeilen-Nutzer">
+          Dateien in der SVN-Arbeitskopie nie direkt mit Betreibssystemmitteln kopieren, löschen und verschieben.
+          Stattdessen auf jeden Fall auf die <code>svn</code>-Kommandos <code>cp</code>, <code>rm</code> und
+          <code>mv</code> zurück.
+        </note>
+        <note label="Hinweis für Eclipse-Nutzer"> Ab sofort sollten Dateien nicht mehr mit Cut &amp; Paste sondern vielmehr über die
+          Team-Funktionen kopiert werden, damit die Histories nicht verloren gehen!</note>
+        <note label="MIME-Typ für alle neuen Dateien">
+          Alle neuen Dateien, die bei MyCoRe mit Subversion verwaltet werden müssen das SVN Property
+          <code>svn:mime-type</code> ausgefüllt haben. Bei Mime-Typ <code>text/*</code>
+          muss zusätzlich noch da Property <code>svn:eol-style</code>
+          beschrieben sein. Für die häufigsten Dateiarten gibt es eine Konfiguration zum
+          <a href="../../filecollection/svn-config.txt">herunterladen</a>,
+          die ans Ende der Datei <code>config</code> im Verzeichnis <code>.subversion</code>
+          des Nutzerverzeichnisses angefügt wird. Der entsprechende Bereich trägt den Namen
+          <code>[auto-props]</code>.
+        </note>
+      </section>
+      <section>
+        <title>Maven Grundsystem</title>
+        <p>
+          Neben der Installation von Subversion für die Arbeit mit einem zentralen Code-Repository ist ab Version 2.1
+          auch das Produkt Maven (<a href="http://maven.apache.org/">http://maven.apache.org/</a>)
+          erforderlich, um an den Kernkomponenten zu arbeiten. Installieren Sie Maven gemäß Anleitung der Home Page
+          und setzen Sie die Umgebungsvariablen M2_HOME und MAVEN_OPTS. Binden Sie das mvn-Kommando in den Suchpfad mit
+          ein.
+        </p>
+        <p>
+          Die Funktion von Maven kann mit dem Kommando
+          <code>mvn --version</code> getestet werden. Unter Linux-Systemen wird im Wurzelverzeichnis des Nutzers ein Verzeichnis
+          <code>.m2</code> angelegt, worin sich alle relevanten Maven-Daten befinden.
+        </p>
+      </section>
+      <section>
+        <title>Nutzung von Eclipse</title>
+        <p>
+          Die Entwicklungsumgebung Eclipse leistet nicht nur hilfreiche Dienste bei der Formatierung des Java-Codes.
+          Mit ihr kann auch die Syntaxprüfung der Java-Klasse wie auch ihre Einbettung in das Gesamtprojekt leicht
+          überwacht werden. Dazu sind einige Installationen und Einstellungen erforderlich. Diese werden dann sowohl für
+          die Kernanwendung wie auch für die Applikationen genutzt.
+        </p>
+        <p>
+          Zuerst ist die <a href="http://www.eclipse.org/downloads/">Eclipse-Entwicklungsumgebung</a>
+          zu installieren. Von den Entwicklern wird als Basis die <strong>Eclipse IDE for Java EE Developers</strong>
+          (<a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2">Indigo</a>;
+          Stand Oktober 2012) genutzt und auch empfohlen.
+        </p>
+        <p>
+          Als nächstes ist das Plugin für die Integration von Subversion zu installieren. Da inzwischen
+          <strong>Subversive</strong> für die Integration in Eclipse vorgesehen ist, sollte dies dem Projekt Subclipse vorgezogen werden. Die
+          Installation ist auf der <a href="http://www.eclipse.org/subversive/">Homepage von Subversive</a>
+          beschrieben. Alternativ kann <strong>Subclipse</strong> verwendet werden, jedoch gibt es kleine Probleme bei der Nutzung von Subversion via Kommandozeile. Auch dafür
+          gibt es eine Installationsanleitung auf der <a href="http://subclipse.tigris.org/">Homepage von Subclipse</a>.
+        </p>
+        <p>
+          Im dritten Schritt ist die Maven-Integration zu installieren. Dafür empfehlen wir
+          <strong>m2e</strong>, siehe <a href="http://eclipse.org/m2e/">http://eclipse.org/m2e/</a>.
+          Weiteres dazu und wie nun MyCoRe in die Entwicklungsumgebung geholt wird, steht im
+          <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Ideen/Maven#Eclipse">Wiki</a>.
+          <!-- TODO: Bilder dazu mycore_checkout.png und mycore_toMaven.png -->
+        </p>
+        <p>
+          Zur Bearbeitung von I18N-Sprachdateien hat sich der
+          <a href="http://eclipse-rbe.sourceforge.net/index.htm">ResourceBundle-Editor</a>
+          (besonders für Sprachen außerhalb des Lateinischen Alphabetes) bewährt. Weiterhin
+          sollte nach der Installation die Code-Style-Definition von MyCoRe importiert werden,
+          mehr dazu im Abschnitt <a href="site:codestyle_dev22">Java-Code Formatierung</a>.
+        </p>
+      </section>
+
+  </body>
+</document>

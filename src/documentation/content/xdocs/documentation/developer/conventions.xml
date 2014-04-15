@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+  <header>
+    <title>Namenskonventionen</title>
+  </header>
+  <body>
+
+      <section>
+        <title>Benennung der Properties</title>
+        <p> MyCoRe-Properties beginnen immer mit MCR, darauf folgt ein Punkt und dann der Komponentenname (z.B. ACL, IFS
+          ...). Alle weiteren Bezeichner sind mit Punkt voneinander getrennt und beginnen mit einem Grossbuchstaben.
+        </p>
+        <p class="kasten">
+          Beispiel:<br />
+          MCR.IFS.FileMetadataStore.Class
+        </p>
+        <p>Properties von Drittanbietern (z.B. Log4j, Hibernate) behalten ihre Konventionen bei.</p>
+        <table>
+          <tr>
+            <th>Komponente</th>
+            <th>Property-Kürzel</th>
+            <th>Kommentar</th>
+          </tr>
+          <tr>
+            <td>allgemeine Konfiguration</td>
+            <td>MCR.ConfigurationMCR.XMLParser</td>
+            <td />
+          </tr>
+          <tr>
+            <td>ACL</td>
+            <td>MCR.Access</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Classification Browser</td>
+            <td>MCR.ClassificationBrowser</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Classification Editor</td>
+            <td>MCR.ClassificationEditor</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Commandline Tool</td>
+            <td>MCR.CLI</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Editor</td>
+            <td>MCR.EditorFrameworkMCR.Editor</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Event Handler / Searcher</td>
+            <td>MCR.EventHandlerMCR.Searcher</td>
+            <td />
+          </tr>
+          <tr>
+            <td>File Upload</td>
+            <td>MCR.FileUpload</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Goggle Indexer</td>
+            <td>MCR.GoogleSitemap</td>
+            <td />
+          </tr>
+          <tr>
+            <td>IFS</td>
+            <td>MCR.IFS</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Index Browser</td>
+            <td>MCR.IndexBrowser</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Layout Service</td>
+            <td>MCR.Request</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Mail System</td>
+            <td>MCR.Mail</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Metadaten-Modell</td>
+            <td>MCR.Metadata</td>
+            <td />
+          </tr>
+          <tr>
+            <td>OAI</td>
+            <td>MCR.OAI</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Simple Workflow</td>
+            <td>MCR.SWF</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Stores und Manager</td>
+            <td>MCR.Persistence</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Textextrakter</td>
+            <td>MCR.TextFilterPlugin</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Upload Applet</td>
+            <td>MCR.UploadApplet</td>
+            <td />
+          </tr>
+          <tr>
+            <td>URI Resolver</td>
+            <td>MCR.URIResolver</td>
+            <td />
+          </tr>
+          <tr>
+            <td>URN</td>
+            <td>MCR.URN</td>
+            <td />
+          </tr>
+          <tr>
+            <td>User Administration</td>
+            <td>MCR.Useradmin</td>
+            <td />
+          </tr>
+          <tr>
+            <td>User Kernsystem</td>
+            <td>MCR.Users</td>
+            <td />
+          </tr>
+          <tr>
+            <td>WebService</td>
+            <td>MCR.WebService</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Zip Tool</td>
+            <td>MCR.Zip</td>
+            <td />
+          </tr>
+          <tr>
+            <td>Z3950</td>
+            <td>MCR.z3950</td>
+            <td />
+          </tr>
+        </table>
+        <p class="klein">
+          <strong>Tabelle 3.1:</strong>
+          Liste der Property-Präfixe
+        </p>
+      </section>
+      <section>
+        <title>Benennung von I18N Übersetzungen</title>
+        <p>
+          Alle Übersetzungsvariablen erhalten ein einheitliches Namensschema. Alle Übersetzungen von Texten des Kerns
+          und häufig benutzte Texte erhalten den Anfang <span class="T2">common.</span>, Variablen der Module den
+          Modulnamen und Teile der Anwendung den Anwendungsnamen.
+        </p>
+        <p class="kasten">
+          Beispiel:<br /><br />
+          common.cancel = Abbrechen
+          <br />
+          swf.object.edit = Editieren Objekt
+          <br />
+          docportal.title.label = Titel
+        </p>
+      </section>
+      <section>
+        <title>Stylesheets</title>
+        <p> Stylesheets in MyCoRe und DocPortal sind einheitlich zu benennen. Sie sollten (wenn möglich) komplett klein
+          geschrieben werden. Die Verwendung eines Präfix wie mcr, MyCoRe oder mycore entfällt, auch werden keine
+          Unterstriche genutzt.
+        </p>
+        <p class="kasten">
+          Beispiele:<br /><br />
+          results.xsl
+          <br />
+          user.xsl
+          <br />
+          editor.xsl
+        </p>
+        <p>
+          Stylesheets für das Layout der Webseiten ...
+          <br />
+          <code>[ToDo: Thomas] Namenskonvention bzgl. RootTag</code>
+        </p>
+      </section>
+
+  </body>
+</document>

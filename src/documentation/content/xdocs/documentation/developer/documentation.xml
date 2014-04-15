@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+  <header>
+    <title>Dokumentation</title>
+  </header>
+  <body>
+
+      <section>
+        <title>Allgemeines</title>
+        <p> Die Dokumentation von MyCoRe und die Unterstützung der Nutzer erfolgt über mehrere Medien.</p>
+        <ol>
+          <li>
+            <strong>bisher:</strong>
+            Dokumente im OpenOffice- und PDF-Format als Bestandteil der Releases.
+            <br />
+            <strong>neu:</strong>
+            Die MyCoRe-Dokumentation wird zur Zeit für die kommende Version MyCoRe 2.0 überarbeitet und mit Apache
+            Forrest erstellt
+            <a href="site:overview"> http://www.mycore.de/documentation/documentation/index.html</a>
+          </li>
+          <li>
+            Die MyCoRe-Web-Seite <a href="site:news"> http://www.mycore.de/documentation</a>
+            als Web-Auftritt - jetz auch <strong>neu</strong> über Apache Forrest
+          </li>
+          <li>
+            Die Know-How- und Dokumentationsseiten der MyCoRe-Wiki-Installation
+            <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation">http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation</a>
+            als Platform für ein Wissensforum zum Erfahrungsaustausch der Anwender.
+          </li>
+          <li>Die Mailing-Listen für Benutzer und Entwickler zur direkten Kommunikation.</li>
+        </ol>
+      </section>
+      <section>
+        <title>Dokumente</title>
+        <p>
+          Dokumentationen zum MyCoRe-Projekt sind zukünftig als XML-Dateien mit Apache Forrest zu erstellen. Die
+          Sprache der Dokumente ist wahlweise Deutsch oder Englisch.
+        </p>
+      </section>
+
+  </body>
+</document>
