@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Schnittstellen</title>
+  </header>
+  <body>
+
+    <section>
+      <title>Schnittstellen</title>
+      <p>
+        Welche Schnittstellen bietet MyCoRe um auf die Inhalte zuzugreifen?
+      </p>
+      <ul>
+        <li>WebServices</li>
+        <li>REST</li>
+        <li>OAI</li>
+        <li>URN-Vergabe</li>
+        <li>Google-Sitemap</li>
+        <li>SWORD</li>
+      </ul>
+    </section>
+
+  </body>
+</document>

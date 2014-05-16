@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>URN-Vergabe</title>
+  </header>
+  <body>
+
+  <section>
+   <title>Nutzung der URN-Vergabe</title>
+   <p>
+   Die URN-Vergabe für Dokumente und deren Derivate ist in DocPortal standardmässig
+   aktiviert. Möchte man dies deaktivieren, so findet man die folgende, dann zu
+   löschende Zeile unter docportal/modules/common/config/mycore.properties:<br /><br />
+
+   <code>MCR.URN.Enabled.Objects = document</code><br /><br />
+
+   Soll für mehrere Objekttypen die URN-Vergabe ermöglicht werden, so
+   müssen alle Typen durch Komma getrennt an dieser Stelle angegeben werden:<br /><br />
+
+   <code>MCR.URN.Enabled.Objects = document,file,certificate</code><br /><br />
+
+   Es erscheint daraufhin im DocPortal in der Bearbeitungsleiste unterhalb des
+   Derivates und unterhalb des Dokumentes eine Schaltfläche für das automatische
+   Erzeugen einer URN.
+   </p>
+
+   <p>
+   In der Basisimplementierung sorgt der MCRURNProvider für die Erzeugung
+   der URN. Dieser generiert die URN nach dem gleichen Schema, wie auch sonst
+   URNs für die Metadatensätze erzeugt werden.<br /><br />
+
+   <code>MCR.URN.Provider.Class=org.mycore.services.urn.MCRURNProvider</code><br /><br />
+
+   Eine Anpassung kann in den mycore.properties.private im Abschnitt
+   <code># The MyCoRe properties URN file for the DocPortal #</code> vorgenommen werden.
+   </p>
+
+   <p>
+   Reichen die Optionen über die Properties nicht aus und die URNs sollen mit einem
+   anderen Aufbau generiert werden, so muss dafür eine eigene Klasse geschrieben werden,
+   die das <code>org.mycore.services.urn.IURNProvider</code>-Interface implementiert oder
+   einfacher gleich von <code>org.mycore.services.urn.AbstractURNProvider</code>
+   abgeleitet wird. Die neue Klasse muss dann mit dem vollen Klassenpfad als Wert
+   für das Property <code>MCR.URN.Provider.Class</code> gesetzt werden.
+   </p>
+
+   <p>
+   Die erzeugten URNs werden zum einen in der Datenbank in der Tabelle
+   MCRURN als auch im Derivate selber abgelegt.
+   </p>
+  </section>
+
+  </body>
+</document>
