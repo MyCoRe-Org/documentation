@@ -107,6 +107,31 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcruriresolver      label="URI-Resolver"          href="uri_resolver.html" />
       <mcrtextresolver     label="TextResolver"          href="text_resolver.html" />
     </frontend>
+    <permissions           label="Benutzer und Rechte"   href="#" />
+    <workflow              label="Workflow"              href="#" />
+    <image_viewer          label="Bildbetrachter"        href="imageviewer/">
+      <iview2              label="IView2"                href="iview2.html" />
+      <dfgviewer           label="DFG-Viewer"            href="dfgviewer.html" />
+      <metseditor          label="METS-Editor"           href="mets.html" />
+    </image_viewer>
+    <export                label="Datenexport"           href="export/">
+      <bibutils            label="Bibutils"              href="index.html" />
+    </export>
+    <interfaces            label="Schnittstellen"        href="interfaces/">
+      <webservices         label="WebServices"           href="webservices.html" />
+      <rest                label="REST"                  href="rest.html" />
+      <oai                 label="OAI"                   href="oai.html" />
+      <urn                 label="URN-Vergabe"           href="urn.html" />
+      <google              label="Google-Sitemap"        href="google_sitemap.html" />
+      <sword               label="SWORD"                 href="sword.html" />
+    </interfaces>
+    <production            label="laufender Betrieb"     href="production/">
+      <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
+      <consistency         label="Konsistenzprüfung"     href="consistency.html" />
+      <vhost               label="Virtueller Host"       href="vhost.html" />
+      <tips                label="Tipps"                 href="tips.html" />
+    </production>
+
 
     <migrate               label="Migration"         href="migrate/">
       <migrate2013.08_11   label="2013.08 -> 2013.11"  href="migrate201308_201311.html" />
