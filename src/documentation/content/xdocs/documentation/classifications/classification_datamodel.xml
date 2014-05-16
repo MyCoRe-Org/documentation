@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Das Klassifikationen-Datenmodell</title>
+    <abstract>Wie sieht das XML einer Klassifikation aus.</abstract>
+  </header>
+  <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+   <section>  
+   <title>Das Klassifikationen-Datenmodell</title>
+   <p>
+   Wie bereits erwähnt dienen Klassifikationen der einheitlichen Gliederung bestimmter Fakten. Sie sorgen dafür, 
+   dass eine einheitliche Schreibweise für bestimmte Begriffe verwendet wird. Diese Einzelbegriffe werden als 
+   Kategorien bezeichnet. Innerhalb einer Kategorie kann der Begriff in verschiedenen Sprachen aufgezeichnet sein. 
+   Die eindeutige Zuordnung zu einer Kategorie erfolgt über einen Bezeichner. Dieser besteht aus der Klassifikations- 
+   und Kategorie-ID und muss eindeutig sein.
+   </p>
+   <p>
+   Klassifikationen werden im DocPortal als extra XML-Datei erstellt, in die Anwendung importiert und in Form einer 
+   Datenbank gespeichert. Dies ist für den Nutzer transparent und erfolgt mittels Schnittstellen. Der Zugriff auf die 
+   Daten erfolgt dann durch den oben genannten Bezeichner. Die Klassifikations-ID ist eine <code>MCRObjectID</code> mit 
+   dem Typ <code>class</code>. Die Kategorie-ID ist dagegen frei wählbar. Sie darf mehrstufig sein, jede Stufe spiegelt 
+   eine Hierarchieebene wieder. Die Stufen in der ID werden mit einem Punkt voneinander getrennt, ’<code>Uni.URZ</code>’. 
+   Das wiederum gestattet eine Abfrage nach allen untergeordneten Stufen bzw. Sub-Kategorien wie ’<code>Uni.*</code>’.
+   </p>
+   <note label="Hinweis">
+   Sollten Sie Zahlen als Kategorie-IDs mit verwenden, so planen Sie entsprechende führende Nullen ein, andernfalls 
+   wird das Suchergebnis fehlerhaft! Weiterhin ist es sehr zu empfehlen, dieser Zahlenfolge einen Buchstaben voran 
+   zusetzen, damit die ID nicht als Zahl interpretiert wird.
+   </note>
+   <p>
+   Im ID Attribut einer <code>category</code> ist der eindeutige Bezeichner anzugeben. Das darunter befindliche label 
+   Tag bietet die Möglichkeit, eine Kurzbezeichnung anzugeben. Mehrsprachige Ausführungen sind erlaubt. Dasselbe gilt für 
+   das Tag <code>description</code>. Beide Werte werden als Strings aufgefasst. Eine category kann wiederum category 
+   Tags beinhalten.
+   </p>
+   <source class="code">
+<![CDATA[<?xml version="1.0" encoding="UTF-8" ?>
+    <mycoreclass
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      ID="..." >
+     <label xml:lang="..." text="..." description="..."/>
+     ...
+     <categories>
+      <category ID="...">
+         <label xml:lang="..." text="..." description="..."/>
+         ...
+         <category ID="...">
+           <label xml:lang="..." text="..." description="..."/>
+           ...
+         </category>
+         <category ID="...">
+           <label xml:lang="..." text="..." description="..."/>
+           ...
+         </category>
+       </category>
+     </category>
+   </categories>
+</mycoreclass>]]></source>
+  </section>
+   
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+</body>
+</document>

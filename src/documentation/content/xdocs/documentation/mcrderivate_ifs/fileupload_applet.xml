@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>FileUpload in MyCoRe</title>
+    <abstract>Hochladen von Dateien mit Upload Applet und Servlet</abstract>
+  </header>
+
+  <body>
+   <section>
+   <title>FileUpload mit MyCoRe</title>
+   <p>
+   TODO ...
+   </p>
+   </section>
+ 
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+  </body>
+</document>
+  

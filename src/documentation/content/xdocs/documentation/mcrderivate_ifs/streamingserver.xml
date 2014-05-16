@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Das Backend</title>
+    <abstract>
+      Im Backend-Bereich muss zwischen den verschieden Aufgaben unterschieden werden. Für die
+      Speicherung organisatorischer Informationen (Nutzerdaten, Klassifikationen, etc.) wird ein
+      relationales Datenbanksystem über Hibernate verwendet. Für die Suche liefert MyCoRe Apache
+      Lucene mit. Die Ablage der eigentlichen digitalen Objekte und deren Volltexte geschieht im
+      Filesystem. Optional kann für Audio- und Video-Streaming ein Helix-Server angebunden werden.
+    </abstract>
+  </header>
+<body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+   
+   <section>
+    <title>Streaming-Server</title>
+    <p>
+		ToDo
+    </p>
+   </section>
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+     SyntaxHighlighter.all()
+   </script>
+</body>
+</document>
+

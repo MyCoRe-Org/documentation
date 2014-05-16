@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Kommandos zum Verwalten von Klassifikationen</title>
+  </header>
+  <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+   <section>
+    <title>Kommandos zum Verwalten von Klassifikationen</title>
+     
+    <dl class="kasten">
+    <dt><code>load classification from file {0}</code></dt>
+    <dd>Es wird eine Klassifikation in Form einer XML-Definition aus der Datei {0} gelesen und in das System geladen.</dd>
+    <dt><code>load all classifications from directory {0}</code></dt>
+    <dd>Es werden alle XML-Definitionen von Klassifikationen aus einem Verzeichnis {0} gelesen und in das System geladen.</dd>
+    <dt><code>update classification from file {0}</code></dt>
+    <dd>Es wird eine Klassifikation in Form einer XML-Definition aus der Datei {0} gelesen. Diese überschreibt die im System bereits 
+    geladene Klassifikation. Achtung, lassen Sie keine Kategorien einer bestehenden Klassifikation weg, da sonst Ihr 
+    System ggf. in einen inkonsistenten Zustand kommen kann! Referenzierte Kategoien werden nicht beseitigt.</dd>
+    <dt><code>update all classifications from directory {0}</code></dt>
+    <dd>es werden alle XML-Definitionen von Klassifikationen aus einem Verzeichnis {0} gelesen. Diese überschreiben die im 
+    System bereits geladenen Klassifikationen. Achtung, lassen Sie keine Kategorien einer bestehenden Klassifikation 
+    weg, da sonst Ihr System ggf. in einen inkonsistenten Zustand kommen kann! Referenzierte Kategoien werden nicht beseitigt.</dd>
+    <dt><code>delete classification {0}</code></dt>
+    <dd>Es wird eine Klassifikation mit der im Parameter <code>{0}</code> angegebenen <code>MCRObjectID</code> 
+    gelöscht. Sollten noch Referenzen existieren, wird das Löschen abgebrochen.</dd>
+    <dt><code>export classification {0} to {1} with {2}</code></dt>
+    <dd>Es wird eine Klassifikation mit der im Parameter <code>{0}</code> angegebenen <code>MCRObjectID</code> 
+    in eine Datei mit dem im Parameter <code>{1}</code> angegeben Namen gespeichert. Es wird zur Transformation 
+    der zu speichernden Daten das Stylesheet <code>{2}-classification.xsl</code> unter 
+    <code>$DOCPORTAL_HOME/build/xsl</code> verwendet.</dd>
+    <dt><code>export all classifications to directory {0} with {1}</code></dt>
+    <dd>Es werden alle im System befindlichen Klassifikationen in Dateien des Verzeichnisses mit dem im Parameter 
+    <code>{0}</code> angegeben Namen gespeichert. Es wird zur Transformation der zu speichernden Daten das Stylesheet <code>{1}-classification.xsl</code> unter 
+    <code>$DOCPORTAL_HOME/build/xsl</code> verwendet.</dd>
+    <dt><code>count classification children of {0}</code></dt>
+    <dd>Es werden die Referenzen zu den Kategorien der im Parameter <code>{0}</code> angegebenen Klassifikation mit der <code>MCRObjectID</code> gezählt.</dd>
+    <dt><code>list all classifications</code></dt>
+    <dd>Das Kommando listet alle in der Datenbasis gespeicherten Klassifikationen aus.</dd>
+    <dt><code>list classification {0}</code></dt>
+    <dd>Das Kommando listet die unter der <code>MCRObjectID</code> in der Datenbasis gespeicherte Klassifikation mit alle Kategorien aus.</dd>
+    </dl>
+   </section>
+   
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+</body>
+</document>
