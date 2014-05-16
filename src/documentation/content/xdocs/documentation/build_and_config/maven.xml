@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Maven</title>
+  </header>
+  <body>
+
+    <section>
+      <title>Maven</title>
+      <p>
+        MyCoRe verwendet das Build-Management-Tool der Apache Software Foundation "Maven". Das Werkzeug hilft dabei, möglichst viele Schritte der Softwareentwicklung zu automatisieren. Alle Informationen zum Softwareprojekt MyCoRe werden in der Konfigurationsdatei pom.xml beschrieben
+      </p>
+      <ul>
+        <li></li>
+      </ul>
+    </section>
+
+  </body>
+</document>

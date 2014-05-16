@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Hibernate</title>
+  </header>
+  <body>
+
+    <section>
+      <title>Hibernate</title>
+      <p>
+        In MyCoRe wird Hibernate verwendet...
+      </p>
+
+    </section>
+
+  </body>
+</document>
