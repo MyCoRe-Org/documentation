@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Virtuelle Hostnamen</title>
+  </header>
+  <body>
+
+  <section>
+   <title>Einbindung virtueller Host-Namen mit Hilfe des Apache-Web-Servers</title>
+   <p>
+   Standardmäßig ist der Apache2 in den Installations-CDs aller gängigen Linux-Distributionen und in MacOS enthalten.
+   Für Windows muss ein gesonderter Download erfolgen (<a href="#chapter_2">Kapitel 2</a>). Der Quellcode des Apache2 liegt auf
+   <em>http://httpd.apache.org</em> für ein Download bereit. Die folgende Beschreibung bezieht sich auf die
+   Apache-version 2.0.x. Die weitere Beschreibung bezieht sich hinsichtlich der Pfade auf ein UNIX/MacOS-System, für
+   Windows sind die dazu korrespondierenden Pfade zu nutzen.
+   </p>
+
+   <section>
+    <title>Einbindung des Proxy-Modules</title>
+    <p>
+    Die Einbindung des Proxy-modules ist relativ einfach zu bewerkstelligen. In der Datei <em>/etc/sysconfig/apache2</em>
+    sind in der Zeile der Variable <strong>APACHE_MODULES</strong> die Module <strong>proxy,proxy_http,proxy_connect</strong>
+    hinzuzufügen. Nach der Änderung ist der Neustart des Apache-Servers erforderlich.
+    </p>
+   </section>
+
+   <section>
+    <title>Die Verbindung von einer Servlet-Engine und Apache2</title>
+    <p>
+    Die Verbindung zwischen dem Apache2 und der Servlet-Engine wird in den Konfigurationsfiles
+    <em>/etc/apache2/httpd.conf</em> und <em>/etc/apache2/http-vhosts.conf</em> konfiguriert.
+    </p>
+    <p>
+    In der Datei <em>/etc/apache2/httpd.conf</em> ist die Include-Anweisung für das Lesen der Zusatzkonfiguration
+    <em>http-vhosts.conf</em> zu aktivieren. Anschließend wird der eigentliche virtuelle Host in dieser Datei definiert.
+    Dabei sind natürlich die Pfade zu den einzelnen Verzeichnissen entsprechend den aktuellen Gegebenheiten anzupassen.
+    </p>
+
+    <pre class="brush: xml">
+<![CDATA[<VirtualHost mycoresample.dl.uni-leipzig.de:80>
+  ProxyPass / http://mycoresamplelinux.dl.uni-leipzig.de:8291/
+  ProxyPassReverse /
+  http://mycoresamplelinux.dl.uni-leipzig.de:8291/
+
+  ServerAdmin mcradmin@mycoresamplelinux.dl.uni-leipzig.de
+  DocumentRoot /home/mcradmin/docportal/webapps
+  ServerName mycoresamplelinux.dl.uni-leipzig.de
+  ErrorLog /var/log/apache2/mycoresample-error_log
+  CustomLog /var/log/apache2/mycoresample-access_log common
+  Alias /mycoresamplelinux "/home/mcradmin/docportal/webapps"
+
+<Directory "/home/mcradmin/docportal/webapps/" >
+  Options Indexes FollowSymLinks
+  DirectoryIndex
+  AddHandler jakarta-servlet2 .jsp
+  Order deny,allow
+  Deny from all
+  Allow from all
+</Directory>
+
+<Directory "/mycoresamplelinux" >
+  Options Indexes FollowSymLinks
+  DirectoryIndex
+  AddHandler jakarta-servlet2 .jsp
+  Order deny,allow
+  Deny from all
+  Allow from all
+</Directory>
+</VirtualHost>]]></pre>
+
+    <p>
+    Nach dieser Änderung ist zuerst die Servlet-Engine zu starten. Anschließend kann der Apache-Server mit
+    <code>/usr/sbin/rcapache2</code> neu gestartet werden.
+    </p>
+   </section>
+
+  </section>
+
+  </body>
+</document>

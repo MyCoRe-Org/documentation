@@ -71,46 +71,6 @@ See http://forrest.apache.org/docs/linking.html for more info
   <documentation           label="Dokumentation"     href="documentation/" tab="documentation">
     <overview              label="Übersicht"         href="index.html" />
     <whats_new             label="Was ist neu?"      href="whats_new.html" />
-    <install               label="Installation"      href="install.html" />
-    <principles            label="Funktionsweisen"   href="principles/">
-      <section01 label="1 Allgemeine Klassen"    href="01_classes.html" />
-      <section02 label="2 Session-Verwaltung"    href="02_session_handling.html" />
-      <section03 label="3 EventHandler"          href="03_event_handler.html" />
-      <section04 label="4 Datenmodell"           href="04_datamodel.html" />
-      <section05 label="5 Query-Service"         href="05_query_service.html" />
-      <section06 label="6 Extrahieren"           href="06_extract.html" />
-      <section07 label="7 Link-Tabellen"         href="07_link_tables.html" />
-      <section08 label="8 Benutzerverwaltung"    href="08_user_management.html" />
-      <section09 label="9 ACL-Integration"       href="09_acl_integration.html" />
-      <section10 label="10 Backend"              href="10_backend.html" />
-      <section11 label="11 Frontend"             href="11_frontend.html" />
-      <section12 label="12 XML-Funktionalität"   href="12_xml_functionality.html" />
-      <section13 label="13 Editor-Framework"     href="13_editor_framework.html" />
-      <section14 label="14 Klassifikationen"     href="14_classification.html" />
-      <section15 label="15 Nützliche Klassen"    href="15_useful_classes.html" />
-    </principles>
-    <components            label="Komponenten"   href="components/">
-      <section01 label="1 Session Listing"    href="01_session_listing.html" />
-      <section02 label="2 IView2"    href="02_iview2.html" />
-      <section03 label="3 Broadcasting"    href="03_broadcasting.html" />
-      <section04 label="4 Basket"    href="04_basket.html" />
-      <section05 label="5 XEditor"    href="05_xeditor.html" />
-      <section05 label="6 SolR"    href="06_solr.html" />
-    </components>
-    <componentes            label="alte Komponenten"         href="components.html" />
-    <mymaker               label="DocPortal"           href="docportal/">
-      <mm_about            label="1. Übersicht"        href="04_docportal.html" as_pdf="true" />
-      <mm_configuration    label="2. Konfiguration"    href="45_configuration.html" as_pdf="true" />
-      <mm_datamodel        label="3. Datenmodell"      href="05_datamodel.html" as_pdf="true" />
-      <mm_usage            label="4. Umgang"           href="06_use_docportal.html" as_pdf="true">
-        <mm_cmd_iview                                  href="#cmd_iview" />
-        <mm_classif_editor                             href="#classif_editor" />
-      </mm_usage>
-      <mm_components       label="5. Komponenten"      href="07_optional_components.html" as_pdf="true" />
-      <mm_structure        label="6. Aufbau"           href="08_more_information.html" as_pdf="true" />
-      <mm_tips             label="7. Tipps"            href="09_tips.html" as_pdf="true" />
-      <!-- mm_wholedoc         label="als PDF"             href="/mymaker.pdf" / -->
-    </mymaker>
     <migrate               label="Migration"         href="migrate/">
       <migrate2013.08_11   label="2013.08 -> 2013.11"  href="migrate201308_201311.html" />
       <migrate2013.06_08   label="2013.06 -> 2013.08"  href="migrate201306_201308.html" />
@@ -128,11 +88,55 @@ See http://forrest.apache.org/docs/linking.html for more info
       <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
       <documentation       label="Dokumentation"              href="documentation.html" />
       <tests               label="Tests"                      href="tests.html" />
+      <classes             label="Allgemeine Klassen"         href="classes.html" />
+      <mcrservlet          label="MCRServlet"                 href="mcrservlet.html" />
     </developer>
     <maven                 label="Maven Site"        href="http://www.mycore.de/generated/" />
     <apidocs               label="Javadocs"          href="http://www.mycore.de/generated/mycore/apidocs/" />
 
     <doc_archive label="Archiv">
+      <version_201404 label="MyCoRe 2014.04" href="archiv/version201404/">
+        <install               label="Installation"      href="install.html" />
+        <principles            label="Funktionsweisen"   href="principles/">
+          <section01 label="1 Allgemeine Klassen"    href="01_classes.html" />
+          <section02 label="2 Session-Verwaltung"    href="02_session_handling.html" />
+          <section03 label="3 EventHandler"          href="03_event_handler.html" />
+          <section04 label="4 Datenmodell"           href="04_datamodel.html" />
+          <section05 label="5 Query-Service"         href="05_query_service.html" />
+          <section06 label="6 Extrahieren"           href="06_extract.html" />
+          <section07 label="7 Link-Tabellen"         href="07_link_tables.html" />
+          <section08 label="8 Benutzerverwaltung"    href="08_user_management.html" />
+          <section09 label="9 ACL-Integration"       href="09_acl_integration.html" />
+          <section10 label="10 Backend"              href="10_backend.html" />
+          <section11 label="11 Frontend"             href="11_frontend.html" />
+          <section12 label="12 XML-Funktionalität"   href="12_xml_functionality.html" />
+          <section13 label="13 Editor-Framework"     href="13_editor_framework.html" />
+          <section14 label="14 Klassifikationen"     href="14_classification.html" />
+          <section15 label="15 Nützliche Klassen"    href="15_useful_classes.html" />
+        </principles>
+        <components            label="Komponenten"   href="components/">
+          <section01 label="1 Session Listing"    href="01_session_listing.html" />
+          <section02 label="2 IView2"    href="02_iview2.html" />
+          <section03 label="3 Broadcasting"    href="03_broadcasting.html" />
+          <section04 label="4 Basket"    href="04_basket.html" />
+          <section05 label="5 XEditor"    href="05_xeditor.html" />
+          <section05 label="6 SolR"    href="06_solr.html" />
+        </components>
+        <componentes            label="alte Komponenten"         href="components.html" />
+        <mymaker               label="DocPortal"           href="docportal/">
+          <mm_about            label="1. Übersicht"        href="04_docportal.html" as_pdf="true" />
+          <mm_configuration    label="2. Konfiguration"    href="45_configuration.html" as_pdf="true" />
+          <mm_datamodel        label="3. Datenmodell"      href="05_datamodel.html" as_pdf="true" />
+          <mm_usage            label="4. Umgang"           href="06_use_docportal.html" as_pdf="true">
+            <mm_cmd_iview                                  href="#cmd_iview" />
+            <mm_classif_editor                             href="#classif_editor" />
+          </mm_usage>
+          <mm_components       label="5. Komponenten"      href="07_optional_components.html" as_pdf="true" />
+          <mm_structure        label="6. Aufbau"           href="08_more_information.html" as_pdf="true" />
+          <mm_tips             label="7. Tipps"            href="09_tips.html" as_pdf="true" />
+          <!-- mm_wholedoc         label="als PDF"             href="/mymaker.pdf" / -->
+        </mymaker>
+      </version_201404>
       <version_2_2 label="MyCoRe 2.2" href="archiv/version22/">
         <mcruse_2_2  label="User Guide"                     href="userguide/">
           <chapter1_ug22  label="1. Über MyCoRe"            href="01_about.html" as_pdf="true" />

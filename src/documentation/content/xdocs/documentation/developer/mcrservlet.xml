@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>MCRServlet</title>
+  </header>
+<body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+   <section>
+    <title>Das Zusammenspiel der Servlets mit dem MCRServlet</title>
+    <p>
+    Als übergeordnetes Servlet mit einigen grundlegenden Funktionalitäten dient die Klasse <code>MCRServlet</code>. Die
+    Hauptaufgabe von <code>MCRServlet</code> ist dabei die Herstellung der Verbindung zur Sessionverwaltung
+    (siehe Abschnitt <a href="site:sessions_2_1">Die Session-Verwaltung</a>). Das Zusammenspiel der relevanten Klassen ist im Klassendiagramm
+    (Abbildung 2.5) verdeutlicht.
+    </p>
+
+    <img src="images/progguide_2frontend_mcrservlet.jpg" alt="Java-Klassen" title="Java-Klassen"/>
+    <p class="klein"><strong>Abbildung 2.5:</strong> Klassendiagramm <code>Common Servlets</code></p>
+
+    <p>
+    Wie an anderen Stellen im MyCoRe-System auch, kann auf Konfigurationsparameter wie zum Beispiel den Einstellungen
+    für das Logging über das statische Attribut <code>MCRConfiguration</code> zugegriffen werden.
+    </p>
+    <p>
+    <code>MCRServlet</code> selbst ist direkt von <code>HttpServlet</code> abgeleitet. Sollen andere Servlets im
+    MyCoRe-Softwaresystem die von MCRServlet angebotenen Funktionen automatisch nutzen, so müssen sie von
+    <code>MCRServlet</code> abgeleitet werden. Im Klassendiagramm ist das durch die stellvertretende Klasse
+    <code>MCRAnyOtherServlet</code> angedeutet. Es wird empfohlen, dass die abgeleiteten Servlets die Methoden
+    <code>doGet()</code> und <code>doPost()</code> nicht überschreiben, denn dadurch werden bei einem eingehenden
+    Request auf jeden Fall die Methoden von <code>MCRServlet</code> ausgeführt.
+    </p>
+    <p>
+    Der Programmablauf innerhalb von <code>MCRServlet</code> ist im folgenden Sequenzdiagramm (siehe Abbildung 2.6)
+    dargestellt. Bei einem eingehenden Request (<code>doGet()</code> oder <code>doPost()</code>) wird zunächst
+    an <code>MVRServlet.doGetPost()</code> delegiert. (Bei dieser Delegation wird ein Parameter mitgeführt, über den
+    feststellbar ist, ob es sich um einen GET- oder POST-Request gehandelt hat.)
+    </p>
+
+    <img src="images/progguide_2frontend_mcrservletsequenz.jpg" alt="Common Servlets" title="Common Servlets"/>
+    <p class="klein"><strong>Abbildung 2.6:</strong> Sequenzdiagramm <code>Common Servlets</code></p>
+
+    <p>
+    Falls nicht schon aus vorhergehenden Anfragen an das <code>MCRServlet</code> bekannt, werden in
+    <code>doGetPost()</code> die Base-URL und die Servlet-URL des Systems bestimmt. Dabei besteht die Servlet-URL
+    aus der Base-URL und dem angehängten String '<code>servlets/</code>'. Darauf folgend wird die für diese Session
+    zugehörige Instanz von <code>MCRSession</code> bestimmt. Das Verfahren dazu ist im Ablaufdiagramm (Abbildung 2.7)
+    dargestellt.
+    </p>
+    <p>
+    Die Session kann bereits durch vorhergehende Anfragen existieren. Falls dies der Fall ist, kann das zugehörige
+    Session-Objekt entweder über eine im <code>HttpServletRequest</code> mitgeführte SessionID identifiziert oder
+    direkt der HttpSession entnommen werden. Existiert noch keine Session, so wird ein neues Session-Objekt über den
+    Aufruf von <code>MCRSessionMgr.getCurrentSession()</code> erzeugt. Nachfolgend wird das Session-Objekt an den
+    aktuellen Thread gebunden und zusätzlich in der HttpSession abgelegt.
+    </p>
+    <p>Im Sequenzdiagramm gehen wir davon aus, dass die Sitzung neu ist und deswegen ein Session-Objekt über
+    <code>MCRSessionMgr.getCurrentSession()</code> erzeugt werden muss. Schließlich wird eine Instanz von
+    <code>MCRServletJob</code> erzeugt. Diese Klasse ist nichts weiter als ein Container für die aktuellen
+    HttpServletRequest und HttpServletResponse Objekte und hat keine weitere Funktionalität (siehe Klassendiagramm,
+    Abbildung 2.5). (Das Speichern des Session-Objekts in der HttpSession ist notwendig, weil in einer typischen
+    Servlet-Engine mit Thread-Pool Umgebung nicht davon ausgegangen werden darf, dass bei aufeinander folgenden Anfragen
+    aus demselben Kontext auch derselbe Thread zugewiesen wird.)
+    </p>
+
+    <img src="images/progguide_2frontend_mcrservletfluss.jpg" alt="MCRServlet.doGetPost()" title="MCRServlet.doGetPost()"/>
+    <p class="klein"><strong>Abbildung 2.7:</strong> Ablaufdiagramm für MCRServlet.doGetPost()</p>
+
+    <p>
+    An dieser Stelle wird der Programmfluss an das abgeleitete Servlet (in diesem Beispiel
+    <code>MCRAnyOtherServlet</code>) delegiert. Dazu muss das Servlet eine Methode mit der Signatur
+    </p>
+    <pre class="brush: java; gutter: false;">public void doGetPost(MCRServletJob job) {}</pre>
+    <p>
+    implementieren. Wie das Sequenzdiagramm beispielhaft zeigt, kann <code>MCRAnyOtherServlet</code> danach
+    gegebenenfalls auf das Session-Objekt und damit auf die Kontextinformationen zugreifen. Der Aufruf an den
+    SessionManager dazu wäre:
+    </p>
+    <pre class="brush: java; gutter: false;">MCRSession mcrSession=MCRSessionMgr.getCurrentSession();</pre>
+    <p>
+    Es sei bemerkt, dass dies nicht notwendigerweise genau so durchgeführt werden muss, da wegen der geschilderten
+    Probleme mit <code>threadlocal</code> Variablen in Servlet-Umgebungen das Session-Objekt auch in der HttpSession
+    abgelegt sein muss, könnte man die Kontextinformationen auch aus der übergebenen Instanz von
+    <code>MCRServletJob</code> gewinnen.
+    </p>
+   </section>
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+
+</body>
+</document>
+

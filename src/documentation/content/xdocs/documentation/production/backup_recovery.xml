@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Backup and Recovery</title>
+  </header>
+  <body>
+
+  <section>
+   <title>Sicherung der Daten</title>
+   <section>
+    <title>Backup</title>
+    <p>
+    Natürlich muss ein Dokumenten-Server im Produktionseinsatz auch ein Datensicherungskonzept haben. Je nach Einsatz
+    der gewählten Datenbank ist der erste Schritt natürlich eine Sicherung der selben nach Backup-Vorgaben des
+    Herstellers. Dazu kommt auch eine regelmäßige Backup-Strategie für das Server-System.
+    </p>
+    <p>
+    Ein weiterer Schritt ist das komplette Auslesen des Datenbestandes und die Speicherung auf einem externen
+    (ggf. Netzwerk-) Filesystem. Mit dieser Methode lassen sich auch Migrationen durchführen. Die Distribution enthält
+    im Verzeichnis bin Scripts für Windows und Linux, die diese Aufgabe realisieren. Gestartet wird jeweils das
+    <code>Save.cmd</code> bzw. <code>Save.sh Script</code>. Diese Kommandodateien rufen dann weitere Scripts, welche
+    mit <code>Save...</code> beginnen auf. Im Ergebnis des Kommandos werden alle Daten in das
+    <code>$DOCPORTAL_HOME/save -Verzeichnis exportiert.</code>
+    </p>
+   </section>
+
+   <section>
+    <title>Recovery</title>
+    <p>
+    Die mittels des Save-Kommandos exportierten Daten können im Bedarfsfall wieder in ein ggf. neu erstelltes System
+    eingespielt werden. Sollte es nötig sein, einzelne Benutzer mit Ihren gesicherten Passworten neu zu laden, so ist
+    vorher das im bin-Verzeichnis befindliche Script <code>SelectUserFromSave.sh</code> zu starten. Nach erfolgreichem
+    Lauf befinden sich für jeden Benutzer / jede Gruppe Dateien im Verzeichnis <code>$DOCPORTAL_HOME/config/user</code>.
+    Diese Daten können dann im MyCoRe-Kommandozeilen-Tool mit den Kommandos '<code>delete user ...</code>' und
+    '<code>import user from file ...</code>' geladen werden.
+    </p>
+    <p>Sollte nur der Metadaten-Index (z. B. Lucene) defekt sein, so hilft das Script <code>RepairFromXMLStore.sh</code>
+    diesen Index neu zu erstellen.
+    </p>
+    <p>
+    Sind die XML-Daten bzw. die Derivate defekt bzw. weg so könne die gesicherten Daten aus dem save-Verzeichnis in die
+    Workflow-Directories kopiert werden. Mit dem Kommandozeile-Tool bzw. speziellen Scripts unter unixtools können
+    diese Objekte nun wieder in das System eingebracht werden.
+    </p>
+   </section>
+  </section>
+
+  </body>
+</document>
