@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>CLI und Kommandos</title>
+  </header>
+  <body>
+
+    <section>
+      <title>CLI und Kommandos</title>
+      <p>
+        MyCoRe stellt eine Kommandozeile bereit, das "Command Line Interface", kurz CLI, die mit einer Reihe von MyCoRe-Kommandos benutzt werden kann.
+      </p>
+      <ul>
+        <li>CLI - die MyCoRe-Kommandozeile</li>
+        <li>MyCoRe-Kommandos</li>
+      </ul>
+    </section>
+
+  </body>
+</document>
