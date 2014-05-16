@@ -1,4 +1,4 @@
-<project name="MyCoRe Documentation" default="info" basedir=".">
+<project name="MyCoRe Dokumentation" default="info" basedir=".">
 
   <property environment="env" />
   
