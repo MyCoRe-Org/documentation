@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Klassifikationen</title>
+  </header>
+  <body>
+
+    <section>
+      <title>Klassifikationen</title>
+      <p>
+        Wie verwende ich Klassifikationen in MyCoRe ...
+      </p>
+      <ul>
+        <li>XML Format</li>
+        <li>Kommandos</li>
+        <li>Klassifikationsbrowser</li>
+        <li>Klassifikationseditor</li>
+        <li>Klassifikationsmapping</li>
+      </ul>
+    </section>
+
+  </body>
+</document>
