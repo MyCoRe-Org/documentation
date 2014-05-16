@@ -21,6 +21,38 @@
     </section>
 
     <section>
+     <title>Die Integration des Bildbetrachter-Modules</title>
+    <p>
+      MyCoRe bietet einen komfortablen Bildbetrachter, um Dateien
+      verschiedener Formate anzuzeigen. Dazu wird die
+      Komponente <code>iview2</code> aus dem MyCoRe-Kern verwendet.
+      Diese Komponente ist im DocPortal
+      standardmässig integriert. Um sie zu deaktivieren
+      muss in mycore.properties.private das Property
+      <code>MCR.Components.Exclude</code>
+      um diese Komponente erweitert werden.
+    </p>
+    <p>
+      Eine Übersicht der verfügbaren Kommandos finden Sie im Abschnitt
+      <a href="site:cmd_iview_ug21">Kommandos
+        zur Arbeit mit dem ImageViewer</a>.
+    </p>
+    <p>
+      Der Bildbetrachter ist in DocPortal bereits in die Detailansicht des MyCoRe-Objekttyps
+      <code>document</code> integriert. Ist der Bildbetrachter deaktiviert oder sind keine
+      Kacheln vorhanden, wird dieser einfach nicht dargestellt. Für die Darstellung
+      in der document.xsl sind die folgenden Code-Zeilen verantwortlich:
+    </p>
+      <pre class="brush: xml"><![CDATA[
+    <!-- MCR-IView ..start -->
+    <xsl:call-template name="derivateView">
+      <xsl:with-param name="derivateID" select="@xlink:href" />
+    </xsl:call-template>
+    <!-- MCR - IView ..end -->]]></pre>
+    </section>
+
+
+    <section>
       <title>Komponente IView2 – API zur Bildbearbeitung</title>
       <p>
         Die IView2-Komponente befindet sich im MyCoRe-Kern und bietet eine API um Bilddaten in MyCoRe abzuspeichern,
@@ -91,4 +123,3 @@
     </section>
   </body>
 </document>
-  
