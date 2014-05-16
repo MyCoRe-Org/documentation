@@ -71,6 +71,43 @@ See http://forrest.apache.org/docs/linking.html for more info
   <documentation           label="Dokumentation"     href="documentation/" tab="documentation">
     <overview              label="Übersicht"         href="index.html" />
     <whats_new             label="Was ist neu?"      href="whats_new.html" />
+    <datamodel             label="Datenmodell"       href="#" />
+    <installation          label="Installation &amp; Aufbau" href="#" />
+    <buildprocess          label="Buildprozess"      href="#">
+      <properties          label="mycore.properties" href="#" />
+      <hibernate           label="Hibernate"         href="#" />
+      <maven               label="Maven"             href="#" />
+    </buildprocess>
+    <cli                   label="Kommandozeile"     href="#" />
+    <classifications       label="Klassifikationen"  href="#" />
+    <mcrobject             label="MCRObject"         href="#" />
+    <mcrderivate           label="MCRDerivat"        href="#" />
+    <eventhandler          label="EventHandler"      href="#" />
+    <search                label="Suche"             href="search/">
+      <solr                label="Solr-Integration"  href="solr.html" />
+      <query_service       label="QueryService"      href="query_service.html" />
+      <extract             label="Daten extrahieren" href="extract.html" />
+      <indexbrowsing       label="Index-Blättern"    href="index.html" />
+    </search>
+    <frontend              label="Präsentation"          href="frontend/">
+      <integrated_wcms     label="Content Management">
+        <wcms2             label="WCMS2"                 href="index.html#wcms2" />
+        <wcms              label="WCMS"                  href="wcms.html" />
+      </integrated_wcms>
+      <multilang           label="Mehrsprachigkeit"      href="index.html#i18n" />
+      <forms               label="Formulare">
+        <xeditor           label="XEditor"               href="xeditor.html" />
+        <editorframework   label="Editorframework"       href="editor_framework.html" />
+      </forms>
+      <basket              label="Korbfunktion"          href="basket.html" />
+      <xsl                 label="XSL-Stylesheets">
+        <layout_service    label="Layout-Service"        href="layout_service.html" />
+        <xsl_fo            label="XSL-FO Unterstützung"  href="xsl_fo.html" />
+      </xsl>
+      <mcruriresolver      label="URI-Resolver"          href="uri_resolver.html" />
+      <mcrtextresolver     label="TextResolver"          href="text_resolver.html" />
+    </frontend>
+
     <migrate               label="Migration"         href="migrate/">
       <migrate2013.08_11   label="2013.08 -> 2013.11"  href="migrate201308_201311.html" />
       <migrate2013.06_08   label="2013.06 -> 2013.08"  href="migrate201306_201308.html" />

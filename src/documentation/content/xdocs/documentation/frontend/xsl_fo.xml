@@ -45,7 +45,6 @@
         Für FOP kann noch eine Konfigurationsdatei im Classpath angegeben werden, die
         z. B. andere Fonts einsetzt.</p>
      </section>
-   </section>
 
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
  <script type="text/javascript">

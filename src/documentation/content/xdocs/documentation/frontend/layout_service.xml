@@ -109,6 +109,7 @@
      >http://www.mycore.de:8291/servlets/MCRXSLInfoServlet</a>
    </p>
    </section>
+ </section>
 
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
  <script type="text/javascript">
