@@ -79,10 +79,31 @@ See http://forrest.apache.org/docs/linking.html for more info
       <maven               label="Maven"             href="#" />
     </buildprocess>
     <cli                   label="Kommandozeile"     href="#" />
-    <classifications       label="Klassifikationen"  href="#" />
-    <mcrobject             label="MCRObject"         href="#" />
-    <mcrderivate           label="MCRDerivat"        href="#" />
-    <eventhandler          label="EventHandler"      href="#" />
+    <classifications       label="Klassifikationen"  href="classifications/">
+      <classif_xml         label="XML-Format"        href="classification_datamodel.html" />
+      <classif_commands    label="Kommandos"         href="classification_commands.html" />
+      <classif_browser     label="Browser"           href="classification_browser.html" />
+      <classif_editor      label="Editor"            href="classification_editor.html" />
+      <classif_mapping     label="Mapping"           href="classification_mapping.html" />
+    </classifications>
+    <mcrobject             label="MCRObject"         href="mcrobject/">
+      <mcrobj_id           label="MCRObject-ID"      href="mcrobjectid.html" />
+      <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
+      <mcrobj_datatypes    label="Datentypen"        href="datatypes.html" />
+      <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html" />
+      <mcrobj_ifs          label="IFS2"              href="ifs.html" />
+      <mcrobj_linktables   label="Linktabellen"      href="linktables.html" />
+    </mcrobject>
+    <mcrderivate           label="MCRDerivat"        href="mcrderivate_ifs/">
+      <mcrderiv_ifs        label="IFS"               href="ifs.html" />
+      <mcrderiv_commands   label="Kommandos"         href="mcrderivate_commands.html" />
+      <mcrderiv_zip        label="ZIP-Dateien"       href="zipfiles.html" />
+      <mcrderiv_streaming  label="StreamingServer"   href="streamingserver.html" />
+      <mcrderiv_fileupload label="File-Upload"       href="fileupload_applet.html" />
+    </mcrderivate>
+    <eventhandler          label="EventHandler"      href="eventhandler/">
+      <eventhandling       label="Übersicht"         href="index.html" />
+    </eventhandler>
     <search                label="Suche"             href="search/">
       <solr                label="Solr-Integration"  href="solr.html" />
       <query_service       label="QueryService"      href="query_service.html" />
