@@ -3,18 +3,15 @@
 
 <document>
   <header>
-    <title>ÃœÂœbersicht</title>
+    <title>Architektur-Übersicht</title>
   </header>
   <body>
 
     <section>
-      <title>Ãœbersicht</title>
+      <title>Architektur-Übersicht</title>
       <p>
-        Welche MyCoRe-Properties gibt es und wie sind sie anzupassen?
+        Kurze Einführung in MyCoRe um loszulaufen ...
       </p>
-      <ul>
-        <li></li>
-      </ul>
     </section>
 
   </body>

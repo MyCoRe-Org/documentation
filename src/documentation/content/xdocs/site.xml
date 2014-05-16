@@ -57,6 +57,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   <download      label="Download"           href="download/" tab="download">
     <howtoget    label="Übersicht"          href="index.html" />
+    <whats_new   label="Was ist neu?"       href="whats_new.html" />
     <release     label="Release 2014.01"    href="release.html" />
     <lts_release label="LTS-Release 2013.06"    href="lts_release.html" />
     <logos       label="Material"           href="logos.html" />
@@ -69,48 +70,214 @@ See http://forrest.apache.org/docs/linking.html for more info
   </download>
 
   <documentation           label="Dokumentation"     href="documentation/" tab="documentation">
-    <overview              label="Übersicht"         href="index.html" />
-    <whats_new             label="Was ist neu?"      href="whats_new.html" />
-    <datamodel             label="Datenmodell"       href="#" />
-    <installation          label="Installation &amp; Aufbau" href="#" />
-    <buildprocess          label="Buildprozess"      href="#">
-      <properties          label="mycore.properties" href="#" />
-      <hibernate           label="Hibernate"         href="#" />
-      <maven               label="Maven"             href="#" />
-    </buildprocess>
-    <cli                   label="Kommandozeile"     href="#" />
-    <classifications       label="Klassifikationen"  href="classifications/">
-      <classif_xml         label="XML-Format"        href="classification_datamodel.html" />
-      <classif_commands    label="Kommandos"         href="classification_commands.html" />
-      <classif_browser     label="Browser"           href="classification_browser.html" />
-      <classif_editor      label="Editor"            href="classification_editor.html" />
-      <classif_mapping     label="Mapping"           href="classification_mapping.html" />
-    </classifications>
-    <mcrobject             label="MCRObject"         href="mcrobject/">
-      <mcrobj_id           label="MCRObject-ID"      href="mcrobjectid.html" />
-      <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
-      <mcrobj_datatypes    label="Datentypen"        href="datatypes.html" />
-      <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html" />
-      <mcrobj_ifs          label="IFS2"              href="ifs.html" />
-      <mcrobj_linktables   label="Linktabellen"      href="linktables.html" />
-    </mcrobject>
-    <mcrderivate           label="MCRDerivat"        href="mcrderivate_ifs/">
-      <mcrderiv_ifs        label="IFS"               href="ifs.html" />
-      <mcrderiv_commands   label="Kommandos"         href="mcrderivate_commands.html" />
-      <mcrderiv_zip        label="ZIP-Dateien"       href="zipfiles.html" />
-      <mcrderiv_streaming  label="StreamingServer"   href="streamingserver.html" />
-      <mcrderiv_fileupload label="File-Upload"       href="fileupload_applet.html" />
-    </mcrderivate>
-    <eventhandler          label="EventHandler"      href="eventhandler/">
-      <eventhandling       label="Übersicht"         href="index.html" />
-    </eventhandler>
+    <overview              label="Übersicht"           href="index.html">
+      <howtos                label="HowTo's"           href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo" />
+      <maven                 label="Maven Site"        href="http://www.mycore.de/generated/" />
+      <apidocs               label="Javadocs"          href="http://www.mycore.de/generated/mycore/apidocs/" />
+
+      <doc_archive label="Archiv" href="/../">
+        <version_201404 label="MyCoRe 2014.04" href="archiv/version201404/">
+          <install               label="Installation"      href="install.html" />
+          <principles            label="Funktionsweisen"   href="principles/">
+            <section01 label="1 Allgemeine Klassen"    href="01_classes.html" />
+            <section02 label="2 Session-Verwaltung"    href="02_session_handling.html" />
+            <section03 label="3 EventHandler"          href="03_event_handler.html" />
+            <section04 label="4 Datenmodell"           href="04_datamodel.html" />
+            <section05 label="5 Query-Service"         href="05_query_service.html" />
+            <section06 label="6 Extrahieren"           href="06_extract.html" />
+            <section07 label="7 Link-Tabellen"         href="07_link_tables.html" />
+            <section08 label="8 Benutzerverwaltung"    href="08_user_management.html" />
+            <section09 label="9 ACL-Integration"       href="09_acl_integration.html" />
+            <section10 label="10 Backend"              href="10_backend.html" />
+            <section11 label="11 Frontend"             href="11_frontend.html" />
+            <section12 label="12 XML-Funktionalität"   href="12_xml_functionality.html" />
+            <section13 label="13 Editor-Framework"     href="13_editor_framework.html" />
+            <section14 label="14 Klassifikationen"     href="14_classification.html" />
+            <section15 label="15 Nützliche Klassen"    href="15_useful_classes.html" />
+          </principles>
+          <components            label="Komponenten"   href="components/">
+            <section01 label="1 Session Listing"    href="01_session_listing.html" />
+            <section02 label="2 IView2"    href="02_iview2.html" />
+            <section03 label="3 Broadcasting"    href="03_broadcasting.html" />
+            <section04 label="4 Basket"    href="04_basket.html" />
+            <section05 label="5 XEditor"    href="05_xeditor.html" />
+            <section05 label="6 SolR"    href="06_solr.html" />
+          </components>
+          <componentes            label="alte Komponenten"         href="components.html" />
+          <mymaker               label="DocPortal"           href="docportal/">
+            <mm_about            label="1. Übersicht"        href="04_docportal.html" as_pdf="true" />
+            <mm_configuration    label="2. Konfiguration"    href="45_configuration.html" as_pdf="true" />
+            <mm_datamodel        label="3. Datenmodell"      href="05_datamodel.html" as_pdf="true" />
+            <mm_usage            label="4. Umgang"           href="06_use_docportal.html" as_pdf="true">
+              <mm_cmd_iview                                  href="#cmd_iview" />
+              <mm_classif_editor                             href="#classif_editor" />
+            </mm_usage>
+            <mm_components       label="5. Komponenten"      href="07_optional_components.html" as_pdf="true" />
+            <mm_structure        label="6. Aufbau"           href="08_more_information.html" as_pdf="true" />
+            <mm_tips             label="7. Tipps"            href="09_tips.html" as_pdf="true" />
+            <!-- mm_wholedoc         label="als PDF"             href="/mymaker.pdf" / -->
+          </mymaker>
+        </version_201404>
+        <version_2_2 label="MyCoRe 2.2" href="archiv/version22/">
+          <mcruse_2_2  label="User Guide"                     href="userguide/">
+            <chapter1_ug22  label="1. Über MyCoRe"            href="01_about.html" as_pdf="true" />
+            <chapter2_ug22  label="2. Voraussetzungen"        href="02_prereq.html" as_pdf="true" />
+            <chapter4_ug22  label="3. DocPortal"              href="04_docportal.html" as_pdf="true" />
+            <chapter3_ug22  label="4. Installation"           href="03_install.html" as_pdf="true" />
+            <chapter45_ug22 label="5. Konfiguration"          href="45_configuration.html" as_pdf="true" />
+            <chapter5_ug22  label="6. Datenmodell"            href="05_datamodel.html" as_pdf="true" />
+            <chapter6_ug22  label="7. Umgang"                 href="06_use_docportal.html" as_pdf="true">
+              <cmd_iview_ug22      href="#cmd_iview" />
+              <classif_editor_ug22 href="#classif_editor" />
+            </chapter6_ug22>
+            <chapter7_ug22  label="8. Komponenten"            href="07_optional_components.html" as_pdf="true" />
+            <chapter8_ug22  label="9. Aufbau"                 href="08_more_information.html" as_pdf="true" />
+            <chapter9_ug22  label="10. Tipps"                 href="09_tips.html" as_pdf="true" />
+            <wholedoc_ug22  label="als PDF"                   href="/mcr_user_guide_22.pdf" />
+          </mcruse_2_2>
+          <appdev_2_2  label="Programmer Guide"               href="programmerguide/" >
+            <chapter1_pg22  label="1. Allgemeines"            href="01_general.html" as_pdf="true" />
+            <chapter2_pg22  label="2. Funktionsweisen"        href="02_principles/">
+              <section01_ch2_pg22 label="2.1 Allgemeine Klassen"    href="01_classes.html" as_pdf="true" />
+              <section02_ch2_pg22 label="2.2 Session-Verwaltung"    href="02_session_handling.html" as_pdf="true" />
+              <section03_ch2_pg22 label="2.3 EventHandler"          href="03_event_handler.html" as_pdf="true" />
+              <section04_ch2_pg22 label="2.4 Datenmodell"           href="04_datamodel.html" as_pdf="true" />
+              <section05_ch2_pg22 label="2.5 Query-Service"         href="05_query_service.html" as_pdf="true" />
+              <section06_ch2_pg22 label="2.6 Extrahieren"           href="06_extract.html" as_pdf="true" />
+              <section07_ch2_pg22 label="2.7 Link-Tabellen"         href="07_link_tables.html" as_pdf="true" />
+              <section08_ch2_pg22 label="2.8 Benutzerverwaltung"    href="08_user_management.html" as_pdf="true" />
+              <section09_ch2_pg22 label="2.9 ACL-Integration"       href="09_acl_integration.html" as_pdf="true" />
+              <section10_ch2_pg22 label="2.10 Backend"              href="10_backend.html" as_pdf="true" />
+              <section11_ch2_pg22 label="2.11 Frontend"             href="11_frontend.html" as_pdf="true" />
+              <section12_ch2_pg22 label="2.12 XML-Funktionalität"   href="12_xml_functionality.html" as_pdf="true" />
+              <section13_ch2_pg22 label="2.13 Editor-Framework"     href="13_editor_framework.html" as_pdf="true" />
+              <section14_ch2_pg22 label="2.14 Klassifikationen"     href="14_classification.html" as_pdf="true" />
+              <section15_ch2_pg22 label="2.15 Nützliche Klassen"    href="15_useful_classes.html" as_pdf="true" />
+            </chapter2_pg22>
+            <chapter3_pg22  label="3. Komponenten"            href="03_components.html" as_pdf="true">
+              <iview_pg22 href="#Bildbetrachter" />
+            </chapter3_pg22>
+            <chapter4_pg22  label="4. Schnittstellen"            href="04_interfaces/">
+              <section01_ch4_pg22 label="4.1 OAI"    href="01_oai.html" as_pdf="true" />
+              <section04_ch4_pg22 label="4.2 SWORD"    href="04_sword.html" as_pdf="true" />
+            </chapter4_pg22>
+            <chapter5_pg22  label="5. Anmerkungen"            href="05_comments.html" as_pdf="true" />
+            <wholedoc_pg22  label="als PDF"                   href="/mcr_programmer_guide_22.pdf" />
+          </appdev_2_2>
+          <mcrdev_2_2  label="Developer Guide"        href="mcrdev_2_2.html">
+            <codestyle_dev22 href="#CodeStyle" />
+          </mcrdev_2_2>
+        </version_2_2>
+        <version_2_1 label="MyCoRe 2.1" href="archiv/version21/">
+          <whats_new_2_1 label="Was ist neu?" href="whats_new.html" />
+          <mcruse_2_1  label="User Guide"                href="userguide/">
+            <chapter1_ug21  label="1. Über MyCoRe"            href="01_about.html" as_pdf="true" />
+            <chapter2_ug21  label="2. Voraussetzungen"        href="02_prereq.html" as_pdf="true" />
+            <chapter4_ug21  label="3. DocPortal"              href="04_docportal.html" as_pdf="true" />
+            <chapter3_ug21  label="4. Installation"           href="03_install.html" as_pdf="true" />
+            <chapter45_ug21 label="5. Konfiguration"          href="45_configuration.html" as_pdf="true" />
+            <chapter5_ug21  label="6. Datenmodell"            href="05_datamodel.html" as_pdf="true" />
+            <chapter6_ug21  label="7. Umgang"                 href="06_use_docportal.html" as_pdf="true">
+              <cmd_iview_ug21      href="#cmd_iview" />
+              <classif_editor_ug21 href="#classif_editor" />
+            </chapter6_ug21>
+            <chapter7_ug21  label="8. Komponenten"            href="07_optional_components.html" as_pdf="true" />
+            <chapter8_ug21  label="9. Aufbau"                 href="08_more_information.html" as_pdf="true" />
+            <chapter9_ug21  label="10. Tipps"                 href="09_tips.html" as_pdf="true" />
+            <wholedoc_ug21  label="als PDF"                   href="/mcr_user_guide_21.pdf" />
+          </mcruse_2_1>
+          <appdev_2_1  label="Programmer Guide"         href="programmerguide/" >
+            <chapter1_pg21  label="1. Allgemeines"            href="01_general.html" as_pdf="true" />
+            <chapter2_pg21  label="2. Funktionsweisen"       href="02_principles/">
+                <section01_ch2_pg21 label="2.1 Allgemeine Klassen"    href="01_classes.html" as_pdf="true" />
+                <section02_ch2_pg21 label="2.2 Session-Verwaltung"    href="02_session_handling.html" as_pdf="true" />
+                <section03_ch2_pg21 label="2.3 EventHandler"          href="03_event_handler.html" as_pdf="true" />
+                <section04_ch2_pg21 label="2.4 Datenmodell"           href="04_datamodel.html" as_pdf="true" />
+                <section05_ch2_pg21 label="2.5 Query-Service"         href="05_query_service.html" as_pdf="true" />
+                <section06_ch2_pg21 label="2.6 Extrahieren"           href="06_extract.html" as_pdf="true" />
+                <section07_ch2_pg21 label="2.7 Link-Tabellen"         href="07_link_tables.html" as_pdf="true" />
+                <section08_ch2_pg21 label="2.8 Benutzerverwaltung"    href="08_user_management.html" as_pdf="true" />
+                <section09_ch2_pg21 label="2.9 ACL-Integration"       href="09_acl_integration.html" as_pdf="true" />
+                <section10_ch2_pg21 label="2.10 Backend"              href="10_backend.html" as_pdf="true" />
+                <section11_ch2_pg21 label="2.11 Frontend"             href="11_frontend.html" as_pdf="true" />
+                <section12_ch2_pg21 label="2.12 XML-Funktionalität"   href="12_xml_functionality.html" as_pdf="true" />
+                <section13_ch2_pg21 label="2.13 Editor-Framework"     href="13_editor_framework.html" as_pdf="true" />
+                <section14_ch2_pg21 label="2.14 Klassifikationen"     href="14_classification.html" as_pdf="true" />
+                <section15_ch2_pg21 label="2.15 Nützliche Klassen"    href="15_useful_classes.html" as_pdf="true" />
+            </chapter2_pg21>
+            <chapter3_pg21  label="3. Komponenten"            href="03_components.html" as_pdf="true">
+                <iview_pg21 href="#Bildbetrachter" />
+            </chapter3_pg21>
+            <chapter4_pg21  label="4. Schnittstellen"            href="04_interfaces/">
+                <section01_ch4_pg21 label="4.1 OAI"    href="01_oai.html" as_pdf="true" />
+                <section04_ch4_pg21 label="4.2 SWORD"    href="04_sword.html" as_pdf="true" />
+            </chapter4_pg21>
+            <chapter5_pg21  label="5. Anmerkungen"            href="05_comments.html" as_pdf="true" />
+            <wholedoc_pg21  label="als PDF"                   href="/mcr_programmer_guide_21.pdf" />
+          </appdev_2_1>
+          <mcrdev_2_1  label="Developer Guide"        href="mcrdev_2_1.html" />
+        </version_2_1>
+        <version_2_0 label="MyCoRe 2.0" href="archiv/version20/">
+            <mcruse      label="User Guide"             href="mcruse.html" />
+            <appdev      label="Programmer Guide"       href="appdev.html">
+              <chapter1  label="Allgemeines"            href="#Allgemeines+zur+Implementierung" />
+              <chapter2  label="Funktionsprinzipien"    href="#Funktionsprinzipien+und+Implementierungen+von+Kernkomponenten" />
+              <chapter3  label="Komponenten"            href="#Komponenten" />
+              <chapter4  label="Anmerkungen"            href="#Anmerkungen+und+Hinweise" />
+              <sessions  href="#session" />
+            </appdev>
+            <mcrdev      label="Developer Guide"        href="mcrdev.html" />
+        </version_2_0>
+      </doc_archive>
+    </overview>
+    <getting_started       label="Mit MyCoRe starten" href="getting_started/">
+      <architecture          label="Architektur"       href="architecture.html" />
+      <datamodel             label="Datenmodell"       href="datamodel.html" />
+      <installation          label="Installation &amp; Aufbau" href="installation.html" />
+      <buildprocess          label="Buildprozess"      href="build_and_config/">
+        <properties          label="mycore.properties" href="mcr_properties.html" />
+        <hibernate           label="Hibernate"         href="hibernate.html" />
+        <maven               label="Maven"             href="maven.html" />
+      </buildprocess>
+      <cli                   label="Kommandozeile"     href="cli_and_commands/" >
+        <cli_overview        label="Übersicht"         href="index.html" />
+        <web_cli             label="WebCLI"            href="web_cli.html" />
+        <cli_extension       label="Erweiterungen"     href="cli_extension.html" />
+      </cli>
+    </getting_started>
+    <content               label="Inhalte verwalten" >
+      <classifications       label="Klassifikationen"  href="classifications/">
+        <classif_xml         label="XML-Format"        href="classification_datamodel.html" />
+        <classif_commands    label="Kommandos"         href="classification_commands.html" />
+        <classif_browser     label="Browser"           href="classification_browser.html" />
+        <classif_editor      label="Editor"            href="classification_editor.html" />
+        <classif_mapping     label="Mapping"           href="classification_mapping.html" />
+      </classifications>
+      <mcrobject             label="Objekte"         href="mcrobject/">
+        <mcrobj_id           label="MCRObject-ID"      href="mcrobjectid.html" />
+        <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
+        <mcrobj_datatypes    label="Datentypen"        href="datatypes.html" />
+        <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html" />
+        <mcrobj_ifs          label="IFS2"              href="ifs.html" />
+      </mcrobject>
+      <mcrderivate           label="Derivate"        href="mcrderivate_ifs/">
+        <mcrderiv_ifs        label="IFS"               href="ifs.html" />
+        <mcrderiv_commands   label="Kommandos"         href="mcrderivate_commands.html" />
+        <mcrderiv_zip        label="ZIP-Dateien"       href="zipfiles.html" />
+        <mcrderiv_streaming  label="StreamingServer"   href="streamingserver.html" />
+        <mcrderiv_fileupload label="File-Upload"       href="fileupload_applet.html" />
+      </mcrderivate>
+      <eventhandler          label="EventHandler"      href="eventhandler/index.html" />
+      <mcrobj_linktables     label="Linktabellen"      href="mcrobject/linktables.html" />
+    </content>
+
     <search                label="Suche"             href="search/">
       <solr                label="Solr-Integration"  href="solr.html" />
       <query_service       label="QueryService"      href="query_service.html" />
       <extract             label="Daten extrahieren" href="extract.html" />
       <indexbrowsing       label="Index-Blättern"    href="index.html" />
     </search>
-    <frontend              label="Präsentation"          href="frontend/">
+    <frontend              label="Weboberfläche"     href="frontend/">
       <integrated_wcms     label="Content Management">
         <wcms2             label="WCMS2"                 href="index.html#wcms2" />
         <wcms              label="WCMS"                  href="wcms.html" />
@@ -120,6 +287,11 @@ See http://forrest.apache.org/docs/linking.html for more info
         <xeditor           label="XEditor"               href="xeditor.html" />
         <editorframework   label="Editorframework"       href="editor_framework.html" />
       </forms>
+      <image_viewer          label="Bildbetrachter"        href="imageviewer/">
+        <iview2              label="IView2"                href="iview2.html" />
+        <dfgviewer           label="DFG-Viewer"            href="dfgviewer.html" />
+        <metseditor          label="METS-Editor"           href="mets.html" />
+      </image_viewer>
       <basket              label="Korbfunktion"          href="basket.html" />
       <xsl                 label="XSL-Stylesheets">
         <layout_service    label="Layout-Service"        href="layout_service.html" />
@@ -129,12 +301,10 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcrtextresolver     label="TextResolver"          href="text_resolver.html" />
     </frontend>
     <permissions           label="Benutzer und Rechte"   href="#" />
-    <workflow              label="Workflow"              href="#" />
-    <image_viewer          label="Bildbetrachter"        href="imageviewer/">
-      <iview2              label="IView2"                href="iview2.html" />
-      <dfgviewer           label="DFG-Viewer"            href="dfgviewer.html" />
-      <metseditor          label="METS-Editor"           href="mets.html" />
-    </image_viewer>
+    <workflow              label="Workflow"              href="workflow/">
+      <wf_overview         label="Übersicht"             href="index.html" />
+      <swf                 label="SimpleWorkFlow"        href="swf.html" />
+    </workflow>
     <export                label="Datenexport"           href="export/">
       <bibutils            label="Bibutils"              href="index.html" />
     </export>
@@ -146,7 +316,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <google              label="Google-Sitemap"        href="google_sitemap.html" />
       <sword               label="SWORD"                 href="sword.html" />
     </interfaces>
-    <production            label="laufender Betrieb"     href="production/">
+    <production            label="Laufender Betrieb"     href="production/">
       <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />
       <vhost               label="Virtueller Host"       href="vhost.html" />
@@ -162,7 +332,6 @@ See http://forrest.apache.org/docs/linking.html for more info
       <migrate13_20        label="1.3 -> 2.0"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
       <migrate12_13        label="1.2 -> 1.3"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
     </migrate>
-    <howtos                label="HowTo's"           href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo" />
     <developer             label="Für Entwickler"    href="developer/">
       <vocabular           label="Vokabular"                  href="vocabular.html" />
       <eclipse             label="Entwicklungsplattformen"    href="eclipse.html" />
@@ -174,164 +343,6 @@ See http://forrest.apache.org/docs/linking.html for more info
       <classes             label="Allgemeine Klassen"         href="classes.html" />
       <mcrservlet          label="MCRServlet"                 href="mcrservlet.html" />
     </developer>
-    <maven                 label="Maven Site"        href="http://www.mycore.de/generated/" />
-    <apidocs               label="Javadocs"          href="http://www.mycore.de/generated/mycore/apidocs/" />
-
-    <doc_archive label="Archiv">
-      <version_201404 label="MyCoRe 2014.04" href="archiv/version201404/">
-        <install               label="Installation"      href="install.html" />
-        <principles            label="Funktionsweisen"   href="principles/">
-          <section01 label="1 Allgemeine Klassen"    href="01_classes.html" />
-          <section02 label="2 Session-Verwaltung"    href="02_session_handling.html" />
-          <section03 label="3 EventHandler"          href="03_event_handler.html" />
-          <section04 label="4 Datenmodell"           href="04_datamodel.html" />
-          <section05 label="5 Query-Service"         href="05_query_service.html" />
-          <section06 label="6 Extrahieren"           href="06_extract.html" />
-          <section07 label="7 Link-Tabellen"         href="07_link_tables.html" />
-          <section08 label="8 Benutzerverwaltung"    href="08_user_management.html" />
-          <section09 label="9 ACL-Integration"       href="09_acl_integration.html" />
-          <section10 label="10 Backend"              href="10_backend.html" />
-          <section11 label="11 Frontend"             href="11_frontend.html" />
-          <section12 label="12 XML-Funktionalität"   href="12_xml_functionality.html" />
-          <section13 label="13 Editor-Framework"     href="13_editor_framework.html" />
-          <section14 label="14 Klassifikationen"     href="14_classification.html" />
-          <section15 label="15 Nützliche Klassen"    href="15_useful_classes.html" />
-        </principles>
-        <components            label="Komponenten"   href="components/">
-          <section01 label="1 Session Listing"    href="01_session_listing.html" />
-          <section02 label="2 IView2"    href="02_iview2.html" />
-          <section03 label="3 Broadcasting"    href="03_broadcasting.html" />
-          <section04 label="4 Basket"    href="04_basket.html" />
-          <section05 label="5 XEditor"    href="05_xeditor.html" />
-          <section05 label="6 SolR"    href="06_solr.html" />
-        </components>
-        <componentes            label="alte Komponenten"         href="components.html" />
-        <mymaker               label="DocPortal"           href="docportal/">
-          <mm_about            label="1. Übersicht"        href="04_docportal.html" as_pdf="true" />
-          <mm_configuration    label="2. Konfiguration"    href="45_configuration.html" as_pdf="true" />
-          <mm_datamodel        label="3. Datenmodell"      href="05_datamodel.html" as_pdf="true" />
-          <mm_usage            label="4. Umgang"           href="06_use_docportal.html" as_pdf="true">
-            <mm_cmd_iview                                  href="#cmd_iview" />
-            <mm_classif_editor                             href="#classif_editor" />
-          </mm_usage>
-          <mm_components       label="5. Komponenten"      href="07_optional_components.html" as_pdf="true" />
-          <mm_structure        label="6. Aufbau"           href="08_more_information.html" as_pdf="true" />
-          <mm_tips             label="7. Tipps"            href="09_tips.html" as_pdf="true" />
-          <!-- mm_wholedoc         label="als PDF"             href="/mymaker.pdf" / -->
-        </mymaker>
-      </version_201404>
-      <version_2_2 label="MyCoRe 2.2" href="archiv/version22/">
-        <mcruse_2_2  label="User Guide"                     href="userguide/">
-          <chapter1_ug22  label="1. Über MyCoRe"            href="01_about.html" as_pdf="true" />
-          <chapter2_ug22  label="2. Voraussetzungen"        href="02_prereq.html" as_pdf="true" />
-          <chapter4_ug22  label="3. DocPortal"              href="04_docportal.html" as_pdf="true" />
-          <chapter3_ug22  label="4. Installation"           href="03_install.html" as_pdf="true" />
-          <chapter45_ug22 label="5. Konfiguration"          href="45_configuration.html" as_pdf="true" />
-          <chapter5_ug22  label="6. Datenmodell"            href="05_datamodel.html" as_pdf="true" />
-          <chapter6_ug22  label="7. Umgang"                 href="06_use_docportal.html" as_pdf="true">
-            <cmd_iview_ug22      href="#cmd_iview" />
-            <classif_editor_ug22 href="#classif_editor" />
-          </chapter6_ug22>
-          <chapter7_ug22  label="8. Komponenten"            href="07_optional_components.html" as_pdf="true" />
-          <chapter8_ug22  label="9. Aufbau"                 href="08_more_information.html" as_pdf="true" />
-          <chapter9_ug22  label="10. Tipps"                 href="09_tips.html" as_pdf="true" />
-          <wholedoc_ug22  label="als PDF"                   href="/mcr_user_guide_22.pdf" />
-        </mcruse_2_2>
-        <appdev_2_2  label="Programmer Guide"               href="programmerguide/" >
-          <chapter1_pg22  label="1. Allgemeines"            href="01_general.html" as_pdf="true" />
-          <chapter2_pg22  label="2. Funktionsweisen"        href="02_principles/">
-            <section01_ch2_pg22 label="2.1 Allgemeine Klassen"    href="01_classes.html" as_pdf="true" />
-            <section02_ch2_pg22 label="2.2 Session-Verwaltung"    href="02_session_handling.html" as_pdf="true" />
-            <section03_ch2_pg22 label="2.3 EventHandler"          href="03_event_handler.html" as_pdf="true" />
-            <section04_ch2_pg22 label="2.4 Datenmodell"           href="04_datamodel.html" as_pdf="true" />
-            <section05_ch2_pg22 label="2.5 Query-Service"         href="05_query_service.html" as_pdf="true" />
-            <section06_ch2_pg22 label="2.6 Extrahieren"           href="06_extract.html" as_pdf="true" />
-            <section07_ch2_pg22 label="2.7 Link-Tabellen"         href="07_link_tables.html" as_pdf="true" />
-            <section08_ch2_pg22 label="2.8 Benutzerverwaltung"    href="08_user_management.html" as_pdf="true" />
-            <section09_ch2_pg22 label="2.9 ACL-Integration"       href="09_acl_integration.html" as_pdf="true" />
-            <section10_ch2_pg22 label="2.10 Backend"              href="10_backend.html" as_pdf="true" />
-            <section11_ch2_pg22 label="2.11 Frontend"             href="11_frontend.html" as_pdf="true" />
-            <section12_ch2_pg22 label="2.12 XML-Funktionalität"   href="12_xml_functionality.html" as_pdf="true" />
-            <section13_ch2_pg22 label="2.13 Editor-Framework"     href="13_editor_framework.html" as_pdf="true" />
-            <section14_ch2_pg22 label="2.14 Klassifikationen"     href="14_classification.html" as_pdf="true" />
-            <section15_ch2_pg22 label="2.15 Nützliche Klassen"    href="15_useful_classes.html" as_pdf="true" />
-          </chapter2_pg22>
-          <chapter3_pg22  label="3. Komponenten"            href="03_components.html" as_pdf="true">
-            <iview_pg22 href="#Bildbetrachter" />
-          </chapter3_pg22>
-          <chapter4_pg22  label="4. Schnittstellen"            href="04_interfaces/">
-            <section01_ch4_pg22 label="4.1 OAI"    href="01_oai.html" as_pdf="true" />
-            <section04_ch4_pg22 label="4.2 SWORD"    href="04_sword.html" as_pdf="true" />
-          </chapter4_pg22>
-          <chapter5_pg22  label="5. Anmerkungen"            href="05_comments.html" as_pdf="true" />
-          <wholedoc_pg22  label="als PDF"                   href="/mcr_programmer_guide_22.pdf" />
-        </appdev_2_2>
-        <mcrdev_2_2  label="Developer Guide"        href="mcrdev_2_2.html">
-          <codestyle_dev22 href="#CodeStyle" />
-        </mcrdev_2_2>
-      </version_2_2>
-      <version_2_1 label="MyCoRe 2.1" href="archiv/version21/">
-        <whats_new_2_1 label="Was ist neu?" href="whats_new.html" />
-        <mcruse_2_1  label="User Guide"                href="userguide/">
-          <chapter1_ug21  label="1. Über MyCoRe"            href="01_about.html" as_pdf="true" />
-          <chapter2_ug21  label="2. Voraussetzungen"        href="02_prereq.html" as_pdf="true" />
-          <chapter4_ug21  label="3. DocPortal"              href="04_docportal.html" as_pdf="true" />
-          <chapter3_ug21  label="4. Installation"           href="03_install.html" as_pdf="true" />
-          <chapter45_ug21 label="5. Konfiguration"          href="45_configuration.html" as_pdf="true" />
-          <chapter5_ug21  label="6. Datenmodell"            href="05_datamodel.html" as_pdf="true" />
-          <chapter6_ug21  label="7. Umgang"                 href="06_use_docportal.html" as_pdf="true">
-            <cmd_iview_ug21      href="#cmd_iview" />
-            <classif_editor_ug21 href="#classif_editor" />
-          </chapter6_ug21>
-          <chapter7_ug21  label="8. Komponenten"            href="07_optional_components.html" as_pdf="true" />
-          <chapter8_ug21  label="9. Aufbau"                 href="08_more_information.html" as_pdf="true" />
-          <chapter9_ug21  label="10. Tipps"                 href="09_tips.html" as_pdf="true" />
-          <wholedoc_ug21  label="als PDF"                   href="/mcr_user_guide_21.pdf" />
-        </mcruse_2_1>
-        <appdev_2_1  label="Programmer Guide"         href="programmerguide/" >
-          <chapter1_pg21  label="1. Allgemeines"            href="01_general.html" as_pdf="true" />
-          <chapter2_pg21  label="2. Funktionsweisen"       href="02_principles/">
-              <section01_ch2_pg21 label="2.1 Allgemeine Klassen"    href="01_classes.html" as_pdf="true" />
-              <section02_ch2_pg21 label="2.2 Session-Verwaltung"    href="02_session_handling.html" as_pdf="true" />
-              <section03_ch2_pg21 label="2.3 EventHandler"          href="03_event_handler.html" as_pdf="true" />
-              <section04_ch2_pg21 label="2.4 Datenmodell"           href="04_datamodel.html" as_pdf="true" />
-              <section05_ch2_pg21 label="2.5 Query-Service"         href="05_query_service.html" as_pdf="true" />
-              <section06_ch2_pg21 label="2.6 Extrahieren"           href="06_extract.html" as_pdf="true" />
-              <section07_ch2_pg21 label="2.7 Link-Tabellen"         href="07_link_tables.html" as_pdf="true" />
-              <section08_ch2_pg21 label="2.8 Benutzerverwaltung"    href="08_user_management.html" as_pdf="true" />
-              <section09_ch2_pg21 label="2.9 ACL-Integration"       href="09_acl_integration.html" as_pdf="true" />
-              <section10_ch2_pg21 label="2.10 Backend"              href="10_backend.html" as_pdf="true" />
-              <section11_ch2_pg21 label="2.11 Frontend"             href="11_frontend.html" as_pdf="true" />
-              <section12_ch2_pg21 label="2.12 XML-Funktionalität"   href="12_xml_functionality.html" as_pdf="true" />
-              <section13_ch2_pg21 label="2.13 Editor-Framework"     href="13_editor_framework.html" as_pdf="true" />
-              <section14_ch2_pg21 label="2.14 Klassifikationen"     href="14_classification.html" as_pdf="true" />
-              <section15_ch2_pg21 label="2.15 Nützliche Klassen"    href="15_useful_classes.html" as_pdf="true" />
-          </chapter2_pg21>
-          <chapter3_pg21  label="3. Komponenten"            href="03_components.html" as_pdf="true">
-              <iview_pg21 href="#Bildbetrachter" />
-          </chapter3_pg21>
-          <chapter4_pg21  label="4. Schnittstellen"            href="04_interfaces/">
-              <section01_ch4_pg21 label="4.1 OAI"    href="01_oai.html" as_pdf="true" />
-              <section04_ch4_pg21 label="4.2 SWORD"    href="04_sword.html" as_pdf="true" />
-          </chapter4_pg21>
-          <chapter5_pg21  label="5. Anmerkungen"            href="05_comments.html" as_pdf="true" />
-          <wholedoc_pg21  label="als PDF"                   href="/mcr_programmer_guide_21.pdf" />
-        </appdev_2_1>
-        <mcrdev_2_1  label="Developer Guide"        href="mcrdev_2_1.html" />
-      </version_2_1>
-      <version_2_0 label="MyCoRe 2.0" href="archiv/version20/">
-          <mcruse      label="User Guide"             href="mcruse.html" />
-          <appdev      label="Programmer Guide"       href="appdev.html">
-            <chapter1  label="Allgemeines"            href="#Allgemeines+zur+Implementierung" />
-            <chapter2  label="Funktionsprinzipien"    href="#Funktionsprinzipien+und+Implementierungen+von+Kernkomponenten" />
-            <chapter3  label="Komponenten"            href="#Komponenten" />
-            <chapter4  label="Anmerkungen"            href="#Anmerkungen+und+Hinweise" />
-            <sessions  href="#session" />
-          </appdev>
-          <mcrdev      label="Developer Guide"        href="mcrdev.html" />
-      </version_2_0>
-    </doc_archive>
-
   </documentation>
 
   <support      label="Organisation"       href="support/" tab="support">

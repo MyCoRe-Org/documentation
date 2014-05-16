@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -10,37 +10,37 @@
    <section>
     <title>Eine Übersicht</title>
     <p>
-    Die folgende Skizze soll eine Übersicht über die Zusammenhänge der einzelnen Daten geben. In den anschließenden 
-    Abschnitten werden diese dann näher erläutert. Die Datenmodelle der Typen <strong>document</strong> 
-    und <strong>disshab</strong> sowie <strong>author</strong> und <strong>person</strong> unterscheiden sich lediglich 
-    in der Frage der Pflichtfelder. Die Typen disshab und person sind für einen Dissertations-Server (DOL) gedacht und 
+    Die folgende Skizze soll eine Übersicht über die Zusammenhänge der einzelnen Daten geben. In den anschließenden
+    Abschnitten werden diese dann näher erläutert. Die Datenmodelle der Typen <strong>document</strong>
+    und <strong>disshab</strong> sowie <strong>author</strong> und <strong>person</strong> unterscheiden sich lediglich
+    in der Frage der Pflichtfelder. Die Typen disshab und person sind für einen Dissertations-Server (DOL) gedacht und
     sind in der Grundversion von DocPortal nicht enthalten.
     </p>
     <img src="images/mcruse_metadata.png" alt="Metadaten" />
-    <p class="klein"><strong>Abbildung 5.1:</strong> Zusammenhänge der einzelnen Metadaten</p>   
+    <p class="klein"><strong>Abbildung 5.1:</strong> Zusammenhänge der einzelnen Metadaten</p>
    </section>
-   
+
    <section>
     <title>Die Document-Daten</title>
     <p>
-    Das Datenmodell der Dokumente ist ein Kompromiss zwischen den einzelnen abzubildenden Datenmodellen bisher 
-    bestehender Projekte. Gleichzeitig sollen auch Anforderungen an die Zukunft, wie das <strong>xMetaDiss</strong> 
-    Datenmodell oder OAI berücksichtigt werden. Entscheidend für die Gestaltung der Daten mit MyCoRe sind vor allem 
-    die MyCoRe-Datentypen. Die Festlegungen zur Wiederholbarkeit der Angaben bezieht sich immer 
+    Das Datenmodell der Dokumente ist ein Kompromiss zwischen den einzelnen abzubildenden Datenmodellen bisher
+    bestehender Projekte. Gleichzeitig sollen auch Anforderungen an die Zukunft, wie das <strong>xMetaDiss</strong>
+    Datenmodell oder OAI berücksichtigt werden. Entscheidend für die Gestaltung der Daten mit MyCoRe sind vor allem
+    die MyCoRe-Datentypen. Die Festlegungen zur Wiederholbarkeit der Angaben bezieht sich immer
     auf <strong>eine</strong> Sprache. Die meisten Felder sind optional und können bei Bedarf verwendet werden.
     </p>
     <p>
-    Einzelne Applikationen werden nur einen Teil der angegebenen Felder ausfüllen. Es ist daher sinnvoll sich auf 
-    eine allgemeine Mindestmenge von Pflichtfeldern zu einigen, um eine korrekte Suche über mehrere Instanzen und 
+    Einzelne Applikationen werden nur einen Teil der angegebenen Felder ausfüllen. Es ist daher sinnvoll sich auf
+    eine allgemeine Mindestmenge von Pflichtfeldern zu einigen, um eine korrekte Suche über mehrere Instanzen und
     Projekte zu gestatten. Bei einigen Feldern ist dies aber von den Spezifika des jeweiligen Projektes abhängig.
     </p>
-    <p>Die Suchmöglichkeiten (parametrisch/Freitext) beziehen sich auf die Metadaten. Hinzu kommt die Volltextsuche 
-    im Dokument. Die Felder des <strong>Dublin Core Datenmodells</strong> sollten immer implementiert und wenn möglich 
-    mit Daten gefüllt sein. Auf sie beziehen sich auch die Suchen externer Datenanbieter bzw. Teilnehmer am MyCoRe- 
-    oder OAI Datenverbund. Um späteren Problemen mit nicht-Latin1-Sprachen aus dem Weg zu gehen sollen alle 
-    Metadatensätze und die Internet-Anwendung UTF-8 als Codierung verwenden. 
+    <p>Die Suchmöglichkeiten (parametrisch/Freitext) beziehen sich auf die Metadaten. Hinzu kommt die Volltextsuche
+    im Dokument. Die Felder des <strong>Dublin Core Datenmodells</strong> sollten immer implementiert und wenn möglich
+    mit Daten gefüllt sein. Auf sie beziehen sich auch die Suchen externer Datenanbieter bzw. Teilnehmer am MyCoRe-
+    oder OAI Datenverbund. Um späteren Problemen mit nicht-Latin1-Sprachen aus dem Weg zu gehen sollen alle
+    Metadatensätze und die Internet-Anwendung UTF-8 als Codierung verwenden.
     </p>
-    
+
     <table>
     <tr>
     <th>Nr.</th>
@@ -359,12 +359,12 @@
     </tr>
     </table>
     <p class="klein"><strong>Tabelle 5.1:</strong> Das neue Metadaten-Modell der Dokumente</p>
-    
+
     <p>Ausfüllhinweise:</p>
     <p>
     Die Zahlen in Klammern geben die maximale Zeichenlänge pro Kardinalität an.
     </p>
-    
+
     <table>
     <tr>
     <th>Nr.</th>
@@ -378,7 +378,7 @@
         <li>Pro Titeltyp können mehrere Sprachen benutzt werden.</li>
         <li>Haupttitel werden mit <strong>type=“main“</strong> markiert.</li>
         <li>Alternative Titel werden mit <strong>type=“alt“</strong> markiert.</li>
-        <li>Untertitel werden mit <strong>type=“subtitle“</strong> markiert.</li>    
+        <li>Untertitel werden mit <strong>type=“subtitle“</strong> markiert.</li>
     </ul></td>
     </tr>
     <tr>
@@ -414,7 +414,7 @@
     <td>Beschreibende Informationen.
         <ul><li>Für den Beschreibungstext <strong>type=“description“</strong>.</li>
             <li>Für Abstract <strong>type=“abstract“</strong>.</li>
-            <li>Für die Inhaltsangabe <strong>type=“content“</strong>.</li>        
+            <li>Für die Inhaltsangabe <strong>type=“content“</strong>.</li>
         </ul>
     </td>
     </tr>
@@ -424,7 +424,7 @@
     <td>Vereis auf externe Beschreibungstexte.
         <ul><li>Für den Beschreibungstext <strong>type=“description“</strong>.</li>
             <li>Für Abstract <strong>type=“abstract“</strong>.</li>
-            <li>Für die Inhaltsangabe <strong>type=“content“</strong>.</li>        
+            <li>Für die Inhaltsangabe <strong>type=“content“</strong>.</li>
         </ul>
     </td>
     </tr>
@@ -443,7 +443,7 @@
     <td>Contributor(128)</td>
     <td>Textliche Bezeichnung des/der Beteiligten.
         <ul>
-        <li>Für den Typ können Informationen wie <strong>„advisor“</strong> , <strong>„mentor“</strong>, 
+        <li>Für den Typ können Informationen wie <strong>„advisor“</strong> , <strong>„mentor“</strong>,
         <strong>„drawer“</strong> usw. angegeben werden.</li>
         </ul>
     </td>
@@ -453,7 +453,7 @@
     <td>ContributorLink</td>
     <td>Verweis auf einen Personen- oder Institutionen-Datensatz.
         <ul>
-        <li>Für den Typ können Informationen wie <strong>„advisor“</strong> , <strong>„mentor“</strong>, 
+        <li>Für den Typ können Informationen wie <strong>„advisor“</strong> , <strong>„mentor“</strong>,
         <strong>„drawer“</strong> usw. angegeben werden.</li>
         </ul>
     </td>
@@ -465,7 +465,7 @@
             <li>Für das Datum der Einreichung zur Dis./Habil.der Arbeit <strong>type=“submit“</strong>.</li>
             <li>Für das Datum der Verteidigung zur Dis./Habil.der Arbeit <strong>type=“accept“</strong>.</li>
             <li>Für das Datum der Beschlussfassung zur Dis./Habil. der Arbeit <strong>type=“decide“</strong>.</li>
-        </ul>           
+        </ul>
     </td>
     </tr>
     <tr>
@@ -590,16 +590,16 @@
     </tr>
     </table>
     <p class="klein"><strong>Tabelle 5.2:</strong> Ausfüllhinweise zum neuen Datenmodell der Dokumente</p>
-    
+
    </section>
-   
+
    <section>
     <title>Das Datenmodell für Institutionen</title>
     <p>
-    Für Institutionen wurde ein Datenmodell entwickelt, welches sich hauptsächlich an dem Einsatz im dienstlichen 
+    Für Institutionen wurde ein Datenmodell entwickelt, welches sich hauptsächlich an dem Einsatz im dienstlichen
     Gebrauch orientiert.
     </p>
-    
+
     <table>
     <tr>
     <td>Nr.</td>
@@ -666,9 +666,9 @@
     </tr>
     </table>
     <p class="klein"><strong>Tabelle 5.3:</strong> Das neue Metadaten-Modell für Institutionen</p>
-    
+
     <p>Ausfüllhinweise:</p>
-    
+
     <table>
     <tr>
     <th>Nr.</th>
@@ -710,15 +710,15 @@
     </tr>
     </table>
     <p class="klein"><strong>Tabelle 5.4:</strong> Ausfüllhinweise für das neue Metadaten-Modell für Institutionen</p>
-    
+
    </section>
    <section>
     <title>Das Datenmodell für natürliche Personen</title>
     <p>
-    Für natürliche <strong>Personen</strong> hingegen ist ein umfangreicheres Datenmodell erforderlich. 
+    Für natürliche <strong>Personen</strong> hingegen ist ein umfangreicheres Datenmodell erforderlich.
     Dieses ist in der angebotenen Variante vor allem auf dienstliche Belange abgestimmt.
     </p>
-    
+
     <table>
     <tr>
     <td>Nr.</td>
@@ -728,7 +728,7 @@
     <td>wied.</td>
     <td>Suche</td>
     <td>MCR-Type</td>
-    </tr>    
+    </tr>
     <tr>
     <td>1</td>
     <td>Name</td>
@@ -857,9 +857,9 @@
     </tr>
     </table>
     <p class="klein"><strong>Tabelle 5.5:</strong> Das neue Metadaten-Modell für Personen</p>
-    
+
     <p>Ausfüllhinweise:</p>
-    
+
     <table>
     <tr>
     <th>Nr.</th>
@@ -951,30 +951,30 @@
     </tr>
     </table>
     <p class="klein"><strong>Tabelle 5.6:</strong> Ausfüllhinweise für das neue Metadaten-Modell für Personen</p>
-    
+
    </section>
-   
+
    <anchor id="chapter_5.5" />
    <section>
     <title>Klassifikationen</title>
     <p>
-    Klassifikationen sollen eine Suche / Präsentation von einheitlichen Begriffen gewährleisten. 
-    Da letztendlich jede Einrichtung selbst für die Auswahl der verwendeten Klassifikation verantwortlich ist, 
-    können hier nur Empfehlungen ausgesprochen werden, um eine gemeinsame Instanzen-übergreifende Suche zu ermöglichen. 
-    Achtung, in einem Verbund sollte man sich darüber im Klaren sein, dass Streichungen von Kategorien einer 
+    Klassifikationen sollen eine Suche / Präsentation von einheitlichen Begriffen gewährleisten.
+    Da letztendlich jede Einrichtung selbst für die Auswahl der verwendeten Klassifikation verantwortlich ist,
+    können hier nur Empfehlungen ausgesprochen werden, um eine gemeinsame Instanzen-übergreifende Suche zu ermöglichen.
+    Achtung, in einem Verbund sollte man sich darüber im Klaren sein, dass Streichungen von Kategorien einer
     Klassifikation zu Fehlern führen können! Ergänzungen hingegen sind unkritisch.
     </p>
-   
+
     <section>
      <title>Subjekte</title>
      <p>
-     Die Klassifikationen der Subjekte sind wohl das größte Problem bei der Suche nach einem gemeinsamen Nenner. 
-     Andererseits kann hier auch toleriert werden, das eine große Individualität der einzelnen Anwendungen herrscht, 
-     wenn man bereit ist, Diskrepanzen bei der Suche hinzunehmen bzw. dieses Feld von einer <strong>gemeinsamen 
-     übergreifenden</strong> Suche auszuschließen. Einige Klassifikationen sind schon für MyCoRe realisiert, andere 
+     Die Klassifikationen der Subjekte sind wohl das größte Problem bei der Suche nach einem gemeinsamen Nenner.
+     Andererseits kann hier auch toleriert werden, das eine große Individualität der einzelnen Anwendungen herrscht,
+     wenn man bereit ist, Diskrepanzen bei der Suche hinzunehmen bzw. dieses Feld von einer <strong>gemeinsamen
+     übergreifenden</strong> Suche auszuschließen. Einige Klassifikationen sind schon für MyCoRe realisiert, andere
      bedürfen noch einer Umsetzung. Eine Übersicht gibt die folgende Tabelle.
      </p>
-     
+
      <table>
      <tr>
      <th>Klassifikation</th>
@@ -1076,70 +1076,70 @@
      <td>Unified Medical Language System Scheme (UMLS)</td>
      <td>nein</td>
      <td/>
-     <td/>     
+     <td/>
      </tr>
      </table>
      <p class="klein"><strong>Tabelle 5.7:</strong> Potentielle Klassifikationen für DocPortal</p>
-     
+
     </section>
-    
+
     <section>
      <title>Herkunft</title>
      <p>
-     Diese Klassifikation beinhaltet eine Liste von Grundeinträgen für die beteiligten Einrichtungen. Diese 
-     Grundeinträge sind durch den jeweiligen DocPortal-Anwender für sich um eine weitere Untergliederung näher zu 
-     spezifizieren. Ziel dieser Grundeinrichtung ist eine grobe Suchbarkeit der Daten auch von Anwendungen anderer 
-     Portal-Teilnehmer aus (Beispiel: Suche von Objekten aus Leipzig in Jena). Es erscheint sinnvoll, für die 
-     Herkunft die Möglichkeit einer Anbindung von URL's an die jeweilige Kategorie, wie sie MyCoRe bietet, 
-     auszunutzen, somit kann direkt auf die Web-Seite eines Institutes oder einer Einrichtung referenziert werden. 
+     Diese Klassifikation beinhaltet eine Liste von Grundeinträgen für die beteiligten Einrichtungen. Diese
+     Grundeinträge sind durch den jeweiligen DocPortal-Anwender für sich um eine weitere Untergliederung näher zu
+     spezifizieren. Ziel dieser Grundeinrichtung ist eine grobe Suchbarkeit der Daten auch von Anwendungen anderer
+     Portal-Teilnehmer aus (Beispiel: Suche von Objekten aus Leipzig in Jena). Es erscheint sinnvoll, für die
+     Herkunft die Möglichkeit einer Anbindung von URL's an die jeweilige Kategorie, wie sie MyCoRe bietet,
+     auszunutzen, somit kann direkt auf die Web-Seite eines Institutes oder einer Einrichtung referenziert werden.
      </p>
     </section>
-    
+
     <section>
      <title>Typ</title>
      <p>
-     Da sich das xMetaDiss Konzept nur für Dissertation und Habilitationen verantwortlich fühlt, ist eine Integration 
-     in MILESS/MyCoRe relativ einfach möglich. DocPortal sieht daher alle in MILESS bisher verwendeten Typen vor. 
+     Da sich das xMetaDiss Konzept nur für Dissertation und Habilitationen verantwortlich fühlt, ist eine Integration
+     in MILESS/MyCoRe relativ einfach möglich. DocPortal sieht daher alle in MILESS bisher verwendeten Typen vor.
      Ergänzungen durch die Anwender von DocPortal können problemlos durchgeführt werden.
      </p>
     </section>
-    
+
     <section>
      <title>Format</title>
      <p>
-     Die Festlegung der Format-Klassifikation ist sehr schwierig. METADISS sieht hier zum Beispiel die MIME-Types vor. 
-     In MILESS/MyCoRe werden hier verbale Einstufungen benutzt. Dabei sollten wir auch bleiben, da wir ja ggf. eine 
-     Menge von Objekten mit einem Metadatensatz versehen (Derivate). Aus der Speichertabelle dieser Derivate können 
-     die erforderlichen Mime-Types gewonnen werden. 
+     Die Festlegung der Format-Klassifikation ist sehr schwierig. METADISS sieht hier zum Beispiel die MIME-Types vor.
+     In MILESS/MyCoRe werden hier verbale Einstufungen benutzt. Dabei sollten wir auch bleiben, da wir ja ggf. eine
+     Menge von Objekten mit einem Metadatensatz versehen (Derivate). Aus der Speichertabelle dieser Derivate können
+     die erforderlichen Mime-Types gewonnen werden.
      </p>
     </section>
-    
+
     <section>
      <title>Sprache</title>
      <p>
-     Die Language Klassifikation ist eine Abbildung der Sprachen nach ISO-639-1. Ggf. werden diese Sprachkürzel um 
-     Länderkürzel nach ISO Norm 3166 erweitert werden (z. B. eng-US). Um Konform zur XML-Notation zu sein, wird 
-     gemäß Spezifikation die Form <strong>...[-CC]</strong> gewählt, wobei ... der 3-stellige Sprachcode ist. Diesem 
+     Die Language Klassifikation ist eine Abbildung der Sprachen nach ISO-639-1. Ggf. werden diese Sprachkürzel um
+     Länderkürzel nach ISO Norm 3166 erweitert werden (z. B. eng-US). Um Konform zur XML-Notation zu sein, wird
+     gemäß Spezifikation die Form <strong>...[-CC]</strong> gewählt, wobei ... der 3-stellige Sprachcode ist. Diesem
      kann sich das Länderkürzel mit Minuszeichen anschließen.
      </p>
     </section>
-   
+
     <section>
      <title>Nationalität</title>
      <p>
-     Die Klassifikation der Nationalitäten umfasst eine einfache Liste der gängigsten Nationalitäten. 
+     Die Klassifikation der Nationalitäten umfasst eine einfache Liste der gängigsten Nationalitäten.
      Eine Ergänzung ist jederzeit möglich.
      </p>
     </section>
-    
+
     <section>
      <title>Übersicht der DocPortal-Klassifikationen</title>
      <p>
-     Die nachfolgende Tabelle gibt eine Übersicht der mitgelieferten Klassifikationsmuster, wie sie Verwendung finden. 
-     Diese Muster müssen für eine Nachnutzung entsprechend angepasst werden. Gleichzeitig erfolgt mit dem weiteren 
+     Die nachfolgende Tabelle gibt eine Übersicht der mitgelieferten Klassifikationsmuster, wie sie Verwendung finden.
+     Diese Muster müssen für eine Nachnutzung entsprechend angepasst werden. Gleichzeitig erfolgt mit dem weiteren
      Projektausbau auch die Erweiterung dieser Klassifikationen.
      </p>
-     
+
      <table>
      <tr>
      <th>MCRObjectID</th>
@@ -1151,8 +1151,8 @@
      </tr>
      <tr>
      <td>DocPortal_class_00000002</td>
-     <td>Eine Grundliste der beteiligten Universitäten und Firmen. Diese Liste ist nicht fein struktueriert, dies müssen 
-         die Anwender selbst vornehmen. Im description Attribut der Kategorien können MCRObjectID's der Institutionen 
+     <td>Eine Grundliste der beteiligten Universitäten und Firmen. Diese Liste ist nicht fein struktueriert, dies müssen
+         die Anwender selbst vornehmen. Im description Attribut der Kategorien können MCRObjectID's der Institutionen
          abgelegt werden.
      </td>
      </tr>
@@ -1190,7 +1190,7 @@
      </tr>
      </table>
      <p class="klein"><strong>Tabelle 5.8:</strong> DocPortal-Klassifikationen</p>
-     
+
     </section>
    </section>
 
