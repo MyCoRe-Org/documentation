@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Web Front End anpassen</title>
+  </header>
+  <body>
+
+    <section>
+      <title>Web Front End anpassen</title>
+      <p>
+        
+      </p>
+      <ul>
+        <li>Integriertes Web Content Management System
+          <ul>
+            <li>WCMS</li>
+            <li>WCMS 2</li>
+          </ul>
+        </li>
+        <li>Mehrsprachigkeit, i18n</li>
+        <li>Formulare für Such- und Eingabemasken gestalten
+          <ul>
+            <li>MyCoRe Editor Framework</li>
+            <li>XEditor</li>
+          </ul>
+        </li>
+        <li>Korbfunktion</li>
+        <li>Layout-Service
+          <ul>
+            <li>XSL Stylesheets verwenden</li>
+            <li>XSLInfoServlet</li>
+            <li>Mehrstufige Layout-Prozesse</li>
+            <li>XSL FO Unterstützung</li>
+          </ul>
+        </li>
+        <li>URI Resolver verwenden: Wieso, weshalb, warum
+        <ul>
+          <li>Vorhandene URI Resolver</li>
+          <li>MCRTextResolver</li>
+          <li>Eigene URI Resolver implementieren</li>
+        </ul>
+        </li>
+      </ul>
+    </section>
+
+  </body>
+</document>

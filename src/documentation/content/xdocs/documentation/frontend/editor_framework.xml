@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Das MyCoRe-Editor-Framework</title>
+    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten</abstract>
+  </header>
+<body>
+    <section>
+     <title>Funktionalität</title>
+     <p>
+     Das Metadatenmodell einer MyCoRe Anwendung ist frei konfigurierbar. Dementsprechend benötigt ein MyCoRe System
+     auch einen Online-Editor für diese Metadaten, der frei konfigurierbar ist. Aus dieser Anforderung heraus entstand
+     das MyCoRe Editor Framework, das aus einem XSL Stylesheet und einer Menge von Java-Klassen besteht.
+     </p>
+     <p>
+     Verschiedene MyCoRe Anwendungen können über XML-Definitionsdateien nahezu beliebige Online-Eingabemasken für
+     Metadaten gestalten. Das Framework verarbeitet diese Editor-Definitionsdateien und generiert daraus den HTML-Code
+     der Webseite, die das Online-Formular enthält. Nach Abschicken des Formulars generiert das Framework aus den
+     Eingaben ein dem Metadatenmodell entsprechendes XML-Dokument, das an ein beliebiges Servlet zur endgültigen
+     Verarbeitung (z.B. zur Speicherung) weitergereicht wird. Ebenso können existierende XML-Dokumente als Eingabe in
+     die Formularfelder des Editors dienen, so dass sich vorhandene Metadaten bearbeiten lassen. Das Framework regelt
+     dabei die Abbildung zwischen den XML-Elementen und –Attributen und den Eingabefeldern der resultierenden
+     HTML-Formularseite, indem es die in der Editor-Definitionsdatei hinterlegten Abbildungsregeln verarbeitet.
+     </p>
+     <p>
+     Inzwischen ist das Editor Framework auch in der Lage, einzelne Dateien zusammen mit den Formulareingaben in das
+     System hochzuladen und zur Weiterverarbeitung an ein Servlet durchzureichen. Die Validierung der Eingabefelder ist
+     strukturell vorbereitet, aber derzeit noch nicht implementiert. Prinzipiell erlaubt das Editor Framework,
+     beliebige XML-Dokumente in HTML-Formularen zu erzeugen oder zu bearbeiten.
+     </p>
+    </section>
+
+    <section>
+     <title>Architektur</title>
+     <p>Die folgende Abbildung zeigt die Architektur des MyCoRe Editor Frameworks:</p>
+     <p><code>[ToDo]: Bild folgt</code></p>
+     <p>
+     Ein HTML Formular, das man mit Hilfe des Frameworks realisieren möchte, wird im folgenden <em>Editor</em> genannt.
+     Jeder Editor besitzt eine eindeutige ID (z.B. <code>document</code> (in den MyCoRe-Applikationen meist eine
+     Mischung aus dem MCRObjectID-Typ und der Bezeichnung eines Verarbeitungsschrittes [editor-commit-document.xml]).
+     und eine Definitionsdatei im XML-Format (<code>editor-document.xml</code>). In dieser Definitionsdatei ist
+     festgelegt, aus welchen Eingabefeldern in welcher optischen Anordnung der Editor besteht und wie die Abbildung
+     zwischen den Eingabefeldern und der zugrunde liegenden XML-Darstellung der Daten aussieht.
+     </p>
+     <p>
+     Ein Editor ist üblicherweise in eine umgebende Webseite eingebunden, die das Formular enthält. Die umgebenden
+     Webseiten referenzieren über die Editor ID den Editor, der an einer bestimmten Stelle der sichtbaren Webseite
+     eingebunden werden soll. Der HTML-Code der Webseite selbst wird in einem MyCoRe System aus einem beliebigen
+     XML-Dokument (z.B. anypage.xml [z.B. editor_form_...xml in DocPortal]) mittels eines dazu passenden XSL Stylesheets
+     (anypage.xsl [z.B. MyCoReWebPage.xsl in DocPortal]) generiert. Um in eine solche Webseite einen Editor integrieren
+     zu können, muss <code>anypage.xml</code> ein XML-Element enthalten, das auf den einzubindenden Editor verweist,
+     zusätzlich muss <code>anypage.xsl</code> das Stylesheet <code>editor.xsl</code> einbinden. Das Stylesheet
+     verarbeitet die Referenz auf den Editor und integriert den HTML-Code des Formulars in die umgebende Webseite. So
+     ist es möglich, Editor-Formulare in beliebige Webseiten einzubinden, unabhängig von ihrem Layout oder ihrer
+     Struktur.
+     </p>
+
+     <img src="images/include_editor.png" alt="Editor einbinden" title="Editor einbinden"/>
+     <p class="klein"><strong>Abbildung 2.10:</strong> Einbindung des Editors in eine Webseite</p>
+
+    <p>
+    Das Stylesheet <code>editor.xsl</code> aus dem Framework verarbeitet die Definition in
+    <code>editor-document.xml</code> und erzeugt daraus eine HTML-Tabelle mit den entsprechenden Beschriftungen und
+    Formularfeldern für die Eingabe der Metadaten. Es lassen sich jedoch nicht nur neue Daten eingeben, auch
+    existierende Metadatenobjekte können bearbeitet werden. Das Stylesheet kann dazu von einer beliebigen URL ein
+    XML-Dokument einlesen, verarbeitet dieses dann entsprechend den Abbildungsregeln aus <code>editor-person.xsl</code>
+    und füllt die Eingabefelder des Formulars mit den Inhalten der XML-Elemente und –Attribute.
+    </p>
+    <p>
+    Wenn der Benutzer im Browser die Eingaben in die Formularfelder getätigt hat und das Formular abschickt, werden die
+    Eingaben durch das Servlet <code>MCREditorServlet</code> aus dem Framework verarbeitet. Das Servlet generiert aus
+    den Eingaben ein XML-Dokument, entsprechend den Regeln aus <code>editor-document.xml</code>. Dieses XML-Dokument
+    wird anschließend an ein beliebiges anderes Servlet weitergereicht, welches in der Formulardefinition angegeben ist
+    und welches dann die Daten endgültig verarbeiten kann und z.B. das XML-Dokument als MyCoRe Metadaten-Objekt
+    speichert.
+    </p>
+    <p>
+    <code>MCREditorServlet</code> übergibt dabei dem Ziel-Servlet (z.B. <code>AnyTargetServlet</code>) ein Objekt vom
+    Typ <code>MCREditorSubmission</code>, das nicht nur das XML-Dokument, sondern auch eventuell gemeinsam mit den
+    Formulardaten übertragene Dateien als InputStream enthält. Damit ist es möglich, auch einfache Datei-Upload-Formulare
+    über das Editor Framework zu realisieren.
+    </p>
+    <p>
+    Das Ziel-Servlet erhält zusätzlich auch die ursprünglichen HTTP Request Parameter aus dem abgeschickten Formular, so
+    dass es bei Bedarf auch direkt auf die Werte bestimmter Eingabefelder zugreifen kann und nicht zwingend unbedingt
+    das resultierende XML-Dokument beachten muss. Dadurch ist es möglich, das Editor Framework auch mit bereits
+    existierenden Servlets zu nutzen, die bisher keine XML-Dokumente als Eingabe verarbeiten. Das Framework ist daher
+    auch in der Lage, die Eingaben an eine beliebige URL statt an ein Servlet zu senden, so dass das Ziel der Eingaben
+    an sich auch ein externes CGI-Skript oder ein Servlet in einem entfernten System sein könnte. Das schafft ein hohes
+    Maß an Flexibilität, durch das das Editor Framework auch genutzt werden kann, um z.B. Suchmasken oder
+    Login-Formulare zu erzeugen. Die Nutzung ist nicht allein auf die Realisierung von Metadaten-Editoren beschränkt.
+    </p>
+   </section>
+
+   <section>
+    <title>Beschreibung der Editor-Formular-Definition</title>
+    <p class="fett">Die Grundstruktur</p>
+    <p>
+    Im Folgenden soll die Gestaltung eines Editor-Formulars näher beschrieben werden. Als Beispiel ist ein Formular für
+    ein Dokument gedacht. Die Daten werden z.B. in der Datei <code>editor-document.xml</code> gespeichert.
+    </p>
+
+    <img src="images/xml_rahmen.png" alt="Editor Rahmen" title="Editor Rahmen" />
+    <p class="klein"><strong>Abbildung 2.11:</strong> Rahmen der Formular-Definition</p>
+
+    <p>
+    Als nächstes definieren wir die Eingabefelder des Editors. Ein Editor besteht aus verschiedenen Komponenten, die
+    innerhalb des Elements <code>components</code> deklariert werden. Dies können einfache Komponenten z.B. für
+    Auswahllisten und Texteingabefelder sein, oder aber zusammengesetzte Panels, mit deren Hilfe man einfache
+    Komponenten in einer Tabellengitterstruktur anordnen kann. Panels können wiederum andere Panels beinhalten, so dass
+    sich komplexere Layouts erzeugen lassen. Jede Komponente besitzt eine innerhalb des Editors eindeutige ID, über die
+    sie referenziert werden kann. Jeder Editor besitzt ein Root-Panel, die äußerste Struktur, mit der die Anordnung der
+    Komponenten begonnen wird. Die ID dieses Root-Panels wird als Attribut im Element <code>components</code> angegeben.
+    </p>
+
+    <img src="images/root_panel.png" alt="Root-Panel" title="Root-Panel"/>
+    <p class="klein"><strong>Abbildung 2.12:</strong> Definition eines einfachen Formulares</p>
+
+    <p>
+    Innerhalb eines Panels lassen sich andere Komponenten oder Panels anordnen. Solche Komponenten werden im einfachsten
+    Fall einfach in die Gitterzellen eines Panels eingebettet. Jede Zelle entspricht einem <code>cell</code>-Element
+    innerhalb des Panels. Jede Zelle besitzt eine <code>row</code>- und <code>col</code>-Koordinate, mit deren Hilfe
+    die Zelleninhalte von links nach rechts in Spalten (<code>col</code>) und von oben nach unten in Zeilen
+    (<code>row</code>) angeordnet werden. Dabei ist für Textfelder noch die Angabe der Sprache möglich.
+    </p>
+    <p>
+    Innerhalb der Gitterzellen füllen die Komponenten in der Regel nicht den gesamten Platz aus, daher können sie in
+    ihren Zellen mittels des <code>anchor</code>-Attributs anhand der Himmelsrichtungen (<code>NORTH</code>,
+    <code>NORTHEAST</code>, <code>EAST</code>, ... bis <code>CENTER</code>) angeordnet werden. Wir ordnen die
+    Beschriftungen rechtsbündig, die Texteingabefelder linksbündig an. Außerdem wird nun in der untersten rechten Zelle
+     rechtsbündig ein "Speichern" Button zum Absenden des Formulars ergänzt.
+     </p>
+
+     <img src="images/root_panel2.png" alt="Root-Panel-Auslagerung" title="Root-Panel-Auslagerung"/>
+     <p class="klein"><strong>Abbildung 2.14:</strong> Auslagern von Definitionen aus dem Root-Panel</p>
+
+     <p>
+     Im nächsten Schritt soll nun die Definition aus dem Root-Panel ausgegliedert werden. Sie verwenden dazu ein eigenes
+     Panel. Diese Technik wird verwendet, um Panels mehrfach zu nutzen und den Quellcode des Formulars zu strukturieren.
+     Dabei wird gezeigt, wie sich Panels untereinander aufrufen (Abbildung 2.14).
+     </p>
+     <p>
+     Soll das Panel <code>form</code> nun mehrfach genutzt werden,z.B. in mehreren Formularen, so ist es sinnvoll das
+     Panel in eine gemeinsame Definitionsdatei <code>imports-common.xml</code> auszulagern. Im eigentlichen Formular
+     wird dann nur noch auf das <code>form</code>-Panel verwiesen. Die Einbindung der ausgelagerten Panels erfolgt mit
+     der <code>include</code>-Anweisung (Abbildung 2.15). Die einzufügende Datei (Abbildung 2.16) wird nun im System
+     mittels <code>EntityResolver</code> gesucht und eingebunden. Auf diese Weise lassen sich elegante und wartungsarme
+     Formulare gestalten.
+     </p>
+
+     <img src="images/imports_formular.png" alt="Editor-Auslagerung" title="Editor-Auslagerung"/>
+     <p class="klein"><strong>Abbildung 2.15:</strong> Auslagern von Definitionen aus dem Editor-Formular</p>
+
+     <img src="images/imports.png" alt="imports" title="imports"/>
+     <p class="klein"><strong>Abbildung 2.16:</strong> Die imports-Formular-Definition</p>
+
+     <p class="fett">Abbildung zwischen Eingabefeldern und XML-Strukturen</p>
+     <p>
+     Als nächstes definieren wir, wie die Eingabefelder auf XML-Elemente abgebildet werden. Dies geschieht über das
+     Attribut <code>var</code> verschiedener Elemente der Editor-Definition. Zunächst wird im <code>var</code>-Attribut
+     des <code>components</code>-Elements der Name des Root-Elements der XML-Darstellung (document) festgelegt. Die
+     Abbildung zwischen Eingabefeldern oder Panels und ihrer Zuordnung zu XML-Elementen geschieht über das
+     <code>var</code>>-Attribut in den <code>cell</code>-Elementen, welche die Eingabekomponente enthalten (Abbildung 217).
+     </p>
+
+     <img src="images/xml_main_tag.png" alt="XML-Main-Tag-Namen" title="XML-Main-Tag-Namen"/>
+     <p class="klein"><strong>Abbildung 2.17:</strong> Einfügen des XML-Main-Tag-Namen</p>
+
+     <p>
+     Es gibt für Tags und Attribute innerhalb der Root-Komponente verschiedene Möglichkeiten der Gestaltung des
+     Ausgabe-XML-Baumes. Die einfachste Art ist die direkte Zuordnung. Hier werden die Werte des Eingangs-XML-Files dem
+     Feld in der Editormaske zugeordnet. Weiterhin kann dem Feld noch ein Standardwert durch das Attribut <code>default</code>
+     mitgegeben werden. Zudem können Felder, welche von der Dateneingabe ausgenommen werden sollen, deren Inhalte aber
+     an die Ausgabeseite durchgereicht werden sollen, als <code>hidden</code>-Felder mitgeführt werden. Auch hier können
+     Standardwerte angegeben werden, welche eingesetzt werden, wenn keine Daten für das Tag/Attribut vorhanden sind.
+     </p>
+
+      <img src="images/xml_integration.png" alt="XML-Tag Integration" title="XML-Tag Integration"/>
+      <p class="klein"><strong>Abbildung 2.18:</strong> Integration von einfachen XML-Tags</p>
+
+     <p>
+     Sollten Sie mehrere gleiche XML-Strukturen im Editor zur Bearbeitung anbieten wollen, so wird dies über eine
+     Integer-Zahl in Klammer organisiert. Achtung, es werden immer nur soviel XML-Elemente übernommen und an die Ausgabe
+     weitergereicht, wie angegeben sind. Um eine beliebige Anzahl zu präsentieren und zu bearbeiten nutzen sie die
+     weiter unten angegebene Möglichkeit des Repeaters. Für <code>hidden</code>-Felder gibt es noch die Variante,
+     mittels des <code>descendants="true"</code> - Attributs alle Kindelemente, Attribute und Wiederholungen des
+     Elementes an die Ausgabe durchzureichen.
+     </p>
+
+     <img src="images/xml_integration_mehrfach.png" alt="XML-Tag Integration" title="XML-Tag Integration"/>
+     <p class="klein"><strong>Abbildung 2.19:</strong> Integration von mehrfachen XML-Tags</p>
+
+     <p>
+     Wenn das zu bearbeitende Quell-XML-Dokument oder das Zieldokument Namespaces verwendet,
+     können die Werte der var-Attribute auch Namespace-Prefixes enthalten.
+     Dazu müssen sämtliche Namespaces in der Editor-Definition im Element <code>components</code>
+     als zusätzliche Namespaces mit ihrem Prefix registriert werden. Wird in einem var-Attribut ein
+     Namespace-Prefix verwendet, das hier nicht deklariert ist, oder erfolgt die Deklaration an
+     einer anderen Stelle, führt dies zu einem Verarbeitungsfehler! Ein Beispiel:
+     </p>
+
+     <source>
+     <![CDATA[
+       <components root="/mycoreobject" xmlns:xlink="http://www.w3.org/1999/xlink">
+         ...
+         <cell row="1" col="1" var="@xlink:href">
+           ...
+         </cell>
+         ...
+       </components>
+     ]]>
+     </source>
+
+     <p class="fett">Integration und Aufruf des Editor Framework</p>
+     <p>
+     Bereits am Anfang des Kapitels wurde eine einfache Syntax zum Aufruf des Editor Framework vorgestellt. Dieser
+     Abschnittinformiert umfassend zu diesem Thema.
+     </p>
+
+     <img src="images/editor_einbinden.png" alt="Editor einbinden" title="Editor einbinden" />
+     <p class="klein"><strong>Abbildung 2.20:</strong> Einbindung des Editors in eine Webseite</p>
+
+     <p>
+     Das Editor Framework ist so konzipiert, dass es als XML-Sequenz in einer durch das <code>MCRLayoutServlet</code>
+     darzustellenden Webseite integriert werden kann. D.h. Sie erstellen eine XML Seite, welche durch das Servlet und
+     die zugehörigen XSLT-Stylesheets nach HTML konvertiert wird. Durch den Import (<code>include</code>) der
+     Editor-Framework-XSL-Dateien in das Layout zum Erzeugen der HTML-Seiten ermöglichen Sie die Einbindung ihrer
+     Editor-Formulare. In der oben gezeigten XML-Sequenz wird jedoch nur die Definitionsdatei des Formulars
+     beschrieben: „nimm aus der Web-Applikation die Datei editor-document.xml aus dem Verzeichnis editor“. Dabei ist
+     noch nichts über die Datenquelle bekannt. Hierfür existieren noch einige Parameter, welche durch das Framework
+     ausgewertet werden. Diese können sowohl direkt im Browser in der Aufrufsequenz oder über Parametereinstellungen
+     in einem Servlet mitgegeben werden.
+     </p>
+
+     <p class="kasten"><code>http://.../document.xml?XSL.editor.source.new=true&amp;type=...</code></p>
+     <p>Oder in einem Servlet als Codestück, wie Abbildung 2.21 zeigt.</p>
+
+     <img src="images/codesequenz.png" alt="Codesequenz" title="Codesequenz" />
+     <p class="klein"><strong>Abbildung 2.21:</strong> Codesequenz zum Aufruf des Editor Framework</p>
+
+     <table><tr><th>Start-Parameter für das Lesen der zu bearbeitenden XML-Quelle:</th></tr><tr><td></td></tr></table>
+     
+     <p>
+     Über Request Parameter kann beim Aufruf des Editors gesteuert werden, ob bzw. aus welcher Quelle die zu bearbeitenden
+     XML-Daten gelesen werden. Die zu bearbeitenden XML-Daten werden von einer beliebigen URI gelesen, die durch den MyCoRe
+     URI Resolver unterstützt wird, z. B. <code>mcrobject:[ID]</code> um die Metadaten eines MyCoRe Objektes einzulesen, oder
+     <code>webapp:[Pfad]</code>, um eine statische XML-Datei aus der Web Applikation einzulesen. 
+     </p>
+     <p>
+     In der Editor-Definition gibt man dazu ein oder mehrere URIs an, die als Quelle gelesen werden. Wenn keine Source URI
+     definiert wird, startet das Formular leer. In der Regel werden die URIs ein oder mehrere Platzhalter für Parameter enthalten,
+     die beim Aufruf durch HTTP Request Parameter ersetzt werden. Die erste Source URI, bei der alle Parameter durch den Aufruf
+     ersetzt werden können, wird verwendet. Man kann auch die gesamte URI als Parameter übergeben, d.h. eine Source URI definieren,
+     die nur aus einem Parameter besteht. Dazu einige Beispiele:   
+     </p>
+     <dl>
+       <dt><code>&lt;source uri="{sourceUri}" /&gt;</code></dt>
+       <dd>liest die zu bearbeitende XML-Quelle aus dem HTTP Request Parameter sourceUri, wenn dieser der bei Aufruf übergeben wird.</dd>
+       <dt><code>&lt;source uri="mcrobject:{mcrId}" /&gt;</code></dt>
+       <dd>liest die Metadaten eines MyCoRe-Objektes als zu bearbeitende XML-Quelle. Die ID wird als Request Parameter mcrId übergeben.</dd>
+       <dt><code>&lt;source uri="webapp:templates/document.xml" /&gt;</code></dt>
+       <dd>liest die statische XML-Datei document.xml, die im Verzeichnis templates der Web-Applikation hinterlegt ist.</dd>
+     </dl>
+
+     <table><tr><th>Start-Parameter für die Definition des Abbrechen-Buttons:</th></tr><tr><td></td></tr></table>
+     <p>
+     Diese Parameter werden im Abschnitt zur Verwendung eines Cancel-Buttons (Abbrechen-Knopf) erläutert, sie steuern
+     die URL, zu der bei Klick auf einen „Abbrechen“ Button zurückgekehrt wird. Auch hier ist die Verwendung von Request Parametern
+     in der URL möglich.
+     </p>
+     <table><tr><th>Start-Parameter für die Weitergabe an das Zielservlet:</th></tr><tr><td></td></tr></table>
+     <p>
+     In der Regel werden die Eingaben nach der Bearbeitung mit dem Editor an ein Zielservlet gesendet
+     (<code>target type="servlet"</code>). Man kann diesem Zielservlet auch HTTP Parameter mitschicken, die der Editor
+     bei Abschicken des Formulars mitsendet. So können Informationen an das Zielservlet weitergegeben werden, die nicht
+     Teil des zu bearbeitenden XML-Dokumentes sind, z.B. die Information, ob es sich um einen Update- oder Create-Vorgang
+     handelt, die Objekt-ID etc. Der Editor reicht automatisch alle HTTP Request Parameter an das Zielservlet durch,
+     deren Name nicht mit XSL beginnt.
+     </p>
+     <p class="break">
+     Beispiel:<code>http://.../editor-document.xml?XSL.editor.source.id=4711&amp;</code> <br/>
+     <code>action=update&amp;mode=bingoBongo</code>
+     </p>
+     <table><tr><th>Ausgabeziele</th></tr><tr><td></td></tr></table>
+     <p>
+     Das Editor-Framework ist auch hinsichtlich der Verarbeitung der entstandenen Daten flexibel konfigurierbar.
+     Wie bereits erwähnt, wird nach dem Betätigen des Submit-Buttons das <code>MCREditorServlet</code> für eine erste
+     Verarbeitung angestoßen. Diese reicht die Daten dann an ein weiteres konfigurierbares Ziel weiter. Welches das ist,
+     wird mit der target-Zeile in der Formulardefinition festgelegt. Das Attribut <code>method</code> definiert, ob dazu
+     <code>HTTP</code> <code>GET</code> oder <code>POST</code> verwendet wird. Zu empfehlen ist in der Regel immer
+     <code>POST</code>, was auch der Default-Wert ist und zwingend bei File Uploads gesetzt wird. Möglich ist:
+     </p>
+     <ul>
+     <li>die Ausgabe als HTML-Seite zum Debugging des Ergebnisses:<br/>
+     <code>&lt;target type="debug" method="post" format="xml" /&gt;</code>,</li>
+     <li>die Weiterleitung der Daten in ein nachgeschaltetes Servlet im XML-Format:<br/>
+     <code>&lt;target type="servlet" method="post" name="MCRCheckDataServlet" format="xml" /&gt;</code>,</li>
+     <li>die Weiterleitung der Daten an ein nachgeschaltetes Servlet in der Form <code>name=value</code>, d. h. ohne
+     Generierung eines XML-Dokumentes:<br/>
+     <code>&lt;target type="servlet" method="post" name="MCRCheckDataServlet" format="name=value" /&gt;</code>,</li>
+     <li>die Weiterleitung an das LayoutServlet zur Anzeige des generierten XML-Dokumentes als Test:<br/>
+     <code>&lt;target type="display" method="post" format="xml" /&gt;</code>.<br/>
+     <br/>
+
+     <img src="images/target_type.png" alt="Target" title="Target"/>
+     <p class="klein"><strong>Abbildung 2.22:</strong> Rahmen der Formular-Definition</p><br/>
+
+     </li>
+     <li>die Weiterleitung an eine beliebige URL als HTTP GET oder POST Request:<br/>
+     <code>&lt;target type="url" method="post" format="name=value" url="cgi-bin/ProcessMe.cgi" /&gt;</code> oder</li>
+     <li>die Weiterleitung an einen anderen Editor, für den dieser Editor als „Subdialog“ fungiert. Dies wird in einem
+     separaten Abschnitt erläutert.<br/>
+     <code>&lt;target type="subselect" method="post" format="xml" /&gt;</code>
+     </li>
+     </ul>
+     <p>
+     Mit der nachfolgenden Java-Code-Sequenz kann nun auf die vom MCREditorServlet durchgereichten XML- und -File-Daten
+     zugegriffen werden.
+     </p>
+
+     <img src="images/java_code.png" alt="Java" title="Java"/>
+     <p class="klein"><strong>Abbildung 2.23:</strong> Java-Code-Sequenz für den Zugriff</p><br/>
+
+     <p>
+     Neben der Übernahme der Ausgabewerte des <code>MCREditorServlets</code> als XML-Baum können diese auch in der
+     Form '<code>name=value</code>' durchgereicht werden. Hierzu müssen u. a. die <code>var</code>-Attribute
+     entsprechend in eine einfache Form gebracht werden. Der Ausschnitt der Editor-Definition soll das verdeutlichen.
+     </p>
+
+     <img src="images/editor_rahmen.png" alt="Rahmen Editor" title="Rahmen Editor"/>
+     <p class="klein"><strong>Abbildung 2.24:</strong> Rahmen der Formular-Definition mit name=value</p>
+
+    </section>
+
+    <section>
+     <title>Syntax der Formularelemente</title>
+     <p class="fett">Aufbau einer Zelle</p>
+     <p>
+     Das <code>cell</code>-Element stellt ein elementares Gebilde innerhalb eines Formulargitters dar. Seine Position
+     wird durch die Attribute <code>col</code>, <code>row</code> und <code>anchor</code> beschrieben. <code>col</code>
+     gibt dabei die relative Spaltenzahl, <code>row</code> die relative Zeilenzahl an. Mit <code>anchor</code> kann die
+     Ausrichtung gesteuert werden. Mögliche Werte sind hier <code>NORTHWEST</code>, <code>NORTH</code>,
+     <code>NORTHEAST</code>, <code>WEST</code>, <code>CENTER</code>, <code>EAST</code>, <code>SOUTHWEST</code>,
+     <code>SOUTH</code> und <code>SOUTHEAST</code>. Mit dem Attribut <code>ref</code> kann auf ein mehrfach verwendbares
+     Element via ID referenziert werden. Über das Attribut <code>sortnr</code> kann die Reihenfolge der zu generierenden
+     XML-Daten für die Ausgabe geregelt werden. Dieses Attribut bezieht sich dabei auf das gesamte Formular.
+     </p>
+
+     <img src="images/cell_syntax.png" alt="Syntax" title="Syntax"/>
+     <p class="klein"><strong>Abbildung 2.25:</strong> Syntax des cell-Elements</p>
+
+     <p class="fett">Texteingabefelder</p>
+     <p>
+     Ein einzeiliges Texteingabefeld wird mittels eines Elementes <code>textfield</code> erzeugt, ein mehrzeiliges
+     mittels eines Elementes <code>textarea</code>. Das Attribut <code>width</code> gibt die Breite des
+     Texteingabefeldes in Anzahl Zeichen an. Das Attribute <code>height</code> gibt für mehrzeilige Texteingabefelder
+     die Anzahl Zeilen an. Das Attribut <code>maxlength</code> gibt bei textfield-Elementen die maximale Länge der
+     Eingabe an.
+     </p>
+     <p>
+     Texteingabefelder können einen Vorgabewert enthalten, der wahlweise über ein Attribut oder ein Kindelement mit dem
+     Namen <code>default</code> angegeben wird. Die Verwendung eines default-Elementes statt eines default-Attributes
+     ist sinnvoll, wenn mehrzeilige default-Werte angegeben werden sollen.
+     </p>
+
+     <img src="images/textfield_syntax.png" alt="Syntax" title="Syntax"/>
+     <p class="klein"><strong>Abbildung 2.26:</strong> Syntax von textfield und textarea</p>
+
+     <p>
+     Alternativ kann auch ein AutoFill-Wert über das Attribut bzw. Element <code>autofill</code> angegeben werden.
+     Während <code>default</code>-Werte immer Teil der Eingabe werden, werden AutoFill-Werte nur dann als Eingabe
+     betrachtet, wenn der Nutzer sie ergänzt oder ändert. Unveränderte AutoFill-Werte werden also ignoriert. Für alle
+     Mitarbeiter der Universität sind z.B. Teile der Email-Adresse oder der Anschrift in den meisten Fällen identisch.
+     Falls der Nutzer diese Angaben im Eingabefeld ändert oder ergänzt, wird dies als Eingabe betrachtet. Ansonsten
+     wird der AutoFill-Wert ignoriert. Default-Werte dagegen werden immer als Eingabe betrachtet. Wichtig ist, dass
+     textfield- und textarea-Elemente ein innerhalb des Editors eindeutiges ID-Attribut besitzen.
+     </p>
+
+     <img src="images/autofill.png" alt="Autofill-Werte" title="Autofill-Werte"/>
+     <p class="klein"><strong>Abbildung 2.27:</strong> AutoFill-Werte in textfield und textarea</p>
+
+     <p class="fett">Passwort-Eingabefelder</p>
+     <p>
+     Passwort-Eingabefelder werden über das Element <code>password</code> erzeugt. Sie können keine default- oder
+     autofill-Werte besitzen. Bei der Eingabe werden Sternchen statt der eingegebenen Zeichen angezeigt. Das Attribut
+     <code>width</code> gibt die Breite des Eingabefeldes in Anzahl Zeichen an. Leider ist es bei allen Browsern so,
+     dass dieses Feld keine vorhandenen Inhalte bearbeiten kann, d. h. Passworte sind aus Sicherheitsgründen immer neu
+     einzugeben.
+     </p>
+
+     <img src="images/password.png" alt="Syntax password" title="Syntax password"/>
+     <p class="klein"><strong>Abbildung 2.28:</strong> Syntax des password-Elements</p>
+
+     <p class="fett">Einfache Checkboxen</p>
+     <p>
+     Das Element <code>checkbox</code> generiert eine alleinstehende Checkbox, bei der über einen „Haken“ ein Wert
+     ein- oder ausgeschaltet werden kann. Das Attribut <code>value</code> gibt den Wert an, der gesetzt werden soll,
+     wenn die Checkbox markiert ist. Das Attribut <code>checked</code> gibt mit den möglichen Werten <code>true</code>
+     und <code>false</code> an, ob als default die Checkbox markiert sein soll oder nicht. Die Beschriftung der
+     Checkbox erfolgt über ein Attribut <code>label</code> bzw. über untergeordnete mehrsprachige label-Elemente, vgl.
+     dazu den Abschnitt zu Beschriftungen.
+     </p>
+
+     <img src="images/checkbox.png" alt="Syntax checkbox" title="Syntax checkbox"/>
+     <p class="klein"><strong>Abbildung 2.29:</strong> Syntax für Checkboxen</p>
+
+     <p class="fett">Auswahllisten</p>
+     <p>
+     Auswahllisten werden über das Element <code>list</code> erzeugt. Die in der Liste darzustellenden Werte werden über
+     geschachtelte <code>item</code>-Elemente angegeben. Das Attribut <code>type</code> gibt an, in welchem Format die
+     Listenwerte dargestellt werden. Der Typ <code>dropdown</code> stellt die Listenwerte als einzeilige
+     Dropdown-Auswahlliste dar. Das Attribut <code>width</code> gibt dabei die Breite des Auswahlfeldes in CSS-Syntax an,
+     d.h. es sind Angaben in Anzahl Zeichen oder Pixeln etc. möglich. Der Typ <code>multirow</code> stellt die
+     Listenwerte als mehrzeiliges Auswahlfeld dar. Das Attribut <code>rows</code> gibt dabei die Anzahl Zeilen an, die
+     maximal zu sehen sind. Enthält die Liste mehr Werte als Zeilen, werden Scrollbalken dargestellt. Das Attribut
+     <code>multiple</code> mit den möglichen Werten <code>true</code> und <code>false</code> gibt an, ob eine
+     Mehrfachauswahl möglich ist. Das Attribut <code>default</code> gibt ggf. eine Vorauswahl vor.
+     </p>
+
+     <img src="images/auswahlliste.png" alt="Syntax Auswahlliste" title="Syntax Auswahlliste"/>
+     <p class="klein"><strong>Abbildung 2.30:</strong> Syntax einer Auswahlliste</p>
+
+     <p>
+     Die in einer Liste dargestellten Werte werden über <code>item</code>-Elemente angegeben. Diese können auch
+     mehrstufig geschachtelt sein, um eine hierarchische Struktur darzustellen (d.h. item-Elemente können wiederum
+     item-Elemente enthalten). Eine Schachtelung ist nur für die Listentypen <code>dropdown</code> und
+     <code>multirow</code> erlaubt und sinnvoll. Die Hierarchie wird dabei automatisch durch Einrückungen dargestellt.
+     Die Beschriftung der item-Elemente wird über geschachtelte label-Attribute oder Elemente definiert und kann
+     mehrsprachig angegeben werden, vgl. dazu den folgenden Abschnitt zu Beschriftungen. Die Verwendung von
+     <code>&lt;list type="multirow" multiple="true"&gt;</code>, d.h. mehrzeiligen Auswahllisten mit Mehrfachauswahl ist
+     nur sinnvoll, wenn das aktuelle var-Attribut der Zelle auf ein Element verweist, denn Attribute sind ja
+     grundsätzlich in XML nicht wiederholbar.
+     </p>
+
+     <img src="images/mehrfachauswahl.png" alt="Mehrfachauswahl" title="Mehrfachauswahl"/>
+     <p class="klein"><strong>Abbildung 2.31:</strong> Beispiel für Mehrfachauswahl</p>
+
+     <p>
+     Das Beispiel erzeugt eine dreizeilige Mehrfachauswahlliste, die ggf. in mehrfach generierte XML-Elemente
+     „Programmiersprache“ resultiert.
+     </p>
+
+     <p class="fett">Radio-Buttons und Checkbox-Listen</p>
+     <p>
+     Der Typ <code>radio</code> stellt die Listenwerte als eine Menge von Radiobuttons dar, es kann also nur ein Wert
+     ausgewählt werden. Der Typ <code>checkbox</code> stellt die Listenwerte als eine Menge von Checkboxes dar, in
+     diesem Fall können mehrere Werte ausgewählt sein. Bei diesen beiden Typen werden alle Werte der Liste nacheinander
+     in einer Tabellenstruktur mit einer gewissen Anzahl an Zeilen und Spalten ausgegeben. Es kann entweder die Anzahl
+     an Zeilen (Attribut <code>rows</code>) oder die Anzahl an Spalten (Attribut <code>cols</code>) dieser Tabelle
+     angegeben werden. Der jeweils nicht angegebene Wert folgt automatisch aus der Anzahl der Werte in der Liste.
+     Der Spezialfall <code>rows="1"</code> entspricht also einer Anordnung aller Listenwerte von links nach rechts in
+     einer Zeile, der Fall <code>cols="1"</code> entspricht einer Anordnung von oben nach unten in nur einer Spalte.
+     </p>
+
+     <img src="images/radio_button.png" alt="Radio-Button" title="Radio-Button"/>
+     <p class="klein"><strong>Abbildung 2.32:</strong> Syntax von Radio-Button und Checkbox-Listen</p>
+
+     <p>
+     Analog zu multirow/multiple Listen ist die Verwendung von Checkbox-Listen nur sinnvoll für die Abbildung auf
+     XML-Elemente, da XML-Attribute nicht wiederholbar sind (vgl. vorangehenden Abschnitt).
+     </p>
+     <p class="fett">Beschriftungen</p>
+     <p class="P50">Beschriftungen von Eingabefeldern lassen sich mit den Elementen <code>text</code> und
+     <code>label</code> definieren. Das Element <code>text</code> erzeugt eine frei platzierbare Beschriftung etwa für
+     eine Texteingabefeld. Beschriftungen dürfen auch XHTML Fragmente enthalten, etwa um eine fette, kursive oder
+     mehrzeilige Darstellung zu erreichen. Mehrsprachige Beschriftungen von Elementen können über mehrere
+     <code>label</code>-Elemente realisierte werden, wobei das Attribut <code>xml:lang</code> die Sprache angibt.
+     </p>
+     <p>
+     Die aktive Sprache wird wie bei anderen MyCoRe-Stylesheets über den <code>XSL.Lang</code> Parameter definiert.
+     Wenn ein <code>label</code> existiert, bei dem <code>xml:lang</code> der aktiven Sprache entspricht, wird dieses
+     ausgegeben. Ist dies nicht der Fall, wird als erster Rückfallschritt das <code>label</code> der Default-Sprache
+     (Parameter <code>XSL.DefaultLang</code>) ausgegeben. Existiert auch dies nicht, wird das Label ausgegeben, das
+     im <code>label</code>-Attribut oder im ersten <code>label</code>-Element enthalten ist, das kein
+     <code>xml:lang</code>-Attribut enthält. In alles anderen Fällen wird das erste <code>label</code>-Element
+     verwendet, das überhaupt existiert.
+     </p>
+
+     <img src="images/textfeld.png" alt="Syntax Textfeld" title="Syntax Textfeld"/>
+     <p class="klein"><strong>Abbildung 2.33:</strong> Syntax eines Textfeldes</p>
+
+     <p class="fett">Internationalisierung</p>
+     <p>
+     Das Editor-Framework verfügt über mehrere Möglichkeiten der Mehrsprachigkeit einzelner Auswahl- oder Textfelder.
+     Bis MyCoRe-Version 1.2 war hier nur der Einsatz von <code>&lt;label xml:lang="..."&gt;</code>-Tags
+     (wie oben beschrieben) möglich. Mit Version 1.3 ist die direkte Nutzung von I18N
+     (<a title="" target="_blank" href="http://www.debian.org/doc/manuals/intro-i18n/">http://www.debian.org/doc/manuals/intro-i18n/</a>)
+     möglich. Um eine Abwärts-Kompatibilität zu erreichen sind die <code>&lt;label&gt;</code>-Tags auch weiterhin im
+     Framework gültig. Es ist aber zu empfehlen, langfristig ältere MyCoRe-Anwendungen entsprechend umzustellen. damit
+     wird eine strikte Trennung von Layout und sprachabhängigem Text erreicht.
+     </p>
+     <p>
+     Mit MyCoRe v1.3 wurde das <code>i18n</code>-Attribut in alle Editor-Framework-Stellen eingebaut, in den bisher
+     <code>&lt;label&gt;</code>-Tags vorgesehen waren. Entsprechend der I18N- Spezifikation sind alle Texte nun über
+     eine Property-Variable bekannt zu machen und in sprachabhängigen Dateien anzulegen. Diese tragen die Namen
+     <code>messages_{lang}.properties</code> und sind bei MyCoRe im <code>config</code>-Verzeichnis untergebracht.
+     Sollte das System für die angegebene Sprache keine solche Datei finden, so wird als Fallback die Datei
+     <code>messages.properties</code>> gesucht. Sind beide Angaben vorhanden, hat das <code>i18n</code>-Attribut Vorrang.
+     Die nachfolgende Abbildung verdeutlicht die neue Funktion.
+     </p>
+
+     <img src="images/beschriftung_i18n.png" alt="I18N" title="I18N"/>
+     <p class="klein"><strong>Abbildung 2.34:</strong> Beschriftung mit I18N</p>
+
+     <p class="fett">Abstandshalter</p>
+     <p>
+     Ein Abstandshalter erzeugt leeren Raum als Platzhalter zwischen Elementen. Die Attribute <code>width</code>
+     und <code>height</code> geben Breite und Höhe des Abstandes in CSS-Syntax, etwa in Anzahl Pixeln, an.
+     </p>
+
+     <img src="images/space.png" alt="Abstand" title="Abstand"/>
+     <p class="klein"><strong>Abbildung 2.35:</strong> Syntax eines Abstandhalters</p>
+
+     <p class="fett">Externes Popup-Fenster</p>
+     <p>
+     Ein externes Popup-Fenster kann z.B. ein Hilfetext zu einem Eingabefeld im HTML-Format enthalten. Es können aber
+     auch beliebige andere Informationen und Funktionalitäten wie Eingabehilfen dargestellt werden. Der Startpunkt ist
+     ein Button im Formular, der mit einer frei wählbaren Beschriftung versehen werden kann. Standardmäßig wird er als
+     [?] Button im Formular dargestellt. Bei Anklicken des Buttons erscheint das codierte HTML in einem Popup-Fenster.
+     Die Attribute <code>width</code> und <code>height</code> steuern die Breite und Höhe dieses Fensters. Das Attribut
+     <code>css</code> gestattet die Verwendung eines externen CSS-Files. Wichtig ist, dass jedes <code>helpPopup</code>
+     Element eine eindeutige ID besitzt. Optional kann das Popup-Fenster auch von einer externen URL geladen werden.
+     Falls die URL mit „<code>http://</code>“ oder „<code>https://</code>“ beginnt, wird sie als absolute URL direkt
+     verwendet, andernfalls wird die URL als relativ zur <code>WebApplicationBaseURL</code> (<code>context root</code>),
+     dem Startpunkt der WebApplication, interpretiert.</p>
+     <p>
+     Innerhalb des helpPopup-Tags gibt es mehrere Tags, welche das Aussehen und den Inhalt des Aufruf-Buttons und des
+     Popup-Fensters bestimmen. Jedes Tag verfügt über das xml:lang-Attribut. Somit kann jedes Tag für die im Projekt
+     benötigten Sprachen implementiert werden. Zusätzlich gibt es das Konstrukt <code>xml:lang="all"</code>, das
+     anzeigt, dass das entsprechende Tag immer unabhängig von der Spracheinstellung des Systems präsentiert werden soll.
+     </p>
+     <p>Im Einzelnen sind die Tags wie folgend definiert:</p>
+     <ul>
+     <li><code>button</code> gibt die Zeichenkette an, welche der Start-Button haben soll,</li>
+     <li><code>title</code> gibt den Titel des Popup-Fensters an,</li><li><code>close</code> gibt den Text zum
+     Schließen des Popup-Fensters an,</li>
+     <li><code>label</code> beinhaltet den eigentlichen darzustellenden HTML-Code oder Text.</li>
+     </ul>
+
+     <img src="images/popup.png" alt="Popup-Fenster" title="Popup-Fenster"/>
+     <p class="klein"><strong>Abbildung 2.36:</strong> Syntax eines Popup-Fensters</p>
+
+     <p class="fett">Buttons</p>
+     <p>
+     Über das Element <code>button</code> wird ein Knopf erzeugt, der bei Anklicken zu einer externen URL wechselt.
+     Das Attibut <code>width</code> legt die Breite des Knopfes fest, das Attribut <code>label</code> oder ggf.
+     mehrsprachige enthaltene label-Elemente legen die Beschriftung des Knopfes fest. Falls die URL mit
+     „<code>http://</code>“ oder „<code>https://</code>“ beginnt, wird sie als absolute URL direkt verwendet,
+     andernfalls wird die URL als relativ zur <code>WebApplicationBaseURL</code> (<code>context root</code>), dem
+     Startpunkt der WebApplication, interpretiert.
+     </p>
+
+     <img src="images/button.png" alt="Syntax Button" title="Syntax Button"/>
+     <p class="klein"><strong>Abbildung 2.37:</strong> Syntax eines einfachen Buttons</p>
+
+     <p class="fett">SubmitButton</p>
+     <p>
+     Über das Element <code>submitButton</code> wird ein Knopf erzeugt, der beim Anklicken die Eingaben an das in der
+     Konfiguration angegebene Ziel sendet. Das Attribut <code>width</code> legt die Breite des Knopfes fest, das
+     Attribut <code>label</code> oder ggf. mehrsprachige enthaltene label-Elemente legen die Beschriftung des Knopfes
+     fest.
+     </p>
+
+     <img src="images/submit.png" alt="Syntax Submit-Button" title="Syntax Submit-Button"/>
+     <p class="klein"><strong>Abbildung 2.38:</strong> Syntax des Submit-Buttons</p>
+
+     <p class="fett">CancelButton</p>
+     <p>
+     Über das Element <code>cancelButton</code> wird ein Knopf erzeugt, der bei Anklicken die Bearbeitung des Formulars
+     abbricht. Das Attibut <code>width</code> legt die Breite des Knopfes fest, das Attribut <code>label</code> oder
+     ggf. mehrsprachige enthaltene label-Elemente legen die Beschriftung des Knopfes fest.
+     </p>
+
+     <img src="images/cancel.png" alt="Syntax Cancel-Button" title="Syntax Cancel-Button"/>
+     <p class="klein"><strong>Abbildung 2.39:</strong> Syntax des Cancel-Buttons</p>
+
+     <p>
+     Die Ziel-URL des Buttons kann auf verschiedene Weisen gebildet werden, z. B. im einfachsten Fall 
+     als statische URL, die in der Editor-Definition als Top-Level-Element angegeben ist (d.h. auf gleicher Ebene wie die
+     target-Deklaration), z.B.<br/>
+     <code>&lt;cancel url="pages/goodbye.html" /&gt;</code>
+     </p>
+     <p>
+     Alternativ oder zusätzlich ist auch die Verwendung von Request Parametern wie bei der Source URI möglich,
+     so dass die URL dynamisch gebaut wird. Gegeben sei z. B. ein Formular zur Bearbeitung von Objekt-Metadaten.  
+     </p>
+     <code>&lt;cancel url="receive/{mcrId}" /&gt;</code><br /><br/>
+     <code>&lt;cancel url="content/main/authorsArea.xml" /&gt;</code><br />
+     <ul>
+       <li>
+         Wenn das Formular ohne Request Parameter aufgerufen wird, wird die zweite URL verwendet,
+         und bei Klick auf den Abbrechen-Button auf die Seite content/main/authorsArea.xml geleitet.
+       </li>
+       <li>
+         Wenn das Formular beim Aufruf mit dem Request Parameter <code>formular.xml?mcrId=DocPortal_document_00410901</code> aufgerufen wird,
+         wird dieser in die erste URL eingesetzt und diese verwendet. Es wird dann auf die Anzeige der Metadaten eines
+         bestimmten Objektes geleitet: <code>receive/DocPortal_document_00410901</code>  
+       </li>
+     </ul>
+     
+     <p class="fett">Ausgabe von Werten aus dem Quelldokument</p>
+     <p>
+     Das Element <code>output</code> kann bei der Bearbeitung einer existierenden XML-Quelle verwendet werden, um den
+     Inhalt von Attributen oder Elementen im Formular als nicht bearbeitbaren Text auszugeben. Dabei ist zu beachten,
+     dass der ausgegebene Wert bei Abschicken des Formulars nicht weitergegeben wird. Hierfür muss ggf. ein
+     <code>hidden</code>-Element verwendet werden. Das Attribut <code>default</code> gibt den Wert an, der ggf.
+     ausgegeben wird, wenn das Dokument keinen Wert enthält.</p><p class="P50">Beispiel:
+     </p>
+     <p>
+     <code>&lt;text&gt;&lt;label&gt;Dokument-ID:&lt;/label&gt;&lt;/text&gt;</code><br/>
+     <code>&lt;output var="@id" default="(neu) /&gt;</code>
+     </p>
+     <p>
+     gibt den Wert des Attributes <code>id</code> aus, sofern dieses im XML-Quelldokument existiert, ansonsten wird
+     „(neu)“ ausgegeben.
+     </p>
+     <p class="fett">Wiederholbare Elemente mit Repeatern erstellen</p>
+     <p>
+     Häufig sind einzelne Eingabefelder oder ganz Panels wiederholbar. Das Element <code>repeater</code> schachtelt auf
+     einfache Weise ein Eingabeelement oder ein ganzes Panel und macht dieses wiederholbar. Das var-Attribut der
+     umgebenden Zelle muss auf ein Element verweisen, da Attribute nicht wiederholbar sind. Das Attribut
+     <code>min</code> gibt an, wie oft minimal das wiederholte Element im Formular dargestellt wird, das Attribut
+     <code>max</code> gibt die Maximalzahl an Wiederholungen an. In jedem Fall wird das Element minimal so oft
+     dargestellt, wie es in der Eingabe auftritt.
+     </p>
+     <p>
+     Das Beispiel wiederholt die Komponente mit der ID <code>pcreator</code>. Wiederholbare Elemente werden mit
+     +/- Buttons dargestellt, mit denen neue Eingabefelder hinzugefügt bzw. dargestellte gelöscht werden  können. Bei
+     mehr als einer aktuell dargestellten Wiederholung werden Pfeile angezeigt, mit deren Hilfe die Reihenfolge der
+     Elemente vertauscht werden kann.
+     </p>
+
+     <img src="images/repeater.png" alt="Repeater" title="Repeater"/>
+     <p class="klein"><strong>Abbildung 2.40:</strong> Beispiel Repeator</p>
+
+     <p class="fett">Der Framework-interne FileUpload</p>
+     <p>
+     Das Element <code>file</code> erlaubt es, eine einzelne Datei zusammen mit den Formulareingaben hochzuladen oder
+     eine auf dem Server vorhandene Datei zu löschen oder zu aktualisieren. Voraussetzung ist hierfür die vollständige
+     Integration des Upload-Services in den jeweiligen Java-Klassen. Das Attribut <code>maxlength</code> gibt optional
+     die maximale Grösse der hochzuladenen Datei an. Der FileUpload über ein HTML-Formular ist nur für relativ kleine
+     Dateien mit wenigen MB zu empfehlen, andernfalls ist der in MyCoRe implementierte externe FileUpload zu nutzen.
+     Das Attribut <code>accept</code> gibt optional den akzeptierten MIME Typ an. Ob diese Angaben beachtet werden, ist
+     jedoch vom Browser abhängig und daher nicht verlässlich. Die Darstellung eines Datei-Upload Feldes hängt ebenfalls
+     sehr stark vom Browser ab und kann nicht über CSS gestaltet werden. In der Regel bestellt ein solches Feld aus einem
+     Texteingabefeld (dessen Breite in Anzahl Zeichen das <code>width</code>-Attribut angibt) und einem Button
+     „Durchsuchen“. Beschriftung und Layout dieser Elemente sind nicht steuerbar und fest vom Browser vorgegeben, CSS
+     Angaben funktionieren nicht zuverlässig. Über den Durchsuchen-Button kann eine Datei von der lokalen Festplatte
+     gewählt werden, alternativ kann der Dateipfad im Texteingabefeld eingegeben werden. Mit Abschicken des Formulars
+     wird der Dateiinhalt und der Dateiname an den Server übertragen, was unter Umständen lange dauern kann.
+     </p>
+
+     <img src="images/fileupload.png" alt="FileUpload" title="FileUpload"/>
+     <p class="klein"><strong>Abbildung 2.41:</strong> Syntax des FileUpload</p>
+
+     <p>Zu beachten ist noch, dass für den FileUpload einige Property-Werte des Systems von Bedeutung sind.</p>
+     <ul>
+     <li>Dateien bis zu dieser Größe werden im Hauptspeicher des Servers gehalten:<br/>
+     <code>MCR.Editor.FileUpload.MemoryThreshold=1000000</code></li>
+     <li>Dateien bis zu dieser Größe werden für HTTP Uploads akzeptiert:<br/>
+     <code>MCR.Editor.FileUpload.MaxSize=5000000</code> </li>
+     <li>Temporärer Speicherort für hochgeladene Dateien:<br/>
+     <code>MCR.Editor.FileUpload.TempStoragePath=/tmp/upload</code>
+     </li>
+     </ul>
+     <p>Das Auslesen der Dateien zur weiteren Verarbeitung kann z.B. wie folgt durchgeführt werden.</p>
+
+     <img src="images/java_fileupload.png" alt="FileUpload" title="FileUpload"/>
+     <p class="klein"><strong>Abbildung 2.42:</strong> Abbildung 42: Java-Code zum Lesen des FileUpload</p>
+
+     <p>
+     Weitere Hinweise zum Auslesen der hochgeladenen Dateien finden Sie in der JavaDoc-Dokumentation der Klassen
+     <code>org.mycore.frontend.editor2.MCREditorSubmission</code> und <code>MCREditorVariable</code> sowie in der
+     Online-Dokumentation des Apache File Upload Paketes (http://jakarta.apache.org/commons/fileupload/).
+     </p>
+     <p>
+     Die Methode <code>MCREditorSubmission.listFiles()</code> liefert eine <code>java.util.List</code> von hochgeladenen
+     FileItem-Objekten. Die Apache-Klasse <code>FileItem</code> besitzt Methoden <code>getName()</code> und
+     <code>getInputStream()</code>, die den Dateinamen und den hochgeladenen Dateiinhalt liefern. Die Methode
+     <code>getFieldName()</code> liefert den Pfad im XML-Dokument, zu dem die hochgeladene Datei gehört.
+     </p>
+     <p>
+     Alternativ kann auch über diesen Pfad auf eine bestimmte hochgeladene Datei direkt zugegriffen werden: Die
+     Eingaben aus dem Editor werden als JDOM-Dokument an das Zielservlet übergeben und stehen über
+     <code>MCREditorSubmission.getXML()</code> zur Verfügung. Mit JDOM-Operationen kann man nun zu dem JDOM-Element
+     oder -Attribut navigieren, für das ggf. eine Datei im Formular hochgeladen wurde. Die Methode
+     <code>MCREditorSubmission.getFile()</code>erwartet als Argument dieses JDOM-Objekt und liefert das dazu gehörende
+     FileItem.
+     </p>
+     <p class="P50">FileItem-Objekte sollten unmittelbar verarbeitet werden, da die Dateiinhalte nur temporär
+     gespeichert werden. Der hochgeladene Inhalt kann mittels <code>FileItem.write()</code> in ein persistentes
+     <code>java.io.File</code> kopiert werden oder in einem <code>MCRFile</code> gespeichert werden.
+     </p>
+     <p>
+     Zu beachten ist, dass FileUploads nicht in Editoren verwendet werden sollten, die Repeater enthalten. Will man mehr
+     als eine Datei hochladen, sollte das file-Element „manuell“ mehrfach im Editor definiert werden, es darf jedoch
+     kein Repeater verwendet werden.
+     </p>
+     <p class="fett">Integration externer Datenquellen</p>
+     <p>
+     Das Editor-Framework gestattet es, Teile der Formular-Definition auszulagern und über eine 
+     <code>include</code> Anweisung einzubinden. Dies ermöglicht es, in mehreren Formularen oder an verschiedenen
+     Stellen eines Formulars verwendete Teile wiederzuverwenden und nur einmal zu definieren. 
+     Eine <code>include</code> Anweisung kann an beliebiger Stelle eines Formulars stehen.
+     </p>
+     <p>
+     Die <code>include</code> Anweisung liest einen Teil der Editor-Definition von einer beliebigen URI, 
+     die durch den MyCoRe URI Resolver unterstützt wird. Beispiele:
+     </p>
+     <dl>
+       <dt><code>&lt;include uri="classification:editor:-1:children:marcrelator" /&gt;</code></dt>
+       <dd>liest über den Klassifikations-Resolver die Kategorien der Klassifikation mit ID "marcrelator" ein,
+       um sie in das Formular als Auswahlwerte einer Dropdown-Liste anzubieten.</dd>
+       <dt><code>&lt;include uri="webapp:editor-includes.xml" ref="cancel.submit" /&gt;</code></dt>
+       <dd>liest die statische XML-Datei editor-includes.xml aus der Webapplikation, und nimmt daraus den Inhalt eines
+       XML-Elementes mit der ID "cancel.submit". Dies könnte etwa die Definition des Speichern- und Abbrechen-Buttons sein,
+       der in mehreren Formularen verwendet wird und in der Datei editor-includes.xml nur einmal definiert wird..</dd>
+     </dl>
+     
+     <table><tr><th>Einfügen eines Request aus einem Servlet</th></tr><tr><td></td></tr></table>
+     <p>Dieses Beispiel zeigt den Zugriff auf ein Servlet zur Laufzeit. Dabei werden die Ausgabedaten der
+     Servlet-Antwort vor der Integration in das Framework mittels XSLT in eine passende Form gebracht. Im Beispiel
+     wird eine MyCoRe-Klassifikation in eine Auswahlliste eingefügt.
+     </p>
+
+     <img src="images/servlet_request.png" alt="Servlet-Request" title="Servlet-Request"/>
+     <p class="klein"><strong>Abbildung 2.43:</strong> Include Servlet-Request</p>
+
+     <table><tr><th>Einfügen eines Definitionsabschnittes aus der Session</th></tr><tr><td></td></tr></table>
+     <p>
+     Es besteht auch die Möglichkeit, Daten dynamisch in der <code>MCRSession</code> zu hinterlegen und von dort in
+     die Gestaltung des Formulars zu integrieren. Im ersten Schritt wird in einer Java-Klasse ein JDOM-Element erzeugt,
+     welches dann im zweiten Schritt in das Formular eingebaut wird. Das Attribut <code>cacheable</code> spezifiziert
+     dabei, ob die Daten permanent vorgehalten werden sollen. Für ständig wechselnde Daten ist hier <code>false</code>
+     anzugeben.
+     </p>
+
+     <img src="images/java_code_session.png" alt="Java-Code" title="Java-Code"/>
+     <p class="klein"><strong>Abbildung 2.44:</strong> Java-Code</p>
+
+     <table><tr><th>Formularteile dynamisch abhängig von Request Parametern integrieren</th></tr><tr><td></td></tr></table>
+     <p>
+     Ähnlich wie bei der Source URI und Cancel URI kann auch bei der <code>include</code> Anweisung ein HTTP Request Parameter
+     verwendet werden, um Formularteile abhängig davon nachzuladen und so ein dynamisch aufgebautes Formular zu erzeugen. In
+     diesem Fall muss allerdings der Request Parameter <strong>immer</strong> übergeben werden. Beispiel: 
+     </p>
+     <code>&lt;include uri="webapp:editor-includes.xml" ref="{mode}" /&gt;</code>
+     <p>
+     Wird das Formular mit dem Parameter <code>?mode=simple</code> aufgerufen, wird an dieser Stelle aus der Datei editor-includes.xml
+     der Inhalt eines Elementes mit der ID "simple" eingebunden. Wird das Formular mit dem Parameter <code>?mode=advanced</code> aufgerufen, 
+     wird an dieser Stelle der Inhalt eines Elementes mit der ID "advanced" eingebunden.
+     </p>
+     <p>Platzhalter für Request Parameter stehen in geschweiften Klammern und können sowohl im <code>uri</code> Attribut als auch im
+     <code>ref</code> Attribut verwendet werden.
+     </p>
+
+    </section>
+
+    <section>
+     <title>Eingabevalidierung</title>
+     <p class="fett">Einführung</p>
+     <p>
+     Die Eingabefelder von Editor-Formularen können durch Integration von Validierungsregeln direkt durch das
+     Editor-Servlet geprüft werden, noch bevor die Eingaben an das weiterverarbeitende Zielservlet weitergegeben werden.
+     Wenn eine Eingabe fehlerhaft ist, wird das Formular noch einmal angezeigt. Es erscheint eine Fehlermeldung.
+     Eingabefelder mit fehlerhaften Eingaben werden im Formular optisch markiert. Zunächst ein einfaches Beispiel:
+     </p>
+
+     <img src="images/eingabevalidierung.png" alt="Eingabevalidierung" title="Eingabevalidierung"/>
+     <p class="klein"><strong>Abbildung 2.45:</strong> Einfaches Beispiel für Eingabevalidierung</p>
+
+     <p>
+     Das Element <code>validationMessage</code> enthält die Meldung, die am Kopf des Formulars erscheint, wenn ein oder
+     mehrere Eingabefelder fehlerhaft ausgefüllt wurden. Dieses Element ist optional, es kann ein sprachunabhängiges
+     label-Attribut oder ein oder mehrere sprachabhängige label-Elemente enthalten.
+     </p>
+
+     <p>
+     Jedes zu validierende Eingabefeld muss eine eindeutige ID besitzen. Neben Texteingabefeldern können auch alle
+     anderen Feldtypen wie z.B. Auswahllisten validiert werden. Nur hidden-Felder können momentan nicht validiert
+     werden.
+     </p>
+     <p>
+     Das zu validierende Feld muss ein oder mehrere <code>condition-</code>Elemente enthalten, die wiederum eine
+     eindeutige ID besitzen müssen. Die Attribute dieser <code>condition</code>-Elemente enthalten die zu prüfenden
+     Validierungsregeln. Ein <code>condition</code>-Element kann ein sprachunabhängiges <code>label</code>-Attribut
+     oder ein oder mehrere sprachabhängige label-Elemente enthalten, die eine Meldung für den Benutzer enthalten. Bei
+     einer fehlerhaften Eingabe wird diese Meldung angezeigt, wenn der Benutzer mit der Maus über das Fehlersymbol
+     fährt, das neben dem Eingabefeld angezeigt wird.
+     </p>
+
+     <img src="images/validierung.png" alt="Fehlgeschlagene Eingabevalidierung" title="Fehlgeschlagene Eingabevalidierung"/>
+     <p class="klein"><strong>Abbildung 2.46:</strong> Fehlgeschlagene Eingabevalidierung</p>
+
+     <p>
+     Ein Eingabefeld kann mehr als ein condition-Element enthalten. Dadurch können komplexe Validierungsregeln
+     schrittweise geprüft werden, und der Nutzer bekommt eine exaktere Rückmeldung, welche dieser Regeln verletzt wurde.
+     Wenn die Validierungsregeln auf mehrere condition-Elemente aufgeteilt wird, sollte die „required“ Regel ggf. die
+     erste sein.
+     </p>
+
+     <img src="images/conditions.png" alt="Regeln" title="Regeln"/>
+     <p class="klein"><strong>Abbildung 2.47:</strong> Beispiel für eine Reihenfolge von Regeln</p>
+
+     <p>Oder</p>
+
+     <img src="images/condition.png" alt="Regeln in einer condition" title="Regeln in einer condition"/>
+     <p class="klein"><strong>Abbildung 2.48:</strong> Beispiel für Regeln in einer <code>condition</code></p>
+
+     <p class="fett">Validierungsregeln für einzelne Felder</p>
+     <p>
+     Die Validierungsregeln für Eingabefelder werden über Attribute oder Attributkombinationen des condition-Elements
+     definiert. Die folgenden Regeln können geprüft werden:
+     </p>
+     <table>
+     <tr><th>required="true"</th></tr>
+     <tr>
+     <td>Es ist eine Eingabe erforderlich. Auch Eingaben, die nur aus Leerzeichen bestehen, werden abgewiesen. Ist diese
+     Regel verletzt, werden ggf. weitere vorhandene Regeln nicht mehr geprüft.</td>
+     </tr>
+     </table>
+     <table>
+     <tr><th>minLength="10"</th></tr>
+     <tr><td>Die Eingabe muss aus minimal 10 Zeichen bestehen.</td></tr>
+     </table>
+     <table>
+     <tr><th>maxLength="250"</th></tr>
+     <tr><td>Die Eingabe darf aus maximal 250 Zeichen bestehen.</td></tr>
+     </table>
+     <table>
+     <tr><th>type="integer" min="0" max="100"</th></tr>
+     <tr><td>Die Eingabe muss eine ganze Zahl sein. Optional kann über die Attribute min und/oder max der Wertebereich
+     eingeschränkt werden.</td></tr>
+     </table>
+     <table>
+     <tr><th>type="decimal" format="de" min="0" max="3,5"</th></tr>
+     <tr><td>Die Eingabe muss eine Zahl (ggf. mit Nachkommastellen) sein. Optional kann über die Attribute min und/oder
+     max der Wertebereich eingeschränkt werden. Das Attribut format muss einen ISO 639 Sprachcode enthalten (z.B. „de“
+     oder „en“), der bestimmt, wie Kommazahlen formatiert werden. Die min- und max-Werte müssen diesem Format
+     entsprechend angegeben werden.</td></tr>
+     </table>
+     <table>
+     <tr><th>type="datetime" format="dd.MM.yyyy" min="01.01.1970" max="31.12.2030" <br/>
+     type="datetime" format="dd.MM.yyyy;yyyy-MM-dd" min="21.08.2009"</th></tr>
+     <tr><td>Die Eingabe muss ein Datums- oder Zeitwert sein. Optional kann über die Attribute min und/oder max der
+     Wertebereich eingeschränkt werden. Das Attribut format muss ein java.text.SimpleDateFormat Pattern enthalten
+     (z.B. „dd.MM.yyyy“), das bestimmt, wie der Wert formatiert sein muss. Erlaubt sind auch mehrere durch Semikolon
+     getrennte Formate. Die min- und max-Werte müssen im ersten angegebenen Format spezifiziert werden.</td></tr>
+     </table>
+     <table>
+     <tr><th>type="string" min="a" max="zzz"</th>
+     </tr><tr><td>Eine Eingabe kann ein beliebiger Text sein. Optional kann über die Attribute min und/oder max der
+     Wertebereich eingeschränkt werden.</td></tr>
+     </table>
+     <table>
+     <tr><th>regexp=".+@.+\..+"</th></tr>
+     <tr><td>Die Eingabe muss den angegebenen regulären Ausdruck erfüllen. Die Syntax des regulären Ausdrucks ist durch
+     die Klasse java.util.regex.Pattern definiert.</td></tr>
+     </table>
+     <table>
+     <tr><th>xsl="contains(.,'@')"</th></tr>
+     <tr><td>Die Eingabe wird gegen eine XSL Bedingung geprüft, wie sie in XSL if oder when Elementen verwendet werden
+     kann. Der Eingabewert wird in der Bedingung durch einen Punkt referenziert.</td></tr>
+     </table>
+     <table>
+     <tr><th>class="foo.bar.Validator" method="validateFooBar"</th></tr>
+     <tr><td>Die Eingabe wird durch Aufruf einer beliebigen Java-Methode validiert, die true oder false zurückgibt. Im
+     oben gezeigten Beispiel würde die Methode public static boolean validateFooBar( String value ) aus der Klasse
+     foo.bar.Validator aufgerufen. Es sind so sehr spezielle Validierungsregeln wie z.B. das Prüfen einer ISBN
+     implementierbar.</td></tr>
+     </table>
+     <p class="fett">Validierungsregeln für Feldkombinationen</p>
+     <p>
+     Es ist ebenfalls möglich, die Eingaben zweier Felder gegeneinander zu prüfen. Dazu wird ein
+     <code>condition</code>-Element in das die beiden Felder enthaltende Panel eingefügt. Die Werte der beiden Felder
+     können dann über Vergleichsoperatoren gegeneinander geprüft werden. Beispiele:</p>
+     <ul>
+     <li>Ein Eingabeformular zum Ändern eines Passwortes enthält zwei Passwortfelder, so dass das Passwort
+     wiederholt eingegeben werden muss. Die Eingaben in diesen beiden Feldern müssen identisch sein.</li>
+     <li>Ein Eingabeformular enthält zwei Eingabefelder für einen Datumsbereich. Das Datum im Feld
+     <code>validFrom</code> muss kleiner oder gleich dem Datum im Feld <code>validTo</code> sein.</li>
+     </ul>
+
+     <img src="images/codebeispiel.png" alt="Codebeispiel" title="Codebeispiel"/>
+     <p class="klein"><strong>Abbildung 2.49:</strong> Codebeispiel</p>
+
+
+     <p>
+     Zunächst werden die Werte beider Eingabefelder <code>validFrom</code> und <code>validTo</code> nach den gleichen
+     Regeln auf die Eingabe eines korrekten Datums geprüft. Wenn mindestens eines der Felder eine Eingabe enthält
+     (was ggf. über ein <code>required-</code>>Attribut erzwungen werden könnte), werden die Werte der Felder
+     miteinander verglichen.
+     </p>
+
+     <p><code>field1="validFrom"</code></p>
+     <p>
+     Erstes zu vergleichende Feld. Syntax und Funktionsweise entsprechen dem Verhalten des Attributes <code>var</code>
+     für Zellen.
+     </p>
+     <p><code>field2="validTo" </code>></p>
+     <p>
+     Zweites zu vergleichende Feld. Syntax und Funktionsweise entsprechen dem Verhalten des Attributes <code>var</code>
+     für Zellen.
+     </p>
+     <p><code>operator="&amp;lt;="</code></p>
+     <p>
+     Vergleichsoperator (hier <code>&gt;=</code>). Es können die Operatoren <code>=, &gt;, &lt;, &gt;=, &lt;=, !=</code>
+     (für ungleich) verwendet werden.
+     </p>
+     <p><code>type="datetime"</code><br/>
+     <code>format="dd.MM.yyyy"</code></p>
+     <p>
+     Datentyp und Format der Eingabe, analog zu den gleichnamigen Attributen, die im vorangehenden Abschnitt bereits
+     erläutert wurden.
+     </p>
+     <p>
+     Alternativ kann auch hier über eine <strong>externe Java-Methode validiert</strong> werden. Das folgende Beispiel
+     würde für zwei Zahlen prüfen, ob die eine das Quadrat der anderen ist:
+     </p>
+     <p><code>&lt;condition id="cond.quadrat" field1="zahl1" field2="zahl2"</code> <br/>
+     <code>class="math.Validator" method="validateSquare"&gt;</code><br/>
+     <code> &lt;label&gt;Zahl 1 muss gleich dem Quadrat der Zahl 2 sein!&lt;/label&gt;</code><br/>
+     <code>&lt;/condition&gt;</code></p>
+     <p>In der Klasse math.Validator könnte die Methode zur Validierung wie folgt aussehen:</p>
+     <p><code>public static boolean validateSquare( String value1, String value2 )</code><br/>
+     <code>{</code><br/>
+     <code>int zahl1 = Integer.parseInt( value1 );</code><br/>
+     <code>int zahl2 = Integer.parseInt( value2 );</code><br/>
+     <code>return ( zahl1 == (zahl2 * zahl2) );</code><br/>
+     <code>}</code></p>
+     <p>
+     Bitte beachten Sie, dass bei externer Validierung die Werte immer als String übergeben werden. Durch Vorschalten
+     einer weiteren Validierungsregel kann aber z.B. leicht erreicht werden, dass nur Zahlen oder bestimmte Datentypen
+     eingegeben werden können.
+     </p>
+     <p class="fett">Validierung ganzer Panels oder XML-Bereiche</p>
+     <p>
+     Mehrere Eingabefelder können gemeinsam über eine XSL-Bedingung oder eine externe Java-Methode validiert werden. So
+     kann im Extremfall das gesamte aus der Eingabe resultierende XML-Dokument validiert werden. Die Eingabevalidierung
+     bezieht sich in diesem Fall auf ein Panel der Editor-Definition und dem daraus resultierendem XML-Element. Dies
+     kann auch das Wurzelpanel sein. Das condition-Element für die Validierungsregel muss dabei ein Kindelement dieses
+     Panels sein.
+     </p>
+     <p>
+     Über die Attribute <strong>class</strong> und <strong>method</strong> kann eine externe Java-Methode angegeben
+     werden, die ein XML-Element validiert:
+     </p>
+     <source>
+    <p class="kastensource">
+    <![CDATA[
+     <components var="/input" root="root"
+     ...
+       <panel lines="off" id="root">
+         <condition id="validateExt"
+                 class="foo.bar.Validator" method="validateInput">
+                     <label xml:lang=</code><code>"de"> Eingabefehler! </label>
+         </condition>
+         ...
+     ]]>
+     Sie ruft dann zur Validierung in der Klasse <code>foo.bar.Validator</code> die folgende Methode auf:
+    <![CDATA[
+     public static boolean validateInput( Element input )
+     ]]>
+     </p>
+     </source>
+     <p>
+     Über das Attribut <strong>xsl</strong> kann eine XSL-Bedingung angegeben werden. Im folgenden Beispiel wird in
+     einer Suchmaske sichergestellt, dass mindestens ein Eingabefeld mit einem Wert ausgefüllt ist. Dies entspricht der
+     XSL-Bedingung: „Die Anzahl der Elemente, bei denen das value-Attribut nicht leer ist, ist größer null“.
+     </p>
+     <source>
+     <p class="kastensource">
+     <![CDATA[
+     <components var="/query" root="root">
+     ...
+       <panel lines="off" id="root">
+         <condition id="someInputNeeded"
+              xsl="count(conditions/boolean/*[string-length(@value) &gt; 0])
+                &gt; 0">
+           <label xml:lang="de">Bitte einen Suchausdruck eingeben!>/label>
+         </condition>
+         ...
+     ]]>
+     </p>
+     </source>
+    </section>
+
+</body>
+</document>
+
