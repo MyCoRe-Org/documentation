@@ -58,7 +58,7 @@
                         li.menu_entry
                         li.menu_entry_active
 
-    TODO: Find a way to select external links and mark them with an arrow..
+
 ---------------------------------------------------------------------------- */
 /* submenu container */
     #submenu {
@@ -146,11 +146,15 @@
     #submenu ul.block_level_two_active div.block_title {
         padding-left: 30px;             /* space for background image*/
         }
-/* entry level 3+ (should not exists) */
+/* entry level 3+ */
     #submenu ul.block_level_two li.menu_entry_block div.block_title,
     #submenu ul.block_level_two_active li.menu_entry_block_active div.block_title,
     #submenu ul.block_level_two li.menu_entry_block div.block_title,
     #submenu ul.block_level_two_active li.menu_entry_block div.block_title {
-        color:red;                                  /* mark all level 3+*/
+        /* color:green; */                                 /* mark all level 3+*/
+    }
+/* entry level 4+ (should not exists) */
+    #submenu ul ul ul {
+        /* color:red; */                                 /* mark all level 4+*/
     }
 }
