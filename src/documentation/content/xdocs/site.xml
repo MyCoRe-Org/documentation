@@ -46,7 +46,6 @@ See http://forrest.apache.org/docs/linking.html for more info
     <interfaces label="Schnittstellen"   href="interfaces.html" />
     <derivates  label="Dateiverwaltung"  href="derivates.html" />
     <acl        label="Rechteverwaltung" href="acl.html" />
-
   </features>
 
   <applications    label="Beispiele"              href="applications/" tab="applications">
@@ -74,7 +73,6 @@ See http://forrest.apache.org/docs/linking.html for more info
       <howtos                label="HowTo's"           href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo" />
       <maven                 label="Maven Site"        href="http://www.mycore.de/generated/" />
       <apidocs               label="Javadocs"          href="http://www.mycore.de/generated/mycore/apidocs/" />
-
       <doc_archive label="Archiv" href="/../">
         <version_201404 label="MyCoRe 2014.04" href="archiv/version201404/">
           <install               label="Installation"      href="install.html" />
@@ -300,7 +298,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcruriresolver      label="URI-Resolver"          href="uri_resolver.html" />
       <mcrtextresolver     label="TextResolver"          href="text_resolver.html" />
     </frontend>
-    <permissions           label="Benutzer und Rechte"   href="#" />
+    <permissions           label="Benutzer und Rechte"   href="index.html" /> <!-- TODO: Frank -->
     <workflow              label="Workflow"              href="workflow/">
       <wf_overview         label="Übersicht"             href="index.html" />
       <swf                 label="SimpleWorkFlow"        href="swf.html" />
