@@ -188,7 +188,10 @@ $(document).ready(function() {
                     </xsl:choose>
                 </xsl:for-each>
             </xsl:if>
-            <xsl:text> | MyCoRe</xsl:text>
+            <xsl:if test="string-length(div[@id='content']/h1) > 0">
+              <xsl:text> | </xsl:text>
+            </xsl:if>
+            <xsl:text>MyCoRe</xsl:text>
         </title>
     </xsl:template>
 
