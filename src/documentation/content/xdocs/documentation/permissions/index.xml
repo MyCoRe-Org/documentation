@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Benutzer, Rollen und Zugriffsrechte</title>
+  </header>
+  <body>
+
+    <section>
+      <title>Benutzer, Rollen und Zugriffsrechte</title>
+      <p>
+        
+      </p>
+      <ul>
+        <li>Benutzerverwaltung</li>
+        <li>Access Control Listen</li>
+        <li>Benutzer und Rechte in DocPortal</li>
+        <li>LoginServlet und MCRSession</li>
+        <li>Broadcasting-Nachrichten</li>
+        <li>Session Listing</li>
+        <li>Externe Benutzerverwaltung einbinden</li>
+      </ul>
+    </section>
+
+  </body>
+</document>
