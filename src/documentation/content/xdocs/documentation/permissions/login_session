@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Das Login-Servlet und MCRSession</title>
+    <abstract>
+      Das Frontend ist Teil der Basiskomponente (mycore-base) und beinhaltet unter anderem die allgemeine Logik
+      zur Erstellung der Webinhalte und für die Kommandozeile.
+    </abstract>
+  </header>
+  <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+
+
+   <section>
+    <title>Das Login-Servlet und MCRSession</title>
+    <p>
+    Das <code>LoginServlet</code>, implementiert durch die Klasse <code>MCRLoginServlet</code>, dient zum Anmelden
+    von Benutzern und Benutzerinnen über ein Web-Formular. Die Funktionsweise ist wie folgt: Wie in Abschnitt 3.7.2
+    empfohlen, überschreibt <code>MCRLoginServlet</code> nicht die von <code>MCRServlet</code> geerbten
+    Standard-Methoden <code>doGet()</code> und <code>doPost()</code>. Meldet sich ein Benutzer oder eine Benutzerin
+    über das <code>MCRLoginServlet</code> an, so wird daher zunächst die Funktionalität von <code>MCRServlet</code>
+    ausgenutzt und die in Abschnitt 3.7.2 beschriebene Verbindung zur Sessionverwaltung herstellt. Wie dort ebenfalls
+    beschrieben, wird der Programmfluss an das Login-Servlet über die Methode <code>MCRLoginServlet.doGetPost()</code>
+    delegiert. Der Ablauf in <code>doGetPost()</code> wird im Diagramm auf Abbildung 2.8 dargestellt und ist
+    selbsterklärend.
+    </p>
+
+    <img src="images/progguide_2frontend_mcrloginservletfluss.jpg" alt="MCRServlet.doGetPost()" title="MCRServlet.doGetPost()"/>
+    <p class="klein"><strong>Abbildung 2.8:</strong> Ablaufdiagramm für MCRServlet.doGetPost()</p>
+
+    <p>
+    Der resultierende XML Output-Stream muss vom zugehörigen Stylesheet verarbeitet werden und hat die in
+    Abbildung 2.9 gezeigte Syntax.
+    </p>
+
+    <img src="images/loginservletsoutput.jpg" alt="MCRServlet.doGetPost()" title="MCRServlet.doGetPost()"/>
+    <p class="klein"><strong>Abbildung 2.9:</strong> XML Output des LoginServlets</p>
+
+
+    <p>Bei einer missglückten Anmeldung wird der Grund dafür in Form eines Attributes gespeichert. Das Stylesheet kann
+    dann die entsprechende Meldung ausgeben. Die Gast-User-ID und das Gast-Passwort werden aus einer Konfigurationsdatei
+    gelesen. Die URL schließlich wird dem Http-Request entnommen und sollte dort von der aufrufenden Seite bzw. vom
+    aufrufenden Servlet gesetzt sein. Ist sie nicht gesetzt, so wird die Base-URL des MyCoRe-Systems verwendet.
+    </p>
+   </section>
+
+
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
+
+</body>
+</document>
+
