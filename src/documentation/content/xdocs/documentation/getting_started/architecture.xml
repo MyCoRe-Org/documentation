@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
   <header>
-    <title>Architektur-Übersicht</title>
+    <title>Architektur-Ãœbersicht</title>
   </header>
   <body>
 
     <section>
-      <title>Architektur-Übersicht</title>
+      <title>Architektur-Ãœbersicht</title>
       <p>
-        Kurze Einführung in MyCoRe um loszulaufen ...
+        Kurze EinfÃ¼hrung in MyCoRe um loszulaufen ...
       </p>
     </section>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -12,11 +12,50 @@
       <p>
         MyCoRe stellt eine Kommandozeile bereit, das "Command Line Interface", kurz CLI, die mit einer Reihe von MyCoRe-Kommandos benutzt werden kann.
       </p>
-      <ul>
-        <li>CLI - die MyCoRe-Kommandozeile</li>
-        <li>MyCoRe-Kommandos</li>
-      </ul>
     </section>
+   <section>
+    <title>Anfragen an das System per Kommandozeile</title>
+    <dl>
+    <dt><code>run query from file {0}</code></dt>
+    <dd>das Kommando startet eine Anfrage mit einer Query, welche im File <code>{0}</code> steht.</dd>
+    <dt><code>run local query {0}</code></dt>
+    <dd>das Kommando startet eine Anfrage gegen das lokale System mit einer Query, welche im String <code>{0}</code> 
+    steht.</dd>
+    <dt><code>run distributed query {0}</code></dt>
+    <dd>das Kommando startet eine Anfrage gegen alle bekannten Systeme mit einer Query, welche im String <code>{0}</code> 
+    steht.</dd>
+    </dl>
+   </section>
+   
+   <section>
+    <title>Sonstige Kommandos</title>
+    <dl>
+    <dt><code>repair metadata search of type {0}</code></dt>
+    <dd></dd>
+    <dt><code>repair metadata search of ID {0}</code></dt>
+    <dd>die Kommandos lesen die XML-SQL-Tabellen und reparieren zerstörte Metadaten-Suchindizes. Das Kommando kann 
+    auch beim Wechsel eines <code>SearchStore</code> angewendet werden.</dd>
+    <dt><code>repair derivate search of type derivate</code></dt>
+    <dd></dd>
+    <dt><code>repair derivate search of ID {0}</code></dt>
+    <dd>die Kommandos lesen die gespeicherten Datenobjekte und reparieren zerstörte Volltext-Suchindizes. Das Kommando 
+    kann auch beim Wechsel eines <code>SearchStore</code> angewendet werden.</dd>
+    <dt><code>get last ID for base {0}</code></dt>
+    <dd></dd>
+    <dt><code>get next ID for base {0}</code></dt>
+    <dd></dd>
+    <dt><code>show last object ID for base {0}</code></dt>
+    <dd></dd>
+    <dt><code>show next object ID for base {0}</code></dt>
+    <dd>die Kommandos liefern die nächste freie oder die letzte <code>MCRObjectID</code> für eine vorgegeben 
+    <code>MCRObjectID</code>-Basis zurück. Die Basis besteht aus Projekt- und Type-String in der Form 
+    <code>project_type</code>. (Siehe Abschnitt zur <a href="#MCRO">MCRObjectID</a>)</dd>
+    <dt><code>check file {0}</code></dt>
+    <dd>prüft eine im Parameter <code>{0}</code> angegebene Datei mittels XML-Parser.</dd>
+    <dt><code>init hibernate</code></dt>
+    <dd>das Kommando initialisiert den Hibernate-SQL-Store. Das Kommando ist nur einmal erforderlich!</dd>
+    </dl>
+   </section>
 
   </body>
 </document>

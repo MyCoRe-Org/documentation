@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -7,13 +7,43 @@
   </header>
   <body>
 
-    <section>
-      <title>Hibernate</title>
-      <p>
-        In MyCoRe wird Hibernate verwendet...
-      </p>
-
+    <section id="database">
+    <title>Relationale Datenbanken</title>
+    <p>
+    Im Bereich der SQL Datenbasis werden ab MyCoRe 1.3 alle Zugriffe über die Datenbank-Mapping-Sprache 
+    <a title="Hibernate" href="http://www.hibernate.org/">Hibernate</a> realisiert. Dieses garantiert eine einheitliche 
+    Programmierschnittstelle gegenüber der Anwendung und gestattet die Nutzung aller durch Hibernate unterstützten 
+    relationalen Datenbanksysteme wie <a title="HSQLDB" href="http://hsqldb.org/">HSQLDB</a>, 
+    <a title="MySQL" href="http://dev.mysql.com/">MySQL</a>, <a title="PostgreSQL" href="http://www.postgresql.org/">PostgreSQL</a>, 
+    <a title="IBM DB2" href="http://www-306.ibm.com/software/data/db2/">IBM DB2</a> und <a title="Oracle" 
+    href="http://www.oracle.com/lang/de/database/index.html">Oracle</a>. Über die Konfiguration von MyCoRe gibt der 
+    Administrator der Anwendung an, welche Datenbank konkret zum Einsatz kommt. Standardmäßig wird für DocPortal die 
+    HSQLDB verwendet. Dies ist ein sogenanntes leichtgewichtiges, Java-basiertes Datenbanksystem und erfordert keine 
+    zusätzlichen Installationen. Der erforderliche Code ist im MyCoRe-Paket bereits enthalten. Für produktive 
+    Anwendungsinstallationen sollte jedoch ein den Erfordernissen entsprechendes Datenbanksystem gewählt werden.
+    </p>
     </section>
+	
+	
+   <section>
+     <title>hibernate.cfg.xml</title>
+   <p>
+   MyCoRe verwendet Hibernate als Schnittstelle zwischen der Java-Anwendung und der verwendeten relationalen Datenbank. 
+   Die Konfiguration dazu ist ebenfalls als Template vorhanden und wird bei der Erstinstallation via install.xml kopiert, von
+   </p>
+   <p class="break">
+   <code>docportal/config/hibernate/hibernate.cfg.xml.template</code> 
+   </p>
+   <p>nach </p>
+   <p class="break">
+   <code>docportal/config/hibernate/hibernate.cfg.xml</code>.
+   </p>
+   <p>
+   Für Anpassungen finden Sie unter <a title="" href="http://www.hibernate.org/">www.hibernate.org</a> ggf. weitere Hinweise.
+   Diese sind vor allem sinnvoll, wenn Sie zu einem späteren Zeitpunkt die Hibernate-Anbindung für Ihre Datenbank optimieren wollen, oder besonderen Funktionen 
+   wie Statistiken, Caches und Logging nutzen wollen.
+   </p>
+   </section>
 
   </body>
 </document>
