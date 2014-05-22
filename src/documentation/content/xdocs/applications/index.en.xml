@@ -8,8 +8,7 @@
   <body>
     <p>
     Currently, the developers are working on a new sample application.
-    This should be available by the end of 2013 or at the beginning of 2014. 
-    Until then the <a href="http://www.mycore.de:8291">DocPortal</a> will give 
+    Until then the <a href="http://www.mycore.de:8291">DocPortal</a> will give
     a short insight in a repository application.
     </p>
     <h3>Registration</h3>
@@ -19,8 +18,8 @@
     </p>
 
     <h2>More examples</h2>
-    <p>The <a href="site:map">map</a> gives an overview about all mycore applications 
-    of the community. Here you can look for suitable examples get in contact 
+    <p>The <a href="site:map">map</a> gives an overview about all mycore applications
+    of the community. Here you can look for suitable examples get in contact
     to the developer.</p>
   </body>
 </document>
