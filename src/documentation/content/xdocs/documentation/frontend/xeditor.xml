@@ -25,7 +25,7 @@
 
   <section>
     <title>Architektur und Funktionsweise</title>
-<p>XEditor-Formulare werden als MyCoReWebPage mit der Endung <code*.xed</code>code definiert. Die statische Webseite enthält neben anderen Elementen an einer Stelle ein
+<p>XEditor-Formulare werden als MyCoReWebPage mit der Endung <code>*.xed</code>code definiert. Die statische Webseite enthält neben anderen Elementen an einer Stelle ein
 <code>&lt;xed:form /&gt;</code> Element, das das gesamte XEditor-Formular umschließt. Es ist derzeit nicht möglich, mehr als ein XEditor Formular in der gleichen Webseite zu verwenden.</p>
 
 <p>Ein XEditor-Formular besteht aus einer Kombination von HTML Elementen und speziellen XEditor-Elementen.
