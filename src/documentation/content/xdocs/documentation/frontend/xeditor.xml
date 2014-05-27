@@ -25,41 +25,79 @@
 
   <section>
     <title>Architektur und Funktionsweise</title>
-<p>XEditor-Formulare werden als MyCoReWebPage mit der Endung <code>*.xed</code>code definiert. Die statische Webseite enthält neben anderen Elementen an einer Stelle ein
-<code>&lt;xed:form /&gt;</code> Element, das das gesamte XEditor-Formular umschließt. Es ist derzeit nicht möglich, mehr als ein XEditor Formular in der gleichen Webseite zu verwenden.</p>
+    <p>
+      XEditor-Formulare werden als MyCoReWebPage mit der Endung
+      <code>*.xed</code>
+      code definiert. Die statische Webseite enthält neben anderen Elementen an einer Stelle ein
+      <code>&lt;xed:form /&gt;</code>
+      Element, das das gesamte XEditor-Formular umschließt. Es ist derzeit nicht möglich, mehr als ein XEditor Formular
+      in der gleichen Webseite zu verwenden.
+    </p>
 
-<p>Ein XEditor-Formular besteht aus einer Kombination von HTML Elementen und speziellen XEditor-Elementen.
-Die HTML-Elemente definieren Struktur und Layout des Formulars und werden vom XEditor-Framework weitgehend unverändert belassen.
-Zusätzliche XEditor-Elemente und -Attribute mit Namespace <code>xmlns:xed="http://www.mycore.de/xeditor"</code> definieren die Abbildung zwischen Eingabefeldern im HTML-Formular
-und Elementen und Attributen in dem XML Dokument, das mit dem Formular bearbeitet oder erstellt wird. Weitere XEditor-Elemente regeln die Nachbearbeitung des resultierenden XMLs, steuern die Eingabevalidierung oder stellen Funktionen für dynamische Elemente wie z. B.
-wiederholbare Bereiche bereit. Wird eine Seite aufgerufen, die ein XEditor-Formular enthält, werden die speziellen XEditor-Element serverseitig in HTML Strukturen transformiert und jedem Eingabefeld
-ein Element oder Attribut im bearbeiteten XML Dokument zugeordnet. Browserseitig erscheint ein reines HTML Formular.</p>
+    <p>
+      Ein XEditor-Formular besteht aus einer Kombination von HTML Elementen und speziellen XEditor-Elementen.
+      Die HTML-Elemente definieren Struktur und Layout des Formulars und werden vom XEditor-Framework weitgehend unverändert
+      belassen.
+      Zusätzliche XEditor-Elemente und -Attribute mit Namespace
+      <code>xmlns:xed="http://www.mycore.de/xeditor"</code>
+      definieren die Abbildung zwischen Eingabefeldern im HTML-Formular
+      und Elementen und Attributen in dem XML Dokument, das mit dem Formular bearbeitet oder erstellt wird. Weitere
+      XEditor-Elemente regeln die Nachbearbeitung des resultierenden XMLs, steuern die Eingabevalidierung oder stellen
+      Funktionen für dynamische Elemente wie z. B.
+      wiederholbare Bereiche bereit. Wird eine Seite aufgerufen, die ein XEditor-Formular enthält, werden die speziellen XEditor-Element
+      serverseitig in HTML Strukturen transformiert und jedem Eingabefeld
+      ein Element oder Attribut im bearbeiteten XML Dokument zugeordnet. Browserseitig erscheint ein reines HTML Formular.
+    </p>
 
-<p>Das Formular kann entweder leer starten, so dass beim Aufbau des Formulars ein neues XML Dokument generiert wird, oder es kann ein vorhandenes XML Dokument
-aus beliebiger Quelle laden und dessen Werte in den Eingabefeldern zur Bearbeitung bereitstellen. Elemente und Attribute, die nicht bestimmten Eingabefeldern im
-Formular zugeordnet sind, bleiben dabei unverändert im XML Dokument erhalten. Bestimmte Bereiche des Formulars, einzelne Eingabefelder oder ganze Panels können wiederholt werden und entsprechen wiederholbaren Elementen im XML Dokument.
-In einem Formular für Publikationsdaten kann z. B. ein Bereich zur Eingabe der Autoren wiederholbar gestaltet werden. Der Benutzer kann über Buttons Felder hinzufügen,
-entfernen oder vertauschen.</p>
+    <p>Das Formular kann entweder leer starten, so dass beim Aufbau des Formulars ein neues XML Dokument generiert wird,
+      oder es kann ein vorhandenes XML Dokument
+      aus beliebiger Quelle laden und dessen Werte in den Eingabefeldern zur Bearbeitung bereitstellen. Elemente und
+      Attribute, die nicht bestimmten Eingabefeldern im
+      Formular zugeordnet sind, bleiben dabei unverändert im XML Dokument erhalten. Bestimmte Bereiche des Formulars, einzelne
+      Eingabefelder oder ganze Panels können wiederholt werden und entsprechen wiederholbaren Elementen im XML Dokument.
+      In einem Formular für Publikationsdaten kann z. B. ein Bereich zur Eingabe der Autoren wiederholbar gestaltet
+      werden. Der Benutzer kann über Buttons Felder hinzufügen,
+      entfernen oder vertauschen.
+    </p>
 
-<p>Beim Abschicken des Formulars werden die Werte zunächst an das XEditor Servlet übermittelt. Dort werden sie in das XML Dokument eingefügt. Das resultierende XML wird
-zusammen mit den abgeschickten Request Parametern aus dem Formular via Request Dispatching an das eigentliche Zielservlet weitergeleitet. 
-Wenn Validierungsregeln definiert sind, erfolgt zuvor eine serverseitig Eingabevalidierung. Schlägt die Validierung fehl, wird die Formularseite erneut angezeigt und
-dabei konfigurierbare Meldungen ausgegeben, damit der Benutzer die Eingabefehler korrigieren kann. Die Eingabevalidierung erfolgt immer serverseitig nach Abschicken des
-Formulars. Der Entwickler kann jedoch zusätzlich mit den üblichen Mitteln (HTML5, JavaScript) eine clientseitige Eingabevalidierung im Browser implementieren.
-Bereinigungsregeln (Cleanup Rules) dienen der Nachbearbeitung des resultierenden XML Dokumentes und ermöglichen es, logisch leere Elemente und Attribute zu entfernen,
-für die z. B. zwar ein Eingabefeld angeboten wurde, aber kein Wert eingegeben wurde.</p>
+    <p>Beim Abschicken des Formulars werden die Werte zunächst an das XEditor Servlet übermittelt. Dort werden sie in
+      das XML Dokument eingefügt. Das resultierende XML wird
+      zusammen mit den abgeschickten Request Parametern aus dem Formular via Request Dispatching an das eigentliche Zielservlet
+      weitergeleitet.
+      Wenn Validierungsregeln definiert sind, erfolgt zuvor eine serverseitig Eingabevalidierung. Schlägt die Validierung fehl,
+      wird die Formularseite erneut angezeigt und
+      dabei konfigurierbare Meldungen ausgegeben, damit der Benutzer die Eingabefehler korrigieren kann. Die Eingabevalidierung
+      erfolgt immer serverseitig nach Abschicken des
+      Formulars. Der Entwickler kann jedoch zusätzlich mit den üblichen Mitteln (HTML5, JavaScript) eine clientseitige
+      Eingabevalidierung im Browser implementieren.
+      Bereinigungsregeln (Cleanup Rules) dienen der Nachbearbeitung des resultierenden XML Dokumentes und ermöglichen es, logisch leere
+      Elemente und Attribute zu entfernen,
+      für die z. B. zwar ein Eingabefeld angeboten wurde, aber kein Wert eingegeben wurde.
+    </p>
 
-<p>Bei Aufruf der Seite können Request Parameter verwendet werden. Diese Parameter sind, zusammen mit Konfigurationswerten aus mycore.properties oder Variablen aus der
-Session des Benutzers (MCRSession) an vielen Stellen im Formular verwendbar, um dessen Aufbau zu steuern.
-Alle Request Parameter aus dem ursprünglichen Aufruf der Seite werden zusätzlich zu den Formularwerten auch an das Zielservlet durchgereicht.</p>
+    <p>Bei Aufruf der Seite können Request Parameter verwendet werden. Diese Parameter sind, zusammen mit
+      Konfigurationswerten aus mycore.properties oder Variablen aus der
+      Session des Benutzers (MCRSession) an vielen Stellen im Formular verwendbar, um dessen Aufbau zu steuern.
+      Alle Request Parameter aus dem ursprünglichen Aufruf der Seite werden zusätzlich zu den Formularwerten auch an das
+      Zielservlet durchgereicht.
+    </p>
 
-<p>Über die Elemente <code>&lt;xed:if /&gt;</code>, <code>&lt;xed:choose /&gt;</code> und <code>&lt;xed:include /&gt;</code> können Formular dynamisch gestaltet werden, so dass sie abhängig von Aufruf- oder
-Konfigurationsparametern Teilbereiche unterschiedlich darstellen oder aus Teilen zusammensetzen.</p>
-<p>Beschriftungen und Texte im Formular können über messages-*.properties Dateien mehrsprachig ausgegeben werden.</p>
-</section>
+    <p>
+      Über die Elemente
+      <code>&lt;xed:if /&gt;</code>
+      ,
+      <code>&lt;xed:choose /&gt;</code>
+      und
+      <code>&lt;xed:include /&gt;</code>
+      können Formular dynamisch gestaltet werden, so dass sie abhängig von Aufruf- oder
+      Konfigurationsparametern Teilbereiche unterschiedlich darstellen oder aus Teilen zusammensetzen.
+    </p>
+    <p>Beschriftungen und Texte im Formular können über <code>messages-*.properties</code> Dateien mehrsprachig ausgegeben werden.
+    </p>
+  </section>
 
 <section>
-    <title>Konfiguration</title>
+    <title>Grundkonfiguration des XEditor-Frameworks</title>
 <p>In einer eigenen Anwendung müssen nur wenige Properties ggf. angepasst werden.</p>
 <p>Wird ein XEditor Formular aufgerufen, speichert das Framework das bearbeitete XML und weitere Informationen serverseitig in der Session des Benutzers.</p>
      <pre class="brush: xml">MCR.XEditor.MaxEditorsInSession=50</pre>
@@ -73,6 +111,16 @@ aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt wer
   <url-pattern>*.xed</url-pattern>
 </servlet-mapping>]]></pre>
 
+</section>
+
+<section>
+  <title>Formulare definieren</title>
+  
+  <section>
+    <title>Hello World</title>
+    <p>TODO</p>
+  </section>
+
 <section>
     <title><code>&lt;xed:form /&gt;</code></title>
 <p>... umschliesst das gesamte XEditor-Formular, entspricht dem HTML <code>&lt;form /&gt;</code> Element und wird in ein solches transformiert.
@@ -84,9 +132,61 @@ definiert werden. Die in MyCoRe häufig verwendeten Namespaces für MyCoRe, MODS
 </section>
 
 <section>
-    <title><code>&lt;xed:bind /&gt;</code></title>
+    <title><code>Zu bearbeitendes XML laden: &lt;xed:source /&gt;</code></title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[<xed:source uri="..." />]]></pre>
+<p>Beispiel:</p>
+<pre class="brush: xml"><![CDATA[<xed:source uri="mcrobject:{id}" />]]></pre>
+
+<p>Lädt das in diesem Formular zu bearbeitende XML-Dokument von einer URI.</p>
+
+<p><code>&lt;xed:source /&gt;</code> ist nur erforderlich, wenn das Formular nicht "leer" starten soll, sondern ein existierendes XML-Dokument zur Bearbeitung laden soll.
+Das können z. B. die Metadaten eines MyCoRe Objektes sein, oder auch eine XML-Datei, die als Template (Vorlage) dient.</p>
+
+<p>Das Attribut @uri kann eine beliebige URI sein, die der MyCoRe URI Resolver unterstützt (z. B. mcrobject:, resource:, webapp:, file:, http:.) und gibt die Quelle an,
+von der das XML-Dokument gelesen wird.</p>
+
+<p>Das Attribut @uri kann optional ein oder mehrere Variablen enthalten, die bei Aufruf des Formulars durch Parameter ersetzt werden. Variablen stehen in geschweiften Klammern und
+beginnen mit einem $ Zeichen, z. B.</p>
+
+<pre class="brush: xml"><![CDATA[<xed:source uri="mcrobject:{$id}" />]]></pre>
+
+<p>Die Variablen werden bei Aufruf des Formulars durch den konkreten Wert ersetzt, wobei als Quelle die HTTP Request Parameter aus der URL des Aufrufs, Konfigurationswerte aus
+mycore.properties oder Werte aus der MCRSession verwendet werden können. </p>
+
+<p><code>&lt;xed:source /&gt;</code> ist wiederholbar. Wenn mehrere <code>&lt;xed:source /&gt;</code> Elemente angegeben sind, wird das erste Element verwendet, das keine Variablen enthält,
+oder bei dem alle angegebenen Variablen durch konkrete Werte ersetzt werden können. So kann man z. B. abhängig von Aufruf- oder Konfigurationsparametern
+XML-Dokumente aus verschiedenen Quellen laden.</p>
+
+<p>Beispiel:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:source uri="xslStyle:mcrobject2{$type}:mcrobject:{$id}" />
+<xed:source uri="mcrobject:{$id}" />
+<xed:source uri="webapp:template.xml" />]]></pre>
+
+<ul>
+<li>Wenn das Formular mit [Seite].xed?id=DocPortal_document_07910403 aufgerufen wird, wird die zweite URI verwendet, denn der Parameter $type ist nicht gegeben.
+Die URI mcrobject:DocPortal_document_0791040 lädt die Metadaten des MyCoRe Objektes mit der ID DocPortal_document_07910403 zur Bearbeitung.</li>
+<li>Wenn das Formular stattdessen mit [Seite].xed?type=similar&amp;id=DocPortal_document_07910403 aufgerufen wird, wird die erste URI verwendet, und ein XML Dokument von xslStyle=mcrobject2similar:mcrobject:DocPortal_document_07910403 geladen, d.h. die Metadaten des MyCoRe Objektes mit der ID DocPortal_document_07910403 werden geladen,
+durch das XSL Stylesheet mcrobject2similar.xsl transformiert und in das Formular geladen.</li>
+<li>Wenn das Formular ohne Parameter aufgerufen wird, wird die dritte URI verwendet, und eine statische Vorlage aus der Datei template.xml der Webapplikation geladen.</li>
+</ul>
+<p>Es wäre auch denkbar, die komplette URI als Parameter zu übergeben. Davon kann nur abgeraten werden, da es die Aufruf-URLs unnötig lang macht,
+Implementierungsdetails offenlegt und potentiell zu Sicherheitslücken führt:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:source uri="{$uri}" />
+Aufruf mit [Seite].xed?uri=mcrobject:DocPortal_document_07910403]]></pre>
+</section>
+
+
+<section>
+    <title>Abbildung zwischen XML und HTML: <code>&lt;xed:bind /&gt;</code></title>
 <p>Legt die Abbildung zwischen Eingabe-Komponenten im HTML Formular und Knoten im XML-Dokument fest.</p>
      <pre class="brush: xml"><![CDATA[Syntax: <xed:bind xpath="..." default="..." initially="..." set="..." name="...">]]></pre>
+     
+<section>
+  <title>Abbildung auf XML-Knoten über XPath-Ausdrücke</title>
+
 <p>Das Attribut @xpath kann ein beliebiger XPath 1.0 Ausdruck sein, der ein oder mehrere Elemente oder Attribute im zu bearbeiteten XML selektiert.
 Das Element drückt aus, dass alle durch das <code>&lt;xed:bind /&gt;</code> umschlossenene Bereiche des Formulars sich auf die selektierten Elemente und Attribute beziehen.
 Innerhalb des <code>&lt;xed:bind /&gt;</code> Elementes können beliebige HTML- oder XEditor-Elemente ineinander geschachtelt werden, so dass sich eine hierachische Abbildung zwischen
@@ -155,6 +255,10 @@ Eingabekomponenten entfernt und diese funktional duch umgebende <code>&lt;xed:bi
   <input type="checkbox" value="POD" name="/document/service" />Print on Demand anbieten
 </div>]]></pre>
 
+</section>
+<section>
+  <title>Prädikate und Generieren von XML-Knoten</title>
+
 <p>Der XPath-Ausdruck kann beliebige Prädikate enthalten, z. B.</p>
 
     <pre class="brush: xml"><![CDATA[<xed:bind xpath="mods:titleInfo[@type='translated'][@xml:lang='en']/mods:title">
@@ -203,6 +307,11 @@ HTML Formular zu definieren. Beispiel:</p>
   <xed:bind xpath="field[@name='year'][@order='descending']" />
   <xed:bind xpath="field[@name='title'][@order='ascending']" />
 </xed:bind>]]></pre>
+
+</section>
+
+<section>
+  <title>Default- und Initialwerte</title>
 
 <p>Das optionale Attribut @default legt einen Wert fest, der als Default-Wert verwendet wird, wenn der XML Knoten neu generiert wird, oder aber vor oder nach
 der Bearbeitung im Formular leer ist, d.h. keinen Textwert hat. Beispiele:</p>
@@ -263,10 +372,14 @@ wiederverwendet werden kann. Das Attribut @name spezifiziert den Namen der Varia
 in seinem Attribut @xlink:href diese ID referenziert.</p>
 </section>
 
+</section>
 
 <section>
-    <title><code>&lt;xed:repeat /&gt;</code></title>
-<p>Variante von <code>&lt;xed:bind /&gt;</code> für wiederholbare Formularbereiche, die einem wiederholbaren Element im bearbeiteten XML-Dokument entsprechen.
+  <title>Wiederholbare Bereiche</title>
+
+<section>
+    <title>Bereiche mit <code>&lt;xed:repeat /&gt;</code> wiederholbar machen</title>
+<p><code>&lt;xed:repeat /&gt;</code> ist eine Variante von <code>&lt;xed:bind /&gt;</code> für wiederholbare Formularbereiche, die einem wiederholbaren Element im bearbeiteten XML-Dokument entsprechen.
 In einem Formular für Publikationsdaten können so z. B. Eingabebereiche für die Daten mehrerer Autoren wiederholt werden.
 Der Benutzer kann über Buttons die wiederholten Abschnitte vertauschen, einzelne entfernen oder weitere einfügen.</p>
 <p>Syntax:</p>
@@ -300,8 +413,8 @@ Allerdings wird immer mindestens so oft wiederholt, wie bereits Elemente im bear
 </section>
 
 <section>
-    <title><code>&lt;xed:controls /&gt;</code></title>
-<p>Bestimmt Art und Position der Buttons zur Bearbeitung des wiederholten Bereiches. Diese Buttons werden als Submit Buttons implementiert, d.h. bei
+    <title>Buttons zum Bearbeiten wiederholter Bereiche: <code>&lt;xed:controls /&gt;</code></title>
+<p><code>&lt;xed:controls /&gt;</code> bestimmt Art und Position der Buttons zur Bearbeitung des wiederholten Bereiches. Diese Buttons werden als Submit Buttons implementiert, d.h. bei
 Klick auf den Button wird das Formular abgeschickt, die Änderung serverseitig durchgeführt und im Anschluss das veränderte Formular neu dargestellt.</p>
 <ul>
 <li>Die Position der Buttons kann an beliebiger Stelle innerhalb des durch <code>&lt;xed:repeat /&gt;</code> umschlossenen Bereiches frei bestimmt werden.</li>
@@ -344,55 +457,143 @@ setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als 
 
 </section>
 
-<section>
-    <title><code>&lt;xed:source /&gt;</code></title>
-<p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[<xed:source uri="..." />]]></pre>
-<p>Beispiel:</p>
-<pre class="brush: xml"><![CDATA[<xed:source uri="mcrobject:{id}" />]]></pre>
-
-<p>Lädt das in diesem Formular zu bearbeitende XML-Dokument von einer URI.</p>
-
-<p><code>&lt;xed:source /&gt;</code> ist nur erforderlich, wenn das Formular nicht "leer" starten soll, sondern ein existierendes XML-Dokument zur Bearbeitung laden soll.
-Das können z. B. die Metadaten eines MyCoRe Objektes sein, oder auch eine XML-Datei, die als Template (Vorlage) dient.</p>
-
-<p>Das Attribut @uri kann eine beliebige URI sein, die der MyCoRe URI Resolver unterstützt (z. B. mcrobject:, resource:, webapp:, file:, http:.) und gibt die Quelle an,
-von der das XML-Dokument gelesen wird.</p>
-
-<p>Das Attribut @uri kann optional ein oder mehrere Variablen enthalten, die bei Aufruf des Formulars durch Parameter ersetzt werden. Variablen stehen in geschweiften Klammern und
-beginnen mit einem $ Zeichen, z. B.</p>
-
-<pre class="brush: xml"><![CDATA[<xed:source uri="mcrobject:{$id}" />]]></pre>
-
-<p>Die Variablen werden bei Aufruf des Formulars durch den konkreten Wert ersetzt, wobei als Quelle die HTTP Request Parameter aus der URL des Aufrufs, Konfigurationswerte aus
-mycore.properties oder Werte aus der MCRSession verwendet werden können. </p>
-
-<p><code>&lt;xed:source /&gt;</code> ist wiederholbar. Wenn mehrere <code>&lt;xed:source /&gt;</code> Elemente angegeben sind, wird das erste Element verwendet, das keine Variablen enthält,
-oder bei dem alle angegebenen Variablen durch konkrete Werte ersetzt werden können. So kann man z. B. abhängig von Aufruf- oder Konfigurationsparametern
-XML-Dokumente aus verschiedenen Quellen laden.</p>
-
-<p>Beispiel:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:source uri="xslStyle:mcrobject2{$type}:mcrobject:{$id}" />
-<xed:source uri="mcrobject:{$id}" />
-<xed:source uri="webapp:template.xml" />]]></pre>
-
-<ul>
-<li>Wenn das Formular mit [Seite].xed?id=DocPortal_document_07910403 aufgerufen wird, wird die zweite URI verwendet, denn der Parameter $type ist nicht gegeben.
-Die URI mcrobject:DocPortal_document_0791040 lädt die Metadaten des MyCoRe Objektes mit der ID DocPortal_document_07910403 zur Bearbeitung.</li>
-<li>Wenn das Formular stattdessen mit [Seite].xed?type=similar&amp;id=DocPortal_document_07910403 aufgerufen wird, wird die erste URI verwendet, und ein XML Dokument von xslStyle=mcrobject2similar:mcrobject:DocPortal_document_07910403 geladen, d.h. die Metadaten des MyCoRe Objektes mit der ID DocPortal_document_07910403 werden geladen,
-durch das XSL Stylesheet mcrobject2similar.xsl transformiert und in das Formular geladen.</li>
-<li>Wenn das Formular ohne Parameter aufgerufen wird, wird die dritte URI verwendet, und eine statische Vorlage aus der Datei template.xml der Webapplikation geladen.</li>
-</ul>
-<p>Es wäre auch denkbar, die komplette URI als Parameter zu übergeben. Davon kann nur abgeraten werden, da es die Aufruf-URLs unnötig lang macht,
-Implementierungsdetails offenlegt und potentiell zu Sicherheitslücken führt:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:source uri="{$uri}" />
-Aufruf mit [Seite].xed?uri=mcrobject:DocPortal_document_07910403]]></pre>
 </section>
 
 <section>
-    <title><code>&lt;xed:cancel /&gt;</code></title>
+    <title>Ausgabe von Werten und mehrsprachigen Bereichen</title>
+
+<section>
+    <title>Werte ausgeben mit <code>&lt;xed:output /&gt;</code></title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[<xed:output value="..." i18n="..." />]]></pre>
+
+<p>Ermöglicht die Ausgabe eines Wertes. Der Wert kann über einen XPath-Ausdruck definiert werden und/oder das aktuelle Binding im bearbeitetn XML Dokument verwenden. Auch eine Kombination mit mehrsprachigen Bezeichnern aus messages-*.properties Dateien ist möglich. </p>
+
+<p>Wenn kein Attribut angegeben ist, wird der erste durch das aktuelle Binding ausgewählte Wert ausgegeben. Beispiel:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="title">
+  <label>Titel:</label>
+  <xed:output />
+</xed:bind>]]></pre>
+
+<p>Wenn das Attribut @value angegeben ist, wird der darin enthaltene XPath-Ausdruck ausgewertet und ausgegeben. Der XPath-Ausdruck kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Beispiele:</p>
+
+<pre class="brush: xml"><![CDATA[<label>Name: </label>
+<xed:output value="concat(mods:namePart[@type='family'],', ',mods:namePart[@type='given'])" />]]></pre>
+
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="title">
+  Diese Publikation mit dem Titel "<xed:output />" dürfen Sie als <xed:output value="$SomeUser" /> bearbeiten.
+</xed:bind>]]></pre>
+
+<p>Wenn das Attribut @i18n angegeben ist, wird der mehrsprachige Bezeichner aus den messages-*.properties Dateien ausgegeben, dessen Schlüssel angegeben ist. Beispiel:</p>
+
+<pre class="brush: xml"><![CDATA[<label>
+  <xed:output i18n="edit.title" />:
+</label>]]></pre>
+
+<p>Wenn sowohl das Attribut @value als auch das Attribut @i18n angegeben ist, wird zunächst der XPath-Ausdruck aus dem Attribut @value ausgewertet, und der resultierende Wert in den mehrsprachigen Bezeichner eingesetzt. Der Bezeichner in den messages-*.properties Dateien muss einen entsprechenden Platzhalter vorsehen. Beispiel:</p>
+
+<p>In messages-de.properties:
+<code>edit.datePublished=Das Dokument wurde am {0} veröffentlicht.</code></p>
+
+<p>In messages-en.properties:
+<code>edit.datePublished=The document was publised at {0}.</code></p>
+
+<pre class="brush: xml"><![CDATA[<label>
+  <xed:output value="date[@type='published']" i18n="edit.datePublished" />
+</label>]]></pre>
+</section>
+
+<section>
+    <title>Ausgabe eines Wertes innerhalb von HTML-Attributen</title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[{XPath} oder {i18:key} oder {i18n:key,XPath}]]></pre>
+
+<p>Enthält ein Attribut einen Ausdruck, der durch geschweifte Klammern umschlossen ist, wird dieser Ausdruck ausgewertet und an dieser Stelle im Attribut eingesetzt. Bei dem Ausdruck kann es sich um einen XPath-Ausdruck handeln, oder um einer mehrsprachigen Bezeichner aus den messages-*.properties Dateien. Der XPath-Ausdruck kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. </p>
+
+<p>Beispiele:</p>
+
+<pre class="brush: xml"><![CDATA[<img src="{@href}" />
+<a href="{$WebApplicationBaseURL}receive/{@xlink:href}">Link zum reverenzierten Objekt</a>]]></pre>
+
+<p>Wenn der Ausdruck mit "i18n:" beginnt, wird der mehrsprachige Bezeichner aus den messages-*.properties Dateien ausgegeben, dessen Schlüssel angegeben ist. Es ist möglich, einen XPath-Ausdruck mit einem i18n Schlüssel zu kombinieren, indem Schlüssen und XPath Ausdruck durch ein Komma getrennt werden. In diesem Fall wird zunächst der XPath-Ausdruck ausgewertet, und der resultierende Wert in den mehrsprachigen Bezeichner eingesetzt. Der Bezeichner in den messages-*.properties Dateien muss einen entsprechenden Platzhalter vorsehen.</p>
+
+<p>Beispiele:</p>
+
+<pre class="brush: xml"><![CDATA[<input type="submit" xed:target="cancel" value="{i18n:label.cancel}" />
+<input type="text" placeholder="{i18n:placeholder.date.issued}" />
+<img alt="{i18n:image.title,title[@type='main']}" src="{@href}" />]]></pre>
+</section>
+
+<section>
+    <title>Mehrsprachige Formularbereiche: <code>&lt;xed:multi-lang&gt;</code></title>
+<p>Ermöglicht es, abhängig von der aktuell verwendeten Sprache (Variable $CurrentLang der MCRSession), Teile des Formulars in verschiedenen Varianten anzubieten.</p>
+
+<p>Syntax:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:multi-lang>
+  <xed:lang xml:lang="..."></xed:lang>
+  <xed:lang xml:lang="..."></xed:lang>
+</xed:multi-lang>]]></pre>
+
+<p>Das Attribut @xml:lang definiert die Sprache (nach IETF BCP 47), für die der umschlossene Block verarbeitet und angezeigt werden soll. Wenn kein <code>&lt;xed:lang /&gt;</code> Bereich für die aktuelle Sprache definiert ist, wird der Bereich verwendet, der für die Default-Sprache (MCR.Metadata.DefaultLang aus mycore.properties) definiert ist. Wenn auch für die Default-Sprache kein Bereich definiert ist, wird der erste <code>&lt;xed:lang /&gt;</code> Bereich verwendet.</p>
+
+<p>Beispiel:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:multi-lang>
+  <xed:lang xml:lang="de">
+     <label>Straße:</label>...
+     <label>Hausnummer:</label>...
+     <label>PLZ:</label>...
+     <label>Ort:</label>...
+  </xed:lang>
+  <xed:lang xml:lang="en">
+     <label>Number:</label>...
+     <label>Street:</label>...
+     <label>City:</label>...
+     <label>ZIP Code:</label>...
+  </xed:lang>
+</xed:multi-lang>]]></pre>
+</section>
+
+<section>
+    <title>Ausgabe mittels externer XML Ressourcen: <code>&lt;xed:load-resource&gt;</code></title>
+<p>Lädt ein XML-Dokument von einer URI und stellt es in einer Variablen bereit, um in XPath-Ausdrücken darauf zuzugreifen.</p>
+
+<p>Syntax:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:load-resource name="..." uri="..." />]]></pre>
+
+<p>Das Attribut @name gibt den Namen der Variablen an, unter dem das XML Element bereitgestellt werden soll.
+Das Attribut @uri gibt die URI an, von der das XML geladen werden soll. Dies kann eine beliebige URI sein,
+die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:.) Innerhalb des Attributes
+@uri kann auch auf XPath Ausdrücke oder Variablen zugregriffen werden. </p>
+
+<p><code>&lt;xed:load-resource /&gt;</code> kann in Kombination mit <code>&lt;xed:output /&gt;</code> verwendet werden, um Werte im Formular auszugeben, die sowohl
+vom bearbeiteten XML als auch von Parametern oder externen XML-Ressourcen abhängen.
+Beispielsweise kann man Bezeichnungen von Klassifikationskategorien im Formular ausgeben, wobei die IDs der Kategorien im
+im bearbeiteten XML Dokument liegen, die Bezeichnungen aber in der Klassifikation verwaltet werden:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:load-resource name="genres" uri="classification:metadata:-1:children:modsgenre" />]]></pre>
+
+<p>lädt die Klassifikation "modsgenre" und stellt sie in einer Variablen $genres bereit. </p>
+
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="mods:genre" name="genre" />]]></pre>
+
+<p>wählt das Element mods:genre und stellt es in der  Variablen $genre bereit.</p>
+
+<pre class="brush: xml"><![CDATA[<xed:output value="$genres//category[@ID=$genre]/label[lang($CurrentLang)]/@text" />]]></pre>
+
+<p>gibt dann die Bezeichnung der Kategorie aus der Klassifikation aus, deren ID der Wert von <code>&lt;mods:genre /&gt;</code> ist, in der aktuellen Sprache.</p>
+
+</section>
+
+</section>
+<section>
+  <title>Das Formular absenden</title>
+
+<section>
+    <title>Abbruch-URL definieren: <code>&lt;xed:cancel /&gt;</code></title>
 <p>Syntax:</p>
 <pre class="brush: xml"><![CDATA[<xed:cancel url="..." />]]></pre>
 <p>Beispiel:</p>
@@ -510,339 +711,10 @@ org.jdom.Document xml = (org.jdom.Document) (request.getAttribute("MCRXEditorSub
 
 </section>
 
-<section>
-    <title>Cleanup-Rules</title>
-<p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="..." relevant-if="..." />]]></pre>
-
-<p>Cleanup-Rules sind Bereinigunsregeln, die logisch leere XML-Elemente oder -Attribute vor Übergabe an das Zielservlet aus dem resultierenden XML herauslöschen.
-Das Attribut @xpath gibt in Form eines XPath-Ausdruckes an, auf welche Elemente oder Attribute sich die Regel bezieht.
-Das Attribut @relevant-if gibt in Form eines XPath-Tests an, unter welchen Bedingungen diese XML-Knoten als relevant erachtet werden.</p>
-<p>Sofern keine weiteren Cleanup-Rules definiert sind, gelten die folgenden Standard-Regeln:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//@*" relevant-if="string-length(.) &gt; 0" />
-<xed:cleanup-rule xpath="//*" relevant-if="@* or * or (string-length(text()) &gt; 0)" />]]></pre>
-
-<p>Die Standard-Regeln entfernen leere Attribute und Elemente aus dem resultierenden XML-Dokument. Ein Element ist leer, wenn es keine Kindelemente, keine Attribute und keinen Text enthält.
-Diese Regeln lassen sich durch eigene Regeln ergänzen oder überschreiben.</p>
-
-<p>Beispiel (Suchmaske):</p>
-
-<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//condition" relevant-if="string-length(@value) &lt; 0" />]]></pre>
-
-<p>entfernt alle <code>&lt;condition /&gt;</code> Elemente, deren @value Attribut leer ist. In einer MyCoRe Suchmaske werden die Suchfelder als <code>&lt;condition /&gt;</code> Elemente dargestellt, mit den Attributen @field für das zu durchsuchende Feld, @operator für den zu verwendenden Suchoperator, und @value für den eingegebenen und zu suchenden Wert, z. B.</p>
-
-<pre class="brush: xml"><![CDATA[<condition field="title" operator="contains" value="Optik" />]]></pre>
-
-<p>Die Attribute @field und @operator werden in der Suchmaske durch hidden-Felder oder Auswahllisten festgelegt. Wenn aber kein zu suchender Wert eingegeben wird, ist die gesamte Suchbedingung nicht
-relevant, und sie wird durch die Bereinigungsregel entfernt.</p>
-
-<p>Beispiel (MODS):</p>
-<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//mods:*" relevant-if="(string-length(text()) &lt; 0) or mods:* or (string-length(@xlink:href) &lt; 0)" />
-<xed:cleanup-rule xpath="//mods:name" relevant-if="mods:namePart" />]]></pre>
-
-<p>Im MODS Datenmodell werden Personennamen z. B. wie folgt dargestellt:</p>
-
-<pre class="brush: xml"><![CDATA[<mods:name type="personal">
-  <mods:namePart type="given">John</namePart>
-  <mods:namePart type="family">Huston</namePart>
-  <mods:role>
-    <mods:roleTerm type="code" authority="marcrelator">aut</roleTerm>
-  </mods:role>
-</mods:name>]]></pre>
-
-<p>Angenommen, ein Eingabeformular besitzt für an einer Publikation beteiligte Personen Eingabefelder für Vor- und Nachname (mods:namePart), sowohl eine Auswahlliste für die Rolle (Autor, Herausgeber etc. entsprechend mods:roleTerm). Dann entfernt die zweite Bereinigungsregel das mods:name Element, wenn keine mods:namePart Elemente vorhanden sind, d.h. keine Namensteile eingegeben wurden. Die erste Bereinigungsregel entfernt alle mods Elemente, die keine anderen mods Elemente enthalten, oder kein xlink:href Attribut. Somit wird das mods:namePart Element entfernt, wenn kein Text enthalten ist. Das Attribut @type ist nicht relevant, da die Standard-Regel für mods Elemente überschrieben wurde.</p>
-
-<p>Bereinigungsregeln werden rekursiv und iterativ auf das resultierende XML-Dokumente angewandt, bis sich das Dokument nicht mehr ändert, d.h. aufgrund der Regeln keine weiteren Knoten als zu entfernen identifiziert werden.</p>
 </section>
 
 <section>
-    <title>xed:post-processor</title>
-<p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[<xed:post-processor xsl="..." />]]></pre>
-
-<p>Gibt mit dem Attribut @xsl ein Stylesheet an, das zur Nachbearbeitung des resultierenden XML-Dokumentes verwendet werden soll. Über ein solches XSL-Stylesheet kann das XML-Dokument nach Bearbeitung im Formular, aber noch vor Übergabe an das Zielservlet transformiert werden. </p>
-<p>Über die XEditor-Syntax können Eingabefelder flexibel auf XML-Elemente und Attribute abgebildet werden. In einigen Fällen kann die XML-Struktur aber zu komplex sein, um sie einfach auf Eingabefelder abzubilden. In solchen Fällen kann man das zu bearbeitende XML-Dokument</p>
-<ul>
-<li>vor der Bearbeitung im Formular durch ein XSL-Stylesheet in eine für die Bearbeitung geeignetere Form umwandeln: Dies ist einfach über Verwendung des xslStyle URI Resolvers möglich, z. B.
-<code>&lt;xed:source uri="xslStyle:mods-preprocessor:mcrobject:{$id}" /&gt;</code></li>
-<li>nach der Bearbeitung im Formular wieder durch ein XSL-Stylesheet in die gewünschte XML-Struktur zurück transformieren, z. B.
-<code>&lt;xed:post-processor xsl="mods-postprocessor.xsl" /&gt;</code></li>
-</ul>
-<p>Beispiel:</p>
-<p>Im MODS Datenmodell wird eine Publikation, die auf einer einzelnen Seite veröffentlicht wird, dargestellt als</p>
-
-<pre class="brush: xml"><![CDATA[<mods:detail type="page">
-  <mods:number> Seitenzahl </mods:number>
-</mods:detail>]]></pre>
-
-<p>Wenn sich die Publikation über mehrere Seiten erstreckt, wird ein von-bis Bereich angegeben:</p>
-
-<pre class="brush: xml"><![CDATA[<mods:extent unit="pages">
-  <mods:start> Seite von </mods:start>
-  <mods:end> Seite bis </mods:end>
-</mods:extent>]]></pre>
-
-<p>Angenommen, das Eingabeformular soll grundsätzlich nur die Eingabefelder "Seite von" und "Seite bis" anbieten, dann könnte man den Sonderfall einer einzelnen Seite abbilden, indem</p>
-<ul>
-<li>in einem Stylesheet mods-preprocessor.xsl alle mods:detail[@type='page']/mods:number zu mods:extent mit identischen mods:start und mods:end Werten transformiert werden</li>
-<li>in einem Stylesheet mods-postprocessor.xsl alle mods:extent mit identischen oder einzelnen mods:start und mods:end Werten zu einem einzelnen mods:detail[@type='page']/mods:number transformiert werden</li>
-</ul>
-</section>
-
-<section>
-    <title>xed:post-processor</title>
-<p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[<xed:output value="..." i18n="..." />]]></pre>
-
-<p>Ermöglicht die Ausgabe eines Wertes. Der Wert kann über einen XPath-Ausdruck definiert werden und/oder das aktuelle Binding im bearbeitetn XML Dokument verwenden. Auch eine Kombination mit mehrsprachigen Bezeichnern aus messages-*.properties Dateien ist möglich. </p>
-
-<p>Wenn kein Attribut angegeben ist, wird der erste durch das aktuelle Binding ausgewählte Wert ausgegeben. Beispiel:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:bind xpath="title">
-  <label>Titel:</label>
-  <xed:output />
-</xed:bind>]]></pre>
-
-<p>Wenn das Attribut @value angegeben ist, wird der darin enthaltene XPath-Ausdruck ausgewertet und ausgegeben. Der XPath-Ausdruck kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Beispiele:</p>
-
-<pre class="brush: xml"><![CDATA[<label>Name: </label>
-<xed:output value="concat(mods:namePart[@type='family'],', ',mods:namePart[@type='given'])" />]]></pre>
-
-<pre class="brush: xml"><![CDATA[<xed:bind xpath="title">
-  Diese Publikation mit dem Titel "<xed:output />" dürfen Sie als <xed:output value="$SomeUser" /> bearbeiten.
-</xed:bind>]]></pre>
-
-<p>Wenn das Attribut @i18n angegeben ist, wird der mehrsprachige Bezeichner aus den messages-*.properties Dateien ausgegeben, dessen Schlüssel angegeben ist. Beispiel:</p>
-
-<pre class="brush: xml"><![CDATA[<label>
-  <xed:output i18n="edit.title" />:
-</label>]]></pre>
-
-<p>Wenn sowohl das Attribut @value als auch das Attribut @i18n angegeben ist, wird zunächst der XPath-Ausdruck aus dem Attribut @value ausgewertet, und der resultierende Wert in den mehrsprachigen Bezeichner eingesetzt. Der Bezeichner in den messages-*.properties Dateien muss einen entsprechenden Platzhalter vorsehen. Beispiel:</p>
-
-<p>In messages-de.properties:
-<code>edit.datePublished=Das Dokument wurde am {0} veröffentlicht.</code></p>
-
-<p>In messages-en.properties:
-<code>edit.datePublished=The document was publised at {0}.</code></p>
-
-<pre class="brush: xml"><![CDATA[<label>
-  <xed:output value="date[@type='published']" i18n="edit.datePublished" />
-</label>]]></pre>
-</section>
-
-<section>
-    <title>Ausgabe eines Wertes innerhalb von HTML-Attributen</title>
-<p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[{XPath} oder {i18:key} oder {i18n:key,XPath}]]></pre>
-
-<p>Enthält ein Attribut einen Ausdruck, der durch geschweifte Klammern umschlossen ist, wird dieser Ausdruck ausgewertet und an dieser Stelle im Attribut eingesetzt. Bei dem Ausdruck kann es sich um einen XPath-Ausdruck handeln, oder um einer mehrsprachigen Bezeichner aus den messages-*.properties Dateien. Der XPath-Ausdruck kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. </p>
-
-<p>Beispiele:</p>
-
-<pre class="brush: xml"><![CDATA[<img src="{@href}" />
-<a href="{$WebApplicationBaseURL}receive/{@xlink:href}">Link zum reverenzierten Objekt</a>]]></pre>
-
-<p>Wenn der Ausdruck mit "i18n:" beginnt, wird der mehrsprachige Bezeichner aus den messages-*.properties Dateien ausgegeben, dessen Schlüssel angegeben ist. Es ist möglich, einen XPath-Ausdruck mit einem i18n Schlüssel zu kombinieren, indem Schlüssen und XPath Ausdruck durch ein Komma getrennt werden. In diesem Fall wird zunächst der XPath-Ausdruck ausgewertet, und der resultierende Wert in den mehrsprachigen Bezeichner eingesetzt. Der Bezeichner in den messages-*.properties Dateien muss einen entsprechenden Platzhalter vorsehen.</p>
-
-<p>Beispiele:</p>
-
-<pre class="brush: xml"><![CDATA[<input type="submit" xed:target="cancel" value="{i18n:label.cancel}" />
-<input type="text" placeholder="{i18n:placeholder.date.issued}" />
-<img alt="{i18n:image.title,title[@type='main']}" src="{@href}" />]]></pre>
-</section>
-
-
-<section>
-    <title><code>&lt;xed:include&gt;</code></title>
-<p>Fügt an der verwendeten Stelle Komponenten in das Formular ein, indem sie über eine ID referenziert werden, und/oder von einer externen URI nachgeladen werden. </p>
-<p>Syntax:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:include uri="..." ref="..." static="true|false" />]]></pre>
-
-<p>Wird das Attribut @uri angegeben, wird ein XML-Element von der angegebenen URI geladen, und der Inhalt (nicht das Wurzelelement selbst) an dieser Stelle eingefügt.
-@uri kann jede URI sein, die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:, xslStyle:).</p>
-<p>Wird das Attribut @ref angegeben, wird der Inhalt desjenigen XML-Elements eingefügt, dessen ID (@id) dem Wert von @ref entspricht. </p>
-
-<p>Die Attribute @uri und @ref sind kombinierbar. Sie können XPath-Ausdrücke oder Verweise auf Variablen enthalten. D.h. man kann über <code>&lt;xed:include /&gt;</code> Teile des Formulars
-dynamisch nachladen, die abhängig vom bearbeiteten XML und/oder von Request Parametern bei Aufruf des Formulars sind. </p>
-<p>Beispiel: Nachladen von Klassifikationskategorien als Auswahl in einer Select-Box:</p>
-
-<pre class="brush: xml"><![CDATA[<select>
-  <option value="">Bitte wählen...</option>
-  <xed:include uri="xslStyle:items2options:classification:editor:-1:children:modsgenre" />
-</select>]]></pre>
-
-<p>Die URI "xslStyle:items2options:classification:editor:-1:children:modsgenre" lädt die Klassifikation "modsgenre" und transformiert alle Kategorien in
-<code>&lt;option /&gt;</code> Auswahloptionen in der HTML-Syntax.</p>
-
-<p>Beispiel: Nachladen von Teilen eines Formulars abhängig von Request Parametern:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:include uri="webapp:ubo/editor/editor-genres.xed" ref="{$genre}" /> ]]></pre>
-
-<p>Wird das Formular z. B. mit [Seite].xed?genre=article aufgerufen, wird an dieser Stelle der Inhalt des Elementes mit @id='article' eingefügt.</p>
-
-<p>Das inkludierte XML sollte von einem Element <code>&lt;xed:template /&gt;</code> umschlossen sein.
-Der XEditor ignoriert solche Bereiche, wenn sie nicht durch <code>&lt;xed:include /&gt;</code> referenziert werden. </p>
-
-<p>Beispiel: Suchmaske, Auswahl Erscheinungsjahr</p>
-
-<pre class="brush: xml"><![CDATA[<label>Suche nach Erscheinungsjahr:</label>
-zwischen
-<pre class="brush: xml"><![CDATA[<xed:bind xpath="condition[@field='year'][1]">
-  <xed:bind xpath="@operator" default="&lt;=" />
-  <xed:include ref="year.input" />
-</xed:bind>]]></pre>
-
-<p>und</p>
-
-<pre class="brush: xml"><![CDATA[<xed:bind xpath="condition[@field='year'][2]">
-  <xed:bind xpath="@operator" default="&gt;=" />
-  <xed:include ref="year.input" />
-</xed:bind>]]></pre>
-
-<pre class="brush: xml"><![CDATA[<xed:template id="year.input">
-  <xed:bind xpath="@operator">
-    <select>
-      <option>=</option>
-      <option>&lt;</option>
-      <option>&lt;=</option>
-      <option>&gt;</option>
-      <option>&gt;=</option>
-    </select>
-  </xed:bind>
-  <xed:bind xpath="@value">
-    <input type="text" placeholder="{i18n:ubo.placeholder.year}" />
-  </xed:bind>
-</xed:template>]]></pre>
-
-<p>Hier wird eine Vorlage für die Auswahl des Suchoperators (&lt;, &gt;, = etc.) und die Eingabe der Jahreszahl an zwei Stellen wiederverwendet. </p>
-<p>Häufig verändern sich über eine URI inkludierte Vorlagen über die gesamte Laufzeit der Anwendungen nicht. Solche statischen Vorlagen können mit</p>
-
-<pre class="brush: xml"><![CDATA[<xed:include static="true" ... />]]></pre>
-
-<p>markiert werden. Der XEditor wird die externe Ressource (z. B. eine statische XML-Datei aus der Webapplikation) nur einmal einlesen, in einem
-Cache aufbewahren und wiederverwenden. </p>
-<p>Für Ressourcen, die sich über die Laufzeit der Applikation ändern, z. B. Klassifikationen, bei denen nachträglich Kategorien online ergänzt werden,
-sollte @static nicht gesetzt sein.</p>
-</section>
-
-<section>
-    <title><code>&lt;xed:if&gt;</code></title>
-<p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[<xed:if test="...">...</xed:if>]]></pre>
-
-<p>Ermöglicht es, einen Teil des Formulars nur unter einer bestimmten Bedingung auszuführen, die durch einen XPath-Test bestimmt wird. Der XPath-Test kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Nur wenn die Testbedingung erfüllt ist, wird der durch <code>&lt;xed:if /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt.</p>
-
-<p>Beispiele:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:if test="string-length(@valueURI) &lt; 0">
-  <a href="{@valueURI}">
-        <xed:output value="concat(mods:namePart[@type='family'],', ',mods:namePart[@type='given'])" />
-  </a>
-</xed:if>]]></pre>
-
-<pre class="brush: xml"><![CDATA[<xed:if test="$mode='advanced'">
-  <h3>Erweiterter Modus mit zusätzlichen Eingabefeldern:</h3>
-  ...
-</xed:if>]]></pre>
-</section>
-
-<section>
-    <title><code>&lt;xed:choose&gt;</code></title>
-<p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[<xed:choose>
-  <xed:when test="...">...</xed:when>
-  <xed:when test="...">...</xed:when>
-  <xed:otherwise>...</xed:otherwise>
-</xed:choose>]]></pre>
-
-<p>Ermöglicht es, abhängig von ein oder mehreren Bedingungen unterschiedliche Teile oder Varianten eines Formulars auszuführen. </p>
-
-<p>Jedes <code>&lt;xed:when /&gt;</code> Element definiert einen XPath-Test. Der XPath-Test kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Nur wenn die Testbedingung erfüllt ist, wird der durch <code>&lt;xed:when /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt. Wenn mehrere <code>&lt;xed:when /&gt;</code> Elemente angegeben sind, wird nur das erste Element berücksichtigt, dessen Testbedingung erfüllt ist.</p>
-
-<p>Das Element <code>&lt;xed:otherwise /&gt;</code> ist optional. Es wird nur dann ausgeführt, wenn keine der Testbedingungen der vorangehenden <code>&lt;xed:when /&gt;</code> Elemente erfüllt ist. In diesem Fall wird der duch <code>&lt;xed:otherwise /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt.</p>
-
-<p>Beispiel:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:choose>
-  <xed:when test="@status='new'">
-        <label>Veröffentlichen am:</label>
-        <xed:bind xpath="dateToPublish">
-          <input type="text />
-        </xed:bind>
-  </xed:when>
-  <xed::otherwise> <!- status='published' ->
-        <label>Veröffentlichungsdatum: </label>
-        <xed:output value="dateToPublished" />
-  </xed:otherwise>
-</xed:choose>]]></pre>
-</section>
-
-<section>
-    <title><code>&lt;xed:multi-lang&gt;</code></title>
-<p>Ermöglicht es, abhängig von der aktuell verwendeten Sprache (Variable $CurrentLang der MCRSession), Teile des Formulars in verschiedenen Varianten anzubieten.</p>
-
-<p>Syntax:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:multi-lang>
-  <xed:lang xml:lang="..."></xed:lang>
-  <xed:lang xml:lang="..."></xed:lang>
-</xed:multi-lang>]]></pre>
-
-<p>Das Attribut @xml:lang definiert die Sprache (nach IETF BCP 47), für die der umschlossene Block verarbeitet und angezeigt werden soll. Wenn kein <code>&lt;xed:lang /&gt;</code> Bereich für die aktuelle Sprache definiert ist, wird der Bereich verwendet, der für die Default-Sprache (MCR.Metadata.DefaultLang aus mycore.properties) definiert ist. Wenn auch für die Default-Sprache kein Bereich definiert ist, wird der erste <code>&lt;xed:lang /&gt;</code> Bereich verwendet.</p>
-
-<p>Beispiel:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:multi-lang>
-  <xed:lang xml:lang="de">
-     <label>Straße:</label>...
-     <label>Hausnummer:</label>...
-     <label>PLZ:</label>...
-     <label>Ort:</label>...
-  </xed:lang>
-  <xed:lang xml:lang="en">
-     <label>Number:</label>...
-     <label>Street:</label>...
-     <label>City:</label>...
-     <label>ZIP Code:</label>...
-  </xed:lang>
-</xed:multi-lang>]]></pre>
-</section>
-
-<section>
-    <title><code>&lt;xed:load-resource&gt;</code></title>
-<p>Lädt ein XML-Dokument von einer URI und stellt es in einer Variablen bereit, um in XPath-Ausdrücken darauf zuzugreifen.</p>
-
-<p>Syntax:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:load-resource name="..." uri="..." />]]></pre>
-
-<p>Das Attribut @name gibt den Namen der Variablen an, unter dem das XML Element bereitgestellt werden soll.
-Das Attribut @uri gibt die URI an, von der das XML geladen werden soll. Dies kann eine beliebige URI sein,
-die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:.) Innerhalb des Attributes
-@uri kann auch auf XPath Ausdrücke oder Variablen zugregriffen werden. </p>
-
-<p><code>&lt;xed:load-resource /&gt;</code> kann in Kombination mit <code>&lt;xed:output /&gt;</code> verwendet werden, um Werte im Formular auszugeben, die sowohl
-vom bearbeiteten XML als auch von Parametern oder externen XML-Ressourcen abhängen.
-Beispielsweise kann man Bezeichnungen von Klassifikationskategorien im Formular ausgeben, wobei die IDs der Kategorien im
-im bearbeiteten XML Dokument liegen, die Bezeichnungen aber in der Klassifikation verwaltet werden:</p>
-
-<pre class="brush: xml"><![CDATA[<xed:load-resource name="genres" uri="classification:metadata:-1:children:modsgenre" />]]></pre>
-
-<p>lädt die Klassifikation "modsgenre" und stellt sie in einer Variablen $genres bereit. </p>
-
-<pre class="brush: xml"><![CDATA[<xed:bind xpath="mods:genre" name="genre" />]]></pre>
-
-<p>wählt das Element mods:genre und stellt es in der  Variablen $genre bereit.</p>
-
-<pre class="brush: xml"><![CDATA[<xed:output value="$genres//category[@ID=$genre]/label[lang($CurrentLang)]/@text" />]]></pre>
-
-<p>gibt dann die Bezeichnung der Kategorie aus der Klassifikation aus, deren ID der Wert von <code>&lt;mods:genre /&gt;</code> ist, in der aktuellen Sprache.</p>
-
-</section>
-</section>
+  <title>Eingabevalidierung und Nachbearbeitung</title>
 
 <section>
     <title>Eingabevalidierung</title>
@@ -855,7 +727,7 @@ verschiedenen Formularen wiederzuverwenden.</p>
 erneut angezeigt. Es besteht die Möglichkeit, an beliebiger Stelle Meldungen auszugeben, um anzuzeigen, welche Regeln nicht erfüllt sind.</p>
 
 <section>
-    <title><code>&lt;xed:validate&gt;</code></title>
+    <title>Validierungsregeln mit <code>&lt;xed:validate&gt;</code></title>
 <p>Setzt eine Validierungsregel. Die Validierungsmethode wird durch ein oder mehrere kombinierbare Attribute spezifiziert. </p>
 <p>Auf welchen XML Knoten sich die Validierungsregel bezieht, kann auf zwei Weisen festgelegt werden:</p>
 <p>Lokale Validierungsregeln stehen innerhalb eines <code>&lt;xed:bind /&gt;</code> Elementes und beziehen sich auf das dadurch gebundene XML. Beispiel:</p>
@@ -1012,7 +884,220 @@ könnte z. B. auch ein placeholder gesetzt oder anderes HTML generiert werden. B
 </section>
 
 <section>
-    <title>Subselects</title>
+    <title>Resultierendes XML bereinigen: Cleanup-Rules</title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="..." relevant-if="..." />]]></pre>
+
+<p>Cleanup-Rules sind Bereinigunsregeln, die logisch leere XML-Elemente oder -Attribute vor Übergabe an das Zielservlet aus dem resultierenden XML herauslöschen.
+Das Attribut @xpath gibt in Form eines XPath-Ausdruckes an, auf welche Elemente oder Attribute sich die Regel bezieht.
+Das Attribut @relevant-if gibt in Form eines XPath-Tests an, unter welchen Bedingungen diese XML-Knoten als relevant erachtet werden.</p>
+<p>Sofern keine weiteren Cleanup-Rules definiert sind, gelten die folgenden Standard-Regeln:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//@*" relevant-if="string-length(.) &gt; 0" />
+<xed:cleanup-rule xpath="//*" relevant-if="@* or * or (string-length(text()) &gt; 0)" />]]></pre>
+
+<p>Die Standard-Regeln entfernen leere Attribute und Elemente aus dem resultierenden XML-Dokument. Ein Element ist leer, wenn es keine Kindelemente, keine Attribute und keinen Text enthält.
+Diese Regeln lassen sich durch eigene Regeln ergänzen oder überschreiben.</p>
+
+<p>Beispiel (Suchmaske):</p>
+
+<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//condition" relevant-if="string-length(@value) &lt; 0" />]]></pre>
+
+<p>entfernt alle <code>&lt;condition /&gt;</code> Elemente, deren @value Attribut leer ist. In einer MyCoRe Suchmaske werden die Suchfelder als <code>&lt;condition /&gt;</code> Elemente dargestellt, mit den Attributen @field für das zu durchsuchende Feld, @operator für den zu verwendenden Suchoperator, und @value für den eingegebenen und zu suchenden Wert, z. B.</p>
+
+<pre class="brush: xml"><![CDATA[<condition field="title" operator="contains" value="Optik" />]]></pre>
+
+<p>Die Attribute @field und @operator werden in der Suchmaske durch hidden-Felder oder Auswahllisten festgelegt. Wenn aber kein zu suchender Wert eingegeben wird, ist die gesamte Suchbedingung nicht
+relevant, und sie wird durch die Bereinigungsregel entfernt.</p>
+
+<p>Beispiel (MODS):</p>
+<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//mods:*" relevant-if="(string-length(text()) &lt; 0) or mods:* or (string-length(@xlink:href) &lt; 0)" />
+<xed:cleanup-rule xpath="//mods:name" relevant-if="mods:namePart" />]]></pre>
+
+<p>Im MODS Datenmodell werden Personennamen z. B. wie folgt dargestellt:</p>
+
+<pre class="brush: xml"><![CDATA[<mods:name type="personal">
+  <mods:namePart type="given">John</namePart>
+  <mods:namePart type="family">Huston</namePart>
+  <mods:role>
+    <mods:roleTerm type="code" authority="marcrelator">aut</roleTerm>
+  </mods:role>
+</mods:name>]]></pre>
+
+<p>Angenommen, ein Eingabeformular besitzt für an einer Publikation beteiligte Personen Eingabefelder für Vor- und Nachname (mods:namePart), sowohl eine Auswahlliste für die Rolle (Autor, Herausgeber etc. entsprechend mods:roleTerm). Dann entfernt die zweite Bereinigungsregel das mods:name Element, wenn keine mods:namePart Elemente vorhanden sind, d.h. keine Namensteile eingegeben wurden. Die erste Bereinigungsregel entfernt alle mods Elemente, die keine anderen mods Elemente enthalten, oder kein xlink:href Attribut. Somit wird das mods:namePart Element entfernt, wenn kein Text enthalten ist. Das Attribut @type ist nicht relevant, da die Standard-Regel für mods Elemente überschrieben wurde.</p>
+
+<p>Bereinigungsregeln werden rekursiv und iterativ auf das resultierende XML-Dokumente angewandt, bis sich das Dokument nicht mehr ändert, d.h. aufgrund der Regeln keine weiteren Knoten als zu entfernen identifiziert werden.</p>
+</section>
+
+<section>
+    <title>Nachbearbeitung über XSL: &lt;xed:post-processor /&gt;</title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[<xed:post-processor xsl="..." />]]></pre>
+
+<p>Gibt mit dem Attribut @xsl ein Stylesheet an, das zur Nachbearbeitung des resultierenden XML-Dokumentes verwendet werden soll. Über ein solches XSL-Stylesheet kann das XML-Dokument nach Bearbeitung im Formular, aber noch vor Übergabe an das Zielservlet transformiert werden. </p>
+<p>Über die XEditor-Syntax können Eingabefelder flexibel auf XML-Elemente und Attribute abgebildet werden. In einigen Fällen kann die XML-Struktur aber zu komplex sein, um sie einfach auf Eingabefelder abzubilden. In solchen Fällen kann man das zu bearbeitende XML-Dokument</p>
+<ul>
+<li>vor der Bearbeitung im Formular durch ein XSL-Stylesheet in eine für die Bearbeitung geeignetere Form umwandeln: Dies ist einfach über Verwendung des xslStyle URI Resolvers möglich, z. B.
+<code>&lt;xed:source uri="xslStyle:mods-preprocessor:mcrobject:{$id}" /&gt;</code></li>
+<li>nach der Bearbeitung im Formular wieder durch ein XSL-Stylesheet in die gewünschte XML-Struktur zurück transformieren, z. B.
+<code>&lt;xed:post-processor xsl="mods-postprocessor.xsl" /&gt;</code></li>
+</ul>
+<p>Beispiel:</p>
+<p>Im MODS Datenmodell wird eine Publikation, die auf einer einzelnen Seite veröffentlicht wird, dargestellt als</p>
+
+<pre class="brush: xml"><![CDATA[<mods:detail type="page">
+  <mods:number> Seitenzahl </mods:number>
+</mods:detail>]]></pre>
+
+<p>Wenn sich die Publikation über mehrere Seiten erstreckt, wird ein von-bis Bereich angegeben:</p>
+
+<pre class="brush: xml"><![CDATA[<mods:extent unit="pages">
+  <mods:start> Seite von </mods:start>
+  <mods:end> Seite bis </mods:end>
+</mods:extent>]]></pre>
+
+<p>Angenommen, das Eingabeformular soll grundsätzlich nur die Eingabefelder "Seite von" und "Seite bis" anbieten, dann könnte man den Sonderfall einer einzelnen Seite abbilden, indem</p>
+<ul>
+<li>in einem Stylesheet mods-preprocessor.xsl alle mods:detail[@type='page']/mods:number zu mods:extent mit identischen mods:start und mods:end Werten transformiert werden</li>
+<li>in einem Stylesheet mods-postprocessor.xsl alle mods:extent mit identischen oder einzelnen mods:start und mods:end Werten zu einem einzelnen mods:detail[@type='page']/mods:number transformiert werden</li>
+</ul>
+</section>
+
+</section>
+
+<section>
+  <title>Komplexe Strukturen mit Includes und Fallunterscheidungen</title>
+
+<section>
+    <title><code>&lt;xed:include&gt;</code></title>
+<p>Fügt an der verwendeten Stelle Komponenten in das Formular ein, indem sie über eine ID referenziert werden, und/oder von einer externen URI nachgeladen werden. </p>
+<p>Syntax:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:include uri="..." ref="..." static="true|false" />]]></pre>
+
+<p>Wird das Attribut @uri angegeben, wird ein XML-Element von der angegebenen URI geladen, und der Inhalt (nicht das Wurzelelement selbst) an dieser Stelle eingefügt.
+@uri kann jede URI sein, die der MyCoRe URI Resolver unterstützt (z. B. classification:, resource:, webapp:, file:, http:, xslStyle:).</p>
+<p>Wird das Attribut @ref angegeben, wird der Inhalt desjenigen XML-Elements eingefügt, dessen ID (@id) dem Wert von @ref entspricht. </p>
+
+<p>Die Attribute @uri und @ref sind kombinierbar. Sie können XPath-Ausdrücke oder Verweise auf Variablen enthalten. D.h. man kann über <code>&lt;xed:include /&gt;</code> Teile des Formulars
+dynamisch nachladen, die abhängig vom bearbeiteten XML und/oder von Request Parametern bei Aufruf des Formulars sind. </p>
+<p>Beispiel: Nachladen von Klassifikationskategorien als Auswahl in einer Select-Box:</p>
+
+<pre class="brush: xml"><![CDATA[<select>
+  <option value="">Bitte wählen...</option>
+  <xed:include uri="xslStyle:items2options:classification:editor:-1:children:modsgenre" />
+</select>]]></pre>
+
+<p>Die URI "xslStyle:items2options:classification:editor:-1:children:modsgenre" lädt die Klassifikation "modsgenre" und transformiert alle Kategorien in
+<code>&lt;option /&gt;</code> Auswahloptionen in der HTML-Syntax.</p>
+
+<p>Beispiel: Nachladen von Teilen eines Formulars abhängig von Request Parametern:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:include uri="webapp:ubo/editor/editor-genres.xed" ref="{$genre}" /> ]]></pre>
+
+<p>Wird das Formular z. B. mit [Seite].xed?genre=article aufgerufen, wird an dieser Stelle der Inhalt des Elementes mit @id='article' eingefügt.</p>
+
+<p>Das inkludierte XML sollte von einem Element <code>&lt;xed:template /&gt;</code> umschlossen sein.
+Der XEditor ignoriert solche Bereiche, wenn sie nicht durch <code>&lt;xed:include /&gt;</code> referenziert werden. </p>
+
+<p>Beispiel: Suchmaske, Auswahl Erscheinungsjahr</p>
+
+<pre class="brush: xml"><![CDATA[<label>Suche nach Erscheinungsjahr:</label>
+zwischen
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="condition[@field='year'][1]">
+  <xed:bind xpath="@operator" default="&lt;=" />
+  <xed:include ref="year.input" />
+</xed:bind>]]></pre>
+
+<p>und</p>
+
+<pre class="brush: xml"><![CDATA[<xed:bind xpath="condition[@field='year'][2]">
+  <xed:bind xpath="@operator" default="&gt;=" />
+  <xed:include ref="year.input" />
+</xed:bind>]]></pre>
+
+<pre class="brush: xml"><![CDATA[<xed:template id="year.input">
+  <xed:bind xpath="@operator">
+    <select>
+      <option>=</option>
+      <option>&lt;</option>
+      <option>&lt;=</option>
+      <option>&gt;</option>
+      <option>&gt;=</option>
+    </select>
+  </xed:bind>
+  <xed:bind xpath="@value">
+    <input type="text" placeholder="{i18n:ubo.placeholder.year}" />
+  </xed:bind>
+</xed:template>]]></pre>
+
+<p>Hier wird eine Vorlage für die Auswahl des Suchoperators (&lt;, &gt;, = etc.) und die Eingabe der Jahreszahl an zwei Stellen wiederverwendet. </p>
+<p>Häufig verändern sich über eine URI inkludierte Vorlagen über die gesamte Laufzeit der Anwendungen nicht. Solche statischen Vorlagen können mit</p>
+
+<pre class="brush: xml"><![CDATA[<xed:include static="true" ... />]]></pre>
+
+<p>markiert werden. Der XEditor wird die externe Ressource (z. B. eine statische XML-Datei aus der Webapplikation) nur einmal einlesen, in einem
+Cache aufbewahren und wiederverwenden. </p>
+<p>Für Ressourcen, die sich über die Laufzeit der Applikation ändern, z. B. Klassifikationen, bei denen nachträglich Kategorien online ergänzt werden,
+sollte @static nicht gesetzt sein.</p>
+</section>
+
+<section>
+    <title><code>&lt;xed:if&gt;</code></title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[<xed:if test="...">...</xed:if>]]></pre>
+
+<p>Ermöglicht es, einen Teil des Formulars nur unter einer bestimmten Bedingung auszuführen, die durch einen XPath-Test bestimmt wird. Der XPath-Test kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Nur wenn die Testbedingung erfüllt ist, wird der durch <code>&lt;xed:if /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt.</p>
+
+<p>Beispiele:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:if test="string-length(@valueURI) &lt; 0">
+  <a href="{@valueURI}">
+        <xed:output value="concat(mods:namePart[@type='family'],', ',mods:namePart[@type='given'])" />
+  </a>
+</xed:if>]]></pre>
+
+<pre class="brush: xml"><![CDATA[<xed:if test="$mode='advanced'">
+  <h3>Erweiterter Modus mit zusätzlichen Eingabefeldern:</h3>
+  ...
+</xed:if>]]></pre>
+</section>
+
+<section>
+    <title><code>&lt;xed:choose&gt;</code></title>
+<p>Syntax:</p>
+<pre class="brush: xml"><![CDATA[<xed:choose>
+  <xed:when test="...">...</xed:when>
+  <xed:when test="...">...</xed:when>
+  <xed:otherwise>...</xed:otherwise>
+</xed:choose>]]></pre>
+
+<p>Ermöglicht es, abhängig von ein oder mehreren Bedingungen unterschiedliche Teile oder Varianten eines Formulars auszuführen. </p>
+
+<p>Jedes <code>&lt;xed:when /&gt;</code> Element definiert einen XPath-Test. Der XPath-Test kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. Nur wenn die Testbedingung erfüllt ist, wird der durch <code>&lt;xed:when /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt. Wenn mehrere <code>&lt;xed:when /&gt;</code> Elemente angegeben sind, wird nur das erste Element berücksichtigt, dessen Testbedingung erfüllt ist.</p>
+
+<p>Das Element <code>&lt;xed:otherwise /&gt;</code> ist optional. Es wird nur dann ausgeführt, wenn keine der Testbedingungen der vorangehenden <code>&lt;xed:when /&gt;</code> Elemente erfüllt ist. In diesem Fall wird der duch <code>&lt;xed:otherwise /&gt;</code> umschlossene Formularabschnitt verarbeitet und angezeigt.</p>
+
+<p>Beispiel:</p>
+
+<pre class="brush: xml"><![CDATA[<xed:choose>
+  <xed:when test="@status='new'">
+        <label>Veröffentlichen am:</label>
+        <xed:bind xpath="dateToPublish">
+          <input type="text />
+        </xed:bind>
+  </xed:when>
+  <xed::otherwise> <!- status='published' ->
+        <label>Veröffentlichungsdatum: </label>
+        <xed:output value="dateToPublished" />
+  </xed:otherwise>
+</xed:choose>]]></pre>
+</section>
+
+</section>
+
+<section>
+    <title>Externe Auswahl oder Eingabe über Subselects</title>
 <p>Subselects dienen der externen Auswahl ein oder mehrerer Werte, z. B. Suche einer Person im Personalverzeichnis der Einrichtung, und Übername von Name und Personalnummer in das Autorenfeld einer Publikation.</p>
 
 <p>Subselects werden als spezielle Submit-Buttons im Formular definiert. Bei Klick auf den Button werden alle aktuellen Formularwerte serverseitig zwischengespeichert.
@@ -1068,13 +1153,14 @@ XPath-Ausdrücke in einem <code>&lt;xed:bind /&gt;</code> Element unterhalb von 
 Wert "Doe, John" ausgeben.</p>
 
 </section>
+</section>
 
    <section>
-    <title>Eigene Erweiterungen</title>
-<ol>
-<li>TODO: Eine eigene Template-Sprache definieren, vgl. MIR Modul in MyCoRe oder UBO Modul in miless</li>
-<li>TODO: Eigene Targets für Submit Buttons definieren</li>
-</ol>
+    <title>Das XEditor-Framework erweitern</title>
+<ul>
+<li>TODO: Wie man eine eigene Template-Sprache auf Basis von XSL definiert, vgl. MIR Modul in MyCoRe oder UBO Modul in miless</li>
+<li>TODO: Wie man eigene Targets für Submit Buttons definiert</li>
+</ul>
    </section>
 
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
