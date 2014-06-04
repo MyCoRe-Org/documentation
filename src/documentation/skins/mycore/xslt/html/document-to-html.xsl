@@ -88,19 +88,24 @@ imported document-to-html.xsl for details.
     <xsl:apply-templates/>
     <!-- Piwik -->
     <script type="text/javascript">
-    var pkBaseURL = (("https:" == document.location.protocol) ? "https://esx-179.gbv.de/piwik/piwik/" : "http://esx-179.gbv.de/piwik/piwik/");
-    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-    </script><script type="text/javascript">
-    try {
-    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
-    piwikTracker.trackPageView();
-    piwikTracker.enableLinkTracking();
-    piwikTracker.setDownloadExtensions( "7z|aac|arc|arj|asf|asx|avi|bin|bz|bz2|csv|deb|dmg|doc|exe|flv|gif|gz|gzip|hqx|jar|jpg|jpeg|js|mp2|mp3|mp4|mpg|mpeg|mov|movie|msi|msp|odb|odf|odg|odp|ods|odt|ogg|ogv|pdf|phps|png|ppt|qt|qtm|ra|ram|rar|rpm|sea|sit|tar|tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd|z|zip" );
-
-    } catch( err ) {}
-    </script><noscript><p><img src="http://esx-179.gbv.de/piwik/piwik/piwik.php?idsite=3" style="border:0" alt="" /></p></noscript>
-    <!-- End Piwik Tracking Code -->
-
+      var _paq = _paq || [];
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.mycore.de"]);
+      _paq.push(["setDomains", ["*.mycore.de"]]);
+      _paq.push(["setDoNotTrack", true]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.gbv.de/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 20]);
+        _paq.push(['setDownloadExtensions', "7z|aac|arc|arj|asf|asx|avi|bin|bz|bz2|csv|deb|dmg|doc|exe|flv|gif|gz|gzip|hqx|jar|jpg|jpeg|js|mp2|mp3|mp4|mpg|mpeg|mov|movie|msi|msp|odb|odf|odg|odp|ods|odt|ogg|ogv|pdf|phps|png|ppt|qt|qtm|ra|ram|rar|rpm|sea|sit|tar|tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd|z|zip"]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+        g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="http://piwik.gbv.de/piwik.php?idsite=20" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
   </xsl:template>
   <xsl:template match="@id">
     <xsl:apply-imports/>
