@@ -115,7 +115,7 @@ aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt wer
 
 <section>
   <title>Formulare definieren</title>
-  
+
   <section>
     <title>Hello World</title>
     <p>TODO</p>
@@ -183,7 +183,7 @@ Aufruf mit [Seite].xed?uri=mcrobject:DocPortal_document_07910403]]></pre>
     <title>Abbildung zwischen XML und HTML: <code>&lt;xed:bind /&gt;</code></title>
 <p>Legt die Abbildung zwischen Eingabe-Komponenten im HTML Formular und Knoten im XML-Dokument fest.</p>
      <pre class="brush: xml"><![CDATA[Syntax: <xed:bind xpath="..." default="..." initially="..." set="..." name="...">]]></pre>
-     
+
 <section>
   <title>Abbildung auf XML-Knoten über XPath-Ausdrücke</title>
 
@@ -429,7 +429,7 @@ Klick auf den Button wird das Formular abgeschickt, die Änderung serverseitig d
 </ul>
 </li>
 </ul>
-<p>Ein leeres <code>&lt;xed:controls /&gt;</code> Element entspricht der Standard-Auswahl <code>&lt;xed:controls&gt;</code>insert remove up <code>&lt;down/xed:controls&gt;</code>
+<p>Ein leeres <code>&lt;xed:controls /&gt;</code> Element entspricht der Standard-Auswahl <code>&lt;xed:controls&gt;</code>insert remove up down<code>&lt;/xed:controls&gt;</code>
 Sollen keine Buttons erscheinen, lässt man das <code>&lt;xed:controls /&gt;</code> Element weg. Sollen nur bestimmte Buttons erscheinen, gibt man diese im Text des Elementes an.</p>
 <p>Beispiel:</p>
 
