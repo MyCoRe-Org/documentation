@@ -318,20 +318,23 @@ $(document).ready(function() {
 <![CDATA[
       $(document).ready(function() {
 
-          $(".sphere").hover(
+          $(".sphereLink").hover(
+
               function () {
-                  $(this).attr("src", "images/abbildung_orange_110x110.jpg");
+                  var sphere = $(this).children('img.sphere');
+                  sphere.attr("src", "images/abbildung_orange_110x110.jpg");
               },
               function () {
-                  switch($(this).attr("rel")){
+                  var sphere = $(this).children('img.sphere');
+                  switch(sphere.attr("rel")){
                       case "sphere_manysided":
-                          $(this).attr("src", "images/abbildung_vielseitig.jpg");
+                          sphere.attr("src", "images/abbildung_vielseitig.jpg");
                           break;
                       case "sphere_adaptable":
-                          $(this).attr("src", "images/abbildung_anpassbar.jpg");
+                          sphere.attr("src", "images/abbildung_anpassbar.jpg");
                           break;
                       case "sphere_lasting":
-                          $(this).attr("src", "images/abbildung_nachhaltig.jpg");
+                          sphere.attr("src", "images/abbildung_nachhaltig.jpg");
                           break;
                   }
               }
