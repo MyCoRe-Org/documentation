@@ -84,16 +84,11 @@
         </map:call>
       </map:match>
       <map:match pattern="index.xml">
-       <map:select type="exists">
-        <map:when test="{request-param:locale}">
-         <map:generate src="{properties:content.xdocs}index.{request-param:locale}.xml" />
-        </map:when>
-        <map:otherwise>
-         <map:generate src="{properties:content.xdocs}index.de.xml" />
-        </map:otherwise>
-       </map:select>
-       <map:transform src="{properties:resources.stylesheets}/homepage-to-document.xsl" />
-       <map:serialize type="xml"/>
+        <map:match type="i18n" pattern="{properties:content.xdocs}index.*.xml">
+          <map:generate src="{source}" />
+          <map:transform src="{properties:resources.stylesheets}/homepage-to-document.xsl" />
+          <map:serialize type="xml"/>
+        </map:match>
       </map:match>
     </map:pipeline>
     <map:pipeline>
