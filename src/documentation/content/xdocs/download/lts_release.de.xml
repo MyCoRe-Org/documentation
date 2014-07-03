@@ -13,10 +13,10 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <p>
-    Nach der Einführung von Solr als Alternative zu Lucene vor einem Jahr, ist das diesjährige
-    LTS-Release 2014.06 nun ohne Lucene-Unterstützung unterwegs. Es ist jedoch auch weiterhin möglich
-    auf Lucene laufende Anwendungen mit dem aktuellen MyCoRe zu betreiben. Weitere Informationen dazu
-    finden Sie im Abschnitt zur Migration.
+    Nach der Einführung von Solr als Alternative zu Lucene 2013, enthält das diesjährige
+    LTS-Release 2014.06 keine Lucene-Unterstützung mehr. Diese würde ausgegliedert, womit es weiterhin möglich
+    ist, auf Lucene laufende Anwendungen mit dem aktuellen MyCoRe zu betreiben. Weitere Informationen dazu
+    finden Sie im <a href="site:migrate2014.06">Abschnitt zur Migration</a>.
   </p>
   <p>
     Ebenfalls abgelöst wurde das alte WCMS, durch eine deutlich flexiblere Lösung. Diese bietet nicht nur
@@ -43,7 +43,7 @@
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>2014.06.0.1-SNAPSHOT&lt;/version>
+  &lt;version>[2014.06.0.1-SNAPSHOT,2014.06.1)&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -56,8 +56,8 @@
       ><img src="/images/download_docportal_201406.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
     Alternativ steht DocPortal mit dem aktuellen <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
     >Release 2014.06</a> zum Download zur Verfügung. Die dazugehörige Installationsanleitung finden Sie
-    unter <a href="site:install">Dokumentation</a>. <!-- Für die <a href="site:migrate2014.06">Migration</a> steht
-    ebenfalls eine Anleitung zur Verfügung. -->
+    unter <a href="site:install">Dokumentation</a>. Für die <a href="site:migrate2014.06">Migration</a> steht
+    ebenfalls eine Anleitung zur Verfügung.
   </p>
   <p>
     Weiterhin kann MyCoRe als <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.06/"

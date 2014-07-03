@@ -330,12 +330,13 @@ See http://forrest.apache.org/docs/linking.html for more info
 
 
     <migrate               label="Migration"         href="migrate/">
-      <migrate2013.08_11   label="2013.08 -> 2013.11"  href="migrate201308_201311.html" />
-      <migrate2013.06_08   label="2013.06 -> 2013.08"  href="migrate201306_201308.html" />
-      <migrate21_2013.06   label="2.1 -> 2013.06"    href="migrate21_201306.html" />
-      <migrate20_21        label="2.0 -> 2.1"        href="migrate20_21.html" />
-      <migrate13_20        label="1.3 -> 2.0"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
-      <migrate12_13        label="1.2 -> 1.3"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
+      <migrate2014.06      label="2014.03 &#8658; 2014.06"        href="migrate201406.html" />
+      <migrate2013.08_11   label="2013.08 &#8658; 2013.11"  href="migrate201308_201311.html" />
+      <migrate2013.06_08   label="2013.06 &#8658; 2013.08"  href="migrate201306_201308.html" />
+      <migrate21_2013.06   label="2.1 &#8658; 2013.06"    href="migrate21_201306.html" />
+      <migrate20_21        label="2.0 &#8658; 2.1"        href="migrate20_21.html" />
+      <migrate13_20        label="1.3 &#8658; 2.0"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
+      <migrate12_13        label="1.2 &#8658; 1.3"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
     </migrate>
     <developer             label="Für Entwickler"    href="developer/">
       <vocabular           label="Vokabular"                  href="vocabular.html" />

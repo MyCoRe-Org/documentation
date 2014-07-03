@@ -36,7 +36,7 @@
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>2013.06.0.1-SNAPSHOT&lt;/version>
+  &lt;version>[2014.06.0.1-SNAPSHOT,2014.06.1)&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -50,8 +50,8 @@
       ><img src="/images/download_docportal_201406.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
     As an alternative DocPortal is available as download with <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
     >Release 2014.06</a>. You can find the corresponding installation guidelines
-    in the <a href="site:install">UserGuide</a>.<!-- There are instructions for the
-    <a href="site:migrate2014.06">Migration</a> as well provided. -->
+    in the <a href="site:install">UserGuide</a>.There are instructions for the
+    <a href="site:migrate2014.06">Migration</a> as well provided.
   </p>
   <p>
     Furthermore there is a MyCoRe

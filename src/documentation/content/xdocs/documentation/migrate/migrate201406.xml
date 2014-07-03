@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Migrationsanleitung auf 2014.06</title>
+    <abstract>
+      Hier wird die Migration auf 2014.06 ausgehend vom letzten LTS-Release 2013.06 bzw. vom letzten
+      Release 2014.03 beschrieben. Die Migrationsanleitung ist derzeit noch im Aufbau!
+    </abstract>
+  </header>
+  <body>
+    <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+      <note label="Hinweis">Die Migrationsanleitung geht von MyCoRe 2013.06 (LTS) oder 2014.03
+      als Ausgangsbasis aus.</note>
+
+
+    <section id="start">
+      <title>Allgemeine Schritte zur Anwendungsmigration</title>
+      <p>
+        Eine grundsätzlich gute Basis bei der Aktualisierung einer auf Docportal basierenden
+        Anwendung ist es, sich das aktuelle docportal auszuchecken und mit der eigenen Version
+        zu vergleichen. Wichtig sind hierbei vor allem die folgenden Dateien:
+        mycore.properties.private, pom.xml, common-modules.xml, build.xml
+      </p>
+
+    </section>
+
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
+
+  </body>
+</document>

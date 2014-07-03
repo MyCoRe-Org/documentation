@@ -53,7 +53,7 @@
   <section>
     <title>Release 2013.11 (Codename ‚Leila ? Helau!‘)</title>
     <p>
-      All changes, new features etc. are summarized below.
+      All changes, new features etc. are summarized in <a href="/download/changelog.html#Version+2013.11">changelog</a>.
       If your application is already near version 2013.11, you only have to update
       your pom.xml (docportal/config):
 
@@ -74,6 +74,65 @@
       In the next step you have to build your application again: <code>ant resolve create.jar
       create.scripts create.webapp</code>
     </p>
+      <h2>What's new?</h2>
+      <h3>XEditor</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Der XEditor ist eine vollständige Überarbeitung des Editor-Frameworks. Grundidee ist, dass man
+          ganz normale HTML-Formulare für Such- und Eingabemasken erstellen kann und diese dann mit der
+          XEditor-Syntax anreichert. Dies bietet deutlich mehr Flexibitität bei der Formular-Erstellung und
+          ermöglich nun auch barrierefreie Such- und Eingabemasken.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Frank Lützenkirchen</dd>
+      </dl>
+      <h3>Neue Prüf-Kommandos</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Für Test und Reparaturen an Anwendungsdaten im laufenden Produktivbetrieb waren weitere Kommandos
+          notwendig, mit deren Hilfe Metadaten und Inhalte im IFS (Internal File System) auf Konsistenz und
+          Fehlerfreiheit geprüft werden können.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt</dd>
+      </dl>
+      <h3>Hierarchische SOLR-Indizierung</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Damit Metadaten nicht redundant sowohl in Eltern (z.B. Buch, Serie), als auch in Kind-Objekten
+          (z.B. Kapitel) gehalten werden müssen, um dann darüber suchen zu können, wurde für das MODS-Datenmodell
+          eine Erweiterung erstellt, die die Metadaten der Kindobjekte mit den Metadaten der Eltern-Objekte beim
+          Speichern anreichert. Die Inhalte werden dann mit indiziert und ermöglichen so eine verknüpfte Suche über
+          Eltern-Kind-Informationen (z.B. das <a href="http://de.wikipedia.org/wiki/Schiller-R%C3%A4uber-Problem"
+          >Schiller-Räuber-Problem</a>)
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+      <h3>Neue ACL-Strategie: SubmitterCreatorRule</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Um noch mehr Möglichkeiten im Rahmen des internen Workflows zu haben, wurde eine erweiterte
+          <a href="principles/09_acl_integration.html#Methode+2%3A+Objekt-Typ">ObjektTyp-Strategie</a>
+          erstellt. Diese prüft, ob der Nutzer Ersteller des aktuellen Dokumentes ist
+          und sich das Dokument noch im Zustand "eingereicht" befindet. Ist dem so, kann der Nutzer das
+          Dokument bearbeiten.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Kathleen Neumann, Thomas Scheffler</dd>
+      </dl>
   </section>
   <section>
     <title>Release 2013.08 (Codename ‚Old Pascas‘)</title>
@@ -97,6 +156,81 @@
 
       Anschliessend muss die Anwendung neu erstellt werden (<code>ant resolve create.jar create.scripts create.webapp</code>).
     </p>
+    <p>
+      Mit dem August-Release (Codename ‚Old Pascas‘) stellt MyCoRe auf den Servlet-3.0-Standard um. Die Verwendung einer
+      entsprechenden Servlet-Engine (z.B. Tomcat 7) wird damit verpflichtend. Die wichtigsten Neuerungen und Ansprechpartner
+      dazu sind nachfolgend aufgelistet. Alle Details zum Release stehen unter <a href="/download/changelog.html#Version+2013.08">ChangeLog</a>.
+    </p>
+    <h2>Was ist neu?</h2>
+      <h3>Umstellung auf Servlet3</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Der bereits seit 2009 verfügbare Servlet-3.0-Standard wird nun auch von MyCoRe unterstützt. Dadurch ist eine
+          entsprechende Servlet-Engine als Laufzeitumgebung zwingend.<br />
+          Durch die Umstellung konnte der Build-Prozess deutlich vereinfacht werden, da viele Dateien nicht mehr
+          entpackt werden müssen, sondern direkt aus den jar-Archiven gelesen werden können. Desweiteren können in den
+          einzelnen MyCoRe-Komponenten und Anwendungsmodulen nun web-fragment.xml-Dateien genutzt werden. Ein
+          Zusammenführen einzelner web.xml-Dateien wird so unnötig.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+      <h3>Neuer ACL-Editor</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Auf Basis von <a href="http://dojotoolkit.org/">Dojo</a> und <a href="http://getbootstrap.com/">Bootstrap</a>
+          wurde der ACL-Regel- und Rechte-Editor überarbeitet. Durch die Überarbeitung gewinnt der Editor vor allem
+          an Übersicht und Benutzbarkeit. Die funktionale Mächtigkeit bleibt dabei erhalten.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Michel Büchner</dd>
+      </dl>
+      <h3>Einführung des CSS-Frameworks Bootstrap</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Um den Anwendungsentwicklern eine strukturierte und dokumentierte Layout-Basis zur Verfügung zu stellen,
+          hat sich die Community entschieden das CSS-Framework <a href="http://getbootstrap.com/">Bootstrap</a>
+          einzusetzen. Nach und nach werden die MyCoRe-Komponenten entsprechend umgestellt. Für die Anwendungsentwickler
+          wird die Bootstrap-Nutzung dadurch nicht verpflichtend, aber empfohlen.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler, et al.</dd>
+      </dl>
+      <h3>Neues CLI-Objekt-Kommando</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Ein neues CLI-Kommando, um Dateien von einem FileStore in einen anderen zu verschieben wurde
+          entwickelt.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt</dd>
+      </dl>
+      <h3>Neue ACL-Strategie: MCRObjectBaseStrategy</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Als Spezialisierung der <a href="principles/09_acl_integration.html#Methode+2%3A+Objekt-Typ">ObjektTyp-Strategie</a>
+          steht mit der MCRObjectBaseStrategy eine ACL-Strategie zur Verfügung, die erst prüft, ob Regeln für
+          die gegebene ObjektID oder die BaseID verfügbar sind, bevor das Standardverhalten der Objekttyp-Strategie
+          greift.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt</dd>
+      </dl>
   </section>
 
   <section>
@@ -137,6 +271,84 @@
       ready for download, therewith you can use the MyCoRe kernel in your own application
       independent from DocPortal. MyCoRe can be integrated as well via Maven.
     </p>
+
+      <p>
+        Der Name ist sicher die augenscheinlichste Änderung beim neuen MyCoRe-Release. Ab
+        sofort werden die Versionen nach Jahr.Monat.xx benannt. Aber auch funktional hat sich seit dem
+        letzten Release vieles getan. So gibt es viele Neuerungen im Bildbetrachter, eine umfassende
+        Unterstützung des MODS-Standards und alternativ zu Lucene kann ab sofort SOLR als Suchengine
+        eingesetzt werden. Eine detaillierte Aufstellung der Änderungen ist im
+        <a href="/download/changelog.html#Version+2013.06.0.2+-+LTS">ChangeLog</a> zu finden.
+      </p>
+      <h2>Was ist neu?</h2>
+      <h3>Unterstützung des MODS-Standards</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Um den immer komplexer werdenen Anforderungen an Datenmodelle in Repositories gerecht zu werden,
+          unterstützt MyCoRe ab sofort MODS als Datenmodell (standardisiertes XML-Format für bibliografische
+          Metadaten). Man kann nun nicht nur MODS-Dokumente importieren, sondern es steht auch alles für
+          die Darstellung und den Umgang mit MODS-Dokumenten zur Verfügung.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler, Frank Lützenkirchen und Kathleen Neumann</dd>
+      </dl>
+
+      <h3>Erweiterung des Bildbetrachters</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Der Bildbetrachter (IView 2) wurde an die aktuellen Browserversionen angepasst und stellt nun auch
+          eine Druckfunktion (Ausgabe in PDF) zur Verfügung.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+
+      <h3>Korbfunktion</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die neue Korbfunktion ermöglicht das Sammeln von Metadatenobjekten in der Web-Session. Das
+          Ergebnis kann dann z.B. exportiert oder gedruckt werden. Das Speichern als ein neues MyCoRe-Objekt
+          ist ebenfalls möglich.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Frank Lützenkirchen</dd>
+      </dl>
+
+      <h3>Neue Nutzerverwaltung </h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Miless verfügt über eine Nutzerverwaltung, die einen komfortablen Umgang mit mehrerern Tausend
+          Nutzern ermöglicht. Diese Verwaltung soll daher aus Miless in den MyCoRe-Kern übernommen werden.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+
+      <h3>SOLR als Alternative zu Lucene</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Mittelfristig soll Lucene als Suchengine durch SOLR abgelöst werden, um die facettierte Suche,
+          Markierungen der Suchbegriffe und vieles andere mehr zu ermöglichen. Mit diesem Release besteht
+          nun bereits die Möglichkeit SOLR als Alternative zu Lucene zu nutzen.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Silvio Hermann, Matthias Eichner und Thomas Scheffler</dd>
+      </dl>
   </section>
 
 
@@ -162,92 +374,6 @@
 
       Anschliessend muss die Anwendung neu erstellt werden (<code>ant resolve create.jar create.scripts create.webapp</code>).
     </p>
-
-    <h2>Changes in this version include</h2>
-    <h3>New features</h3>
-    <ul>
-      <li>ClassificationBrowser implementation for solr</li>
-      <li>I18N support to mycore-user2</li>
-      <li>MCRXSL2JAXBTransformer to generate JAVA Objects via XSLT</li>
-      <li>command "delete index part for type {0}" in mycore-solr</li>
-      <li>MCRListeningPriorityExecutorService where tasks can be prioritized and listened</li>
-      <li>MCRSolrSelectProxyServlet supports "wt" parameter of SOLR</li>
-      <li>support for canvas HTML element in mycore-iview2 (adds rotate function)</li>
-      <li>Handle support</li>
-      <li>mycore-xeditor component</li>
-      <li>MCRObjectTypeStrategy allows "default_class" rules for classifications</li>
-      <li>Added commands to check consistency of classifications and fix any errors found
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/606">606</a>)</li>
-      <li>MCRXMLFunctions.encodeURIPath(String path, boolean asciiOnly) to ensure that encoded path contains only ASCII characters. Thanks to Frank Lützenkirchen.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/610">610</a>)</li>
-      <li>MCRXMLFunctions.normalizeAbsoluteURL(String) to ensure that a absolute URL is RFC 2396 compliant. Thanks to Frank Lï¿½tzenkirchen.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/607">607</a>)</li>
-      <li>MCRURNManager.assignURN(String urn, String derivateID, String path)</li>
-      <li>MCRXSLInfoServlet generates graphs that display call-template calls: XSL.mode=uses</li>
-      <li>o.m.d.m.MCRMetadataManager.getObjectId(MCRObjectID, long) to retrieve objectID of metadata object for derivate id</li>
-      <li>MCRCache added getIfUpToDate() with lazy determination of last modified timestamp of cache value</li>
-
-    </ul>
-
-    <h3>Fixed Bugs</h3>
-    <ul>
-      <li>The login page should be accessible only through https Thanks to Silvio Hermann.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/608">608</a></li>
-      <li>WCMS: Assigning read and write permissions does not work
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/628">628</a>
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/617">617</a></li>
-      <li>Mets Editor does not support files with blanks
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/625">625</a></li>
-      <li>wait for index process to complete on shutdown (lucene &amp; solr)</li>
-      <li>MCRSearchServlet: on redirect pass XSL.Transformer parameter</li>
-      <li>Editor: &lt;hidden var="..." descendants="true" /> may duplicate data when attribute predicates are used in xpath
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/622">622</a></li>
-      <li>Editing user data produces erroneous links in "Search and manage users" Thanks to Frank Lützenkirchen.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/606">606</a></li>
-      <li>Password hint is not displayed Thanks to Matthias Eichner.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/613">613</a></li>
-      <li>Workflow looses action and type Thanks to Kathleen Neumann.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/611">611</a></li>
-      <li>Categories have wrong left-/right- values when using new classification editor Thanks to Matthias Eichner.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/612">612</a></li>
-      <li>ClassificationEditor does not work for non super users. Thanks to Marcus Mï¿½ller.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/609">609</a></li>
-      <li>Mets-Editor: order label is not displayed in the mets-editor
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/601">601</a></li>
-      <li>foliation in METS editor does not work on Mac OS
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/595">595</a></li>
-      <li>do not remove URN information if file content is updated</li>
-      <li>fixed multi thread access to SAXBuilder Thanks to Silvio Hermann.
-    - Issue: <a href="https://sourceforge.net/p/mycore/bugs/598">598</a></li>
-    </ul>
-
-    <h3>Changes</h3>
-    <ul>
-      <li>MCRSearchServlet parameter numPerPage defaults to "10" (was "0")</li>
-      <li>better statistics for mycore-solr component</li>
-      <li>use Google guava cache for for MCRObjectIDPool and MCRCache</li>
-      <li>refactored mycore-solr component</li>
-      <li>bootstraped editor forms of mycore-user2</li>
-      <li>MCRLayoutService: buffer output gives about 30% faster downloads and big improvements in browser render speed on fast connections.</li>
-      <li>Speed up XSL Transformations: XSL files are checked for changes after
-          "MCR.LayoutService.LastModifiedCheckPeriod" ms (default 10000).</li>
-      <li>improved speed of MCRCache</li>
-      <li>moved results-commandlinequery.xsl to MyCoRe - it is independent of any application</li>
-      <li>update to Java 7</li>
-      <li>update to JDOM 2</li>
-      <li>moved many stream related classes to new package org.mycore.common.content.stream</li>
-      <li>updated dependencies</li>
-    </ul>
-
-    <h3>Removed</h3>
-    <ul>
-      <li>removed applet from mycore-mets and removed mycore-zoomify component</li>
-      <li>removed mycore-user component.
-          Use "migrate users" from mycore-migration21-22 to transfer your old
-          users.</li>
-      <li>removed componente mycore-classhandler (old classification browser and editor)</li>
-    </ul>
-
   </section>
 
 
@@ -273,62 +399,6 @@
 
       Anschliessend muss die Anwendung neu erstellt werden (<code>ant resolve create.jar create.scripts create.webapp</code>).
     </p>
-
-    <h2>Changes in this version include</h2>
-    <h3>New features</h3>
-    <ul>
-      <li>?XSL.Style=versions on "/receive/*" URLs displays version information</li>
-      <li>added mycore-solr to add Apache SOLR support</li>
-      <li>added MCRIFSCommands to operate on IFS from CLI</li>
-      <li>added MCRLockServlet to lock metadata update forms</li>
-      <li>added mycore-classeditor - a new classeditor that uses RESTful web services</li>
-      <li>added JAX-RS support via Apache Jersey</li>
-      <li>added mycore-migration21-22 component</li>
-      <li>added mycore-wfc (workflow component)</li>
-      <li>added MCRContent and MCRContentTransformer classes</li>
-      <li>added mycore-user2 component</li>
-      <li>added org.mycore.datamodel.language.* for code-independent representation for languages used in datamodels</li>
-      <li>added MCRLoggingCommands to change log levels through webcli</li>
-      <li>added MCRTarServlet to generate tar files</li>
-      <li>added many editor forms for different mods document types</li>
-      <li>added MCRPersistentServlet to circumvent mycore-swf</li>
-      <li>all deleted items are stored in table MCRDELETEDITEMS</li>
-      <li>added MCRExternalProcess to launch command line processes</li>
-      <li>added support to generate PDF documents in image viewer.
-          see: <a href="http://www.mycore.de/svn/maven/mets-printer/">http://www.mycore.de/svn/maven/mets-printer/</a></li>
-      <li>Added templates for share/subscribe buttons. See share.xsl and document metadata details view in DocPortal for an example.</li>
-      <li>Added basket functionality to web front end. A basket collects objects in the user's session.
-          Objects can be added, removed, their order can be changed and the basket can be cleared completely.
-          There can be different baskets for different purposes within the same session.</li>
-      <li>added MODS datamodel support through mycore-mods</li>
-    </ul>
-
-    <h3>Fixed Bugs</h3>
-    <ul>
-      <li>instances of MCRSession are bound to the first IP address (see <a href="http://sourceforge.net/p/mycore/bugs/570/">#570</a>)</li>
-      <li>MyCoRe is fully xlink 1.1 conform (see <a href="http://sourceforge.net/p/mycore/bugs/516/">#516</a>)</li>
-    </ul>
-
-    <h3>Changes</h3>
-    <ul>
-      <li>MCRLayoutService uses MCRContent and MCRXSLTransformer to pipe XML through a set of XSL templates.</li>
-      <li>mycore-media: many improvements</li>
-      <li>new OAI implementation</li>
-      <li>mycore-mets: many improvements to mets editor</li>
-      <li>mycore-iview2: many improvements</li>
-      <li>update to maven 3</li>
-      <li>MCRURIResolver now implements EntityResolver2</li>
-      <li>added support to switch XSL-FO implementation</li>
-    </ul>
-
-    <h3>Removed</h3>
-    <ul>
-      <li>removed MCRFSMapperServlet</li>
-      <li>removed old OAI implementation</li>
-      <li>removed mycore-imaging, mycore-iview and mycore-migration20-21 component</li>
-    </ul>
-
-
   </section>
 
    <section>
