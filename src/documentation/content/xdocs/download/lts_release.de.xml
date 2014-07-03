@@ -13,11 +13,21 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <p>
-    Mit dem MyCoRe-Release 2014.06 ...
+    Nach der Einführung von Solr als Alternative zu Lucene vor einem Jahr, ist das diesjährige
+    LTS-Release 2014.06 nun ohne Lucene-Unterstützung unterwegs. Es ist jedoch auch weiterhin möglich
+    auf Lucene laufende Anwendungen mit dem aktuellen MyCoRe zu betreiben. Weitere Informationen dazu
+    finden Sie im Abschnitt zur Migration.
+  </p>
+  <p>
+    Ebenfalls abgelöst wurde das alte WCMS, durch eine deutlich flexiblere Lösung. Diese bietet nicht nur
+    umfangreiche Unterstützung der Mehrsprachigkeit, sondern auch die Möglichkeit verschiedenste Menübäume
+    zu definieren.
+  </p>
+  <p>
     Eine Übersicht aller Neuerungen ist unter Dokumentation - <a href="site:whats_new">"Was
     ist neu?"</a> zusammengestellt. Eine detaillierte Liste aller Neuerungen bietet das
-    <a href="site:changelog">Changelog</a>. Das Release ist ein Long-Term-Support-Release und wird regelmäßig
-    mit Bugfixes gepflegt.
+    <a href="site:changelog">Changelog</a>. Das Release ist ein Long-Term-Support-Release und wird ein Jahr
+    lang regelmäßig mit Bugfixes gepflegt.
   </p>
 
   <p>
