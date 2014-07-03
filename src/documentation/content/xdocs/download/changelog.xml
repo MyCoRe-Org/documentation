@@ -122,22 +122,40 @@
     <ul>
       <li>New features</li>
       <ul>
-        <li>xxx</li>
+        <li>added MCRContentServlet to provide support for reliable browser cache and HTTP range requests
+        currently used by MCRFileNodeServlet and MCRObjectServlet</li>
+        <li>mycore-solr: added support to mycoreobject-dynamicfields.xsl to index remote content</li>
+        <li>added cache info support to MCRContent classes</li>
+        <li>added MCRXMLFunctions.hasParentCategory(String classificationId, String categoryId)</li>
+        <li>mycore-mods: add schema support for MODS 3.5</li>
+        <li>mycore-mods: support classification typeOfResource</li>
+        <li>When using MCRConfigurationDir comments are added to mycore.active.properties</li>
       </ul>
 
       <li>Fixed Bugs</li>
       <ul>
-        <li>xxx</li>
+        <li>mycore-webcli: fixed "process {0}"  (2014-03-07)</li>
+        <li>MCRFileImportExport: properly close MCRMD5InputStream  (2014-02-21)</li>
+        <li>MCRConfigurationInputStream should respect dependencies between mycore components  (2014-02-21)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/684">684</a>)</li>
+        <li>fixed handling of references in editor framework  (2014-02-18)</li>
+        <li>added mycore-xeditor to integration steps of mycore-complete  (2014-02-18)</li>
+        <li>mycore-acl-editor2: fixed layout  (2014-02-14)</li>
+        <li>fixed missing searchfields.xml exception  (2014-02-11)</li>
       </ul>
 
       <li>Changes</li>
       <ul>
-        <li>xxx</li>
+        <li>mycore-wcms2 get support for access checks and fixes in I18N keys</li>
+        <li>changed order of MCREventHandler</li>
+        <li>Update to SOLRJ 4.7.0</li>
       </ul>
 
       <li>Removed</li>
       <ul>
-        <li>xxx</li>
+        <li>MCRObjectServlet: removed support for browsing in MCRResults</li>
+        <li>removed MCR.UploadApplet.BackgroundColor property (moved to docportal)</li>
+        <li>removed mycore-acl-editor (replaced by mycore-acl-editor2)</li>
       </ul>
     </ul>
   </section>
@@ -148,22 +166,69 @@
     <ul>
       <li>New features</li>
       <ul>
-        <li>xxx</li>
+        <li>solr: add createdby and modifiedby to solrindex</li>
+        <li>added first version of wcms2</li>
+        <li>base: added service flag event handler to set createdby and modifiedby flags</li>
+        <li>buildtools: make the build tool for integration generic; with the jarstartswith attribute
+        in the buildintegration call you can use the integrate functionality in your own jar archives;
+        the jar archive must have a Manifest the MCR-Version entry to use for integration process</li>
+        <li>base: introduce system property MCR.Home</li>
+        <li>add message-properties for ar, fr and id</li>
+        <li>add multi-language support using new property MCR.I18N.Languages; messages_*.properties will only be generated for selected languages default (de,en)</li>
+        <li>wfc: added MCRActionMappingServlet to manage static web pages via action mapping</li>
+        <li>base: added support to use variables in command</li>
+        <li>base: add IFS2 support with defined default properties for derivates</li>
+        <li>base: added command to create configuration directory</li>
+        <li>base: add support to load additional jar files in CLI</li>
+        <li>iview2: add commands to handle image tiles based on  MCR project ID</li>
+        <li>solr: added indexing support for MCRHistorydate-fields "from" and "to"</li>
+        <li>base: add classification output format "text"</li>
+        <li>add a default configuration for IFS2</li>
       </ul>
 
       <li>Fixed Bugs</li>
       <ul>
-        <li>xxx</li>
+        <li>base: fixed NPE on shutdown</li>
+        <li>mods: validate mods documents against catalog.xml defined schema  (2014-02-10)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/678">678</a>)</li>
+        <li>mods: updated nameOrPND to current rdf-version (DN-B v2014-01-15)  (2014-01-28)<br />
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/680">680</a>)<br />
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/681">681</a>)</li>
+        <li>fixed merging of properties (keep in order of ${components.order})  (2014-01-28)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/683">683</a>)</li>
+        <li>handle: changed actual column name for schema attribute to schema_attr  (2014-01-24)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/682">682</a>)</li>
+        <li>mods: fixed empty language output in conference proceeding</li>
+        <li>base: navigation.xml may not lay in build/webapps/config directory  (2014-01-22)</li>
+        <li>classbrowser: fix npe - check queryAdapter not null</li>
+        <li>iview2: fix: don't encode slashes  (2014-01-21)</li>
+        <li>Fix bug with merge mycore.properties in ant build process  (2014-01-21)</li>
+        <li>fixed self call of property in iview2; action="substituteVariables" is removed from mcr:config task  (2014-01-21)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/676">676</a>)</li>
+        <li>mods: condition in conference proceeding checks now only for main title</li>
+        <li>classbrowser: show category also when countResults is set to false</li>
+        <li>iview2: fixes Tiling-jobs in infinite loop if tiling not possible for a file; use MCR.Module-iview2.MaxResetCount to configure maximum tries  (2014-01-15)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/673">673</a>)</li>
       </ul>
 
       <li>Changes</li>
       <ul>
-        <li>xxx</li>
+        <li>user2: update password hash to SHA-256</li>
+        <li>mets: write urn as contentids to mets file (if any)</li>
+        <li>user2: added default values for MCR.Users.Superuser.* to mycore.properties</li>
+        <li>base: added support for date format yyyy and yyyy-MM</li>
+        <li>base: improve mcrfile uri resolver to handle derivates and paths</li>
+        <li>base: disable database if hibernate is not configured</li>
+        <li>base: use MCRSystemUserInformation to detect if current user is super user</li>
+        <li>iview2: use MCRStartupHandler and not ServletContextListener to start image tiling thread</li>
+        <li>update dependencies (jetty, solr, jaxws-tools)</li>
       </ul>
 
       <li>Removed</li>
       <ul>
-        <li>xxx</li>
+        <li>fileupload-applet excluded from mycore to seperate project</li>
+        <li>removed &lt;distributionManagement> section in 'deployment' profile</li>
+        <li>iview2: Removed second canvas</li>
       </ul>
     </ul>
   </section>
