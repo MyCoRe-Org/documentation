@@ -3,7 +3,7 @@
 
 <document xml:lang="en">
 <header>
- <title>Release 2013.06 (LTS)</title>
+ <title>Release 2014.06 (LTS)</title>
 </header>
 
  <body>
@@ -24,19 +24,19 @@
   </p>
 
   <p>
-    If you have your application already near version 2013.06, you only have to update
+    If you have your application already near version 2014.06, you only have to update
     your pom.xml (docportal/config):
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2013.06.0.3-SNAPSHOT&lt;/version>
+&lt;version>2014.06.0.1-SNAPSHOT&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>2013.06.0.3-SNAPSHOT&lt;/version>
+  &lt;version>2013.06.0.1-SNAPSHOT&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -46,16 +46,16 @@
   </p>
 
   <p>
-    <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
-      ><img src="/images/download_docportal_201306.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
-    As an alternative DocPortal is available as download with <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
-    >Release 2013.06</a>. You can find the corresponding installation guidelines
-    in the <a href="site:install">UserGuide</a>. There are instructions for the
-    <a href="site:migrate21_2013.06">Migration</a> as well provided.
+    <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
+      ><img src="/images/download_docportal_201406.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
+    As an alternative DocPortal is available as download with <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
+    >Release 2014.06</a>. You can find the corresponding installation guidelines
+    in the <a href="site:install">UserGuide</a>.<!-- There are instructions for the
+    <a href="site:migrate2014.06">Migration</a> as well provided. -->
   </p>
   <p>
     Furthermore there is a MyCoRe
-    <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.06.0/">jar file</a>
+    <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.06/">jar file</a>
     ready for download, therewith you can use the MyCoRe kernel in your own application
     independent from DocPortal. MyCoRe can be integrated as well via Maven.
   </p>

@@ -57,8 +57,8 @@ See http://forrest.apache.org/docs/linking.html for more info
   <download      label="Download"           href="download/" tab="download">
     <howtoget    label="Übersicht"          href="index.html" />
     <whats_new   label="Was ist neu?"       href="whats_new.html" />
-    <release     label="Release 2014.01"    href="release.html" />
-    <lts_release label="LTS-Release 2013.06"    href="lts_release.html" />
+    <release     label="Release 2014.03"    href="release.html" />
+    <lts_release label="LTS-Release 2014.06"    href="lts_release.html" />
     <logos       label="Material"           href="logos.html" />
     <license     label="Lizenzbedingungen"  href="license.html" />
     <dl_archive  label="Archiv"             href="archive.html" />

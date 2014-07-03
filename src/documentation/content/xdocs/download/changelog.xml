@@ -11,7 +11,7 @@
   <title>Changes in MyCoRe</title>
 
   <section>
-  <title>Version 2014.02 (current head tree)</title>
+  <title>Version 2014.07 (current head tree)</title>
   <ul>
 
     <li>Components</li>
@@ -21,6 +21,173 @@
     </ul>
 
   </ul>
+  </section>
+
+  <section>
+    <title>Release 2014.06 - LTS</title>
+    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.06/changelog.html">maven site</a></p>
+    <ul>
+      <li>New features</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Fixed Bugs</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Changes</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Removed</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+    </ul>
+  </section>
+
+  <section>
+    <title>Release 2014.03 - ‚Lenzing‘</title>
+    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.03/changelog.html">maven site</a></p>
+    <ul>
+      <li>New features</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Fixed Bugs</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Changes</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Removed</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+    </ul>
+  </section>
+
+  <section>
+    <title>Release 2014.02 - ‚Kindl‘</title>
+    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.02/changelog.html">maven site</a></p>
+    <ul>
+      <li>New features</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Fixed Bugs</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Changes</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+
+      <li>Removed</li>
+      <ul>
+        <li>xxx</li>
+      </ul>
+    </ul>
+  </section>
+
+  <section>
+    <title>Release 2014.01 - ‚T&atilde;t Ni&ecirc;n‘</title>
+    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.01/changelog.html">maven site</a></p>
+    <ul>
+      <li>New features</li>
+      <ul>
+        <li>mycore-solr: added '/search/search-expert.xed' XEditor form</li>
+        <li>mycore-solr: added command "select objects with solr query {0}"</li>
+        <li>Added batch process command "execute for selected *"</li>
+        <li>mycore-xeditor: added XSL template support via</li>
+        <li>added mycore-meta component to add all components as a transitive dependency</li>
+        <li>added MCRConfigurationDir to get directory of installation specific configuration files</li>
+        <li>automatically update database schema on startup. No need to run "init database" anymore.</li>
+        <li>added MCRStartupHandler to automatically execute code on startup</li>
+        <li>
+          added support for multi-stage layout per default:
+          <ul>
+            <li>MCR.LayoutTransformerFactory.Default.Stylesheets to append additional stylesheets to transformation pipeline</li>
+            <li>MCR.LayoutTransformerFactory.Default.Ignore to keep single stage transformation for specific transformation IDs</li>
+          </ul>
+        </li>
+        <li>added "synchronize metadata index *" commands to keep the SOLR index synchron with the database</li>
+        <li>added MCRXMLMetadataManager.getObjectTypes() to get all stored object types.</li>
+        <li>added mycore-handle component</li>
+        <li>added "Locale" support to MCRLanguage and MCRLanguageFactory</li>
+        <li>added runtime detection of mycore components and application modules</li>
+        <li>jersey: added simple echo resource to mycore-base</li>
+        <li>added MCRPropertiesResolver</li>
+      </ul>
+
+      <li>Fixed Bugs</li>
+      <ul>
+        <li>XPath binding does not work with automatic element duplication Thanks to Thomas Scheffler.  (2014-01-10)
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/671">671</a></li>
+        <li>MD5 error in MCRFSNODES for IFS2 Thanks to Jens Kupferschmidt.  (2014-01-10)
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/666">666</a></li>
+        <li>mycore-iview2: fixed tile loading when browsing fast through images  (2014-01-08)</li>
+        <li>MCRParameterCollector: MCRServlet.getBaseURL() may return just "/"  (2013-12-20)</li>
+        <li>mycore-solr: Tolerate missing MCR.NameOfProject property.  (2013-12-18)</li>
+        <li>MCRConfiguration: added SingletonKey class to store single instances of classes
+            per property name  (2013-12-13)</li>
+        <li>URN: delete entry from db after related file is deleted  (2013-12-12)</li>
+        <li>mycore-iview2: fixed NPE in MCRIView2Tools.isFileSupported()  (2013-12-12)</li>
+        <li>MCRXMLMetadataManager: keep track of created stores and remove on reload() and
+            use URI for svnBase  (2013-12-11)</li>
+        <li>fixed shutdown message issues with log4j  (2013-12-11)</li>
+        <li>MCRCoreVersion: set revision to -1 if revision is not an integer  (2013-12-02)</li>
+        <li>MCRTranslation: fixed some errors if no messages*.properties files are present  (2013-11-28)</li>
+        <li>possible exploit via Java Applet Thanks to Christian Windolf.  (2013-11-28)
+      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/668">668</a></li>
+        <li>mycore-oai: fixed exception handling  (2013-11-25)</li>
+        <li>hibernate: fix a problem when exec getSessionFactory after sessionFactory is closed  (2013-11-14)</li>
+        <li>mycore-iview2: fixed Bootstrap compatibility  (2013-11-14)</li>
+      </ul>
+
+      <li>Changes</li>
+      <ul>
+        <li>mycore-xeditor: use Bootstrap styled repeater buttons by default.</li>
+        <li>Set MIME type to "text/xml" for MCRToPrettyXML ContentTransformer</li>
+        <li>MCRConfiguration is not configured by itself but via MCRConfigurationLoader</li>
+        <li>MCRConfiguration does not expose its properties anymore use getPropertiesMap() to access properties read only</li>
+        <li>moved MCRConfiguration classes to org.mycore.common.config</li>
+        <li>use MCR.Hibernate.Mapping to add mappings to hibernate (until we have JPA ready)</li>
+        <li>move iview specific code from mycore-solr to mycore-iview2</li>
+        <li>MCRConfiguration: support self referencing properties to append values automatically:
+            key=%key%,another value</li>
+        <li>mycore-mods: various improvements</li>
+        <li>MCRContentTransformer: if content transformer class is not specified but *.Stylesheet property,
+            *.Class is set default to MCRXSLTransformer</li>
+        <li>MCRConfiguration can run without MCR.baseDir set</li>
+        <li>removed baseURL parameter from MCRURIREsolver.init()</li>
+        <li>mycore-mods: added searchfield mods.gnd.top and mods.name.top, renamed mods.host* to mods.*.host</li>
+        <li>mycore-mods: do not link to categories from parent (relatedItem[@type='host'])</li>
+        <li>mycore-acl-editor2: various improvements and fixes</li>
+        <li>mycore-classeditor: leave labels blank on new items</li>
+        <li>added MCRConfiguration.getStrings() method to automatically split comma separated values</li>
+        <li>SOLR queries do not require searchfields.xml anymore</li>
+        <li>improved MCRTextResolver</li>
+        <li>improved URN API</li>
+        <li>update dependencies</li>
+      </ul>
+
+      <li>Removed</li>
+      <ul>
+        <li>mycore-migration-2014: remove unneeded files</li>
+      </ul>
+    </ul>
   </section>
 
   <section>
@@ -192,7 +359,7 @@
   </section>
 
   <section>
-  <title>Version 2013.06.0.2</title>
+  <title>Version 2013.06.0.2 - LTS</title>
   <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0.2/changelog.html">maven site</a></p>
   <ul>
 
@@ -241,7 +408,7 @@
   </section>
 
   <section>
-  <title>Version 2013.06.0.1</title>
+  <title>Version 2013.06.0.1 - LTS</title>
   <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0.1/changelog.html">maven site</a></p>
   <ul>
 
@@ -290,7 +457,7 @@
   </section>
 
   <section>
-  <title>Version 2013.06</title>
+  <title>Version 2013.06 - LTS</title>
   <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0/changelog.html">maven site</a></p>
   <ul>
 

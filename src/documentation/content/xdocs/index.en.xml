@@ -48,7 +48,7 @@
           <title>Conference</title>
           <message>MyCoRe was present at „103. Deutschen Bibliothekartag“ Conference.</message>
           <url>http://www.bibliothekartag2014.de/index.php?id=4</url>
-          <date>10. Juni 2014</date>
+          <date>10. June 2014</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
@@ -56,24 +56,24 @@
           <title>Developer meeting</title>
           <message>The developer will come together at 7.-9. Juli in Rostock.</message>
           <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/JuliTreffen14</url>
-          <date>10. Juni 2014</date>
+          <date>10. June 2014</date>
           <author>Wiebke Oeltjen</author>
           <image></image>
         </newsentry>
         <newsentry>
           <title>Release</title>
-          <message>The first LTS Release is out now</message>
+          <message>LTS Release 2014.06 is out now</message>
           <url>site:release</url>
-          <date>02 July 2014</date>
-          <author>Wiebke Oeltjen</author>
+          <date>20. June 2014</date>
+          <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
           <title>Application</title>
-          <message>The Federal Statistical Office in Wiesbaden uses MyCoRe.</message>
-          <url>https://www.destatis.de/GPStatistik/</url>
-          <date>12 June 2013</date>
-          <author>Wiebke Oeltjen</author>
+          <message>DSZV repository, a Reposis service hosted at VZG, is online.</message>
+          <url>http://www.dszv.it/dszv/</url>
+          <date>02. July 2014</date>
+          <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
       </news>

@@ -3,7 +3,7 @@
 
 <document xml:lang="de">
 <header>
- <title>Release 2014.01 - ‚T&atilde;t Ni&ecirc;n‘</title>
+ <title>Release 2014.03 - ‚Lenzing‘</title>
 </header>
 
  <body>
@@ -13,11 +13,7 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <p>
-    Ziel der aktuellen Entwicklungsarbeit ist es u.a., den Umgang mit MyCoRe einfacher zu gestalten. Ein
-    wichtiger Schritt dafür ist es, eigene Anwendungen ohne den komplexen Build-Prozess mit DocPortal
-    zu entwickeln. In Vorbereitung dazu, umfässt dieses Release viele wichtige Umstellungen, die in
-    bestehenden Anwendungen nicht sichtbar werden. Migrationsschritte von Anwendungen
-    auf Basis der Version 2013.11 sind nicht notwendig.
+    Dies ist die letzte Version mit Lucene-Unterstützung!
     <br />
     Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
     pom.xml (zu finden unter docportal/config) die MyCoRe-Version angepasst werden:
@@ -26,12 +22,12 @@
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2014.01&lt;/version>
+&lt;version>2014.03.1-SNAPSHOT&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>2014.01&lt;/version>
+  &lt;version>2014.03.1-SNAPSHOT&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -42,85 +38,40 @@
   <h2>Changes in this version include</h2>
   <h3>New features</h3>
   <ul>
-    <li>mycore-solr: added '/search/search-expert.xed' XEditor form</li>
-    <li>mycore-solr: added command "select objects with solr query {0}"</li>
-    <li>Added batch process command "execute for selected *"</li>
-    <li>mycore-xeditor: added XSL template support via</li>
-    <li>added mycore-meta component to add all components as a transitive dependency</li>
-    <li>added MCRConfigurationDir to get directory of installation specific configuration files</li>
-    <li>automatically update database schema on startup. No need to run "init database" anymore.</li>
-    <li>added MCRStartupHandler to automatically execute code on startup</li>
-    <li>
-      added support for multi-stage layout per default:
-      <ul>
-        <li>MCR.LayoutTransformerFactory.Default.Stylesheets to append additional stylesheets to transformation pipeline</li>
-        <li>MCR.LayoutTransformerFactory.Default.Ignore to keep single stage transformation for specific transformation IDs</li>
-      </ul>
-    </li>
-    <li>added "synchronize metadata index *" commands to keep the SOLR index synchron with the database</li>
-    <li>added MCRXMLMetadataManager.getObjectTypes() to get all stored object types.</li>
-    <li>added mycore-handle component</li>
-    <li>added "Locale" support to MCRLanguage and MCRLanguageFactory</li>
-    <li>added runtime detection of mycore components and application modules</li>
-    <li>jersey: added simple echo resource to mycore-base</li>
-    <li>added MCRPropertiesResolver</li>
+    <li>added MCRContentServlet to provide support for reliable browser cache and HTTP range requests
+        currently used by MCRFileNodeServlet and MCRObjectServlet</li>
+    <li>mycore-solr: added support to mycoreobject-dynamicfields.xsl to index remote content</li>
+    <li>added cache info support to MCRContent classes</li>
+    <li>added MCRXMLFunctions.hasParentCategory(String classificationId, String categoryId)</li>
+    <li>mycore-mods: add schema support for MODS 3.5</li>
+    <li>mycore-mods: support classification typeOfResource</li>
+    <li>When using MCRConfigurationDir comments are added to mycore.active.properties</li>
   </ul>
 
   <h3>Fixed Bugs</h3>
   <ul>
-    <li>XPath binding does not work with automatic element duplication Thanks to Thomas Scheffler.  (2014-01-10)
-  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/671">671</a></li>
-    <li>MD5 error in MCRFSNODES for IFS2 Thanks to Jens Kupferschmidt.  (2014-01-10)
-  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/666">666</a></li>
-    <li>mycore-iview2: fixed tile loading when browsing fast through images  (2014-01-08)</li>
-    <li>MCRParameterCollector: MCRServlet.getBaseURL() may return just "/"  (2013-12-20)</li>
-    <li>mycore-solr: Tolerate missing MCR.NameOfProject property.  (2013-12-18)</li>
-    <li>MCRConfiguration: added SingletonKey class to store single instances of classes
-        per property name  (2013-12-13)</li>
-    <li>URN: delete entry from db after related file is deleted  (2013-12-12)</li>
-    <li>mycore-iview2: fixed NPE in MCRIView2Tools.isFileSupported()  (2013-12-12)</li>
-    <li>MCRXMLMetadataManager: keep track of created stores and remove on reload() and
-        use URI for svnBase  (2013-12-11)</li>
-    <li>fixed shutdown message issues with log4j  (2013-12-11)</li>
-    <li>MCRCoreVersion: set revision to -1 if revision is not an integer  (2013-12-02)</li>
-    <li>MCRTranslation: fixed some errors if no messages*.properties files are present  (2013-11-28)</li>
-    <li>possible exploit via Java Applet Thanks to Christian Windolf.  (2013-11-28)
-  - Issue: <a href="https://sourceforge.net/p/mycore/bugs/668">668</a></li>
-    <li>mycore-oai: fixed exception handling  (2013-11-25)</li>
-    <li>hibernate: fix a problem when exec getSessionFactory after sessionFactory is closed  (2013-11-14)</li>
-    <li>mycore-iview2: fixed Bootstrap compatibility  (2013-11-14)</li>
+    <li>mycore-webcli: fixed "process {0}"  (2014-03-07)</li>
+    <li>MCRFileImportExport: properly close MCRMD5InputStream  (2014-02-21)</li>
+    <li>MCRConfigurationInputStream should respect dependencies between mycore components  (2014-02-21)
+        - Issue: <a href="https://sourceforge.net/p/mycore/bugs/684">684</a>)</li>
+    <li>fixed handling of references in editor framework  (2014-02-18)</li>
+    <li>added mycore-xeditor to integration steps of mycore-complete  (2014-02-18)</li>
+    <li>mycore-acl-editor2: fixed layout  (2014-02-14)</li>
+    <li>fixed missing searchfields.xml exception  (2014-02-11)</li>
   </ul>
 
   <h3>Changes</h3>
   <ul>
-    <li>mycore-xeditor: use Bootstrap styled repeater buttons by default.</li>
-    <li>Set MIME type to "text/xml" for MCRToPrettyXML ContentTransformer</li>
-    <li>MCRConfiguration is not configured by itself but via MCRConfigurationLoader</li>
-    <li>MCRConfiguration does not expose its properties anymore use getPropertiesMap() to access properties read only</li>
-    <li>moved MCRConfiguration classes to org.mycore.common.config</li>
-    <li>use MCR.Hibernate.Mapping to add mappings to hibernate (until we have JPA ready)</li>
-    <li>move iview specific code from mycore-solr to mycore-iview2</li>
-    <li>MCRConfiguration: support self referencing properties to append values automatically:
-        key=%key%,another value</li>
-    <li>mycore-mods: various improvements</li>
-    <li>MCRContentTransformer: if content transformer class is not specified but *.Stylesheet property,
-        *.Class is set default to MCRXSLTransformer</li>
-    <li>MCRConfiguration can run without MCR.baseDir set</li>
-    <li>removed baseURL parameter from MCRURIREsolver.init()</li>
-    <li>mycore-mods: added searchfield mods.gnd.top and mods.name.top, renamed mods.host* to mods.*.host</li>
-    <li>mycore-mods: do not link to categories from parent (relatedItem[@type='host'])</li>
-    <li>mycore-acl-editor2: various improvements and fixes</li>
-    <li>mycore-classeditor: leave labels blank on new items</li>
-    <li>added MCRConfiguration.getStrings() method to automatically split comma separated values</li>
-    <li>SOLR queries do not require searchfields.xml anymore</li>
-    <li>improved MCRTextResolver</li>
-    <li>improved URN API</li>
-    <li>update dependencies</li>
+    <li>mycore-wcms2 get support for access checks and fixes in I18N keys</li>
+    <li>changed order of MCREventHandler</li>
+    <li>Update to SOLRJ 4.7.0</li>
   </ul>
 
   <h3>Removed</h3>
   <ul>
-    <li>mycore-migration-2014: remove unneeded files</li>
+    <li>MCRObjectServlet: removed support for browsing in MCRResults</li>
+    <li>removed MCR.UploadApplet.BackgroundColor property (moved to docportal)</li>
+    <li>removed mycore-acl-editor (replaced by mycore-acl-editor2)</li>
   </ul>
 
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->

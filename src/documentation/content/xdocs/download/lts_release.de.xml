@@ -3,7 +3,7 @@
 
 <document xml:lang="de">
 <header>
- <title>Release 2013.06 (LTS)</title>
+ <title>Release 2014.06 (LTS)</title>
 </header>
 
  <body>
@@ -13,9 +13,7 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <p>
-    Mit dem MyCoRe-Release 2013.06 kommt ein überarbeitetes Nutzersystem, die Unterstützung
-    des MODS-Standards und die Verwendung von Apache Solr&#153; als Suchmaschine. Aber auch neue Funktionen,
-    wie beispielsweise ein Warenkorb und eine weitere Workflowunterstützung sind Teil der neuen Version.
+    Mit dem MyCoRe-Release 2014.06 ...
     Eine Übersicht aller Neuerungen ist unter Dokumentation - <a href="site:whats_new">"Was
     ist neu?"</a> zusammengestellt. Eine detaillierte Liste aller Neuerungen bietet das
     <a href="site:changelog">Changelog</a>. Das Release ist ein Long-Term-Support-Release und wird regelmäßig
@@ -30,12 +28,12 @@
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2013.06.0.3-SNAPSHOT&lt;/version>
+&lt;version>2014.06.0.1-SNAPSHOT&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>2013.06.0.3-SNAPSHOT&lt;/version>
+  &lt;version>2014.06.0.1-SNAPSHOT&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -44,15 +42,15 @@
   </p>
 
   <p>
-    <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
-      ><img src="/images/download_docportal_201306.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
-    Alternativ steht DocPortal mit dem aktuellen <a href="https://sourceforge.net/projects/mycore/files/docportal/2013.06.0/"
-    >Release 2013.06</a> zum Download zur Verfügung. Die dazugehörige Installationsanleitung finden Sie
-    unter <a href="site:install">Dokumentation</a>. Für die <a href="site:migrate21_2013.06">Migration</a> steht
-    ebenfalls eine Anleitung zur Verfügung.
+    <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
+      ><img src="/images/download_docportal_201406.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
+    Alternativ steht DocPortal mit dem aktuellen <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
+    >Release 2014.06</a> zum Download zur Verfügung. Die dazugehörige Installationsanleitung finden Sie
+    unter <a href="site:install">Dokumentation</a>. <!-- Für die <a href="site:migrate2014.06">Migration</a> steht
+    ebenfalls eine Anleitung zur Verfügung. -->
   </p>
   <p>
-    Weiterhin kann MyCoRe als <a href="https://sourceforge.net/projects/mycore/files/mycore/2013.06.0/"
+    Weiterhin kann MyCoRe als <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.06/"
       >jar-Archiv</a> heruntergeladen und so der MyCoRe-Kern unabhängig
     von DocPortal für die eigene Anwendung genutzt werden. MyCoRe kann auch über Maven
     eingebunden werden.

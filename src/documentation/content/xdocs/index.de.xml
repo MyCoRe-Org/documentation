@@ -54,7 +54,7 @@
         </newsentry>
         <newsentry>
           <title>Entwicklertreffen</title>
-          <message>Auch 2014 gibt es viel zu tun. Vom 7.-9. Juli treffen sich die MyCoRe-Entwickler in Rostock.</message>
+          <message>Vom 7.-9. Juli findet das nächste Treffen in Rostock statt.</message>
           <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/JuliTreffen14</url>
           <date>10. Juni 2014</date>
           <author>Wiebke Oeltjen</author>
@@ -62,18 +62,18 @@
         </newsentry>
         <newsentry>
           <title>Release</title>
-          <message>Wir beginnen das neue Jahr mit dem Release 2014.01 und 2013.06.02 - „Tất Niên“</message>
-          <url>site:release</url>
-          <date>28. Januar 2014</date>
+          <message>Pünktlich zum Sommeranfang steht das neue LTS-Release 2014.06 zum Download bereit.</message>
+          <url>site:lts_release</url>
+          <date>20. Juni 2014</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
           <title>Anwendung</title>
-          <message>Statistische Ämter des Bundes und der Länder setzen MyCoRe ein.</message>
-          <url>https://www.destatis.de/GPStatistik/</url>
-          <date>12. Juni 2013</date>
-          <author>Wiebke Oeltjen</author>
+          <message>Der Dokumentenserver des DSZV, ein bei der VZG gehosteter Reposis-Dienst, ist online.</message>
+          <url>http://www.dszv.it/dszv/</url>
+          <date>02. Juli 2014</date>
+          <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
       </news>
