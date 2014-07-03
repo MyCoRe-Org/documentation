@@ -29,22 +29,89 @@
     <ul>
       <li>New features</li>
       <ul>
-        <li>xxx</li>
+        <li>mycore-mods: added MCRMODSEmbargoFilter that enforces an embargo on requested files</li>
+        <li>added "redirect:" URIResolver</li>
+        <li>mycore-mets: added method to overwrite a METS file</li>
+        <li>mycore-wcms2: add move content button</li>
+        <li>added MCRDOMUtils to get pooled DocumentBuilder instances</li>
+        <li>mycore-wcms2: first version of wcms2 filebrowser
+            allows upload and usage of images</li>
+        <li>added MCRDFGLinkServlet to generate links for DFG Viewer</li>
+        <li>MCRObjectMetadata: added method to merge two metadata sets (similar metadata gets ignored differences get added to the end)</li>
+        <li>extend XSL include resolver, now can use a Java class instead of property values</li>
+        <li>mycore-xeditor: add target to create a new empty element depend on xpath</li>
+        <li>create template for mycore.properties and hibernate.cfg.xml with "create configuration directory" command</li>
+        <li>add parameter $User-Agent for XSL stylesheets</li>
+        <li>mycore-iview2: add zip resource (/iview/zip): zips iview jpgs of a derivate</li>
+        <li>added MCRCategoryDAO.setLabels()</li>
+        <li>mycore-solr: add support for child documents (requires SOLR 4.5)
+            see <a href="http://blog.griddynamics.com/2013/09/solr-block-join-support.html">http://blog.griddynamics.com/2013/09/solr-block-join-support.html</a></li>
+        <li>added Italian translations</li>
+        <li>mycore-wcms2: added frontend support for groups of items</li>
+        <li>MCRLayoutUtils.getPersonalNavigation() returns complete navigation filtered for the current user</li>
+        <li>mycore-wcms2: added (backend) support for group of items</li>
+        <li>added French translations</li>
+        <li>mycore-iview2: Added new Iview-Client which can be enabled with parameter iview2.client=true</li>
+        <li>mycore-solr: index logical struct map of mets.xml to field "content"</li>
+        <li>mycore-classeditor: add link dialog (you can see all linked objects of a classification or category)</li>
+        <li>added xalan extension function MCRTranslation:exist(), MCRXMLFunction:getDisplayName(), MCRXMLFunction:isCategoryID()</li>
       </ul>
 
       <li>Fixed Bugs</li>
       <ul>
-        <li>xxx</li>
+        <li>mycore-xeditor: Make a copy of original request parameters, may be re-used by servlet container after request ended.  (2014-06-20)</li>
+        <li>mycore-classeditor: better exception handling and fixed editing language in fullscreen mode  (2014-06-17)</li>
+        <li>mycore-solr: Solr index is not current
+            automatically commit when dropping index Thanks to Kathleen Neumann.  (2014-06-13)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/704">704</a>)</li>
+        <li>mycore-wcms2: xml file of navigation root is now editable</li>
+        <li>classifications: return empty text labels instead of removing them -> avoid schema invalid xml  (2014-05-28)</li>
+        <li>mycore-xeditor: fixed NPE if session does not exist  (2014-05-28)</li>
+        <li>mycore-user2: fixed cancel button in login form  (2014-05-17)</li>
+        <li>mycore-wcms2: not existing content files can now be edited and saved  (2014-05-23)</li>
+        <li>mycore-wcms2: fixed issues when using "https://..."  (2014-05-14)</li>
+        <li>mycore-wcms2: allow changes of web resources from jar files  (2014-04-10)</li>
+        <li>mycore-acl-editor2: fixed security issues  (2014-04-04)</li>
+        <li>missing character set in html in mycore Thanks to Jens Kupferschmidt.  (2014-04-03)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/694">694</a>)</li>
+        <li> Cache fails for MCRContentServlet with XSLTransformer  (2014-04-03)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/695">695</a>)</li>
+        <li>close MCRSession that is created by MCRServlet.getBaseURL()  (2014-03-28)</li>
+        <li>mycore-acl-editor2: fixed several bugs  (2014-03-19)</li>
+        <li>mycore-base: Fixed non-unique id of checkbox and radio input elements generated from list items.  (2014-03-17)</li>
+        <li>mycore-mets: Fixed fast clicking on save button causes multiple mets.xml  (2014-03-17)</li>
+        <li>mycore-solr: fixed several issues</li>
+        <li>mycore-solr: fixed "mycoreobject-solrdocument" Transformer to work with MCRContentServlet  (2014-03-13)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/697">697</a>)</li>
+        <li>mycore-solr: First request to a solr request handler results in a NullPointerException Thanks to Silvio Hermann.  (2014-03-12)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/688">688</a>)</li>
+        <li>add UserAgentFilter to MCRBasketServlet  (2014-03-12)</li>
       </ul>
 
       <li>Changes</li>
       <ul>
-        <li>xxx</li>
+        <li>when resolving class resources use MCRConfigurationDir.getConfigResource() instead of j.l.ClassLoader.getResource()</li>
+        <li>mycore-user2: replaced old editor forms by xeditor forms</li>
+        <li>MCRConfiguraionDirectory: renamed "libs" directory in configuration dir to "lib"</li>
+        <li>MCRPersistentServlet accepts XEditor submissions</li>
+        <li>mycore-wcms2: update to dojo 1.6.2</li>
+        <li>Use MCRPropertiesResolver for property substitution in MCRConfiguration
+        Properties can now be added/modified and substituted at runtime</li>
+        <li>moved URN related classes and files from mycore-base to newly created mycore-urn</li>
+        <li>add default value for property: MCR.Save.FileSystem=%MCR.datadir%/save</li>
+        <li>mycore-base: disable useful but not needed eventhandler in mycore-base</li>
+        <li>mycore-swf: accept input from mycore-xeditor</li>
+        <li>when trying to resolve classpath resource use order defined in ServletContext.ORDERED_LIBS (allows overwriting of XSL files in jar files)</li>
+        <li>added IPv6 support for trusted proxies</li>
+        <li>use ServletContainerInitializer to setup mycore webapp</li>
+        <li>added property for sherpa/romeo api key: MCR.Mods.SherpaRomeo.ApiKey</li>
       </ul>
 
       <li>Removed</li>
       <ul>
-        <li>xxx</li>
+        <li>removed support of property MCR.Hibernate.Configuration property (is fixed to 'hibernate.cfg.xml')</li>
+        <li>removed mycore-wcms (replaced by mycore-wcms2)</li>
+        <li>removed old MCRSearcher code (you may need to add mycore-legacy-search dependency)</li>
       </ul>
     </ul>
   </section>
