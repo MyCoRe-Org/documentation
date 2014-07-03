@@ -12,14 +12,16 @@
     <section>
       <title>Long-Term-Support-Release 2014.06</title>
       <p>
-        xxx
+        Das am 20. Juni 2014 erschienene LTS-Release 2014.06 bringt die nachfolgend gelisteten großen Neuerungen mit sich. Eine detaillierte
+        Aufstellung aller Änderungen, Bugfixes etc. ist im <a href="/download/changelog.html#Release+2014.06+-+LTS">ChangeLog</a> zu finden.
       </p>
 
       <h2>Ausgliederung Lucene</h2>
       <dl>
         <dt>Beschreibung:</dt>
         <dd>
-          xxx
+          Suche und Indexierung auf Basis von Lucene befindet sich nun in einem separaten Mavenmodul mycore-legacy-search. Damit stellt der
+          MyCoRe-Kern nun nur noch eine Solr-Unterstützung für die Suche zur Verfügung.
           <br />
           <br />
         </dd>
@@ -31,12 +33,28 @@
       <dl>
         <dt>Beschreibung:</dt>
         <dd>
-          xxx
+          Die neue WCMS-Komponente ermöglicht grundsätzlich, wie schon der Vorgänger, statische Webseiten rund um das Repository anzulegen, zu
+          ändern oder zu löschen. Dabei unterstützt das WCMS nun auch alle aktuell von MyCoRe bereitgestellten Funktionen, wie z.B. die Möglichkeit
+          in einer Seite sowohl sprachabhängige als auch sprachunabhängige Bereiche zu definieren. Es ist ebenfalls möglich beliebige Menüs zu definieren.
+          Damit entfällt die starre Nutzung von „main“ und „below“.
           <br />
           <br />
         </dd>
         <dt>Realisiert von:</dt>
         <dd>Matthias Eichner, et.al</dd>
+      </dl>
+
+      <h2>Verschlüsselte Übertragung über https</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Auf MyCoRe basierende Anwendungen können nun auch vollständig über https genutzt werden. Alle Komponenten wurden dahingehend geprüft und
+          ggf. angepasst.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler, Matthias Eichner und Kathleen Neumann</dd>
       </dl>
     </section>
 

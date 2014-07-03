@@ -965,6 +965,96 @@
   </section>
 
   <section>
+    <title>Prerelease 2.0.94</title>
+    <p>see also <a href="http://www.mycore.de/generated/mycore-2.0.94/changelog.html">maven site</a></p>
+    <ul>
+      <li>New features:
+        <ul>
+          <li>Added functionality to disable editing of a textfield and set it read-only with @disabled="true", same as for list elements.</li>
+          <li>Added MCRLocalServlet to allow multi lingual javascript applications.</li>
+          <li>Added two command 'list' and 'restore' to handle revision of a metadata object.</li>
+          <li>Added METS editor.</li>
+          <li>Added a new Toolbar-API to modify ImageViewer toolbar.</li>
+          <li>
+            ImageViewer uses structure information of METS-files for "chapter overview" using
+            <ul>
+              <li>jsTree (<a href="http://www.jstree.com/">http://www.jstree.com/</a>)</li>
+              <li>fg-menu 3.0 (<a href="http://www.filamentgroup.com/lab/jquery_ipod_style_and_flyout_menus/">http://www.filamentgroup.com/lab/jquery_ipod_style_and_flyout_menus/</a>)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>Fixed Bugs:
+        <ul>
+          <li>Validation fails when creating new user account (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3118487&amp;group_id=92005&amp;atid=599192">3118487</a>)</li>
+          <li>password of a user should always be changeable (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3152882&amp;group_id=92005&amp;atid=599192">3152882</a>)</li>
+          <li>MCRSessionListingServlet throws NullPointerException (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3118486&amp;group_id=92005&amp;atid=599192">3118486</a>)</li>
+          <li>"MCR.editor_" + type + "_directory" (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3164569&amp;group_id=92005&amp;atid=599192">3164569</a>)</li>
+          <li>Error while tranforming XML workflow file (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3164572&amp;group_id=92005&amp;atid=599192">3164572</a>)</li>
+          <li>ErrorServlet has wrong WebAppBaseURL (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3118439&amp;group_id=92005&amp;atid=599192">3118439</a>)</li>
+          <li>IView permalink doens't work with space characters in file (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3189052&amp;group_id=92005&amp;atid=599192">3189052</a>)</li>
+          <li>MCRMETSServlet (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3185631&amp;group_id=92005&amp;atid=599192">3185631</a>)</li>
+          <li>Sorting of a fulltext search result has no effect. (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3189936&amp;group_id=92005&amp;atid=599192">3189936</a>)</li>
+          <li>"ant resolve" override pom.xml (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3199545&amp;group_id=92005&amp;atid=599192">3199545</a>)</li>
+          <li>DocPortal does not index content of A. Hohlfeld (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3204336&amp;group_id=92005&amp;atid=599192">3204336</a>)</li>
+          <li>WCMS "save changes" doesn't work (see <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3177246&amp;group_id=92005&amp;atid=599192">3177246</a>)</li>
+        </ul>
+      </li>
+
+      <li>Changes:
+        <ul>
+          <li>Moved all webcli classes in package org.mycore.webcli.</li>
+          <li>Added option to initialize all hits of a lucene query: MCR.Searcher.{ID}.initializeResult=true.</li>
+          <li>Enable storing of fields of type long and date, so they can be use for sorting.</li>
+          <li>Adding manager class for creating, get, removing store in IFS2. MCRStore is no longer responsible for these operations.</li>
+          <li>Merged mycore-useradmin and mycore-userlogin component into mycore-user moved user system related code from mycore-base to mycore-user.</li>
+          <li>Separate ACL system from User system
+              MCRUserMagr.login() now actually logs a (MCR) user in
+              Guest User is not physically stored in database anymore
+              A default group for new users can be configured via property (defaults to "users"):
+              MCR.Users.DefaultGroupName.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+
+
+
+
+  <section>
+    <title>Prerelease 2.0.93</title>
+    <p>see also <a href="http://www.mycore.de/generated/mycore-2.0.93/changelog.html">maven site</a></p>
+    <ul>
+      <li>New features:
+       <ul>
+         <li>Added new built-in command "get uri {uri} to file {path}" to test or use MCRURIResolver</li>
+         <li>Added new generic search field "category" which contains "classificationID:categoryID" to search for any category in any classification</li>
+         <li>MCRMailer now acts as a servlet to simplify sending e-mail after editor form submission. See workshop.xml and workshop.xsl in DocPortal as an example.</li>
+         <li>Added xsl templates "derivateView" and "derivateLinkView" as an adapter for IView and IView2</li>
+         <li>Added MCRApplicationModuleSelector to detect mycore application modules.</li>
+       </ul>
+      </li>
+      <li>Fixed Bugs:
+       <ul>
+         <li>Renamed property URN.Enabled.Objects to MCR.URN.Enabled.Objects</li>
+         <li>Fixed export and re-import of users on systems with encrypted passwords (default case)
+           <p>
+             If you have XML files with unencrypted passwords encrypt them with "encrypt passwords in user xml file {0} to file {1}".
+             See "create.users" target in docportal module as example.
+           </p>
+         </li>
+       </ul>
+      </li>
+      <li>Changes:
+        <p>mycore-migration20-21 classes are now in package org.mycore.migration20_21</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
   <title>Version 2.0</title>
   <ul>
 
