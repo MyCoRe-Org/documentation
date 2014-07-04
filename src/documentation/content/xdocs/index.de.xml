@@ -43,6 +43,15 @@
           </description>
         </image>
       </images>
+      <location number="60+" label="Projekte" title="Liste aller Standorte ansehen" />
+      <members>
+        <member href="http://duepublico.uni-duisburg-essen.de/" label="DuEPublico" title="Zum Dokumentenserver der Universität Duisburg-Essen" />
+        <member href="http://zs.thulb.uni-jena.de" label="Journals@UrMEL" title="Zum Zeitschriftenserver der Thüringer Universitäts- und Landesbibliothek Jena (ThULB)" />
+        <member href="http://www.diss.fu-berlin.de/diss" label="Dissertationen Online" title="Zum Dissertationsserver der FU Berlin" />
+        <member href="http://www.islamic-manuscripts.net" label="Islamische Handschriften" title="Zu den Islamische Handschriften der Universitätsbibliothek Leipzig" />
+        <member href="http://cpr.uni-rostock.de" label="Rostocker Professorenkatalog" title="Zum Professorenkatalog der Universität Rostock" />
+      </members>
+      <map title="Alle Projekte auf einer Karte anzeigen" label="Karte" />
       <news>
         <newsentry>
           <title>Konferenz</title>

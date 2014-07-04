@@ -20,35 +20,14 @@
                 </div>
                 <div class="well">
                     <div id="verbreitung">
-                        <div id="standorte" class="">
-                            <span id="nummer"><a href="site:list" title="Liste aller Standorte ansehen">60+</a></span>
-                            <span id="label"><a href="site:list" title="Liste aller Standorte ansehen">Projekte</a></span>
-                        </div>
+                        <xsl:apply-templates select="location" />
                         <div id="mitglieder" class="">
                             <ul>
-                                <li title="Zum Dokumentenserver der Universität Duisburg-Essen">
-                                    <a href="http://duepublico.uni-duisburg-essen.de/">DuEPublico</a>
-                                </li>
-                                <li title="Zum Zeitschriftenserver der Thüringer Universitäts- und Landesbibliothek Jena (ThULB)">
-                                    <a href="http://zs.thulb.uni-jena.de">Journals@UrMEL</a>
-                                </li>
-                                <li title="Zum Dissertationsserver der FU Berlin">
-                                    <a href="http://www.diss.fu-berlin.de/diss">Dissertationen Online</a>
-                                </li>
-                                <li title="Zu den Islamische Handschriften der Universitätsbibliothek Leipzig">
-                                    <a href="http://www.islamic-manuscripts.net">Islamische Handschriften</a>
-                                </li>
-                                <li title="Zum Professorenkatalog der Universität Rostock">
-                                    <a href="http://cpr.uni-rostock.de">Rostocker Professorenkatalog</a>
-                                </li>
+                                <xsl:apply-templates select="members/member" />
                             </ul>
                          </div>
                         <div id="karte" class="">
-                            <span id="label"><a href="site:map" title="Alle Projekte auf einer Karte anzeigen">Karte</a></span>
-                            <a href="site:map" title="Alle Projekte auf einer Karte anzeigen"><img src = "images/icon_karte.png"
-                                 class=""
-                                 id  = ""
-                                 alt = "" /></a>
+                            <xsl:apply-templates select="map" />
                         </div>
                     </div>
 
@@ -57,6 +36,27 @@
             </div>
         </div>
     </div>
+  </xsl:template>
+
+  <xsl:template match="location">
+    <div id="standorte" class="">
+        <span id="nummer"><a href="site:list" title="{@title}"><xsl:value-of select="@number" /></a></span>
+        <span id="label"><a href="site:list" title="{@title}"><xsl:value-of select="@label" /></a></span>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="member">
+    <li title="{@title}">
+        <a href="{@href}"><xsl:value-of select="@label" /></a>
+    </li>
+  </xsl:template>
+
+  <xsl:template match="map">
+    <span id="label"><a href="site:map" title="{@title}"><xsl:value-of select="@label" /></a></span>
+    <a href="site:map" title="{@title}"><img src = "images/icon_karte.png"
+         class=""
+         id  = ""
+         alt = "" /></a>
   </xsl:template>
 
   <xsl:template match="image">
