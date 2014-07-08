@@ -253,16 +253,16 @@ $(document).ready(function() {
 
         var style = new OpenLayers.Style( {
           pointRadius: "${pointRadius}",
-          fillColor: "red",
-          fillOpacity: 1,
-          strokeColor: "black",
-          strokeOpacity: 1,
+          fillColor: "#FF9600",
+          fillOpacity: 0.8,
+          strokeColor: "#cc6633",
+          strokeOpacity: 0.8,
           graphicZIndex: 2,
           strokeWidth: 2,
           label: "${label}",
           title: "Klicken, um Anwendungen anzuzeigen"
         } , {
-          context: 
+          context:
           {
             pointRadius: function(feature) { return 7 + feature.cluster.length.toString().length * 3; },
             label: function(feature) { return feature.cluster ? feature.cluster.length : "1";  }
