@@ -249,9 +249,31 @@ $(document).ready(function() {
         );
         map.addLayer(mapquestLayer);
 
+        var clusterStrategy = new OpenLayers.Strategy.Cluster( { distance: 25, threshold: 1 } );
+
+        var style = new OpenLayers.Style( {
+          pointRadius: "${pointRadius}",
+          fillColor: "red",
+          fillOpacity: 1,
+          strokeColor: "black",
+          strokeOpacity: 1,
+          graphicZIndex: 2,
+          strokeWidth: 2,
+          label: "${label}",
+          title: "Klicken, um Anwendungen anzuzeigen"
+        } , {
+          context: 
+          {
+            pointRadius: function(feature) { return 7 + feature.cluster.length.toString().length * 3; },
+            label: function(feature) { return feature.cluster ? feature.cluster.length : "1";  }
+          }
+        } );
+        var styleMap = new OpenLayers.StyleMap( { "default": style, "select": { fillColor : "orange" } } );
+
         var kml =  new OpenLayers.Layer.Vector("MyCoRe Standorte", {
                      projection: new OpenLayers.Projection("EPSG:4326"),
-                     strategies: [new OpenLayers.Strategy.Fixed()],
+                     strategies: [ new OpenLayers.Strategy.Fixed(), clusterStrategy ],
+                     styleMap : styleMap,
                      protocol: new OpenLayers.Protocol.HTTP({
                        url: "map/mycore-standorte.kml",
                        format: new OpenLayers.Format.KML({
@@ -286,7 +308,14 @@ $(document).ready(function() {
               var feature = event.feature;
               // Since KML is user-generated, do naive protection against
               // Javascript.
-              var content = "<h2>"+feature.attributes.name + "</h2>" + feature.attributes.description;
+
+              var content = "";
+              if( feature.cluster ) {
+                for(var i = 0; i < feature.cluster.length; i++ ) content += "<h2>" + feature.cluster[i].attributes.name + "</h2>" + feature.cluster[i].attributes.description;
+              } else {
+                content = "<h2>" + feature.attributes.name + "</h2>" + feature.attributes.description;
+              };
+
               if (content.search("<script") != -1) {
                   content = "Content contained Javascript! Escaped content below.<br>" + content.replace(/</g, "&lt;");
               }
