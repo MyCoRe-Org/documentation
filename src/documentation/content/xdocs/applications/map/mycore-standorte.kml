@@ -244,12 +244,12 @@
                 <a href="http://rosdok.uni-rostock.de"><img class="icon" alt="icon" src="map/icons/icon_rostock_rosdok.png" /></a>
                 <a href="http://rosdok.uni-rostock.de">Rostocker Dokumentenserver</a>
             </div>
-            <p>Universität Rostock (Universitätsbibliothek und Forschungsstelle Universitätsgeschichte)</p>
+            <p>Universität Rostock (Universitätsbibliothek)</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
       <Point>
-        <coordinates>12.103413,54.075543,0</coordinates>
+        <coordinates>12.103427,54.075436,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
@@ -265,7 +265,7 @@
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
       <Point>
-        <coordinates>12.103413,54.075543,0</coordinates>
+        <coordinates>54.075543,12.133350,0</coordinates>
       </Point>
     </Placemark>
 
