@@ -482,10 +482,10 @@
      <title>Catalogus Professorum Rostochiensium (CPR)</title>
      <img class="float2" src="images/cpr_screenshot.png" alt="CPR Screenshot" title="CPR Screenshot"/>
      <p>
-        Der <b>Rostocker Professorenkatalog</b> ist ein Projekt der Forschungsstelle Universitätsgeschichte,
-        der Bibliothek und des Archivs der Universität Rostock im Hinblick auf das Universitätsjubiläum
-        2019. Im Catalogus sollen alle Professoren der Universität Rostock seit 1419 dokumentiert werden. 
-    </p>
+        Der <b>Rostocker Professorenkatalog</b> ist ein Projekt der Forschungsstelle Universitätsgeschichte, 
+        der Bibliothek und des Archivs der Universität Rostock im Hinblick auf das Universitätsjubiläum im Jahr 2019. 
+        Im CPR sollen alle Professoren der Universität Rostock seit 1419 dokumentiert werden.     
+     </p>
      <img src="images/cpr_logo.jpg" alt="CPR Logo" title="CPR Logo"/>
 
     <p>
@@ -494,26 +494,23 @@
     </p>
      
     <p>
-        Zurzeit befinden sich über 900 Einträge im Catalogus. Die Rostocker Professoren 
-        seit 1992/93 bis 2007 sind bereits vollständig und die Professoren der DDR-Zeit (1946 bis 1990/92) 
-        zu einem großen Teil enthalten. Für die Professoren vor 1945 finden sich bisher nur einzelne 
-        Einträge.
+       Zurzeit befinden sich über 2200 Einträge im CPR. Die Rostocker Professoren seit 1563 sind bereits vollständig enthalten. 
+       Begleitend werden ein Katalog der Kanzler, ein Katalog der Rektoren und ein Katalog der Professoren und Hochschuldozenten 
+       der Ingenieurhochschule für Schiffahrt (IHS) Warnemünde/Wustrow erarbeitet.
     </p>
     <p>
-        Die Katalogeinträge umfassen den Zeitraum, das Fachgebiet und die institutionelle Zuordnung der 
-        Professur. Dazu kommen wenn möglich Angaben zur Biographie, zum wissenschaftlichen Profil und zu 
-        den Aktivitäten an der Rostocker Hochschule. Beigefügt sind Bilder, Lebensläufe, 
-        Schriftenverzeichnisse und sonstige Dokumente zur Person. Die Einträge werden verknüpft mit 
-        weiteren Internet-Ressourcen.
+       Die Einträge im Rostocker Professorenkatalog umfassen den Zeitraum, das Fachgebiet und die institutionelle Zuordnung der Professur. 
+       Dazu kommen wenn möglich Angaben zur Biographie, zum wissenschaftlichen Profil und zu den Aktivitäten an der Rostocker Hochschule. 
+       Beigefügt sind Bilder, Lebensläufe, Schriftenverzeichnisse und sonstige Dokumente zur Person. 
+       Die Einträge werden mit zusätzlichen Internet-Ressourcen verknüpft. 
     </p> 
     <p>
-        Die momentan an der Universität Rostock wirkenden Professoren und die Emeriti wurden seit 2006 
-        angeschrieben und stellen ihre Angaben für den Catalogus selbst zusammen. Erfolgt keine Rückmeldung
-        können nur Kurzeinträge erstellt werden. Die Informationen zu den &quot;historischen&quot; Professoren 
-        seit 1419 erarbeiten Mitarbeiter der Forschungsstelle unter Verwendung bereits bestehender 
-        Verzeichnisse. 
+       Die momentan an der Universität Rostock wirkenden Professoren und die Emeriti wurden seit 2006 angeschrieben und stellen 
+       ihre Angaben für den CPR selbst zusammen. Neuberufungen werden kontinuierlich eingepflegt. 
+       Erfolgt keine Rückmeldung können nur Kurzeinträge erstellt werden. Die Informationen zu den "historischen" Professoren 
+       im Zeitraum 1419 bis 1563 erarbeiten Mitarbeiter der Forschungsstelle derzeit unter Verwendung bereits bestehender Verzeichnisse. 
     </p>
-      <p>Der Catalogus ist eine MyCoRe-Applikation, die auf dem JSPDocportal basiert.</p>
+      <p>Der Rostocker Professorenkatalog ist eine MyCoRe-Applikation, die auf dem JSPDocportal basiert.</p>
       <br />
     </section>
 
