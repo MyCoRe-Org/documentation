@@ -293,7 +293,7 @@ $(document).ready(function() {
         map.addControl(select);
         select.activate();
 
-        map.setCenter(new OpenLayers.LonLat(10.25,51.5) // Center of the map
+        map.setCenter(new OpenLayers.LonLat(9.7,49.8) // Center of the map
               .transform(
                 new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
                 new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
