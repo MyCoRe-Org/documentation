@@ -383,9 +383,7 @@
                 <a href="http://turfan-digital.staatsbibliothek-berlin.de/">
                   <img class="icon" alt="icon" src="map/icons/icon_berlin_sbb.png" />
                 </a>
-                <a href="http://turfan-digital.staatsbibliothek-berlin.de/">Turfan Handschriften der KOHD</a>
-             </div>
-             <div id="info-turfan" class="info" style="display:none">Projekt zur Einführung des Katalogprogrammes MyIHS</div>
+                <a href="http://turfan-digital.staatsbibliothek-berlin.de/">Die Berliner Turfansammlung</a>
              </div>
             <p>Staatsbibliothek zu Berlin</p>
           ]]>
@@ -402,7 +400,7 @@
                 <a href="http://openagrar.bmelv-forschung.de/">
                   <img class="icon" alt="icon" src="map/icons/icon_berlin_openagrar.png" />
                 </a>
-                <a href="http://openagrar.bmel-forschung.de">OpenAgrar (Publikationsserver)</a>
+                <a href="http://openagrar.bmel-forschung.de">Publikationsservers OpenAgrar</a>
             </div>
             <p>Bundesministerium für Ernährung und Landwirtschaft (BMEL)</p>
           ]]>
@@ -470,8 +468,8 @@
       <name>Dokumentenserver der TU-Clausthal</name>
       <description><![CDATA[
             <div class="mcrmap_item">
-                <a href="http://esx-171.gbv.de/clausthal/"><img class="icon" alt="icon" src="map/icons/icon_clausthal_tu.png" /></a>
-                <a href="http://esx-171.gbv.de/clausthal/">Dokumentenserver</a>
+                <a href="https://dokumente.ub.tu-clausthal.de/"><img class="icon" alt="icon" src="map/icons/icon_clausthal_tu.png" /></a>
+                <a href="https://dokumente.ub.tu-clausthal.de/">Dokumentenserver</a>
             </div>
             <p>Technische Universität Clausthal (Universitätsbibliothek)</p>
           ]]>
@@ -1089,6 +1087,25 @@
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
       <Point>
         <coordinates>8.252253,50.071001</coordinates>
+      </Point>
+    </Placemark>
+
+<!-- ***************************************************************************************************************** -->
+<!-- Venedig                                                                                                         -->
+<!-- ***************************************************************************************************************** -->
+    <Placemark>
+      <name>DSZV-Dokumentenserver</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://www.dszv.it/dszv/content/main/index.xml" title="Link zum Dokumentenserver des DSZV"><img class="icon" alt="icon" src="map/icons/icon_venedig_dszv.png" /></a>
+                <a href="http://www.dszv.it/dszv/content/main/index.xml" title="Link zum Dokumentenserver des DSZV">Der Dokumentenserver des Deutschen Studienzentrums in Venedig</a>
+            </div>
+            <p>Deutschen Studienzentrums in Venedig (DSZV)</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>12.329348,45.436260</coordinates>
       </Point>
     </Placemark>
 

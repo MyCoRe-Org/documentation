@@ -51,7 +51,7 @@
         <map:select type="exists">
           <map:when test="{properties:content}{1}.html">
             <map:read src="{properties:content}{1}.html" mime-type="text/html"/>
-<!--
+        <!--
           Use this instead if you want JTidy to clean up your HTML
           <map:generate type="html" src="{properties:content}/{0}" />
           <map:serialize type="html"/>
