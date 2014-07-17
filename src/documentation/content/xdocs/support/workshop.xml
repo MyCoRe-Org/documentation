@@ -4,30 +4,31 @@
 <document>
   <header>
     <title>MyCoRe-Workshop 2014</title>
-    <abstract>Der diesjährige Anwenderworkshop findet voraussichtlich in der 46. Kalenderwoche im November statt. Genaue
-    Informationen zu Ort und Zeit, sowie die Agenda werden rechtzeitig an dieser Stelle bekannt gegeben.</abstract>
   </header>
 <body>
 
-<!-- <section> -->
-<!-- <title>Ankündigung</title> -->
+<section>
+<title>Ankündigung</title>
+  <p>Der diesjährige Anwenderworkshop findet am 12. November in Braunschweig statt. <br/>
+	 Am <strong>Mittwoch, dem 12.11.2014</strong> sind wir zu Gast an der <a title="Universitätsbibliothek der TU Braunschweig" href="http://www.biblio.tu-bs.de/ueberuns/anfahrt.html">Universitätsbibliothek der TU Braunschweig</a>.<br/>
+	 
+     Ziel des eintägigen Workshops ist es, einen Erfahrungsaustausch zwischen den MyCoRe-Anwendern und Interessierten zu
+     ermöglichen. Auch wird es Gelegenheit für Fragen an die Entwickler geben. </p>
+  <p> 
+     Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben.
+     Anregungen und Vorschläge können auf der <strong><a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a></strong> im MyCoRe-Wiki eingetragen werden. </p>
+  <p> 	 
+	 Wir empfehlen bereits am 11. November anzureisen: am Dienstabend treffen wir uns mit den Entwicklern zum zwanglosen Austausch. Auch am Abend des 12. November planen wir einen gemeinsamen Abend zum Ausklang des Workshoptages ein.
+	 Weitere Informationen folgen in Kürze.
+   </p>
 
-   <!--
-<p>Der MyCoRe-User-Workshop findet dieses Jahr in Leizig statt.
-   An zwei halben Tagen &#8211; Mittwochnachmittag, dem 13.11. und Donnerstagvormittag,
-   dem 14.11. &#8211; sind wir zu Gast an der Universität Leipzig.
-   Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen den MyCoRe-Anwendern und Interessierten zu
-   ermöglichen und Gelegenheit für Fragen an die Entwickler zu bieten. <br/>
-   Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben.
-   Anregungen und Vorschläge können im MyCoRe-Wiki auf der
-   <a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a> eingetragen werden.
-</p>
- <p>
+<!--   
+<p>
   Hier können Sie sich für den Workshop <a href="http://www.mycore.de:8291/content/below/workshop.xed?XSL.template.SESSION=template_mycore-de"><strong style="color:darkred;">anmelden!</strong></a>
-</p>
+</p> 
 
 <p><strong>Weitere Informationen</strong></p>
-  <p>   Die Agenda des Workshops kann im <a title="MyCoRe-Wiki Workshop 2013 Agenda" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013" >Wiki</a> eingesehen werden.
+  <p>   Die Agenda des Workshops kann im <a title="MyCoRe-Wiki Workshop 2014 Agenda" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014" >Wiki</a> eingesehen werden.
   Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
 
 <p>
@@ -40,7 +41,7 @@
 </p>
 <p class="fett">Siehe <a title="Ortsbeschreibung im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2013#Ort:_Leipzig">Ortsbeschreibung im Wiki</a>.</p>
 -->
-<!-- </section> -->
+</section>
 
 <!--
 <p><strong>Hotelinformationen</strong></p>
