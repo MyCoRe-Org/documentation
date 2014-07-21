@@ -14,12 +14,12 @@
 
   <p>
     Nach der Einführung von Solr als Alternative zu Lucene 2013, enthält das diesjährige
-    LTS-Release 2014.06 keine Lucene-Unterstützung mehr. Diese würde ausgegliedert, womit es weiterhin möglich
+    LTS-Release 2014.06 keine Lucene-Unterstützung mehr. Diese wurde ausgegliedert, so dass es weiterhin möglich
     ist, auf Lucene laufende Anwendungen mit dem aktuellen MyCoRe zu betreiben. Weitere Informationen dazu
     finden Sie im <a href="site:migrate2014.06">Abschnitt zur Migration</a>.
   </p>
   <p>
-    Ebenfalls abgelöst wurde das alte WCMS, durch eine deutlich flexiblere Lösung. Diese bietet nicht nur
+    Außerdem wurde das alte WCMS durch eine deutlich flexiblere Lösung abgelöst. Diese bietet nicht nur
     umfangreiche Unterstützung der Mehrsprachigkeit, sondern auch die Möglichkeit verschiedenste Menübäume
     zu definieren.
   </p>
