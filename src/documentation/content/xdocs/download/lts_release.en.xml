@@ -15,7 +15,18 @@
     language you want to highlight
     -->
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-
+  <p>
+    After the introduction of Solr as an alternative to Lucene 2013, this year's 
+	LTS Release 2014.06 doesn't contain Lucene support anymore. 
+	Since Lucene support is only excluded, it is still possible to operate 
+	on Lucene running applications with the current MyCoRe. 
+	For more information, see the <a href="site:migrate2014.06">section on migration</a>.
+  </p>
+  <p>
+    The old WCMS has also been replaced by a much more flexible solution. 
+	This provides extensive support of multilingualism and the possibility 
+	to define a wide variety of menu trees.
+  </p>
   <p>
     You can find an overview of all innovations on the documentation site
     <a href="site:whats_new">"Was ist neu?"</a>. A detailed list of changes
