@@ -21,11 +21,14 @@
         Freie Universität Berlin (Universitätsbibliothek)
         <ul>
           <li>
-            Dokumenten- und Publikationsserver
-            (<a href="http://edocs.fu-berlin.de"
-              title="Dokumentenserver der Freien Universität Berlin">eTDs</a>,
-            <a href="http://www.diss.fu-berlin.de/"
-              title="Link zum Dissertationsserver der Freien Universität Berlin">Dissertationsserver</a>)
+            <a href="http://edocs.fu-berlin.de"
+              title="Dokumentenserver der Freien Universität Berlin">Dokumentenserver</a>
+          </li>
+          <li>
+            <a href="http://www.diss.fu-berlin.de/" title="Link zum Dissertationsserver 
+            der Freien Universität Berlin">Dissertationsserver</a> 
+            <em>(<a href="http://www.dini.de/dini-zertifikat" 
+            title="link to DINI certificate">DINI-zertifiziert</a>)</em>
           </li>
         </ul>
       </dd>
@@ -66,7 +69,8 @@
           <li>
             Dokumenten- und Publikationsserver
             <a href="http://duepublico.uni-duisburg-essen.de/" title="DuEPublico Duisburg-Essen Publications Online"
-              >DuEPublico</a>,
+              >DuEPublico</a> <em>(<a href="http://www.dini.de/dini-zertifikat"
+              title="link to DINI certificate">DINI-zertifiziert</a>)</em>,
             in Nachfolge der fusionierten Server miless (Essen) und DuetT
             (Duisburg): Open Access E-Publikationen, E-Dissertationen, Lehr- und Lernmaterial,
             Semesterapparate, Videos, Universitätsbibliographie
@@ -107,10 +111,12 @@
           <li>
             Die
             <a href="http://semapp.ub.uni-giessen.de/semapp/" title="Link zur Gießener Elektronischen Bibliothek">Gießener
-              Elektronischen Bibliothek</a>
+              Elektronische Bibliothek</a>
             enthält elektronische Semesterapparate und andere Lehrmaterialien
             im Volltext, insbesondere auch multimediale Lehrmaterialien
-            wie Audio- und Videomaterial in verschiedenen Formaten.
+            wie Audio- und Videomaterial in verschiedenen Formaten. 
+            Der <a href="http://geb.uni-giessen.de/geb/" 
+            title="Link zum Gießener Hochschulschriftenserver">Gießener Hochschulschriftenserver</a> ist <em>DINI-zertifiziert</em>.
           </li>
         </ul>
       </dd>
@@ -159,7 +165,8 @@
           <li>
             <a href="http://www.db-thueringen.de/" title="dbt Digitale Bibliothek Thüringen">Digitale
               Bibliothek Thüringen</a>
-            Multimedialer Dokumentenserver der Thüringer Hochschulen
+            Multimedialer Dokumentenserver der Thüringer Hochschulen <em>(<a href="http://www.dini.de/dini-zertifikat"
+              title="link to DINI certificate">DINI-zertifiziert</a>)</em>
           </li>
         </ul>
       </dd>
@@ -170,9 +177,10 @@
         Christian-Albrechts-Universität (Rechenzentrum, Bibliothek)
         <ul>
           <li>
-            <a href="http://eldiss.uni-kiel.de"
-              title="MACAU Multimedialer Archivserver der Christian-Albrechts-Universität">MACAU/ElDiss</a>
-            Online-Dissertationen
+            <a href="http://macau.uni-kiel.de/"
+              title="MACAU Multimedialer Archivserver der Christian-Albrechts-Universität">MACAU</a>,
+            Multimedialer Archiv- und Publikationsserver <em>(<a href="http://www.dini.de/dini-zertifikat"
+              title="link to DINI certificate">DINI-zertifiziert</a>)</em>
           </li>
         </ul>
       </dd>
