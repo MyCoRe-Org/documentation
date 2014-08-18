@@ -467,4 +467,7 @@ a:hover.sphereLink {
     ul.minitoc ul.minitoc li {
         margin-left: 20px;
         }
+    .label-info {
+      background-color: rgba(210, 157, 77, 1);
+    }
 }

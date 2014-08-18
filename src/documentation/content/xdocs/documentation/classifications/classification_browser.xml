@@ -26,15 +26,30 @@
       soll, muss eine Seite im content-Verzeichnis angelegt werden (siehe z.B. im docportal-Modul unter
       <code>web/content/main/classifications</code>).
     </p>
-    <h4>Beispiel für Browsen nach Einrichtung</h4>
-    <p>
-      Der Klassifikationsbrowser für die Klassifikation Dokumente nach Einrichtung (z.B. bei einer lokalen
-      Beispiel-Installation) kann dann durch folgende URL aufgerufen werden:
-    </p>
-    <pre class="brush: shell; gutter: false;">http://localhost:8291/content/main/classifications/origin.xml</pre>
-    <p>
-      Dabei wird das XML-Tag <code>&lt;classificationbrowser&gt;</code> inkl. seiner Attribute über das XSLT-Stylesheet
-      <code>classificationBrowser.xsl</code> ausgewertet. Folgende Attribute sind möglich:
+
+    <section>
+      <title>Konfiguration</title>
+      <p>
+        Seit <span class="label label-info">2013.06</span> kann man je nach Index zwischen zwei Klassifikationsbrowsern unterscheiden. Mit Hilfe des Properties
+        <code>MCR.classbrowser.Servlet</code> kann man angeben, auf welchen Index beruhend der Klassifikationsbrowser arbeiten soll.
+        Folgende Werte sind möglich:
+      </p>
+      <pre class="brush: xml;"><![CDATA[
+  MCR.classbrowser.Servlet=ClassificationBrowser       # Lucene - Standardeinstellung in 2013.06
+  MCR.classbrowser.Servlet=ClassificationBrowserSolr   # Solr
+      ]]></pre>
+      <p>
+        In <span class="label label-info">2014.06</span> wird mit <code>MCR.classbrowser.Servlet=ClassificationBrowser</code> der Solr-Klassifikationsbrowser
+        genutzt.
+      </p>
+      <p>
+        Der Klassifikationsbrowser selbst wird über die Komponente mycore-classbrowser eingebunden und steht dann zur Verfügung.
+        Die Komponente ist Teil von mycore-complete.
+      </p>
+      <p>
+        Der Browser kann in jede MyCoRe-Webpage unter Angabe des xml-Tags <code>&lt;classificationbrowser&gt;</code>
+        eingebunden werden. Dabei wird das XML-Tag inkl. seiner Attribute über das XSLT-Stylesheet <code>classificationBrowser.xsl</code>
+        ausgewertet. Folgende Attribute sind möglich:
     </p>
     <pre class="brush: xml;"><![CDATA[
   <classificationbrowser
@@ -44,6 +59,7 @@
     objecttype="{MCRObject type, optional}"
     field="{search field for category queries in this classification}"
     restriction="{additional query expression}"
+    filterCategory="{true|false, if true join returnId to id, ignored with lucene, default true}"
     parameters="{additional MCRSearchServlet parameters}"
     addParameter="{any additional request parameters to forward to classification browser servlet}"
     countresults="{true|false, default false, whether to execute queries to count results}"
@@ -51,9 +67,18 @@
     emptyleaves="{true|false, when false and counting activated, skip empty leaves}"
     adduri="{true|false, whether to include URI from classification data}"
     adddescription="{true|false, whether to include description from category label}"
+    addclassid="{true|false, adds classification ID to category, default false}"
     class="{CSS class, default is 'classificationBrowser'}"
     style="{XSL.Style to use, default is classificationBrowserData.xsl}"
   />]]></pre>
+    </section>
+    <section>
+      <title>Beispiel für Browsen nach Einrichtung</title>
+    <p>
+      Der Klassifikationsbrowser für die Klassifikation Dokumente nach Einrichtung (z.B. bei einer lokalen
+      Beispiel-Installation) kann dann durch folgende URL aufgerufen werden:
+    </p>
+    <pre class="brush: shell; gutter: false;">http://localhost:8291/content/main/classifications/origin.xml</pre>
     <p>
       Für das im docportal-Modul enthaltene Beispiel der Einrichtungen wurde die folgende Konfiguration verwendet:
     </p>
@@ -66,7 +91,6 @@
     parameters="numPerPage=10"
     style="docportal"
   />]]></pre>
-
   <p>
     Da diese Konfiguration direkt als XML im section-Tag der Seitenspezifikation stattfindet, kann
     der Klassifikationsbrowser in beliebigen Seitenkontext eingebunden werden und muss nicht, wie im
@@ -84,7 +108,7 @@
     <img src="images/klassifikationsbrowser.png" alt="Klassifikationsbrowser" style="margin:5px;padding:10px;border:1px solid gray;" /><br />
     <span class="klein"><strong>Abbildung 2.14.1:</strong> Klassifikationsbrowser in einer MyCoRe-Anwendung</span>
   </div>
-  
+  </section>
   <section>
     <title>Die Parameter im Detail</title>
     <h4>classification="{ClassificationID}"</h4>
@@ -197,6 +221,12 @@
       Es wird das origin-Suchfeld als Suchparameter genutzt.
     </p>
 
+    <h4>filterCategory="{true|false}" <span class="label label-info">2013.06</span></h4>
+    <p>
+      Dieser Parameter wird intern genutzt, um die von Solr zurückgegebene ID (returnId) mit der Id zu
+      verknüpfen (join). Funktioniert nur mit Solr, wird bei Solr ignoriert.
+    </p>
+
     <h4>adddescription="{true|false}"</h4>
     <p>
       Die Beschreibung, die optional beim Erstellen der Klassifikation für Kategorien angegeben sein können, werden
@@ -206,7 +236,22 @@
     <pre class="brush: shell; gutter: false;">
   Beispiel:
 
-  adddescription="true"
+  addclassid="true"
+    </pre>
+
+    <h4>addclassid="{true|false}" <span class="label label-info">2013.06</span></h4>
+    <p>
+      Mit Solr stehen nun die Suchfelder category bzw. category.top zur Verfügung, in denen jeweils die Klassifikationen
+      indiziert sind. Somit kann unter Angabe "KlassifikationsID:KategorieID" auf eine Klassifikation zugegriffen werden,
+      ohne sie explizit zu indizieren. Damit der Klassifikationsbrowser damit umgehen kann, muss in diesem Fall das Attribut
+      addclassid auf "true" gesetzt werden.
+    </p>
+    <pre class="brush: shell; gutter: false;">
+  Beispiel:
+
+ classification="bmelv_genres"
+          field="category.top"
+     addclassid="true"
     </pre>
 
   </section>
