@@ -39,12 +39,11 @@
   MCR.classbrowser.Servlet=ClassificationBrowserSolr   # Solr
       ]]></pre>
       <p>
-        In <span class="label label-info">2014.06</span> wird mit <code>MCR.classbrowser.Servlet=ClassificationBrowser</code> der Solr-Klassifikationsbrowser
-        genutzt.
+        In <span class="label label-info">2014.06</span> ist diese Unterscheidung via Property nicht mehr notwendig.
       </p>
       <p>
-        Der Klassifikationsbrowser selbst wird über die Komponente mycore-classbrowser eingebunden und steht dann zur Verfügung.
-        Die Komponente ist Teil von mycore-complete.
+        Der Klassifikationsbrowser selbst mittels der Komponente <code>mycore-classbrowser</code> eingebunden und steht
+        dann zur Verfügung. Nutzt man <code>mycore-complete</code>, hat man ebenfalls Zugriff auf den Klassifikationsbrowser.
       </p>
       <p>
         Der Browser kann in jede MyCoRe-Webpage unter Angabe des xml-Tags <code>&lt;classificationbrowser&gt;</code>
