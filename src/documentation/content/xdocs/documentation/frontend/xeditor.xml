@@ -597,7 +597,7 @@ im bearbeiteten XML Dokument liegen, die Bezeichnungen aber in der Klassifikatio
 <p>Syntax:</p>
 <pre class="brush: xml"><![CDATA[<xed:cancel url="..." />]]></pre>
 <p>Beispiel:</p>
-<pre class="brush: xml"><![CDATA[<xed:cancel url="receive/{$id}" />]]></pre>
+<pre class="brush: xml"><![CDATA[<xed:cancel url="/receive/{$id}" />]]></pre>
 
 <p>Definiert die URL, zu der bei Abbruch zurückgekehrt werden soll, z. B. bei Betätigen eines Abbrechen-Buttons, um die Bearbeitung aus dem Formular heraus abzubrechen.</p>
 
@@ -606,7 +606,7 @@ im bearbeiteten XML Dokument liegen, die Bezeichnungen aber in der Klassifikatio
 <p>Das Attribut @url kann optional ein oder mehrere Variablen enthalten, die bei Aufruf des Formulars durch Parameter ersetzt werden. Variablen stehen in geschweiften Klammern und
 beginnen mit einem $ Zeichen, z. B.</p>
 
-<pre class="brush: xml"><![CDATA[<xed:cancel url="receive/{$id}" />]]></pre>
+<pre class="brush: xml"><![CDATA[<xed:cancel url="/receive/{$id}" />]]></pre>
 
 <p>Die Variablen werden bei Aufruf des Formulars durch den konkreten Wert ersetzt, wobei als Quelle die HTTP Request Parameter aus der URL des Aufrufs, Konfigurationswerte aus
 mycore.properties oder Werte aus der MCRSession verwendet werden können. </p>
@@ -617,11 +617,11 @@ Zielseiten zurückkehren.</p>
 
 <p>Beispiel:</p>
 
-<pre class="brush: xml"><![CDATA[<xed:cancel url="receive/{$id}" />
-<xed:cancel url="index.xml" />]]></pre>
+<pre class="brush: xml"><![CDATA[<xed:cancel url="/receive/{$id}" />
+<xed:cancel url="/index.xml" />]]></pre>
 
 <ul>
-<li>Wenn das Formular mit [Seite].xed?id=DocPortal_document_07910403 aufgerufen wird, wird bei Abbruch zur Seite receive/DocPortal_document_07910403 zurückgekehrt.</li>
+<li>Wenn das Formular mit [Seite].xed?id=DocPortal_document_07910403 aufgerufen wird, wird bei Abbruch zur Seite /receive/DocPortal_document_07910403 zurückgekehrt.</li>
 <li>Wenn das Formular ohne Parameter aufgerufen wird, wird zur Seite index.xml zurückgekehrt.</li>
 </ul>
 <p>Es wäre auch denkbar, die komplette URL als Parameter zu übergeben. Davon kann nur abgeraten werden, da es die Aufruf-URLs unnötig lang macht,
