@@ -595,13 +595,21 @@ im bearbeiteten XML Dokument liegen, die Bezeichnungen aber in der Klassifikatio
 <section>
     <title>Abbruch-URL definieren: <code>&lt;xed:cancel /&gt;</code></title>
 <p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[<xed:cancel url="..." />]]></pre>
-<p>Beispiel:</p>
-<pre class="brush: xml"><![CDATA[<xed:cancel url="/receive/{$id}" />]]></pre>
+  <pre class="brush: xml"><![CDATA[<xed:cancel url="..." />]]></pre>
+  <p>Beispiel:</p>
+  <pre class="brush: xml"><![CDATA[<xed:cancel url="/receive/{$id}" />]]></pre>
 
 <p>Definiert die URL, zu der bei Abbruch zurückgekehrt werden soll, z. B. bei Betätigen eines Abbrechen-Buttons, um die Bearbeitung aus dem Formular heraus abzubrechen.</p>
 
-<p><code>&lt;xed:cancel /&gt;</code> sollte angegeben werden, wenn das Formular einen Abbrechen-Button enthält. Die URL wird relative zur Wurzel der Webapplikation angegeben.</p>
+<p><code>&lt;xed:cancel /&gt;</code> sollte angegeben werden, wenn das Formular einen Abbrechen-Button enthält.
+</p>
+
+<ul>
+  <li>Wenn eine relative URL angegeben ist, wird diese als relativ zu der Seite interpretiert, die das Formular enthält.</li>
+  <li>Wenn ein absoluter Pfad angegeben ist, wird dieser als relativ zur Basis-URL der Webanwendung interpretiert.</li>
+  <li>Wenn eine vollständige URL angegeben ist, wird diese unverändert verwendet.</li>
+  <li>Wenn keine URL angegeben ist, wird zur Basis-URL der Webanwendung geleitet.</li>
+</ul>
 
 <p>Das Attribut @url kann optional ein oder mehrere Variablen enthalten, die bei Aufruf des Formulars durch Parameter ersetzt werden. Variablen stehen in geschweiften Klammern und
 beginnen mit einem $ Zeichen, z. B.</p>
