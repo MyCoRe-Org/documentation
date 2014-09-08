@@ -899,7 +899,7 @@ könnte z. B. auch ein placeholder gesetzt oder anderes HTML generiert werden. B
 <p>Cleanup-Rules sind Bereinigunsregeln, die logisch leere XML-Elemente oder -Attribute vor Übergabe an das Zielservlet aus dem resultierenden XML herauslöschen.
 Das Attribut @xpath gibt in Form eines XPath-Ausdruckes an, auf welche Elemente oder Attribute sich die Regel bezieht.
 Das Attribut @relevant-if gibt in Form eines XPath-Tests an, unter welchen Bedingungen diese XML-Knoten als relevant erachtet werden.</p>
-<p>Sofern keine weiteren Cleanup-Rules definiert sind, gelten die folgenden Standard-Regeln:</p>
+<p>Es gelten die folgenden Standard-Regeln:</p>
 
 <pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//@*" relevant-if="string-length(.) &gt; 0" />
 <xed:cleanup-rule xpath="//*" relevant-if="@* or * or (string-length(text()) &gt; 0)" />
@@ -907,7 +907,7 @@ Das Attribut @relevant-if gibt in Form eines XPath-Tests an, unter welchen Bedin
 
 <p>Die Standard-Regeln entfernen leere Attribute und Elemente aus dem resultierenden XML-Dokument. Ein Element ist leer, wenn es keine Kindelemente, keine Attribute und keinen Text enthält.
 Ausnahmen bilden die <code>&lt;structure /&gt;</code> und <code>&lt;service /&gt;</code> Elemente eines MyCoRe-Objektes, die immer -auch leer- erhalten bleiben, um den Vorgaben des XML-Schemas zu entsprechen.
-Diese Regeln lassen sich durch eigene Regeln ergänzen oder überschreiben.</p>
+Diese Regeln lassen sich durch eigene Regeln ergänzen oder auch ganz oder teilweise überschreiben. Die Regeln werden in der Reihenfolge der Deklaration angewandt, d.h. die zuletzt angegebene Regel "gewinnt"".</p>
 
 <p>Beispiel (Suchmaske):</p>
 
