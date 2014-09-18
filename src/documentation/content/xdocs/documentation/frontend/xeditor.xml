@@ -457,6 +457,32 @@ setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als 
 
 </section>
 
+<section>
+  <title>IDs generieren</title>
+
+  <p>
+    Über die Funktion <code>xed:generate-id()</code> kann eine eindeutige ID für den gerade via <code>xed:bind / xed:repeat</code> ausgewählten XML-Knoten generiert werden.
+    Diese IDs benötigt man, um im HTML Quellcode z. B. eindeutige Referenzen für die zugehörigen Labels zu haben.
+  </p>  
+
+  <p>Syntax:</p>
+  <pre class="brush: xml"><![CDATA[xed:generate-id([XPath])]]></pre>
+  
+  <p>
+    Im folgenden Beispiel wird für jede Wiederholung des Eingabefeldes für mods:namePart eine eindeutige ID generiert:
+  </p>
+  <pre class="brush: xml"><![CDATA[<xed:repeat xpath="mods:name[@type='personal']" min="2">
+  <div>
+    <xed:bind xpath="mods:namePart[@type='given']">
+      <label for="{xed:generate-id()}">Vorname:</label>
+      <input type="text" id="{xed:generate-id()}" />
+    </xed:bind />
+    ...
+  </div>
+</xed:repeat>]]></pre>
+  
+</section>
+
 </section>
 
 <section>
@@ -1102,6 +1128,40 @@ sollte @static nicht gesetzt sein.</p>
         <xed:output value="dateToPublished" />
   </xed:otherwise>
 </xed:choose>]]></pre>
+</section>
+
+<section>
+  <title>Java-Aufrufe in XPath-Ausdrücken</title>
+
+  <p>
+    Über die Funktion <code>xed:call-java()</code> können statische, externe Java-Methoden aufgerufen werden. Als Parameter können dabei auch Variabeln
+    aus Request Parametern oder Knoten aus dem gerade bearbeiteten XML-Dokument übergeben werden.
+  </p>  
+
+  <p>Syntax:</p>
+  <pre class="brush: xml"><![CDATA[xed:call-java('Klasse','Methode'[,Parameter...])]]></pre>
+  
+  <p>
+    Ein solcher Java-Aufruf kann z. B. verwendet werden, um Teile eines Formulars abhängig von der Rolle des aktuell angemeldeten Benutzers anzuzeigen oder zu verbergen.
+    Administratoren könnten z. B. andere oder komplexere Such- und Eingabefelder verwenden als andere Benutzer. Beispiel:
+  </p>
+  <pre class="brush: xml"><![CDATA[<xed:if test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admins')")>
+  Dieser Teil des Formulars ist nur für Administratoren sichtbar!
+</xed:if>]]></pre>
+  
+  <p>
+    Hier ein Beispiel für einen Aufruf mit Parametern und der dazugehörigen Implementierung in Java. XPath-Ausdrücke geben in der Regel einen Menge von Elementen zurück, auch wenn
+    der konkrete Ausdruck nur ein einzelnes Element selektiert. Der XEditor versucht analog zum Überladen von Methoden die am besten passende Methode zu selektieren.
+  </p>
+  <pre class="brush: xml"><![CDATA[<xed:output xpath="xed:call-java('Checker','isValid',mods:identifier[@type='issn'])" />]]></pre>
+  <pre class="brush: java"><![CDATA[public class Checker {
+
+  /* Dummy */
+  public static String isValid( List<Element> nodes ) {
+    return "The ID you gave me is valid. Have a nice day."; 
+  }
+}]]></pre>
+  
 </section>
 
 </section>
