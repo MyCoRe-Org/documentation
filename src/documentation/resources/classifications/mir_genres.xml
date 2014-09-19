@@ -5,133 +5,175 @@
   <label xml:lang="de" text="Genre" description="Liste der Publikationsarten" />
   <label xml:lang="x-uri" text="http://www.mycore.org/classifications/mir_genres" />
   <categories>
-    <category ID="series">
-      <label xml:lang="en" text="series" />
-      <label xml:lang="de" text="Serie" />
-    </category>
-    <category ID="journal">
-      <label xml:lang="en" text="journal" />
-      <label xml:lang="de" text="Zeitschrift" />
-    </category>
     <category ID="article">
-      <label xml:lang="en" text="article" />
-      <label xml:lang="de" text="Zeitschriftenaufsatz" />
-    </category>
-    <category ID="book">
-      <label xml:lang="en" text="book" />
-      <label xml:lang="de" text="Buch" />
-    </category>
-    <category ID="chapter">
-      <label xml:lang="en" text="book chapter" />
-      <label xml:lang="de" text="Buchkapitel" />
-    </category>
-    <category ID="confpro">
-      <label xml:lang="en" text="Conference Proceeding" />
-      <label xml:lang="de" text="Konferenzband" />
-    </category>
-    <category ID="confpub">
-      <label xml:lang="en" text="Conference Publication" />
-      <label xml:lang="de" text="Konferenzbeitrag" />
-      <category ID="confpubposter">
-        <label xml:lang="en" text="Poster" />
-        <label xml:lang="de" text="Poster" />
+      <label xml:lang="de" text="Artikel / Aufsatz" />
+      <label xml:lang="en" text="article / chapter" />
+      <label xml:lang="x-hosts" text="journal newspaper collection festschrift proceedings standalone" />
+      <category ID="chapter">
+        <label xml:lang="en" text="book chapter" />
+        <label xml:lang="de" text="Buchkapitel" />
+        <label xml:lang="x-hosts" text="monograph book collection" />   <!-- Wollen wir das weiterhin explizit aufführen, oder soll das im "Aufsatz/Artikel" aufgehen? -->
       </category>
-      <category ID="confpubpres">
-        <label xml:lang="en" text="Presentation" />
+      <category ID="entry">
+        <label xml:lang="en" text="encyclopedia entry" />
+        <label xml:lang="de" text="Lexikoneintrag" />
+        <label xml:lang="x-hosts" text="lexicon" />   <!-- Ausgabe: Lexikoneintrag -->
+      </category>
+      <category ID="preface">
+        <label xml:lang="en" text="preface (foreword) / postface" />
+        <label xml:lang="de" text="Vorwort / Nachwort" />
+        <label xml:lang="x-hosts" text="journal collection festschrift proceedings lexicon" />
+      </category>
+      <category ID="speech">
+        <label xml:lang="en" text="Lecture / Speech" />
         <label xml:lang="de" text="Vortrag" />
+        <label xml:lang="x-hosts" text="proceedings standalone" />
       </category>
-      <category ID="confpubatt">
-        <label xml:lang="en" text="Attachment" />
-        <label xml:lang="de" text="Aufsatz" />
+      <category ID="review">
+        <label xml:lang="en" text="Review" />
+        <label xml:lang="de" text="Rezension" />
+        <label xml:lang="x-hosts" text="journal newspaper collection festschrift proceedings standalone" />
       </category>
     </category>
-    <category ID="thesis">
-      <label xml:lang="en" text="Thesis" />
-      <label xml:lang="de" text="Hochschulschrift" />
+    <category ID="monograph">
+      <label xml:lang="de" text="Monographie" />
+      <label xml:lang="en" text="Monograph" />
+      <label xml:lang="x-hosts" text="series standalone" />
+      <category ID="book">
+        <label xml:lang="de" text="Buch" />
+        <label xml:lang="en" text="Book" />
+        <label xml:lang="x-hosts" text="series standalone" />
+      </category>
+      <category ID="dissertation">
+        <label xml:lang="de" text="Dissertation" />
+        <label xml:lang="en" text="Dissertation" />
+        <label xml:lang="x-hosts" text="series standalone" />
+      </category>
+      <category ID="habilitation">
+        <label xml:lang="de" text="Habilitation" />
+        <label xml:lang="en" text="Habilitation" />
+        <label xml:lang="x-hosts" text="series standalone" />
+      </category>
       <category ID="diploma_thesis">
         <label xml:lang="en" text="Diploma Thesis" />
         <label xml:lang="de" text="Diplomarbeit" />
+        <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="master_thesis">
         <label xml:lang="en" text="Master Thesis" />
         <label xml:lang="de" text="Abschlussarbeit (Master)" />
+        <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="bachelor_thesis">
         <label xml:lang="en" text="Bachelor Thesis" />
         <label xml:lang="de" text="Abschlussarbeit (Bachelor)" />
+        <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="student_resarch_project">
         <label xml:lang="en" text="Student Research Project" />
         <label xml:lang="de" text="Studienarbeit" />
-      </category>
-      <category ID="dissertation">
-        <label xml:lang="en" text="Dissertation" />
-        <label xml:lang="de" text="Dissertation" />
-      </category>
-      <category ID="habilitation">
-        <label xml:lang="en" text="Habilitation" />
-        <label xml:lang="de" text="Habilitation" />
+        <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="magister_thesis">
         <label xml:lang="en" text="Magister Thesis" />
         <label xml:lang="de" text="Magisterarbeit" />
+        <label xml:lang="x-hosts" text="series standalone" />
       </category>
     </category>
-    <category ID="av">
-      <label xml:lang="en" text="Audio/Video Media" />
-      <label xml:lang="de" text="Audio/Video Medium" />
-      <category ID="picture">
-        <label xml:lang="en" text="Picture" />
-        <label xml:lang="de" text="Bild" />
+    <category ID="collection">
+      <label xml:lang="en" text="Collection" />
+      <label xml:lang="de" text="Sammelwerk" />
+      <label xml:lang="x-hosts" text="series standalone" />
+      <category ID="festschrift">
+        <label xml:lang="en" text="Festschrift" />
+        <label xml:lang="de" text="Festschrift" />
+        <label xml:lang="x-hosts" text="series standalone" />
       </category>
-      <category ID="film">
-        <label xml:lang="en" text="Film" />
-        <label xml:lang="de" text="Film" />
+      <category ID="proceedings">
+        <label xml:lang="en" text="Proceedings" />
+        <label xml:lang="de" text="Tagungsband" />
+        <label xml:lang="x-hosts" text="series standalone" />
       </category>
-      <category ID="filmstrip">
-        <label xml:lang="en" text="Filmstrip" />
-        <label xml:lang="de" text="Filmstreifen" />
-      </category>
-      <category ID="audiorec">
-        <label xml:lang="en" text="Audio Recording" />
-        <label xml:lang="de" text="Tonaufnahme" />
-      </category>
-      <category ID="videorec">
-        <label xml:lang="en" text="Video Recording" />
-        <label xml:lang="de" text="Videoaufnahme" />
-      </category>
-      <category ID="tvBroadcast">
-        <label xml:lang="en" text="TV Broadcast" />
-        <label xml:lang="de" text="Fernsehsendung" />
-      </category>
-      <category ID="radioBroadcast">
-        <label xml:lang="en" text="Radio Broadcast" />
-        <label xml:lang="de" text="Radiosendung" />
+      <category ID="lexicon">
+        <label xml:lang="en" text="Lexicon" />
+        <label xml:lang="de" text="Lexikon" />
+        <label xml:lang="x-hosts" text="series standalone" />
       </category>
     </category>
     <category ID="report">
       <label xml:lang="de" text="Report" />
       <label xml:lang="en" text="Report" />
+      <label xml:lang="x-hosts" text="standalone" />
       <category ID="research_results">
         <label xml:lang="en" text="Research Results" />
         <label xml:lang="de" text="Forschungsergebnisse" />
+        <label xml:lang="x-hosts" text="standalone" />
       </category>
       <category ID="in_house">
         <label xml:lang="en" text="In House" />
         <label xml:lang="de" text="In House" />
+        <label xml:lang="x-hosts" text="standalone" />
       </category>
       <category ID="press_release">
         <label xml:lang="en" text="Press Release" />
         <label xml:lang="de" text="Presseerklärung" />
-      </category>
-      <category ID="poster">
-        <label xml:lang="en" text="Poster" />
-        <label xml:lang="de" text="Poster" />
+        <label xml:lang="x-hosts" text="standalone" />
       </category>
       <category ID="declaration">
         <label xml:lang="de" text="Fachliche Stellungnahme" />
         <label xml:lang="en" text="Professional Declaration" />
+        <label xml:lang="x-hosts" text="standalone" />
       </category>
+    </category>
+    <category ID="journal">
+      <label xml:lang="en" text="Journal" />
+      <label xml:lang="de" text="Zeitschrift" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="newspaper">
+      <label xml:lang="en" text="Newspaper" />
+      <label xml:lang="de" text="Zeitung" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="series">
+      <label xml:lang="en" text="Series" />
+      <label xml:lang="de" text="Serie" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="interview">
+      <label xml:lang="en" text="Interview" />
+      <label xml:lang="de" text="Interview" />
+      <label xml:lang="x-hosts" text="journal newspaper standalone" />
+    </category>
+    <category ID="patent">
+      <label xml:lang="en" text="Patent" />
+      <label xml:lang="de" text="Patent" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="poster">
+      <label xml:lang="en" text="Poster" />
+      <label xml:lang="de" text="Poster" />
+      <label xml:lang="x-hosts" text="proceedings standalone" />
+    </category>
+    <category ID="audio">
+      <label xml:lang="en" text="Audio file" />
+      <label xml:lang="de" text="Tondokument" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="video">
+      <label xml:lang="en" text="Movie / Video" />
+      <label xml:lang="de" text="Film / Video" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="picture">
+      <label xml:lang="en" text="Picture" />
+      <label xml:lang="de" text="Bild" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="broadcasting">
+      <label xml:lang="en" text="Broadcasting" />
+      <label xml:lang="de" text="Sendung" />
+      <label xml:lang="x-hosts" text="standalone" />
     </category>
   </categories>
 </mycoreclass>
