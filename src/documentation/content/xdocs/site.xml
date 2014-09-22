@@ -276,10 +276,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <indexbrowsing       label="Index-Blättern"    href="index.html" />
     </search>
     <frontend              label="Weboberfläche"     href="frontend/">
-      <integrated_wcms     label="Content Management">
-        <wcms2             label="WCMS2"                 href="index.html#wcms2" />
-        <wcms              label="WCMS"                  href="wcms.html" />
-      </integrated_wcms>
+      <integrated_wcms     label="Content Management"    href="wcms.html" />
       <multilang           label="Mehrsprachigkeit"      href="index.html#i18n" />
       <forms               label="Formulare">
         <xeditor           label="XEditor"               href="xeditor.html" />
@@ -356,9 +353,9 @@ See http://forrest.apache.org/docs/linking.html for more info
     <email      label="Mailing-Listen"     href="email.html" />
     <team       label="Team"               href="team.html" />
     <workshops  label="Workshops"          href="workshops/" >
-	  <workshop            label="Anwender-Workshop"          href="workshop.html" />
-	  <dbt-workshop        label="DBT-Workshop 2014"          href="dbt-workshop.html" />
-	</workshops>
+    <workshop            label="Anwender-Workshop"          href="workshop.html" />
+    <dbt-workshop        label="DBT-Workshop 2014"          href="dbt-workshop.html" />
+  </workshops>
     <bugs       label="Fehler melden"      href="http://sourceforge.net/p/mycore/bugs/" />
     <featurereq label="Feature Request"    href="http://sourceforge.net/p/mycore/feature-requests/" />
     <wiki       label="MyCoRe Wiki"        href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />

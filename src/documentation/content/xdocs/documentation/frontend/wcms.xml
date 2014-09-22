@@ -10,13 +10,21 @@
      <title>WCMS</title>
      <p>
        Seit <span class="label label-info">2014.06</span> steht eine neue Version des MyCoRe-eigenen WCMS
-       für die Bearbeitung von Webinhalten einer MyCoRe-Anwendung zur Verfügung.
+       für die Bearbeitung von Webinhalten einer MyCoRe-Anwendung zur Verfügung. Der Aufruf erfolgt über
+       <code>{$WebApplicationBaseURL}modules/wcms2/wcms2.xml?XSL.useMT=false</code>
      </p>
+     <img src="images/wcms2.png" alt="Startbildschirm WCMS" />
+     <p class="klein"><strong>Abbildung 1:</strong> Startbildschirm des MyCoRe-WCMS</p>
      <section>
        <title>Zugriffsrechte</title>
        <p>
-         Um das WCMS nutzen zu können, muss der entsprechende Nutzer bzw. die Gruppe das <code>POOLPRIVILIGE</code>
-         <code>use-wcms</code> besitzen.
+         Um das WCMS nutzen zu können, muss der entsprechende Nutzer bzw. die Gruppe das <code>POOLPRIVILEGE</code>
+         <code>use-wcms</code> besitzen. Weiterhin kann für jede einzelne Seite nochmals definiert werden, ob und von
+         wem diese bearbeitet werden darf.
+       </p>
+       <p>
+         Ist keine ACL definiert, darf nur der im System angelegte Superuser (typischer Weise der Nutzer "administrator")
+         das WCMS benutzen.
        </p>
      </section>
    </section>
