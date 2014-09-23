@@ -23,6 +23,8 @@
           <li>
             <a href="http://edocs.fu-berlin.de"
               title="Dokumentenserver der Freien Universität Berlin">Dokumentenserver</a>
+            <em>(<a href="http://www.dini.de/dini-zertifikat" 
+            title="link to DINI certificate">DINI-zertifiziert</a>)</em>
           </li>
           <li>
             <a href="http://www.diss.fu-berlin.de/" title="Link zum Dissertationsserver 
@@ -350,16 +352,8 @@
         Friedrich-Schiller-Universität Jena (Rechenzentrum, Bibliothek)
         <ul>
           <li>
-            <a href="http://archive.thulb.uni-jena.de/ThHStAW/" title="Link zum Thüringischen Hautstaatsarchivs Weimar">Thüringisches
-              Hautstaatsarchiv Weimar</a>
-          </li>
-          <li>
-            <a href="http://archive.thulb.uni-jena.de/saru/" title="Link zum Thüringisches Staatsarchiv Rudolstadt">Thüringisches
-              Staatsarchiv Rudolstadt</a>
-          </li>
-          <li>
-            <a href="http://archive.thulb.uni-jena.de/ThStAM/" title="Link zum Thüringisches Staatsarchiv Meiningen">Thüringisches
-              Staatsarchiv Meiningen</a>
+            <a href="http://archive.thulb.uni-jena.de/ThHStAW/" title="Link zum Digitalen Archiv der Thüringischen Staatsarchive">Digitales 
+              Archiv der Thüringischen Staatsarchive</a>
           </li>
           <li>
             <a href="http://archive.thulb.uni-jena.de/hisbest/" title="Link zu den Historischen Beständen">„Historische
@@ -510,7 +504,7 @@
         <ul>
           <li>
             <a href="http://zs.thulb.uni-jena.de/" title="Journals@UrMEL">Zeitschriftenserver
-              der ThULB</a> mit 140 Historischen Zeitschriften, 260 Kalendern und 64 Online-Zeitschriften
+              der ThULB</a> mit mehr als 800 Zeitschriften. Davon sind über 400 historische Zeitschriften.
           </li>
         </ul>
       </dd>

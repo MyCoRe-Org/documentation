@@ -26,7 +26,8 @@
           <li>
             <a href="http://edocs.fu-berlin.de/docs/content/below/index.xml?lang=en"
               title="link to Institutional Repository of the Freie Universität Berlin">Institutional Repository</a>
-              for electronic publications
+              for electronic publications <em>(<a href="http://www.dini.de/dini-zertifikat" 
+            title="link to DINI certificate">DINI-certified</a>)</em>              
           </li>
           <li>
             Repository for doctoral theses and habilitation treatises from members of the FU Berlin
@@ -70,9 +71,9 @@
         Universität Duisburg-Essen (Duisburg-Essen University Library - UB, Centre of Information and Media Services - CIM)
         <ul>
           <li>
-            Institutional Content Repository with miscellaneous content, as a replacement for miless (Essen) and DuetT (Duisburg),
+            Institutional content repository with miscellaneous content, as a replacement for miless (Essen) and DuetT (Duisburg),
             <a href="http://duepublico.uni-duisburg-essen.de/?lang=en" title="link to DuEPublico - Duisburg-Essen Publications online"
-              >DuEPublico</a> contains: Reserve collections, Dissertations, University bibliography and E-Publications <em>(<a href="http://www.dini.de/dini-zertifikat"
+              >DuEPublico</a> contains: reserve collections, dissertations, University bibliography and e-publications <em>(<a href="http://www.dini.de/dini-zertifikat"
               title="link to DINI certificate">DINI-certified</a>)</em>
           </li>
         </ul>
@@ -84,7 +85,7 @@
         Universitäts- und Landesbibliothek Düsseldorf
         <ul>
           <li>
-            Düsseldorf Document- and Publishingservice
+            Düsseldorf pocument- and publishing service
             <a href="http://docserv.uni-duesseldorf.de"
               title="Düsseldorfer Dokumenten- und Publikationsservice: Semesterapparate">Publications and reserch collections</a>
           </li>
@@ -128,8 +129,9 @@
         Gemeinsamer Bibliotheksverbund (GBV)
         <ul>
           <li>Publication server <a href="http://openagrar.bmelv-forschung.de" title="Link to publication server OpenAgrar">OpenAgrar</a>
-          - Institutional Repository (IR) for six libraries of the department research facilities, 
-          part of the Federal Ministry of Food and Agriculture (BMELV-Forschung)</li>
+            - Institutional Repository (IR) for six libraries of the department research facilities, 
+            part of the Federal Ministry of Food and Agriculture (BMELV-Forschung)
+          </li>
         </ul>
       </dd>
 <!--      <dt>
@@ -165,10 +167,10 @@
         <ul>
           <li>
             <a href="http://www.db-thueringen.de/" title="dbt Digitale Bibliothek Thüringen">Digitale
-              Bibliothek Thüringen</a>
+            Bibliothek Thüringen</a>
             Multimedia publication repository of Thuringian	universities 
             <em>(<a href="http://www.dini.de/dini-zertifikat"
-              title="link to DINI certificate">DINI-certified</a>)</em>
+            title="link to DINI certificate">DINI-certified</a>)</em>
           </li>
         </ul>
       </dd>
@@ -194,15 +196,13 @@
         Westfälische Wilhelms-Universität Münster (University Library, Computer Center)
         <ul>
           <li>
-            Münstersches Informations- und Archivsystem für multimediale
-            Inhalte
+            Münster information and archive system for multimedia content
             <a href="http://miami.uni-muenster.de/"
-              title="miami münstersches informations- und archivsystem für multimediale inhalte">Miami</a>
+              title="miami münstersches information and archive system for multimedia content">Miami</a>
             <br />
-            Digitaler Dokumentenserver für die Universität Münster,
-            elektronische Dissertationen, Archiv für Digitalisate wertvoller
-            Bestände wie der „Dyckschen Handschrift“
-            und der Bibliothek des Barock-Gelehrten Nünning
+            Digital document server for the University of Münster,
+            e-dissertations, archive for digital objects and precious
+            manuscripts and the library of the baroque scholar Nünning
           </li>
         </ul>
       </dd>
@@ -210,13 +210,13 @@
         <strong>Neubrandenburg</strong>
       </dt>
       <dd>
-        Neubrandenburg University of Applied Sciences (Library, in cooperation with the
+        Hochschule Neubrandenburg (Library, in cooperation with the
         University Library Rostock)
         <ul>
           <li>
             Publication server
             <a href="http://digibib.hs-nb.de/" title="Digitale Bibliothek - Hochschule Neubrandenburg">
-              Digitale Library of Neubrandenburg University of Applied Sciences </a>
+              Digital library of the university of applied sciences Neubrandenburg</a>
           </li>
         </ul>
       </dd>
@@ -224,12 +224,12 @@
         <strong>Rostock</strong>
       </dt>
       <dd>
-        University of Rostock (Library, Department of Computer Science, University Computer Center)
+        Universität Rostock (Library, Department of Computer Science, University Computer Center)
         <ul>
           <li>
             <a href="http://rosdok.uni-rostock.de/" title="Rostocker Dokumentenserver RosDok">
               RosDok</a>
-            Dokumentenserver der Universität Rostock
+            Documenten server of the University of Rostock
           </li>
         </ul>
       </dd>
@@ -237,7 +237,7 @@
         <strong>Schwerin</strong>
       </dt>
       <dd>
-        Regional Library Mecklenburg-Vorpommern
+        Landesbibliothek Mecklenburg-Vorpommern
         <ul>
           <li>
             <a href="http://mvdok.lbmv.de/" title="Dokumentenserver der Landesbibliothek MV"
@@ -252,10 +252,10 @@
         Statistisches Bundesamt (DESTATIS)
         <ul>
           <li>
-            Die 
+            The 
             <a href="https://www.destatis.de/GPStatistik/"
-              title="Link zur Statistischen Bibliothek der Statistischen Ämter des Bundes und der Länder">"Statistische Bibliothek" der Statistischen Ämter des Bundes und der Länder</a>
-            Publikationenserver für alle elektronischen Veröffentlichungen der Statistischen Ämter der Länder und des Statistischen Bundesamtes, archiviert auch im Format PDF/A-1b. 
+              title="Link zur Statistischen Bibliothek der Statistischen Ämter des Bundes und der Länder">Statistical Library</a> 
+              is a publication server for all electronic publications of the statistical offices of the Federation and the Länder, that archives in PDF / A-1b.
           </li>
         </ul>
       </dd>
@@ -266,12 +266,12 @@
         Universität Wuppertal (University Library)
         <ul>
           <li>
-            Der
+            The
             <a href="http://elpub.bib.uni-wuppertal.de/"
-              title="Link zum Hochschulschriftenserver der Universitätsbibliothek Wuppertal">Dokumenten- und
-              Publikationsserver der Bergischen Universität Wuppertal</a>
-            (Hochschulschriftenserver) enthält Dissertationen, elektronische
-            Publikationen und andere Dokumente im Volltext.
+              title="Link zum Hochschulschriftenserver der Universitätsbibliothek Wuppertal">
+              document and publication server</a> of the University of Wuppertal
+             (Hochschulschriftenserver) contains dissertations, electronic
+             publications and other documents in full text.
           </li>
         </ul>
       </dd>
@@ -301,8 +301,8 @@
       <dd>
         Rheinische Friedrich-Wilhelms-Universität Bonn (University Computer Center)
         <ul>
-          <li>Digitalisierung des Bildarchives der
-            Universitätspressestelle</li>
+          <li>Digitized image archive of the
+            University 	press office</li>
         </ul>
       </dd>
       <dt>
@@ -337,7 +337,7 @@
             <a href="http://mycms.rrz.uni-hamburg.de/eae" title="Encyclopaedia Aethiopica">EAE</a>
           </li>
           <li>
-            Mehrsprachiges Glossar des Asien-Afrika-Instituts
+            Multilingual 	glossary of the Asia-Africa-Institute
             <a href="http://mycms.rrz.uni-hamburg.de/mcglossary" title="Mehrsprachiges Glossar des Asien-Afrika-Instituts">MCGlossary</a>
           </li>
           <li>
@@ -353,16 +353,8 @@
         Friedrich-Schiller-Universität Jena (University Computer Center, Library)
         <ul>
           <li>
-            <a href="http://archive.thulb.uni-jena.de/ThHStAW/" title="Link zum Thüringischen Hautstaatsarchivs Weimar">Thüringisches
-              Hautstaatsarchiv Weimar</a>
-          </li>
-          <li>
-            <a href="http://archive.thulb.uni-jena.de/saru/" title="Link zum Thüringisches Staatsarchiv Rudolstadt">Thüringisches
-              Staatsarchiv Rudolstadt</a>
-          </li>
-          <li>
-            <a href="http://archive.thulb.uni-jena.de/ThStAM/" title="Link zum Thüringisches Staatsarchiv Meiningen">Thüringisches
-              Staatsarchiv Meiningen</a>
+            <a href="http://archive.thulb.uni-jena.de/ThHStAW/" title="Link zum Digitalen Archiv der Thüringischen Staatsarchive">Digital 
+              Archive der Thüringischen Staatsarchive</a>
           </li>
           <li>
             <a href="http://archive.thulb.uni-jena.de/hisbest/" title="Link zu den Historischen Beständen">„Historische
@@ -400,72 +392,73 @@
         <ul>
           <li>
             <a href="http://www.wandmalerei-luebeck.de"
-              title="Link zum Projekt WAND- UND DECKENMALEREI IN LÜBECKER HÄUSERN">„Wand- und Deckenmalerei in Lübecker Häusern“</a>,
-            ein Gemeinschaftsprojekt mit dem Bereich Archäologie und
-            Denkmalpflege der Hansestadt Lübeck und dem Kunsthistorischen
-            Institut der Universität Kiel
+              title="Link zum Projekt WAND- UND DECKENMALEREI IN LÜBECKER HÄUSERN">„Wall and ceiling painting in Lübeck houses“</a>,
+             a joint project with the archeology and
+             preservation of the hanseatic city of Lübeck and the institute 
+             of art history at the University of Kiel
           </li>
         </ul>
       </dd>
       <dt>
         <strong>Leipzig</strong>
       </dt>
-      <dd> Universität Leipzig (University Library)
+      <dd> Universität Leipzig (University Library, UBL)
         <ul>
           <li>
-            <a href="http://nsraubgut.ub.uni-leipzig.de/" title="Die Anwendung NS-Raubgut">NS-Raubgut</a>
+            <a href="http://nsraubgut.ub.uni-leipzig.de/" title="Die Anwendung NS-Raubgut">„NS-Raubgut“</a>
           </li>
           <li>
-            <a href="http://histbest.ub.uni-leipzig.de/" title="Historische Bestände und Nachlässe der UBL">Historische Bestände und Nachlässe der UBL</a>
+            <a href="http://histbest.ub.uni-leipzig.de/" title="Historische Bestände und Nachlässe der UBL">Historical collections and assets of the UBL</a>
           </li>
-          <li> Der
-            <a href="http://jbmk.dl.uni-leipzig.de/" title="Jahresbibliographie Massenkommunikation 1974/75 bis 2003">Digitalisierungsserver</a> - Jahresbibliographie Massenkommunikation
-              1974/75 bis 2003 </li>
+          <li> The
+            <a href="http://jbmk.dl.uni-leipzig.de/" title="Jahresbibliographie Massenkommunikation 1974/75 bis 2003">digitization server</a> - annual bibliography „Massenkommunikation
+              1974/75 bis 2003“ </li>
         </ul>
       </dd>
-      <dd>Bach Archiv (in Kooperation mit der Universität Leipzig)
+      <dd>Bach Archiv (in cooperation with the University Leipzig)
         <ul>
-          <li>Die Datenbasis <a href="http://www.bach-digital.de/" title="Bach-Digital">Bach Digital</a> als umfassende
-            Katalog- und Bildquelle zu J. S. Bach und seiner Familie </li>
+          <li><a href="http://www.bach-digital.de/" title="Bach-Digital">„Bach Digital“</a>, 
+            a comprehensive database with a catalog about J. S. Bach and his family </li>
         </ul>
       </dd>
       <dd>
-        <strong>Digitalen Papyrussammlungen</strong><br />
-        Die Projekte der Papyrusforschung und -sammlungen verschiedener Universitäten und Einrichtungen
-        bereitgestellt durch die Universität Leipzig (University Computer Center / Library)
+        <strong>Digital Papyrus Collections</strong><br />
+        Projects of Papyrus research und collections of different universities and institutions,
+        provided by the University of Leipzig (University Computer Center / Library)
         <ul>
           <li>
-            <a href="http://papyri-collection.dl.uni-leipzig.de/" title="Eine Kollektion verschiedener deutscher Papyrussammlungen">Eine Kollektion verschiedener deutscher Papyrussammlungen</a>
+            <a href="http://papyri-collection.dl.uni-leipzig.de/" title="A combination of german Papyrus collections">A combination of different german papyrus collections</a>
           </li>
           <li>
-            <a href="http://papyri-giessen.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Gießen">Gießen</a>
+            <a href="http://papyri-giessen.dl.uni-leipzig.de/" title="The Papyrus Project Gießen">Gießen</a>
           </li>
           <li>
-            <a href="http://papyri-leipzig.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Halle-Jena-Leipzig">
+            <a href="http://papyri-leipzig.dl.uni-leipzig.de/" title="The Papyrus Project Halle-Jena-Leipzig">
               Halle-Jena-Leipzig</a>
           </li>
           <li>
-            Das <a href="http://www.papyrusportal.de/" title="Papyrus Portal">Papyrus Portal</a> als einheitliche
-            Rechercheplattform aller digitalen Papyrussammlungen
+            The <a href="http://www.papyrusportal.de/" title="Papyrus Portal">Papyrus Portal</a> as one unique
+            search plattform for all digitale papyrus collections
           </li>
         </ul>
       </dd>
       <dd>
-        <strong>Sammlungen orientalischer Handschriften</strong><br />
-        Projekte der Digitalisierung und Sammlung orientalischer Handschriften gemeinsam
-        mit der Universität Leipzig (University Computer Center / Library) <br />
+        <strong>Collections of Orientale Manuscripts</strong><br />
+        Projects of digitization and collections of oriental manuscripts together
+        with the University of Leipzig (University Computer Centre / Library)<br />
         <ul>
           <li>
             <a href="http://www.islamic-manuscripts.net/"
-              title="Islamische Handschriften der Universitätsbibliothek Leipzig">Islamische Handschriften an der UBL</a>
+              title="Islamische Handschriften der Universitätsbibliothek Leipzig">Islamic Manuscripts at the UBL</a>
           </li>
           <li>
             <a href="http://www.refaiya.uni-leipzig.de/" title="Refaiya der Universitätsbibliothek Leipzig">Damaszener
-              Familienbibliothek Refaiya an der UBL</a>
+              Family library „Refaiya“ at the UBL</a>
           </li>
           <li>
-            <a href="http://nusantara.dl.uni-leipzig.de/" title="Historische Handschriften Indonesien">Historische Handschriften 
-              Indonesien</a> (Entstanden aus den Kooperationsprojekten 'Banda Aceh' und 'Java' des auswärtigen Amts) </li>
+            <a href="http://nusantara.dl.uni-leipzig.de/" title="Historische Handschriften Indonesien">Historical Manuscripts 
+              of Indonesia</a> (as a result from the project cooperation „Banda Aceh“ and „Java“ with the Federal Foreign Office) 
+          </li>
         </ul>
       </dd>
     </dl>
@@ -482,8 +475,8 @@
         Friedrich-Ebert-Stiftung (FES)
         <ul>
           <li>
-            <a href="http://library.fes.de/angestelltenpresse/content/below/index.xml" title="Link zur Startseite des Portals">Das
-            gedruckte Gedächtnis der Tertiarisierung</a> ist ein Pilotprojekt zur Sicherung und Demokratisierung zentraler Quellen
+            <a href="http://library.fes.de/angestelltenpresse/content/below/index.xml" title="Link zur Startseite des Portals">
+            The printed memory of the tertiary sector</a> is a pilot project to provide copies and Sicherung und Demokratisierung zentraler Quellen
             der Angestelltenbewegung. Das Portal basiert auf dem Zeitschriftenserver der ThULB (Jena) und umfasst aktuell 6 Quellen.
           </li>
           <li>
@@ -499,9 +492,11 @@
         Gemeinsamer Bibliotheksverbund (GBV)
         <ul>
           <li>
-            Der <!-- a href="#" title="Link zur Startseite des Portals">Zeitschriftenserver des GBV</a -->Zeitschriftenserver des GBV
+            The <!-- a href="#" title="Link zur Startseite des Portals">Zeitschriftenserver des GBV</a -->Journal server of the GBV
             soll die bereits online Verfügbaren Zeitschriften beim GBV übernehmen und weiter ausgebaut werden. Das Portal basiert
             auf dem Zeitschriftenserver der ThULB (Jena) und umfasst aktuell 2 Quellen. Momentan ist dieser noch im Aufbau befindlich.
+            shall take over the magazines, that are already online available, and will be extended. 
+            The base of the web portal is the journal server of the ThULB (Jena). The system is under construction.
           </li>
         </ul>
       </dd>
@@ -514,7 +509,7 @@
           <li>
             <a href="http://zs.thulb.uni-jena.de/content/below/index.xml?lang=en"
             title="link to Journals@UrMEL">Zeitschriftenserver der ThULB</a>, there are about
-            700 journals, containing more than 230.000 articles, and other periodicals available.
+            800 journals, containing more than 230.000 articles, and other periodicals available.
             These were provided by the ThULB Jena in cooperation with numerous other libraries,
             archives, publishers and scientific societies.
           </li>
@@ -528,7 +523,7 @@
         <ul>
           <li>
             <a href="http://www.uni-kiel.de/journals/content/below/index.xml"
-              title="Link zum Kieler Zeitschriftenportal">Journals@CAU</a> ist das Kieler Portal für Zeitschriften und andere Periodika
+              title="Link zum Kieler Zeitschriftenportal">Journals@CAU</a> is the web-portal for journals and other periodical at the CAU university in Kiel
           </li>
         </ul>
       </dd>
@@ -548,7 +543,8 @@
           <li>
             „Online-Lexikon exilierter Musiker und Musikerinnen der NS-Zeit“
             <a href="http://www.lexm.uni-hamburg.de/"
-              title="Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit LexM">LexM</a>
+              title="Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit LexM">LexM</a> is 
+              an online lexicon of exiled musicians during the Nazi period
           </li>
         </ul>
       </dd>
@@ -561,8 +557,8 @@
           <li>
             <a href="http://cpr.uni-rostock.de" title="Rostocker Professorenkatalog">
             Catalogus Professorum Rostochiensium</a>
-            (Katalog über alle an der Universität Rostock tätigen Professoren,
-            seit ihrer Gründung 1419)
+            (Catalogue of all professors who worked at the University of Rostock 
+            since its inception 1419)
           </li>
         </ul>
       </dd>
@@ -630,7 +626,7 @@
         Universität Leipzig (University Computer Center / Library)
         <ul>
           <li>
-            Die <a href="http://139.18.24.5:8861/?lang=en" title="Forschungsdatenrepositorium DGPuK">Forschungsdatenrepositorium DGPuK</a>
+            The <a href="http://139.18.24.5:8861/?lang=en" title="Forschungsdatenrepositorium DGPuK">Research data repository DGPuK</a>
           </li>
         </ul>
       </dd>
@@ -638,11 +634,11 @@
         <strong>Maria Veen</strong>
       </dt>
       <dd>
-        Schulbibliothek des Gymnasiums der Mariannhiller Missionare Maria Veen (<a href="http://www.schule1.de">www.schule1.de</a>)
+        School library of the Gymnasiums „Mariannhiller Missionare Maria Veen“ (<a href="http://www.schule1.de">www.schule1.de</a>)
         <ul>
           <li>
-            CMMLib, eine Medienverwaltung für die Schulbibliothek des Gymnasiums der Mariannhiller Missionare Maria Veen
-            nutzt kleine Teile von MyCoRe, nämlich das Editor Framework und den LayoutService.
+            CMMLib, a media management for the school library of the Gymnasium „Mariannhiller Missionare Maria Veen“
+              uses small parts of MyCoRe, namely the Framework Editor and Layout Service.
           </li>
         </ul>
       </dd>
@@ -654,16 +650,16 @@
         <ul>
           <li>
             Multimedia- und Videoserver
-            <a href="http://muvin.uamr.de/?lang=en" title="Link zum Multimedia- und Videoserver">MUVIN</a>
+            <a href="http://muvin.uamr.de/?lang=en" title="Link to the Multimedia and Video server">MUVIN</a>
             <br />
-            Dieser wird aktuell genutzt von der TU Dortmund und der
-            Ruhr-Universität Bochum mit Anbindung der dortigen
-            E-Learning-Umgebungen EWS (Dortmund)
-            bzw. Blackboard (Bochum). Die FH Dortmund und die Universität Siegen
-            sind in einer Test- und Implementierungsphase. Schwerpunkt hier ist
-            die Nutzung als Repository für umfangreiches Videomaterial mit Anbindung des
-            Helix Streaming Servers. Der Zugriff auf die Inhalte erfolgt fast
-            ausschliesslich über Web Services (SOAP).
+            The multimedia and video server is currently used by the TU Dortmund and the
+            Ruhr-University Bochum with a connection to the local
+            E-learning environments EWS (Dortmund) and Blackboard (Bochum). 
+            The FH Dortmund and the University of Siegen are in a testing 
+            and implementation phase. The focus here is to use the repository 
+            for extensive video material with connection to a
+            Helix streaming server. Access to the content is almost
+            exclusively based on Web Services (SOAP). 
           </li>
         </ul>
       </dd>
