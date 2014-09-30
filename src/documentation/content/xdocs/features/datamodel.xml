@@ -22,25 +22,25 @@
         </li>
         <li>
           <strong>Objekttypen</strong>
-          definieren, welche Felder zur Beschreibung gleichartiger Objekte verwendet werden, 
+          definieren, welche Felder zur Beschreibung gleichartiger Objekte verwendet werden,
           welchen Datentyps diese sind, und ob sie verpflichtend oder wiederholbar sind.
         </li>
         <li>
-          Objekte können untereinander in einer <strong>Beziehung</strong> stehen. 
-          Dies kann ein Verweis sein (z. B. "Publikation" verweist auf "Person"), 
-          oder eine Vater-Kind-Beziehung ("ist-Teil-von", "besteht aus") mit Existenzabhängigkeit 
+          Objekte können untereinander in einer <strong>Beziehung</strong> stehen.
+          Dies kann ein Verweis sein (z. B. "Publikation" verweist auf "Person"),
+          oder eine Vater-Kind-Beziehung ("ist-Teil-von", "besteht aus") mit Existenzabhängigkeit
           (z. B. Objekt "Zeitschrift" enthält "Artikel").
         </li>
         <li>
           <strong>Beispiel:</strong>
           <ul>
             <li>
-              Objekttyp "Publikation" mit den Feldern 
+              Objekttyp "Publikation" mit den Feldern
               "Titel" (Text, mehrsprachig, verpflichtend, wiederholbar),
               "Autor" (Verweis auf "Person", optional, wiederholbar)...
             </li>
             <li>
-              Objekttyp "Person" mit den Feldern 
+              Objekttyp "Person" mit den Feldern
               "Name", "Geburtsdatum" (Datum, optional, nicht wiederholbar), ...
             </li>
           </ul>
@@ -49,9 +49,9 @@
       <p>
         Für Vater-Kind-Beziehungen zwischen Objekten bietet MyCoRe einen <strong>Vererbungsmechanismus</strong> für Metadaten.
         Kindobjekte können dabei über mehrere Hierarchiestufen hinweg Werte bestimmter Felder
-        von den übergeordneten Obekten erben. 
+        von den übergeordneten Obekten erben.
         Ein Zeitschriftenartikel könnte z. B. das Veröffentlichungsdatum des Heftes erben, in dem der
-        Artikel erschienen ist. 
+        Artikel erschienen ist.
         Vererbung bezieht sich hier also auf die Werte der Metadaten, nicht auf die Datenmodelldefinition.
       </p>
     </section>
@@ -61,30 +61,30 @@
         Neben den vordefinierten Datentypen können <strong>eigene Datentypen</strong> als Java-Klassen implementiert werden.
       </p>
       <p>
-        Alternativ kann auch der XML-Datentyp für eigene Erweiterungen verwendet werden.  
-        Felder dieses Typs können eine beliebige XML-Struktur enthalten, 
+        Alternativ kann auch der XML-Datentyp für eigene Erweiterungen verwendet werden.
+        Felder dieses Typs können eine beliebige XML-Struktur enthalten,
         die ggf. durch ein <strong>XML Schema</strong> spezifiziert wird.
-        So können beliebige XML-basierte Datenmodelle wie z. B. MODS direkt in MyCoRe 
+        So können beliebige XML-basierte Datenmodelle wie z. B. MODS direkt in MyCoRe
         zur Beschreibung von Objekten verwendet werden.
       </p>
       <p>
-        <link href="http://www.loc.gov/standards/mods/‎">MODS</link> (Metadata Object Description Schema) 
+        <a href="http://www.loc.gov/standards/mods/‎" title="zur MODS-Homepage">MODS</a> (Metadata Object Description Schema)
         ist ein XML-basiertes Metadatenschema der Library of Congress, für das MyCoRe bereits eine
-        spezielle Unterstützung mit vordefinierter Funktionalität bietet. 
+        spezielle Unterstützung mit vordefinierter Funktionalität bietet.
         Dazu gehören etwa der direkte Import von MODS-Metadaten als MyCoRe Objekte
         und die Abbildung auf MyCoRe Klassifikationen.
       </p>
       <p>
         MODS wird zukünftig das von MyCoRe empfohlene Metadatenformat für Publikationsserver werden,
         dem wir besondere Aufmerksamkeit und Funktionalität widmen. So wird die MyCoRe Beispielanwendung "DocPortal"
-        bald durch eine MODS-basierte Anwendung abgelöst.  
+        bald durch eine MODS-basierte Anwendung abgelöst.
       </p>
     </section>
     <section>
       <title>Internes Speicherformat der Metadaten</title>
       <p>
-        Die Metadaten aller MyCoRe Objekte werden intern als XML-Dokumente gespeichert. 
-        Dies unterstützt Strategien der Langzeitarchivierung und stellt sicher, 
+        Die Metadaten aller MyCoRe Objekte werden intern als XML-Dokumente gespeichert.
+        Dies unterstützt Strategien der Langzeitarchivierung und stellt sicher,
         dass Metadaten auch unabhängig von MyCoRe zu einem späteren Zeitpunkt
         weiter verarbeitet werden können.
       </p>
@@ -119,48 +119,48 @@
     <section>
       <title>Hierarchisches Klassifikationssystem</title>
       <p>
-        Klassifikationssysteme finden in vielen internationalen Metadaten-Standards Verwendung, um Datenbestände 
+        Klassifikationssysteme finden in vielen internationalen Metadaten-Standards Verwendung, um Datenbestände
         sachlich zu erschließen und Inhalte zu strukturieren. Beispiele für solche Klassifikationen sind
-        die <strong>Dewey Dezimalklassifikation (DDC)</strong>, oder das <strong>"Gemeinsame Vokabular"</strong> 
-        von DINI und Deutscher Nationalbibliothek zur Einordnung von Publikationstypen. 
+        die <strong>Dewey Dezimalklassifikation (DDC)</strong>, oder das <strong>"Gemeinsame Vokabular"</strong>
+        von DINI und Deutscher Nationalbibliothek zur Einordnung von Publikationstypen.
         Auch fach- oder anwendungsspezifische Klassifikationsysteme werden
         verwendet, z. B. die Organisationsstruktur der eigenen Einrichtung.
       </p>
       <p>
         MyCoRe kann beliebige solcher Klassifikationssysteme unterstützen. Eine Klassifikation besteht in MyCoRe aus
         einer Liste oder Hiearchie von Kategorien. Jede Kategorie besitzt eine eindeutige ID, eine mehrsprachige Bezeichnung,
-        sowie optional ein Kommentarfeld und einen weiterführenden Link.    
+        sowie optional ein Kommentarfeld und einen weiterführenden Link.
       </p>
       <p>
-        Klassifikationen können über eine XML-Struktur über Kommandozeilen-Befehle <strong>importiert und exportiert</strong> werden. 
+        Klassifikationen können über eine XML-Struktur über Kommandozeilen-Befehle <strong>importiert und exportiert</strong> werden.
         Darüber hinaus gibt es auch einen <strong>Online-Klassifikationseditor</strong>, um Klassifikationen anzulegen und Kategorien zu bearbeiten.
         Mehrere in Publikationsservern häufig verwendete Klassifikationen stehen vordefiniert zur Verfügung, z. B.
-        die ersten Ebenen der DDC, das Gemeinsame Vokabular, eine Liste der Sprachen nach RFC4646 und weitere.  
+        die ersten Ebenen der DDC, das Gemeinsame Vokabular, eine Liste der Sprachen nach RFC4646 und weitere.
       </p>
       <p>
-        MyCoRe Objekte können beliebigen Klassifikationskategorien zugewiesen werden. 
+        MyCoRe Objekte können beliebigen Klassifikationskategorien zugewiesen werden.
         Bei der <strong>Recherche</strong> kann über Kategorien gesucht werden, wobei auch die Hierarchie von Kategorien berücksichtigt wird.
         Über einen <strong>Klassifikationsbrowser</strong> kann der Bestand nach Kategorien strukturiert präsentiert werden.
       </p>
     </section>
-    
+
     <section>
       <title>Persistent Identifier</title>
       <p>
-        Persistent Identifier Systeme wie <strong>URN, DOI und Handle</strong> dienen in Online-Repositorien 
-        der dauerhaften Referenzierung von Ressourcen. Elektronische Publikationen und Digitalisate 
+        Persistent Identifier Systeme wie <strong>URN, DOI und Handle</strong> dienen in Online-Repositorien
+        der dauerhaften Referenzierung von Ressourcen. Elektronische Publikationen und Digitalisate
         erhalten so eine dauerhafte, standardisierte und weltweit eindeutige Adresse, unter der sie erreichbar sind
         und mit der sie zitiert werden können. Alle Formen von Persistent Identifiern können in den MyCoRe Metadaten
-        gespeichert werden.           
+        gespeichert werden.
       </p>
       <p>
         MyCoRe unterstützt direkt die Generierung, Vergabe und Verwaltung von
-        <link href="http://www.persistent-identifier.de/">URNs</link>,
+        <a href="http://www.persistent-identifier.de/">URNs</a>,
          Persistent Identifiern im Namensraum urn:nbn:de,
         wie sie die Deutsche Nationalbibliothek für E-Publikationen einsetzt. Für die Generierung
         von URNs stehen verschieden Algorithmen zur Verfügung, etwa auf Basis von Zeitstempeln oder fortlaufenden
-        Zählern, die auch miteinander kombiniert werden können. MyCoRe speichert die URN, berechnet und testet 
-        ggf. die zugehörige Prüfsumme und implementiert einen lokalen URN-Resolver. 
+        Zählern, die auch miteinander kombiniert werden können. MyCoRe speichert die URN, berechnet und testet
+        ggf. die zugehörige Prüfsumme und implementiert einen lokalen URN-Resolver.
         Zugewiesene URNs können über die <strong>OAI-Schnittstelle</strong> im Datenformat <strong>Epicur</strong> an die
         Deutsche Nationalbibliothek gemeldet werden.
       </p>
