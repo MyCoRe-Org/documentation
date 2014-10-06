@@ -322,7 +322,7 @@
 
   <h4>Properties für die Suche</h4>
   <p>
-    Zunächst kann ein Searcher definiert werden, der den OAI-Request vberarbeitet. Als Standard wird die Klasse MCROAISolrSearcher verwendet:
+    Zunächst kann ein Searcher definiert werden, der den OAI-Request verarbeitet. Als Standard wird die Klasse MCROAISolrSearcher verwendet:
   </p>
   <pre class="brush: xml; gutter: false;"> MCR.OAIDataProvider.OAI2.Searcher=org.mycore.oai.MCROAISolrSearcher</pre>
   <p>
