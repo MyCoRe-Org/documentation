@@ -203,7 +203,13 @@
     zurückliefert:
   </p>
   <pre class="brush: shell; gutter: false;">MCR.OAIDataProvider.OAI2.MapSetToQuery.open_access=(objectType = *)</pre>
-
+	<p>
+    Wenn die ID des Sets (setSpec) Doppelpunkte enthält, werden diese durch Unterstrich (_) ersetzt:
+  </p>
+  <pre class="brush: shell">
+  #setName=Personen, setSpec=type:person
+  MCR.OAIDataProvider.OAI2.MapSetToQuery.type_person=objectType:person</pre>
+	
   <h4>Properties für Metadatenformate</h4>
   <p>
     Zunächst sind die unterstützten Metadatenformate aufzulisten und dann jeweils
