@@ -230,6 +230,15 @@
     der Regel an das eigene Datenmodell anzupassen.
   </p>
   </section>
+  <section>
+   <title>OAI-Validatoren</title>
+    <p>Es gibt verschiedene Validatoren für die eigene OAI-Schnittstelle. Hier eine kurze Liste bekannter Seiten (Stand 10/2014):</p>
+    <ul>
+      <li><a href="http://oanet.cms.hu-berlin.de/validator/pages/validation_dini.xhtml">DINI Check 2010</a></li>
+      <li><a href="http://oval.base-search.net/">BASE OAI-PMH Validator: OVAL</a></li>
+      <li><a href="http://validator.oaipmh.com/">OAI-PMH Validator & data extractor Tool</a></li>
+    </ul>
+  </section>
 
 </body>
 </document>
