@@ -493,7 +493,7 @@ setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als 
 <p>Syntax:</p>
 <pre class="brush: xml"><![CDATA[<xed:output value="..." i18n="..." />]]></pre>
 
-<p>Ermöglicht die Ausgabe eines Wertes. Der Wert kann über einen XPath-Ausdruck definiert werden und/oder das aktuelle Binding im bearbeitetn XML Dokument verwenden. Auch eine Kombination mit mehrsprachigen Bezeichnern aus messages-*.properties Dateien ist möglich. </p>
+<p>Ermöglicht die Ausgabe eines Wertes. Der Wert kann über einen XPath-Ausdruck definiert werden und/oder das aktuelle Binding im bearbeiteten XML Dokument verwenden. Auch eine Kombination mit mehrsprachigen Bezeichnern aus messages-*.properties Dateien ist möglich. </p>
 
 <p>Wenn kein Attribut angegeben ist, wird der erste durch das aktuelle Binding ausgewählte Wert ausgegeben. Beispiel:</p>
 
@@ -517,6 +517,7 @@ setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als 
   <xed:output i18n="edit.title" />:
 </label>]]></pre>
 
+<p>Das Attribut @i18n kann auch Variablen enthalten, die dann, wie in einem XPath-Ausdruck, ersetzt werden.</p>
 <p>Wenn sowohl das Attribut @value als auch das Attribut @i18n angegeben ist, wird zunächst der XPath-Ausdruck aus dem Attribut @value ausgewertet, und der resultierende Wert in den mehrsprachigen Bezeichner eingesetzt. Der Bezeichner in den messages-*.properties Dateien muss einen entsprechenden Platzhalter vorsehen. Beispiel:</p>
 
 <p>In messages-de.properties:
