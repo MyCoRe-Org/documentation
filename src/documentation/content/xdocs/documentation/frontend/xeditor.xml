@@ -136,7 +136,7 @@ definiert werden. Die in MyCoRe häufig verwendeten Namespaces für MyCoRe, MODS
 <p>Syntax:</p>
 <pre class="brush: xml"><![CDATA[<xed:source uri="..." />]]></pre>
 <p>Beispiel:</p>
-<pre class="brush: xml"><![CDATA[<xed:source uri="mcrobject:{id}" />]]></pre>
+<pre class="brush: xml"><![CDATA[<xed:source uri="mcrobject:{$id}" />]]></pre>
 
 <p>Lädt das in diesem Formular zu bearbeitende XML-Dokument von einer URI.</p>
 
@@ -209,7 +209,7 @@ XML-Dokumente und HTML-Formular ergibt.</p>
 
 <p>In diesem Beispiel bezieht sich das Eingabefeld mit der ID "title" auf das XML Element <code>mods:titleInfo/mods:title</code>,
 das Eingabefeld mit der ID "subtitle" auf das XML Element <code>mods:titleInfo/mods:subtitle</code>. Der XEditor setzt dabei für HTML input-Elemente vom Typ
-<code>text, password, hidden, file, color, date, datetime, datetime-local, email, month, number, range, search, tel, time, url, week</code> automatisch die
+<code>text</code>, <code>password</code>, <code>hidden</code>, <code>file</code>, <code>color</code>, <code>date</code>, <code>datetime</code>, <code>datetime-local</code>, <code>email</code>, <code>month</code>, <code>number</code>, <code>range</code>, <code>search</code>, <code>tel</code>, <code>time</code>, <code>url</code>, <code>week</code> automatisch die
 <code>@name</code> und <code>@value</code> Attribute, für HTML checkbox- und radio-Elemente die <code>@name</code> und <code>@checked</code> Attribute, sowie für HTML select/option Elemente die <code>@name</code> bzw. <code>@selected</code>
 Attribute. Das Attribut @name der Eingabekomponente wird dabei auf den absoluten XPath des XML Knotens gesetzt, der durch das aktuelle Bindung durch die verschachtelten
 <code>&lt;xed:bind /&gt;</code> Elemente ausgewählt wurde. Die Attribute <code>@value</code> bzw. <code>@selected</code> oder <code>@checked</code> werde so gesetzt, dass ihr Wert dem Inhalt des selektierten Knotens entspricht.</p>
@@ -463,11 +463,11 @@ setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als 
   <p>
     Über die Funktion <code>xed:generate-id()</code> kann eine eindeutige ID für den gerade via <code>xed:bind / xed:repeat</code> ausgewählten XML-Knoten generiert werden.
     Diese IDs benötigt man, um im HTML Quellcode z. B. eindeutige Referenzen für die zugehörigen Labels zu haben.
-  </p>  
+  </p>
 
   <p>Syntax:</p>
   <pre class="brush: xml"><![CDATA[xed:generate-id([XPath])]]></pre>
-  
+
   <p>
     Im folgenden Beispiel wird für jede Wiederholung des Eingabefeldes für mods:namePart eine eindeutige ID generiert:
   </p>
@@ -480,7 +480,7 @@ setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als 
     ...
   </div>
 </xed:repeat>]]></pre>
-  
+
 </section>
 
 </section>
@@ -1137,11 +1137,11 @@ sollte @static nicht gesetzt sein.</p>
   <p>
     Über die Funktion <code>xed:call-java()</code> können statische, externe Java-Methoden aufgerufen werden. Als Parameter können dabei auch Variabeln
     aus Request Parametern oder Knoten aus dem gerade bearbeiteten XML-Dokument übergeben werden.
-  </p>  
+  </p>
 
   <p>Syntax:</p>
   <pre class="brush: xml"><![CDATA[xed:call-java('Klasse','Methode'[,Parameter...])]]></pre>
-  
+
   <p>
     Ein solcher Java-Aufruf kann z. B. verwendet werden, um Teile eines Formulars abhängig von der Rolle des aktuell angemeldeten Benutzers anzuzeigen oder zu verbergen.
     Administratoren könnten z. B. andere oder komplexere Such- und Eingabefelder verwenden als andere Benutzer. Beispiel:
@@ -1149,7 +1149,7 @@ sollte @static nicht gesetzt sein.</p>
   <pre class="brush: xml"><![CDATA[<xed:if test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admins')")>
   Dieser Teil des Formulars ist nur für Administratoren sichtbar!
 </xed:if>]]></pre>
-  
+
   <p>
     Hier ein Beispiel für einen Aufruf mit Parametern und der dazugehörigen Implementierung in Java. XPath-Ausdrücke geben in der Regel einen Menge von Elementen zurück, auch wenn
     der konkrete Ausdruck nur ein einzelnes Element selektiert. Der XEditor versucht analog zum Überladen von Methoden die am besten passende Methode zu selektieren.
@@ -1159,10 +1159,10 @@ sollte @static nicht gesetzt sein.</p>
 
   /* Dummy */
   public static String isValid( List<Element> nodes ) {
-    return "The ID you gave me is valid. Have a nice day."; 
+    return "The ID you gave me is valid. Have a nice day.";
   }
 }]]></pre>
-  
+
 </section>
 
 </section>
