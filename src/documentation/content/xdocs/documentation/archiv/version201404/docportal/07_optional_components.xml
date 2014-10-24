@@ -347,7 +347,7 @@
   <pre class="brush: xml; gutter: false;"> MCR.OAIDataProvider.OAI.Sets.DDC=xslStyle:classification2sets:classification:metadata:10:children:DDC</pre>
     <p>
     Der Parameter <code>noEmptyLeaves</code> des Klassifikations-URIResolvers ist nur für  den Rückgabetyp <code>editor</code>
-    implementiert - Dieses Feature funktioniert hier nicht!</span>
+    implementiert - Dieses Feature funktioniert hier nicht!
   </p> 
   <p>
     Mit dem Property FilterEmptySets kann bestimmt werden, ob auch leere Sets bei einem ListSets-Request zurückgegeben werden. 
