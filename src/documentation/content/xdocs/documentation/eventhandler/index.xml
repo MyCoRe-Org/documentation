@@ -150,6 +150,18 @@
        </tr>
        <tr>
         <td valign="top">MCRObject</td>
+        <td>optional<br/>013</td>
+        <td>Enthalten in mycore-mods<br/>org.mycore.mods.MCRExtractRelatedItemsEventHandler</td>
+       </tr>
+       <tr>
+        <td colspan="3">
+        Nur relevant für die MODS Unterstützung. 
+        Der MCRExtractRelatedItemsEventHandler extrahiert mods:relatedItem Elemente und speichert sie als separate MyCoRe Objekte,
+        die dann miteinander verlinkt werden.
+        </td>
+       </tr>
+       <tr>
+        <td valign="top">MCRObject</td>
         <td>optional<br/>015</td>
         <td>Enthalten in mycore-base<br/>org.mycore.oai.classmapping.MCRClassificationMappingEventHandler</td>
        </tr>
