@@ -5,6 +5,10 @@
   <label xml:lang="de" text="Objektstatus" />
   <label xml:lang="x-uri" text="http://www.mycore.org/classifications/state" />
   <categories>
+    <category ID="new">
+      <label xml:lang="en" text="new" />
+      <label xml:lang="de" text="erstellt" />
+    </category>
     <category ID="submitted">
       <label xml:lang="en" text="submitted" />
       <label xml:lang="de" text="eingereicht" />
