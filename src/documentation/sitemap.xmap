@@ -29,6 +29,9 @@
     </map:selectors>
     <map:serializers default="fo2pdf">
       <map:serializer name="fo2pdf" src="org.apache.cocoon.blocks.fop.FOPNGSerializer" mime-type="application/pdf" />
+      <map:serializer name="xml-utf8" mime-type="text/xml" src="org.apache.cocoon.serialization.XMLSerializer">
+        <encoding>UTF-8</encoding>
+      </map:serializer>
     </map:serializers>
   </map:components>
   <map:resources>
@@ -63,9 +66,9 @@
         <map:read src="{properties:resources}/classifications/{1}.xml" mime-type="text/xml" />
       </map:match>
       <map:match pattern="classifications/*.rdf">
-        <map:generate src="{properties:resources}/classifications/{1}.xml" />
-        <map:transform src="{properties:resources.stylesheets}/mcrclass2rdf.xsl" />
-        <map:serialize type="xml-document"/>
+        <map:generate src="{properties:resources}/classifications/{1}.xml" type="file" />
+        <map:transform src="{properties:resources.stylesheets}/mcrclass2rdf.xsl" type="xslt" />
+        <map:serialize type="xml-utf8" />
       </map:match>
       <map:match pattern="**.xml">
         <!-- pdf-tab definitions -->
