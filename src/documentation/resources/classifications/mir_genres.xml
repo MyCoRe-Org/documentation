@@ -7,20 +7,20 @@
   <categories>
     <category ID="article">
       <label xml:lang="de" text="Artikel / Aufsatz" />
-      <label xml:lang="en" text="article / chapter" />
+      <label xml:lang="en" text="Article / Chapter" />
       <label xml:lang="x-hosts" text="journal newspaper collection festschrift proceedings standalone" />
       <category ID="chapter">
-        <label xml:lang="en" text="book chapter" />
+        <label xml:lang="en" text="Book chapter" />
         <label xml:lang="de" text="Buchkapitel" />
         <label xml:lang="x-hosts" text="monograph book collection" />   <!-- Wollen wir das weiterhin explizit aufführen, oder soll das im "Aufsatz/Artikel" aufgehen? -->
       </category>
       <category ID="entry">
-        <label xml:lang="en" text="encyclopedia entry" />
+        <label xml:lang="en" text="Encyclopedia entry" />
         <label xml:lang="de" text="Lexikoneintrag" />
         <label xml:lang="x-hosts" text="lexicon" />   <!-- Ausgabe: Lexikoneintrag -->
       </category>
       <category ID="preface">
-        <label xml:lang="en" text="preface (foreword) / postface" />
+        <label xml:lang="en" text="Preface (foreword) / Postface" />
         <label xml:lang="de" text="Vorwort / Nachwort" />
         <label xml:lang="x-hosts" text="journal collection festschrift proceedings lexicon" />
       </category>
@@ -55,27 +55,27 @@
         <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="diploma_thesis">
-        <label xml:lang="en" text="Diploma Thesis" />
+        <label xml:lang="en" text="Diploma thesis" />
         <label xml:lang="de" text="Diplomarbeit" />
         <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="master_thesis">
-        <label xml:lang="en" text="Master Thesis" />
+        <label xml:lang="en" text="Master thesis" />
         <label xml:lang="de" text="Abschlussarbeit (Master)" />
         <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="bachelor_thesis">
-        <label xml:lang="en" text="Bachelor Thesis" />
+        <label xml:lang="en" text="Bachelor thesis" />
         <label xml:lang="de" text="Abschlussarbeit (Bachelor)" />
         <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="student_resarch_project">
-        <label xml:lang="en" text="Student Research Project" />
+        <label xml:lang="en" text="Student research project" />
         <label xml:lang="de" text="Studienarbeit" />
         <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="magister_thesis">
-        <label xml:lang="en" text="Magister Thesis" />
+        <label xml:lang="en" text="Magister thesis" />
         <label xml:lang="de" text="Magisterarbeit" />
         <label xml:lang="x-hosts" text="series standalone" />
       </category>
@@ -110,18 +110,18 @@
         <label xml:lang="x-hosts" text="standalone" />
       </category>
       <category ID="in_house">
-        <label xml:lang="en" text="In House" />
-        <label xml:lang="de" text="In House" />
+        <label xml:lang="en" text="In house" />
+        <label xml:lang="de" text="Hausinterne Veröffentlichung" />
         <label xml:lang="x-hosts" text="standalone" />
       </category>
       <category ID="press_release">
-        <label xml:lang="en" text="Press Release" />
+        <label xml:lang="en" text="Press release" />
         <label xml:lang="de" text="Presseerklärung" />
         <label xml:lang="x-hosts" text="standalone" />
       </category>
       <category ID="declaration">
         <label xml:lang="de" text="Fachliche Stellungnahme" />
-        <label xml:lang="en" text="Professional Declaration" />
+        <label xml:lang="en" text="Professional declaration" />
         <label xml:lang="x-hosts" text="standalone" />
       </category>
     </category>
