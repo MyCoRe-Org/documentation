@@ -11,10 +11,12 @@
         background-clip: border-box;
         background-origin: padding-box;
         background-size: auto auto;
-        font-family: "Sintony", Helvetica, Arial, sans-serif;
+        /* font-family: "Sintony", Helvetica, Arial, sans-serif; */
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
         }
     /*
     h1, h2, h3, h4, h5 {font-family: 'Source Code Pro', sans-serif; font-weight: normal;}*/
+    h1, h2, h3, h4, h5, #topnav, #mycore_home, #footer, #subnav {font-family: "Sintony", Helvetica, Arial, sans-serif;}
     h1 {font-size:28px;}
     h2 {font-size:24px;}
     h3 {font-size:20px;}
@@ -470,4 +472,16 @@ a:hover.sphereLink {
     .label-info {
       background-color: rgba(210, 157, 77, 1);
     }
+    .label-danger {
+      background-color: #9E1E2B;
+    }
+
+    #content .syntaxhighlighter {
+      font-size: 0.96em !important;
+      padding: 5px !important;
+    }
+
+    .table { font-size: 1em;}
+    .event-handler-table tbody > tr:nth-child(2n) > td {padding-bottom: 25px;}
+}
 }

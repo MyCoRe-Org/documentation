@@ -8,6 +8,12 @@
    Subsystems für die Benutzerverwaltung.</abstract>
   </header>
 <body>
+
+    <!-- Include required JS files -->
+    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+    <!-- At least one brush, eg. XML. You need to include a brush for every language you want to highlight -->
+    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
    <section>
     <title>Die Geschäftsprozesse der MyCoRe Benutzerverwaltung</title>
     <p>
@@ -32,7 +38,7 @@
     MyCoRe-Benutzerverwaltung werden weiter unten ausgeführt.
     </p>
 
-    <img src="images/progguide_2user_usecase.jpg" alt="Geschäftsprozesse" title="Geschäftsprozesse"/>
+    <img src="images/progguide_2user_usecase.jpg" alt="Geschäftsprozesse" title="Geschäftsprozesse" />
     <p class="klein"><strong>Abbildung 2.3:</strong> Geschäftsprozesse der Benutzerverwaltung in MyCoRe</p>
 
    </section>
@@ -40,14 +46,92 @@
    <section>
     <title>Benutzer und Gruppen</title>
     <p>
-    Die Attribute von Benutzern/innen des Systems können in drei Bereiche klassifiziert werden, Account-Informationen
-    wie ID, Passwort, Beschreibung usw., Address-Informationen wie Name, Anrede, Fakultätszugehörigkeit usw. sowie
-    Informationen über die Mitgliedschaft in Gruppen. Die aktuell implementierten Benutzerattribute kann man an
-    folgender beispielhafter XML-Darstellung erkennen:<br/>
-    <code>[ToDo]: to be continued ...</code>
+      Die Attribute von Benutzern/innen des Systems unterteilen sich in drei Bereiche:
     </p>
+    <ol>
+      <li>Account-Informationen: dazu gehören ID, Passwort, Name, E-Mail-Adresse, ggf. Besitzer des Nutzers</li>
+      <li>Rollenzugehörigkeiten: ein Nutzer kann beliebig vielen Rollen angehören, z.B. administrator und editor</li>
+      <li>Attribute: hier können beliebige Eigenschaften des Nutzers abgelegt werden</li>
+    </ol>
+    <p>
+      Die Nutzer werden in der Datenbank abgespeichert, die XML-Repräsentation eines Benutzerobjektes
+      zeigt das folgende Codebeispiel:
+    </p>
+  <pre class="brush: xml;"><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<user name="editorTest" realm="local">
+  <owner name="administrator" realm="local" />
+  <realName>Testnutzer - Bearbeiter</realName>
+  <eMail>mailadresse@des-nutzers.de</eMail>
+  <roles>
+    <role name="editor" />
+  </roles>
+  <attributes>
+    <attribute name="sex"         value="male" />
+    <attribute name="institution" value="Bibliothek der Beispieluniversität" />
+    <attribute name="street"      value="Musterstraße 1" />
+    <attribute name="city"        value="Musterort" />
+    <attribute name="postalcode"  value="12345" />
+    <attribute name="tel"         value="+49 111 222 3333" />
+  </attributes>
+  <password hashType="sha1" hash="passwdsalt" />
+</user>
+    ]]></pre>
    </section>
-
+   <section>
+     <title>Anlegen, Ändern und Löschen von Nutzern</title>
+     <p>
+       Für die Verarbeitung der Nutzerdaten ist das <code>MCRUserServlet</code> zuständig. Der
+       Parameter <code>'action'</code> bestimmt, was getan werden soll. Mögliche Werte sind
+       <code>show</code>, <code>save</code>, <code>delete</code>, <code>password</code> (ggf.
+       mit Angabe der <code>'id'</code> als zweiten Parameter). Standardmäßig wird die Aktion
+       <code>search</code> aufgerufen, diese listet alle Nutzer im System auf.
+     </p>
+     <p>
+       Die mycore-user2-Komponente stellt verschiedene Editoren für den Umgang mit dem Nutzer
+       bereit, die in der folgenden Übersicht beschrieben werden:
+     </p>
+     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Datei</th>
+          <th>Beschreibung</th>
+          <th>Beispielaufruf</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>new-user.xed</td>
+          <td>Erfassungsmaske zur Erstellung eines neuen Nutzers</td>
+          <td>authorization/new-user.xed?action=save</td>
+        </tr>
+        <tr>
+          <td>action=show</td>
+          <td>Nutzerdaten anzeigen</td>
+          <td>servlets/MCRUserServlet?action=show&amp;id=editorTest</td>
+        </tr>
+        <tr>
+          <td>change-user.xed</td>
+          <td>Daten eines Nutzers ändern</td>
+          <td>authorization/change-user.xed?action=save&amp;id=editorTest</td>
+        </tr>
+        <tr>
+          <td>change-password.xed</td>
+          <td>Passwort des angegebenen Nutzers ändern</td>
+          <td>authorization/change-password.xed?action=password&amp;id=editorTest</td>
+        </tr>
+        <tr>
+          <td>XSL.step=confirmDelete</td>
+          <td>Löschen des Nutzers mit Sicherheitsabfrage</td>
+          <td>servlets/MCRUserServlet?action=show&amp;id=editorTest&amp;XSL.step=confirmDelete</td>
+        </tr>
+      </tbody>
+     </table>
+   </section>
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
 </body>
 </document>
 
