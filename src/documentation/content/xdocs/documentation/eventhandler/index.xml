@@ -194,6 +194,8 @@
            <tr>
             <td title="Beschreibung" colspan="2">
             Nur relevant für die MODS Unterstützung.
+            Speichert verwendete Klassifikationskategorien von MODS-Dokumenten. <!-- Später kommen hier noch die Verweise von
+            MODS-Dokumenten untereinander dazu, damit verlinkte Dokumente nicht mehr gelöscht werden können. -->
             </td>
            </tr>
            <tr>
