@@ -191,5 +191,11 @@
       <label xml:lang="de" text="Veranstalter"
         description="Eine Person oder Institution, die verantwortlich für die Organisation eines Treffens ist. Dabei entstehen Reporte oder Konferenzbänder." />
     </category>
+    <category ID="cph">
+      <label xml:lang="en" text="Copyright holder"
+        description="A person or organization to whom copy and legal rights have been granted or transferred for the intellectual content of a work." />
+      <label xml:lang="de" text="Rechteinhaber"
+        description="Eine Person oder Institution, der die intellektuellen Rechte auf den Inhalt des Werkes gewährt oder übertragen wurden." />
+    </category>
   </categories>
 </mycoreclass>
