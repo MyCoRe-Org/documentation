@@ -10,11 +10,12 @@
     <section>
      <title>Allgemein</title>
      <p>
-     Mit Version 1.2 (aus 2005) wurde in die MyCoRe-Implementierung ein EventHandler-Basispaket integriert. Ziel ist es, eine
-     bessere Trennung der Code-Schichten des Datenmodells und der Backends zu erreichen. Im Datenmodell sollen nur noch
-     Ereignisse ausgelöst werden (z.B. create, delete usw.), welche dann bestimmt durch die Konfiguration in den
-     Property-Dateien verarbeitet werden. Es soll ein allgemein gültiges Template-Modell existieren, welches für die
-     erforderlichen Anwendungsfälle ausgebaut werden kann. Ein singleton-Manager-Prozess nimmt nur ein Ereignis
+     <span class="label label-info">seit 1.2 (2005)</span>
+     Das EventHandler-Basispaket realisiert eine bessere Trennung der Code-Schichten des Datenmodells und der
+     Backends. Im Datenmodell werden nur Ereignisse ausgelöst werden (z.B. create, delete usw.), welche dann
+     bestimmt durch die Konfiguration in den
+     Property-Dateien verarbeitet werden. Es existiert ein allgemein gültiges Template-Modell, welches für die
+     erforderlichen Anwendungsfälle ausgebaut wird. Ein singleton-Manager-Prozess nimmt nur ein Ereignis
      entgegen, wählt die dafür bestimmte Konfiguration aus und startet die Methode
      <code>doHandleEvent(MCREvent evt)</code>. Dies geschieht in der Reihenfolge, welche in der Konfiguration angegeben
      ist und stellt ein Pipeline-Verfahren dar. Das Event-Objekt wird dabei nacheinander an die Handler durchgereicht.
