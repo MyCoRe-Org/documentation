@@ -264,6 +264,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         <mcrderiv_zip        label="ZIP-Dateien"       href="zipfiles.html" />
         <mcrderiv_streaming  label="StreamingServer"   href="streamingserver.html" />
         <mcrderiv_fileupload label="File-Upload"       href="fileupload_applet.html" />
+        <mcrderiv_mets       label="METS"              href="mets.html" />
       </mcrderivate>
       <eventhandler          label="EventHandler"      href="eventhandler/index.html" />
       <mcrobj_linktables     label="Linktabellen"      href="mcrobject/linktables.html" />

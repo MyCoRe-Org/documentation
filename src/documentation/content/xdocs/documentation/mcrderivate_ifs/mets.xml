@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Die METS-Unterstützung</title>
+  </header>
+
+  <body>
+    <!-- Include required JS files -->
+    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+    <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <section>
+   <title>Allgemein</title>
+   <p>
+     Der Metadata Encoding &amp; Transmission Standard (METS) ist ein mit XML Schema definiertes
+     XML-Format zur Beschreibung von digitalen Sammlungen von Objekten mit Metadaten. MyCoRe stellt
+     einen Editor bereit, mit dessen Hilfe man METS-Daten anlegen und bearbeiten kann. Der Bildbetrachter
+     liest diese Daten dann aus und stellt die METS-Informationen entsprechend dar.
+   </p>
+  </section>
+  <section>
+    <title>Kommandos</title>
+    <section>
+      <title>validate selected mets</title>
+      <p>
+        Dieses CLI-Kommando überprüft die Datenintegrität von MyCoRe-Derivaten hinsichtlich ihrer
+        METS-Dateien. Um das Kommando zu nutzen muss entsprechend als erstes die MyCoRe-CLI oder
+        die Web-CLI der Anwendung gestartet werden. Anschließend müssen alle zu prüfenden Derivate
+        ausgewählt werden. Dies geschieht mit dem Kommando <code>select objects with solr query {0}</code>
+        (Web-CLI unter der Kommandogruppe "MCR SOLR Commands").
+      </p>
+      <p>
+        Das folgende Kommando selektiert z.B. alle Derivate des Objektes mit der ID
+        ArchNachl_cbu_00000002:
+      </p>
+      <pre class="brush: bash; gutter: false;">
+select objects with solr query returnId:ArchNachl_cbu_00000002 AND objectType:derivate
+      </pre>
+      <p>
+        Als Bestätigung erscheint folgender Text:
+      </p>
+      <pre class="brush: bash; gutter: false;">
+>INFO: Processing command:'select objects with solr query returnId:ArchNachl_cbu_00000002
+>      AND objectType:derivate' (0 left)
+>INFO: Syntax matched (executed): select objects with solr query {0}
+>INFO: 1 objects selected
+>INFO: Command processed (5 ms)
+      </pre>
+      <p>
+        Um anschließend die Überprüfung zu starten, muss das Kommando <code>validate selected mets</code>
+        (Web-CLI unter der Kommandogruppe "MCR METS Commands") ausgeführt werden. Falls die Validierung
+        nicht erfolgreich war erscheinen Fehlermeldungen, welche auf die entsprechende Stelle verweisen
+        z.B.:
+      </p>
+      <pre class="brush: bash; gutter: false;">
+>INFO: Validate mets.xml of ArchNachl_derivate_00000004
+>ERROR: Some physical elements are not linked: [phys1]
+      </pre>
+    </section>
+  </section>
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+  </body>
+</document>
