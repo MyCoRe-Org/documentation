@@ -54,15 +54,22 @@
       <li>Attribute: hier können beliebige Eigenschaften des Nutzers abgelegt werden</li>
     </ol>
     <p>
+      Mit der Eigenschaft <code>locked</code> kann man festlegen, ob der Nutzer seine Daten selber ändern darf
+      oder nicht. Ist locked auf <code>true</code> gesetzt, dürfen alle Daten geändert werden. Setzt man den Wert
+      auf <code>false</code>, darf der Nutzer nur sein Passwort ändern. Alle anderen Daten sind geschützt und
+      können nur vom Administrator geändert werden.
+    </p>
+    <p>
       Die Nutzer werden in der Datenbank abgespeichert, die XML-Repräsentation eines Benutzerobjektes
       zeigt das folgende Codebeispiel:
     </p>
   <pre class="brush: xml;"><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
-<user name="editorTest" realm="local">
+<user locked="false" name="editorTest" realm="local">
   <owner name="administrator" realm="local" />
   <realName>Testnutzer - Bearbeiter</realName>
   <eMail>mailadresse@des-nutzers.de</eMail>
+  <lastLogin>2014-11-14T16:50:07Z</lastLogin>
   <roles>
     <role name="editor" />
   </roles>
