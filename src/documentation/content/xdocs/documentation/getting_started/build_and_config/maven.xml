@@ -10,11 +10,19 @@
     <section>
       <title>Maven</title>
       <p>
-        MyCoRe verwendet das Build-Management-Tool der Apache Software Foundation "Maven". Das Werkzeug hilft dabei, mÃ¶glichst viele Schritte der Softwareentwicklung zu automatisieren. Alle Informationen zum Softwareprojekt MyCoRe werden in der Konfigurationsdatei pom.xml beschrieben
+        MyCoRe verwendet das Build-Management-Tool der Apache Software Foundation "Maven". 
+        Das Werkzeug hilft dabei, möglichst viele Schritte der Softwareentwicklung 
+        zu automatisieren.
       </p>
+      <p>
+        Alle Informationen zum Softwareprojekt MyCoRe werden 
+        in der Konfigurationsdatei <code>pom.xml</code> beschrieben.
+      </p>
+      <!-- 
       <ul>
         <li></li>
       </ul>
+      -->
     </section>
 
   </body>
