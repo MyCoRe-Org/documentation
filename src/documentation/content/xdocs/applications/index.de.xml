@@ -3,21 +3,30 @@
 
 <document>
   <header>
-    <title>Demo</title>
+    <title>Demo-Anwendungen</title>
   </header>
   <body>
+    <h2>MyCoRe MODS Institutional Repository</h2>
     <p>
-    Derzeit arbeiten die Entwickler an einer neuen Beispielanwendung.
-    Bis dahin kann Ihnen
-    <a href="http://www.mycore.de:8291">DocPortal</a> einen ersten Einblick
-    in eine Repository-Anwendung geben.
+      Das "MyCoRe MODS Institutional Repository" (MIR) ist eine Repository-Anwendung, die Out-Of-The-Box
+      installiert werden kann. Sie stellt alle typischen IR-Funktionen bereit und kann sofort produktiv genutzt werden.
+      Anpassungen sind nur beim Layout und bei den Webinhalten vorgesehen. Die Metadaten werden als MODS-XML gespeichert.
+      Weitere Informationen zu MIR finden Sie in der Dokumentation.<!-- TODO: Verlinken! -->
     </p>
-    <h3>Anmeldung</h3>
+    <h3>Zugang</h3>
     <p>
-    Nutzername: administrator<br />
-    Passwort: alleswirdgut
+      Eine Demo der MIR-Anwendung kann unter <a href="http://www.mycore.de/mir">www.mycore.de/mir</a> getestet werden.
+      Es steht ein Nutzer mit allen Berechtigungen zur Verfügung:<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;Nutzername: administrator<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;Passwort: alleswirdgut
     </p>
 
+    <h2>DocPortal (veraltet)</h2>
+    <p>
+      Die alte Beispiel- und Basisanwendung für MyCoRe-Entwicklungen DocPortal wird nicht mehr gepflegt. Da sich
+      MIR noch in Entwicklung befindet, kann das <a href="http://www.mycore.de:8291">DocPortal-Demo</a> einen Einblick
+      in deutlich mehr MyCoRe-Funktionen geben.
+    </p>
     <h2>Weitere Beispiele</h2>
     <p>Die <a href="site:map">Karte</a> gibt eine Übersicht über MyCoRe-Anwendungen der Community. Hier
     können Sie sich selbst passende Beispiele suchen und Kontakt zu den

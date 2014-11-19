@@ -229,19 +229,23 @@ See http://forrest.apache.org/docs/linking.html for more info
       </doc_archive>
     </overview>
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
-      <architecture          label="Architektur"       href="architecture.html" />
-      <datamodel             label="Datenmodell"       href="datamodel.html" />
-      <installation          label="Installation &amp; Aufbau" href="installation.html" />
-      <buildprocess          label="Buildprozess"      href="build_and_config/">
-        <properties          label="mycore.properties" href="mcr_properties.html" />
-        <hibernate           label="Hibernate"         href="hibernate.html" />
-        <maven               label="Maven"             href="maven.html" />
-      </buildprocess>
+      <mir                   label="MIR"               href="mir.html" />
       <cli                   label="Kommandozeile"     href="cli_and_commands/" >
         <cli_overview        label="Übersicht"         href="index.html" />
         <web_cli             label="WebCLI"            href="web_cli.html" />
         <cli_extension       label="Erweiterungen"     href="cli_extension.html" />
       </cli>
+      <buildprocess          label="Buildprozess"      href="build_and_config/">
+        <properties          label="mycore.properties" href="mcr_properties.html" />
+        <hibernate           label="Hibernate"         href="hibernate.html" />
+        <maven               label="Maven"             href="maven.html" />
+      </buildprocess>
+      <datamodel             label="Datenmodell"      href="datamodel.html" />
+      <docportal             label="DocPortal"        href="docportal/">
+        <architecture_dp          label="Architektur"       href="architecture.html" />
+        <datamodel_dp             label="Datenmodell"       href="datamodel.html" />
+        <installation_dp          label="Installation &amp; Aufbau" href="installation.html" />
+      </docportal>
     </getting_started>
     <content               label="Inhalte verwalten" >
       <classifications       label="Klassifikationen"  href="classifications/">

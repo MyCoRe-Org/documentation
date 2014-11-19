@@ -3,1196 +3,986 @@
 
 <document>
   <header>
-    <title>Datenmodell und Aufbau von DocPortal</title>
+    <title>Datenmodelldefinition</title>
   </header>
   <body>
 
-   <section>
-    <title>Eine Übersicht</title>
-    <p>
-    Die folgende Skizze soll eine Übersicht über die Zusammenhänge der einzelnen Daten geben. In den anschließenden
-    Abschnitten werden diese dann näher erläutert. Die Datenmodelle der Typen <strong>document</strong>
-    und <strong>disshab</strong> sowie <strong>author</strong> und <strong>person</strong> unterscheiden sich lediglich
-    in der Frage der Pflichtfelder. Die Typen disshab und person sind für einen Dissertations-Server (DOL) gedacht und
-    sind in der Grundversion von DocPortal nicht enthalten.
+ <section>
+  <title>XML-Syntax des Datenmodells</title>
+  <p>
+  In diesem Abschnitt wird der Syntax der einzelnen XML-Daten-Dateien und der MyCoRe-Standard-Datentypen näher
+  beschrieben. Die Kenntnis des Syntax benötigen Sie um eigene Datensätze für Ihren Dokumenten-Server zu erstellen.
+  Eine umfassende Beschreibung der zugehörigen Klassen finden Sie im
+  <a href="site:appdev" title="MyCoRe Programmer Guide 2.0" target="_blank">Programmer Guide</a>. In den folgenden Abschnitten
+  wird lediglich auf die XML-Syntax der Daten eingegangen.
+  </p>
+
+  <anchor id="MCRO" />
+  <section>
+   <title>Die MCRObjectID</title>
+   <p>
+   Die Identifikation eines jeden MyCoRe Objektes erfolgt grundsätzlich über eine eindeutige ID.
+   Die ID kann per Hand vergeben oder auch automatisch via API generiert werden. Diese hat für alle Objekte einen
+   einheitlichen Aufbau, dessen Inhalt für jedes Projekt und jeden Datentyp festzulegen ist:
+   </p>
+   <p class="break">ID = “projektkürzel_type_nummer”</p>
+
+   <table>
+   <tr>
+   <td><strong>projektkürzel</strong></td>
+   <td>Dieses Element ist für ein Projekt und/oder eine Einrichtung / Datengruppe festzulegen, zum Beispiel UBLPapyri
+       oder MyCoReDocument. In MyCoRe wird es teilweise auch zur Identifikation einzelner Konfigurationsdaten mit
+       genutzt.
+   </td>
+   </tr>
+   <tr>
+   <td><strong>type</strong></td>
+   <td>Das Element beschreibt den Datenmodelltyp, d. h. der type verweist auf die zugehörige Datenmodell-Konfiguration,
+       zum Beispiel datamodel-author oder datamodel-document. In MyCoRe wird es oft zur Identifikation einzelner
+       Konfigurationsdaten im Zusammenhang mit der Verarbeitung dieses Datenmodells genutzt.
+   </td>
+   </tr>
+   <tr>
+   <td><strong>nummer</strong></td>
+   <td>Ist eine frei wählbare positive Integerzahl. Diese Zahl kann in Verantwortung des Projektmanagers per Hand oder
+       automatisch vergeben werden. Bei der Projektdefinition wird die Größe des Zahlenbereiches festgelegt. Es hat sich
+       als sinnvoll erwiesen, nicht weniger als 8 Ziffern einzuplanen.
+   </td>
+   </tr>
+   </table>
+   <p class="klein"><strong>Tabelle 8.1:</strong> Aufbau der MCRObjectID</p>
+
+   <p>
+   Im MyCoRe-Projekt sind zwei MCRObjectID-Typnamen reserviert und dürfen nicht für anderweitige Objekte genutzt werden.
+   Der Typ <code>class</code> steht für Klassifikationen, der Typ <code>derivate</code> wird für Multimediaobjekte
+   verwendet.
+   </p>
+   <p>
+   Es sei noch einmal ausdrücklich darauf hingewiesen, das die <code>MCRObjectID</code> eine zentrale Rolle im ganzen
+   MyCoRe-Projekt spielt. Über sie werden alle Daten identifiziert und referenziert. Es sind daher die vorgegebenen
+   Regeln streng einzuhalten. Da es derzeit für den Datentyp zum anhängen nur eine <code>type</code>-Bezeichnung gibt,
+   kann es beim Design eines Projektes hilfreich sein, sich für eine Gruppe von Projektkürzeln zu entscheiden, z. B.
+   <code>DOLAuthor_author_...</code>, <code>DOLDocument_document_...</code> usw. So kann jedem Datenmodell eine
+   dedizierte Derivate-Gruppe zugeordnet werden z. B. <code>DOLAuthor_derivate_...</code> oder
+   <code>DOLDocument_derivate_...</code>. Diese Trennung ist nicht zwingend, hat sich aber bei der Verwaltung großer
+   Datenmengen als günstig erwiesen. Manchmal ist es sogar sinnvoll, hierzu noch mehrere Projektkürzel für ein
+   Datenmodell zu verwenden, je nach Umfang des Datenbestandes und der Sicherungs- und Reparatur-Strategien des
+   Projektes.
+   </p>
+  </section>
+
+  <anchor id="Klass" />
+  <section>
+   <title>Das Klassifikationen-Datenmodell</title>
+   <p>
+   Wie bereits erwähnt dienen Klassifikationen der einheitlichen Gliederung bestimmter Fakten. Sie sorgen dafür,
+   dass eine einheitliche Schreibweise für bestimmte Begriffe verwendet wird. Diese Einzelbegriffe werden als
+   Kategorien bezeichnet. Innerhalb einer Kategorie kann der Begriff in verschiedenen Sprachen aufgezeichnet sein.
+   Die eindeutige Zuordnung zu einer Kategorie erfolgt über einen Bezeichner. Dieser besteht aus der Klassifikations-
+   und Kategorie-ID und muss eindeutig sein.
+   </p>
+   <p>
+   Klassifikationen werden im DocPortal als extra XML-Datei erstellt, in die Anwendung importiert und in Form einer
+   Datenbank gespeichert. Dies ist für den Nutzer transparent und erfolgt mittels Schnittstellen. Der Zugriff auf die
+   Daten erfolgt dann durch den oben genannten Bezeichner. Die Klassifikations-ID ist eine <code>MCRObjectID</code> mit
+   dem Typ <code>class</code>. Die Kategorie-ID ist dagegen frei wählbar. Sie darf mehrstufig sein, jede Stufe spiegelt
+   eine Hierarchieebene wieder. Die Stufen in der ID werden mit einem Punkt voneinander getrennt, ’<code>Uni.URZ</code>’.
+   Das wiederum gestattet eine Abfrage nach allen untergeordneten Stufen bzw. Sub-Kategorien wie ’<code>Uni.*</code>’.
+   </p>
+   <note label="Hinweis">
+   Sollten Sie Zahlen als Kategorie-IDs mit verwenden, so planen Sie entsprechende führende Nullen ein, andernfalls
+   wird das Suchergebnis fehlerhaft! Weiterhin ist es sehr zu empfehlen, dieser Zahlenfolge einen Buchstaben voran
+   zusetzen, damit die ID nicht als Zahl interpretiert wird.
+   </note>
+   <p>
+   Im ID Attribut einer <code>category</code> ist der eindeutige Bezeichner anzugeben. Das darunter befindliche label
+   Tag bietet die Möglichkeit, eine Kurzbezeichnung anzugeben. Mehrsprachige Ausführungen sind erlaubt. Dasselbe gilt für
+   das Tag <code>description</code>. Beide Werte werden als Strings aufgefasst. Eine category kann wiederum category
+   Tags beinhalten.
+   </p>
+   <source>
+    <p class="kastensource">
+      <![CDATA[
+      <?xml version="1.0" encoding="UTF-8" ?>
+        <mycoreclass
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          ID="..." >
+         <label xml:lang="..." text="..." description="..."/>
+         ...
+         <categories>
+          <category ID="...">
+             <label xml:lang="..." text="..." description="..."/>
+             ...
+             <category ID="...">
+               <label xml:lang="..." text="..." description="..."/>
+               ...
+             </category>
+             <category ID="...">
+               <label xml:lang="..." text="..." description="..."/>
+               ...
+             </category>
+           </category>
+         </category>
+       </categories>
+    </mycoreclass>
+   ]]>
+   </p>
+   </source>
+  </section>
+
+  <section>
+   <title>Das Metadatenmodell</title>
+   <p>
+   Die zu speichernden Daten des Beispiels teilen sich in unserem Modell in Metadaten und digitale Objekte. Dies gilt
+   auch für die vom Anwender entwickelten Applikationen. Digitale Objekte sind Gegenstand des Abschnitts ’IFS und
+   Content Store’. Unter Metadaten verstehen wir in MyCoRe alle beschreibenden Daten des Objektes, die extern
+   hinzugefügt, separat gespeichert und gesucht werden können. Dem gegenüber stehen Daten welche die digitalen Objekte
+   selbst mitbringen. In diesem Abschnitt werden nur erstere behandelt.
+   </p>
+   <p>
+   Um die Metadaten besser auf unterschiedlichen Datenspeichern ablegen zu können, wurde ein System von XML-Strukturen
+   entwickelt, das es gestattet, neben den eigentlichen Daten wie Titel, Autor usw. auch Struktur- und
+   Service-Informationen mit abzulegen. Die eigentlichen Nutzerdaten sind wiederum typisiert, was deren
+   speicherunabhängige Aufzeichnung erheblich vereinfacht. Es steht dem Entwickler einer Anwendung jedoch frei, hier bei
+   Bedarf weitere hinzuzufügen. Im Folgenden soll nun der Aufbau der Metadatenobjekte im Detail beschrieben werden. Zum
+   Verständnis der MyCoRe-Beispielanwendung sei hier auch auf den vorigen Abschnitt verwiesen. Die Metadaten werden
+   komplett in XML erfasst und verarbeitet. Für die Grundstrukturen und Standardmetadatentypen werden seitens MyCoRe
+   bereits XMLSchema-Dateien mitgeliefert.
+   </p>
+   <p class="fett">XML-Syntax eines Metadatenobjektes</p>
+   <source>
+    <p class="kastensource">
+      <![CDATA[
+      <?xml version="1.0" encoding="UTF-8" ?>
+      <mycoreobject
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="....xsd"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          ID="..."
+          label="..." >
+       <structure>
+       ...
+       </structure>
+       <metadata xml:lang="de">
+       ...
+       </metadata>
+       <service>
+       ...
+       </service>
+      </mycoreobject>
+      ]]>
     </p>
-    <img src="images/mcruse_metadata.png" alt="Metadaten" />
-    <p class="klein"><strong>Abbildung 5.1:</strong> Zusammenhänge der einzelnen Metadaten</p>
-   </section>
-
-   <section>
-    <title>Die Document-Daten</title>
-    <p>
-    Das Datenmodell der Dokumente ist ein Kompromiss zwischen den einzelnen abzubildenden Datenmodellen bisher
-    bestehender Projekte. Gleichzeitig sollen auch Anforderungen an die Zukunft, wie das <strong>xMetaDiss</strong>
-    Datenmodell oder OAI berücksichtigt werden. Entscheidend für die Gestaltung der Daten mit MyCoRe sind vor allem
-    die MyCoRe-Datentypen. Die Festlegungen zur Wiederholbarkeit der Angaben bezieht sich immer
-    auf <strong>eine</strong> Sprache. Die meisten Felder sind optional und können bei Bedarf verwendet werden.
+   </source>
+   <p>
+   Die oben gezeigte Syntax stellt den Rahmen eines jeden Metadaten-Objektes dar. Diese Struktur ist immer gleich und
+   muss so eingehalten werden.
+   </p>
+   <ul>
+   <li>Für xsi:noNamespaceSchemaLocation ist das entsprechende XMLSchema-File des Metadatentyps anzugeben
+   (document.xsd)</li>
+   <li>Die ID ist die eindeutige MCRObjectID.</li>
+   <li>Der label ist ein kurzer Text-String, der bei administrativen Arbeiten an der Datenbasis das Identifizieren
+   einzelner Datensätze erleichtern soll. Er kann maximal 256 Zeichen lang sein.</li>
+   <li>Innerhalb der XML-Datenstruktur gibt es die Abschnitte structure, metadata und service zur Trennung von
+   Struktur-, Beschreibungs- und Wartungsdaten. Diese Tag-Namen sind reserviert und dürfen NICHT anderweitig verwendet
+   werden!</li>
+   </ul>
+   <p class="fett">XML-Syntax des XML-Knotens structure</p>
+   <p>
+   Im XML-Knoten structure sind alle Informationen über die Beziehung des Metadatenobjektes zu anderen Objekten abgelegt.
+   Es werden derzeit die folgenden XML-Daten unter diesem Knoten abgelegt. Die Tag-Namen parents/parent, children/child
+   und derobjects/derobject sind reserviert und dürfen NICHT anderweitig verwendet werden! Alle Sub-Knoten haben einen
+   Aufbau wie für MCRMetaLinkID beschrieben.
+   </p>
+   <p>
+   In parents wird ein Link zu einem Elternobjekt gespeichert, sofern das referenzierende Objekt Eltern hat. Ob dies der
+   Fall ist, bestimmt die Anwendung. Das Tag dient der Gestaltung von Vererbungsbäumen und kann durch den Anwender
+   festgelegt werden. Siehe auch <a href="site:appdev" title="MyCoRe Programmer Guide 2.0" target="_blank">
+   Programmer Guide</a>, Abschnitt Vererbung. Die Werte für xlink:title und xlink:label werden beim Laden der Daten
+   automatisch ergänzt.
+   </p>
+   <p>
+   Die Informationen über die children hingegen werden durch das MyCoRe-System beim Laden der Daten automatisch erzeugt
+   und dürfen nicht per Hand geändert werden, da sonst das Gesamtsystem nicht mehr konsistent ist. Werden die Metadaten
+   eines Kindes oder eines Baumes von Kindern gelöscht, so wird in diesem Teil des XML-Knotens der Eintrag durch die
+   Software entfernt.
+   </p>
+   <p>
+   Dasselbe gilt auch für den XML-Unterknoten <code>derobjects</code>. In diesem Bereich werden alle Verweise auf die an
+   das Metadatenobjekt angehängten digitalen Objekte gespeichert. Jeder Eintrag verweist mittels einer Referenz auf ein
+   Datenobjekt vom Typ mycorederivate, wie es im nachfolgenden Abschnitt ’IFS und Content Store’ näher erläutert ist.
+   </p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <structure>
+       <parents class="MCRMetaLinkID">
+         <parent xlink:type="locator" xlink:href="...mcr_id..." />
+       </parents>
+       <children class="MCRMetaLinkID">
+         <child xlink:type="locator" xlink:href="...mcr_id..."
+             xlink:label="..." xlink:title="..." />
+         ...
+       </children>
+       <derobjects class="MCRMetaLinkID">
+         <derobject xlink:type="locator" xlink:href="...mcr_id..."
+             xlink:label="..." xlink:title="..." />
+         ...
+       </derobjects>
+     </structure>
+     ]]>
     </p>
-    <p>
-    Einzelne Applikationen werden nur einen Teil der angegebenen Felder ausfüllen. Es ist daher sinnvoll sich auf
-    eine allgemeine Mindestmenge von Pflichtfeldern zu einigen, um eine korrekte Suche über mehrere Instanzen und
-    Projekte zu gestatten. Bei einigen Feldern ist dies aber von den Spezifika des jeweiligen Projektes abhängig.
+   </source>
+   <p class="fett">XML-Syntax des XML-Knotens metadata</p>
+   <p>
+   Der Abschnitt metadata des MyCoRe-Metadatenobjektes nimmt alle Beschreibungsdaten des eigentlichen Datenmodells auf.
+   Diese werden ihrerseits in vordefinierten Datentyp-Strukturen mit festgelegter Syntax abgelegt. Die Liste der
+   Einzelelemente und die Reihenfolge der Typen ist dabei quasi beliebig in Anordnung und Länge. Wichtig ist nur, dass
+   alle Datentypen bestimmte gemeinsame Eigenschaften haben. Es ist auch jederzeit möglich, weitere Typen den Projekten
+   der Anwender hinzuzufügen (siehe dazu <a href="site:appdev" title="MyCoRe Programmer Guide 2.0" target="_blank">
+   Programmer Guide</a>).
+   </p>
+   <p>
+   Die Metadaten bestehen aus einer Ansammlung von Informationen rund um das multimediale Objekt. Vorrangig wird dieser
+   Teil in der Suche abgefragt. Jedes Metadatum (auch Metadaten-Tag) enthält im class Attribut den Namen des MCRMeta-Typs
+   bzw. der gleichnamigen MCRMeta-Java Klasse. Daneben gibt es noch ein Attribut heritable, in dem festgelegt wird, ob
+   diese Metadaten vererbbar sein sollen. Es sind jeweils die booleschen Werte true oder false möglich. Die mit der
+   Vererbung verbundenen Mechanismen sind in dieser Dokumentation weiter hinten beschrieben.
+   </p>
+   <p>
+   Für MyCoRe wurden einige Basismetadatentypen festgelegt, mit denen die Mehrzahl der bisher in Betracht kommenden
+   Anwendungen gelöst werden können. Die einzelnen Daten treten dabei als Liste auf, in denen mehrere Elemente des
+   gleichen Typs erscheinen können, beispielsweise ein Titel in verschiedenen Sprachen. Jedes Listenelement hat wiederum
+   per Default ein type Attribut und eine gemäß W3C spezifizierte Sprache im Attribut xml:lang. Die Angabe der Sprache
+   im Tag metadata ist für alle eingeschlossenen Metadatentypen der Default-Wert. Die Liste der aktuell unterstützten
+   Sprach-Codes entnehmen Sie bitte der Java-Quelldatei
+   </p>
+   <p class="break"><code>~/mycore/sources/org/mycore/common/MCRDefaults.java</code></p>
+   <p>
+   Für interne Zwecke wurde ein weiteres Attribut inherited eingeführt. Dieses ist NICHT durch den Anwender zu verändern!
+   Es wird gesetzt, wenn das betreffende Metadatum von einem Elternteil geerbt wurde (siehe Vererbung). Diese
+   Information ist für die Datenpräsentation sehr hilfreich.
+   </p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <metadata xml:lang="...">
+       <... class="MCRMeta..." heritabel="...">
+        ...
+       </...>
+       ...
+     </metadata>
+     ]]>
     </p>
-    <p>Die Suchmöglichkeiten (parametrisch/Freitext) beziehen sich auf die Metadaten. Hinzu kommt die Volltextsuche
-    im Dokument. Die Felder des <strong>Dublin Core Datenmodells</strong> sollten immer implementiert und wenn möglich
-    mit Daten gefüllt sein. Auf sie beziehen sich auch die Suchen externer Datenanbieter bzw. Teilnehmer am MyCoRe-
-    oder OAI Datenverbund. Um späteren Problemen mit nicht-Latin1-Sprachen aus dem Weg zu gehen sollen alle
-    Metadatensätze und die Internet-Anwendung UTF-8 als Codierung verwenden.
+   </source>
+   <p>
+   Für das MyCoRe-Beispiel mit einem Dublin Core Datenmodell werden bereits einige Metadatentypen verwendet, welche dem
+   MyCoRe-Kern beigefügt sind. Die Syntax der einzelnen Typen wird in den nachfolgenden Absätzen genau beschrieben.
+   </p>
+   <p class="fett">MyCoRe Metadaten-Basistypen</p>
+   <p>
+   In MyCoRe gibt es eine Reihe von vordefinierten XML-Datenstrukturen zur Abbildung bestimmter mehr oder minder
+   komplexer Daten. Diese Strukturen bilden die MyCoRe-Datentypen, welche von der Dateneingabe bis hin zur Validierung
+   und Datenpräsentation für einen einheitlichen Umgang mit den Daten sorgen. Dabei ist zwischen einfachen, recht
+   atomaren Typen und anwendungsspezifischen komplexen Typen zu unterscheiden. Eine Auflistung finden Sie in
+   nachfolgender Tabelle.
+   </p>
+   <table>
+   <tr>
+   <th>Einfache Typen</th>
+   <th>Komplexe Typen</th>
+   </tr>
+   <tr>
+   <td>MCRMetaBoolean</td>
+   <td>MCRMetaAccessRule</td>
+   </tr>
+   <tr>
+   <td>MCRMetaClassification</td>
+   <td>MCRMetaAddress</td>
+   </tr>
+   <tr>
+   <td>MCRMetaISBN</td>
+   <td>MCRMetaHistoryDate</td>
+   </tr>
+   <tr>
+   <td>MCRMetaISO8601Date</td>
+   <td>MCRMetaInstitutionName</td>
+   </tr>
+   <tr>
+   <td>MCRMetsLangText</td>
+   <td>MCRMetaPersonName</td>
+   </tr>
+   <tr>
+   <td>MCRMetaLink</td>
+   <td>MCRMetaIFS</td>
+   </tr>
+   <tr>
+   <td>MCRMetaLinkID</td>
+   <td>MCRMetaXML</td>
+   </tr>
+   <tr>
+   <td>MCRMetaNBN</td>
+   <td/>
+   </tr>
+   <tr>
+   <td>MCRMetaNumber</td>
+   <td/>
+   </tr>
+   </table>
+   <p class="klein"><strong>Tabelle 8.2:</strong> MyCoRe-Basisdatentypen</p>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaAccessRule</p>
+   <p>
+   Der Basistyp MCRMetaAccessRule ist für den Import/Export von Access Control Lists (ACL's) gedacht. Der Metadatentyp
+   stellt einen Container für die entsprechenden Access-Conditions dar und wird nur im MCRService-Teil verwendet.
+   </p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <servacls class="MCRMetaAccessRule">
+       <servacl permission="...">
+         <condition format="xml">
+          ...
+         </condition>
+       </servacl>
+     </servacls>
+
+     <servacls class="MCRMetaAccessRule">
+       <servacl permission="read">
+         <condition format="xml">
+           <boolean operator="and">
+             <!-- USER OR GROUP -->
+           <boolean operator="or" />
+             <!-- DATE -->
+           <boolean operator="and" />
+             <!-- IP -->
+           <boolean operator="or" />
+             <!-- -->
+           </boolean>
+         </condition>
+       </servacl>
+     </servacls>
+     ]]>
     </p>
-
-    <table>
-    <tr>
-    <th>Nr.</th>
-    <th>Bezeichner</th>
-    <th>Bemerkung</th>
-    <th>Pfl.</th>
-    <th>wied.</th>
-    <th>Suche</th>
-    <th>MCR-Type</th>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Titel (DC)</td>
-    <td>Haupttitel und ggf. weitere Titel</td>
-    <td>ja</td>
-    <td>ja</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>2</td>
-    <td>Creator (DC)</td>
-    <td>Name eines Autors ohne Verweis</td>
-    <td>ja</td>
-    <td>ja</td>
-    <td>Param. Freitext</td>
-    <td>MCRMentLangText</td>
-    </tr>
-    <tr>
-    <td>3</td>
-    <td>CreatorLink</td>
-    <td>Daten des Autor oder Schöpfer des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. </td>
-    <td>MCRMetaLinkID</td>
-    </tr>
-    <tr>
-    <td>4</td>
-    <td>Subject (DC)</td>
-    <td>Ordnungskriterien in Klassifikationen</td>
-    <td>ggf.</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaClassification</td>
-    </tr>
-    <tr>
-    <td>5</td>
-    <td>Origin</td>
-    <td>Zugehörigkeit zu einer Einrichtung als Klassifikation</td>
-    <td>ja</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaClassification</td>
-    </tr>
-    <tr>
-    <td>6</td>
-    <td>Description (DC)</td>
-    <td>Kurzbeschreibung des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>7</td>
-    <td>DescriptURL</td>
-    <td>Link zu Kurzbeschreibungen</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaLink</td>
-    </tr>
-    <tr>
-    <td>8</td>
-    <td>Publisher (DC)</td>
-    <td>Name des Veröffentlichers des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>9</td>
-    <td>PublisherLink</td>
-    <td>Daten des Veröffentlichers des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. </td>
-    <td>MCRMetaLinkID</td>
-    </tr>
-    <tr>
-    <td>10</td>
-    <td>Contributor (DC)</td>
-    <td>Name des Beteiligten an der Erstellung des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>11</td>
-    <td>ContribLink</td>
-    <td>Daten des Beteiligten an der Erstellung des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. </td>
-    <td>MCRMetaLinkID</td>
-    </tr>
-    <tr>
-    <td>12</td>
-    <td>Date (DC)</td>
-    <td>Datumsangaben zum Objekt</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaISO8601</td>
-    </tr>
-    <tr>
-    <td>13</td>
-    <td>Type (DC)</td>
-    <td>Typ des Objektes als Klassifikation</td>
-    <td>ja</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaClassification</td>
-    </tr>
-    <tr>
-    <td>14</td>
-    <td>Format (DC)</td>
-    <td>Format des Objektes als Klassifikation</td>
-    <td>ja</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaClassification</td>
-    </tr>
-    <tr>
-    <td>15</td>
-    <td>Identifier (DC)</td>
-    <td>Angaben zur Identifikation des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>16</td>
-    <td>Source (DC)</td>
-    <td>Angaben zu den Quellen des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>17</td>
-    <td>SourceLink</td>
-    <td>Link zu Angaben zu den Quellen des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaLink</td>
-    </tr>
-    <tr>
-    <td>18</td>
-    <td>Languages (DC)</td>
-    <td>Sprache als Klassifikation</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRClassification</td>
-    </tr>
-    <tr>
-    <td>19</td>
-    <td>Keywords </td>
-    <td>Schlüsselworte als verbaler Text</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>20</td>
-    <td>Coverage (DC)</td>
-    <td>Angaben zu der Erstreckung des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext </td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>21</td>
-    <td>CoverageLink</td>
-    <td>Link zu Angaben zu der Erstreckung des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaLink</td>
-    </tr>
-    <tr>
-    <td>22</td>
-    <td>CoverageDate</td>
-    <td>Datumsangaben zur Erstreckung des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaDate</td>
-    </tr>
-    <tr>
-    <td>23</td>
-    <td>Relation (DC)</td>
-    <td>Textlicher Verweis auf externe Referenzen</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext </td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>24</td>
-    <td>RelationLink</td>
-    <td>Verweise auf externe Referenzen</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaLink</td>
-    </tr>
-    <tr>
-    <td>25</td>
-    <td>RelationISBN</td>
-    <td>ISBN als Relation.</td>
-    <td>nein</td><td>nein</td>
-    <td>param.</td>
-    <td>MCRMetaISBN</td>
-    </tr>
-    <tr>
-    <td>26</td>
-    <td>Rights (DC)</td>
-    <td>Angaben zu den Rechten des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>27</td>
-    <td>RightsLink</td>
-    <td>Link zu Angaben zu den Rechten des Objektes</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaLink</td>
-    </tr>
-    <tr>
-    <td>28</td>
-    <td>Size</td>
-    <td>Angaben zu Seitenanzahl, Bilder, Tabellen usw.</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>29</td>
-    <td>Place</td>
-    <td>Erscheinungsort</td>
-    <td>nein</td>
-    <td>nein</td>
-    <td>param.Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>30</td>
-    <td>ISBN</td>
-    <td>eindeutige ISBN</td>
-    <td>nein</td><td>nein</td>
-    <td>param.</td><td>MCRMetaISBN</td>
-    </tr><tr><td>31</td><td>NBN</td>
-    <td>eindeutige NBN</td>
-    <td>nein</td>
-    <td>nein</td>
-    <td>param.</td>
-    <td>MCRMetaNBN</td>
-    </tr>
-    <tr>
-    <td>32</td>
-    <td>URN</td>
-    <td>eindeutige URN</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaLink</td>
-    </tr><tr><td>33</td>
-    <td>DDBContact</td>
-    <td>Eindeutiger Identifizierer der DB</td>
-    <td>nein</td><td>nein</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>34</td>
-    <td>Notes</td>
-    <td>Anmerkungen zum Objekt</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>Freitext</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>35</td>
-    <td>Citation</td>
-    <td>Zitierweise</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    </table>
-    <p class="klein"><strong>Tabelle 5.1:</strong> Das neue Metadaten-Modell der Dokumente</p>
-
-    <p>Ausfüllhinweise:</p>
-    <p>
-    Die Zahlen in Klammern geben die maximale Zeichenlänge pro Kardinalität an.
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaAddress</p>
+   <p>
+   Der Basistyp MCRMetaAddress beinhaltet eine Liste von postalischen Anschriften in der Ausprägung eines
+   XML-Abschnittes. Dabei wird berücksichtigt, dass die Anschrift in verschiedenen Sprachen und in international
+   gängigen Formen gespeichert werden soll. Die einzelnen Subtags sind dabei selbsterklärend. Die Angaben zu type und
+   xml:lang sind optional, ebenso die unter subtag liegenden Tags, jedoch muss mindestens eines ausgefüllt sein. Alle
+   Werte werden als Text betrachtet.
+   </p>
+   <p>XML-Syntax des Metadatentyps MCRMetaAddress:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaAddress">
+       <subtag type="..." xml:lang="...">
+         <country>...</country>
+         <state>...</state&gt;
+         <zipcode>...</zipcode>
+         <city>...</city>
+         <street>...</street>
+         <number>...</number>
+       </subtab>
+       ...
+     </tag>
+     ]]>
     </p>
-
-    <table>
-    <tr>
-    <th>Nr.</th>
-    <th>Bezeichner</th>
-    <th>Ausfüllhinweis</th>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Titel(1024)</td>
-    <td><ul>
-        <li>Pro Titeltyp können mehrere Sprachen benutzt werden.</li>
-        <li>Haupttitel werden mit <strong>type=“main“</strong> markiert.</li>
-        <li>Alternative Titel werden mit <strong>type=“alt“</strong> markiert.</li>
-        <li>Untertitel werden mit <strong>type=“subtitle“</strong> markiert.</li>
-    </ul></td>
-    </tr>
-    <tr>
-    <td>2</td>
-    <td>Creator(128)</td>
-    <td><ul>
-        <li>Für Habilitationen und Dissertationen Verfasser in Vorlageform.</li>
-        <li>Sonst Autorname als Text.</li>
-    </ul></td>
-    </tr>
-    <tr>
-    <td>3</td>
-    <td>CreatorLink</td>
-    <td>Verweis auf einen Personen-Datensatz.</td>
-    </tr>
-    <tr>
-    <td>4</td>
-    <td>Subject</td>
-    <td><ul>
-        <li>Verweise auf Kategorien von Klassifikationen, in die das Dokument eingeordnet ist.</li>
-        <li>Für  Habilitationen und Dissertationen in Leipzig --> Regensburger Systematik (ID der RS)</li>
-        <li>Weitere bibliotheksinterne Sachgruppen</li>
-    </ul></td>
-    </tr>
-    <tr>
-    <td>5</td>
-    <td>Origin</td>
-    <td>Auswahlliste, zu welcher Einrichtung das Objekt gehört.</td>
-    </tr>
-    <tr>
-    <td>6</td>
-    <td>Description(4096)</td>
-    <td>Beschreibende Informationen.
-        <ul><li>Für den Beschreibungstext <strong>type=“description“</strong>.</li>
-            <li>Für Abstract <strong>type=“abstract“</strong>.</li>
-            <li>Für die Inhaltsangabe <strong>type=“content“</strong>.</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>7</td>
-    <td>DescriptURL</td>
-    <td>Vereis auf externe Beschreibungstexte.
-        <ul><li>Für den Beschreibungstext <strong>type=“description“</strong>.</li>
-            <li>Für Abstract <strong>type=“abstract“</strong>.</li>
-            <li>Für die Inhaltsangabe <strong>type=“content“</strong>.</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>8</td>
-    <td>Publisher(128)</td>
-    <td>Textliche Bezeichnung des/derHerausgeber(s).</td>
-    </tr>
-    <tr>
-    <td>9</td>
-    <td>PublisherLink</td>
-    <td>Verweis auf einen Personen- oder Institutionen-Datensatz.</td>
-    </tr>
-    <tr>
-    <td>10</td>
-    <td>Contributor(128)</td>
-    <td>Textliche Bezeichnung des/der Beteiligten.
-        <ul>
-        <li>Für den Typ können Informationen wie <strong>„advisor“</strong> , <strong>„mentor“</strong>,
-        <strong>„drawer“</strong> usw. angegeben werden.</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>11</td>
-    <td>ContributorLink</td>
-    <td>Verweis auf einen Personen- oder Institutionen-Datensatz.
-        <ul>
-        <li>Für den Typ können Informationen wie <strong>„advisor“</strong> , <strong>„mentor“</strong>,
-        <strong>„drawer“</strong> usw. angegeben werden.</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>12</td>
-    <td>Date</td>
-    <td><ul><li>Für allgemeine Dokumente Datum der Einstellung <strong>type=“create“</strong>.</li>
-            <li>Für das Datum der Einreichung zur Dis./Habil.der Arbeit <strong>type=“submit“</strong>.</li>
-            <li>Für das Datum der Verteidigung zur Dis./Habil.der Arbeit <strong>type=“accept“</strong>.</li>
-            <li>Für das Datum der Beschlussfassung zur Dis./Habil. der Arbeit <strong>type=“decide“</strong>.</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>13</td>
-    <td>Type</td>
-    <td>Auswahlliste inkusive „Dissertation“ und „Habilitation“</td>
-    </tr>
-    <tr>
-    <td>14</td>
-    <td>Format</td>
-    <td>Auswahlliste </td>
-    </tr>
-    <tr>
-    <td>15</td>
-    <td>Identifier(128)</td>
-    <td>ggf. Bibliothekssignatur</td>
-    </tr>
-    <tr>
-    <td>16</td>
-    <td>Source(1024)</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>17</td>
-    <td>SourceLink</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>18</td>
-    <td>Language</td>
-    <td>Siehe Anmerkungen zur Sprachnotation.</td>
-    </tr>
-    <tr>
-    <td>19</td>
-    <td>Keywords(128)</td>
-    <td>Verbal anzugebende Schlüsselworte / Stichworte.</td>
-    </tr>
-    <tr>
-    <td>20</td>
-    <td>Coverage(1024)</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>21</td>
-    <td>CoverageLink</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>22</td>
-    <td>CoverageDate</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>23</td>
-    <td>Relation(1024)</td>
-    <td><ul><li>Angabe zum Erscheinen des Werkes.</li>
-            <li>Verbaler Verweis auf vorangegangene Versionen.</li>
-       </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>24</td>
-    <td>RelationLink</td>
-    <td>Link auf vorangegangene Versionen.</td>
-    </tr>
-    <tr>
-    <td>25</td>
-    <td>RelationISBN</td>
-    <td>Verweis auf eine ISBN Nummer.</td>
-    </tr>
-    <tr>
-    <td>26</td>
-    <td>Right(1024)</td>
-    <td>Verbale Beschreibung der Urheberrechte.</td>
-    </tr>
-    <tr>
-    <td>27</td><td>RightsLink</td>
-    <td>Verweis auf eine URL mit den Lizenz- und/oder Urheberrechten.</td>
-    </tr>
-    <tr>
-    <td>28</td><td>Size(1024)</td>
-    <td>Verbale Aufzählung von Seite, Abbildungen, usw. lt. Vorgabe der Bibliothek.<br />
-        Für Leipzig z. B. : xxx S. : Ill., graph. Darst.</td>
-    </tr>
-    <tr>
-    <td>29</td>
-    <td>Place(1024)</td>
-    <td>Erscheinungsort</td>
-    </tr>
-    <tr>
-    <td>30</td>
-    <td>ISBN(32)</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>31</td>
-    <td>NBN(256)</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>32</td>
-    <td>URN(256)</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>33</td>
-    <td>DDBContact(1024)</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>34</td>
-    <td>Notes(4096)</td>
-    <td><ul><li>Für SWB Fußnoten <strong>type=“feet“</strong>.</li>
-            <li>Für SWB Kommentare <strong>type=“coment“</strong>.</li>
-       </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>35</td>
-    <td>Citation4096)</td>
-    <td>Verbale Angabe der Zitierweise.</td>
-    </tr>
-    </table>
-    <p class="klein"><strong>Tabelle 5.2:</strong> Ausfüllhinweise zum neuen Datenmodell der Dokumente</p>
-
-   </section>
-
-   <section>
-    <title>Das Datenmodell für Institutionen</title>
-    <p>
-    Für Institutionen wurde ein Datenmodell entwickelt, welches sich hauptsächlich an dem Einsatz im dienstlichen
-    Gebrauch orientiert.
+   </source>
+   <p>Beispiel des Metadatentyps MCRMetaAddress:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <addresses class="MCRMetaAddress">
+       <address type="Work" xml:lang="de">
+         <country>Deutschland</country>
+         <state>Sachsen</state>
+         <zipcode>04109</zipcode>
+         <city>Leipzig</city>
+         <street>Augustuspaltz</street>
+         <number>10/11</number>
+       </address>
+       ...
+     </addresses>
+     ]]>
     </p>
-
-    <table>
-    <tr>
-    <td>Nr.</td>
-    <td>Bezeichner</td>
-    <td>Bemerkung</td>
-    <td>Pfl.</td>
-    <td>wied.</td>
-    <td>Suche</td>
-    <td>MCR-Type</td>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Name</td>
-    <td>Angaben zum Namen einer Institution</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaCorporationName</td>
-    </tr>
-    <tr>
-    <td>2</td>
-    <td>Address</td>
-    <td>Angaben zur Adresse</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaAddress</td>
-    </tr>
-    <tr>
-    <td>3</td>
-    <td>Phone</td>
-    <td>Telefonnummern / Fax</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>4</td>
-    <td>URL</td>
-    <td>URL’s</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>5</td>
-    <td>eMail</td>
-    <td>eMails’s</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>6</td>
-    <td>Note</td>
-    <td>Bemerkungen</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    </table>
-    <p class="klein"><strong>Tabelle 5.3:</strong> Das neue Metadaten-Modell für Institutionen</p>
-
-    <p>Ausfüllhinweise:</p>
-
-    <table>
-    <tr>
-    <th>Nr.</th>
-    <th>Bezeichner</th
-    ><th>Ausfüllhinweis</th>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Name</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>2</td>
-    <td>Address</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>3</td>
-    <td>Phone</td>
-    <td><ul>
-            <li>für Telefonnummern <strong>type="phone"</strong></li>
-            <li>für Faxe <strong>type="fax"</strong></li>
-        </ul></td>
-    </tr>
-    <tr>
-    <td>4</td>
-    <td>URL</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>5</td>
-    <td>eMail</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>6</td>
-    <td>Note</td>
-    <td/>
-    </tr>
-    </table>
-    <p class="klein"><strong>Tabelle 5.4:</strong> Ausfüllhinweise für das neue Metadaten-Modell für Institutionen</p>
-
-   </section>
-   <section>
-    <title>Das Datenmodell für natürliche Personen</title>
-    <p>
-    Für natürliche <strong>Personen</strong> hingegen ist ein umfangreicheres Datenmodell erforderlich.
-    Dieses ist in der angebotenen Variante vor allem auf dienstliche Belange abgestimmt.
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaBoolean</p>
+   <p>
+   Der Basistyp MCRMetaBoolean beinhaltet eine Liste von Wahrheitswerten mit zugehörigen type Attributen. Folgende Werte
+   sind zulässig:
+   </p>
+   <ul>
+   <li>für true - ’true’, ’yes’, ’wahr’ und ’ja’</li>
+   <li>für false - ’false’, ’no’, ’falsch’ und ’nein’</li>
+   </ul>
+   <p>XML-Syntax des Metadatentyps MCRMetaBoolean:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaBoolean">
+       <subtag type="..." xml:lang="..." >
+       ...
+       </subtab>
+       ...
+     </tag>
+     ]]>
     </p>
-
-    <table>
-    <tr>
-    <td>Nr.</td>
-    <td>Bezeichner</td>
-    <td>Bemerkung</td>
-    <td>Pfl.</td>
-    <td>wied.</td>
-    <td>Suche</td>
-    <td>MCR-Type</td>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Name</td>
-    <td>Angaben zum Namen einer Person</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>param. Freitext</td>
-    <td>MCRMetaPersonName</td>
-    </tr>
-    <tr>
-    <td>2</td>
-    <td>Female</td>
-    <td>Angaben zum Geschlecht der Person</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>param. </td>
-    <td>MCRMetaBoolean</td>
-    </tr>
-    <tr>
-    <td>3</td>
-    <td>Institution</td>
-    <td>Verweis auf die Institution, zu der die Person gehört</td>
-    <td>ja</td>
-    <td>ja</td>
-    <td>param. </td>
-    <td>MCRMetaClassification</td>
-    </tr>
-    <tr>
-    <td>4</td>
-    <td>Address</td>
-    <td>Angaben zur Adresse</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaAddress</td>
-    </tr>
-    <tr>
-    <td>5</td>
-    <td>Phone</td>
-    <td>Telefonnummern</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>6</td>
-    <td>Date</td>
-    <td>Datumsangeben wie Geburtsdatum, usw.</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaISO8601</td>
-    </tr>
-    <tr>
-    <td>7</td>
-    <td>Profession</td>
-    <td>Berufsbezeichnung / Amt</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>8</td>
-    <td>ProfClass</td>
-    <td>Berufsbezeichnung / Amt als Klassifikationseintrag</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaClassification</td>
-    </tr>
-    <tr>
-    <td>9</td>
-    <td>National</td>
-    <td>Nationalität</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>param.</td>
-    <td>MCRMetaClassification</td>
-    </tr>
-    <tr>
-    <td>10</td>
-    <td>URL</td>
-    <td>URL’s</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLink</td>
-    </tr>
-    <tr>
-    <td>11</td>
-    <td>eMail</td>
-    <td>eMails’s</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>12</td>
-    <td>Reference</td>
-    <td>Externe Referenzen</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLink</td>
-    </tr>
-    <tr>
-    <td>13</td>
-    <td>Note</td>
-    <td>Anmerkungen</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    <tr>
-    <td>14</td>
-    <td>Publications</td>
-    <td>Publikationen</td>
-    <td>nein</td>
-    <td>ja</td>
-    <td>nein</td>
-    <td>MCRMetaLangText</td>
-    </tr>
-    </table>
-    <p class="klein"><strong>Tabelle 5.5:</strong> Das neue Metadaten-Modell für Personen</p>
-
-    <p>Ausfüllhinweise:</p>
-
-    <table>
-    <tr>
-    <th>Nr.</th>
-    <th>Bezeichner</th>
-    <th>Ausfüllhinweise</th>
-    </tr>
-    <tr>
-    <td>1</td>
-    <td>Name</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>2</td>
-    <td>Female</td>
-    <td><ul>
-        <li>weiblich ist <strong>true</strong>; männlich ist <strong>false</strong></li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>3</td>
-    <td>Institution</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>4</td>
-    <td>Address</td>
-    <td><ul>
-        <li>Für das Büro ist <strong>type=“office“</strong> anzugeben.</li>
-        <li>Für die private Adresse ist <strong>type=“private“</strong> anzugeben.</li>
-        </ul></td>
-    </tr>
-    <tr>
-    <td>5</td>
-    <td>Phone</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>6</td>
-    <td>Date</td>
-    <td><ul>
-        <li>Für das Geburtsdatum ist <strong>type=“birth“</strong> anzugeben.</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>7</td>
-    <td>Profession</td>
-    <td><ul>
-        <li>Für den Beruf ist <strong>type=“profession“</strong> anzugeben.</li>
-        <li>Für die Tätigkeit ist <strong>type=“job“</strong> anzugeben.</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td>8</td>
-    <td>ProfClass</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>9</td>
-    <td>National</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>10</td>
-    <td>URL</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>11</td>
-    <td>eMail</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>12</td>
-    <td>Reference</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>13</td>
-    <td>Note</td>
-    <td/>
-    </tr>
-    <tr>
-    <td>14</td>
-    <td>Publications</td>
-    <td/>
-    </tr>
-    </table>
-    <p class="klein"><strong>Tabelle 5.6:</strong> Ausfüllhinweise für das neue Metadaten-Modell für Personen</p>
-
-   </section>
-
-   <anchor id="chapter_5.5" />
-   <section>
-    <title>Klassifikationen</title>
-    <p>
-    Klassifikationen sollen eine Suche / Präsentation von einheitlichen Begriffen gewährleisten.
-    Da letztendlich jede Einrichtung selbst für die Auswahl der verwendeten Klassifikation verantwortlich ist,
-    können hier nur Empfehlungen ausgesprochen werden, um eine gemeinsame Instanzen-übergreifende Suche zu ermöglichen.
-    Achtung, in einem Verbund sollte man sich darüber im Klaren sein, dass Streichungen von Kategorien einer
-    Klassifikation zu Fehlern führen können! Ergänzungen hingegen sind unkritisch.
-    </p>
-
-    <section>
-     <title>Subjekte</title>
-     <p>
-     Die Klassifikationen der Subjekte sind wohl das größte Problem bei der Suche nach einem gemeinsamen Nenner.
-     Andererseits kann hier auch toleriert werden, das eine große Individualität der einzelnen Anwendungen herrscht,
-     wenn man bereit ist, Diskrepanzen bei der Suche hinzunehmen bzw. dieses Feld von einer <strong>gemeinsamen
-     übergreifenden</strong> Suche auszuschließen. Einige Klassifikationen sind schon für MyCoRe realisiert, andere
-     bedürfen noch einer Umsetzung. Eine Übersicht gibt die folgende Tabelle.
+   </source>
+   <p>Beispiel des Metadatentyps MCRMetaBoolean:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <publishes class="MCRMetaBoolean">
+       <publish type="Ausgabe_1" xml:lang="de">ja</publish>
+       <publish type="Ausgabe_2" xml:lang="de">nein</publish>
+       ...
+     </publishes>
+     ]]>
      </p>
+    </source>
+   <p class="fett">XML-Syntax des Metadaten-Basistyps MCRMetaClassification</p>
+   <p>
+   Der Basistyp MCRMetaClassification dient der Einbindung von Klassifikationen und deren Kategorien in die Metadaten.
+   Beide Identifizierer zusammen beschreiben einen Kategorieeintrag vollständig. Dabei ist für die categid eine, ggf.
+   mehrstufige, Kategorie-ID einzutragen. Die classid muss vom Typ MCRObjectID sein. Bitte beachten Sie die Hinweise
+   zur Gestaltung der Kategorie-IDs im vorigen Kapitel!
+   </p>
+   <p>XML-Syntax des Metadaten-Basistyps MCRMetaClassification:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaClassification">
+       <subtag classid="..." categid="..."/>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaClassification:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <origins class="MCRMetaClassification" heritable="false">
+       <origin classid="MyCoReDemoDC_class_1" categid="Unis.Leipzig.URZ"/>
+       ...
+     </origins>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des Metadaten-Basistyps MCRMetaHistoryDate</p>
+   <p>
+   Der Basistyps MCRMetaHistoryDate ist speziell kreiert, um Datumsangaben für historische Projekte speichern und suchen
+   zu können. Dabei wird sowohl ein verbaler Text wie eine konkrete Datumskonvertierung mit dem dazugehörigen Kalender
+   gespeichert. Das Datum wird im Format des angegebenen Kalenders abgelegt, auch für die Zeit vor Einführung des selben.
+   Zur Implementierung des Datentyps wurde die frei verfügbare ICU-Library der Firma IBM genutzt. Sie bietet eine Reihe
+   von Kalendern an, die so für diesen Datentyp nun verfügbar sind. Alle Datumsangaben werden zur internen Verarbeitung
+   in MyCoRe in eine Julian Day Number, also eine fortlaufende Tageszahl, umgerechnet. Diese wird neben einer Lesbaren
+   Form in dem Datentyp MCRMetaHistoryDate gespeichert.
+   </p>
+   <p>
+   Somit ist eine scharfe Datumssuche mit Hilfe der Integer-Daten möglich. Die Eingabe der Daten erfolgt nach den Regeln:
+   </p>
+   <ul>
+   <li>Im text-Feld steht ein beliebiger String gemäß den Projektvorgaben</li>
+   <li>Die Felder von und bis enthalten gregorianische Datumsangaben.</li>
+   <li>Ist für von und/oder bis nichts angegeben, werden Standardwerte genommen. Das sind 1..1.4713 BC und 31.12.3999
+       AD.</li>
+   <li>Die Felder ivon bzw. ibis enthalten die korrespondierenden Werte zu von bzw. bis.</li>
+   <li>Das calendar-Feld kann die Werte <strong>gregorian</strong> oder <strong>islamic</strong>
+   enthalten.</li>
+   <li>Mögliche Notationen für die Datumsangaben sind 01.01.1999 / -01.12.200 / 1035 / 133 BC.</li>
+   </ul>
+   <p>Syntax des Metadaten-Basistyps MCRMetaHistoryDate:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaHistoryDate" heritable="...">
+       <subtag type="..." xml:lang="...">
+         <text>...</text>
+         <von>...</von>
+         <ivon>...</ivon>
+         <bis>...</bis>
+         <ibis>...</ibis>
+         <calendar>...</calendar>
+       </subtab>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaHistoryDate:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <date class="MCRMetaHistoryDate" heritable="...">
+       <dates type="written" xml:lang="de">
+         <text>4. Jh. v. Chr.</text>
+         <von>BC01.01.399</von>
+         <ivon>1575694</ivon>
+         <bis>BC31.12.300</bis>
+         <ibis>1830997</ibis>
+         <calendar>gregorian</calendar>
+       </dates>
+     </date>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaInstitutionName</p>
+   <p>
+   Der Basistyp MCRMetaInstitutionName beinhaltet eine Liste der Namen einer Firma oder Einrichtung oder eines Bereiches
+   der selben. Dabei soll berücksichtigt werden, dass die Name in verschiedenen Sprachen und in international gängigen
+   Formen gespeichert werden sollen. Über das Attribut type ist eine zusätzliche Differenzierung der verschiedenen Namen
+   möglich.
+   </p>
+   <ul>
+   <li>name beinhaltet den vollständigen Namen (Pflicht)</li>
+   <li>nickname das Pseudonym (z. B. UBL) (optional)</li>
+   <li>property den rechtlichen Stand, GmbH (optional</li>
+   </ul>
+   <p>Syntax des Metadaten-Basistyps MCRMetaInstitutionName:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaInstitutionName" heritable="...">
+       <subtag xml:lang="...">
+         <fullname>...</fullname>
+         <nickname>...</nickname>
+         <property>...</property>
+       </subtab>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaInstitutionName:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <insts class="MCRMetaInstitutionName" heritable="...">
+       <inst xml:lang="de">
+         <fullname>Obelix &amp; Co. KG</fullname>
+         <nickname>O. &amp;. Co.</nickname>
+         <property>KG</property>
+       </inst>
+     </insts>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaISBN</p>
+   <p>
+   Dieser Metadatentyp ist ganz speziell zur <span class="T4">Speicherung</span> einer ISBN gedacht. Er gestattet nur
+   eine Kardinalität.
+   </p>
+   <p>Syntax des Metadaten-Basistyps MCRMetaISBN:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaISBN" heritable="...">
+       <subtag>ISBN</subtag>
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Syntax des Metadaten-Basistyps MCRMetaISBN:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <isbns class="MCRMetaISBN" heritable="..." >
+       <isbn>1-234-56567-4</isbn>
+     </isbn>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaISO8601Date</p>
+   <p>
+   Dieser Metadatentyp ist wie MCRMetaDate für das Speichern von Zeitangaben gedacht. Er bietet jedoch eine höhere
+   zeitliche Auflösung, bis in den Millisekundenbereich. Unterstützt werden alle Formate der Informationsseite des W3C
+   (http://www.w3.org/TR/NOTE-datetime). Sie enthält nähere Informationen zu den Formaten und zur ISO-Norm:ISO 8601 :
+   1998 (E)
+   </p>
+   <p>
+   Wie MCRMetaDate unterstützt MCRMetaISO8601Date die Verwendung des type-Attributs, auf Grund seiner
+   Sprachunabhängigkeit in der Formatierung der Datumsangabe fehlt die Unterstützung für das lang-Attribut. Das
+   Verwenden von MCRMetaISO8601Date ermöglicht eine Syntaxprüfung der Datumsangabe bereits auf XMLSchema-Ebene, durch
+   den dort definierten Datentyp xsd:duration, auf dem der MyCoRe-Datentyp abgebildet wird.
+   </p>
+   <p>
+   Optional kann ein format-Attribut verwendet werden. Dies erzwingt für das Datum das angegebene Format. So ist bei
+   der Formatangabe „YYYY“ das Datum „2006-01“ ungültig. Ohne die Formatangabe hingegen ist das gleiche Datum gültig,
+   weil es dem unterstützen Format „YYYY-MM“ entspricht.
+   </p>
+   <p>Syntax des Metadaten-Basistyps MCRMetaISO8601Date:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaISO8601Date" heritable="...">
+       <subtag type="..." format="...">YYYY-MM-DDThh:mm:ss.sTZD</subtag>
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaISO8601Date:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <dates class="MCRMetaISO8601Date" heritable="false">
+       <date type="sample">2006-01-16T13:20:30.85+01:00</date>
+     </dates>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaLangText</p>
+   <p>
+   Der Basistyp MCRMetaLangText dient der Speicherung einer Liste von Textabschnitten mit zugehöriger Sprachangabe. Über
+   das form Attribut kann noch spezifizier werden, in welcher Form der Text geschrieben ist.
+   </p>
+   <p>XML-Syntax des Metadaten-Basistyps MCRMetaLangText:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaLangText" heritable="...">
+       <subtag type="..." xml:lang="..." form="...">
+         ...
+       </subtab>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaLangText:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <titles class="MCRMetaLangText" heritable="true">
+       <title type="maintitle" xml:lang="de" form="plain">
+         Mein Leben als MyCoRe-Entwickler
+       </title>
+     </titles>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax der Metadatentypen MCRMetaLink und MCRMetaLinkID</p>
+   <p>
+   Der Basistyp MCRMetaLink wurde geschaffen, um eine Verknüpfung verschiedener MyCoRe-Objekte untereinander zu
+   realisieren. Außerdem können hier genauso Verweise auf beliebige externe Referenzen abgelegt werden. Der Typ
+   MCRMetaLink ist eine Implementation des W3C XLink Standards (siehe ’XLM Linking Language (XLink) Version 1.0’).
+   Auf dieser Basis enthält der MyCoRe-Metadatentyp zwei Arten von Links - eine Referenz und einen bidirektionalen Link.
+   Bei beiden werden jedoch in MCRMetaLink nicht alle Möglichkeiten der XLink Spezifikation ausgeschöpft, da dies für
+   die in MyCoRe benötigten Funktionalitäten nicht erforderlich ist.
+   </p>
+   <p>
+   Im Referenztyp ist das Attribut xlink:type=’locator’ immer anzugeben. Die eigentliche Referenz wird im xlink:href
+   Attribut notiert. Dabei kann die Referenz eine URL oder eine MCRObjectID sein. Daneben können noch weitere
+   Informationen im xlink:label angegeben werden, die Rolle einer verlinkten Person. Der Referenztyp kommt im DocPortal
+   bei der Verlinkung von Dokumenten und Personen zum Einsatz. Um den Update-Aufwand in Grenzen zu halten, wurde die
+   genannte Verbindung als Referenz konzipiert. Somit weiß das referenzierte Objekt in der Beispielanwendung nichts über
+   den Verweis.
+   </p>
+   <p>
+   Alternativ dazu besteht die Möglichkeit eines bidirektionalen Links. Dieser wird sowohl in der Link-Quelle wie auch
+   im Link-Ziel eingetragen. Der Typ ist in diesem Fall xlink:type=’arc’. Weiterhin sind die Attribute xlink:from und
+   xlink:to erforderlich. Optional kann noch ein Titel in xlink:title mitgegeben werden.
+   </p>
+   <p>
+   Der Basistyp MCRMetaLinkID entspricht im Aufbau dem MCRMetaLink. Der einzige Unterschied ist, dass die Attribute
+   xlink:href, xlink:from und xlink:to nur mit MCRObjectIDs belegt werden dürfen.
+   </p>
+   <p>XML-Syntax des Metadaten-Basistyps MCRMetaLink:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaLink" heritable="...">
+       <subtag xlink:type="locator" xlink:href="..." xlink:label="..." xlink:title="..."/>
+       <subtag xlink:type="arc" xlink:from="..." xlink:to="..." xlink:title="..."/>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaLink:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <urls class="MCRMetaLink" heritable="false">
+       <url xlink:type="locator" xlink:href="http://www.zoje.de" xlink:label="ZOJE" xlink:title="Eine externe URL"/>
+       <url xlink:type="arc" xlink:from="mcr_object_id_1" xlink:to="mcr_object_id_2" xlink:title="Link zwischen Objekten"/>
+     </urls>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaNBN</p>
+   <p>
+   Diese Metadatentyp ist ganz speziell zur Speicherung einer NBN gedacht. Er gestattet nur eine Kardinalität.
+   </p>
+   <p>Syntax des Metadaten-Basistyps MCRMetaNBN:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaNBN" heritable="...">
+       <subtag>NBN</subtag>
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaNBN:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <nbns class="MCRMetaNBN" heritable="...">
+       <nbn>urn:nbn:1-2334</nbn>
+     </nbns>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaNumber</p>
+   <p>
+   Der Basistyp MCRMetaNumber ermöglicht das Speichern und Suchen von Zahlenwerten. Die Zahlendarstellung kann je nach
+   Sprache, d. h. im Deutschen mit Komma und im Englischen mit Punkt, angegeben werden. Weiterhin sind die zusätzlichen
+   Attribute dimension und measurement möglich. Beide Attribute sind optional, ebenso wie das Default-Attribut type.
+   </p>
+   <p>XML-Syntax des Metadaten-Basistyps MCRMetaNumber:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaNumber" heritable="...">
+       <subtag xml:lang="..." dimension="..." mesurement="...">
+         ...
+       </subtag>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaNumber:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <masse class="MCRMetaNumber" heritable="false">
+       <mass xml:lang="de" dimension="Breite" mesurement="cm">12,1</mass>
+       <mass xml:lang="en" type="neu" dimension="width" mesurement="ft">12.2</mass>
+       ...
+    </masse>
+    ]]>
+   </p>
+  </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaPersonName</p>
+   <p class="Standard">Der Basistyp MCRMetaPerson beinhaltet eine Liste von Namen für natürliche Personen. Dabei wird
+   berücksichtigt, dass die Namen in verschiedenen Sprachen und international gängigen Formen auftreten können. Das
+   Attribut type dient der Differenzierung der verschiedenen Namen einer Person, Geburtsname, Synonym, Kosename usw.
+   firstname repräsentiert den/die Vornamen, callname den Rufnamen, surname den Familiennamen, academic den akademischen
+   Titel und peerage den Adelstitel und prefix Namenszusätze wie 'von', 'de' usw. fullname enthält nochmal den
+   automatisch zusammengesetzten Namen.
+   </p>
+   <p>XML-Syntax des Metadaten-Basistyps MCRMetaPersonName:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaPersonName" heritable="...">
+       <subtag type="..." xml:lang="..">
+         <firstname>...</firstname>
+         <callname>...</callname>
+         <surname>...<surname>
+         <fullname>...</fullname>
+         <academic>...</academic>
+         <peerage>...</peerage>
+         <prefix>...</prefix>
+       </subtag>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel des Metadaten-Basistyps MCRMetaPersonName:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaPersonName" heritable="true">
+       <subtag type="geburtsname" xml:lang="de">
+         <firstname>Lisa Marie</firstname>
+         <callname>Lisa</callname>
+         <surname>Schnell<surname>
+         <fullname>Schnelle, Lisa</fullname>
+       </subtag>
+       <subtag type="familienname" xml:lang="de">
+         <firstname>Lisa Marie</firstname>
+         <callname>Lisa</callname>
+         <surname>Schmidt<surname>
+         <fullname>Dr. phil. Freifrau von Schnelle, Lisa</fullname>
+         <academic>Dr. phil.</academic>
+         <peerage>Freifrau</peerage>
+         <prefix>von</prefix>
+       </subtag>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des Metadatentyps MCRMetaXML</p>
+   <p>
+   Der Basistyp MCRMetaXML wurde zusätzlich als Container für einen beliebigen XML-Baum in das Projekt integriert.
+   Dieser wird in den Textknoten des Subtags gestellt und kann dort theoretisch beliebig groß sein. Achten Sie aber
+   darauf, dass entsprechend viel Speicherplatz in dem XML-SQL-Store vorgesehen wird.
+   </p>
+   <p>XML-Syntax des Metadaten-Basistyps MCRMetaXML:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <tag class="MCRMetaXML" heritable="...">
+       <subtag type="..." >
+        ...
+       </subtag>
+       ...
+     </tag>
+     ]]>
+    </p>
+   </source>
+   <p>Beispiel für die Definition dieses Datentyps in der Datamodel-Datei:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <-- beliebiges XML-Objekt -->
+     <element name="teixmls" minOccurs="0" maxOccurs="1">
+       <mcrmetaxml name="teixml" class="MCRMetaXML" minOccurs="1" maxOccurs="1"/>
+     </element>
+     ]]>
+    </p>
+   </source>
+   <p>und ein Beispiel mit Metadaten zum Metadaten-Basistyp MCRMetaXML:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <teixmls class="MCRMetaXML">
+       <teixml inherited="0">
+         <TEI>
+           <teiHeader>
+             <title>
+               Text Encoding Initiative, ein Dokumentenformat zur Kodierung und den Austausch von Texten
+             </title>
+           </teiHeader>
+         </TEI>
+       </teixml>
+     </teixmls>
+     ]]>
+    </p>
+   </source>
+   <p class="fett">XML-Syntax des XML-Knotens service</p>
+   <p>
+   Für die Einrichtung eines Workflow und um die Wartung großer Datenmengen zu vereinfachen sowie für den Import /
+   Export der ACL's wurde der XML-Abschnitt service in das Metadatenobjekt integriert. Hier sind Informationen wie
+   Datumsangaben, ACL's und Flags für die Verarbeitung im Batch-Betrieb enthalten. Achtung, die Tag-Namen sind fest
+   vorgegeben und dürfen nicht anderweitig verwendet werden!
+   </p>
+   <p>
+   Die Datumsangaben servdates verhalten sich analog zu denen in MCRMetaISO8601Date. Folgende Möglichkeiten für das
+   Attribut type sind vorgesehen. Weitere Typen sind jedoch integrierbar.
+   </p>
+   <dl>
+   <dt><code>acceptdate</code></dt>
+   <dd>Datum aus dem Dublin Core, kann frei verwendet werden.</dd>
+   <dt><code>createdate</code></dt>
+   <dd>Das Erzeugungsdatum des Objektes, dieser Wert wird automatisch beim Anlegen des Objektes erzeugt und bleibt
+       immer erhalten! </dd>
+   <dt><code>modifydate</code></dt>
+   <dd>Das Datum des letzten Update, dieser Wert wird automatisch beim Update des Objektes erzeugt und bleibt immer
+       erhalten!</dd>
+   <dt><code>submitdate</code></dt>
+   <dd>Datum aus dem Dublin Core, kann frei verwendet werden.</dd>
+   <dt><code>validfromdate</code></dt>
+   <dd>Datum aus dem Dublin Core, kann frei verwendet werden.</dd>
+   <dt><code>validtodate</code></dt>
+   <dd>Datum aus dem Dublin Core, kann frei verwendet werden.</dd>
+   </dl>
+   <p>
+   Die servacls enthalten Access Control System Conditions für die genutzten Permissions wie read, writedb oder
+   deletedb. Eine genaue Beschreibung ist dem Kapitel über ACL's
+   des <a href="site:appdev" title="MyCoRe Programmer Guide 2.0" target="_blank">Programmer Guide</a> zu entnehmen.
+   </p>
+   <p>
+   Im servflags Teil können kurze Texte untergebracht werden. Die Anzahl der servflag Elemente ist theoretisch
+   unbegrenzt.
+   </p>
+   <p>XML-Syntax des service XML-Knotens:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <service>
+       <servdates class="MCRMetaISO8601Date">
+         <servdate type="...">...</servdate>
+         ...
+       </servdates>
+       <servacls class="MCRMetaAccessRule">
+         <servacl permission="...">
+         ...
+         </servacl>
+       </servacls>
+       <servflags class="MCRMetaLangText">
+         <servflag>...</servflag>
+         ...
+       </servflags>
+     </service>
+     ]]>
+    </p>
+   </source>
+  </section>
 
-     <table>
-     <tr>
-     <th>Klassifikation</th>
-     <th>in DocPortal</th>
-     <th>MCRObjectID</th>
-     <th>im Sample</th>
-     </tr>
-     <tr>
-     <td>Basisklassifikation (GBV)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Sachgruppen der Deutschen Nationalbibliographie (DNB)</td>
-     <td>ja</td>
-     <td>DocPortal_class_00000007</td>
-     <td>ja</td>
-     </tr>
-     <tr>
-     <td>Dewey Decimal Classifikation (DDC)</td>
-     <td>ja</td>
-     <td>DocPortal_class_00000009</td>
-     <td/>
-     </tr>
-     <tr>
-     <td>Regensburger Verbundklassifikation (RKV)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Mathematics Subject Classifikation (msc1991)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Physics and Astronomy Classification Scheme (pacs2003)</td>
-     <td>ja</td>
-     <td>DocPortal_class_00000010</td>
-     <td/>
-     </tr>
-     <tr>
-     <td>ACM Computing Classification System (ccs1998)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Zentralblatt für Didaktik der Mathematik (zdm)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Library of Congress Classification Scheme (LCC)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Universam Decimal Classification Scheme (UDC)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>National Library of Medicine Classification Scheme (NLM)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Mathematics Subject Classifikation (msc2000)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Schlagwortnormdatei (SWD)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Library of Congress Subject Headings Scheme (LCSH)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Medical Subject Headings Scheme (MeSH)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     <tr>
-     <td>Unified Medical Language System Scheme (UMLS)</td>
-     <td>nein</td>
-     <td/>
-     <td/>
-     </tr>
-     </table>
-     <p class="klein"><strong>Tabelle 5.7:</strong> Potentielle Klassifikationen für DocPortal</p>
-
-    </section>
-
-    <section>
-     <title>Herkunft</title>
-     <p>
-     Diese Klassifikation beinhaltet eine Liste von Grundeinträgen für die beteiligten Einrichtungen. Diese
-     Grundeinträge sind durch den jeweiligen DocPortal-Anwender für sich um eine weitere Untergliederung näher zu
-     spezifizieren. Ziel dieser Grundeinrichtung ist eine grobe Suchbarkeit der Daten auch von Anwendungen anderer
-     Portal-Teilnehmer aus (Beispiel: Suche von Objekten aus Leipzig in Jena). Es erscheint sinnvoll, für die
-     Herkunft die Möglichkeit einer Anbindung von URL's an die jeweilige Kategorie, wie sie MyCoRe bietet,
-     auszunutzen, somit kann direkt auf die Web-Seite eines Institutes oder einer Einrichtung referenziert werden.
-     </p>
-    </section>
-
-    <section>
-     <title>Typ</title>
-     <p>
-     Da sich das xMetaDiss Konzept nur für Dissertation und Habilitationen verantwortlich fühlt, ist eine Integration
-     in MILESS/MyCoRe relativ einfach möglich. DocPortal sieht daher alle in MILESS bisher verwendeten Typen vor.
-     Ergänzungen durch die Anwender von DocPortal können problemlos durchgeführt werden.
-     </p>
-    </section>
-
-    <section>
-     <title>Format</title>
-     <p>
-     Die Festlegung der Format-Klassifikation ist sehr schwierig. METADISS sieht hier zum Beispiel die MIME-Types vor.
-     In MILESS/MyCoRe werden hier verbale Einstufungen benutzt. Dabei sollten wir auch bleiben, da wir ja ggf. eine
-     Menge von Objekten mit einem Metadatensatz versehen (Derivate). Aus der Speichertabelle dieser Derivate können
-     die erforderlichen Mime-Types gewonnen werden.
-     </p>
-    </section>
-
-    <section>
-     <title>Sprache</title>
-     <p>
-     Die Language Klassifikation ist eine Abbildung der Sprachen nach ISO-639-1. Ggf. werden diese Sprachkürzel um
-     Länderkürzel nach ISO Norm 3166 erweitert werden (z. B. eng-US). Um Konform zur XML-Notation zu sein, wird
-     gemäß Spezifikation die Form <strong>...[-CC]</strong> gewählt, wobei ... der 3-stellige Sprachcode ist. Diesem
-     kann sich das Länderkürzel mit Minuszeichen anschließen.
-     </p>
-    </section>
-
-    <section>
-     <title>Nationalität</title>
-     <p>
-     Die Klassifikation der Nationalitäten umfasst eine einfache Liste der gängigsten Nationalitäten.
-     Eine Ergänzung ist jederzeit möglich.
-     </p>
-    </section>
-
-    <section>
-     <title>Übersicht der DocPortal-Klassifikationen</title>
-     <p>
-     Die nachfolgende Tabelle gibt eine Übersicht der mitgelieferten Klassifikationsmuster, wie sie Verwendung finden.
-     Diese Muster müssen für eine Nachnutzung entsprechend angepasst werden. Gleichzeitig erfolgt mit dem weiteren
-     Projektausbau auch die Erweiterung dieser Klassifikationen.
-     </p>
-
-     <table>
-     <tr>
-     <th>MCRObjectID</th>
-     <th>Inhalt der Klassifikation</th>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000001</td>
-     <td>Eine Liste der möglichen Nationalitäten.</td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000002</td>
-     <td>Eine Grundliste der beteiligten Universitäten und Firmen. Diese Liste ist nicht fein struktueriert, dies müssen
-         die Anwender selbst vornehmen. Im description Attribut der Kategorien können MCRObjectID's der Institutionen
-         abgelegt werden.
-     </td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000003</td>
-     <td>Analog zu DocPortal_class_00000002..</td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000004</td>
-     <td>Eine Liste der möglichen Sprachen.</td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000005</td>
-     <td>Eine Liste der Typen</td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000006</td>
-     <td>Eine Liste der Formate</td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000007</td>
-     <td>Eine Liste der Sachgruppen DNB</td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000008</td>
-     <td>Eine Liste der Berufe</td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000009</td>
-     <td>Die DDC-Klassifikation</td>
-     </tr>
-     <tr>
-     <td>DocPortal_class_00000010</td>
-     <td>Die PACS-Klassifikation</td>
-     </tr>
-     </table>
-     <p class="klein"><strong>Tabelle 5.8:</strong> DocPortal-Klassifikationen</p>
-
-    </section>
-   </section>
+  <section>
+   <title>Das Speichermodell für die Multimediadaten (IFS)</title>
+   <p>
+   Im bisherigen Verlauf dieses Kapitels wurden nur die beschreibenden Daten des multimedialen Objektes erläutert.
+   Dieser Abschnitt beschäftigt sich damit, wie die eigentlichen Objekte dem Gesamtsystem hinzugefügt werden können.
+   Im MyCoRe Projekt wurde zur Ablage der digitalen Objekte das Konzept des IFS entwickelt. Hier ist es möglich, über
+   spezielle Konfigurationen festzulegen, in welchen Speicher (Store) die einzelnen Dateien gespeichert werden sollen.
+   </p>
+   <p class="Standard">Das Laden von Objekten erfolgt mittels einer Metadaten-Datei, welche alle Informationen über die
+   zu speichernde(n) Datei(en) und ihre Beziehung(en) zu den Metadaten enthält. Die zu speichernden multimedialen
+   Objekte werden im Weiteren als Derivate, also Abkömmlinge, bezeichnet, da ein Objekt in mehreren Formen,
+   Grafikformaten, auftreten kann. Die Struktur der XML-Datei für Derivate ist fest vorgegeben, alle Felder, die
+   nutzerseitig geändert werden können, sind unten beschrieben.
+   </p>
+   <p>XML-Syntax des Derivate-Datenmodells:</p>
+   <source>
+    <p class="kastensource">
+     <![CDATA[
+     <?xml version="1.0" cncoding="ISO-8859-1" ?>
+       <mycorederivate
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="....xsd"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         ID="..."
+         label="..."
+       >
+         <derivate>
+           <linkmetas class="MCRMetaLinkID">
+             <linkmeta xlink:type="locator" xlink:href="..." />
+           </linkmetas>
+           <internals class="MCRMetaIFS">
+             <internal sourcepath="..." maindoc="..."/>
+           </internals>
+         </derivate>
+         <service>
+           ...
+         </service>
+       </mycorederivate>
+     ]]>
+    </p>
+   </source>
+   <ul>
+   <li>Für xsi:noNamespaceSchemaLocation ist die entsprechende XML Schema-Datei anzugeben (Derivate.xsd)</li>
+   <li>Die ID ist die eindeutige MCRObjectID.</li>
+   <li>Der label ist ein kurzer Text-String, der bei administrativen Arbeiten an der Datenbasis das Identifizieren
+       einzelner Datensätze erleichtern soll. Er kann maximal 256 Zeichen lang sein.</li>
+   <li>Die Referenz in linkmeta ist die MCRObjectID des Metadatensatzes, an den das/die Objekte angehängt werden sollen.</li>
+   <li>Das Attribut sourcepath enthält die Pfadangabe zu einer Datei oder zu einem Verzeichnis, welches als Quelle
+       dienen soll. Aus diesen Dateien kann nun eine Datei ausgewählt werden, welche den Einstiegspunkt bei HTML-Seiten
+       darstellen soll. Bei einzelnen Bildern ist hier noch einmal der Dateiname anzugeben. Ist nichts angegeben, so
+       wird versucht Dateien wie index.html usw. zu finden.</li>
+   </ul>
+  </section>
+ </section>
 
   </body>
 </document>
