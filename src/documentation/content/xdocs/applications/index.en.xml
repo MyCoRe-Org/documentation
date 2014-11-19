@@ -3,22 +3,31 @@
 
 <document>
   <header>
-    <title>Demo</title>
+    <title>Sample Application</title>
   </header>
   <body>
+    <h2>MyCoRe MODS Institutional Repository</h2>
     <p>
-    Currently, the developers are working on a new sample application.
-    Until then the <a href="http://www.mycore.de:8291">DocPortal</a> will give
-    a short insight in a repository application.
+      The "MyCoRe MODS Institutional Repository" (MIR) is the repository application, that is ready to install.
+      This package provides all the typical IR functionality and may be used for productive operation.
+      Adaptation are made only to the layout and to the content. 
+	  All metadata are stored as MODS XML. For more information on MIR, please see the documentation.
     </p>
-    <h3>Registration</h3>
+    <h3>Access</h3>
     <p>
-    User name: administrator<br />
-    Password: alleswirdgut
+      A sample MIR application can be tested at <a href="http://www.mycore.de/mir">www.mycore.de/mir</a>.
+      The following user account has all rights for testing:<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;User name: administrator<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;Password: alleswirdgut
     </p>
-
+    <h2>DocPortal (obsolete)</h2>
+    <p>
+      The former sample and base application "DocPortal" is no longer maintained. 
+	  As long as MIR is under developement, the <a href="http://www.mycore.de:8291">DocPortal application</a> 
+	  can provide an insight into several MyCoRe features.
+    </p>
     <h2>More examples</h2>
-    <p>The <a href="site:map">map</a> gives an overview about all mycore applications
+    <p>The <a href="site:map">map</a> provides an overview about all mycore applications
     of the community. Here you can look for suitable examples get in contact
     to the developer.</p>
   </body>
