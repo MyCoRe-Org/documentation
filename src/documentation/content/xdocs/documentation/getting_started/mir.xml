@@ -8,9 +8,138 @@
   <body>
 
     <section>
-      <title>Installation und Konfiguration</title>
+      <title>Installation</title>
+      <h2>Voraussetzungen</h2>
+      <ul>
+        <li>Tomcat v7.0.27 oder höher (bzw. ServletContainer)</li>
+        <li>Solr-Server (optional)</li>
+        <li>relationales Datenbanksystem (optional)</li>
+      </ul>
+      <h2>Download</h2>
       <p>
-        xxx
+        Hier kann das aktuelle <a href="#" data-role="artifactResolver" data-artifact="mir-webapp" data-suffix=".war">MIR-Paket</a>
+        heruntergeladen werden. Dieses kann mit dem Context 'mir' direkt in einen Servlet Container ausgeliefert (deployed) werden.
+      </p>
+      <p>
+        Für administrative Zwecke kann zusätzlich eine MIR-CLI in zwei verschiedenen Formaten heruntergeladen werden:
+      </p>
+      <ol>
+        <li><a href="#" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".zip">ZIP archive</a></li>
+        <li><a href="#" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".tar.gz">tar.gz archive</a></li>
+      </ol>
+      <h3>Solr-Installation (optional)</h3>
+      <p>
+        Sollte kein eigener Solr-Server bereitstehen, kann hier eine speziell für MyCoRe-Anwendungen zusammengestellte
+        <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr/4.8.1/solr-4.8.1.war">Solr-Version</a>
+        heruntergeladen und ebenfalls mit dem Context 'solr' in den Servlet Container ausgeliefert werden.
+        <!-- TODO: Sicherheitseinstellungen in der context.xml -->
+        <!--
+<Context>
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+  <Environment name="solr/home" type="java.lang.String" value="c:/Users/kkrebs/AppData/Local/MyCoRe/mir/data/solr" override="true" />
+</Context>
+         -->
+      </p>
+      <!-- p>
+        Ein dazu passendes <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr-home/4.8.1/solr-home-4.8.1.zip">Solr-Home</a>
+        stellen wir ebenfalls bereit. Wo dies zu finden muss entsprechend dem Solr-Server bekannt gemacht werden. Mehr dazu siehe
+        <a href="http://wiki.apache.org/solr/SolrInstall">Solr-Dokumentation</a>.
+      </p -->
+      <h3>Datenbank (optional)</h3>
+      <p>
+        MIR bringt H2 und HSQLDB als im-Speicher-laufende relationale Datenbanksysteme mit. Bei der Installation können dies
+        gewählt werden, sollte keine eigene DB zur Verfügung stehen.
+      </p>
+
+      <!-- START SNIPPET: downloadCode -->
+      <script type="text/javascript">
+        "use strict";
+        (function($) {
+          $(document).ready(function() {
+            //Chrome support
+            if (typeof String.prototype.endsWith !== 'function') {
+              String.prototype.endsWith = function(suffix) {
+                return this.indexOf(suffix, this.length - suffix.length) !== -1;
+              };
+            }
+            $.fn.resolveArtifacts = function(version) {
+              this.each(function() {
+                var element = $(this);
+                var artifact = element.attr('data-artifact');
+                var suffix = element.attr('data-suffix');
+                $.getJSON('http://artifactory.mycore.de/api/search/gavc', {
+                  "g" : "org.mycore.mir",
+                  "a" : artifact,
+                  "v" : version
+                }, function(data, textStatus, jqXHR) {
+                  var results = data.results;
+                  for (var i = results.length - 1; i >= 0; i--) {
+                    var e = results[i];
+                    if (e.uri.endsWith(suffix)) {
+                      $.getJSON(e.uri, function(data, textStatus, jqXHR) {
+                        element.attr('href', data.downloadUri);
+                      });
+                      break;
+                    }
+                  }
+                });
+              });
+              return this;
+            };
+            var version = "0.1-SNAPSHOT";
+            $('[data-role=artifactResolver]').resolveArtifacts(version);
+          });
+        })(jQuery);
+      </script>
+      <!-- END SNIPPET: downloadCode -->
+    </section>
+    <section>
+      <title>Konfiguration</title>
+      <p>
+        Im Rahmen der MIR-Installation wurde ein Konfigurationsverzeichnis angelegt. Dieses befindet sich typischer Weise unter:
+      </p>
+      <ul>
+        <li>Windows: <code>c:\Users\&lt;name>\AppData\Local\MyCoRe\mir</code></li>
+        <li>Unix: <code>~/.mycore/mir</code></li>
+      </ul>
+      <p>
+        ... wobei <code>mir</code> beispielhaft für den Context-Namen der Webanwendung steht.
+      </p>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/mir_configuration.png" alt="MIR-Konfigurationsverzeichnis" style="margin:5px;border:1px solid gray;" width="550px" /><br />
+        <span class="klein"><strong>Abbildung:</strong> MIR-Konfigurationsverzeichnis</span>
+      </div>
+      <h2>Properties</h2>
+      <dl>
+        <dt>mycore.properties</dt>
+        <dd>enthält alle eigenen Properties, z.B. die URL zum verwendeten Solr-Core</dd>
+
+        <dt>mycore.active (nicht bearbeiten!)</dt>
+        <dd>listet alle verfügbaren (aktiven) Properties inkl. Kommentaren dazu und kann somit als Vorlage zur Übernahme in die eigenen Properties dienen</dd>
+
+        <dt>mycore.resolved (nicht bearbeiten!)</dt>
+        <dd>die aufgelösten Properties, wie sie in der laufenden Anwendung genutzt werden</dd>
+      </dl>
+    </section>
+    <section>
+      <title>Anpassungen</title>
+      <p>
+        Alle Anpassungen am Layout, Webseiten-Inhalten, Erfassungsmasken etc. werden im Verzeichnis <code>%MCR.datadir%/save/webpages</code>
+        hinterlegt. Beim Starten des Servlet-Containers wird der Inhalt dieses Verzeichnisses über das ausgepackte webapp-Verzeichnis
+        im Servlet-Container kopiert und somit die default-Inhalte des <code>mir.war</code> überschrieben. Die nachstehende Abbildung
+        gibt einen Überblick über typische Anpassungen bei einer eigenen MIR-Anwendung.
+      </p>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/mir_content.png" alt="MIR-Webseitenverzeichnis" style="margin:5px;border:1px solid gray;" width="550px" /><br />
+        <span class="klein"><strong>Abbildung:</strong> MIR-Webseitenverzeichnis</span>
+      </div>
+    </section>
+    <section>
+      <title>Aktualisierung</title>
+      <p>
+        Für die Aktualisierung werden im Normalfall nur das <code>mir.war</code> und ggf. die solr-Konfigurationsdateien <code>solrconfig.xml</code> und
+        <code>schema.xml</code> ausgetauscht und danach die Webanwendung inkl. Solr neu gestartet. Sollten
+        Konfigurationen angepasst oder Daten migriert werden müssen, werden entsprechende Informationen an dieser Stelle bereitgestellt.
       </p>
     </section>
 
