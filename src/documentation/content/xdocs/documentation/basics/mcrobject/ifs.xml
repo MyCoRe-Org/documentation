@@ -105,6 +105,16 @@
 			MCR.IFS2.Store.DocPortal_document.SVNRepositoryURL=file:///path/to/local/svn/repository/
 		</pre>
 	</p>
+  <p>
+    Wenn MCRVersioningMetadataStore verwendet wird, wird das Metadatenobjekt zunächst in einer XML-Datei gespeichert, 
+    die dann im Anschluss via SVN commit versioniert wird. Standardmäßig wird der Zeitstempel der Datei nachträglich auf
+    den exakten Zeitpunkt des SVN commits gesetzt. Dies kann unter Linux zu Fehlern aufgrund von Zugriffsrechten führen.
+    In diesem Fall kann durch 
+    <pre class="brush: xml;gutter:false;">
+      MCR.IFS2.SyncLastModifiedOnSVNCommit=false
+    </pre>
+    die Zeitstempel-Synchronisation abgeschaltet werden.
+  </p>
 	<p>
 		In älteren MyCoRe Versionen wurden die Metadaten der Objekte in einer
 		Datenbanktabelle
