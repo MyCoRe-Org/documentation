@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Kommandos zum Verwalten der Objekte</title>
+  </header>
+  <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+   <section>
+    <title>Kommandos zur Verwaltung der Objekte</title>
+    <dl>
+    <dt><code>load object from file {0}</code></dt>
+    <dd></dd>
+    <dt><code>load all objects from directory {0}</code></dt>
+    <dd></dd>
+    <dt><code>update object from file {0}</code></dt>
+    <dd></dd>
+    <dt><code>update all objects from directory {0}</code></dt>
+    <dd></dd>
+    <dt><code>export object {0} to directory {1} with {2}</code></dt>
+    <dd></dd>
+    <dt><code>export object from {0} to {1} to directory {2} with {3}</code></dt>
+    <dd></dd>
+    <dt><code>export all objects of type {0} to directory {1} with {2}</code></dt>
+    <dd></dd>
+    <dt><code>delete object from {0} to {1}</code></dt>
+    <dd></dd>
+    <dt><code>delete all objects of type {0}</code></dt>
+    <dd>das Kommando löscht alle eingestellten Objekte eines bestimmten Datentypes.</dd>
+    <dt><code>select objects with query {0}</code></dt>
+    <dd>selektiert Objekte via MCRQL und speichert sie in eine temporäre Liste. Jeder Aufruf des Kommandos
+    überschreibt die Liste.</dd>
+    <dt><code>execute for selected {0}</code></dt>
+    <dd>führt das angegebene Kommando <code>{0}</code> mit allen selektierten Objekten aus. Im Kommando muss die
+    zu ersetzende ID mit <code>{x}</code> angegeben werden. Ein Beispiel: <code>execute for selected set parent
+    of {x} to DocPortal_document_00000001</code></dd>
+    <dt><code>xslt {0} with file {1}</code></dt>
+    <dd>Transformiert das angegebene MyCoRe Objekt <code>{0}</code> mit einer XSL-Datei <code>{1}</code>. Das
+    Kommando ist hilfreich um fehlerhafte Datenbestände zu reparieren. Selektieren sie dazu zuerst alle
+    fehlerhaften Objekte mit dem <code>select objects with query {0}</code> Kommando. Anschließend können
+    sie mit 'execute for selected xslt {x} with file myfix.xsl' die Objekte reparieren.</dd>
+    </dl>
+   </section>
+   
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+</body>
+</document>

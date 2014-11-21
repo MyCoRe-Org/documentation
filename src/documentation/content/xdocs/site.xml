@@ -240,14 +240,14 @@ See http://forrest.apache.org/docs/linking.html for more info
         <hibernate           label="Hibernate"         href="hibernate.html" />
         <maven               label="Maven"             href="maven.html" />
       </buildprocess>
-      <datamodel             label="Datenmodell"      href="datamodel.html" />
       <docportal             label="DocPortal"        href="docportal/">
         <architecture_dp          label="Architektur"       href="architecture.html" />
         <datamodel_dp             label="Datenmodell"       href="datamodel.html" />
         <installation_dp          label="Installation &amp; Aufbau" href="installation.html" />
       </docportal>
     </getting_started>
-    <content               label="Inhalte verwalten" >
+    <content               label="Grundlagen"          href="basics/">
+      <datamodel             label="Datenmodell"       href="datamodel.html" />
       <classifications       label="Klassifikationen"  href="classifications/">
         <classif_xml         label="XML-Format"        href="classification_datamodel.html" />
         <classif_commands    label="Kommandos"         href="classification_commands.html" />
@@ -270,7 +270,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         <mcrderiv_fileupload label="File-Upload"       href="fileupload_applet.html" />
         <mcrderiv_mets       label="METS"              href="mets.html" />
       </mcrderivate>
-      <eventhandler          label="EventHandler"      href="eventhandler/index.html" />
+      <eventhandler          label="EventHandler"      href="eventhandler.html" />
       <mcrobj_linktables     label="Linktabellen"      href="mcrobject/linktables.html" />
     </content>
 
@@ -281,9 +281,9 @@ See http://forrest.apache.org/docs/linking.html for more info
       <indexbrowsing       label="Index-Blättern"    href="index.html" />
     </search>
     <frontend              label="Weboberfläche"     href="frontend/">
-      <integrated_wcms     label="Content Management"    href="wcms.html" />
+      <integrated_wcms     label="WCMS"              href="wcms.html" />
       <multilang           label="Mehrsprachigkeit"      href="index.html#i18n" />
-      <forms               label="Formulare">
+      <forms               label="Formulare erstellen">
         <xeditor           label="XEditor"               href="xeditor.html" />
         <editorframework   label="Editorframework"       href="editor_framework.html" />
       </forms>
