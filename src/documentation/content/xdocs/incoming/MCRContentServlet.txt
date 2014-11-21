@@ -1,0 +1,61 @@
+
+
+Am 04.03.2014 08:26, schrieb Thomas Scheffler:
+> Hallo,
+>
+> ich habe ein generisches MCRContentServlet geschrieben, das erweitert
+> werden kann und sowohl Caching (via ETag) als auch Ranges unterstützt.
+> Letzteres erlaubt das Streamen von PDF-Dokumenten oder (ungetestet)
+> Videos und Audios. Aber nur für den Fall, dass der Client bestimmte
+> Bereiche auch anfordert.
+> Da bei uns inzwischen alles MCRContent ist und selbst XSL nur MCRContent
+> mittels MCRContentTransformer in anderen MCRContent überführt, könnte
+> man eine Reihe von Servlets so umstellen, dass sie die Funktionen des
+> MCRContentServlets benutzen.
+>
+> Das Caching mit ETags führt dazu, dass Seiten für den Nutzer nur
+> einmalig pro Sitzung ausgeliefert werden müssen. Ich bin Momentan
+> übervorsichtig, so dass bei XSL-Transformationen bei jeder
+> System-Änderung ein anderes ETag herauskommt
+> (MCRConfiguration.getSystemLastModified()).
+>
+> Bei statischen Resourcen benutze ich natürlich nur die Informationen der
+> Resourcen selbst, so das Bilder, Dokumente etc. stabile ETags auch über
+> Sitzungsgrenzen hinweg haben. Hier könnte man sich überlegen, ob man
+> nicht gleich noch den "Expires"-Header setzt.
+>
+> Ich habe eine Implementierung des MCRFileNodeServlets geschrieben, die
+> schon gut funktioniert.
+>
+> In wie weit die Änderungen mit JSPDocportal kompatibel sind, kann ich
+> nicht abschätzen. Für alle anderen ändert sich eigentlich nichts.
+>
+> Wenn wir bei der Telko darüber sprechen könnten, würde mich das freuen.
+> Bis dahin betreibe ich noch etwas Feinschliff.
+
+So der Feinschliff ist abgeschlossen und das MCRFileNodeServlet
+profitiert jetzt davon.
+
+Folgende Zahlen habe ich für das MCRFileNodeServlet messen können:
+
+Auflisten eines Verzeichnisses mit einer Datei:
+
+- inklusive XSL-Transformation 100 ms für den Request inklusive 11 kB
+Daten-Übertragung
+- mitbekommen, dass nicht übertragen (und transformiert) werden muss:
+Response 304 sind 8 ms.
+
+Wie beschrieben ist das Caching erst einmal sehr vorsichtig eingestellt.
+Jegliche Schreiboperation verursacht das erneute Transformieren. Hier
+kann man zukünftig bestimmt noch weiter optimieren.
+
+Ich mache mich mal an das MCRObjectServlet, damit man auch dort ein
+zuverlässiges Caching bekommt. Range-Request spielen dort ja keine große
+Rolle.
+
+Bei der Gelegenheit würde ich das Servlet gerne von Lucene und
+Editor-Altlasten befreien. Das würde bedeuten, dass das Browsen durch
+die Einzeltrefferanzeige nur noch mit SOLR geht. Aktuell funktioniert
+das nur, wenn man das Editor-Framework (deprecated) mit der Lucene-Suche
+(deprecated) verwendet. Für XEditor mit Lucene würde das z.B. auch nicht
+funktionieren.

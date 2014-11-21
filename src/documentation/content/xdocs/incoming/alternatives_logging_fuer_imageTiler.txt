@@ -1,0 +1,23 @@
+
+
+Hallo Gemeinde,
+
+ich habe festgestellt, das der ImageTiler das Log unter Umständen ganz schön flutet. Ich habe es deshalb bei unserer Anwendung so gestaltet, dass alle Log-Nachrichten die das Kacheln von Bildern betreffen in eine extra Log-Datei geschrieben werden. Ich schicke die Konfiguration mal mit, vielleicht möchte sie jemand weiter verwenden.
+
+  log4j.category.org.mycore.iview2.services=INFO, tiler
+  log4j.category.org.mycore.imagetiler=INFO, tiler
+
+  log4j.additivity.org.mycore.iview2.services=false
+  log4j.additivity.org.mycore.imagetiler=false
+
+  log4j.appender.tiler=org.apache.log4j.RollingFileAppender
+  log4j.appender.tiler.File=%MCR.datadir%/%MCR.NameOfProject%-ImageTiler.log
+  log4j.appender.tiler.MaxBackupIndex=10
+  log4j.appender.tiler.MaxFileSize=10MB
+  log4j.appender.tiler.layout=org.apache.log4j.PatternLayout
+  log4j.appender.tiler.layout.ConversionPattern=%d{ABSOLUTE} [%15.15t] %-5p %30.30c - %m%n
+
+Gruß,
+
+Silvio
+

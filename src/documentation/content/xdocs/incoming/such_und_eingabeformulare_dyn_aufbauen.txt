@@ -1,0 +1,40 @@
+
+
+Liebe MyCoReianer,
+
+wie alle wissen kann man in einem Formular Teile auslagern und über eine
+URI einlesen.
+
+<include uri="webapp:editor/imports-editor.xml" ref="commonComponents" />
+
+liest z. B. die Datei imports-editor.xml und fügt den Inhalt des
+Elements mit ID "commonComponents" ein:
+
+<includes id="commonComponents">
+   ...
+</includes>
+
+Ab jetzt (trunk bzw. mycore-2013.06.0.x) ist es auch möglich, diese
+includes abhängig von Request Parametern zu machen, ähnlich wie es bei
+den Elementen source und cancel in Formularen möglich ist. Ein Beispiel:
+
+<include uri="webapp:editor/imports-editor.xml" ref="{mode}"  />
+
+Bei Aufruf der Formularseite mit Parameter ?mode=simple würde
+eingebunden
+
+<includes id="simple">
+   <!-- Definition für einfaches, einzeiliges Titelfeld -->
+</includes>
+
+Bei Aufruf der Formularseite mit Parameter ?mode=advanced würde
+eingebunden
+
+<includes id="advanced">
+   <!-- Definition für komplexes Titelfeld mit Titel, Untertitel,
+Sprache -->
+</includes>
+
+Hier sind verschiedene Anwendungsszenarien denkbar, z. B.
+unterschiedlich komplexe Formulare, Formulare die sich an bestimmten
+Stellen unterscheiden, ...

@@ -1,0 +1,126 @@
+
+
+Am 31.05.2013 09:39, schrieb Frank Lützenkirchen:
+> Hallo,
+>
+>  >> Am 29.05.2013 15:27, schrieb Silvio Hermann:
+>  >>> nun ich will ja die Ergebnisse die ich bei Klick (Klack) erhalte
+> sortieren und nicht die "Baumdarstellung" als solche.
+>
+> das war jetzt ziemlich verwirrend, besonders für die MyCoRe Anwender,
+> die sich noch nicht mit der SOLR Umstellung beschäftigt haben. Thomas,
+> kannst Du uns bitte mal informieren:
+
+Silvio meint offensichtlich, dass "sortby" nicht das Ergebnis sortiert,
+sondern nur die Kategorien im Klassifikationsbrowser.
+
+>
+>    Usage:
+>      <classificationbrowser
+>        classification="{ClassificationID}"
+>        category="{CategoryID to start with, optional}"
+>        sortby="{id|label, optional sort order of categories}"
+>        objecttype="{MCRObject type, optional}"
+>        field="{search field for category queries in this classification}"
+>        restriction="{additional query expression}"
+>        parameters="{additional MCRSearchServlet parameters}"
+>        addParameter="{any additional request parameters to forward to
+> classification browser servlet}"
+>        countresults="{true|false, default false, whether to execute
+> queries to count results}"
+>        countlinks="{true|false, default false, whether to count links to
+> each category}"
+>        emptyleaves="{true|false, when false and counting activated, skip
+> empty leaves}"
+>        adduri="{true|false, whether to include URI from classification
+> data}"
+>        adddescription="{true|false, whether to include description from
+> category label}"
+>        class="{CSS class, default is 'classificationBrowser'}"
+>        style="{XSL.Style to use, default is classificationBrowserData.xsl}"
+>      />
+>
+> Das bezog sich auf die Implementierung des aktuellen
+> Klassifikationsbrowsers. Das funktioniert hoffentlich sowohl mit Lucene
+> als auch mit dem SOLR Adapter (Kompatibilitätscode) wie oben
+> beschrieben? Ansonsten ist es ein Bug!
+
+Das soll auch so sein.
+
+> Dann kann man mit addParameter="author.sortField.1=ascending" z. B. nach
+> dem Suchfeld author aufsteigend sortieren.
+
+Du meinst sicherlich dann "parameters" und nicht "addParameter" oder?
+Sonst lese ich aus der Doku oben, etwas anderes heraus. "parameters"
+Wird an das Such-Servlet übergeben und "addParameters" für den
+Ajax-Request verwendet.
+
+Über "parameters" kann man also das Ergebnis umsortieren lassen:
+
+old way (MCRQuery): parameters="author.sortField.1=ascending"
+new way (SOLR only): parameters="sort=author+asc"
+
+> Ihr redet offenbar von einer Neuimplementierung des Klassifikationsbrowsers?
+
+Ja, es ging um die SOLR-only-Variante (siehe SOLR-Doku im Wiki [1]), die
+etwas fixer ist und einem alle SOLR-Möglichkeiten (hoffentlich ist das
+auch so) eröffnet.
+
+Gruß
+
+Thomas
+
+[1]:
+http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/SOLR#MCRClassificationBrowser-Ersatz
+
+
+
+
+
+
+
+Hallo,
+
+Am 09.02.2012 19:15, schrieb Kathleen Neumann:
+> Das ganze betrifft die folgenden beiden Seiten:
+> http://www.mycore.de/documentation/version22/userguide/06_use_docportal.html#Der+Klassifikationseditor
+> http://www.mycore.de/documentation/version22/programmerguide/02_principles/14_classification.html
+>
+>    - Welche Attribute beim classificationbrowser sind Pflicht und welche
+> optional (steht leider nicht überall dran)?
+
+Pflicht ist nur
+
+classification="ClassificationID"
+
+und normalerweise
+
+field="SuchfeldFürCategoryIDsAusDieserKlassifikation"
+
+sofern man das default Stylesheet verwendet, das eine Query erzeugt.
+Wenn nicht, dann wäre nicht mal "field" erforderlich.
+
+>    - Was ist mit dem comment-Parameter für den Klassifikationsbrowser
+> geworden?
+>    - Gibt es für den Editor noch Properties, die dokumentiert werden müssten?
+>
+> Allgemeine Fragen die im Kontext aufgekommen sind:
+>    - Unterstützen wir eigentlich noch logische Objekttypen ala
+>
+> MCR.Metadata.Type.alldocs=document,article,codice,disshab,professorum,portrait?
+>    - Stimmen die in der Doku angegebenen ACLs für Klassifikation noch?
+>      create-classification zum Erzeugen von Klassifikationen
+>      modify-classification zum Modifizieren von Kategorieeinträgen in
+> einer Klassifikation
+>      delete-classification zum Löschen einer Klassifikation
+> .. und wo ist eigentlich die Doku dazu im UserGuide abgeblieben, die es
+> mal gegeben haben soll?
+>
+>
+>
+> Über Rückmeldungen vor allem von den jeweils verantwortlichen
+> Programmierern freut sich
+> Kathleen
+>
+>
+

@@ -1,0 +1,22 @@
+Hallo MCR *,
+
+nach unserer heutigen TelKo habe ich den URNEventhandler gleich wie besprochen erweitert.
+und ist für das aktuelle Docportal konfiguriert
+
+    MCR.Persistence.URN.XPath=/mycoreobject/metadata/urns/urn
+
+Ich habe mich für eine Konfigurierbarkeit auf Objekt-Typ-Ebene entschieden. Im Notfall lassen sich mehre XPath-Ausdrücke ja noch verODERn.
+
+
+
+Hallo Kathleen,
+
+Es folgt etwas Doku für die URN-Problematik, vielleicht hast Du einen schönen Platz dafür ;-)
+
+
+Damit bei einem Import von Metdaten-Objekten die URNs im URN-Store wieder registriert werden können, muss der XPath-Ausdruck zur URN in den Metadaten als Property angegeben werden.
+Dazu gibt es ein Standard-Property MCR.Persistence.URN.XPath für alle MyCoRe-Objekttypen. Alternativ können für jeden Objekttyp individuelle XPath--Ausdrück in Properties der Form
+MCR.Persistence.URN.XPath.{type} angegeben werden.
+
+In den XPath-Ausdrücken können alle in den Properties mit MCR.Namespace.{prefix}={uri} definierten Namespaces verwendet werden.
+

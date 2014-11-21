@@ -1,0 +1,30 @@
+
+
+Hallo Viktor,
+
+Am 13.09.2011 16:18, schrieb Viktor Kurbangulov:
+> *<printlatestobjects maxresults="3" sortfield="created"
+> objecttype="document" /> .*
+> Man kann sehen (in MyCoReLayout.xsl), dass gibt es für diese Template
+> die weitere Parameter. Meine Frage ist:
+> Wie kann ich das Parameter '*mCRQLConditions'* benutzen?
+> Kann ich mit diesem Parameter z.B. bestimmen, dass in Resultlist nur die
+> Dokumente, die nach 10.09.2011 created, einkommen.
+
+<printlatestobjects maxresults="3" sortfield="created"
+mcrqlcond="Suchausdruck" ... />
+
+wobei Suchausdruck eine Suchanfrage in MCRQL sein muss. Das kannst Du am
+besten zuvor mit der "Expertensuche" ausprobieren:
+
+http://www.mycore.de:8291/editor_form_search-expert.xml
+
+mcrqlcond='created > "2011-09-10 23:59:59"'
+bzw.
+mcrqlcond='created &gt; "2011-09-10 23:59:59"'
+
+sollte funktionieren.
+
+Viele Grüße,
+
+Frank Lützenkirchen

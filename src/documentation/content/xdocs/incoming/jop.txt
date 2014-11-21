@@ -1,0 +1,18 @@
+
+Hallo,
+
+falls Ihr die JOP Funktionalität für eigene Anwendunge gebrauchen könnt, habe ich sie hier schon mal weitgehend isoliert. Der Java-Code ist vollständig generisch ohne Essen-Bezüge, das XSL hat minimale Abhängigkeiten. Ich würde das Feature nur dann nach MyCoRe schieben, wenn jemand glaubt es gebrauchen zu können.
+
+http://www.mycore.de/viewvc/viewvc.cgi/ghbsys/trunk/ghbsys-jop/src/main/
+
+Servlet und URIResolver nehmen eine OpenURL entgegen. Rückgabe ist die OpenURLResponseXML von JOP.
+
+Doku in den JavaDocs und unter
+http://www.zeitschriftendatenbank.de/services/journals-online-print
+
+Demo (von aussen erreichbar?)
+http://www.ub.uni-duisburg-essen.de/ghbsys/jop?genre=journal&sid=bib:ughe&pid=bibid%3DUGHE%26zdbid%3d204287-3
+
+Viele Grüße,
+
+Frank Lützenkirchen

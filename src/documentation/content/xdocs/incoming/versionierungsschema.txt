@@ -1,0 +1,26 @@
+
+
+Hallo,
+
+wie besprochen, soll es beginnend ab diesem Jahr immer im Frühjahr eine
+neue MyCoRe-Version geben, die ein Jahr mit Bug-Fixes versorgt wird. Für
+die jährlichen Veröffentlichung schlage ich folgendes
+Versionierungs-Schema vor
+
+- {JAHR}.{Release-Monat}.0.{FIX-Level} für Versionen mit 1-Jahres-Pflege.
+- {JAHR}.{MONAT} für alle anderen Versionen, ggf. {JAHR}.{MONAT}.{FIX-Level}
+
+Damit erübrigt sich, ob und wann eine Version in der Nachkommastelle
+erhöht wird oder ein neues Major-Release ist. Unsere Major-Releases sind
+immer im Januar/Februar. Die Vergleichbarkeit zwischen unterschiedlichen
+Versionsständen wird erhöht.
+
+In der fortlaufenden Doku gehen bei neuen Funktionen z.B. immer den
+Hinweis: "ab Version 2013.5"
+Wenn die 1-Jahres-Pflege-Version 2013.6 lautet, heißt das auch, dass
+dieses Feature dann enthalten ist.
+
+Wenn der aktuelle MyCoRe-Code wieder die DocPortal-Tests durchläuft,
+würde ich gerne wieder ein Release machen. Das kann schon morgen sein,
+wenn niemand etwas dagegen hat und ich davon ausgehen kann, dass jeder
+mit dem neuen Versionierungsparadigma einverstanden ist.
