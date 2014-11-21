@@ -3,63 +3,146 @@
 
 <document>
   <header>
-    <title>Das Internal File System</title>
+    <title>Die Speicherung der Dokumente</title>
   </header>
 
   <body>
-   <section>
-   <title>Das Speichermodell für die Multimediadaten (IFS)</title>
-   <p>
-   Im bisherigen Verlauf dieses Kapitels wurden nur die beschreibenden Daten des multimedialen Objektes erläutert.
-   Dieser Abschnitt beschäftigt sich damit, wie die eigentlichen Objekte dem Gesamtsystem hinzugefügt werden können.
-   Im MyCoRe Projekt wurde zur Ablage der digitalen Objekte das Konzept des IFS entwickelt. Hier ist es möglich, über
-   spezielle Konfigurationen festzulegen, in welchen Speicher (Store) die einzelnen Dateien gespeichert werden sollen.
-   </p>
-   <p class="Standard">Das Laden von Objekten erfolgt mittels einer Metadaten-Datei, welche alle Informationen über die
-   zu speichernde(n) Datei(en) und ihre Beziehung(en) zu den Metadaten enthält. Die zu speichernden multimedialen
-   Objekte werden im Weiteren als Derivate, also Abkömmlinge, bezeichnet, da ein Objekt in mehreren Formen,
-   Grafikformaten, auftreten kann. Die Struktur der XML-Datei für Derivate ist fest vorgegeben, alle Felder, die
-   nutzerseitig geändert werden können, sind unten beschrieben.
-   </p>
-   <p>Syntax des Derivate-Datenmodells:</p>
-   <source class="code">
-<![CDATA[<?xml version="1.0" cncoding="ISO-8859-1" ?>
-  <mycorederivate
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="....xsd"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    ID="..."
-    label="..."
-  >
-    <derivate>
-      <linkmetas class="MCRMetaLinkID">
-        <linkmeta xlink:type="locator" xlink:href="..." />
-      </linkmetas>
-      <internals class="MCRMetaIFS">
-        <internal sourcepath="..." maindoc="..."/>
-      </internals>
-    </derivate>
-    <service>
-      ...
-    </service>
-  </mycorederivate>]]></source>
 
-   <ul>
-   <li>Für xsi:noNamespaceSchemaLocation ist die entsprechende XML Schema-Datei anzugeben (Derivate.xsd)</li>
-   <li>Die ID ist die eindeutige MCRObjectID.</li>
-   <li>Der label ist ein kurzer Text-String, der bei administrativen Arbeiten an der Datenbasis das Identifizieren
-       einzelner Datensätze erleichtern soll. Er kann maximal 256 Zeichen lang sein.</li>
-   <li>Die Referenz in linkmeta ist die MCRObjectID des Metadatensatzes, an den das/die Objekte angehängt werden sollen.</li>
-   <li>Das Attribut sourcepath enthält die Pfadangabe zu einer Datei oder zu einem Verzeichnis, welches als Quelle
-       dienen soll. Aus diesen Dateien kann nun eine Datei ausgewählt werden, welche den Einstiegspunkt bei HTML-Seiten
-       darstellen soll. Bei einzelnen Bildern ist hier noch einmal der Dateiname anzugeben. Ist nichts angegeben, so
-       wird versucht Dateien wie index.html usw. zu finden.</li>
-   </ul>
-  </section>
+    <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
 
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
+  <p>
+    Das IFS2 (Internal Filesystem Version 2) ist eine neue Implementierung
+    für die Persistenz
+    von Metadaten, Derivaten und Dateien. IFS2 bietet gegenüber der
+    bisherigen Persistenzschicht
+    eine Reihe von Vorteilen, u.a. eine einfachere Struktur, die auch mit
+    externen Werkzeugen
+    ausserhalb von MyCoRe bearbeitbar ist, eine einfachere Möglichkeit der
+    Datensicherung und
+    Synchronisierung und eine gesteigerte Performance. Die Implementierung für Dateien ist
+    derzeit noch nicht vollständig.
+    </p>
+  <p>
+    Zur Speicherung von Objekt-Metadaten wird IFS2 zur Zeit in der Form
+    genutzt,
+    dass je Projekt-ID und Objekttyp ein eigener IFS2 Metadata Store angelegt
+    wird. In der
+    Konfiguration muss dazu nur das Basisverzeichnis angegeben werden.
+    <pre class="brush: shell;gutter:false;">MCR.Metadata.Store.BaseDir=%MCR.datadir%/metadata</pre>
+  </p>
+  <p>
+    Je Projekt und Objekttyp entsteht ein separates Unterverzeichnis.
+    Die Standardkonfiguration speichert dann z. B. die Metadaten des Objektes
+    DocPortal_document_07910403 in der Datei
+    <code>%MCR.datadir%/metadata/DocPortal/document/0791/04/DocPortal_document_07910403.xml</code>
+  </p>
+  <p>
+    IFS2 Stores bilden Unterverzeichnisse (Slots), um die Dateien
+    gleichmässiger im
+    Filesystem zu verteilen. Diese Unterverzeichnisse werden aus der ID abgeleitet,
+    anhand des vorkonfigurieren Slot Layouts. Das Standard Slot Layout ist
+    <pre class="brush: shell;gutter:false;">
+      n-2-2
+    </pre>
+    wobei n die Anzahl der Stellen in der MyCoRe Object ID - 4 ist. Bei
+    <pre class="brush: shell;gutter:false;">
+      MCR.Metadata.ObjectID.NumberPattern=00000000
+    </pre>
+    ist das Standard Layout 4-2-2, achtstellige Objekt-IDs (4+2+2=8),
+    die ersten vier Ziffern der ID bilden die erste Verzeichnisebene,
+    die nächsten zwei Ziffern der ID bilden die zweite Verzeichnisebene
+    unterhalb des Ordners für Projekt-ID und Objekttyp.
+  </p>
+  <p>
+    Es gibt verschiedene Implementierungen eines IFS2 Metadata Stores.
+    Die einfachste und schnellste Implementierung ist
+    <pre class="brush: shell;gutter:false;">
+      MCR.Metadata.Store.DefaultClass=org.mycore.datamodel.ifs2.MCRMetadataStore
+    </pre>
+    Sie bietet keine Versionierung der Metadaten, ist aber auch bei
+    create/update/delete
+    Operationen schnell. Eine Alternative ist
+    <pre class="brush: shell;gutter:false;">
+      MCR.Metadata.Store.DefaultClass=org.mycore.datamodel.ifs2.MCRVersioningMetadataStore
+    </pre>
+    Dies ist zur Zeit die Default-Einstellung, die zusätzlich Änderungen
+    an Metadaten-Objekten in internen Subversion Repositories versioniert.
+    D.h. mit dieser
+    Implementierung lassen sich Änderungen an Metadaten-Objekten verfolgen, alte
+    und gelöschte Versionen der Metadaten wiederherstellen. Diese
+    Implementierung
+    ist bei Leseoperationen auf die aktuellste Version der Metadaten genau so
+    schnell,
+    bei create/update/delete Operationen aber deutlich langsamer.
+  </p>
+  <p>
+    Zur Verwaltung der Metadatenversionen werden je Projekt-ID und
+    Objekttyp separate Subversion
+    Repositories unterhalb eines Basisverzeichnisses angelegt:
+    <pre class="brush: xml;gutter:false;">
+      MCR.Metadata.Store.SVNBase=file\:///%MCR.datadir%/versions-metadata
+    </pre>
+    Diese SVN Repositories können wie andere auch mit externen
+    Subversion Kommandos befragt werden, aber es ist keine lokale Subversion
+    Installation erforderlich. Die benötigte Funktionalität wird von
+    MyCoRe mitgeliefert.
+  </p>
+  <p>
+    Es ist möglich, die Einstellungen zum verwendeten Store, Basisverzeichnis
+    und Slot Layout individuell für einzelne Objekttypen und Projekt-IDs zu
+    überschreiben.
+  </p>
+  <p>
+    So könnte z. B. für einen bestimmten Objekttyp (hier DocPortal document)
+    Versionierung aktiviert werden, für andere Objekttypen aber der schnellere
+    MCRMetadataStore:
+    <pre class="brush: xml;gutter:false;">
+      MCR.Metadata.Store.DefaultClass=org.mycore.datamodel.ifs2.MCRMetadataStore
+
+      MCR.IFS2.Store.DocPortal_document.Class=org.mycore.datamodel.ifs2.MCRVersioningMetadataStore
+      MCR.IFS2.Store.DocPortal_document.SlotLayout=4-2-2
+      MCR.IFS2.Store.DocPortal_document.BaseDir=/path/to/metadata/store/
+      MCR.IFS2.Store.DocPortal_document.SVNRepositoryURL=file:///path/to/local/svn/repository/
+    </pre>
+  </p>
+  <p>
+    Wenn MCRVersioningMetadataStore verwendet wird, wird das Metadatenobjekt zunächst in einer XML-Datei gespeichert,
+    die dann im Anschluss via SVN commit versioniert wird. Standardmäßig wird der Zeitstempel der Datei nachträglich auf
+    den exakten Zeitpunkt des SVN commits gesetzt. Dies kann unter Linux zu Fehlern aufgrund von Zugriffsrechten führen.
+    In diesem Fall kann durch
+    <pre class="brush: xml;gutter:false;">
+      MCR.IFS2.SyncLastModifiedOnSVNCommit=false
+    </pre>
+    die Zeitstempel-Synchronisation abgeschaltet werden.
+  </p>
+  <p>
+    In älteren MyCoRe Versionen wurden die Metadaten der Objekte in einer
+    Datenbanktabelle
+    (BLOB-Spalte) gespeichert. Eine besondere Implementierung ist
+    <pre class="brush: shell;gutter:false;">
+      MCR.Metadata.Store.DefaultClass=org.mycore.migration20_21.datamodel.MCRMigratingXMLStore
+    </pre>
+    Diese verhält sich wie ein MCRVersioningMetadataStore, bietet jedoch
+    zusätzlich eine
+    live Migration der alten Daten aus der Tabelle. Beim ersten Zugriff auf
+    ein Objekt wird
+    dieses ggf. aus der Datenbanktabelle gelesen und in den IFS2 Store kopiert,
+    sofern es
+    nicht schon dort gespeichert ist.
+  </p>
+
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
+
   </body>
 </document>

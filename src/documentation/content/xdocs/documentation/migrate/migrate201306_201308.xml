@@ -71,7 +71,7 @@
           Um Dateien von einem ContentStore in einen anderen zu verschieben, stehen nun die folgenden CLI-Befehle
           zur Verfügung:
         </p>
-        <pre>
+        <pre class="brush: bash;gutter: false;">
 DocPortal: move derivates from content store {0} to content store {1} for owner {2}
 DocPortal:     moves all files of derivates from content store {0} to content store {1}
 DocPortal:     for defined owner {2}

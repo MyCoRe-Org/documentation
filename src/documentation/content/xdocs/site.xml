@@ -247,7 +247,6 @@ See http://forrest.apache.org/docs/linking.html for more info
       </docportal>
     </getting_started>
     <content               label="Grundlagen"          href="basics/">
-      <datamodel             label="Datenmodell"       href="datamodel.html" />
       <classifications       label="Klassifikationen"  href="classifications/">
         <classif_xml         label="XML-Format"        href="classification_datamodel.html" />
         <classif_commands    label="Kommandos"         href="classification_commands.html" />
@@ -255,16 +254,17 @@ See http://forrest.apache.org/docs/linking.html for more info
         <classif_editor      label="Editor"            href="classification_editor.html" />
         <classif_mapping     label="Mapping"           href="classification_mapping.html" />
       </classifications>
-      <mcrobject             label="Objekte"         href="mcrobject/">
+      <mcrobject             label="MyCoRe-Objekte"         href="mcrobject/">
+        <mcrobj_xml          label="Aufbau im XML"     href="mcrobject_datamodel.html" />
         <mcrobj_id           label="MCRObject-ID"      href="mcrobjectid.html" />
-        <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
         <mcrobj_datatypes    label="Datentypen"        href="datatypes.html" />
         <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html" />
-        <mcrobj_ifs          label="IFS2"              href="ifs.html" />
+        <mcrobj_ifs          label="Metadaten-Store"   href="ifs.html" />
       </mcrobject>
       <mcrderivate           label="Derivate"        href="mcrderivate_ifs/">
-        <mcrderiv_ifs        label="IFS"               href="ifs.html" />
+        <mcrderiv_xml        label="Aufbau im XML"     href="mcrderivate_datamodel.html" />
         <mcrderiv_commands   label="Kommandos"         href="mcrderivate_commands.html" />
+        <mcrderiv_ifs        label="Derivate-Store"    href="ifs.html" />
         <mcrderiv_zip        label="ZIP-Dateien"       href="zipfiles.html" />
         <mcrderiv_streaming  label="StreamingServer"   href="streamingserver.html" />
         <mcrderiv_fileupload label="File-Upload"       href="fileupload_applet.html" />

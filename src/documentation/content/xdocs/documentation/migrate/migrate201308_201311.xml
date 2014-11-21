@@ -34,12 +34,25 @@
       </p>
 
       <section>
+        <title>EventHandler</title>
+        <p>
+          ich musste feststellen, dass wir die EventHandler zwar nummerieren, aber
+          nicht nach Nummern sortieren. Stattdessen sortieren wir alphabetisch,
+          was dazu führt, dass EventHandler "10" ziemlich weit vorne nämlich vor
+          "2" ausgeführt wurde. Das kann doch ziemlich ärgerlich sein.
+
+          Deswegen wurde jetzt aus \d -> "0"\d"0", also "2" -> "020". Der
+          Sonderfall "1b" wurde zu "015" abgebildet.
+        </p>
+      </section>
+
+      <section>
         <title>Migration der MODS-Daten</title>
         <p>
           Das mit der MODS-Komponente erstellte MODS wies leider einen kleinen Fehler beim Veröffenltichungsdatum
           von Zeitschriftenaufsätzen (article) auf. Dieser kann mit Hilfe eines Migrationskommandos behoben werden:
         </p>
-        <pre>
+        <pre class="brush: bash;gutter: false;">
 DocPortal: migrate mods dateIssued for {0}
 DocPortal:     Migrate MODS metadata (dateIssued) from relatedItem[@type='host']
 DocPortal:     one level up.
@@ -71,7 +84,7 @@ DocPortal:
       </p>
       <section>
         <title>Neue CLI-Befehle</title>
-        <pre>
+        <pre class="brush: bash;gutter: false;">
 check derivates of mcrfsnodes with project id {0}
 check mcrfsnodes of derivates with project id {0}
 check derivate entries in objects for base {0}
