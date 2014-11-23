@@ -45,6 +45,12 @@
    verwendet.
    </p>
    <p>
+   Das Property für die Länge der generierten Nummer lautet: <code>MCR.Metadata.ObjectID.NumberPattern</code> 
+   und ist mit dem Wert <code>00000000</code> initialisiert. <br />
+   Mit dem Property <code>MCR.Metadata.ObjectID.NumberDistance</code> kann im ID-Generator der Abstand zwischen zwei IDs 
+   definiert werden, falls diese nicht vorlaufend vergeben werden sollen. 
+   </p>
+   <p>
    Es sei noch einmal ausdrücklich darauf hingewiesen, das die <code>MCRObjectID</code> eine zentrale Rolle im ganzen
    MyCoRe-Projekt spielt. Über sie werden alle Daten identifiziert und referenziert. Es sind daher die vorgegebenen
    Regeln streng einzuhalten. Da es derzeit für den Datentyp zum anhängen nur eine <code>type</code>-Bezeichnung gibt,
