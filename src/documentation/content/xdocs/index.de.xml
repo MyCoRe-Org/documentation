@@ -63,9 +63,10 @@
         </newsentry>
         <newsentry>
           <title>Workshop</title>
-          <message>Der diesjährige MyCoRe-Workshop findet am 20.11.2014 in Braunschweig statt.</message>
-          <url>site:workshop</url>
-          <date>17. Oktober 2014</date>
+          <message>Der diesjährige MyCoRe-Workshop fand am 20.11.2014 in Braunschweig statt.</message>
+          <url>site:aw_workshop_2014</url>
+          <!-- <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014</url> -->
+          <date>24. November 2014</date>
           <author>Wiebke Oeltjen</author>
           <image>bid</image>
         </newsentry>
