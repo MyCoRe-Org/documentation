@@ -6,38 +6,41 @@
   </header>
   <body>
 
-      <section>
-        <title>Allgemeines</title>
-        <p> Die Dokumentation von MyCoRe und die Unterstützung der Nutzer erfolgt über mehrere Medien.</p>
-        <ol>
-          <li>
-            <strong>bisher:</strong>
-            Dokumente im OpenOffice- und PDF-Format als Bestandteil der Releases.
-            <br />
-            <strong>neu:</strong>
-            Die MyCoRe-Dokumentation wird zur Zeit für die kommende Version MyCoRe 2.0 überarbeitet und mit Apache
-            Forrest erstellt
-            <a href="site:overview"> http://www.mycore.de/documentation/documentation/index.html</a>
-          </li>
-          <li>
-            Die MyCoRe-Web-Seite <a href="site:news"> http://www.mycore.de/documentation</a>
-            als Web-Auftritt - jetz auch <strong>neu</strong> über Apache Forrest
-          </li>
-          <li>
-            Die Know-How- und Dokumentationsseiten der MyCoRe-Wiki-Installation
-            <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation">http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation</a>
-            als Platform für ein Wissensforum zum Erfahrungsaustausch der Anwender.
-          </li>
-          <li>Die Mailing-Listen für Benutzer und Entwickler zur direkten Kommunikation.</li>
-        </ol>
-      </section>
-      <section>
-        <title>Dokumente</title>
-        <p>
-          Dokumentationen zum MyCoRe-Projekt sind zukünftig als XML-Dateien mit Apache Forrest zu erstellen. Die
-          Sprache der Dokumente ist wahlweise Deutsch oder Englisch.
-        </p>
-      </section>
+    <section>
+      <title>Allgemeines</title>
+      <p> Die Dokumentation von MyCoRe und die Unterstützung der Entwickler erfolgt über mehrere Medien.</p>
+      <ol>
+        <li>
+          Die MyCoRe-Dokumentation wird zur Zeit für das aktuelle Release MyCoRe 2014.06 überarbeitet und mit Apache
+          Forrest erstellt.
+          <a href="site:overview"> http://www.mycore.de/documentation/index.html</a>
+        </li>
+        <li>
+          Die Know-How- und Dokumentationsseiten der MyCoRe-Wiki-Installation
+          <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation">http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation</a>
+          dient als Platform für ein Wissensforum zum Erfahrungsaustausch der Anwender.
+        </li>
+        <li>Die Mailing-Listen für Benutzer und Entwickler zur direkten Kommunikation.</li>
+      </ol>
+    </section>
+    <section>
+      <title>An der Dokumentation mitarbeiten</title>
+      <p>
+        Für die Mitarbeit an der Dokumentation ist ein checkout von
+        <strong>documentation</strong>
+        vom SVN-Trunk erforderlich.
+        Um die Dokumentation lokal zu aktivieren, ist die Installation von Apache Forrest
+        erforderlich. Es muss die Environment-Variable FORREST_HOME gesetzt werden. Für den Start ist in das
+        root-Verzeichnis der Dokumentation zu wechseln und das Kommando
+        <strong>forrest run</strong>
+        auszuführen. Nun kann die lokale Installation über
+        <a target="_blank" href="http://localhost:8888">http://localhost:8888</a>
+        im Browser aufgerufen werden.
+      </p>
+      <p>
+        Die Sprache der Dokumente ist wahlweise Deutsch oder Englisch.
+      </p>
+    </section>
 
   </body>
 </document>
