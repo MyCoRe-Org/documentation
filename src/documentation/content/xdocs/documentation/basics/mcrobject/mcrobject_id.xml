@@ -16,28 +16,28 @@
 
    <table>
    <tr>
-   <td><strong>projektkürzel</strong></td>
+   <td valign="top"><strong>projektkürzel</strong></td>
    <td>Dieses Element ist für ein Projekt und/oder eine Einrichtung / Datengruppe festzulegen, zum Beispiel UBLPapyri
        oder MyCoReDocument. In MyCoRe wird es teilweise auch zur Identifikation einzelner Konfigurationsdaten mit
        genutzt.
    </td>
    </tr>
    <tr>
-   <td><strong>type</strong></td>
+   <td valign="top"><strong>type</strong></td>
    <td>Das Element beschreibt den Datenmodelltyp, d. h. der type verweist auf die zugehörige Datenmodell-Konfiguration,
        zum Beispiel datamodel-author oder datamodel-document. In MyCoRe wird es oft zur Identifikation einzelner
        Konfigurationsdaten im Zusammenhang mit der Verarbeitung dieses Datenmodells genutzt.
    </td>
    </tr>
    <tr>
-   <td><strong>nummer</strong></td>
+   <td valign="top"><strong>nummer</strong></td>
    <td>Ist eine frei wählbare positive Integerzahl. Diese Zahl kann in Verantwortung des Projektmanagers per Hand oder
        automatisch vergeben werden. Bei der Projektdefinition wird die Größe des Zahlenbereiches festgelegt. Es hat sich
        als sinnvoll erwiesen, nicht weniger als 8 Ziffern einzuplanen.
    </td>
    </tr>
    </table>
-   <p class="klein"><strong>Tabelle 8.1:</strong> Aufbau der MCRObjectID</p>
+   <p class="klein">Tabelle: Aufbau der MCRObjectID</p>
 
    <p>
    Im MyCoRe-Projekt sind zwei MCRObjectID-Typnamen reserviert und dürfen nicht für anderweitige Objekte genutzt werden.
