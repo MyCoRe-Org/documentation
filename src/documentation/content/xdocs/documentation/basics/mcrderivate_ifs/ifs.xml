@@ -3,7 +3,7 @@
 
 <document>
   <header>
-    <title>Die Speicherung der Dokumente</title>
+    <title>Die Speicherung der Dokumente / Dateien</title>
   </header>
 
   <body>
@@ -18,126 +18,72 @@
    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
 
-  <p>
-    Das IFS2 (Internal Filesystem Version 2) ist eine neue Implementierung
-    für die Persistenz
-    von Metadaten, Derivaten und Dateien. IFS2 bietet gegenüber der
-    bisherigen Persistenzschicht
-    eine Reihe von Vorteilen, u.a. eine einfachere Struktur, die auch mit
-    externen Werkzeugen
-    ausserhalb von MyCoRe bearbeitbar ist, eine einfachere Möglichkeit der
-    Datensicherung und
-    Synchronisierung und eine gesteigerte Performance. Die Implementierung für Dateien ist
-    derzeit noch nicht vollständig.
-    </p>
-  <p>
-    Zur Speicherung von Objekt-Metadaten wird IFS2 zur Zeit in der Form
-    genutzt,
-    dass je Projekt-ID und Objekttyp ein eigener IFS2 Metadata Store angelegt
-    wird. In der
-    Konfiguration muss dazu nur das Basisverzeichnis angegeben werden.
-    <pre class="brush: shell;gutter:false;">MCR.Metadata.Store.BaseDir=%MCR.datadir%/metadata</pre>
-  </p>
-  <p>
-    Je Projekt und Objekttyp entsteht ein separates Unterverzeichnis.
-    Die Standardkonfiguration speichert dann z. B. die Metadaten des Objektes
-    DocPortal_document_07910403 in der Datei
-    <code>%MCR.datadir%/metadata/DocPortal/document/0791/04/DocPortal_document_07910403.xml</code>
-  </p>
-  <p>
-    IFS2 Stores bilden Unterverzeichnisse (Slots), um die Dateien
-    gleichmässiger im
-    Filesystem zu verteilen. Diese Unterverzeichnisse werden aus der ID abgeleitet,
-    anhand des vorkonfigurieren Slot Layouts. Das Standard Slot Layout ist
-    <pre class="brush: shell;gutter:false;">
-      n-2-2
-    </pre>
-    wobei n die Anzahl der Stellen in der MyCoRe Object ID - 4 ist. Bei
-    <pre class="brush: shell;gutter:false;">
-      MCR.Metadata.ObjectID.NumberPattern=00000000
-    </pre>
-    ist das Standard Layout 4-2-2, achtstellige Objekt-IDs (4+2+2=8),
-    die ersten vier Ziffern der ID bilden die erste Verzeichnisebene,
-    die nächsten zwei Ziffern der ID bilden die zweite Verzeichnisebene
-    unterhalb des Ordners für Projekt-ID und Objekttyp.
-  </p>
-  <p>
-    Es gibt verschiedene Implementierungen eines IFS2 Metadata Stores.
-    Die einfachste und schnellste Implementierung ist
-    <pre class="brush: shell;gutter:false;">
-      MCR.Metadata.Store.DefaultClass=org.mycore.datamodel.ifs2.MCRMetadataStore
-    </pre>
-    Sie bietet keine Versionierung der Metadaten, ist aber auch bei
-    create/update/delete
-    Operationen schnell. Eine Alternative ist
-    <pre class="brush: shell;gutter:false;">
-      MCR.Metadata.Store.DefaultClass=org.mycore.datamodel.ifs2.MCRVersioningMetadataStore
-    </pre>
-    Dies ist zur Zeit die Default-Einstellung, die zusätzlich Änderungen
-    an Metadaten-Objekten in internen Subversion Repositories versioniert.
-    D.h. mit dieser
-    Implementierung lassen sich Änderungen an Metadaten-Objekten verfolgen, alte
-    und gelöschte Versionen der Metadaten wiederherstellen. Diese
-    Implementierung
-    ist bei Leseoperationen auf die aktuellste Version der Metadaten genau so
-    schnell,
-    bei create/update/delete Operationen aber deutlich langsamer.
-  </p>
-  <p>
-    Zur Verwaltung der Metadatenversionen werden je Projekt-ID und
-    Objekttyp separate Subversion
-    Repositories unterhalb eines Basisverzeichnisses angelegt:
-    <pre class="brush: xml;gutter:false;">
-      MCR.Metadata.Store.SVNBase=file\:///%MCR.datadir%/versions-metadata
-    </pre>
-    Diese SVN Repositories können wie andere auch mit externen
-    Subversion Kommandos befragt werden, aber es ist keine lokale Subversion
-    Installation erforderlich. Die benötigte Funktionalität wird von
-    MyCoRe mitgeliefert.
-  </p>
-  <p>
-    Es ist möglich, die Einstellungen zum verwendeten Store, Basisverzeichnis
-    und Slot Layout individuell für einzelne Objekttypen und Projekt-IDs zu
-    überschreiben.
-  </p>
-  <p>
-    So könnte z. B. für einen bestimmten Objekttyp (hier DocPortal document)
-    Versionierung aktiviert werden, für andere Objekttypen aber der schnellere
-    MCRMetadataStore:
-    <pre class="brush: xml;gutter:false;">
-      MCR.Metadata.Store.DefaultClass=org.mycore.datamodel.ifs2.MCRMetadataStore
+   <!-- TODO: copied from miless documentation - refacturing needed -->
+   <section>
+     <title>Speicherorte für Dateien konfigurieren</title>
+     <p>
+       Bevor Dateien in das MyCoRe-System geladen werden können, müssen Sie noch konfigurieren, wo
+       die Inhalte dieser Dateien intern gespeichert werden sollen. MyCoRe verwendet dazu die
+       "FileContentStores". Sie können Dateien in lokalen oder entfernten
+       Dateisystemen, z. B. auf Video Streaming Servern speichern. MyCoRe verwendet das Apache Commons
+       Virtual Filesystem14, welches neben lokalen Dateisystemen auch SFTP, WEBDAV und CIFS unterstützt.
+     </p>
+     <p>
+       Die Datei mycore.properties enthält Beispiel-Konfigurationen für die Speicherung in einem lokalen Verzeichnis
+       und die Anbindung eines Helix Universal Streaming-Servers, was die beiden häufigsten Anwendungsfälle
+       darstellt. In einem MyCoRe-System werden die Metadaten der gespeicherten Dateien (MD5 Prüfsumme,
+       Größe, erkannter Dateityp usw.) in der SQL-Tabelle files gespeichert. Der eigentliche Datei-Inhalt
+       wird in einer eigenen Struktur im FileContentStore gespeichert.
+     </p>
+     <p>
+       Für jeden FileContentStore sind eine eindeutige ID (z.B. FS oder REAL8), die Store-Implementierung
+       (vgl. obige Liste) und weitere Parameter abhängig von der Implementierung (z.B. das Zielverzeichnis)
+       angegeben. Sie müssen mindestens einen FileContentStore konfigurieren. Ändern Sie dazu in der Datei
+       mycore.properties im Abschnitt "FS - Local Filesystem Content Store" gegebenenfalls das Verzeichnis,
+       in dem Dateien auf dem lokalen Server gespeichert werden sollen:
+       <code>MCR.IFS.ContentStore.FS.URI=%MCR.BaseDir%fs</code>
+     </p>
+   </section>
 
-      MCR.IFS2.Store.DocPortal_document.Class=org.mycore.datamodel.ifs2.MCRVersioningMetadataStore
-      MCR.IFS2.Store.DocPortal_document.SlotLayout=4-2-2
-      MCR.IFS2.Store.DocPortal_document.BaseDir=/path/to/metadata/store/
-      MCR.IFS2.Store.DocPortal_document.SVNRepositoryURL=file:///path/to/local/svn/repository/
-    </pre>
-  </p>
-  <p>
-    Wenn MCRVersioningMetadataStore verwendet wird, wird das Metadatenobjekt zunächst in einer XML-Datei gespeichert,
-    die dann im Anschluss via SVN commit versioniert wird. Standardmäßig wird der Zeitstempel der Datei nachträglich auf
-    den exakten Zeitpunkt des SVN commits gesetzt. Dies kann unter Linux zu Fehlern aufgrund von Zugriffsrechten führen.
-    In diesem Fall kann durch
-    <pre class="brush: xml;gutter:false;">
-      MCR.IFS2.SyncLastModifiedOnSVNCommit=false
-    </pre>
-    die Zeitstempel-Synchronisation abgeschaltet werden.
-  </p>
-  <p>
-    In älteren MyCoRe Versionen wurden die Metadaten der Objekte in einer
-    Datenbanktabelle
-    (BLOB-Spalte) gespeichert. Eine besondere Implementierung ist
-    <pre class="brush: shell;gutter:false;">
-      MCR.Metadata.Store.DefaultClass=org.mycore.migration20_21.datamodel.MCRMigratingXMLStore
-    </pre>
-    Diese verhält sich wie ein MCRVersioningMetadataStore, bietet jedoch
-    zusätzlich eine
-    live Migration der alten Daten aus der Tabelle. Beim ersten Zugriff auf
-    ein Objekt wird
-    dieses ggf. aus der Datenbanktabelle gelesen und in den IFS2 Store kopiert,
-    sofern es
-    nicht schon dort gespeichert ist.
-  </p>
+   <section>
+     <title>Auswahlregeln für Speicherorte anpassen</title>
+     <p>
+       Die Datei miless-webapp/src/main/resources/ContentStoreSelectionRules.xml enthält die Regeln, wie die
+       Dateien anhand des erkannten Dateityps auf die zuvor konfigurierten FileContentStores verteilt werden.
+       Wenn keine besondere Regel zutrifft, wird der Dateiinhalt im Default Store gespeichert. Wenn Sie nur
+       einen lokalen FileContentStore eingerichtet haben, sollte der Inhalt dieser Datei also schlicht wie
+       folgt aussehen:
+       <code>&lt;ContentStoreSelectionRules default="FS" /></code>
+     </p>
+     <p>
+       Wenn Sie wie zuvor beschrieben einen Helix Universal Streaming Server eingerichtet haben, oder andere
+       FileContentStores verwenden wollen, können Sie angeben, welche Dateitypen in welchen Stores gespeichert
+       werden. Das Element type entspricht den IDs aus der Datei FileContentTypes.xml (Dateitypen). Beispiel:
+     </p>
+     <pre class="brush: xml">
+<![CDATA[<ContentStoreSelectionRules default="FS">
+  <store ID="REAL8">
+    <type>mp3</type>
+    <type>mpeg4</type>
+    <type>wav</type>
+    <type>realvid</type>
+    <type>realaud</type>
+    <type>wma</type>
+    <type>wmv</type>
+    <type>asf</type>
+  </store>
+</ContentStoreSelectionRules>]]></pre>
+
+     <p>
+       Vergessen Sie nicht, nach Änderung der Konfiguration der Dateitypen, FileContentStores und Auswahlregeln erneut
+       <code>ant build</code> aufzurufen, damit die aktualisierte Konfigurationsdatei verwendet wird. MyCore erlaubt es
+       grundsätzlich auch, andere oder eigene Implementierungen für die Erkennung von Dateitypen oder für die Auswahl
+       des FileContentStores zu verwenden, um z.B. eine Zuordnung nicht anhand des erkannten Dateitypes, sondern etwa
+       anhand der Metadaten des zugehörigen Dokumentes zu treffen. Diese erweiterten Möglichkeiten sind in der Dokumentation
+       des MyCoRe Internal Filesystem (IFS) zu finden.
+     </p>
+   </section>
+
 
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
  <script type="text/javascript">

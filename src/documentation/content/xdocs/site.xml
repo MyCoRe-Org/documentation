@@ -257,7 +257,8 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcrderivate           label="Derivate"          href="mcrderivate_ifs/">
         <mcrderiv_xml        label="XML-Format"        href="mcrderivate_datamodel.html" />
         <mcrderiv_commands   label="Kommandos"         href="mcrderivate_commands.html" />
-        <mcrderiv_ifs        label="Derivate-Store"    href="ifs.html" />
+        <mcrderiv_metadata   label="Derivat-Metadaten speichern" href="store_derivmetadata.html" />
+        <mcrderiv_ifs        label="IFS / IFS2"        href="ifs.html" />
         <mcrderiv_zip        label="ZIP-Dateien"       href="zipfiles.html" />
         <mcrderiv_streaming  label="StreamingServer"   href="streamingserver.html" />
         <mcrderiv_fileupload label="File-Upload"       href="fileupload_applet.html" />
