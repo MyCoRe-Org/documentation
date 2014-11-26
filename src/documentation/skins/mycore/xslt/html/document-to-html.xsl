@@ -66,21 +66,25 @@ imported document-to-html.xsl for details.
         <div id="skinconf-toc-page"/>
       </div>
       <xsl:apply-templates select="body"/>
-      <xsl:if test="header/authors">
+      <xsl:if test="header/authors or header/version">
         <p align="right">
           <font size="-2">
             <xsl:for-each select="header/authors/person">
               <xsl:choose>
-                <xsl:when test="position()=1">by&#160;</xsl:when>
+                <xsl:when test="position()=1">&#160;</xsl:when>
                 <xsl:otherwise>,&#160;</xsl:otherwise>
               </xsl:choose>
               <xsl:value-of select="@name"/>
             </xsl:for-each>
+            <xsl:if test="header/version">
+              <xsl:choose>
+                <xsl:when test="header/authors/person">&#160;-&#160;</xsl:when>
+                <xsl:otherwise><!-- do nothing --></xsl:otherwise>
+              </xsl:choose>
+              <xsl:apply-templates select="header/version"/>
+            </xsl:if>
           </font>
         </p>
-      </xsl:if>
-      <xsl:if test="header/version">
-        <xsl:apply-templates select="header/version"/>
       </xsl:if>
     </div>
   </xsl:template>

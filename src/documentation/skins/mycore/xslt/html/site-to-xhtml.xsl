@@ -20,7 +20,7 @@
             </xsl:choose>
         </xsl:variable>
 
-<html>
+<html lang="de">
     <head>
         <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css' />

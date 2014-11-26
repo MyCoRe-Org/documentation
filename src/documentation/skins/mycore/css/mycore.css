@@ -81,7 +81,12 @@
     #sub_content #content {
         margin: 0 35px 0 0;
         }
-        #mycore_home .pdflink { display:none; }
+    #mycore_home .pdflink { display:none; }
+    #content p {
+        -moz-hyphens: auto;
+        text-rendering: optimizelegibility;
+        padding-right: 10px;
+    }
 /* ----------------------------------------------------------------------------
     search
 ------------------------------------------------------------------------------*/
