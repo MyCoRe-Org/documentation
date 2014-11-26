@@ -27,10 +27,178 @@
         <em>metadata</em>
         befinden. Alle anderen Teile werden automatisch gebaut. Die Definition geht weiterhin davon aus, dass die
         äußeren Tag-Namen entsprechend mit
-        <em>def.</</em> erweiter wird.
+        <em>def.</em>
+        erweiter wird.
       </p>
+      <pre class="brush: xml;">
+<![CDATA[<objecttype name="document" isChild="false" isParent="false" hasDerivates="true" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datamodel.xsd">
+  <metadata>
+    <element name="author" type="text" minOccurs='0' maxOccurs='unbounded'/>
+    <element name="title" type="text" minOccurs='1' maxOccurs='1'/>
+    <element name="subject" type="classification" minOccurs='1' maxOccurs='1'>
+      <classification id="subject"/>
+    <element>
+    <element name="link" type="link" minOccurs='1' maxOccurs='1'>
+      <target type="person"/>
+    <element>    
+  </metadata>
+</objecttype>]]></pre>
+      <ul>
+        <li>
+          <em>name</em>
+          in der Objekt beschreibenden Zeile ist der gewünschte MyCoRe-ObjectID-Typ.
+        </li>
+        <li>
+          <em>isChild</em>
+          spezifiziert, ob das Objekt ein Kind-Objekt ist.
+        </li>
+        <li>
+          <em>isParent</em>
+          spezifiziert, ob das Objekt ein Eltern-Objekt ist.
+        </li>
+        <li>
+          <em>hasDerivates</em>
+          spezifiziert, ob das Objekt Derivate-Objekte haben darf.
+        </li>
+        <li>
+          <em>name</em>
+          im Element beschreibt den Tagnamen des inneren Elementes. Der äußere wird daraufhin gebildest als
+          <em>def.{name}</em>
+          .
+        </li>
+        <li>
+          <em>minOccurs</em>
+          beschreibt die mindeste Anzahl der Wiederholungen des inneren Tags. Ist nichts angegeben, wird 0 angenommen.
+        </li>
+        <li>
+          <em>maxOccurs</em>
+          beschreibt die maximale Anzahl der Wiederholungen des inneren Tags. Ist nichts angegebn, wird unbounded
+          angenommen.
+        </li>
+        <li>
+          Das Subtag
+          <em>classification</em>
+          bescheibt über das Attribut
+          <em>id</em>
+          den Klassifikationsnamen.
+        </li>
+        <li>
+          Das Subtag
+          <em>target</em>
+          gibt über das Attribut
+          <em>type</em>
+          den MCRObjectType des Link-Ziels an.
+        </li>
+        <li>
+          Das
+          <em>element</em>
+          kann um das Attribut
+          <em>wrapper</em>
+          erweitert werden, wenn das äußere Tag nicht den Namen
+          <em>def.{name}</em>
+          haben soll.
+        </li>
+      </ul>
+      <table>
+        <tr>
+          <th>
+            <em>type</em>
+            -Element
+          </th>
+          <th>MyCoRe-Datenmodellklasse</th>
+        </tr>
+        <tr>
+          <td>text
+          </td>
+          <td>MCRMetaLangText
+          </td>
+        </tr>
+        <tr>
+          <td>boolean
+          </td>
+          <td>MCRMetaBoolean
+          </td>
+        </tr>
+        <tr>
+          <td>classification
+          </td>
+          <td>MCRMetaClassification
+          </td>
+        </tr>
+        <tr>
+          <td>link
+          </td>
+          <td>MCRMetaLinkID
+          </td>
+        </tr>
+        <tr>
+          <td>href
+          </td>
+          <td>MCRMetaLink
+          </td>
+        </tr>
+        <tr>
+          <td>derlink
+          </td>
+          <td>MCRMetaDerivateLink
+          </td>
+        </tr>
+        <tr>
+          <td>date
+          </td>
+          <td>MCRMetaISO8601Date
+          </td>
+        </tr>
+        <tr>
+          <td>number
+          </td>
+          <td>MCRMetaNumber
+          </td>
+        </tr>
+        <tr>
+          <td>xml
+          </td>
+          <td>MCRMetaXML
+          </td>
+        </tr>
+        <tr>
+          <td>historydate
+          </td>
+          <td>MCRMetaHistoryDate
+          </td>
+        </tr>
+        <tr>
+          <td>personname
+          </td>
+          <td>MCRMetaPersonName
+          </td>
+        </tr>
+      </table>
     </section>
 
+    <section>
+      <title>Erzeugen von XML-Schema-Dateien in eigenen Maven-Modulen</title>
+      <p>
+        Um eine XML-Schema-Datei der eigenen Metadatendefinition innerhalb eines zu bauenden *.jar-Files während des
+        Build-Prozesses zu bauen und mit zu integrieren, muss die Datenmodell-Datei innerhalb des Maven-Modules unter
+        <code>{maven-modul}/src/main/datamodel/dev/{xyz}.xml</code>
+        stehen.
+        stehen.
+      </p>
+      <pre class="brush: xml;">
+<![CDATA[<plugin>
+  <groupId>org.mycore.plugins</groupId>
+  <artifactId>datamodel-plugin</artifactId>
+  <version>0.5-SNAPSHOT</version>
+  <executions>
+    <execution>
+      <goals>
+        <goal>schema</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>]]></pre>
+    </section>
 
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
     <script type="text/javascript">
