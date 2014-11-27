@@ -4,6 +4,10 @@
 <document>
   <header>
     <title>XML-Syntax eines MyCoRe-Objektes</title>
+    <authors>
+      <person name="Jens Kupferschmidt" />
+    </authors>
+    <version>2014-11-26</version>
     <abstract>In diesem Abschnitt wird der Syntax der einzelnen XML-Daten-Dateien näher beschrieben. Die Kenntnis des
       Syntax
       ist notwendig, um eigene Datensätze für zu erstellen.

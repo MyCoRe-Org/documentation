@@ -4,8 +4,13 @@
 <document>
   <header>
     <title>Datentypen</title>
+    <authors>
+      <person name="Jens Kupferschmidt" />
+    </authors>
+    <version>2014-11-26</version>
     <abstract>Beschreibung der MyCoRe Basis-Datentypen</abstract>
   </header>
+  
   <body>
 
    <!-- Include required JS files -->

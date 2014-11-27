@@ -4,6 +4,11 @@
 <document>
   <header>
     <title>Gestaltung eigener MyCoRe-Metadatenobjekte</title>
+    <authors>
+      <person name="Robert Stephan" />
+      <person name="Jens Kupferschmidt" />
+    </authors>
+    <version>2014-11-26</version>
     <abstract>In diesem Abschnitt wird der Syntax der Definitionsdatei für eigene Metadatenmodelle nach dem
       MyCoRe-Datamodell-Prinzip 2 vorgestellt. Weiterhin folgt eine Beschreibung der Integration in den Build-Prozess.
     </abstract>
