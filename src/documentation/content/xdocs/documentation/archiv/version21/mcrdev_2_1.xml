@@ -356,7 +356,7 @@
     * This class implements all methode for ...
     * 
     * @author Jens Kupferschmidt
-    * @version $Revision: 1.49 $ $Date: 2006/05/17 11:49:32 $
+    * @version $Revision: 1.49 $ $Date$
     */
     final public class MCR... {
     ...
@@ -392,7 +392,7 @@
     <![CDATA[ 
     <?xml version="1.0" encoding="UTF-8"?>
     <!-- ============================================== -->
-    <!-- $Revision: 1.2 $ $Date: 2006/10/12 11:52:14 $ -->
+    <!-- $Revision: 1.2 $ $Date$ -->
     <!-- ============================================== -->
     <xsl:stylesheet version="1.0" 
     xmlns:xsl="
