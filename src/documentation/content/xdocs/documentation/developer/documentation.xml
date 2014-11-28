@@ -3,10 +3,10 @@
 <document>
   <header>
     <title>Dokumentation</title>
-    <version>$LastChangedDate$</version>
+    <version>2014-11-26</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
-      <person email="[EMAIL PROTECTED]" name="$LastChangedBy$" />
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
   </header>
   <body>
@@ -67,14 +67,11 @@
         <pre class="brush: xml;"><![CDATA[
   <header>
     <title>Meine Testseite</title>
-    <version>$LastChangedDate$</version>
+    <version>2014-11-26</version>
     <authors>
-      <person email="[EMAIL PROTECTED]" name="$LastChangedBy$" />
+      <person email="[EMAIL PROTECTED]" name="Max Mustermann" />
     </authors>
   </header>]]></pre>
-        <p>
-          Alternativ dazu können auch die SVN-Keywords <code>$LastChangedDate$</code> und <code>$LastChangedBy$</code> genutzt werden.
-        </p>
       </section>
       <section>
         <title>Code-Beispiele mit Syntax-Highlighting</title>
