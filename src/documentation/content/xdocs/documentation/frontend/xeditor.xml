@@ -384,12 +384,12 @@ In einem Formular für Publikationsdaten können so z. B. Eingabebereiche für d
 Der Benutzer kann über Buttons die wiederholten Abschnitte vertauschen, einzelne entfernen oder weitere einfügen.</p>
 <p>Syntax:</p>
 
-<pre class="brush: xml"><![CDATA[<xed:repeat xpath="..." min="..." max="...">...</xed:repeat>]]></pre>
+<pre class="brush: xml"><![CDATA[<xed:repeat xpath="..." min="..." max="..." method="...">...</xed:repeat>]]></pre>
 
 <p>Das Attribut @xpath kann ein beliebiger XPath 1.0 Ausdruck sein, der ein oder mehrere wiederholte Elemente im zu bearbeiteten XML selektiert.</p>
 <p>Der durch <code>&lt;xed:repeat /&gt;</code> umschlossene Bereich wird so oft im Formular wiederholt eingefügt, wie die Anzahl der durch den XPath-Ausdruck selektierten Elemente.
 Ist das Attribut @min angegeben, wird der Bereich mindestens so oft wie darin angegeben wiederholt. Selektiert der XPath-Ausdruck weniger als @min Elemente,
-wird das letzte selektierte Element so oft im bearbeiteten XML Dokument geklont, dass @min Elemente vorhanden sind. </p>
+werden weitere Elemente erzeugt, bis @min Elemente vorhanden sind. </p>
 <p>Beispiel:</p>
 
 <pre class="brush: xml"><![CDATA[<xed:repeat xpath="mods:name[@type='personal']" min="2">
@@ -405,10 +405,18 @@ wird das letzte selektierte Element so oft im bearbeiteten XML Dokument geklont,
 </xed:repeat>]]></pre>
 
 <p>Das Beispiel wiederholt einen Bereich zur Eingabe von Personen im MODS Datenmodell mit Vorname und Nachname.
-Wenn im bearbeiteten XML drei mods:name[@type='personal'] Elemente vorhanden sind, wird der Bereich dreimal wiederholt und jeder wiederholte Abschnitt an das
-entsprechende XML Element gebunden. </p>
-Wenn aktuell nur ein mods:name[@type='personal'] vorhanden ist, wird dieses geklont, da @min="2", und es werden zwei Bereiche für Personennamen im Formular dargestellt.
-<p>Das Attribut @max gibt an, wie oft der Bereich maximal wiederholt werden kann, wenn der Benutzer einen Button zum Einfügen einer weiteren Wiederholung klickt.
+Wenn im bearbeiteten XML drei <code>mods:name[@type='personal']</code> Elemente vorhanden sind, wird der Bereich dreimal wiederholt und jeder wiederholte Abschnitt an das
+entsprechende XML Element gebunden.
+Wenn aktuell nur ein <code>mods:name[@type='personal']</code> vorhanden ist, wird ein weiteres Element erzeugt, da @min="2", und es werden zwei Bereiche für Personennamen im Formular dargestellt.
+ </p>
+ <p>
+ Das optionale Attribut <code>@method</code> gibt an, auf welche Weise neue Elemente erzeugt werden.
+ Mit <code>method="build"</code> wird ein neues Element über den XPath-Ausdruck gebaut, analog zum Verhalten von <code>xed:bind</code>, d.h. alle über
+ Prädikate angegebenen Attributwerte (und ggf. weitere Unterstrukturen) werden erzeugt.
+ Mit <code>method="clone"</code> wird ein neues Element durch Klonen des vorangehenden Elementes inkl. aller Kindelemente, Attribute und Textknoten erzeugt.
+ Wenn das Attribut @method nicht angegeben ist, wird das Default-Verhalten durch das Property <code>MCR.XEditor.InsertTarget.DefaultMethod=build</code> festgelegt.
+ </p>
+ <p>Das Attribut <code>@max</code> gibt an, wie oft der Bereich maximal wiederholt werden kann, wenn der Benutzer einen Button zum Einfügen einer weiteren Wiederholung klickt.
 Allerdings wird immer mindestens so oft wiederholt, wie bereits Elemente im bearbeiteten XML Dokument vorhanden sind.</p>
 </section>
 
@@ -424,7 +432,7 @@ Klick auf den Button wird das Formular abgeschickt, die Änderung serverseitig d
 <li>Ein "up" Button erscheint ab dem zweiten Element und vertauscht es im Formular und im bearbeiteten XML Dokument mit seinem Vorgänger.</li>
 <li>Ein "down" Button erscheint bei allen bis auf das letzte Element und vertauscht es im Formular und im bearbeiteten XML Dokument mit seinem Nachfolger.</li>
 <li>Ein "remove" Button entfernt das aktuelle Elemente im Formular und im XML Dokument.</li>
-<li>Ein "insert" Button fügt hinter dem aktuellen Element einen Klon dieses Elementes ein und stellt es im Formular dar.</li>
+<li>Ein "insert" Button fügt hinter dem aktuellen Element einen neues Element ein und stellt es im Formular dar.</li>
 <li>Ein "append" Button kann als Alternative zu "insert" verwendet werden und erscheint nur für das letzte Element, um nur am Ende ein weiteres Element einzufügen.</li>
 </ul>
 </li>
