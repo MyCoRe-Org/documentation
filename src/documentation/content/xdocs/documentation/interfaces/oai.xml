@@ -29,18 +29,14 @@
       <title>Das Repository als OAI-Data-Provider</title>
       <p>
         Im folgenden soll die Konfiguration der OAI-Schnittstelle beschrieben
-        werden. Zum Austausch von Metadaten
-        unterstützt MyCoRe das Open Archives
+        werden. Zum Austausch von Metadaten unterstützt MyCoRe das Open Archives
         Initiative Protocol for Metadata Harvesting (OAI-PMH). Die Beschreibung
-        des
-        Standards finden Sie unter
-        <a href="http://www.openarchives.org/pmh/">http://www.openarchives.org/pmh/</a>
-        . Machen Sie sich zunächst grob mit
-        diesem Standard vertraut. In die Implementierung sind auch Anforderungen
-        aus
-        dem DINI-Zertifikat 2010 (
-        <a href="http://www.dini.de/dini-zertifikat/">http://www.dini.de/dini-zertifikat/</a>
-        ) eingeflossen.
+        des Standards finden Sie unter
+        <a href="http://www.openarchives.org/pmh/">http://www.openarchives.org/pmh/</a>.
+        Machen Sie sich zunächst grob mit diesem Standard vertraut. In die Implementierung
+        sind auch Anforderungen aus dem DINI-Zertifikat 2010 (
+        <a href="http://www.dini.de/dini-zertifikat/">http://www.dini.de/dini-zertifikat/</a>)
+        eingeflossen.
       </p>
       <p>
         Die OAI-Schnittstelle ist auch im DocPortal bereits integriert und kann
@@ -119,7 +115,8 @@
         <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#Identify">OAI-Standard</a>
         empfohlen:
       </p>
-      <pre class="brush: shell"><![CDATA[# Properties for OAI Identify Request:
+      <pre class="brush: shell">
+# Properties for OAI Identify Request:
 MCR.OAIDataProvider.OAI2.RepositoryName=MyCoRe Sample Repository
 MCR.OAIDataProvider.OAI2.RepositoryIdentifier=www.mycore.de
 MCR.OAIDataProvider.OAI2.AdminEmail=info@mycore.de
@@ -129,21 +126,22 @@ MCR.OAIDataProvider.OAI2.RecordSampleID=DocPortal_document_07910403
 MCR.OAIDataProvider.OAI2.DeletedRecord=transient
 
 MCR.OAIDataProvider.OAI2.Friends.DuEPublico=http://duepublico.uni-duisburg-essen.de/servlets/OAIDataProvider
-MCR.OAIDataProvider.OAI2.Friends.DBThueringen=http://www.db-thueringen.de/servlets/OAIDataProvider]]></pre>
+MCR.OAIDataProvider.OAI2.Friends.DBThueringen=http://www.db-thueringen.de/servlets/OAIDataProvider
+      </pre>
 
       <h4>Properties für Resumption Tokens</h4>
       <p>
         Mittels Resumption Tokens kann die Rückgabe großer Mengen an Dokumenten
-        partitioniert werden. Genauere Angaben
-        entnehmen Sie der
-        <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#FlowControl">OAI-Spezifikation</a>
-        .
+        partitioniert werden. Genauere Angaben entnehmen Sie der
+        <a href="http://www.openarchives.org/OAI/openarchivesprotocol.html#FlowControl">OAI-Spezifikation</a>.
       </p>
       <p>
         Für die Konfiguration werden folgende Properties verwendet:
       </p>
-      <pre class="brush: shell; gutter: false;"><![CDATA[MCR.OAIDataProvider.ResumptionTokens.PartitionSize=100
-MCR.OAIDataProvider.ResumptionTokens.MaxAge=1440]]></pre>
+      <pre class="brush: shell; gutter: false;">
+MCR.OAIDataProvider.ResumptionTokens.PartitionSize=100
+MCR.OAIDataProvider.ResumptionTokens.MaxAge=1440
+      </pre>
 
       <h4>Properties für den OAIAdapter</h4>
       <p>
@@ -167,8 +165,10 @@ MCR.OAIDataProvider.ResumptionTokens.MaxAge=1440]]></pre>
         Stylesheet erzeugt werden (siehe Properties für Metadatenformate).
       </p>
     <!-- use xml instead of shell here, because of 'false' syntax highlighting -->
-      <pre class="brush: xml; gutter: false;"><![CDATA[MCR.OAIDataProvider.OAI2.Adapter.HeaderURIPattern=xslStyle:document2header:mcrobject:{id}
-MCR.OAIDataProvider.OAI2.Adapter.RecordURIPattern=xslStyle:{mcrobject_type}2{format}:mcrobject:{id}]]></pre>
+      <pre class="brush: xml; gutter: false;">
+MCR.OAIDataProvider.OAI2.Adapter.HeaderURIPattern=xslStyle:document2header:mcrobject:{id}
+MCR.OAIDataProvider.OAI2.Adapter.RecordURIPattern=xslStyle:{mcrobject_type}2{format}:mcrobject:{id}
+      </pre>
 
       <h4>Properties für die Suche</h4>
       <p>
@@ -176,9 +176,11 @@ MCR.OAIDataProvider.OAI2.Adapter.RecordURIPattern=xslStyle:{mcrobject_type}2{for
         die OAI-Schnittstelle ausgeliefert
         werden, einschränken und sortieren.
       </p>
-      <pre class="brush: xml; gutter: false;"><![CDATA[MCR.OAIDataProvider.OAI2.Search.Restriction=objectType = document
+      <pre class="brush: xml; gutter: false;">
+MCR.OAIDataProvider.OAI2.Search.Restriction=objectType = document
 MCR.OAIDataProvider.OAI2.Search.SortBy=modified descending, id descending
-MCR.OAIDataProvider.OAI2.Search.FromUntil=modified]]></pre>
+MCR.OAIDataProvider.OAI2.Search.FromUntil=modified
+      </pre>
 
       <h4>Properties für Sets</h4>
       <p>
@@ -202,7 +204,7 @@ MCR.OAIDataProvider.OAI2.Search.FromUntil=modified]]></pre>
         entsprechende Ausgabe für einen OAI-List-Sets-Request
         generiert werden:
       </p>
-      <pre class="brush: xml; gutter: false;"><![CDATA[MCR.OAIDataProvider.OAI2.Set.doc-type=xslStyle:classification2sets:classification:metadata:10:noEmptyLeaves:children:diniPublType]]></pre>
+      <pre class="brush: xml; gutter: false;">MCR.OAIDataProvider.OAI2.Set.doc-type=xslStyle:classification2sets:classification:metadata:10:noEmptyLeaves:children:diniPublType</pre>
       <p>
       </p>
       <p>
@@ -240,8 +242,10 @@ MCR.OAIDataProvider.OAI2.Search.FromUntil=modified]]></pre>
       <p>
         Wenn die ID des Sets (setSpec) Doppelpunkte enthält, werden diese durch Unterstrich (_) ersetzt:
       </p>
-      <pre class="brush: shell"><![CDATA[#setName=Personen, setSpec=type:person
-MCR.OAIDataProvider.OAI2.MapSetToQuery.type_person=objectType:person]]></pre>
+      <pre class="brush: shell">
+#setName=Personen, setSpec=type:person
+MCR.OAIDataProvider.OAI2.MapSetToQuery.type_person=objectType:person
+      </pre>
 
       <h4>Properties für Metadatenformate</h4>
       <p>
@@ -249,11 +253,13 @@ MCR.OAIDataProvider.OAI2.MapSetToQuery.type_person=objectType:person]]></pre>
         Namensraum und URL der
         XMLSchema-Definition anzugeben:
       </p>
-      <pre class="brush: shell"><![CDATA[MCR.OAIDataProvider.OAI2.MetadataFormats=oai_dc,epicur
+      <pre class="brush: shell">
+MCR.OAIDataProvider.OAI2.MetadataFormats=oai_dc,epicur
 MCR.OAIDataProvider.MetadataFormat.oai_dc.Schema=http://www.openarchives.org/OAI/2.0/oai_dc.xsd
 MCR.OAIDataProvider.MetadataFormat.oai_dc.Namespace=http://www.openarchives.org/OAI/2.0/oai_dc/
 MCR.OAIDataProvider.MetadataFormat.epicur.Schema=http://www.persistent-identifier.de/xepicur/version1.0/xepicur.xsd
-MCR.OAIDataProvider.MetadataFormat.epicur.Namespace=urn:nbn:de:1111-2004033116]]></pre>
+MCR.OAIDataProvider.MetadataFormat.epicur.Namespace=urn:nbn:de:1111-2004033116
+      </pre>
 
       <p>
         Für jedes Metadatenformat ist außerdem ein XSL-Stylesheet zu erstellen,
@@ -283,6 +289,11 @@ MCR.OAIDataProvider.MetadataFormat.epicur.Namespace=urn:nbn:de:1111-2004033116]]
         </li>
       </ul>
     </section>
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
 
   </body>
 </document>
