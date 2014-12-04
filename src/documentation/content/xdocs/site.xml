@@ -284,14 +284,11 @@ See http://forrest.apache.org/docs/linking.html for more info
     <frontend              label="Weboberfläche"     href="frontend/">
       <integrated_wcms     label="WCMS"              href="wcms.html" />
       <multilang           label="Mehrsprachigkeit"      href="index.html#i18n" />
-      <forms               label="Formulare erstellen">
-        <xeditor           label="XEditor"               href="xeditor.html" />
-        <editorframework   label="Editorframework"       href="editor_framework.html" />
-      </forms>
-      <image_viewer          label="Bildbetrachter"        href="imageviewer/">
-        <iview2              label="IView2"                href="iview2.html" />
-        <dfgviewer           label="DFG-Viewer"            href="dfgviewer.html" />
-        <metseditor          label="METS-Editor"           href="mets.html" />
+      <xeditor             label="Formulare erstellen"   href="xeditor.html" />
+      <image_viewer        label="Bildbetrachter"        href="imageviewer/">
+        <iview2            label="IView2"                href="iview2.html" />
+        <dfgviewer         label="DFG-Viewer"            href="dfgviewer.html" />
+        <metseditor        label="METS-Editor"           href="mets.html" />
       </image_viewer>
       <basket              label="Korbfunktion"          href="basket.html" />
       <xsl                 label="XSL-Stylesheets">
@@ -324,6 +321,9 @@ See http://forrest.apache.org/docs/linking.html for more info
       <google              label="Google-Sitemap"        href="google_sitemap.html" />
       <sword               label="SWORD"                 href="sword.html" />
     </interfaces>
+    <old_components        label="veraltete Komponenten" href="old_components/">
+      <editorframework     label="Editorframework"       href="editor_framework.html" />
+    </old_components>
     <production            label="Laufender Betrieb"     href="production/">
       <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />

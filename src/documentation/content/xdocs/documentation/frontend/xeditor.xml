@@ -4,10 +4,15 @@
 <document>
   <header>
     <title>Das MyCoRe XEditor-Framework</title>
+    <version>2014-12-04</version>
+    <authors>
+      <person name="Frank Lützenkirchen" email="[EMAIL PROTECTED]"/>
+    </authors>
     <abstract>
       Das MyCoRe XEditor-Framework stellt Funktionalität zur Gestaltung von HTML Formularen bereit, die XML Dokumente bearbeiten oder erstellen.
       Die Formulardefinition enthält dazu Regeln zur Abbildung zwischen Eingabefeldern im Formular und XML Elementen und Attributen im bearbeiteten Dokument.
-      Solche Formulare werden insbesondere zur Gestaltung von Eingabemasken für Metadaten und für komplexe Suchformulare verwendet.
+      Solche Formulare werden insbesondere zur Gestaltung von Eingabemasken für Metadaten und für komplexe Suchformulare verwendet. Eine Anleitung zum alten
+      Editor Framework ist unter dem Punkt <strong>'Veraltete Komponenten -> Editorframework'</strong> zu finden.
     </abstract>
   </header>
 
