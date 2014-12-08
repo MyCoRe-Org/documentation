@@ -185,17 +185,23 @@
         <label xml:lang="x-miless" text="interviewee" />
       </category>
     </category>
-    <category ID="orm">
-      <label xml:lang="en" text="Organizer of meeting"
-        description="Use for a person or organization responsible for organizing a meeting for which an item is the report or proceedings." />
-      <label xml:lang="de" text="Veranstalter"
-        description="Eine Person oder Institution, die verantwortlich für die Organisation eines Treffens ist. Dabei entstehen Reporte oder Konferenzbänder." />
-    </category>
     <category ID="cph">
       <label xml:lang="en" text="Copyright holder"
         description="A person or organization to whom copy and legal rights have been granted or transferred for the intellectual content of a work." />
       <label xml:lang="de" text="Rechteinhaber"
         description="Eine Person oder Institution, der die intellektuellen Rechte auf den Inhalt des Werkes gewährt oder übertragen wurden." />
+    </category>
+    <category ID="his">
+      <label xml:lang="en" text="Host institution"
+        description="An organization hosting the event, exhibit, conference, etc., which gave rise to a resource, but having little or no responsibility for the content of the resource." />
+      <label xml:lang="de" text="Beherbergende Einrichtung"
+        description="Eine Einrichtung, in deren Umfeld das Werk entsteht, aber ohne nennenswerten Einfluss auf den Inhalt." />
+    </category>
+    <category ID="orm">
+      <label xml:lang="en" text="Organizer of meeting"
+        description="Use for a person or organization responsible for organizing a meeting for which an item is the report or proceedings." />
+      <label xml:lang="de" text="Veranstalter"
+        description="Eine Person oder Institution, die verantwortlich für die Organisation eines Treffens ist. Dabei entstehen Reporte oder Konferenzbänder." />
     </category>
   </categories>
 </mycoreclass>
