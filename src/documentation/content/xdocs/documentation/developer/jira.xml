@@ -13,6 +13,15 @@
         </p>
       </section>
       <section>
+        <title>Zugang einrichten</title>
+        <ol>
+          <li>Nutzer in Jira anlegen</li>
+          <li>Nutzer in Fish-Eye anlegen</li>
+          <li>von jira->FishEye authentifizieren mit OToken</li>
+          <li>und andersherum</li>
+        </ol>
+      </section>
+      <section>
         <title>Verknüpfung der Tickets mit einzelnen Commits</title>
         <p>
           Um diese sogenannten "Smart Commits" ausführen zu können, müssen die Commit-Kommentare einer definierten Form
