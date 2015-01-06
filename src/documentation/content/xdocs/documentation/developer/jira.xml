@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+<document>
+  <header>
+    <title>Jira als Ticket-System</title>
+  </header>
+  <body>
+
+      <section>
+        <title>Einleitung</title>
+        <p>
+          Die Jira-Anbindung befindet sich aktuell im Aufbau.
+        </p>
+      </section>
+      <section>
+        <title>Verknüpfung der Tickets mit einzelnen Commits</title>
+        <p>
+          Um diese sogenannten "Smart Commits" ausführen zu können, müssen die Commit-Kommentare einer definierten Form
+          folgen <code>&lt;ISSUE_KEY> #&lt;COMMAND> &lt;optional COMMAND_PARAMETERS></code>. Diese ist ausführlich
+          auf den <a href="https://confluence.atlassian.com/display/FISHEYE/Using+smart+commits"
+          >Atlassian-Seiten</a> dokumentiert. Nachfolgend einige Beispiele:
+        </p>
+        <code>
+          MCR-792 #comment This is a comment for ticket 792
+        </code><br /><br />
+        <code>
+          MCR-792 #start This commit starts the progress, working on ticket 792
+        </code><br /><br />
+        <code>
+          MCR-792 #finish This commit finishes the current progress on ticket 792 but didn't close it
+        </code><br /><br />
+        <code>
+          MCR-792 #close This commit closes ticket 792
+        </code><br /><br />
+        <code>
+          MCR-792 #resolve This commit closes and resolves ticket 792
+        </code>
+      </section>
+
+  </body>
+</document>
