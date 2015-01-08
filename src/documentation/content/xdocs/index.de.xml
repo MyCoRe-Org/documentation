@@ -54,6 +54,14 @@
       <map title="Alle Projekte auf einer Karte anzeigen" label="Karte" />
       <news>
         <newsentry>
+          <title>Entwicklung</title>
+          <message>Aktuell stellen wir unsere Infrastruktur auf Atlassians JIRA und Bamboo um.</message>
+          <url>https://mycore.atlassian.net/</url>
+          <date>07. Januar 2015</date>
+          <author>Kathleen Neumann</author>
+          <image>sf</image>
+        </newsentry>
+        <newsentry>
           <title>Konferenz</title>
           <message>MyCoRe war am 8./9. September bei der Konferenz „Open Access Tage 2014“ in Köln dabei.</message>
           <url>http://open-access.net/de/aktivitaeten/open_access_tage/programm/abstracts/#c4821</url>
@@ -78,14 +86,14 @@
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
-        <newsentry>
+        <!-- newsentry>
           <title>Anwendung</title>
           <message>Der Dokumentenserver des DSZV, ein bei der VZG gehosteter Reposis-Dienst, ist online.</message>
           <url>http://repository.dszv.it/</url>
           <date>02. Juli 2014</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
-        </newsentry>
+        </newsentry -->
       </news>
     </homepage>
   </body>

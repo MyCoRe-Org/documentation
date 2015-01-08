@@ -9,7 +9,8 @@
       <section>
         <title>Einleitung</title>
         <p>
-          Die Jira-Anbindung befindet sich aktuell im Aufbau.
+          Die Jira-Anbindung befindet sich aktuell im Aufbau. Das Testsystem ist erreichbar über die folgende URL:
+          <a href="https://mycore.atlassian.net/secure/Dashboard.jspa">https://mycore.atlassian.net/</a>
         </p>
       </section>
       <section>
