@@ -127,19 +127,23 @@ $(document).ready(function() {
                 stickyClass = 'fix';
 
                 $(document).bind('scroll',function(){
+
                     var hOffset = header.offset().top+header.height();
                     var top = $(document).scrollTop();
+                    var navHeight = nav.height();
+                    var stickSpace = '0px';
 
                     // make it sticky ...
                         if (hOffset < top) {
                             if (nav.data(stickyClass) !== true) {
                                 nav.addClass(stickyClass).data(stickyClass,true);
-                                $('div#content').css('margin-top', nav.height());
+                                stickSpace = navHeight + 'px';
+                                $('#content').css('padding-top', stickSpace);
                             }
                         } else {
                             if (nav.data(stickyClass) !== false) {
                                 nav.removeClass(stickyClass).data(stickyClass,false);
-                                $('div#content').css('margin-top', 0);
+                                $('#content').css('padding-top', stickSpace);
                             }
                         }
                 });
