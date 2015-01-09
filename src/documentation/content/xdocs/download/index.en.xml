@@ -43,7 +43,7 @@
     </ul>
     <p>
       MyCoRe uses Maven together with Jenkins as Continuous Integration environment.
-      Successful Builds are published in out Maven repository:
+      Successful Builds are published in our Maven repository:
     </p>
     <ul>
       <li><a href="site:jenkins">Jenkins (Continuous Integration)</a></li>
