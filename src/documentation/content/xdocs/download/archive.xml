@@ -18,6 +18,40 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <section>
+    <title>Release 2014.03 - ‚Lenzing‘</title>
+    <p>
+      All changes, new features etc. are summarized below.
+      If your application is already near version 2014.03, you only have to update
+      your pom.xml (docportal/config):
+
+      <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2014.03&lt;/version>
+[...]
+&lt;dependency>
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>2014.03&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
+
+      In the next step you have to build your application again (<code>ant resolve create.jar
+      create.scripts create.webapp</code>).
+    </p>
+
+    <p>
+      Furthermore there is a MyCoRe
+      <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.03/">jar file</a>
+      ready for download, therewith you can use the MyCoRe kernel in your own application
+      independent from DocPortal. MyCoRe can be integrated as well via Maven.
+    </p>
+  </section>
+
+
+  <section>
     <title>Release 2014.01 - ‚T&atilde;t Ni&ecirc;n‘</title>
     <p>
       All changes, new features etc. are summarized below.

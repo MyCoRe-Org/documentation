@@ -10,18 +10,17 @@
 
   <div style="margin-bottom:50px;">
     <p>
-      <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/">
-      <img src="/images/download_docportal_201406.png" alt="Link zum SF-Download" style="float:right;" /></a>
-      Die aktuelle MyCoRe-Version <a href="site:lts_release">Release 2014.06 (LTS)</a> kann direkt via Maven oder auf
-      <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.06/">Sourceforge</a> bezogen werden.
-      Alternativ steht DocPortal inkl. MyCoRe v2014.06 zum Download zur Verfügung.
+      <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.12/">
+      <img src="/images/download_docportal_201412.png" alt="Link zum SF-Download" style="float:right;" /></a>
+      Die aktuelle MyCoRe-Version <a href="site:release">Release 2014.12</a> kann direkt via Maven oder auf
+      <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.12/">Sourceforge</a> bezogen werden.
+      Alternativ steht DocPortal inkl. MyCoRe v2014.12 zum Download zur Verfügung.
     </p>
-    <!-- p>
+    <p>
       Neben dem aktuellen Release, das max. monatlich erscheint, stellt das Entwickler-Team ein sogenanntes
       Long-Term-Support-Release (aktuell <a href="site:lts_release">LTS-Release 2014.06</a>) bereit. Dieses
-      wird über ca. 1 Jahr bis zum nächsten LTS-Release gepflegt. Seit dem 22.01.2014 steht die Version
-      2013.06.0.2 zur Verfügung.
-    </p -->
+      wird über ca. 1 Jahr bis zum nächsten LTS-Release gepflegt.
+    </p>
     <p>
       Alte Versionen (Release und LTS-Release) werden archiviert.
     </p>
