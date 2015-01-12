@@ -7,15 +7,13 @@
   </header>
 
   <body>
-
     <p>
       Die MyCoRe-Community erreichen Sie über verschiedene <a href="site:email">Mailing-Listen</a> oder
-      Sie wenden sich direkt an einen <a href="site:team">zuständigen Entwickler</a>. MyCoRe ist eine bei
-      <a href="https://sourceforge.net/p/mycore">Sourceforge</a> gehostete Software und nutzt die dortige
-      Infrakstruktur für Tickets. Fehler und Feature-Requests stellen Sie daher am besten direkt dort. Im
+      Sie wenden sich direkt an einen <a href="site:team">zuständigen Entwickler</a>. Einen Überblick über
+      aktuelle Fehlermeldungen, Feature-Requests und Entwicklungsaufgaben bietet das <a href="https://mycore.atlassian.net/"
+      >MyCoRe-JIRA</a>. Dort können bei Bedarf auch jederzeit neue Tickets erstellt werden. Im
       <a href="site:wiki">MyCoRe-Wiki</a> diskutieren die Entwickler neue Ideen und deren Umsetzung. Auch
       verschiedene HowTos von Anwendern für Anwender geschrieben sind im Wiki zu finden.
     </p>
-
   </body>
 </document>

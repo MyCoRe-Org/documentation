@@ -344,6 +344,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <developer             label="Für Entwickler"    href="developer/">
       <vocabular           label="Vokabular"                  href="vocabular.html" />
       <eclipse             label="Entwicklungsplattformen"    href="eclipse.html" />
+      <jira                label="JIRA"                       href="jira.html" />
       <codestyle           label="Code-Style"                 href="codestyle.html" />
       <conventions         label="Namenskonventionen"         href="conventions.html" />
       <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
@@ -363,8 +364,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <dbt-workshop        label="DBT-Workshop 2014"          href="dbt-workshop.html" />
     <aw_workshop_2014    label="Braunschweig 2014"          href="braunschweig_2014.html" />
   </workshops>
-    <bugs       label="Fehler melden"      href="http://sourceforge.net/p/mycore/bugs/" />
-    <featurereq label="Feature Request"    href="http://sourceforge.net/p/mycore/feature-requests/" />
+    <bugs       label="Fehler melden"      href="https://mycore.atlassian.net/" />
     <wiki       label="MyCoRe Wiki"        href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
     <archive    label="Meldungen Archiv"   href="archive.html" />
   </support>

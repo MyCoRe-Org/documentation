@@ -54,45 +54,37 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>Development</title>
-          <message>Currently we migrate to Atlassians JIRA and Bamboo. Work is still in progress.</message>
+          <title>Neues Ticketsystem</title>
+          <message>Ab sofort nutzen wir JIRA als Ticketsystem und bitten Fehler etc. dort zu melden.</message>
           <url>https://mycore.atlassian.net/</url>
           <date>07. Januar 2015</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Conference</title>
-          <message>MyCoRe participated in the conference „Open Access Tage 2014“ at 8./9. Sept. in Cologne.</message>
-          <url>http://open-access.net/de/aktivitaeten/open_access_tage/programm/abstracts/#c4821</url>
-          <date>11. September 2014</date>
-          <author>Wiebke Oeltjen</author>
+          <title>Konferenz</title>
+          <message>Das erste 2015-MyCoRe-Entwicklertreffen findet Ende Januar in Jena statt.</message>
+          <url>cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/</url>
+          <date>12. Januar 2015</date>
+          <author>Kathleen Neumann</author>
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Workshop</title>
-          <message>The MyCoRe workshop on 2014-11-20 took place in the university library Braunschweig</message>
-          <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014</url>
-          <date>24. November 2014</date>
-          <author>Wiebke Oeltjen</author>
-          <image></image>
+          <title>Release 2014.12</title>
+          <message>Mumme - das Release zum Anwenderworkshop 2014 in Braunschweig.</message>
+          <url>site:release</url>
+          <date>12. Januar 2015</date>
+          <author>Kathleen Neumann</author>
+          <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Release</title>
-          <message>LTS Release 2014.06 is out now</message>
-          <url>site:release</url>
-          <date>20. June 2014</date>
+          <title>Anwendung</title>
+          <message>Mit &lt;IntR>²Dok geht die erste MIR-Anwendung als Repository der ViFa-Recht online.</message>
+          <url>http://intr2dok.vifa-recht.de/</url>
+          <date>12. Januar 2015</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
-        <!-- newsentry>
-          <title>Application</title>
-          <message>DSZV repository, a Reposis service hosted at VZG, is online.</message>
-          <url>http://repository.dszv.it/</url>
-          <date>02. July 2014</date>
-          <author>Kathleen Neumann</author>
-          <image>sf</image>
-        </newsentry -->
       </news>
     </homepage>
   </body>

@@ -2,15 +2,22 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
 <document>
   <header>
-    <title>Jira als Ticket-System</title>
+    <title>JIRA als Ticket-System</title>
   </header>
   <body>
 
       <section>
         <title>Einleitung</title>
         <p>
-          Die Jira-Anbindung befindet sich aktuell im Aufbau. Das Testsystem ist erreichbar über die folgende URL:
-          <a href="https://mycore.atlassian.net/secure/Dashboard.jspa">https://mycore.atlassian.net/</a>
+          Nachdem wir SourceForge gut 10 Jahre lang als Plattform genutzt haben, wagen wir nun (01/2015) den
+          Schritt hin zu einem umfangreicheren und mächtigeren Ticketsystem, das unseren mit der Zeit deutlich
+          gewachsenen Anforderungen besser gerecht wird. Alle SourceForge-Tickets wurden dahin migriert. Das
+          <a href="https://mycore.atlassian.net/">MyCoRe-JIRA</a> können wir als OpenSource-Community mit entsprechender
+          OpenSource-Lizenz frei nutzen. Als anonymer Nutzer können Sie sich einen Überblick über unsere Tickets und
+          aktuelle Entwicklungsarbeit verschaffen. Um neue Tickets anzulegen ist eine Registrierung notwendig.
+        </p>
+        <p>
+          Nachfolgend wird beschrieben, wie sich Entwickler nach der Registrierung ....
         </p>
       </section>
       <section>
