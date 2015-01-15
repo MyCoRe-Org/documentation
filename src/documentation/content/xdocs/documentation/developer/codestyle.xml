@@ -31,7 +31,7 @@
           </p>
           <ul>
             <li>Java-Code - *.java</li>
-            <li>XML-/XSL-Dateien - *.xml</li>
+            <li>XML-/XED-/XSD-/XSL-Dateien - *.xml</li>
           </ul>
         </section>
         <section>
@@ -102,6 +102,12 @@
             <li>Line width -> 120</li>
             <li>Indent using spaces</li>
             <li>Indentation size -> 2</li>
+            <li>Format Comments abschalten</li>
+          </ol>
+          <p>Weiterhin ist die Erkennung von *.xed-Dateien als XML im Editor einzuschalten</p>
+          <ol>
+            <li>Window -> Preferences -> General -> Editors -> File Assoziation</li>
+            <li>dort wählen *.xed hinzufügen</li>
           </ol>
         </section>
         <note label="Hinweis">Für die Bearbeitung der build.xml verwendet Eclipse einen eigenen Editor. Auch hier müssen die
