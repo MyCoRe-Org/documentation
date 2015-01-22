@@ -54,32 +54,32 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>Neues Ticketsystem</title>
-          <message>Ab sofort nutzen wir JIRA als Ticketsystem und bitten Fehler etc. dort zu melden.</message>
+          <title>New Ticket system</title>
+          <message>The MyCoRe community uses JIRA as ticket system. Please report bugs in Jira.</message>
           <url>https://mycore.atlassian.net/</url>
           <date>07. Januar 2015</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Konferenz</title>
-          <message>Das erste 2015-MyCoRe-Entwicklertreffen findet Ende Januar in Jena statt.</message>
-          <url>cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/</url>
+          <title>Conference</title>
+          <message>The first developer meeting in 2015 will take place in January at the University of Jena.</message>
+          <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/</url>
           <date>12. Januar 2015</date>
           <author>Kathleen Neumann</author>
           <image>newspaper</image>
         </newsentry>
         <newsentry>
           <title>Release 2014.12</title>
-          <message>Mumme - das Release zum Anwenderworkshop 2014 in Braunschweig.</message>
+          <message>Mumme - the Release was published to the user workshop 2014 in Braunschweig.</message>
           <url>site:release</url>
           <date>12. Januar 2015</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Anwendung</title>
-          <message>Mit &lt;IntR>²Dok geht die erste MIR-Anwendung als Repository der ViFa-Recht online.</message>
+          <title>Application</title>
+          <message>The Repository "ViFa-Recht" is now online. &lt;IntR>²Dok is the first MIR-Application.</message>
           <url>http://intr2dok.vifa-recht.de/</url>
           <date>12. Januar 2015</date>
           <author>Kathleen Neumann</author>
