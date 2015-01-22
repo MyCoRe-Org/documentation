@@ -174,7 +174,7 @@
       <label xml:lang="x-term" text="per" />
       <label xml:lang="x-bibl" text="per" />
     </category>
-    <category ID="heb">
+    <category ID="he">
       <label xml:lang="de" text="Hebräisch" />
       <label xml:lang="en" text="Hebrew" />
       <label xml:lang="x-term" text="heb" />
@@ -185,6 +185,12 @@
       <label xml:lang="en" text="Latin" />
       <label xml:lang="x-term" text="lat" />
       <label xml:lang="x-bibl" text="lat" />
+    </category>
+    <category ID="nds">
+      <label xml:lang="de" text="Niederdeutsch" />
+      <label xml:lang="en" text="Low German" />
+      <label xml:lang="x-term" text="nds" />
+      <label xml:lang="x-bibl" text="nds" />
     </category>
     <category ID="id">
       <label xml:lang="de" text="Indonesisch" />
