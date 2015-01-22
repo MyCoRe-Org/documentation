@@ -9,7 +9,7 @@
       <section>
         <title>Einleitung</title>
         <p>
-          Nachdem wir SourceForge gut 10 Jahre lang als Plattform genutzt haben, wagen wir nun (01/2015) den
+          Nachdem wir SourceForge mehr als 10 Jahre lang als Plattform genutzt haben, wagen wir nun (01/2015) den
           Schritt hin zu einem umfangreicheren und mächtigeren Ticketsystem, das unseren mit der Zeit deutlich
           gewachsenen Anforderungen besser gerecht wird. Alle SourceForge-Tickets wurden dahin migriert. Das
           <a href="https://mycore.atlassian.net/">MyCoRe-JIRA</a> können wir als OpenSource-Community mit entsprechender
@@ -17,7 +17,9 @@
           aktuelle Entwicklungsarbeit verschaffen. Um neue Tickets anzulegen ist eine Registrierung notwendig.
         </p>
         <p>
-          Nachfolgend wird beschrieben, wie sich Entwickler nach der Registrierung ....
+          Einen Überblick über die Systeme kann man sich auf den Dokumentationsseiten von Atlassian verschaffen. Wir
+          haben die Mails mit Links zu den wichtigsten Themen im Wiki zusammengestellt:
+          <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Atlassian">Atlassian im MyCoRe-Wiki</a>.
         </p>
       </section>
       <section>
@@ -34,8 +36,8 @@
         <p>
           Um diese sogenannten "Smart Commits" ausführen zu können, müssen die Commit-Kommentare einer definierten Form
           folgen <code>&lt;ISSUE_KEY> #&lt;COMMAND> &lt;optional COMMAND_PARAMETERS></code>. Diese ist ausführlich
-          auf den <a href="https://confluence.atlassian.com/display/FISHEYE/Using+smart+commits"
-          >Atlassian-Seiten</a> dokumentiert. Nachfolgend einige Beispiele:
+          auf den Atlassian-Seiten unter <a href="https://confluence.atlassian.com/display/FISHEYE/Using+smart+commits"
+          >Using smart commits</a> dokumentiert. Nachfolgend einige Beispiele:
         </p>
         <code>
           MCR-792 #comment This is a comment for ticket 792
@@ -44,15 +46,69 @@
           MCR-792 #start This commit starts the progress, working on ticket 792
         </code><br /><br />
         <code>
-          MCR-792 #finish This commit finishes the current progress on ticket 792 but didn't close it
+          MCR-792 #stop This commit finishes the current progress on ticket 792 but didn't close it
         </code><br /><br />
         <code>
           MCR-792 #close This commit closes ticket 792
         </code><br /><br />
         <code>
           MCR-792 #resolve This commit closes and resolves ticket 792
-        </code>
+        </code><br /><br />
+        <p>
+          <span class="label label-info">Hinweis:</span> Aktuell funktioniert die Verwendung mehrfacher Kommandos
+          (z.B. <code>#resolve #comment</code>) nicht! Daher bitte bevorzugt mit <code>#comment</code> arbeiten
+          und das Ticket über Eclipse oder JIRA direkt schliessen.
+        </p>
       </section>
-
+      <section>
+        <title>Projekt anlegen</title>
+        <p>
+          Worauf ist zu achten, wenn ein neues Projekt angelegt wurde?
+        </p>
+        <ol>
+          <li>Administrations-Übersicht des Projektes öffnen</li>
+          <li>unter Permissions -> Scheme anklicken</li>
+          <li>Actions -> Use a different scheme</li>
+          <li>"Open Source" auswählen</li>
+          <li>zurück zur Administrations-Übersicht</li>
+          <li>Roles -> "View Project Roles" anklicken</li>
+          <li>dort mcr-developer bei Developer und mcr-user bei Users ergänzen</li>
+        </ol>
+        <p>
+          Das nun erstellte Projekt sollte noch mit dem SVN (via FishEye) und Bamboo verknüpft werden:
+        </p>
+        <ol>
+          <li>in Jira Administrations-Übersicht des Projektes öffnen</li>
+          <li>Settings -> Repository Path -> "Select Path"</li>
+          <li>entsprechende Angaben machen</li>
+        </ol>
+        <p>
+          Für die Verknüpfung aus FishEye heraus sind folgende Schritte notwendig:
+        </p>
+        <ol>
+          <li>Repository-Administration öffen (über Zahnrad oben rechts)</li>
+          <li>in der Tabelle hinten in der Zeile des betreffenden Repositories unter Actions -> "Application Links" auswählen</li>
+          <li>Link zur Jira bzw. Bamboo-Projekten erstellen</li>
+        </ol>
+      </section>
+      <section>
+        <title>Tipps und Tricks im Umgang mit Jira</title>
+        <section>
+          <title>Probleme bei der Ticket-Ansicht</title>
+          <div style="text-align:center;margin:10px 0;">
+            <img src="images/jira/admin_help.png" alt="Issue-Screenshot mit Admin-Menü" style="margin:5px;padding:10px;border:1px solid gray;width:90%;" /><br />
+            <span class="klein"><strong>Abbildung 1:</strong> Hilfe-Menü für Administratoren</span>
+          </div>
+          <p>
+            Können bestimmte Felder nicht bearbeitet werden oder wird nicht alles wie erwartet angezeigt, so haben sich
+            die Adminwerkzeuge "Where is my field?" und "Permission Helper" als sehr nützlich erwiesen. Darüber kann man
+            sich dann mögliche Gründe aufzeigen lassen, warum ein Nutzer ein Feld nicht sieht oder bearbeiten kann.
+          </p>
+          <div style="text-align:center;margin:10px 0;">
+            <img src="images/jira/admin_whereismyfield.png" alt="Screenshot zu 'Where is my field'" style="margin:5px;padding:10px;border:1px solid gray;width:90%;" /><br />
+            <span class="klein"><strong>Abbildung 2:</strong> Übersicht zum gesuchten Feld und dessen Status</span>
+          </div>
+        </section>
+      </section>
   </body>
 </document>
