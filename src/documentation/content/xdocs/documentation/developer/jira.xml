@@ -109,6 +109,19 @@
             <span class="klein"><strong>Abbildung 2:</strong> Übersicht zum gesuchten Feld und dessen Status</span>
           </div>
         </section>
+        <section>
+          <title>Commit-Message nachträglich ändern</title>
+          <p>
+            Wurde versehentlich eine Commit-Nachricht abgesetzt, ohne diese einem Ticket zuzuweisen, kann dies nachträglich
+            geändert werden. Dies geht entweder über die Shell mittels eines SVN-Befehls, oder direkt im Eclipse mit den
+            folgenden Schritten:
+          </p>
+          <ol>
+            <li>Open for an item where you want to change a log message the history: Team > Show History. This opens a new view named History.</li>
+            <li>In that view, you see the log messages of the selected item. Select one of the messages and choose from the context menu Show revision properties.</li>
+            <li>Select svn:log and then from the context menu Edit.... This opens a new dialog where you can change the log message (if allowed on the server).</li>
+          </ol>
+        </section>
       </section>
   </body>
 </document>
