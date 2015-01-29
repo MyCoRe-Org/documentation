@@ -113,7 +113,7 @@
           <title>Commit-Message nachträglich ändern</title>
           <p>
             Wurde versehentlich eine Commit-Nachricht abgesetzt, ohne diese einem Ticket zuzuweisen, kann dies nachträglich
-            geändert werden. Dies geht entweder über die Shell mittels eines SVN-Befehls, oder direkt im Eclipse mit den
+            geändert werden. Dies geht entweder über die Shell mittels eines <a href="http://subversion.apache.org/faq.html#change-log-msg">SVN-Befehls</a>, oder direkt im Eclipse mit den
             folgenden Schritten:
           </p>
           <ol>
