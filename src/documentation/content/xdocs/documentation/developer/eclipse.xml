@@ -94,10 +94,15 @@
         </p>
         <p>
           Zur Bearbeitung von I18N-Sprachdateien hat sich der
-          <a href="http://eclipse-rbe.sourceforge.net/index.htm">ResourceBundle-Editor</a>
+          <a href="http://essiembre.github.io/eclipse-rbe/">ResourceBundle-Editor</a>
           (besonders für Sprachen außerhalb des Lateinischen Alphabetes) bewährt. Weiterhin
           sollte nach der Installation die Code-Style-Definition von MyCoRe importiert werden,
           mehr dazu im Abschnitt <a href="site:codestyle_dev22">Java-Code Formatierung</a>.
+        </p>
+        <p>
+          Für weitere Einstellungen im Editor kann <a href="http://andrei.gmxhome.de/anyedit/">AnyEdit</a>
+          empfohlen werden. Damit kann beispielsweise konfiguriert werden, dass überzählige Leerzeichen
+          z.B. am Zeilenende aus dem Code entfernt werden.
         </p>
       </section>
 
