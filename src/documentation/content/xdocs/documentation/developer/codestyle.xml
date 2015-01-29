@@ -106,7 +106,7 @@
           </ol>
           <p>Weiterhin ist die Erkennung von *.xed-Dateien als XML im Editor einzuschalten</p>
           <ol>
-            <li>Window -> Preferences -> General -> Editors -> File Assoziation</li>
+            <li>Window -> Preferences -> General -> Editors -> File Associations</li>
             <li>dort wählen *.xed hinzufügen</li>
           </ol>
         </section>
