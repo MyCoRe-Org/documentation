@@ -7,15 +7,6 @@
   <body>
 
       <section>
-        <title>SourceForge</title>
-        <p>
-          Für die Präsentation und den Download von Releases und Distributionen wurde ein Projekt auf den Server von
-          SourceForge eingerichtet. Hier können auch auftretende Bugs und Feature Request dokumentiert werden.
-          <br />
-          <a href="http://sourceforge.net/projects/mycore">http://sourceforge.net/projects/mycore</a>
-        </p>
-      </section>
-      <section>
         <title>Subversion-Zugang</title>
         <p> Der Quellcode der MyCoRe-Kerns und einiger Anwendungen, z. B. der Beispielanwendung DocPortal, wird auf
           einem Subversion-Server an der Universität Duisburg-Essen verwaltet.
@@ -75,29 +66,18 @@
         <p>
           Zuerst ist die <a href="http://www.eclipse.org/downloads/">Eclipse-Entwicklungsumgebung</a>
           zu installieren. Von den Entwicklern wird als Basis die <strong>Eclipse IDE for Java EE Developers</strong>
-          (<a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2">Indigo</a>;
-          Stand Oktober 2012) genutzt und auch empfohlen.
-        </p>
-        <p>
-          Als nächstes ist das Plugin für die Integration von Subversion zu installieren. Da inzwischen
-          <strong>Subversive</strong> für die Integration in Eclipse vorgesehen ist, sollte dies dem Projekt Subclipse vorgezogen werden. Die
-          Installation ist auf der <a href="http://www.eclipse.org/subversive/">Homepage von Subversive</a>
-          beschrieben. Alternativ kann <strong>Subclipse</strong> verwendet werden, jedoch gibt es kleine Probleme bei der Nutzung von Subversion via Kommandozeile. Auch dafür
-          gibt es eine Installationsanleitung auf der <a href="http://subclipse.tigris.org/">Homepage von Subclipse</a>.
-        </p>
-        <p>
-          Im dritten Schritt ist die Maven-Integration zu installieren. Dafür empfehlen wir
-          <strong>m2e</strong>, siehe <a href="http://eclipse.org/m2e/">http://eclipse.org/m2e/</a>.
-          Weiteres dazu und wie nun MyCoRe in die Entwicklungsumgebung geholt wird, steht im
-          <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Ideen/Maven#Eclipse">Wiki</a>.
-          <!-- TODO: Bilder dazu mycore_checkout.png und mycore_toMaven.png -->
+          genutzt und auch empfohlen.
         </p>
         <p>
           Zur Bearbeitung von I18N-Sprachdateien hat sich der
           <a href="http://essiembre.github.io/eclipse-rbe/">ResourceBundle-Editor</a>
           (besonders für Sprachen außerhalb des Lateinischen Alphabetes) bewährt. Weiterhin
           sollte nach der Installation die Code-Style-Definition von MyCoRe importiert werden,
-          mehr dazu im Abschnitt <a href="site:codestyle_dev22">Java-Code Formatierung</a>.
+          mehr dazu im Abschnitt <a href="site:codestyle">Java-Code Formatierung</a>.
+        </p>
+        <p>
+          Um eine direkte Jira-Anbindung im Eclipse zu realisieren, muss der Jira-Connector über den Eclipse-Marketplace
+          installiert werden. Danach muss das Jira über MyLyn eingebunden werden.
         </p>
         <p>
           Für weitere Einstellungen im Editor kann <a href="http://andrei.gmxhome.de/anyedit/">AnyEdit</a>
