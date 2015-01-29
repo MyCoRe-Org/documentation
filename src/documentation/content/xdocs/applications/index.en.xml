@@ -10,8 +10,8 @@
     <p>
       The "MyCoRe MODS Institutional Repository" (MIR) is the repository application, that is ready to install.
       This package provides all the typical IR functionality and may be used for productive operation.
-      Adaptation are made only to the layout and to the content. 
-	  All metadata are stored as MODS XML. For more information on MIR, please see the documentation.
+      Adaptation are made only to the layout and to the content.
+    All metadata are stored as MODS XML. For more information on MIR, please see the documentation.
     </p>
     <h3>Access</h3>
     <p>
@@ -20,12 +20,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;User name: administrator<br />
       &nbsp;&nbsp;&nbsp;&nbsp;Password: alleswirdgut
     </p>
-    <h2>DocPortal (obsolete)</h2>
-    <p>
-      The former sample and base application "DocPortal" is no longer maintained. 
-	  As long as MIR is under developement, the <a href="http://www.mycore.de:8291">DocPortal application</a> 
-	  can provide an insight into several MyCoRe features.
-    </p>
+
     <h2>More examples</h2>
     <p>The <a href="site:map">map</a> provides an overview about all mycore applications
     of the community. Here you can look for suitable examples get in contact

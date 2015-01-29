@@ -21,12 +21,6 @@
       &nbsp;&nbsp;&nbsp;&nbsp;Passwort: alleswirdgut
     </p>
 
-    <h2>DocPortal (veraltet)</h2>
-    <p>
-      Die alte Beispiel- und Basisanwendung für MyCoRe-Entwicklungen DocPortal wird nicht mehr gepflegt. Da sich
-      MIR noch in Entwicklung befindet, kann das <a href="http://www.mycore.de:8291">DocPortal-Demo</a> einen Einblick
-      in deutlich mehr MyCoRe-Funktionen geben.
-    </p>
     <h2>Weitere Beispiele</h2>
     <p>Die <a href="site:map">Karte</a> gibt eine Übersicht über MyCoRe-Anwendungen der Community. Hier
     können Sie sich selbst passende Beispiele suchen und Kontakt zu den
