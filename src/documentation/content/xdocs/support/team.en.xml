@@ -16,9 +16,16 @@
     with the <a href="site:contact" title="Link to the MyCoRe Office">MyCoRe Office</a>.</p>
   <hr/>
   <br/>
+  <p><strong>René Adler</strong><br/>
+    Technische Universität Ilmenau, Universitätsbibliothek <br/>
+    rene.adler (at) tu-ilmenau.de, Tel. 03677 / 69 4626</p>
+  <ul>
+    <li>MIR-Wizard</li>
+  </ul>
+  <br/>
   <p><strong>Matthias Eichner</strong><br/>
   Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br />
-  matthias.eichner (at) uni-jena.de, Tel. 03641 / 94 - 0027
+  matthias.eichner (at) uni-jena.de, Tel. 03641 / 94 0027
   </p>
   <ul>
     <li>Classification editor</li>
@@ -36,21 +43,13 @@
   <br/>
   <p><strong>Silvio Hermann</strong><br/>
   Friedrich-Schiller-University Jena, University Library<br />
-  s.hermann (at) uni-jena.de, Tel. 03641 / 94 - 0019
+  s.hermann (at) uni-jena.de, Tel. 03641 / 94 0019
   </p>
   <ul>
     <li>OAI</li>
     <li>Import tools for MyCoRe/Docportal (SRU, Opac and Pica+)</li>
     <li>METS/MODS Components</li>
     <li>Application development</li>
-  </ul>
-  <br/>
-  <p><strong>Kathleen Neumann</strong><br/>
-  GBV Common Library Network (VZG) <br />
-  kathleen.neumann (at) gbv.de</p>
-  <ul>
-    <li>Application development</li>
-    <li>Documentation</li>
   </ul>
   <br/>
   <p><strong>Jens Kupferschmidt</strong><br/>
@@ -67,7 +66,7 @@
   <br/>
   <p><strong>Frank Lützenkirchen</strong><br/>
   University of Duisburg-Essen, University Library  <br />
-  luetzenkirchen (at) ub.uni-duisburg-essen.de, Tel. 0201 / 183 - 2124</p>
+  luetzenkirchen (at) ub.uni-duisburg-essen.de, Tel. 0201 / 183 2124</p>
   <ul>
     <li><strong>Head of MyCoRe architecture board</strong></li>
     <li>Query framework (search functionality)</li>
@@ -78,9 +77,17 @@
     <li>Application development „DuEPublico“ (Institutional content repository software)</li>
   </ul>
   <br/>
+  <p><strong>Kathleen Neumann</strong><br/>
+  GBV Common Library Network (VZG) <br />
+  kathleen.neumann (at) gbv.de</p>
+  <ul>
+    <li>Application development</li>
+    <li>Documentation</li>
+  </ul>
+  <br/>
   <p><strong>Dr. Wiebke Oeltjen</strong><br/>
   University of Hamburg, Computer center  <br />
-  wiebke.oeltjen (at) rrz.uni-hamburg.de, Tel. 040 / 42838 - 2652
+  wiebke.oeltjen (at) rrz.uni-hamburg.de, Tel. 040 / 42838 2652
   </p>
   <ul>
     <li><strong>MyCoRe Office</strong></li>
@@ -89,7 +96,7 @@
   <br/>
   <p><strong>Thomas Scheffler</strong><br/>
   Friedrich-Schiller-University Jena, University Library<br />
-  thomas.scheffler (at) uni-jena.de, Tel. 03641 / 94 - 0027
+  thomas.scheffler (at) uni-jena.de, Tel. 03641 / 94 0027
   </p>
   <ul>
     <li>Application development „Collections@UrMEL“ (collections and achives)</li>
@@ -112,7 +119,7 @@
   <br/>
   <p><strong>Nils Verheyen</strong><br/>
   University of Duisburg-Essen, University Library  <br />
-  nils.verheyen (at) uni-due.de, Tel. 0201 / 183 - 2134</p>
+  nils.verheyen (at) uni-due.de, Tel. 0201 / 183 2134</p>
   <ul>
     <li>SWORD-Interface</li>
     <li>Statistics</li>
@@ -121,7 +128,7 @@
   <br/>
   <p><strong>Huu Chi Vu</strong><br/>
   Friedrich-Schiller-University Jena, University Library<br />
-  huu.chi.vu (at) uni-jena.de, Tel. 03641 / 94 - 0019
+  huu.chi.vu (at) uni-jena.de, Tel. 03641 / 94 0019
   </p>
   <ul>
     <li>Application development of the journal server „Journals@UrMEL“ </li>
