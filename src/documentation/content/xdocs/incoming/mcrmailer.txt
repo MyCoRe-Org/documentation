@@ -1,0 +1,29 @@
+Verwendung via Java API:
+
+MCRMailer.sendMail( 
+  org.jdom.Document inputXMLWithDataToMakeEMailFrom, 
+  String nameOfXSLStylesheetToTransformInputToEMailWithoutXSLEnding, 
+  Properties optionalXSLPropertiesForUseInStylesheetMayBeEmptyButNotNull
+);
+
+Das XSL Stylesheet nimmt das Eingabe-XML und hat die Aufgabe eine E-Mail als XML-Dokument zu bauen, mit dem Schema
+
+<email>
+   <from>...</from>
+   <to>...</to>
+   <cc>...</cc>
+   <replyTo>...</replyTo>
+   <bcc>...</bcc>
+   <subject>...</subject>
+   <body>
+     ...
+   </body>
+</email>
+
+Verwendung aus Editor Formular heraus:
+- MCRMailer als target Servlet angeben
+- Der Output des Formulars ist der Input für die E-Mail Daten
+- Request Parameter "goto" ist Redirect-URL nach Absenden der Mail
+- Request Parameter "xsl" legt das Stylesheet fest, das die Mail generiert.
+
+
