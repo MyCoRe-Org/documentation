@@ -6,6 +6,94 @@
     <title>Statische Webinhalte verwalten</title>
   </header>
   <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+    <section>
+      <title>Navigation und Struktur</title>
+      <p>
+        Herzstück der Webseiten ist die <code>navigation.xml</code> im config-Verzeichnis der
+        Webanwendung.
+      </p>
+      <pre class="brush: xml"><![CDATA[
+        <?xml version="1.0" encoding="UTF-8"?>
+        <navigation dir="/content" href="navigation"
+                    hrefStartingPage="/content/index.xml" template="template_mir">
+          <menu id="main" dir="/content/main">
+            <label xml:lang="de">Hauptmenü</label>
+            <label xml:lang="en">Main menu</label>
+          </menu>
+          <menu id="brand" dir="/content/brand">
+            <label xml:lang="de">MIR-Menü</label>
+            <label xml:lang="en">MIR menu</label>
+            <item href="/content/index.xml" type="intern">
+              <label xml:lang="de">Start</label>
+              <label xml:lang="en">Start</label>
+            </item>
+            <item href="/content/brand/impressum.xml" type="intern">
+              <label xml:lang="de">Impressum</label>
+              <label xml:lang="en">Impressum</label>
+            </item>
+            <item href="/content/brand/contact.xml" type="intern">
+              <label xml:lang="de">Kontakt</label>
+              <label xml:lang="en">Contact</label>
+            </item>
+          </menu>
+          <menu id="below" dir="/content/below">
+            <label xml:lang="de">Footer-Menü</label>
+            <label xml:lang="en">Footer menu</label>
+          </menu>
+        </navigation>]]>
+      </pre>
+    </section>
+    <section>
+      <title>MyCoRe-WebPage</title>
+      <section>
+        <title>Aufbau</title>
+        <pre class="brush: xml"><![CDATA[
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE MyCoReWebPage>
+          <MyCoReWebPage>
+            <section xml:lang="de" title="Kontakt">
+            <div>
+              <h2>Kontakt</h2>
+              [...]
+            </div>
+            <section xml:lang="en" title="Contact">
+            <div>
+              <h2>Contact</h2>
+              [...]
+            </div>
+          </section>
+          <meta>
+            <log date="2015-02-19" time="10:00"
+                 labelPath="Kontakt" lastEditor="Max Mustermann" />
+          </meta>
+        </MyCoReWebPage>]]>
+        </pre>
+      </section>
+      <section>
+        <title>Elemente</title>
+        <table class="table">
+          <tr>
+            <td>section</td>
+            <td>Abschnitt in angegebener Sprache (de, en, all), kann beliebiges HTML enthalten</td>
+          </tr>
+          <tr>
+            <td>i18n</td>
+            <td>Attribut key enthält i18n-Schlüssel</td>
+          </tr>
+        </table>
+      </section>
+    </section>
     <section>
      <title>WCMS</title>
      <p>
@@ -28,6 +116,12 @@
        </p>
      </section>
    </section>
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+
   </body>
 </document>
 

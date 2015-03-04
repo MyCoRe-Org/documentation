@@ -282,7 +282,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <indexbrowsing       label="Index-Blättern"    href="index.html" />
     </search>
     <frontend              label="Weboberfläche"     href="frontend/">
-      <integrated_wcms     label="WCMS"              href="wcms.html" />
+      <integrated_wcms     label="Statische Webinhalte"  href="wcms.html" />
       <multilang           label="Mehrsprachigkeit"      href="index.html#i18n" />
       <xeditor             label="Formulare erstellen"   href="xeditor.html" />
       <image_viewer        label="Bildbetrachter"        href="imageviewer/">
@@ -317,7 +317,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <webservices         label="WebServices"           href="webservices.html" />
       <rest                label="REST"                  href="rest.html" />
       <oai                 label="OAI"                   href="oai.html" />
-      <urn                 label="URN-Vergabe"           href="urn.html" />
+      <pid                 label="Persistent Identifier" href="pid.html" />
       <google              label="Google-Sitemap"        href="google_sitemap.html" />
       <sword               label="SWORD"                 href="sword.html" />
     </interfaces>
