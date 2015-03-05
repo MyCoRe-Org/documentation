@@ -32,7 +32,8 @@
           soll einen
           Überblick über die einzelnen Teilbereiche geben.
         </p>
-        <p>ToDO : Einbau Bild</p>
+         <img src="images/mycore_recovery_structure.png" alt="Beschreibung des Bildes" />
+         <p class="klein"><strong>Abbildung 1:</strong> Beschreibung des Bildes</p>
       </section>
 
       <section>
