@@ -316,7 +316,42 @@
       <p>Eine wichtige Gruppe bei der Reparatur einer beschädigten Anwendung ist die Wiederherstellung von Verweisen und
         Suchindizes. Alle Verweise zwischen MCRObjects, MCRDerivates und MCRClassifications werden in der Tabelle
         MCRLINKHREFgespeichert. Dies ist eine sekundäre Tabelle. Sie kann gelöscht und wieder hergestellt werden.
+        Gleiches gilt für den SOLR Suchindex. Auch er kann per Kommando gelöscht und neu aufgebaut werden.
       </p>
+      <section>
+        <title>Arbeiten am SOLR-Index</title>
+        <p>Die unten vorgestellten Kommandos gestatten ein reinidzieren des SOLR-Suchindex. Dies kann bei laufender
+          Anwendung erfolgen, da der SOLR-Server eine applikationsunabhängige Instanz darstellt. Ein teilweises
+          Reinidizieren
+          erfolgt mit:
+        </p>
+        <p>
+          <code>mycore.sh rebuild solr metadata index</code>
+        </p>
+        <p>
+          <code>mycore.sh rebuild solr content index</code>
+        </p>
+        <p>
+          <code>mycore.sh rebuild solr classification index</code>
+        </p>
+        <p>
+          <code>mycore.sh restricted rebuild solr metadata index for objecttype {0}</code>
+        </p>
+        <p>
+          <code>mycore.sh restricted rebuild solr metadata index for object {0}</code>
+        </p>
+        <p>Ggf. kann dieser auch komplett gelöscht und dann neu angelegt werden. Die dazu erforderlichen Kommandos sind:
+        </p>
+        <p>
+          <code>mycore.sh drop solr index</code>
+        </p>
+        <p>
+          <code>mycore.sh rebuild solr metadata and content index</code>
+        </p>
+        <p>Diese Möglichkeit sollte jedoch nur in Ausnahmefällen genutzt werden, da sie ggf. je nach Datenmenge länger
+          dauern könnte.
+        </p>
+      </section>
     </section>
   </body>
 </document>
