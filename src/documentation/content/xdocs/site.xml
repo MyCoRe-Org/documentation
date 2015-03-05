@@ -327,6 +327,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <production            label="Laufender Betrieb"     href="production/">
       <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />
+      <batch               label="Batch-Betrieb"         href="batch_with_cli.html" />
       <vhost               label="Virtueller Host"       href="vhost.html" />
       <tips                label="Tipps"                 href="tips.html" />
     </production>
