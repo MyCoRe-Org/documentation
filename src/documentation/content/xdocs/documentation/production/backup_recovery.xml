@@ -8,230 +8,231 @@
   <body>
 
     <section>
-      <title>Sicherung der Daten</title>
-      <section>
-        <title>Allgemeines</title>
-        <p>
-          Natürlich muss ein Server-System im Produktionseinsatz auch ein Datensicherungskonzept haben. Es wird davon
-          ausgegenagen,
-          dass für das Betriebssystem und die daran angeschlossenen Plattensysteme eine systemseitige
-          Backup-Strategie
-          vorliegt, welche
-          auch die verwendeten SQL-Datenbanken berücksichtigt. MyCoRe ist inzwischen so
-          konzipiert, dass für einen großen Teil
-          der
-          erforderlichen Sicherheit diese Strategie ausreicht.
-        </p>
-        <p>
-          Neben dem Backup ist auch eine Konsitenzprüfung der Datenbestandteile möglich. Somit können Fehler in
-          einzelnen
-          Strukturbereichen der Anwendung gefunden und behoben werden. Dem widment sich der Abschnitte
-          <strong>Konsistenzprüfung</strong>
-          .
-          Dieses Kapitel hingegen beschäftigt sich vor allem mit dem Ausspielen des Gesamtdatenbestandes. Das nachfolgende Schema
-          soll einen
-          Überblick über die einzelnen Teilbereiche geben.
-        </p>
-         <img src="images/mycore_recovery_structure.png" alt="Beschreibung des Bildes" />
-         <p class="klein"><strong>Abbildung 1:</strong> Beschreibung des Bildes</p>
-      </section>
+      <title>Allgemeines</title>
+      <p>
+        Natürlich muss ein Server-System im Produktionseinsatz auch ein Datensicherungskonzept haben. Es wird davon
+        ausgegenagen,
+        dass für das Betriebssystem und die daran angeschlossenen Plattensysteme eine systemseitige
+        Backup-Strategie
+        vorliegt, welche
+        auch die verwendeten SQL-Datenbanken berücksichtigt. MyCoRe ist inzwischen so
+        konzipiert, dass für einen großen Teil
+        der
+        erforderlichen Sicherheit diese Strategie ausreicht.
+      </p>
+      <p>
+        Neben dem Backup ist auch eine Konsitenzprüfung der Datenbestandteile möglich. Somit können Fehler in
+        einzelnen
+        Strukturbereichen der Anwendung gefunden und behoben werden. Dem widment sich der Abschnitte
+        <strong>Konsistenzprüfung</strong>
+        .
+        Dieses Kapitel hingegen beschäftigt sich vor allem mit dem Ausspielen des Gesamtdatenbestandes. Das nachfolgende Schema
+        soll einen
+        Überblick über die einzelnen Teilbereiche geben.
+      </p>
+      <img src="images/mycore_recovery_structure.png" alt="Beschreibung des Bildes" />
+      <p class="klein">
+        <strong>Abbildung 1:</strong>
+        Recovery-Struktur einer MyCoRe-Anwendung
+      </p>
+    </section>
 
-      <section>
-        <title>Backup</title>
-        <p>
-          Ein weiterer Schritt zur Sicherung der daten ist das komplette Auslesen des Datenbestandes und die
-          Speicherung auf einem externen
-          (ggf. Netzwerk-) Filesystem. Mit dieser Methode lassen sich auch Migrationen
-          durchführen. Das
-          Commandline-Interface (CLI) von
-          MyCoRe hält dafür einige Kommandos bereit, welche die Daten in
-          definierte Verzeichnis
-          ablegen. Ggf. können die Kommandos auch in Scripte eingebaut werden und über cron-Jobs
-          zyklisch
-          gestartet
-          werden. Neben den eigentlichen Daten können auch Benutzerinformationen und Klassifikationen
-          gesichert werden.
-        </p>
-        <p>Export für MyCoRe-Objekte</p>
-        <dl>
-          <dt>
-            <code>export object {0} to directory {1} with {2}</code>
-          </dt>
-          <dd>Stores the MCRObject with the MCRObjectID {0} to the directory {1} with the stylesheet {2}-object.xsl. For
-            {2} save is the default.
-          </dd>
-          <dt>
-            <code>export all objects of type {0} to directory {1} with {2}</code>
-          </dt>
-          <dd>Stores all MCRObjects of type {0} to directory {1} with the stylesheet mcr_{2}-object.xsl. For {2} save is
-            the default.
-          </dd>
-          <dt>
-            <code>export all objects of base {0} to directory {1} with {2}</code>
-          </dt>
-          <dd>Stores all MCRObjects of base {0} to directory {1} with the stylesheet mcr_{2}-object.xsl. For {2} save is
-            the default.
-          </dd>
-          <dt>
-            <code>export object from {0} to {1} to directory {2} with {3}</code>
-          </dt>
-          <dd>Stores all MCRObjects with MCRObjectID's between {0} and {1} to the directory {2} with the stylesheet
-            {3}-object.xsl. For {3} save is the default.
-          </dd>
-        </dl>
-        <p>Export für MyCoRe-Derivate</p>
-        <dl>
-          <dt>
-            <code>export derivate {0} to directory {1} with {2}</code>
-          </dt>
-          <dd>The command store the derivate with the MCRObjectID {0} to the directory {1} with the stylesheet
-            {2}-object.xsl. For {2} save is the default.
-          </dd>
-          <dt>
-            <code>export derivate from {0} to {1} to directory {2} with {3}</code>
-          </dt>
-          <dd>The command store all derivates with MCRObjectID's between {0} and {1} to the directory {2} with the
-            stylesheet {3}-object.xsl. For {3} save is the default.
-          </dd>
-          <dt>
-            <code>export all derivates of project {0} to directory {1} with {2}</code>
-          </dt>
-          <dd>Stores all derivates of project {0} to the directory {1} with the stylesheet mcr_{2}-derivate.xsl. For {2}
-            save is the default.
-          </dd>
-          <dt>
-            <code>export all derivates to directory {0} with {1}</code>
-          </dt>
-          <dd>Stores all derivates to the directory {0} with the stylesheet mcr_{1}-derivate.xsl. For {1} save is the
-            default.
-          </dd>
-        </dl>
-        <p>Export für MyCoRe-Klassifikationen</p>
-        <dl>
-          <dt>
-            <code>export classification {0} to directory {1} with {2}</code>
-          </dt>
-          <dd>The command exports the classification with MCRObjectID {0} as xml file to directory named {1} using the
-            stylesheet {2}-object.xsl. For {2} save is the default.
-          </dd>
-          <dt>
-            <code>export all classifications to directory {0} with {1}</code>
-          </dt>
-          <dd>The command store all classifications to the directory with name {0} with the stylesheet {1}-object.xsl.
-            For {1} save is the default.
-          </dd>
-        </dl>
-        <p>Export für MyCoRe-Benutzer und Zugriffsrechte</p>
-        <dl>
-          <dt>
-            <code>export user {0} to file {1}</code>
-          </dt>
-          <dd>Exports the data of user {0} to the file {1}.</dd>
-          <dt>
-            <code>export all users to directory {0}</code>
-          </dt>
-          <dd>Exports the data of all users to the directory {0}.</dd>
-          <dt>
-            <code>export all permissions to file {0}</code>
-          </dt>
-          <dd>Export all permissions from the Access Control System to the file {0}.</dd>
-        </dl>
-      </section>
+    <section>
+      <title>Backup</title>
+      <p>
+        Ein weiterer Schritt zur Sicherung der daten ist das komplette Auslesen des Datenbestandes und die
+        Speicherung auf einem externen
+        (ggf. Netzwerk-) Filesystem. Mit dieser Methode lassen sich auch Migrationen
+        durchführen. Das
+        Commandline-Interface (CLI) von
+        MyCoRe hält dafür einige Kommandos bereit, welche die Daten in
+        definierte Verzeichnis
+        ablegen. Ggf. können die Kommandos auch in Scripte eingebaut werden und über cron-Jobs
+        zyklisch
+        gestartet
+        werden. Neben den eigentlichen Daten können auch Benutzerinformationen und Klassifikationen
+        gesichert werden.
+      </p>
+      <p>Export für MyCoRe-Objekte</p>
+      <dl>
+        <dt>
+          <code>export object {0} to directory {1} with {2}</code>
+        </dt>
+        <dd>Stores the MCRObject with the MCRObjectID {0} to the directory {1} with the stylesheet {2}-object.xsl. For
+          {2} save is the default.
+        </dd>
+        <dt>
+          <code>export all objects of type {0} to directory {1} with {2}</code>
+        </dt>
+        <dd>Stores all MCRObjects of type {0} to directory {1} with the stylesheet mcr_{2}-object.xsl. For {2} save is
+          the default.
+        </dd>
+        <dt>
+          <code>export all objects of base {0} to directory {1} with {2}</code>
+        </dt>
+        <dd>Stores all MCRObjects of base {0} to directory {1} with the stylesheet mcr_{2}-object.xsl. For {2} save is
+          the default.
+        </dd>
+        <dt>
+          <code>export object from {0} to {1} to directory {2} with {3}</code>
+        </dt>
+        <dd>Stores all MCRObjects with MCRObjectID's between {0} and {1} to the directory {2} with the stylesheet
+          {3}-object.xsl. For {3} save is the default.
+        </dd>
+      </dl>
+      <p>Export für MyCoRe-Derivate</p>
+      <dl>
+        <dt>
+          <code>export derivate {0} to directory {1} with {2}</code>
+        </dt>
+        <dd>The command store the derivate with the MCRObjectID {0} to the directory {1} with the stylesheet
+          {2}-object.xsl. For {2} save is the default.
+        </dd>
+        <dt>
+          <code>export derivate from {0} to {1} to directory {2} with {3}</code>
+        </dt>
+        <dd>The command store all derivates with MCRObjectID's between {0} and {1} to the directory {2} with the
+          stylesheet {3}-object.xsl. For {3} save is the default.
+        </dd>
+        <dt>
+          <code>export all derivates of project {0} to directory {1} with {2}</code>
+        </dt>
+        <dd>Stores all derivates of project {0} to the directory {1} with the stylesheet mcr_{2}-derivate.xsl. For {2}
+          save is the default.
+        </dd>
+        <dt>
+          <code>export all derivates to directory {0} with {1}</code>
+        </dt>
+        <dd>Stores all derivates to the directory {0} with the stylesheet mcr_{1}-derivate.xsl. For {1} save is the
+          default.
+        </dd>
+      </dl>
+      <p>Export für MyCoRe-Klassifikationen</p>
+      <dl>
+        <dt>
+          <code>export classification {0} to directory {1} with {2}</code>
+        </dt>
+        <dd>The command exports the classification with MCRObjectID {0} as xml file to directory named {1} using the
+          stylesheet {2}-object.xsl. For {2} save is the default.
+        </dd>
+        <dt>
+          <code>export all classifications to directory {0} with {1}</code>
+        </dt>
+        <dd>The command store all classifications to the directory with name {0} with the stylesheet {1}-object.xsl.
+          For {1} save is the default.
+        </dd>
+      </dl>
+      <p>Export für MyCoRe-Benutzer und Zugriffsrechte</p>
+      <dl>
+        <dt>
+          <code>export user {0} to file {1}</code>
+        </dt>
+        <dd>Exports the data of user {0} to the file {1}.</dd>
+        <dt>
+          <code>export all users to directory {0}</code>
+        </dt>
+        <dd>Exports the data of all users to the directory {0}.</dd>
+        <dt>
+          <code>export all permissions to file {0}</code>
+        </dt>
+        <dd>Export all permissions from the Access Control System to the file {0}.</dd>
+      </dl>
+    </section>
 
-      <section>
-        <title>Recovery</title>
-        <p>
-          Die mittels der Export-Kommandos gesicherten Daten können im Bedarfsfall wieder in ein ggf. neu erstelltes
-          System eingespielt werden. Dabei sollte die nachfolgende reihenfolge eingehalten werden.
-        </p>
-        <ol>
-          <li>Laden der Klassifikationen</li>
-          <li>Laden der Nutzer</li>
-          <li>Laden der Zugriffsrechte</li>
-          <li>Laden der MyCoRe-Objekte (vorzugsweise unter Berücksichtigung der Eltern-Kind-Bezieheung)</li>
-          <li>Laden der MyCoRe-Derivate</li>
-        </ol>
-        <p>Import für MyCoRe-Objekte</p>
-        <dl>
-          <dt>
-            <code>load object from file {0}</code>
-          </dt>
-          <dd>Adds a MCRObject from the file {0} to the system.</dd>
-          <dt>
-            <code>load all objects from directory {0}</code>
-          </dt>
-          <dd>Loads all MCRObjects from the directory {0} to the system.</dd>
-          <dt>
-            <code>load all objects in topological order from directory {0}</code>
-          </dt>
-          <dd>Loads all MCRObjects form the directory {0} to the system respecting the order of parents and children.</dd>
-          <dt>
-            <code>update object from file {0}</code>
-          </dt>
-          <dd>Updates a MCRObject from the file {0} in the system.</dd>
-          <dt>
-            <code>update all objects from directory {0}</code>
-          </dt>
-          <dd>Updates all MCRObjects from the directory {0} in the system.</dd>
-          <dt>
-            <code>update all objects in topological order from directory {0}</code>
-          </dt>
-          <dd>Updates all MCRObjects from the directory {0} in the system respecting the order of parents and children.</dd>
-        </dl>
-        <p>Import für MyCoRe-Derivate</p>
-        <dl>
-          <dt>
-            <code>load derivate from file {0}</code>
-          </dt>
-          <dd>The command add a derivate form the file {0} to the system.</dd>
-          <dt>
-            <code>load all derivates from directory {0}</code>
-          </dt>
-          <dd>The command load all derivates form the directory {0} to the system.</dd>
-        </dl>
-        <p>Import für MyCoRe-Klassifikationen</p>
-        <dl>
-          <dt>
-            <code>load classification from file {0}</code>
-          </dt>
-          <dd>The command adds a new classification from file {0} to the system.</dd>
-          <dt>
-            <code>load all classifications from directory {0}</code>
-          </dt>
-          <dd>The command add all classifications in the directory {0} to the system.</dd>
-          <dt>
-            <code>update classification from file {0}</code>
-          </dt>
-          <dd>The command updates a classification from file {0} to the system.</dd>
-          <dt>
-            <code>update all classifications from directory {0}</code>
-          </dt>
-          <dd>The command update all classifications in the directory {0} to the system.</dd>
-        </dl>
-        <p>Import für MyCoRe-Benutzer und Zugriffsrechte</p>
-        <dl>
-          <dt>
-            <code>import user from file {0}</code>
-          </dt>
-          <dd>Imports a user from file {0}.</dd>
-          <dt>
-            <code>import all users from directory {0}</code>
-          </dt>
-          <dd>Imports all users from directory {0}.</dd>
-          <dt>
-            <code>load permissions data from file {0}</code>
-          </dt>
-          <dd>The command loads the permissions data of the access control system with data from the file {0}.</dd>
-          <dt>
-            <code>update permission {0} for id {1} with rulefile {2} described by {3}</code>
-          </dt>
-          <dd>The command updates access rule for a given id of a given permission with a given special rule</dd>
-          <dt>
-            <code>update permission {0} for id {1} with rulefile {2}</code>
-          </dt>
-          <dd>The command updates access rule for a given id of a given permission with a given special rule</dd>
-        </dl>
-      </section>
+    <section>
+      <title>Recovery</title>
+      <p>
+        Die mittels der Export-Kommandos gesicherten Daten können im Bedarfsfall wieder in ein ggf. neu erstelltes
+        System eingespielt werden. Dabei sollte die nachfolgende reihenfolge eingehalten werden.
+      </p>
+      <ol>
+        <li>Laden der Klassifikationen</li>
+        <li>Laden der Nutzer</li>
+        <li>Laden der Zugriffsrechte</li>
+        <li>Laden der MyCoRe-Objekte (vorzugsweise unter Berücksichtigung der Eltern-Kind-Bezieheung)</li>
+        <li>Laden der MyCoRe-Derivate</li>
+      </ol>
+      <p>Import für MyCoRe-Objekte</p>
+      <dl>
+        <dt>
+          <code>load object from file {0}</code>
+        </dt>
+        <dd>Adds a MCRObject from the file {0} to the system.</dd>
+        <dt>
+          <code>load all objects from directory {0}</code>
+        </dt>
+        <dd>Loads all MCRObjects from the directory {0} to the system.</dd>
+        <dt>
+          <code>load all objects in topological order from directory {0}</code>
+        </dt>
+        <dd>Loads all MCRObjects form the directory {0} to the system respecting the order of parents and children.</dd>
+        <dt>
+          <code>update object from file {0}</code>
+        </dt>
+        <dd>Updates a MCRObject from the file {0} in the system.</dd>
+        <dt>
+          <code>update all objects from directory {0}</code>
+        </dt>
+        <dd>Updates all MCRObjects from the directory {0} in the system.</dd>
+        <dt>
+          <code>update all objects in topological order from directory {0}</code>
+        </dt>
+        <dd>Updates all MCRObjects from the directory {0} in the system respecting the order of parents and children.
+        </dd>
+      </dl>
+      <p>Import für MyCoRe-Derivate</p>
+      <dl>
+        <dt>
+          <code>load derivate from file {0}</code>
+        </dt>
+        <dd>The command add a derivate form the file {0} to the system.</dd>
+        <dt>
+          <code>load all derivates from directory {0}</code>
+        </dt>
+        <dd>The command load all derivates form the directory {0} to the system.</dd>
+      </dl>
+      <p>Import für MyCoRe-Klassifikationen</p>
+      <dl>
+        <dt>
+          <code>load classification from file {0}</code>
+        </dt>
+        <dd>The command adds a new classification from file {0} to the system.</dd>
+        <dt>
+          <code>load all classifications from directory {0}</code>
+        </dt>
+        <dd>The command add all classifications in the directory {0} to the system.</dd>
+        <dt>
+          <code>update classification from file {0}</code>
+        </dt>
+        <dd>The command updates a classification from file {0} to the system.</dd>
+        <dt>
+          <code>update all classifications from directory {0}</code>
+        </dt>
+        <dd>The command update all classifications in the directory {0} to the system.</dd>
+      </dl>
+      <p>Import für MyCoRe-Benutzer und Zugriffsrechte</p>
+      <dl>
+        <dt>
+          <code>import user from file {0}</code>
+        </dt>
+        <dd>Imports a user from file {0}.</dd>
+        <dt>
+          <code>import all users from directory {0}</code>
+        </dt>
+        <dd>Imports all users from directory {0}.</dd>
+        <dt>
+          <code>load permissions data from file {0}</code>
+        </dt>
+        <dd>The command loads the permissions data of the access control system with data from the file {0}.</dd>
+        <dt>
+          <code>update permission {0} for id {1} with rulefile {2} described by {3}</code>
+        </dt>
+        <dd>The command updates access rule for a given id of a given permission with a given special rule</dd>
+        <dt>
+          <code>update permission {0} for id {1} with rulefile {2}</code>
+        </dt>
+        <dd>The command updates access rule for a given id of a given permission with a given special rule</dd>
+      </dl>
     </section>
 
   </body>
