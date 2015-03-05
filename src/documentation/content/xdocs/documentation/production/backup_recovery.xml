@@ -4,6 +4,14 @@
 <document>
   <header>
     <title>Backup and Recovery</title>
+    <authors>
+      <person name="Jens Kupferschmidt" />
+    </authors>
+    <version>2015-03-05</version>
+    <abstract>
+      Der Abschnitt beschreibt Vorgehensweisen zur Sicherung und Wiederherstellung der Daten mit
+      Applikationsmitteln.
+    </abstract>
   </header>
   <body>
 
@@ -26,7 +34,8 @@
         Strukturbereichen der Anwendung gefunden und behoben werden. Dem widment sich der Abschnitte
         <strong>Konsistenzprüfung</strong>
         .
-        Dieses Kapitel hingegen beschäftigt sich vor allem mit dem Ausspielen des Gesamtdatenbestandes. Das nachfolgende Schema
+        Dieses Kapitel hingegen beschäftigt sich vor allem mit dem Ausspielen des Gesamtdatenbestandes. Das
+        nachfolgende Schema
         soll einen
         Überblick über die einzelnen Teilbereiche geben.
       </p>
@@ -41,17 +50,20 @@
       <title>Backup</title>
       <p>
         Ein weiterer Schritt zur Sicherung der daten ist das komplette Auslesen des Datenbestandes und die
-        Speicherung auf einem externen
+        Speicherung
+        auf einem externen
         (ggf. Netzwerk-) Filesystem. Mit dieser Methode lassen sich auch Migrationen
         durchführen. Das
         Commandline-Interface (CLI) von
         MyCoRe hält dafür einige Kommandos bereit, welche die Daten in
-        definierte Verzeichnis
+        definierte
+        Verzeichnis
         ablegen. Ggf. können die Kommandos auch in Scripte eingebaut werden und über cron-Jobs
         zyklisch
         gestartet
         werden. Neben den eigentlichen Daten können auch Benutzerinformationen und Klassifikationen
-        gesichert werden.
+        gesichert
+        werden.
       </p>
       <p>Export für MyCoRe-Objekte</p>
       <dl>
@@ -119,7 +131,8 @@
           <code>export all classifications to directory {0} with {1}</code>
         </dt>
         <dd>The command store all classifications to the directory with name {0} with the stylesheet {1}-object.xsl.
-          For {1} save is the default.
+          For
+          {1} save is the default.
         </dd>
       </dl>
       <p>Export für MyCoRe-Benutzer und Zugriffsrechte</p>
