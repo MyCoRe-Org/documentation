@@ -50,7 +50,8 @@
     <section>
       <title>Das MCRAddURNToObjectServlet</title>
       <p>
-        In der Anwendung kann das MCRAddURNToObjectServlet genutzt werden, um je nach Anforderung die URN zu erzeugen. Dafür stehen die folgenden
+        In der Anwendung kann das <a href="http://www.mycore.de/generated/mycore/apidocs/index.html?org/mycore/urn/servlets/MCRAddURNToObjectServlet.html"
+        >MCRAddURNToObjectServlet</a> genutzt werden, um je nach Anforderung die URN zu erzeugen. Dafür stehen die folgenden
         Optionen zur Verfügung:
       </p>
       <table class="table">
@@ -93,7 +94,8 @@
         Die URN-Funktionalität wird in der MyCoRe-Komponente <code>mycore-urn</code> bereitgestellt.
       </p>
       <p>
-        In der Basisimplementierung sorgt der MCRURNProvider für die Erzeugung
+        In der Basisimplementierung sorgt der <a href="http://www.mycore.de/generated/mycore/apidocs/index.html?org/mycore/urn/services/MCRURNProvider.html"
+        >MCRURNProvider</a> für die Erzeugung
         der URN. Dieser generiert die URN nach einem in den Properties definierten Schema:
       </p>
       <pre class="brush: bash">
@@ -107,8 +109,11 @@
       <p>
         Die gelisteten Properties zeigen die Standard-Konfiguration. Diese können (und sollten) entsprechend in den
         Properties der Anwendung angepasst werden. Die Komponente <code>mycore-urn</code> bringt zwei Möglichkeiten mit,
-        eine URN zu generieren. Es kann eine UUID erzeugt werden, oder anhand des Zeitpunktes, zu dem die URN
-        erzeugt wird. Das genaue Muster dafür kann mittels des NISSPattern-Properties definiert werden.
+        eine URN zu generieren. Es kann eine UUID (<a href="http://www.mycore.de/generated/mycore/apidocs/index.html?org/mycore/urn/services/MCRNISSBuilderUUID.html"
+        >MCRNISSBuilderUUID</a>) erzeugt werden, oder anhand des Zeitpunktes, zu dem die URN
+        erzeugt wird. Das genaue Muster dafür kann mittels des NISSPattern-Properties
+        (<a href="http://www.mycore.de/generated/mycore/apidocs/index.html?org/mycore/urn/services/MCRNISSBuilderDateCounter.html"
+        >MCRNISSBuilderDateCounter</a>) definiert werden.
       </p>
       <p>
         Reichen die Optionen über die Properties nicht aus und die URNs sollen mit einem
