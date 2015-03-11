@@ -24,48 +24,105 @@
    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
 
   <section>
-   <title>Nutzung der URN-Vergabe</title>
-   <p>
-   Die URN-Vergabe für Dokumente und deren Derivate ist in DocPortal standardmässig
-   aktiviert. Möchte man dies deaktivieren, so findet man die folgende, dann zu
-   löschende Zeile unter docportal/modules/common/config/mycore.properties:<br /><br />
-
-   <code>MCR.URN.Enabled.Objects = document</code><br /><br />
-
-   Soll für mehrere Objekttypen die URN-Vergabe ermöglicht werden, so
-   müssen alle Typen durch Komma getrennt an dieser Stelle angegeben werden:<br /><br />
-
-   <code>MCR.URN.Enabled.Objects = document,file,certificate</code><br /><br />
-
-   Es erscheint daraufhin im DocPortal in der Bearbeitungsleiste unterhalb des
-   Derivates und unterhalb des Dokumentes eine Schaltfläche für das automatische
-   Erzeugen einer URN.
-   </p>
-
-   <p>
-   In der Basisimplementierung sorgt der MCRURNProvider für die Erzeugung
-   der URN. Dieser generiert die URN nach dem gleichen Schema, wie auch sonst
-   URNs für die Metadatensätze erzeugt werden.<br /><br />
-
-   <code>MCR.URN.Provider.Class=org.mycore.services.urn.MCRURNProvider</code><br /><br />
-
-   Eine Anpassung kann in den mycore.properties.private im Abschnitt
-   <code># The MyCoRe properties URN file for the DocPortal #</code> vorgenommen werden.
-   </p>
-
-   <p>
-   Reichen die Optionen über die Properties nicht aus und die URNs sollen mit einem
-   anderen Aufbau generiert werden, so muss dafür eine eigene Klasse geschrieben werden,
-   die das <code>org.mycore.services.urn.IURNProvider</code>-Interface implementiert oder
-   einfacher gleich von <code>org.mycore.services.urn.AbstractURNProvider</code>
-   abgeleitet wird. Die neue Klasse muss dann mit dem vollen Klassenpfad als Wert
-   für das Property <code>MCR.URN.Provider.Class</code> gesetzt werden.
-   </p>
-
-   <p>
-   Die erzeugten URNs werden zum einen in der Datenbank in der Tabelle
-   MCRURN als auch im Derivate selber abgelegt.
-   </p>
+    <title>Nutzung der URN-Vergabe</title>
+    <section>
+      <title>URN in der Anwendung</title>
+      <p>
+        Um die URN-Vergabe für Dokumente und deren Derivate zu aktivieren, muss das folgende
+        Property für die entsprechenden MyCoRe-Objekttypen definiert werden:
+      </p>
+      <pre class="brush: bash">
+        MCR.URN.Enabled.Objects=mods
+      </pre>
+      <p>
+        Soll für mehrere Objekttypen die URN-Vergabe ermöglicht werden, so
+        müssen alle Typen durch Komma getrennt an dieser Stelle angegeben werden:
+      </p>
+      <pre class="brush: bash">
+        MCR.URN.Enabled.Objects=document,file,certificate
+      </pre>
+      <p>
+        In der Anwendung MIR ist die URN-Vergabe für MODS-Dokumente standardmäßig
+        aktiviert. Werden Dateien angehangen, so kann über das Aktionen-Menü des
+        jeweiligen Derivates eine URN für das Derivat erzeugt werden.
+      </p>
+    </section>
+    <section>
+      <title>Das MCRAddURNToObjectServlet</title>
+      <p>
+        In der Anwendung kann das MCRAddURNToObjectServlet genutzt werden, um je nach Anforderung die URN zu erzeugen. Dafür stehen die folgenden
+        Optionen zur Verfügung:
+      </p>
+      <table class="table">
+        <tr>
+          <th>URL-Parameter</th>
+          <th>Werte</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>object</td>
+          <td>ObjectID / DerivatID</td>
+          <td>Pflichtangabe, übergibt die ID des Objektes bzw. Derivates, für das eine URN erzeugt werden soll; ohne weitere Parameter wird bei Angabe einer
+              Objekt-ID eine URN in den Metadaten eingetragen, bei Angabe einer Derivat-ID bekommt das Derivat eine URN und alle enthaltenen Dateien bekommen
+              eine darauf aufbauende URN-granular</td>
+        </tr>
+        <tr>
+          <td>target</td>
+          <td>"file" oder "derivate"</td>
+          <td>optional und nur in Kombination mit <code>object=&lt;DerivatID&gt;</code> möglich; "file" gibt an, dass die URN
+              für eine einzelne Datei erzeugt werden soll; "derivate" gibt an, dass die URN nur für das Derivat erzeugt werden soll</td>
+        </tr>
+        <tr>
+          <td>file</td>
+          <td>Pfad zur Datei innerhalb des Derivates, für die eine URN erzeugt werden soll</td>
+          <td>optional und nur in Kombination mit <code>object=&lt;DerivatID&gt;</code> und <code>target=file</code></td>
+        </tr>
+      </table>
+      <p>
+        Wird die URN in den Metadaten-Abschnitt generiert, so hat diese folgende Form:
+      </p>
+      <pre class="brush: xml"><![CDATA[
+        <def.identifier>
+          <identifier type="urn">urn:foo:bar</identifier>
+        </def.identifier>]]>
+      </pre>
+    </section>
+    <section>
+      <title>Die Implementierung</title>
+      <p>
+        Die URN-Funktionalität wird in der MyCoRe-Komponente <code>mycore-urn</code> bereitgestellt.
+      </p>
+      <p>
+        In der Basisimplementierung sorgt der MCRURNProvider für die Erzeugung
+        der URN. Dieser generiert die URN nach einem in den Properties definierten Schema:
+      </p>
+      <pre class="brush: bash">
+          MCR.URN.Provider.Class=org.mycore.urn.services.MCRURNProvider
+        # CHANGE: Subnamespace for Campus MyCoRe
+          MCR.URN.SubNamespace.Default.Prefix=urn:nbn:de:mcr:1-
+          MCR.URN.SubNamespace.Default.NISSBuilder=org.mycore.urn.services.MCRNISSBuilderDateCounter
+          MCR.URN.SubNamespace.Default.NISSPattern=yyyyMMdd-HHmmss-
+          #MCR.URN.SubNamespace.Default.NISSBuilder=org.mycore.urn.services.MCRNISSBuilderUUID
+      </pre>
+      <p>
+        Die gelisteten Properties zeigen die Standard-Konfiguration. Diese können (und sollten) entsprechend in den
+        Properties der Anwendung angepasst werden. Die Komponente <code>mycore-urn</code> bringt zwei Möglichkeiten mit,
+        eine URN zu generieren. Es kann eine UUID erzeugt werden, oder anhand des Zeitpunktes, zu dem die URN
+        erzeugt wird. Das genaue Muster dafür kann mittels des NISSPattern-Properties definiert werden.
+      </p>
+      <p>
+        Reichen die Optionen über die Properties nicht aus und die URNs sollen mit einem
+        anderen Aufbau generiert werden, so muss dafür eine eigene Klasse geschrieben werden,
+        die das <code>org.mycore.services.urn.IURNProvider</code>-Interface implementiert oder
+        einfacher gleich von <code>org.mycore.services.urn.AbstractURNProvider</code>
+        abgeleitet wird. Die neue Klasse muss dann mit dem vollen Klassenpfad als Wert
+        für das Property <code>MCR.URN.Provider.Class</code> gesetzt werden.
+      </p>
+      <p>
+        Die erzeugten URNs werden sowohl in der Datenbanktabelle
+        <code>MCRURN</code>, als auch im Derivate bzw. Objekt selber abgelegt.
+      </p>
+    </section>
   </section>
   <section>
     <title>Handel</title>
