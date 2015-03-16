@@ -293,7 +293,11 @@
       </dl>
       <p>
         Die <code>&lt;servacls /&gt;</code> enthalten Access-Control-System-Conditions für die genutzten Permissions wie read, writedb oder
-        deletedb. Eine genaue Beschreibung ist dem <a href="site:acl_integration">Abschnitt über ACL's</a> zu finden.
+        deletedb. Dieses Element ist vor allem für den Import und Export relevant. Man kann mit einem CLI-Kommando Objekte mit ihren ACLs
+        exportieren um sie zu sichern bzw. sie in ein anders System zu importieren. Wenn man, wie die standardmässig aktivierte Vererbung
+        bei den ACLs nutzt (indem man ACLs für den Dokumenttyp definiert), gibt es keine objektspezifischen ACLs.
+        <!-- TODO: In der ACL-Doku fehlen aktuell Informationen dazu! -->
+        <!-- Eine genaue Beschreibung ist dem <a href="site:acl_integration">Abschnitt über ACL's</a> zu finden. -->
       </p>
       <p>
         Im <code>&lt;servflags /&gt;</code> Teil können kurze Texte untergebracht werden. Die Anzahl der <code>&lt;servflag /&gt;</code> Elemente ist theoretisch
