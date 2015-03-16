@@ -4,13 +4,14 @@
 <document>
   <header>
     <title>XML-Syntax eines MyCoRe-Objektes</title>
+    <version>2015-03-16</version>
     <authors>
-      <person name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
-    <version>2014-11-26</version>
-    <abstract>In diesem Abschnitt wird der Syntax der einzelnen XML-Daten-Dateien näher beschrieben. Die Kenntnis des
-      Syntax
-      ist notwendig, um eigene Datensätze für zu erstellen.
+    <abstract>
+      In diesem Abschnitt wird der Syntax der einzelnen XML-Daten-Dateien näher beschrieben. Die Kenntnis des
+      Syntax ist notwendig, um eigene Datensätze für zu erstellen.
     </abstract>
   </header>
   <body>
@@ -257,9 +258,8 @@
         vorgegeben und dürfen nicht anderweitig verwendet werden!
       </p>
       <p>
-        Die Datumsangaben servdates verhalten sich analog zu denen in MCRMetaISO8601Date. Folgende Möglichkeiten für
-        das
-        Attribut type sind vorgesehen. Weitere Typen sind jedoch integrierbar.
+        Die Datumsangaben <code>&lt;servdates /&gt;</code> verhalten sich analog zu denen in MCRMetaISO8601Date. Folgende
+        Möglichkeiten für das Attribut <code>type</code> sind vorgesehen. Weitere Typen sind jedoch integrierbar.
       </p>
       <dl>
         <dt>
@@ -292,13 +292,25 @@
         <dd>Datum aus dem Dublin Core, kann frei verwendet werden.</dd>
       </dl>
       <p>
-        Die servacls enthalten Access Control System Conditions für die genutzten Permissions wie read, writedb oder
-        deletedb. Eine genaue Beschreibung ist dem Kapitel über ACL's zu finden.
+        Die <code>&lt;servacls /&gt;</code> enthalten Access-Control-System-Conditions für die genutzten Permissions wie read, writedb oder
+        deletedb. Eine genaue Beschreibung ist dem <a href="site:acl_integration">Abschnitt über ACL's</a> zu finden.
       </p>
       <p>
-        Im servflags Teil können kurze Texte untergebracht werden. Die Anzahl der servflag Elemente ist theoretisch
+        Im <code>&lt;servflags /&gt;</code> Teil können kurze Texte untergebracht werden. Die Anzahl der <code>&lt;servflag /&gt;</code> Elemente ist theoretisch
         unbegrenzt.
       </p>
+      <p>
+        Der Abschnitt <code>&lt;servstates /&gt;</code> kann dazu genutzt werden, den Status des MyCoRe-Objektes festzuhalten.
+        Der Status muss dafür als Klassifikation hinterlegt sein. Die ID der Klassifikation kann dann über das Property
+        <code>MCR.Metadata.Service.State.Classification.ID</code> (default ist "state") angegeben werden. Welcher Status beim
+        Erstellen eines Objektes standardmässig eingetragen wird, kann durch das Property <code>MCR.Metadata.Service.State.Category.Default</code>
+        spezifiziert werden (default ist "submitted"). Ist keine Klassifikation vorhanden, wird <code>&lt;servstates /&gt;</code>
+        nicht angelegt. Die <a href="http://mycore.de/classifications/state.xml">State-Klassifikation</a> kann heruntergeladen und dann
+        importiert oder direkt über den folgenden CLI-Befehl geladen werden:
+      </p>
+      <pre class="brush: bash;gutter: false;">
+        load classification from url http://mycore.de/classifications/state.xml
+      </pre>
       <p>Syntax des XML-Knotens service:</p>
       <pre class="brush: xml;">
 <![CDATA[<service>
@@ -315,6 +327,9 @@
     <servflag>...</servflag>
     ...
   </servflags>
+  <servstates class="MCRMetaClassification">
+    <servstate classid="..." categid="..." />
+  </servstates>
 </service>]]></pre>
     </section>
 
