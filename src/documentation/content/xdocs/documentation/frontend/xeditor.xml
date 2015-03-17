@@ -132,7 +132,7 @@ aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt wer
 Das XEditor Framework setzt das Attribut <code>@action</code> des <code>&lt;form /&gt;</code> Elementes, damit die Formularwerte an das XEditor Servlet gesendet werden.
 Bei Absenden des Formulars werden die Werte zunächst vom XEditor Servlet verarbeitet und danach ggf. an das eigentliche Zielservlet per Request Dispatching
 als XML Dokument weitergegeben. Weitere optionale Attribute werden 1:1 von <code>&lt;xed:form /&gt;</code> zu <code>&lt;form /&gt;</code> kopiert.</p>
-<p>Die Standard Submit-Methode ist "post", kann aber über <code>/lt;xed:form method="get" ...</code> überschrieben werden.</p>
+<p>Die Standard Submit-Methode ist "post", kann aber über <code>&lt;xed:form method="get" ...</code> überschrieben werden.</p>
 <p>Sollen im bearbeiteten XML Dokument zusätzliche Namespaces verwendet werden, sollten diese als Namespace Attribute (xmlns:...) beim <code>&lt;xed:form /&gt;</code> Element
 definiert werden. Die in MyCoRe häufig verwendeten Namespaces für MyCoRe, MODS, METS, XLink etc. sind bereits vordefiniert und müssen nicht angegeben werden.</p>
 </section>
