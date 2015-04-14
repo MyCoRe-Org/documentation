@@ -8,7 +8,7 @@
       <person name="Robert Stephan" />
       <person name="Jens Kupferschmidt" />
     </authors>
-    <version>2014-11-26</version>
+    <version>2015-04-14</version>
     <abstract>In diesem Abschnitt wird der Syntax der Definitionsdatei für eigene Metadatenmodelle nach dem
       MyCoRe-Datamodell-Prinzip 2 vorgestellt. Weiterhin folgt eine Beschreibung der Integration in den Build-Prozess.
     </abstract>
@@ -45,7 +45,7 @@
     <element>
     <element name="link" type="link" minOccurs='1' maxOccurs='1'>
       <target type="person"/>
-    <element>    
+    <element>
   </metadata>
 </objecttype>]]></pre>
       <ul>
@@ -104,7 +104,7 @@
           haben soll.
         </li>
       </ul>
-      <table>
+      <table class="table">
         <tr>
           <th>
             <em>type</em>
@@ -186,15 +186,13 @@
       <p>
         Um eine XML-Schema-Datei der eigenen Metadatendefinition innerhalb eines zu bauenden *.jar-Files während des
         Build-Prozesses zu bauen und mit zu integrieren, muss die Datenmodell-Datei innerhalb des Maven-Modules unter
-        <code>{maven-modul}/src/main/datamodel/dev/{xyz}.xml</code>
-        stehen.
-        stehen.
+        <code>{maven-modul}/src/main/datamodel/def/{xyz}.xml</code> stehen.
       </p>
       <pre class="brush: xml;">
 <![CDATA[<plugin>
   <groupId>org.mycore.plugins</groupId>
   <artifactId>datamodel-plugin</artifactId>
-  <version>0.5-SNAPSHOT</version>
+  <version>0.6-SNAPSHOT</version>
   <executions>
     <execution>
       <goals>
@@ -203,6 +201,13 @@
     </execution>
   </executions>
 </plugin>]]></pre>
+
+      <p>Weiterführende Informationen:</p>
+      <ul>
+        <li><a href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014?action=AttachFile&amp;do=view&amp;target=Stephan_MyCoRe_Datenmodell_2014.pdf">"MyCoRe Datenmodeldefinition"</a> (Vortrag von Robert Stephan, Braunschweig 11/2014)</li>
+        <li><a href="http://www.mycore.de/generated/datamodel-plugin/plugin-info.html">Link zur Maven-Site mit weiterer Dokumentation</a></li>
+        <li><a href="http://artifactory.mycore.de/webapp/browserepo.html?pathId=plugins-snapshots-local%3Aorg%2Fmycore%2Fplugins%2Fdatamodel-plugin">Link zum Artifactory</a></li>
+      </ul>
     </section>
 
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
