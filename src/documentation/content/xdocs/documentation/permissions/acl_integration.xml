@@ -21,7 +21,7 @@
   </section>
 
   <section>
-    <title>Strategien der Validierung</title>
+    <title>Zugriffs-Strategien</title>
     <p>
       Das ACL-System ist nur lose an das Datenmodell von MyCoRe gekoppelt und so sind ACL-Regeln nicht zwangsweise an
       MCRObjectIDs gebunden, sondern nehmen als ID jeden String entgegen. Diese Flexibilität kann man sich
