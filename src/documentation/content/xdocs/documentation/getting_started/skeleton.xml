@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Skeleton</title>
+    <version>2015-04-23</version>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Wiebke Oeltjen" />
+    </authors>
+  </header>
+
+  <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+    <section>
+      <title>Kurzanleitung zum Start mit dem "Skeleton"</title>
+      <h2>Voraussetzungen</h2>
+      <ul>
+        <li>Tomcat v7.0.27 oder höher (bzw. ServletContainer mit Servlet-3.0-Unterstützung)</li>
+        <li>Solr-Server</li>
+        <li>relationales Datenbanksystem</li>
+        <li>bibutils</li> <!-- TODO! -->
+      </ul>
+      <h2>1. Quellen herunterladen</h2>
+      <p>
+        Hier kann das aktuelle <a href="https://server.mycore.de/svn/skeleton/trunk/skeleton">Skeleton</a>
+        heruntergeladen werden.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Deployen</h2>
+      <p>
+        Vor dem Deployen müssen gegebenenfalls Klassifikationen und Datenmodellspezifikationen ergänzt werden. Anschließend wird das Kommando <code>mvn clean install</code> aufgerufen.
+        Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>zip.gz</code> für die MyCoRe-Kommandozeile zur Verfügung, das in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden kann.
+      </p>        
+    </section>
+
+    <section>
+      <h2>3. Konfigurieren</h2>
+      <h3>Konfigurationsverzeichnis generieren</h3>
+      <p>
+        Anschließend wird das Konfigurations-Verzeichnis generiert, indem je nach Betriebssystem das folgende Kommando aufgerufen wird. Zu beachten ist, dass der Name des Konfigurationsverzeichnisses den Namen der Webanwendung bekommt:
+      <ul>
+        <li><code>bin/skeleton.sh create configuration directory</code> (Linux)</li>
+        <li><code>bin\skeleton.bat create configuration directory</code> (Windows)</li>
+      </ul>
+        Im Nutzerverzeichnis wird damit ein MyCoRe-Konfigurationsverzeichnis generiert, 
+        das unter Linux <code>~/.mycore/skeleton</code> heißt und bei Windows im Verzeichnis
+      <code>c:\Users\&#60;userName&#62;\AppData\Local\MyCoRe\skeleton\</code> zu finden ist.
+      <h3>Datenbank und Solr konfigurieren</h3>
+        Im Konfigurationsverzeichnis wird nun die Datenbank und Solr konfiguriert.
+      </p>
+    </section>
+
+    <section>
+    <h2>4. Daten laden</h2>
+      <p>      
+        Nun können die Klassifikationen und Nutzer in die DB geladen werden. Dazu das Kommando aufrufen:
+        <ul>
+          <li><code>bin/skeleton.sh process config/setup-commands.txt</code> (Linux)</li>
+          <li><code>bin\skeleton.bat process config/setup-commands.txt</code> (Windows)</li>
+        </ul>
+      </p>
+     </section>
+
+    <section>
+
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+
+  </body>
+</document>
