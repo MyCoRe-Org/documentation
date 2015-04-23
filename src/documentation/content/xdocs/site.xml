@@ -230,6 +230,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     </overview>
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
       <mir                   label="MIR"               href="mir.html" />
+      <skeleton              label="Skeleton"          href="skeleton.html" />
       <cli                   label="Kommandozeile"     href="cli_and_commands/" >
         <cli_overview        label="Übersicht"         href="index.html" />
         <web_cli             label="WebCLI"            href="web_cli.html" />
