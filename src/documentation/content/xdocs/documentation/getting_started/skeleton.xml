@@ -6,7 +6,7 @@
     <title>Skeleton</title>
     <version>2015-04-23</version>
     <authors>
-      <person email="[EMAIL PROTECTED]" name="Wiebke Oeltjen" />
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann, Wiebke Oeltjen" />
     </authors>
   </header>
 
@@ -26,7 +26,7 @@
       <title>Kurzanleitung zum Start mit dem "Skeleton"</title>
 
       <p>
-        TODO: beschreiben, was das hier eigentlich soll
+        Das „Skeleton“ ist quasi ein Gerüst zum Erstellen einer eigenen MyCoRe-Anwendung. Diese minimale Webanwendung kann je nach eigenem Bedarf schrittweise um weitere Komponenten und Funktionen erweitert werden. Eigene Anforderungen an das Layout können ebenso einfach realisiert werden, wie Erweiterungen am Datenmodell oder an Kallifikationen. Auch das Rollenmodell lässt sich erweitern und anpassen. Als Vorlage kann die sehr viel umfangreichere Webanwendung „MIR“ verwendet werden. Im Folgenden wird kurz beschrieben, wie das „Skeleton“ verwendet werden kann. 
       </p>
 
       <h3>Voraussetzungen</h3>
@@ -40,7 +40,7 @@
         <title>1. Quellen herunterladen</title>
         <p>
           Hier kann das aktuelle <a href="https://server.mycore.de/svn/skeleton/trunk/skeleton">Skeleton</a>
-          heruntergeladen werden.
+          heruntergeladen werden: <code>https://server.mycore.de/svn/skeleton/trunk/skeleton</code>.
         </p>
       </section>
 
@@ -48,7 +48,7 @@
         <title>2. Deployen</title>
         <p>
           Vor dem Deployen müssen gegebenenfalls Klassifikationen und Datenmodellspezifikationen ergänzt werden. Anschließend wird das Kommando <code>mvn clean install</code> aufgerufen.
-          Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>zip.gz</code> für die MyCoRe-Kommandozeile zur Verfügung, das in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden kann.
+          Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>zip.gz</code> für die MyCoRe-Kommandozeile zur Verfügung. Das <code>zip</code> bzw. <code>zip.gz</code>kann nun in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden.
         </p>
       </section>
 
@@ -56,7 +56,7 @@
         <title>3. Konfigurieren</title>
         <h3>Konfigurationsverzeichnis generieren</h3>
         <p>
-          Anschließend wird das Konfigurations-Verzeichnis generiert, indem je nach Betriebssystem das folgende Kommando aufgerufen wird. Zu beachten ist, dass der Name des Konfigurationsverzeichnisses den Namen der Webanwendung bekommt:
+          Anschließend wird das Konfigurations-Verzeichnis generiert, indem je nach Betriebssystem das folgende Kommando aufgerufen wird. Es ist darauf zu achten, dass der Name des Konfigurationsverzeichnisses dem Namen der Webanwendung entspricht, in diesem Beispiel also <code>skeleton</code>:
         <ul>
           <li><code>bin/skeleton.sh create configuration directory</code> (Linux)</li>
           <li><code>bin\skeleton.bat create configuration directory</code> (Windows)</li>
