@@ -57,10 +57,10 @@
         <h3>Konfigurationsverzeichnis generieren</h3>
         <p>
           Anschließend wird das Konfigurations-Verzeichnis generiert, indem je nach Betriebssystem das folgende Kommando aufgerufen wird. Es ist darauf zu achten, dass der Name des Konfigurationsverzeichnisses dem Namen der Webanwendung entspricht, in diesem Beispiel also <code>skeleton</code>:
-        <ul>
-          <li><code>bin/skeleton.sh create configuration directory</code> (Linux)</li>
-          <li><code>bin\skeleton.bat create configuration directory</code> (Windows)</li>
-        </ul>
+        <dl>
+          <dt>Linux:</dt><dd> <code>bin/skeleton.sh create configuration directory</code></dd>
+          <dt>Windows:</dt><dd> <code>bin\skeleton.bat create configuration directory</code></dd>
+        </dl>
           Im Nutzerverzeichnis wird damit ein MyCoRe-Konfigurationsverzeichnis generiert,
           das unter Linux <code>~/.mycore/skeleton</code> heißt und bei Windows im Verzeichnis
         <code>c:\Users\&#60;userName&#62;\AppData\Local\MyCoRe\skeleton\</code> zu finden ist.
@@ -74,10 +74,10 @@
         <p>
           Nun können die Klassifikationen und Nutzer in die DB geladen werden. Dazu das Kommando aufrufen:
         </p>
-        <ul>
-          <li><code>bin/skeleton.sh process config/setup-commands.txt</code> (Linux)</li>
-          <li><code>bin\skeleton.bat process config/setup-commands.txt</code> (Windows)</li>
-        </ul>
+        <dl>
+          <dt>Linux:</dt><dd> <code>bin/skeleton.sh process config/setup-commands.txt</code></dd>
+          <dt>Windows:</dt><dd> <code>bin\skeleton.bat process config/setup-commands.txt</code></dd>
+        </dl>
        </section>
      </section>
 
