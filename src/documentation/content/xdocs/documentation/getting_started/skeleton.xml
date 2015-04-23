@@ -43,7 +43,7 @@
       <p>
         Vor dem Deployen müssen gegebenenfalls Klassifikationen und Datenmodellspezifikationen ergänzt werden. Anschließend wird das Kommando <code>mvn clean install</code> aufgerufen.
         Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>zip.gz</code> für die MyCoRe-Kommandozeile zur Verfügung, das in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden kann.
-      </p>        
+      </p>
     </section>
 
     <section>
@@ -55,7 +55,7 @@
         <li><code>bin/skeleton.sh create configuration directory</code> (Linux)</li>
         <li><code>bin\skeleton.bat create configuration directory</code> (Windows)</li>
       </ul>
-        Im Nutzerverzeichnis wird damit ein MyCoRe-Konfigurationsverzeichnis generiert, 
+        Im Nutzerverzeichnis wird damit ein MyCoRe-Konfigurationsverzeichnis generiert,
         das unter Linux <code>~/.mycore/skeleton</code> heißt und bei Windows im Verzeichnis
       <code>c:\Users\&#60;userName&#62;\AppData\Local\MyCoRe\skeleton\</code> zu finden ist.
       <h3>Datenbank und Solr konfigurieren</h3>
@@ -65,7 +65,7 @@
 
     <section>
     <h2>4. Daten laden</h2>
-      <p>      
+      <p>
         Nun können die Klassifikationen und Nutzer in die DB geladen werden. Dazu das Kommando aufrufen:
         <ul>
           <li><code>bin/skeleton.sh process config/setup-commands.txt</code> (Linux)</li>
@@ -73,9 +73,6 @@
         </ul>
       </p>
      </section>
-
-    <section>
-
 
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
    <script type="text/javascript">
