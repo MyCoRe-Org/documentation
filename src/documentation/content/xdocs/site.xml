@@ -278,9 +278,8 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <search                label="Suche"             href="search/">
       <solr                label="Solr-Integration"  href="solr.html" />
-      <query_service       label="QueryService"      href="query_service.html" />
+      <query_language      label="Query-Language"    href="query_language.html" />
       <extract             label="Daten extrahieren" href="extract.html" />
-      <indexbrowsing       label="Index-Blättern"    href="index.html" />
     </search>
     <frontend              label="Weboberfläche"     href="frontend/">
       <integrated_wcms     label="Statische Webinhalte"  href="wcms.html" />
@@ -324,6 +323,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     </interfaces>
     <old_components        label="veraltete Komponenten" href="old_components/">
       <editorframework     label="Editorframework"       href="editor_framework.html" />
+      <query_service       label="QueryService"          href="query_service.html" />
     </old_components>
     <production            label="Laufender Betrieb"     href="production/">
       <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
