@@ -50,6 +50,10 @@
         heruntergeladen und ebenfalls mit dem Context 'solr' in den Servlet Container ausgeliefert werden.
       </p>
       <p>
+        Das dazugehörige <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr-home/4.8.1/solr-home-4.8.1.zip">Solr-Home</a>
+        kann direkt bei Solr geholt werden oder alternativ ebenfalls über den hier bereitgestellten Link.
+      </p>
+      <p>
         <span class="label label-info">Hinweis:</span> Die MyCoRe-Solr-Version beinhaltet eine vorkonfigurierte Sicherheitseinstellung,
         wodurch der Solr-Server nur direkt von localhost bzw. 127.0.0.1 erreicht werden. Diese Einstellungen stehen in der Datei
         <code>context.xml</code>, die unter <code>webapps/solr/META-INF</code> zu finden ist. Sollte diese Sicherheitsmassnahme nicht
