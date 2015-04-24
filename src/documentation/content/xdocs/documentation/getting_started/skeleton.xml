@@ -3,11 +3,15 @@
 
 <document>
   <header>
-    <title>Skeleton</title>
+    <title>Mit dem 'Skeleton' zur eigenen Anwendung</title>
     <version>2015-04-23</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann, Wiebke Oeltjen" />
     </authors>
+    <abstract>
+      Zur Entwicklung einer eigenen MyCoRe-Anwendung stellen wir ein Anwendungsgerüst
+      zur Verfügung, das als Einstieg dienen soll.
+    </abstract>
   </header>
 
   <body>
@@ -23,10 +27,10 @@
    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
 
     <section>
-      <title>Kurzanleitung zum Start mit dem "Skeleton"</title>
+      <title>Installation von "Skeleton"</title>
 
       <p>
-        Das „Skeleton“ ist quasi ein Gerüst zum Erstellen einer eigenen MyCoRe-Anwendung. Diese minimale Webanwendung kann je nach eigenem Bedarf schrittweise um weitere Komponenten und Funktionen erweitert werden. Eigene Anforderungen an das Layout können ebenso einfach realisiert werden, wie Erweiterungen am Datenmodell oder an Kallifikationen. Auch das Rollenmodell lässt sich erweitern und anpassen. Als Vorlage kann die sehr viel umfangreichere Webanwendung „MIR“ verwendet werden. Im Folgenden wird kurz beschrieben, wie das „Skeleton“ verwendet werden kann. 
+        Das „Skeleton“ ist quasi ein Gerüst zum Erstellen einer eigenen MyCoRe-Anwendung. Diese minimale Webanwendung kann je nach eigenem Bedarf schrittweise um weitere Komponenten und Funktionen erweitert werden. Eigene Anforderungen an das Layout können ebenso einfach realisiert werden, wie Erweiterungen am Datenmodell oder an Kallifikationen. Auch das Rollenmodell lässt sich erweitern und anpassen. Als Vorlage kann die sehr viel umfangreichere Webanwendung „MIR“ verwendet werden. Im Folgenden wird kurz beschrieben, wie das „Skeleton“ verwendet werden kann.
       </p>
 
       <h3>Voraussetzungen</h3>
@@ -78,6 +82,39 @@
           <dt>Linux:</dt><dd> <code>bin/skeleton.sh process config/setup-commands.txt</code></dd>
           <dt>Windows:</dt><dd> <code>bin\skeleton.bat process config/setup-commands.txt</code></dd>
         </dl>
+       </section>
+     </section>
+
+     <section>
+       <title>Schritt-für-Schritt zur eigenen Anwendung</title>
+
+       <section>
+         <title>1. Datenmodell erstellen</title>
+         <p>
+           Im ersten Schritt muss das eigene <a href="site:mcrobj_datadef">Datenmodell</a> basierend auf den <a href="site:mcrobj_datatypes">MyCoRe-Datentypen</a>
+           spezifiziert werden.
+         </p>
+       </section>
+
+       <section>
+         <title>2. Erfassungsmasken</title>
+         <p>
+           Um eigene Erfasssungsmasken zu erstellen, muss als erstes das HTML-Formular nach eigenen Anforderungen erstellt werden.
+           Dies kann z.B. mit Bootstrap und unter Verwendung des <a href="http://bootsnipp.com/forms?version=3">FormBuilder für Bootstrap 3</a>
+           realisiert werden.
+         </p>
+         <div style="text-align:center;margin:10px 0;">
+          <img src="images/skeleton/formbuilder.png" alt="Formular erstellen" style="margin:5px;border:1px solid gray;" width="550px" /><br />
+          <span class="klein"><strong>Abbildung:</strong> Schnell zum Bootstrap-Formular mit dem Formbuilder</span>
+         </div>
+         <p>
+           <span class="label label-warning">Achtung:</span> Der Formbuilder setzt <code>name</code>-Attribute für Buttons, Input-Felder, etc.
+           Diese kann der XEditor nicht verarbeiten und produziert Fehler. Diese Attribute also bitte unbedingt entfernen!
+         </p>
+         <p>
+           Nachdem das HTML-Formular fertig ist, muss dies mit den entsprechenden XEditor-Bestandteilen angereichert werden. Alle Details
+           dazu finden sich in der <a href="site:xeditor">XEditor-Dokumentation</a>.
+         </p>
        </section>
      </section>
 
