@@ -248,6 +248,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       </docportal>
     </getting_started>
     <content               label="Grundlagen"          href="basics/">
+      <module_structure      label="Modulstruktur"     href="module_structure.html" />
       <mcrobject             label="MyCoRe-Objekte"    href="mcrobject/">
         <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
         <mcrobj_id           label="MCRObject-ID"      href="mcrobject_id.html" />
