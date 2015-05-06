@@ -5,8 +5,8 @@
   <header>
     <title>Kommandos zum Verwalten der Objekte</title>
     <authors>
-      <person name="Thomas Scheffler" />
-      <person name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Thomas Scheffler" />
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
     <version>2014-11-26</version>
     <abstract>
