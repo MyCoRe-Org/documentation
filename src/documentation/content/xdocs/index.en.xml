@@ -63,17 +63,17 @@
         </newsentry>
         <newsentry>
           <title>Conference</title>
-          <message>The first developer meeting in 2015 took place in January at the University of Jena.</message>
+          <message>After the railway strike, the developers now meet on 12 /. 13 May in Göttingen.</message>
           <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/</url>
-          <date>29. Januar 2015</date>
-          <author>Wiebke Oeltjen</author>
+          <date>11. Mai 2015</date>
+          <author>Kathleen Neumann</author>
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Release 2014.12</title>
-          <message>Mumme - the Release was published to the user workshop 2014 in Braunschweig.</message>
-          <url>site:release</url>
-          <date>12. Januar 2015</date>
+          <title>Release 2015.02</title>
+          <message>In February, the interim release 2015.02 was published.</message>
+          <url>http://mycore.de/generated/mycore-2015.02/project-reports.html</url>
+          <date>11. Mai 2015</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>

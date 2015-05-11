@@ -63,17 +63,17 @@
         </newsentry>
         <newsentry>
           <title>Konferenz</title>
-          <message>Das erste 2015-MyCoRe-Entwicklertreffen fand Ende Januar in Jena statt.</message>
+          <message>Nach dem Bahn-Streik treffen sich die Entwickler nun am 12./13. Mai in Göttingen.</message>
           <url>http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/</url>
-          <date>29. Januar 2015</date>
-          <author>Wiebke Oeltjen</author>
+          <date>11. Mai 2015</date>
+          <author>Kathleen Neumann</author>
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Release 2014.12</title>
-          <message>Mumme - das Release zum Anwenderworkshop 2014 in Braunschweig.</message>
-          <url>site:release</url>
-          <date>12. Januar 2015</date>
+          <title>Release 2015.02</title>
+          <message>Im Februar erschien das Zwischenrelease 2015.02</message>
+          <url>http://mycore.de/generated/mycore-2015.02/project-reports.html</url>
+          <date>11. Mai 2015</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
