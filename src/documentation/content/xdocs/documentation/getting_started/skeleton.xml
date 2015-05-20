@@ -31,7 +31,7 @@
       <title>Installation von "Skeleton"</title>
 
       <p>
-        Das „Skeleton“ ist quasi ein Gerüst zum Erstellen einer eigenen MyCoRe-Anwendung. Diese minimale Webanwendung kann je nach eigenem Bedarf schrittweise um weitere Komponenten und Funktionen erweitert werden. Eigene Anforderungen an das Layout können ebenso einfach realisiert werden, wie Erweiterungen am Datenmodell oder an Kallifikationen. Auch das Rollenmodell lässt sich erweitern und anpassen. Als Vorlage kann die sehr viel umfangreichere Webanwendung „MIR“ verwendet werden. Im Folgenden wird kurz beschrieben, wie das „Skeleton“ verwendet werden kann.
+        Das „Skeleton“ ist quasi ein Gerüst zum Erstellen einer eigenen MyCoRe-Anwendung. Diese minimale Webanwendung kann je nach eigenem Bedarf schrittweise um weitere Komponenten und Funktionen erweitert werden. Eigene Anforderungen an das Layout können ebenso einfach realisiert werden, wie Erweiterungen am Datenmodell oder an Klassifikationen. Auch das Rollenmodell lässt sich erweitern und anpassen. Als Vorlage kann die sehr viel umfangreichere Webanwendung „MIR“ verwendet werden. Im Folgenden wird kurz beschrieben, wie das „Skeleton“ verwendet werden kann.
       </p>
 
       <h3>Voraussetzungen</h3>
