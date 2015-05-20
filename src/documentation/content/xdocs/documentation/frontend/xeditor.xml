@@ -952,7 +952,7 @@ Diese Regeln lassen sich durch eigene Regeln ergänzen oder auch ganz oder teilw
 
 <p>Beispiel (Suchmaske):</p>
 
-<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//condition" relevant-if="string-length(@value) &lt; 0" />]]></pre>
+<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//condition" relevant-if="string-length(@value) &gt; 0" />]]></pre>
 
 <p>entfernt alle <code>&lt;condition /&gt;</code> Elemente, deren @value Attribut leer ist. In einer MyCoRe Suchmaske werden die Suchfelder als <code>&lt;condition /&gt;</code> Elemente dargestellt, mit den Attributen @field für das zu durchsuchende Feld, @operator für den zu verwendenden Suchoperator, und @value für den eingegebenen und zu suchenden Wert, z. B.</p>
 
@@ -962,7 +962,7 @@ Diese Regeln lassen sich durch eigene Regeln ergänzen oder auch ganz oder teilw
 relevant, und sie wird durch die Bereinigungsregel entfernt.</p>
 
 <p>Beispiel (MODS):</p>
-<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//mods:*" relevant-if="(string-length(text()) &lt; 0) or mods:* or (string-length(@xlink:href) &lt; 0)" />
+<pre class="brush: xml"><![CDATA[<xed:cleanup-rule xpath="//mods:*" relevant-if="(string-length(text()) &gt; 0) or mods:* or (string-length(@xlink:href) &gt; 0)" />
 <xed:cleanup-rule xpath="//mods:name" relevant-if="mods:namePart" />]]></pre>
 
 <p>Im MODS Datenmodell werden Personennamen z. B. wie folgt dargestellt:</p>
