@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- based upon DINI-Zertifikat Dokumenten und Publikationsservice 2010,DINI Schriften 3-de [Version 3.1, März 2011] -->
-<!-- See also: http://www.d-nb.de/service/zd/gliederung_dnb.htm -->
+<!-- See also: http://www.dnb.de/DE/Service/DigitaleDienste/DNBBibliografie/gliederungDnb.html -->
 
 <mycoreclass ID="SDNB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Sachgruppen der Deutschen Nationalbibliographie" />
