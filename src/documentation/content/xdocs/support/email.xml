@@ -11,10 +11,10 @@
    <p><strong>Mailing-Liste für Anwender: MyCoRe-User</strong></p>
   <div class="margin">
   In der Mailing-Liste <a href="mailto:mycore-user@lists.sourceforge.net">
-  mycore-user@lists.sourceforge.net</a> werden alle Probleme der Nutzung von MyCoRe und DocPortal 
+  mycore-user@lists.sourceforge.net</a> werden alle Fragen der Nutzung von MyCoRe, DocPortal und MIR
   diskutiert. Über diese Liste werden Anwender auch über neue Releases, wichtige Bugfixes und neue 
   Funktionen benachrichtigt. Diese Liste ist offen. Wenn Sie ein Problem haben oder einen Fehler im 
-  MyCoRe Kern oder in der DocPortal Anwendung entdecken, schicken Sie bitte zunächst eine Email an diese 
+  MyCoRe-Kern, in der DocPortal- oder MIR-Anwendung entdecken, schicken Sie bitte eine Email an diese 
   Liste. Oft ist das Problem in der Community bereits bekannt und wir können Ihnen helfen.
   <ul>
     <li><a href="mailto:mycore-user@lists.sourceforge.net">Email an MyCoRe-User Liste schreiben</a></li>
@@ -25,31 +25,31 @@
   </ul>
   </div>
   <br/>
-  <p><strong>Bug Tracking System</strong></p>
+  <p><strong>Fehler melden</strong></p>
   <div class="margin">
   Wenn das Problem über die MyCoRe-User Liste nicht gelöst werden kann, können Sie auch eine offizielle 
-  Fehlermeldung über unser <a href="https://sourceforge.net/tracker/?group_id=92005&amp;atid=599192"
-  target="_blank" title="MyCoRe Bug Tracking System bei Sourceforge">
-  SourceForge Bug Tracking System</a> eingeben. Die Entwickler erhalten dann automatisch eine 
+  Fehlermeldung über unser <a href="https://mycore.atlassian.net/issues/?filter=10400"
+  target="_blank" title="MyCoRe Jira Issue Tracking System">
+  MyCoRe Jira Issue Tracking System</a> eingeben (dazu ist eine Anmeldung im <a href="https://mycore.atlassian.net/admin/users/sign-up">Atlassian Cloud System</a> notwendig). Die Entwickler erhalten dann automatisch eine 
   Benachrichtigung, und es ist sichergestellt, daß Ihr Problem weiter verfolgt wird.
   </div>
   <br/>
   <p><strong>Mailing-Liste für Entwickler: MyCoRe-Developer</strong></p>
   <div class="margin">
-  Die Mailing-Liste <a href="mailto:mycore-developer@lists.sourceforge.net">
-  mycore-developer@lists.sourceforge.net</a> dient der Absprache und internen Kommunikation zwischen den 
-  MyCoRe Entwicklern. Hier werden Funktionen und Quellcode des MyCoRe Kerns und der DocPortal Anwendung 
-  diskutiert. Diese Liste ist nicht offen.
+  Die Mailing-Liste <a href="mailto:mycore-developer@lists.uni-due.de">
+  mycore-developer@lists.uni-due.de</a> dient der internen Absprache und Kommunikation zwischen den 
+  MyCoRe-Entwicklern. Hier werden Funktionen und Quellcode des MyCoRe Kerns und der DocPortal Anwendung 
+  diskutiert. Diese Liste ist geschlossen.
   <ul>
     <li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=mycore-developer" target="_blank"
     title="Email-Archiv der MyCoRe-Developer-Liste bei Sourceforge">
-    Archiv der Liste MyCoRe-Developer</a></li>
+    Archiv der Liste MyCoRe-Developer (bis 3. Juni 2015)</a></li>
   </ul>
   </div>
   <br/>
-  <p><strong>MyCoRe Wiki</strong></p>
+  <p><strong>MyCoRe-Wiki</strong></p>
   <div class="margin">
-  Unser <a href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" target="_blank" title="Link zum MyCoRe Wiki">MyCoRe Wiki</a> dient ebenfalls der internen 
+  Unser <a href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" target="_blank" title="Link zum MyCoRe Wiki">MyCoRe-Wiki</a> dient ebenfalls der internen 
   Organisation der Entwickler-Community, der Sammlung von Ideen und Architekturvorschlägen, der Pflege 
   von ToDo-Listen etc. Teile des Wikis sind aber offen zugänglich.
   </div>
@@ -67,14 +67,6 @@
   Wiki</a>.
   </div>
   <br/>
-  <hidden>
-  <p><strong>Diese Seite taggen</strong></p>
-  <div class="margin">
-  
-  <img src="images/delicious.png" alt="del.icio.us"/> 
-  <a target="_blank" href="http://del.icio.us/post?url=http://www.mycore.de/&amp;notes=Open-Source-Software+zur+Realisierung+von+Institutionellen+Repositories">del.icio.us</a>
-  </div>
-  </hidden>
  </body>
  
 </document>
