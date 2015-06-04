@@ -360,7 +360,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   <support      label="Organisation"       href="support/" tab="support">
     <community  label="Community"          href="index.html" />
-    <email      label="Mailing-Listen"     href="email.html" />
+    <email      label="Mailinglisten"      href="email.html" />
     <team       label="Team"               href="team.html" />
     <workshops  label="Workshops"          href="workshops/" >
     <!-- <workshop            label="Anwender-Workshop"          href="workshop.html" /> -->
