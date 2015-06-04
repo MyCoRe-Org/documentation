@@ -3,14 +3,14 @@
 
 <document>
 <header>
-<title>Mailing-Listen</title>
+<title>Mailinglisten</title>
 </header>
 
  <body>
    <p><strong>Schreiben Sie uns!</strong></p> 
-   <p><strong>Mailing-Liste für Anwender: MyCoRe-User</strong></p>
+   <p><strong>Mailingliste für Anwender: MyCoRe-User</strong></p>
   <div class="margin">
-  In der Mailing-Liste <a href="mailto:mycore-user@lists.sourceforge.net">
+  In der Mailingliste <a href="mailto:mycore-user@lists.sourceforge.net">
   mycore-user@lists.sourceforge.net</a> werden alle Fragen der Nutzung von MyCoRe, DocPortal und MIR
   diskutiert. Über diese Liste werden Anwender auch über neue Releases, wichtige Bugfixes und neue 
   Funktionen benachrichtigt. Diese Liste ist offen. Wenn Sie ein Problem haben oder einen Fehler im 
@@ -34,16 +34,15 @@
   Benachrichtigung, und es ist sichergestellt, daß Ihr Problem weiter verfolgt wird.
   </div>
   <br/>
-  <p><strong>Mailing-Liste für Entwickler: MyCoRe-Developer</strong></p>
+  <p><strong>Mailingliste für Entwickler: MyCoRe-Developer</strong></p>
   <div class="margin">
-  Die Mailing-Liste <a href="mailto:mycore-developer@lists.uni-due.de">
-  mycore-developer@lists.uni-due.de</a> dient der internen Absprache und Kommunikation zwischen den 
+  Die MyCoRe-Developer-Mailingliste dient der internen Absprache und Kommunikation zwischen den 
   MyCoRe-Entwicklern. Hier werden Funktionen und Quellcode des MyCoRe Kerns und der DocPortal Anwendung 
   diskutiert. Diese Liste ist geschlossen.
   <ul>
     <li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=mycore-developer" target="_blank"
     title="Email-Archiv der MyCoRe-Developer-Liste bei Sourceforge">
-    Archiv der Liste MyCoRe-Developer (bis 3. Juni 2015)</a></li>
+    Archiv der Mailingliste MyCoRe-Developer (bis 3. Juni 2015) bei SourceForge.</a></li>
   </ul>
   </div>
   <br/>
