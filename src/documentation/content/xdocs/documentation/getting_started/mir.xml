@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>MIR</title>
-    <version>2014-11-28</version>
+    <version>2015-06-05</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
@@ -112,13 +112,25 @@
         <a href="http://localhost:8080/mir/">http://localhost:8080/mir/</a>.
       </p>
       <p>
-        Im Wizard muss nun noch bekannt gegeben werden, wo der Solr-Kern für die MIR-Anwendung zu finden ist. Läuft Solr im gleichen ServletContainer wie die MIR-Anwendung
-        und wird die Default-Einstellung verwendet, muss hier nur ggf. der Port angepasst werden (z.B. auf 8080 bei Standard-Tomcat-Installtionen). Als Datenbank kann
-        zu Testzwecken erstmal H2 oder HSQLDB ausgewählt werden.
+        Nach Aufruf dieser URL wird der MIR-Wizard gestartet und fragt nun noch aus Sicherheitsgründen nach einem Token, das sich im Log des Servletcontainers (z.B. Tomcat-Log)
+        befindet. Sucht man im Log nach "Login token", findet man die entsprechende Stelle recht schnell. Das Token - eine UUID - muss dann vollständig kopiert und eingefügt
+        werden, dann kann die Installation beginnen.
       </p>
       <div style="text-align:center;margin:10px 0;">
-        <img src="images/mir_wizard_1.png" alt="MIR-Wizard" style="margin:5px;border:1px solid gray;" width="550px" /><br />
-        <span class="klein"><strong>Abbildung:</strong> MIR-Wizard - Startseite</span>
+        <img src="images/mir/wizard_token.png" alt="Tokenabfrage im MIR-Wizard" style="margin:5px;border:1px solid gray;" width="550px" /><br />
+        <span class="klein"><strong>Abbildung:</strong> MIR-Wizard - Sicherheitsabfrage nach einem Token</span>
+      </div>
+      <p>
+        Auf der danach sichtbaren Konfigurationsseite des Wizards muss nun noch bekannt gegeben werden, wo der Solr-Kern für die MIR-Anwendung zu finden ist. Läuft Solr im
+        gleichen ServletContainer wie die MIR-Anwendung und wird die Default-Einstellung verwendet, muss hier nur ggf. der Port angepasst werden (z.B. auf 8080 bei
+        Standard-Tomcat-Installtionen). Die SMTP-Konfiguration ist optional, wird diese leer gelassen, kann die Anwendung keine Mails versenden. Mit funktionierender
+        SMTP-Konfiguration versendet die Anwendung Mails bei der Selbstregistrierung um die Mail-Adresse zu validieren und auch im Rahmen des Publikationsworkflows. Diese
+        Konfiguration kann auch nachträglich erfolgen. Als Datenbank kann zu Testzwecken ersteinmal H2 oder HSQLDB ausgewählt werden. Für den produktiven Betrieb empfehlen wir
+        jedoch keine imRAM-Datenbank zu nutzen.
+      </p>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/mir/wizard_configuration.png" alt="Konfigurationsseite des MIR-Wizards" style="margin:5px;border:1px solid gray;" width="550px" /><br />
+        <span class="klein"><strong>Abbildung:</strong> MIR-Wizard - Konfiguration der MIR-Anwendung</span>
       </div>
       <p>
         Anschliessend auf "Speichern" drücken. Nun werden Konfigurationsdateien erzeugt, Datenbanktreiber heruntergeladen, ein Solr-Home mit einem Solr-Kern für die MIR-Anwendung
@@ -171,15 +183,17 @@
                   "v" : version
                 }, function(data, textStatus, jqXHR) {
                   var results = data.results;
+                  var uris = [];
                   for (var i = results.length - 1; i >= 0; i--) {
                     var e = results[i];
                     if (e.uri.endsWith(suffix)) {
-                      $.getJSON(e.uri, function(data, textStatus, jqXHR) {
-                        element.attr('href', data.downloadUri);
-                      });
-                      break;
+                      uris.push(e.uri);
                     }
                   }
+                  uris.sort().reverse();
+                  $.getJSON(uris[0], function(data, textStatus, jqXHR) {
+                    element.attr('href', data.downloadUri);
+                  });
                 });
               });
               return this;
