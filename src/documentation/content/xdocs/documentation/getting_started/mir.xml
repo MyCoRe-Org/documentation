@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>MIR</title>
-    <version>2015-06-05</version>
+    <version>2015-06-08</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
@@ -112,16 +112,20 @@
         <a href="http://localhost:8080/mir/">http://localhost:8080/mir/</a>.
       </p>
       <p>
-        Nach Aufruf dieser URL wird der MIR-Wizard gestartet und fragt nun noch aus Sicherheitsgründen nach einem Token, das sich im Log des Servletcontainers (z.B. Tomcat-Log)
-        befindet. Sucht man im Log nach "Login token", findet man die entsprechende Stelle recht schnell. Das Token - eine UUID - muss dann vollständig kopiert und eingefügt
-        werden, dann kann die Installation beginnen.
+        Nach Aufruf dieser URL wird der MIR-Wizard gestartet, der wie Abb. 1 zeigt, ein Sicherheits-Token abfragt, das sich im Log des Servletcontainers
+        (z.B. Tomcat-Log, siehe Abb. 2) befindet. Sucht man im Log nach "Login token", findet man die entsprechende Stelle recht schnell. Das Token -
+        eine UUID - muss dann vollständig kopiert und eingefügt werden. Danach kann die Installation beginnen.
       </p>
       <div style="text-align:center;margin:10px 0;">
         <img src="images/mir/wizard_token.png" alt="Tokenabfrage im MIR-Wizard" style="margin:5px;border:1px solid gray;" width="550px" /><br />
-        <span class="klein"><strong>Abbildung:</strong> MIR-Wizard - Sicherheitsabfrage nach einem Token</span>
+        <span class="klein"><strong>Abbildung 1:</strong> MIR-Wizard - Sicherheitsabfrage nach einem Token</span>
+      </div>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/mir/wizard_install_log.png" alt="Token-Logausgabe auf der Shell" style="margin:5px;border:1px solid gray;" width="550px" /><br />
+        <span class="klein"><strong>Abbildung 2:</strong> MIR-Wizard - Token-Logausgabe auf der Shell</span>
       </div>
       <p>
-        Auf der danach sichtbaren Konfigurationsseite des Wizards muss nun noch bekannt gegeben werden, wo der Solr-Kern für die MIR-Anwendung zu finden ist. Läuft Solr im
+        Auf der folgenden Konfigurationsseite des Wizards (Abb. 3) muss nun bekannt gegeben werden, wo der Solr-Kern für die MIR-Anwendung zu finden ist. Läuft Solr im
         gleichen ServletContainer wie die MIR-Anwendung und wird die Default-Einstellung verwendet, muss hier nur ggf. der Port angepasst werden (z.B. auf 8080 bei
         Standard-Tomcat-Installtionen). Die SMTP-Konfiguration ist optional, wird diese leer gelassen, kann die Anwendung keine Mails versenden. Mit funktionierender
         SMTP-Konfiguration versendet die Anwendung Mails bei der Selbstregistrierung um die Mail-Adresse zu validieren und auch im Rahmen des Publikationsworkflows. Diese
@@ -130,11 +134,11 @@
       </p>
       <div style="text-align:center;margin:10px 0;">
         <img src="images/mir/wizard_configuration.png" alt="Konfigurationsseite des MIR-Wizards" style="margin:5px;border:1px solid gray;" width="550px" /><br />
-        <span class="klein"><strong>Abbildung:</strong> MIR-Wizard - Konfiguration der MIR-Anwendung</span>
+        <span class="klein"><strong>Abbildung 3:</strong> MIR-Wizard - Konfiguration der MIR-Anwendung</span>
       </div>
       <p>
         Anschliessend auf "Speichern" drücken. Nun werden Konfigurationsdateien erzeugt, Datenbanktreiber heruntergeladen, ein Solr-Home mit einem Solr-Kern für die MIR-Anwendung
-        angelegt und Klassifikationen, Nutzer und Rechtedaten geladen. Sind alle Schritte auf der nachfolgenden Seite erfolgreich abgeschlossen worden, muss nun nur noch der
+        angelegt und Klassifikationen, Nutzer und Rechtedaten geladen. Sind alle Schritte auf der nachfolgenden Seite erfolgreich abgeschlossen worden, muss als nächstes der
         ServletContainer einmal neu gestartet werden. Dazu kann man direkt den Knopf "Server Herunterfahren" am Ende der Seite verwenden. Wer nicht den gesamten ServletContainer
         neustarten möchte, kann auch nur die MIR-Anwendung neustarten. Erst mit diesem Neustart werden die neuen Konfigurationen gefunden und eingelesen. Dann steht unter
         <a href="http://localhost:8080/mir/">http://localhost:8080/mir/</a> die Anwendung zur Verfügung und man kann sich mit dem Standardnutzer: "administrator" und dem Standardpasswort:
@@ -210,7 +214,7 @@
       <h2>Aufbau des Konfigurationsverzeichnisses</h2>
       <div style="text-align:center;margin:10px 0;">
         <img src="images/mir_configuration.png" alt="MIR-Konfigurationsverzeichnis" style="margin:5px;border:1px solid gray;" width="550px" /><br />
-        <span class="klein"><strong>Abbildung:</strong> MIR-Konfigurationsverzeichnis</span>
+        <span class="klein"><strong>Abbildung 4:</strong> MIR-Konfigurationsverzeichnis</span>
       </div>
       <h2>Properties</h2>
       <dl>
@@ -234,7 +238,7 @@
       </p>
       <div style="text-align:center;margin:10px 0;">
         <img src="images/mir_content.png" alt="MIR-Webseitenverzeichnis" style="margin:5px;border:1px solid gray;" width="550px" /><br />
-        <span class="klein"><strong>Abbildung:</strong> MIR-Webseitenverzeichnis</span>
+        <span class="klein"><strong>Abbildung 5:</strong> MIR-Webseitenverzeichnis</span>
       </div>
       <p>
         Als Vorlage können dafür die Dateien in den MIR-Komponenten verwendet werden. Dateien, die an der gleichen Stelle liegen (unterhalb von <code>webpages</code>
