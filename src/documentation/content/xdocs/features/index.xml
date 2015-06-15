@@ -22,7 +22,7 @@
         und Anwendungsgerüst für eigene MyCoRe-basierte Anwendungen verwendet werden kann.
       </p>
       <div style="text-align:center;margin:10px 0;">
-        <img src="images/mycore_architecture.png" alt="MyCoRe-Achitektur" style="margin:5px;border:1px solid gray;padding:10px 40px;" width="550px" /><br />
+        <img src="images/mycore_architecture.png" alt="MyCoRe-Achitektur" style="margin:5px 0px;border:1px solid gray;padding:10px 30px;" width="590px" /><br />
         <span class="klein"><strong>Abbildung 1:</strong> MyCoRe-Achitektur</span>
       </div>
       <p>
