@@ -22,7 +22,17 @@
     Technische Universität Ilmenau, Universitätsbibliothek <br/>
     rene.adler (at) tu-ilmenau.de, Tel. 03677 / 69 4626</p>
   <ul>
+    <li>Anwendungsentwicklung</li>
     <li>MIR-Wizard</li>
+    <li>USER2</li>
+  </ul>
+  <br/>
+  <p><strong>Michel Büchner</strong><br/>
+    Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br/>
+    michel.buechner (at) uni-jena.de, Tel. 03641 / 94 0027
+  </p>
+  <ul>
+    <li>Content-Manager (COMA-Komponente)</li>
   </ul>
   <br/>
   <p><strong>Matthias Eichner</strong><br/>
@@ -40,7 +50,6 @@
     freitag (at) rz.uni-leipzig.de, Tel. 0341 / 97 30841
   </p>
   <ul>
-    <li>Zoomify Einbindung</li>
     <li>Anwendungsentwicklung in Leipzig</li>
   </ul>
   <br/>
@@ -51,8 +60,19 @@
   <ul>
     <li>OAI</li>
     <li>Importtools für MyCoRe/Docportal (SRU, Opac und Pica+)</li>
-    <li>METS/MODS Komponente</li>
+    <li>MODS Komponente</li>
+    <li>Persistent Identifier (urn:nbn:de Unterstützung)</li>
     <li>Anwendungsentwicklung in Jena</li>
+  </ul>
+  <br/>
+  <p><strong>Sebastian Hofmann</strong><br/>
+    Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek<br/>
+    hofmann.s (at) uni-jena.de, Tel. 03641 / 94 0027
+  </p>
+  <ul>
+    <li>MyCoRe-Viewer</li>
+    <li>IView-Komponente</li>
+    <li>TEI</li>
   </ul>
   <br/>
   <p><strong>Jens Kupferschmidt</strong><br/>
@@ -60,12 +80,11 @@
     kupferschmidt (at) rz.uni-leipzig.de, Tel. 0341 / 97 33348
   </p>
   <ul>
-    <li>User system</li>
     <li>Commandline tools</li>
     <li>Simple Workflow</li>
     <li>Umsetzung Mehrsprachigkeit</li>
-    <li>Distribution</li>
     <li>Anwendungsentwicklung in Leipzig</li>
+    <li>Dokumentation</li>
   </ul>
   <br/>
   <p><strong>Frank Lützenkirchen</strong><br/>
@@ -73,13 +92,9 @@
     luetzenkirchen (at) ub.uni-duisburg-essen.de, Tel. 0201 / 183 2124
   </p>
   <ul>
-    <li>
-      <strong>Leitung des MyCoRe Architekturboards</strong></li>
-    <li>Query Framework (Suchfunktionen)</li>
     <li>Internes Dateisystem (IFS, IFS2) und Datei-Upload</li>
     <li>Editor Framework (Erstellung von Suchmasken und Eingabeformularen)</li>
     <li>Integration von Video-Streaming-Servern</li>
-    <li>Persistent Identifier (urn:nbn:de Unterstützung)</li>
     <li>Anwendungsentwicklung „DuEPublico“ (Dokumenten- und  Publikationsserver)</li>
   </ul>
   <br/>
@@ -87,6 +102,8 @@
     Verbundzentrale des GBV (VZG) <br/>
     Kathleen.Neumann (at) gbv.de</p>
   <ul>
+    <li>MIR</li>
+    <li>MODS</li>
     <li>Anwendungsentwicklung</li>
     <li>Dokumentation</li>
   </ul>
@@ -105,12 +122,11 @@
     thomas.scheffler (at) uni-jena.de, Tel. 03641 / 94 0027
   </p>
   <ul>
+    <li><strong>Leitung des MyCoRe Architekturboards</strong></li>
     <li>Anwendungsentwicklung der Jenaer Archive und Handschriftensammlungen „Collections@UrMEL“</li>
-    <li>Filter zur Textextraktion (Volltextsuche in PDF, Word, OpenOffice etc.)</li>
+    <li>MIR</li>
     <li>Mehrsprachigkeit (I18N)</li>
-    <!-- <li>IBM Content Manager Backend-Anbindung</li> -->
-    <li>Klassifikationsbrowser und Klassifikationseditor</li>
-    <li>Webinterface für Benutzerverwaltung</li>
+    <li>MCR-Konfiguration</li>
     <li>XSL</li>
     <li>URI-Resolver</li>
   </ul>
@@ -122,16 +138,7 @@
   <ul>
     <li>Anwendungsentwicklung „JSPDocPortal“</li>
     <li>OAI-PHM 2.0 Data Provider</li>
-  </ul>
-  <br/>
-  <p><strong>Nils Verheyen</strong><br/>
-    Universität Duisburg-Essen, Universitätsbibliothek   <br/>
-    nils.verheyen (at) uni-due.de, Tel. 0201 / 183 2134
-  </p>
-  <ul>
-    <li>SWORD-Schnittstelle</li>
-    <li>Statistiken</li>
-    <li>Anwendungsentwicklung „DuEPublico“ (Dokumenten- und Publikationsserver)</li>
+    <li>REST-Schnittstelle</li>
   </ul>
   <br/>
   <p><strong>Huu Chi Vu</strong><br/>
@@ -165,6 +172,8 @@
     <li>Anja Schaar (Universität Rostock, Universitätsbibliothek)</li>
     <li>Andreas Trappe (Friedrich-Schiller-Universität Jena, ThULB)<br/>
         Image Viewer Modul (Bildbetrachter), WCMS Modul, Anwendungsentwicklung</li>
+    <li>Nils Verheyen (Universität Duisburg-Essen, Universitätsbibliothek)<br/>
+        SWORD-Schnittstelle, Statistiken, Anwendungsentwicklung „DuEPublico“ </li>
   </ul>
 
 </body>
