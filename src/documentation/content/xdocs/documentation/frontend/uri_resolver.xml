@@ -133,6 +133,19 @@ mcrobject:DocPortal_document_07910401]]></source>
       </section>
 
       <section>
+        <title>deletedMcrObject:[MCRObjectID]</title>
+        <p>löscht ein MCRObject mit der angegebenen MCRObjectID.</p>
+        <p class="break">
+          <source><![CDATA[
+deletedMcrObject:{mcrobjectid}]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+deletedMcrObject:DocPortal_document_07910401]]></source>
+        </p>
+      </section>
+
+      <section>
         <title>classification:[ClassificationQuery]</title>
         <p>gibt eine Klassifikation in unterschiedlichen Formaten aus.
         </p>
@@ -351,6 +364,21 @@ file:DocPortal_derivate_00000001/folder1/image2.jpg]]></source>
       </section>
 
       <section>
+        <title>fileMeta:[Path]</title>
+        <p>
+          liefert ???.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+fileMeta:???]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+fileMeta:???]]></source>
+        </p>
+      </section>
+
+      <section>
         <title>language:[Code]</title>
         <p>
           kann verwendet werden, um zwischen verschiedenen Codes für die gleiche Sprache zu konvertieren. Das
@@ -368,6 +396,21 @@ language:de
 erzeugt folgenden XML-Output:
 
 <language xmlCode="de" biblCode="ger" termCode="deu" />]]></source>
+        </p>
+      </section>
+
+      <section>
+        <title>basket:[BasketAddr]</title>
+        <p>
+          liefert Einträge aus dem Basket.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+basket:{typeID}:{entryID}]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+???]]></source>
         </p>
       </section>
 
@@ -391,6 +434,66 @@ erzeugt folgenden XML-Output:
  <version user="editor" date="2015-06-19" r="12345" action="update"/>
  ...
 </versions>]]></source>
+        </p>
+      </section>
+
+      <section>
+        <title>xslInclude:[IncludeParms]</title>
+        <p>
+          erzeugt eine XML-Include-Liste, welche im Property <code>MCR.URIResolver.xslIncludes.{include_name}</code> definiert sind.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+MCR.URIResolver.xslInclude.{include_name}={xsl_file1},{xsl_file2}...
+          
+xslImport:{import_name}:{xsl_file...}]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+MCR.URIResolver.xslIncludes.components=iview.xsl,wcms.xsl
+
+xslInclude:components
+
+erzeugt folgenden XML-Output:
+
+<xsl:stylesheet version="1.0">
+ <xsl:include href="iview.xsl"/>
+ <xsl:include href="wcms.xsl"/>
+</xsl:stylesheet>]]></source>
+        </p>
+      </section>
+
+      <section>
+        <title>xslImport:[ImportParms]</title>
+        <p>
+          gestattet den Import einer Liste vom Stylesheets, welche im Property <code>MCR.URIResolver.xslImports.{import_name}</code> definiert sind.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+MCR.URIResolver.xslImports.{import_name}={xsl_file1},{xsl_file2}...
+          
+xslImport:{import_name}:{xsl_file...}]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+MCR.URIResolver.xslImports.components=first.xsl,second.xsl
+
+<xsl:import href="xslImport:components:first.xsl"/>]]></source>
+        </p>
+      </section>
+
+      <section>
+        <title>redirect:[RedirectAlias]</title>
+        <p>
+          liest das Alias-Property und leitet die Daten an die URL weiter, welche im Property <code>MCR.URIResolver.redirect.{alias}</code> definiert ist.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+MCR.URIResolver.redirect.{alias}={href}]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+MCR.URIResolver.redirect.alias=webapp:path/to/alias.xml]]></source>
         </p>
       </section>
 
@@ -442,7 +545,20 @@ xslStyle:document2mods:DocPortal_document_07910401]]></source>
         </p>
       </section>
 
-      <p style="color:red;">Dieser Text ist noch in Arbeit!</p>
+      <section>
+        <title>xslTransform:[TransformParms]</title>
+        <p>
+          dieses Vorschaltelement transformiert eines anderen Resolvers mit dem Stylesheet.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+xslTransform:{stylesheet}[?param1=value1[&param2=value2]...]:{anyMyCoReURI}]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+???]]></source>
+        </p>
+      </section>
 
     </section>
 
@@ -494,9 +610,8 @@ xslStyle:document2mods:DocPortal_document_07910401]]></source>
         in MyCoRe integrierten hinzufügen. Eingebunden wird ein zusätzlicher
         <code>MCRResolverProvider</code>
         mittels
-        folgendem Property:
+        folgendem Property <code>MCR.UriResolver.externalResolver.class = {voller Klassenname}</code>
       </p>
-      <p class="kasten">MCR.UriResolver.externalResolver.class = &lt;voller Klassenname&gt;</p>
     </section>
   </body>
 </document>
