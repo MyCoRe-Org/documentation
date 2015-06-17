@@ -292,6 +292,50 @@ ifs:DocPortal_derivate_00000001]]></source>
       </section>
 
       <section>
+        <title>localclass:[Class]</title>
+        <p>
+          läd eine Java-Klasse und leitet den Aufruf daran weiter. Ist die Klasse einen Instanz des URI-Resolvers wird
+          die
+          <code>resolve</code>
+          -Methode aufgerufen. Andernfalls wird ein JDOM-Source zurückgegeben.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+localclass:{class}?{param}]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+localclass:org.mycore.ClassName?mode=getAll]]></source>
+        </p>
+      </section>
+
+      <section>
+        <title>buildxml:[Strings]</title>
+        <p>
+          generiert aus dem String ein JDOM-Objekt.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+buildxml:_rootName_={root_element_name}&{xpath_entry}[&{xpath_entry}][...]]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+buildxml:_rootName_=mycoreobject&metadata/parents/parent/@href= 'FooBar_Document_4711'
+
+erzeugt:
+
+<mycoreobject>
+ <metadata>
+  <parents>
+   <parent href="FooBar_Document_4711" />
+  </parents>
+ </metadata>
+</mycoreobject>
+]]></source>
+        </p>
+      </section>
+
+      <section>
         <title>mcrfile:[Path]</title>
         <p>
           liefert eine konkrete Datei aus einem MCRDerivate, welche über den Pfad adressiert ist.
@@ -324,6 +368,29 @@ language:de
 erzeugt folgenden XML-Output:
 
 <language xmlCode="de" biblCode="ger" termCode="deu" />]]></source>
+        </p>
+      </section>
+
+      <section>
+        <title>versioninfo:[MCRObjectID]</title>
+        <p>
+          liefert Versionsinformationen über ein MyCoRe-Objekt im XML-Format. Ist die Versionierung abgeschaltet, wird
+          nur eine Versionszeile mit den Datum der letzten Änderung ausgegeeben.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+versioninfo:{MCRObjectID}]]></source>
+        </p>
+        <p class="break">
+          <source><![CDATA[
+versioninfo:MyCore_document_00000001
+
+erzeugt folgenden XML-Output:
+
+<versions>
+ <version user="editor" date="2015-06-19" r="12345" action="update"/>
+ ...
+</versions>]]></source>
         </p>
       </section>
 
@@ -374,7 +441,7 @@ xslStyle:{stylesheet}:{uri}]]></source>
 xslStyle:document2mods:DocPortal_document_07910401]]></source>
         </p>
       </section>
-      
+
       <p style="color:red;">Dieser Text ist noch in Arbeit!</p>
 
     </section>
@@ -388,8 +455,10 @@ xslStyle:document2mods:DocPortal_document_07910401]]></source>
         <code>DEBUG</code>
         steht, Debug-Informationen als
         Kommentar im Quelltext, welche URIs während der Erstellung aufgerufen
-        worden sind. In der richtigen Reihenfolge und ggf. auch mit Referrer.
-        Da er standardmäßig mit eingebunden ist, muss man bis auf besagten
+        worden sind.
+        In der richtigen Reihenfolge und ggf. auch mit Referrer.
+        Da er standardmäßig mit eingebunden ist, muss man bis
+        auf besagten
         Log-Level nichts konfigurieren.
       </p>
     </section>
