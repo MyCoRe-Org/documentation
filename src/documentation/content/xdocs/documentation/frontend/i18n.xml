@@ -62,7 +62,7 @@
           </td>
         </tr>
       </table>
-      <p>Für das Erstellen der i18n-Dateien in Eclipse empfielt sich das RessourceBundel-Plugin. Hier können die
+      <p>Für das Erstellen der i18n-Dateien in Eclipse empfielt sich das <strong>RessourceBundle</strong>-Plugin. Hier können die
         Schriftzeichen nativ eingetragen werden. Das Plugin wandelt diese sebstständig in ein entsprechendes Encoding
         um. Da das i18n-Konzept dem der properties entspricht, ist die notation auch entsprechend. Bei der Wahl der
         i18n-Bezeichner sollte dabei die Applikationsstruktur erkennbar sein.
