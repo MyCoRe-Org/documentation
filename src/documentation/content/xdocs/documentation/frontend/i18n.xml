@@ -72,7 +72,7 @@
 mycore.component.basis.part.subpart = Mein Text]]></source>
         </p>
       
-      <p>in folgenden Bereichen von MyCoRe kann i18n eingesetzt werden:</p>
+      <p>in folgenden Bereichen von MyCoRe kann ein i18n-Property eingesetzt werden:</p>
       <table class="table">
         <tr>
           <th>Komponente</th>
@@ -94,6 +94,28 @@ mycore.component.basis.part.subpart = Mein Text]]></source>
           <td>&#160;</td>
           <td>
             <em>section</em>
+            -Tag
+          </td>
+          <td>
+            als Attribute
+            <code>i18n</code>
+          </td>
+        </tr>
+        <tr>
+          <td>&#160;</td>
+          <td>
+            <em>i18n</em>
+            -Tag
+          </td>
+          <td>
+            als Attribute
+            <code>key</code>
+          </td>
+        </tr>
+        <tr>
+          <td>XEditor</td>
+          <td>
+            <em>xed:output</em>
             -Tag
           </td>
           <td>

@@ -45,6 +45,7 @@
             </section>
             <section xml:lang="all" i18n="page.contact.title">
               <div ...>
+                <h1><i18n key="mycore.component.title"></h1>
                 [...]
               </div>
             </section>
