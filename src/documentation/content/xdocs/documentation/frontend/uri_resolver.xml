@@ -402,15 +402,33 @@ erzeugt folgenden XML-Output:
       <section>
         <title>basket:[BasketAddr]</title>
         <p>
-          liefert Einträge aus dem Basket.
+          liefert Einträge aus der Korbfunktion einer Session einer MyCoRe-Anwendung. Der Resolver wird z. B. für den
+          Input des Korb-Editors genutzt.
         </p>
         <p class="break">
           <source><![CDATA[
 basket:{typeID}:{entryID}]]></source>
         </p>
+        <ul>
+          <li>
+            Die
+            <code>typeID</code>
+            beschreibt den Typ des Korbes. In der Session können mehrere Körbe mit verschiedenen
+            <code>typeID</code>
+            existieren. Bisher ist nur die
+            <em>objects</em>
+            in Gebrauch.
+          </li>
+          <li>
+            Die
+            <code>entryID</code>
+            ist eine passende ID, im Normalfall ist es die
+            <strong>MCRObjectID</strong>
+          </li>
+        </ul>
         <p class="break">
           <source><![CDATA[
-???]]></source>
+basket:objects:MyCoRe_basket_00000001]]></source>
         </p>
       </section>
 
@@ -440,7 +458,9 @@ erzeugt folgenden XML-Output:
       <section>
         <title>xslInclude:[IncludeParms]</title>
         <p>
-          erzeugt eine XML-Include-Liste, welche im Property <code>MCR.URIResolver.xslIncludes.{include_name}</code> definiert sind.
+          erzeugt eine XML-Include-Liste, welche im Property
+          <code>MCR.URIResolver.xslIncludes.{include_name}</code>
+          definiert sind.
         </p>
         <p class="break">
           <source><![CDATA[
@@ -466,7 +486,9 @@ erzeugt folgenden XML-Output:
       <section>
         <title>xslImport:[ImportParms]</title>
         <p>
-          gestattet den Import einer Liste vom Stylesheets, welche im Property <code>MCR.URIResolver.xslImports.{import_name}</code> definiert sind.
+          gestattet den Import einer Liste vom Stylesheets, welche im Property
+          <code>MCR.URIResolver.xslImports.{import_name}</code>
+          definiert sind.
         </p>
         <p class="break">
           <source><![CDATA[
@@ -485,7 +507,9 @@ MCR.URIResolver.xslImports.components=first.xsl,second.xsl
       <section>
         <title>redirect:[RedirectAlias]</title>
         <p>
-          liest das Alias-Property und leitet die Daten an die URL weiter, welche im Property <code>MCR.URIResolver.redirect.{alias}</code> definiert ist.
+          liest das Alias-Property und leitet die Daten an die URL weiter, welche im Property
+          <code>MCR.URIResolver.redirect.{alias}</code>
+          definiert ist.
         </p>
         <p class="break">
           <source><![CDATA[
@@ -610,7 +634,8 @@ xslTransform:{stylesheet}[?param1=value1[&param2=value2]...]:{anyMyCoReURI}]]></
         in MyCoRe integrierten hinzufügen. Eingebunden wird ein zusätzlicher
         <code>MCRResolverProvider</code>
         mittels
-        folgendem Property <code>MCR.UriResolver.externalResolver.class = {voller Klassenname}</code>
+        folgendem Property
+        <code>MCR.UriResolver.externalResolver.class = {voller Klassenname}</code>
       </p>
     </section>
   </body>
