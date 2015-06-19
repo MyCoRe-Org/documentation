@@ -35,49 +35,49 @@
         <label xml:lang="x-hosts" text="journal newspaper collection festschrift proceedings standalone" />
       </category>
     </category>
-    <category ID="monograph">
-      <label xml:lang="de" text="Monographie" />
-      <label xml:lang="en" text="Monograph" />
+    <category ID="thesis">
       <label xml:lang="x-hosts" text="series standalone" />
-      <category ID="book">
-        <label xml:lang="de" text="Buch" />
-        <label xml:lang="en" text="Book" />
+      <label xml:lang="en" text="Thesis" />
+      <label xml:lang="de" text="Hochschulschriften" />
+      <category ID="exam">
         <label xml:lang="x-hosts" text="series standalone" />
+        <label xml:lang="en" text="Exam" />
+        <label xml:lang="de" text="Examensarbeit" />
       </category>
       <category ID="dissertation">
+        <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="de" text="Dissertation" />
         <label xml:lang="en" text="Dissertation" />
-        <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="habilitation">
+        <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="de" text="Habilitation" />
         <label xml:lang="en" text="Habilitation" />
-        <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="diploma_thesis">
-        <label xml:lang="en" text="Diploma thesis" />
-        <label xml:lang="de" text="Diplomarbeit" />
         <label xml:lang="x-hosts" text="series standalone" />
+        <label xml:lang="de" text="Diplomarbeit" />
+        <label xml:lang="en" text="Diploma thesis" />
       </category>
       <category ID="master_thesis">
-        <label xml:lang="en" text="Master thesis" />
-        <label xml:lang="de" text="Abschlussarbeit (Master)" />
         <label xml:lang="x-hosts" text="series standalone" />
+        <label xml:lang="de" text="Abschlussarbeit (Master)" />
+        <label xml:lang="en" text="Master thesis" />
       </category>
       <category ID="bachelor_thesis">
+        <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="en" text="Bachelor thesis" />
         <label xml:lang="de" text="Abschlussarbeit (Bachelor)" />
-        <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="student_resarch_project">
+        <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="en" text="Student research project" />
         <label xml:lang="de" text="Studienarbeit" />
-        <label xml:lang="x-hosts" text="series standalone" />
       </category>
       <category ID="magister_thesis">
-        <label xml:lang="en" text="Magister thesis" />
-        <label xml:lang="de" text="Magisterarbeit" />
         <label xml:lang="x-hosts" text="series standalone" />
+        <label xml:lang="de" text="Magisterarbeit" />
+        <label xml:lang="en" text="Magister thesis" />
       </category>
     </category>
     <category ID="collection">
@@ -125,6 +125,26 @@
         <label xml:lang="x-hosts" text="standalone" />
       </category>
     </category>
+    <category ID="teaching_material">
+      <label xml:lang="x-hosts" text="standalone" />
+      <label xml:lang="de" text="Lehrmaterial" />
+      <label xml:lang="en" text="Teaching Resource" />
+      <category ID="lecture_resource">
+        <label xml:lang="x-hosts" text="standalone" />
+        <label xml:lang="de" text="Vorlesungsmaterial" />
+        <label xml:lang="en" text="Lecture Resource" />
+      </category>
+      <category ID="course_resources">
+        <label xml:lang="x-hosts" text="standalone" />
+        <label xml:lang="en" text="Course Resources" />
+        <label xml:lang="de" text="Kurs- und Seminarmaterial" />
+      </category>
+    </category>
+    <category ID="book">
+      <label xml:lang="de" text="Buch" />
+      <label xml:lang="en" text="Book" />
+      <label xml:lang="x-hosts" text="series standalone" />
+    </category>
     <category ID="journal">
       <label xml:lang="en" text="Journal" />
       <label xml:lang="de" text="Zeitschrift" />
@@ -144,6 +164,11 @@
       <label xml:lang="en" text="Interview" />
       <label xml:lang="de" text="Interview" />
       <label xml:lang="x-hosts" text="journal newspaper standalone" />
+    </category>
+    <category ID="research_data">
+      <label xml:lang="x-host" text="standalone" />
+      <label xml:lang="de" text="Forschungsdaten" />
+      <label xml:lang="en" text="Research Data" />
     </category>
     <category ID="patent">
       <label xml:lang="en" text="Patent" />
