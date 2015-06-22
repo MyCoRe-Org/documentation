@@ -12,12 +12,12 @@
       <category ID="chapter">
         <label xml:lang="en" text="Book chapter" />
         <label xml:lang="de" text="Buchkapitel" />
-        <label xml:lang="x-hosts" text="monograph book collection" />   <!-- Wollen wir das weiterhin explizit aufführen, oder soll das im "Aufsatz/Artikel" aufgehen? -->
+        <label xml:lang="x-hosts" text="book collection" />
       </category>
       <category ID="entry">
         <label xml:lang="en" text="Encyclopedia entry" />
         <label xml:lang="de" text="Lexikoneintrag" />
-        <label xml:lang="x-hosts" text="lexicon" />   <!-- Ausgabe: Lexikoneintrag -->
+        <label xml:lang="x-hosts" text="lexicon" />
       </category>
       <category ID="preface">
         <label xml:lang="en" text="Preface (foreword) / Postface" />
