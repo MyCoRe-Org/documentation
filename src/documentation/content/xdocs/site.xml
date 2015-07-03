@@ -228,6 +228,8 @@ See http://forrest.apache.org/docs/linking.html for more info
         </version_2_0>
       </doc_archive>
     </overview>
+    
+    <!-- Mit MyCoRe starten -->
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
       <mir                   label="MIR"               href="mir.html" />
       <skeleton              label="Skeleton"          href="skeleton.html" />
@@ -247,6 +249,8 @@ See http://forrest.apache.org/docs/linking.html for more info
         <installation_dp          label="Installation &amp; Aufbau" href="installation.html" />
       </docportal>
     </getting_started>
+    
+    <!-- Grundlagen -->
     <content               label="Grundlagen"          href="basics/">
       <module_structure      label="Modulstruktur"     href="module_structure.html" />
       <mcrobject             label="MyCoRe-Objekte"    href="mcrobject/">
@@ -277,14 +281,23 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcrobj_linktables     label="Linktabellen"      href="mcrobject/linktables.html" />
     </content>
 
+    <!-- Suche -->
     <search                label="Suche"             href="search/">
       <solr                label="Solr-Integration"  href="solr.html" />
       <query_language      label="Query-Language"    href="query_language.html" />
       <extract             label="Daten extrahieren" href="extract.html" />
     </search>
+    
+    <!-- Weboberfläche -->
     <frontend              label="Weboberfläche"     href="frontend/">
-      <integrated_wcms     label="Statische Webinhalte"  href="wcms.html" />
-      <multilang           label="Mehrsprachigkeit"      href="index.html#i18n" />
+      <static_content      label="Statische Webinhalte"  href="static_content.html" />
+      <multilang           label="Mehrsprachigkeit"      href="i18n.html" />
+      <xsl                 label="XSL-Stylesheets">
+        <layout_service    label="Layout-Service"        href="layout_service.html" />
+        <xsl_fo            label="XSL-FO Unterstützung"  href="xsl_fo.html" />
+      </xsl>
+      <mcruriresolver      label="URI-Resolver"          href="uri_resolver.html" />
+      <mcrtextresolver     label="TextResolver"          href="text_resolver.html" />
       <xeditor             label="Formulare erstellen"   href="xeditor.html" />
       <image_viewer        label="Bildbetrachter"        href="imageviewer/">
         <iview2            label="IView2"                href="iview2.html" />
@@ -292,13 +305,10 @@ See http://forrest.apache.org/docs/linking.html for more info
         <metseditor        label="METS-Editor"           href="mets.html" />
       </image_viewer>
       <basket              label="Korbfunktion"          href="basket.html" />
-      <xsl                 label="XSL-Stylesheets">
-        <layout_service    label="Layout-Service"        href="layout_service.html" />
-        <xsl_fo            label="XSL-FO Unterstützung"  href="xsl_fo.html" />
-      </xsl>
-      <mcruriresolver      label="URI-Resolver"          href="uri_resolver.html" />
-      <mcrtextresolver     label="TextResolver"          href="text_resolver.html" />
+      <integrated_wcms     label="WCMS"                  href="wcms.html" />
     </frontend>
+    
+    <!-- Benutzer und Rechte -->
     <permissions           label="Benutzer und Rechte"   href="permissions/">
       <user_management     label="Benutzerverwaltung"    href="user_management.html" />
       <acl_integration     label="Access Control Listen" href="acl_integration.html" />
@@ -307,13 +317,19 @@ See http://forrest.apache.org/docs/linking.html for more info
       <broadcasting        label="Nachrichtenfenster"    href="broadcasting.html" />
       <session_listing     label="Session Listing"       href="session_listing.html" />
     </permissions>
+    
+    <!-- Workflow -->
     <workflow              label="Workflow"              href="workflow/">
       <wf_overview         label="Übersicht"             href="index.html" />
       <swf                 label="SimpleWorkFlow"        href="swf.html" />
     </workflow>
+    
+    <!-- Datenexport -->
     <export                label="Datenexport"           href="export/">
       <bibutils            label="Bibutils"              href="index.html" />
     </export>
+    
+    <!-- Schnittstellen -->
     <interfaces            label="Schnittstellen"        href="interfaces/">
       <webservices         label="WebServices"           href="webservices.html" />
       <rest                label="REST"                  href="rest.html" />
@@ -322,10 +338,14 @@ See http://forrest.apache.org/docs/linking.html for more info
       <google              label="Google-Sitemap"        href="google_sitemap.html" />
       <sword               label="SWORD"                 href="sword.html" />
     </interfaces>
+    
+    <!-- veraltete Komponenten -->
     <old_components        label="veraltete Komponenten" href="old_components/">
       <editorframework     label="Editorframework"       href="editor_framework.html" />
       <query_service       label="QueryService"          href="query_service.html" />
     </old_components>
+    
+    <!-- Laufender Betrieb -->
     <production            label="Laufender Betrieb"     href="production/">
       <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />
@@ -334,7 +354,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <tips                label="Tipps"                 href="tips.html" />
     </production>
 
-
+    <!-- Migration -->
     <migrate               label="Migration"         href="migrate/">
       <migrate2014.06      label="2014.03 &#8658; 2014.06"        href="migrate201406.html" />
       <migrate2013.08_11   label="2013.08 &#8658; 2013.11"  href="migrate201308_201311.html" />
@@ -344,6 +364,8 @@ See http://forrest.apache.org/docs/linking.html for more info
       <migrate13_20        label="1.3 &#8658; 2.0"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
       <migrate12_13        label="1.2 &#8658; 1.3"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
     </migrate>
+    
+    <!-- Für Entwickler -->
     <developer             label="Für Entwickler"    href="developer/">
       <vocabular           label="Vokabular"                  href="vocabular.html" />
       <eclipse             label="Entwicklungsplattformen"    href="eclipse.html" />
