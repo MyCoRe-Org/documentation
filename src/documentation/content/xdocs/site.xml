@@ -298,6 +298,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       </xsl>
       <mcruriresolver      label="URI-Resolver"          href="uri_resolver.html" />
       <mcrtextresolver     label="TextResolver"          href="text_resolver.html" />
+      <mcrclassbrowser     label="ClassificationBrowser" href="classification_browser.html" />
       <xeditor             label="Formulare erstellen"   href="xeditor.html" />
       <image_viewer        label="Bildbetrachter"        href="imageviewer/">
         <iview2            label="IView2"                href="iview2.html" />
