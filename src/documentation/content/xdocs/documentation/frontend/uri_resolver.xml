@@ -458,9 +458,12 @@ erzeugt folgenden XML-Output:
       <section>
         <title>xslInclude:[IncludeParms]</title>
         <p>
-          erzeugt eine XML-Include-Liste, welche im Property
+          Erzeugt ein XSL-Stylesheet, dass weitere Stylesheets
+          inkludiert. Welche definiert das
           <code>MCR.URIResolver.xslIncludes.{include_name}</code>
-          definiert sind.
+          Property. Zu Laufzeit können so
+          weitere XSL-Dateien hinzugeladen werden, um zusätzliche Templates
+          bereitszustellen oder vorhandene zu Überschreiben.
         </p>
         <p class="break">
           <source><![CDATA[
@@ -486,9 +489,16 @@ erzeugt folgenden XML-Output:
       <section>
         <title>xslImport:[ImportParms]</title>
         <p>
-          gestattet den Import einer Liste vom Stylesheets, welche im Property
+          Erzeugt ähnlich wie "xslInclude" ein XSL-Stylesheet, jedoch
+          werden nicht alle XSL-Dateien inkludiert, sonder in
+          einer Kaskade
+          importiert. Das ermöglicht die Erweiterung bestimmter Templates mittels
+          <code>&lt;xsl:apply-imports /&gt;</code>
+          , um z.B. zusätzliche Felder bei der
+          SOLR-Indizierung (hier ein Link zur Doku, falls vorhanden) zu erzeugen.
+          Die Liste wird im Property
           <code>MCR.URIResolver.xslImports.{import_name}</code>
-          definiert sind.
+          definiert.
         </p>
         <p class="break">
           <source><![CDATA[
@@ -548,7 +558,7 @@ notnull:mcrobject:DocPortal_document_07910401]]></source>
       </section>
 
       <section>
-        <title>xslStyle:[stylesheet]:[URI]</title>
+        <title>xslStyle:[stylesheet][param]:[URI]</title>
         <p>
           dieses Vorschaltelement für andere URI wendet das Stylesheet [stylesheet] auf die XML-Auagabedatei der
           nachfolgenden URI an und gibt das
@@ -557,22 +567,33 @@ notnull:mcrobject:DocPortal_document_07910401]]></source>
           Anwendung. Die Extension .xsl entfällt
           im Parameter
           <code>{stylesheet}</code>
-          .
+          .Es ist als möglich noch Parameter zu übergeben und der Ausgabe von einem
+          Stylesheet gleich durch ein zweites
+          zu weiterzuleiten.
         </p>
         <p class="break">
           <source><![CDATA[
-xslStyle:{stylesheet}:{uri}]]></source>
+xslStyle:{stylesheet},{stylesheet}{?param1=value1{&param2=value2}}:{anyMyCoReURI}]]></source>
         </p>
         <p class="break">
           <source><![CDATA[
-xslStyle:document2mods:DocPortal_document_07910401]]></source>
+xslStyle:mycoreobject-mods,mods2dc?derivate=mycore_derivate_00000001:mcrobject:mycore_doc_00000001]]></source>
+          Dabei würde das Objekt erst in ein MODS-Dokument umgewandelt, um danach
+          letztendlich als Dublin-Core-Dokument ausgegeben worden zu sein.
         </p>
       </section>
 
       <section>
         <title>xslTransform:[TransformParms]</title>
         <p>
-          dieses Vorschaltelement transformiert eines anderen Resolvers mit dem Stylesheet.
+          dieses Vorschaltelement funktioniert wie
+          <strong>xslInclude</strong>
+          . Nur wird ein definierter
+          <code>MCRContentTransformer</code>
+          verwendet, statt einer
+          vordefinierten Liste von Stylesheets. Im gegensatz zu "xslStyle" ist das
+          Verhalten also noch konfigurierbar und prinzipiell nicht auf "XSL"
+          beschränkt.
         </p>
         <p class="break">
           <source><![CDATA[
@@ -580,7 +601,7 @@ xslTransform:{stylesheet}[?param1=value1[&param2=value2]...]:{anyMyCoReURI}]]></
         </p>
         <p class="break">
           <source><![CDATA[
-???]]></source>
+xslTransform:mycoreobject-txt:file:object.txt]]></source>
         </p>
       </section>
 
