@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+
+  <header>
+    <title>Die XSLT-Xalan-Erweiterungen</title>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+    </authors>
+    <version>2015-08-10</version>
+    <abstract>Der Abschnitt beschreibt die Nutzung der Xalan-Erweiterungen für die Nutzung von MyCoRe in XSLT-Scripten.
+    </abstract>
+  </header>
+
+  <body>
+    <section>
+      <title>Xalan Erweiterungen</title>
+      <p>MyCoRe nutzt an vielen Stellen für die Datentransformation XSLT-Prozesse. Um direkt auf nützliche
+        MyCoRe-Funktionen zugreifen zu können, wurden einige Xalan-Extensions entwickelt. Die Einbindung erfolgt wie
+        unten beschrieben.
+      </p>
+      <p class="break">
+        <source><![CDATA[
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transformation"
+  xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
+  ...
+  exclude-result-prefixes="xalan ..." >
+  ...
+  <xsl:... select="mcrxml:{function}"/>
+  ...
+<xsl:stylesheet/>]]></source>
+      </p>
+      <table>
+        <tr>
+          <th valign="top" align="left">Funktion</th>
+          <th valign="top" align="left">Parameter</th>
+          <th valign="top" align="left">Beschreibung</th>
+        </tr>
+        <tr>
+          <td valign="top">getISODateFromMCRHistoryDate</td>
+          <td valign="top">date_value = Datumsstring<br />field_name = 'von' oder 'bis'<br />calendar_name = Kalenderbezeichnung</td>
+          <td valign="top">Erzeugt einen ISO Datumsstring entsprechend der Funktionalität von MCRCalendar.</td>
+        </tr>
+      </table>
+    </section>
+  </body>
+</document>
+      

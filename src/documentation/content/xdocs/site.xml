@@ -295,6 +295,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <xsl                 label="XSL-Stylesheets">
         <layout_service    label="Layout-Service"        href="layout_service.html" />
         <xsl_fo            label="XSL-FO Unterstützung"  href="xsl_fo.html" />
+        <xsl_extension     label="Xalan-Extensions    "  href="xml_functions.html" />
       </xsl>
       <mcruriresolver      label="URI-Resolver"          href="uri_resolver.html" />
       <mcrtextresolver     label="TextResolver"          href="text_resolver.html" />
