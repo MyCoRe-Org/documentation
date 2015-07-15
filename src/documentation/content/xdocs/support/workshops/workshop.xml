@@ -3,56 +3,54 @@
 
 <document>
   <header>
-    <title>MyCoRe-Workshop 2014</title>
+    <title>MyCoRe-Workshop 2015</title>
   </header>
 <body>
 
 <section>
 <title>Einladung</title>
-  <p>Die MyCoRe-Entwickler und die MyCoRe-Geschäftsstelle laden herzlich zum diesjährigen <strong>MyCoRe-Anwenderworkshop</strong> ein. 
-	 Wir freuen uns, an der <a title="Universitätsbibliothek Braunschweig" href="http://www.biblio.tu-bs.de/ueberuns/anfahrt.html">Universitätsbibliothek Braunschweig</a> zu Gast sein zu dürfen!<br/>
-	 Termin: <strong>Donnerstag, 20.11.2014</strong>,<br/> Beginn: 9 Uhr.</p>
+  <p>Auch dieses Jahr laden die MyCoRe-Entwickler und die MyCoRe-Geschäftsstelle herzlich zum <strong>MyCoRe-Anwenderworkshop</strong> ein. 
+	 Wir freuen uns, an der <a title="Universitätsbibliothek Ilmenau" href="https://www.tu-ilmenau.de/ub/allgemein/lageplan/">Universitätsbibliothek Ilmenau</a> zu Gast sein zu dürfen!<br/>
+	 Termin für den Workshop: <strong>Mittwoch, 11.11.2014</strong>,<br/> Beginn: 9 Uhr, Ende: 18 Uhr.<br/>
+   Anreisetag: 10.11.2015, <em>Get-together: 19 Uhr</em>. Der Ort wird noch bekannt gegeben.</p>
   <p> 
-     Ziel des eintägigen Workshops ist es, einen Erfahrungsaustausch zwischen den MyCoRe-Anwendern und Interessierten zu
-     ermöglichen. Deshalb sind kurze Beiträge und Berichte über eigene Entwicklungen gewünscht und willkommen! Die MyCoRe-Entwickler werden neue Entwicklungen vorstellen und es wird Gelegenheit für Fragen an die Entwickler geben. </p>
+     Ziel des eintägigen Workshops ist es, einen Erfahrungsaustausch zwischen den MyCoRe-Anwendern, MyCoRe-Anwenderinnen und Interessierten zu ermöglichen. Deshalb sind kurze Beiträge und Berichte über eigene Entwicklungen gewünscht und willkommen! Die MyCoRe-Entwickler werden neue Entwicklungen vorstellen und es wird Gelegenheit für Fragen an die Entwickler geben. </p>
   <p> 
      Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben.
-     Anregungen und Vorschläge können auf der <strong><a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a></strong> im MyCoRe-Wiki eingetragen werden. </p>
+     Anregungen und Vorschläge können auf der <strong><a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a></strong> im MyCoRe-Wiki eingetragen werden. Oder senden Sie eine Nachricht an die <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
   <p> 	 
-	 Wir empfehlen bereits am 19. November anzureisen: am Mittwochabend treffen wir uns mit den Entwicklern zum zwanglosen Austausch. Wo das sein wird, teilen wir den angemeldeten Teilnehmerinnen und Teilnehmer vorher mit. 
+	 Wir empfehlen bereits am 10. November anzureisen: am Dienstagabend treffen wir uns mit den Entwicklern zum zwanglosen Austausch. Wo das sein wird, teilen wir den angemeldeten Teilnehmerinnen und Teilnehmer vorher mit. 
    </p>
-<p>
+<!--<p>
   Hier können Sie sich für den Workshop <a href="http://www.mycore.de:8291/content/below/workshop.xed?XSL.template.SESSION=template_mycore-de"><strong style="color:darkred;">anmelden!</strong></a>
-</p> 
+</p> --> 
 
 <p><strong>Weitere Informationen</strong></p>
-  <p>Die Agenda des Workshops kann im <a title="MyCoRe-Wiki Workshop 2014 Agenda" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014" >Wiki</a> eingesehen werden, sobald die Themensammlung abgeschlossen ist.
+  <p>Die Agenda des Workshops <!-- kann im <a title="MyCoRe-Wiki Workshop 2015 Agenda" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2015" >Wiki</a> eingesehen werden, --> wird bekannt gegeben, sobald die Themensammlung abgeschlossen ist.
   Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
 
 <p>
-    Der Workshop findet an der <a title="Universitätsbibliothek der TU Braunschweig" href="http://www.biblio.tu-bs.de/ueberuns/anfahrt.html">Universitätsbibliothek der TU Braunschweig</a> statt. Ausgerichtet wird der Workshop von der Universitätsbibliothek.
+    Der Workshop findet im „Veranstaltungsraum“ der <a title="Universitätsbibliothek der TU Ilmenau" href="https://www.tu-ilmenau.de/ub/allgemein/lageplan/">Universitätsbibliothek</a> an der Technischen Universität Ilmenau statt. Ausgerichtet wird der Workshop von der Universitätsbibliothek Ilmenau.
 
   <p><strong>Adresse</strong></p>
-    Universitätsbibliothek Braunschweig <br />
-    Pockelsstrasse 13  <br />
-    38106 Braunschweig<br />
+    Universitätsbibliothek Ilmenau <br />
+    Raum 2050 „Veranstaltungsraum“    <br />
+    Langewiesener Str. 37 <br />
+    98693 Ilmenau <br />
 </p>
-<p class="fett">Siehe <a title="Ortsbeschreibung im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014#Verkehrsanbindung_und_Anreise">Ortsbeschreibung im Wiki</a>.</p>
--->
+<!--<p class="fett">Siehe <a title="Ortsbeschreibung im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014#Verkehrsanbindung_und_Anreise">Ortsbeschreibung im Wiki</a>.</p> -->
 </section>
 
 
 <p><strong>Hotelinformationen</strong></p>
 <p>
-    Eine Liste mit <a title="Auswahl an Hotels im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014#Hotelinformationen">Hotelnamen finden Sie im Wiki</a>.
+    Eine Liste mit <a title="Auswahl an Hotels im Wiki" href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2015/OrganisatorischesIlmenau#Hotelinformationen">Hotels</a> finden Sie im Wiki.
   </p>
  <section>
  <title>Anmeldung</title>
 
- <p> Bitte melden Sie sich entweder mit dem
-   <strong><a href="http://www.mycore.de:8291/content/below/workshop.xed?XSL.template.SESSION=template_mycore-de">Anmeldeformular</a></strong> an
-   oder schicken Sie eine Nachricht an die <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.
- </p>
+ <p> Anmeldeinformationen folgen. Wann die Anmeldung möglich ist, wird auf der  MyCoRe-<a title="User-Mailingliste" href="site:workshop">User-Mailingliste</a> bekannt gegeben. 
+ </p> 
 </section> 
 </body>
 </document>
