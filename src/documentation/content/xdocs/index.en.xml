@@ -54,18 +54,18 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>New Ticket system</title>
-          <message>The MyCoRe community uses JIRA as ticket system. Please report bugs in Jira.</message>
-          <url>https://mycore.atlassian.net/</url>
-          <date>07. Januar 2015</date>
-          <author>Kathleen Neumann</author>
+          <title>MyCoRe-Workshop</title>
+          <message>Announcement: The MyCoRe Workshop will take place at 11. Nov. 2015 in Ilmenau.</message>
+          <url>site:workshop</url>
+          <date>15. Juli 2015</date>
+          <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
           <title>Conference</title>
-          <message>The MyCoRe-Team was present at the 104. Bibliothekartag in Nürnberg.</message>
-          <url>http://www.bibliothekartag2015.de/</url>
-          <date>1. Juni 2015</date>
+          <message>MyCoRe will be present at the Open Access Days 2015 in Zürich.</message>
+          <url>http://www.open-access.net/community/open-access-tage/open-access-tage-2015-zuerich/</url>
+          <date>15. Juli 2015</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
