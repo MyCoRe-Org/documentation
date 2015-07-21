@@ -554,8 +554,8 @@ $(document).ready(function() {
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template name="footer_menu">
         <div id="footer_menu" class="pull-right">
-            <a href="{$root}contact/index.html">Kontakt</a> |
-            <a href="{$root}impressum/index.html">Impressum</a>
+            <a href="{$root}contact/index.html"><i18n:text i18n:catalogue="menu">Kontakt</i18n:text></a> |
+            <a href="{$root}impressum/index.html"><i18n:text i18n:catalogue="menu">Impressum</i18n:text></a>
         </div>
 
     </xsl:template>

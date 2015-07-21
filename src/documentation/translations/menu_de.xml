@@ -38,7 +38,7 @@
   <message key="Snapshot">Snapshot</message>
   <message key="Snapshot-Archiv">Snapshot-Archiv</message>
   <message key="Release">Release</message>
-  <message key="Dokumentation">Dokumentation</message>  
+  <message key="Dokumentation">Dokumentation</message>
   <message key="User Guide">User Guide</message>
   <message key="Programmer Guide">Programmer Guide</message>
   <message key="Allgemeines">Allgemeines</message>
@@ -49,7 +49,7 @@
   <message key="HowTo's">HowTo's</message>
   <message key="JavaDoc API Referenz">JavaDoc API Referenz</message>
   <message key="Dokumentation als PDF">Dokumentation als PDF</message>
-  <message key="Support &amp; Kontakt">Support & Kontakt</message>
+  <message key="Kontakt">Kontakt</message>
   <message key="Mailing-Listen">Mailing-Listen</message>
   <message key="Geschäftsstelle">Geschäftsstelle</message>
   <message key="FAQs">FAQs</message>
