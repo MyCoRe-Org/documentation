@@ -4,60 +4,64 @@
 <document>
   <header>
     <title>REST-API</title>
-    <abstract>Die REST-API kann vor allem durch externe Tools für den Zugriff 
-       auf MyCoRe-Objekte, Klassifikationen, Messsages und Suchanfragen benutzt werden.</abstract>
+    <version>2015-07-21</version>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
+    </authors>
+    <abstract>Die REST-API kann vor allem durch externe Tools für den Zugriff
+       auf MyCoRe-Objekte, Klassifikationen, Messages und Suchanfragen benutzt werden.</abstract>
   </header>
   <body>
     <section>
       <title>Allgemeines</title>
       <p>
-        Zur Zeit ist nur ein lesender Zugriff implementiert. Sämtliche Aufrufe erfolgen per <code>GET</code>-Request.
-      </p>
-      <p>
+        Mit dem <span class="label label-info">LTS 2015.05</span> stellt MyCoRe eine REST-Schnittstelle bereit, die
+        einen nur-lesenden Zugriff auf MyCoRe-Objekte, -Derivate, Klassifikationen, I18N-Texte und den Suchindex
+        ermöglicht. Sämtliche Aufrufe erfolgen per <code>GET</code>-Request.<br />
         Die Basis-URL der REST-API lautet: <code>{$WebApplicationBaseURL}api/v1</code>.
       </p>
     </section>
     <section>
       <title>Metadatenobjekte und Derivate anzeigen</title>
-        <section>
-          <title>/objects</title>
-          <p><strong>Auflistung aller MyCoRe-Objekte</strong></p>
-          <p>Dieser Request liefert eine Liste der vorhandenen MyCoRe-Objekte zurück.</p>
-          <h4>Parameter</h4>
-          
-          <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>format</code></td>
-              <td>Mögliche Werte sind: <code>xml</code> (default) und <code>json</code>.</td>
-            </tr>
-            <tr>
-              <td><code>filter</code></td>
-              <td>
-                <p>enhält eine durch Semikolon <code>;</code> getrennte Liste von Key-Value Paaren.
-                   Key und Value sind durch Doppelpunkt <code>:</code> getrennt.
-                </p>
-                Folgende Keys können verwendet werden:
-                <table class="table table-bordered">
-                  <cols><col width="100px"></col></cols>
-                  <tr>
-                    <td><code>project</code></td>
-                    <td>die MyCoRe-Project-ID (erster Teil einer MyCoRe-ID)</td>
-                  </tr>
-                  <tr>
-                    <td><code>type</code></td>
-                    <td>der MyCoRe-Objekttyp (mittlerer Teil einer MyCoRe-ID)<br />
-                   </td>
-                 </tr>
-                  <tr>
-                    <td><code>lastModifiedBefore</code></td>
-                    <td>filtert Objekte, deren letzte Änderung <strong>vor</strong> dem (im UTC-Format) angegebenen Datum erfolgte.</td>
-                  </tr>
-                  <tr>
-                   <td><code>lastModifiedAfter</code></td>
-                    <td>filtert Objekte, deren letzte Änderung <strong>nach</strong> dem (im UTC-Format) angebenen Datum erfolgte.</td>
-                 </tr>
-               </table>
+      <section>
+        <title>/objects</title>
+        <h4>Auflistung aller MyCoRe-Objekte</h4>
+        <p>Dieser Request liefert eine Liste der vorhandenen MyCoRe-Objekte zurück.</p>
+        <h4>Parameter</h4>
+
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>format</code></td>
+            <td>Mögliche Werte sind: <code>xml</code> (default) und <code>json</code>.</td>
+          </tr>
+          <tr>
+            <td><code>filter</code></td>
+            <td>
+              <p>enhält eine durch Semikolon <code>;</code> getrennte Liste von Schlüssel-Wert-Paaren.
+                 Schlüssel und Wert sind durch Doppelpunkt <code>:</code> getrennt,
+                 folgende Schlüssel können verwendet werden:
+              </p>
+              <table class="table table-bordered">
+                <cols><col width="100px"></col></cols>
+                <tr>
+                  <td><code>project</code></td>
+                  <td>die MyCoRe-Project-ID (erster Teil einer MyCoRe-ID)</td>
+                </tr>
+                <tr>
+                  <td><code>type</code></td>
+                  <td>der MyCoRe-Objekttyp (mittlerer Teil einer MyCoRe-ID)<br />
+                 </td>
+               </tr>
+                <tr>
+                  <td><code>lastModifiedBefore</code></td>
+                  <td>filtert Objekte, deren letzte Änderung <strong>vor</strong> dem (im UTC-Format) angegebenen Datum erfolgte.</td>
+                </tr>
+                <tr>
+                 <td><code>lastModifiedAfter</code></td>
+                  <td>filtert Objekte, deren letzte Änderung <strong>nach</strong> dem (im UTC-Format) angebenen Datum erfolgte.</td>
+                </tr>
+              </table>
             </td>
           </tr>
           <tr>
@@ -79,271 +83,275 @@
             </td>
           </tr>
         </table>
-        
+
         <h4>Beispiel-Requests</h4>
         <ul>
           <li><a href="http://www.mycore.de/mir/api/v1/objects">http://www.mycore.de/mir/api/v1/objects</a></li>
           <li><a href="http://www.mycore.de/mir/api/v1/objects?filter=project:mir;type:mods">http://www.mycore.de/mir/api/v1/objects?filter=project:mir;type:mods</a></li>
           <li><a href="http://www.mycore.de/mir/api/v1/objects?filter=lastModifiedAfter:2015-05;lastModifiedBefore:2015-06">http://www.mycore.de/mir/api/v1/objects?filter=lastModifiedAfter:2015-05;lastModifiedBefore:2015-06</a></li>
-          <li><a href="http://www.mycore.de/mir/api/v1/objects?sort=lastModified:desc&amp;format=json">http://www.mycore.de/mir/api/v1/objects?sort=lastModified:desc&amp;format=json</a></li>  
+          <li><a href="http://www.mycore.de/mir/api/v1/objects?sort=lastModified:desc&amp;format=json">http://www.mycore.de/mir/api/v1/objects?sort=lastModified:desc&amp;format=json</a></li>
         </ul>
       </section>
-        <section>
-          <title>/objects/{$id}</title>
-          <p><strong>Anzeige eines einzelnen Objektes</strong></p>
-          <p>Dieser Request liefert das interne XML eines MyCoRe-Objektes zurück.</p>
-          <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>{$id}</code></td>
-              <td>
-                entspricht im Standardfall der MyCoRe-Object-ID<br />
-                Im Spezialfall hat die ID die Form <code>prefix:other-id</code>.
-                
-                <table class="table table-bordered">
-                  <cols><col width="100px"></col></cols>
-                  <tr>
-                    <td><code>prefix</code></td>
-                    <td>Mögliche Werte sind: <code>mcr</code> für eine MyCoRe-Object-ID (default) 
-                        und <code>recordIdentifier</code> für einen <tt>mods:recordIdentifier</tt>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-          
-          <h4>Parameter</h4>
-          <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>style</code></td>
-              <td>
-                Einziger Wert ist <code>derivatedetails</code><br />
-                Damit wird das XML um Informationen aus den verknüpften Derivaten angereichert.
-              </td>
-            </tr>
-          </table>
-          
-          <h4>Beispiel-Requests</h4>
-          <ul>
-            <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003</a></li>
-            <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003?style=derivatedetails">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003?style=derivatedetails</a></li>
-            <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281</a></li>
-         </ul>
-        </section>
-        
-        <section>
-          <title>/objects/{$id}/derivates</title>
-          <p><strong>Auflistung der Derivate</strong></p>
-          <p>Dies URL liefert eine Liste der zu einem MyCoRe-Objekt gehörenden Derivate.</p>
-          <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>{$id}</code></td>
-              <td>siehe oben</td>
-            </tr>
-          </table>
-            
-          <h4>Parameter</h4>
-          <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>format</code></td>
-              <td>Mögliche Werte sind: <code>xml</code> (default) und <code>json</code>.</td>
-            </tr>
-            <tr>
-              <td><code>sort</code></td>
-              <td>
-                <p>Sortierfeld und Sortierreihenfolge durch Doppelpunkt getrennt (<code>sort_field:sort_order</code>).</p>
-                Folgende Werte sind zugelassen:
-                <table class="table table-bordered">
-                  <cols><col width="100px"></col></cols>
-                  <tr>
-                    <td><code>sort_field</code></td>
-                    <td><code>ID</code> oder <code>lastModified</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>sort_order</code></td>
-                    <td><code>asc</code> oder <code>desc</code></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-          
-          <h4>Beispiel-Requests</h4>
-          <ul>
-            <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates</a></li>
-            <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates?sort=lastModified:desc&amp;format=json">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates?sort=lastModified:desc&amp;format=json</a></li>
-          </ul>
-        </section>
-        <section>
-          <title>/objects/{$id}/derivates/{$derid}</title>
-          <p><strong>Anzeige eines einzelnen Derivates</strong></p>
-          <p>Dieser Request liefert das interne XML eines MyCoRe-Derivates zurück</p>
-          <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>{$id}</code></td>
-              <td>siehe oben</td>
-            </tr>
-            <tr>
-              <td><code>{$derid}</code></td>
-              <td>
-                entspricht im Standardfall der MyCoRe-Derivate-ID<br />
-                Im Spezialfall hat die ID die Form <code>prefix:other-id</code>.
-                
-                <table class="table table-bordered">
-                  <cols><col width="100px"></col></cols>
-                  <tr>
-                    <td><code>prefix</code></td>
-                    <td>Einziger Wert ist <code>label</code> für das Label eines Derivates 
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-                    
-          <h4>Beispiel-Requests</h4>
-          <ul>
-            <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002</a></li>
-            <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003</a></li>
-            <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover</a></li>
-          </ul>
-        </section>
+      <section>
+        <title>/objects/{$id}</title>
+        <h4>Anzeige eines einzelnen Objektes</h4>
+        <p>Dieser Request liefert das interne XML eines MyCoRe-Objektes zurück.</p>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>{$id}</code></td>
+            <td>
+              entspricht im Standardfall der MyCoRe-Object-ID,<br />
+              im Spezialfall hat die ID die Form <code>prefix:other-id</code>
 
-        <section>
-          <title>/objects/{$id}/derivates/{$derid}/files</title>
-          <p><strong>Auflistung der Dateien eines Derivates</strong></p>
-          <p>Mit diesem Request enthält man ein Directory-Listing aller im Derivate abgelegten Dateien.</p>
-          
-           <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>{$id}</code></td>
-              <td>siehe oben</td>
-            </tr>
-            <tr>
-              <td><code>{$derid}</code></td>
-              <td>siehe oben</td>
-            </tr>
-          </table>
-          
-          <h4>Parameter</h4>
-          <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>format</code></td>
-              <td>Mögliche Werte sind: <code>xml</code> (default) und <code>json</code>.</td>
-            </tr>
-          </table>
-          
-          <h4>Beispiel-Requests</h4>
-           <ul>
-            <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002/files">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002/files</a></li>
-            <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/files">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/files</a></li>
-            <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/files">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/files</a></li>
-          </ul>
-        </section>
+              <table class="table table-bordered">
+                <cols><col width="100px"></col></cols>
+                <tr>
+                  <td><code>prefix</code></td>
+                  <td>mögliche Werte sind: <code>mcr</code> für eine MyCoRe-Object-ID (default)
+                      und <code>recordIdentifier</code> für ein gleichnamiges Suchfeld im Solr-Index
+                      (z.B. belegt durch den Wert <tt>mods:recordIdentifier</tt> beim Rostocker
+                      Dokumentenserver <a href="http://rosdok.uni-rostock.de/">RosDok</a>)
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <h4>Parameter</h4>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>style</code></td>
+            <td>
+              einziger Wert ist <code>derivatedetails</code>,<br />
+              damit wird das XML um Informationen aus den verknüpften Derivaten angereichert
+            </td>
+          </tr>
+        </table>
+
+        <h4>Beispiel-Requests</h4>
+        <ul>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003?style=derivatedetails">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003?style=derivatedetails</a></li>
+          <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281</a></li>
+       </ul>
+      </section>
+
+      <section>
+        <title>/objects/{$id}/derivates</title>
+        <h4>Auflistung der Derivate</h4>
+        <p>diese URL liefert eine Liste der zu einem MyCoRe-Objekt gehörenden Derivate</p>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>{$id}</code></td>
+            <td>analog zu <a href="#/objects/{$id}">/objects/{$id}</a></td>
+          </tr>
+        </table>
+
+        <h4>Parameter</h4>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>format</code></td>
+            <td>mögliche Werte sind: <code>xml</code> (default) und <code>json</code></td>
+          </tr>
+          <tr>
+            <td><code>sort</code></td>
+            <td>
+              <p>
+                Sortierfeld und Sortierreihenfolge durch Doppelpunkt getrennt (<code>sort_field:sort_order</code>),
+                folgende Werte sind zugelassen:
+              </p>
+              <table class="table table-bordered">
+                <cols><col width="100px"></col></cols>
+                <tr>
+                  <td><code>sort_field</code></td>
+                  <td><code>ID</code> oder <code>lastModified</code></td>
+                </tr>
+                <tr>
+                  <td><code>sort_order</code></td>
+                  <td><code>asc</code> oder <code>desc</code></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <h4>Beispiel-Requests</h4>
+        <ul>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates?sort=lastModified:desc&amp;format=json">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates?sort=lastModified:desc&amp;format=json</a></li>
+        </ul>
       </section>
       <section>
-        <title>Anzeige / Download einer Datei aus einem Derivate</title>
-        <p>Diese Funktionalität wird nicht über die REST-API, sondern über die File-API bereitgestellt. Die URL
-           entnehme man dem <code>@href</code> Attribute der Auflistung der Dateien (s. o.).
-        </p>
-        <h4>Beispiel-Requests</h4>
-          <ul>
-            <li><a href="http://www.mycore.de/mir/servlets/MCRFileNodeServlet/Document_derivate_00000002/handreichung-publikationsfonds.pdf">http://www.mycore.de/mir/servlets/MCRFileNodeServlet/Document_derivate_00000002/handreichung-publikationsfonds.pdf</a></li>
-            <li><a href="http://rosdok.uni-rostock.de/file/rosdok_document_0000006760/rosdok_derivate_0000025090/ppn746606281.cover.jpg">http://rosdok.uni-rostock.de/file/rosdok_document_0000006760/rosdok_derivate_0000025090/ppn746606281.cover.jpg</a></li>
-          </ul>
-    </section>
-  <section>
-    <title>Klassifikationen anzeigen</title>
-    <section>
-      <title>/classifications</title>
-      <p><strong>Auflistung aller Klassifikationen</strong></p>
-      <p>Dieser Request listet alle in der Anwendung installierten Klassifikationen auf.</p>
-          
-      <h4>Parameter</h4>
-      <table class="table table-bordered">
-        <cols><col width="100px"></col></cols>
-        <tr><td><code>format</code></td>
-          <td>Mögliche Werte sind: <code>json</code> (default) und <code>xml</code></td>
-        </tr>
-      </table>
-         
-      <h4>Beispiel-Requests</h4>
-      <ul>
-        <li><a href="http://www.mycore.de/mir/api/v1/classifications">http://www.mycore.de/mir/api/v1/classifications/</a></li>
-        <li><a href="http://www.mycore.de/mir/api/v1/classifications?format=xml">http://www.mycore.de/mir/api/v1/classifications?format=xml</a></li>
-      </ul>
-    </section>
-        
-    <section>
-      <title>/classifications/{$classid}</title>
-      <p><strong>Anzeigen einer Klassifikation</strong></p>
-      <p>Dieser Request zeigt eine bestimmte Klassifikation an, welche in der MyCoRe-Anwendung aktiv ist.</p>
-      <table class="table table-bordered">
-        <cols><col width="100px"></col></cols>
-        <tr><td><code>{$classid}</code></td><td>entspricht der ID einer Klassifikation</td></tr>
-      </table>
-      
-      <h4>Parameter</h4>
-      <table class="table table-bordered">
-        <cols><col width="100px"></col></cols>
-        <tr>
-          <td><code>format</code></td>
-          <td>Mögliche Werte sind: <code>xml</code> (default) und <code>json</code>.</td>
-        </tr>
-        <tr>
-          <td><code>filter</code></td>
-          <td><p>enhält eine durch Semikolon <code>;</code> getrennte Liste von Key-Value Paaren.
-              Key und Value sind durch Doppelpunkt <code>:</code> getrennt.
-              Für Einige Keys wurden keine Values definiert. 
-              </p>
-              Folgende Keys können verwendet werden:
-            <table class="table table-bordered">
-              <cols><col width="100px"></col></cols>
-              <tr>
-                <td><code>lang</code></td>
-                <td>Es werden nur Label der Sprache zurückgegebenen, die dem angegebenen ISO-Kürzel enstpricht.<br />
-                    Wenn <code>lang</code> nicht gesetzt ist, werden Label für sämtliche definierte Sprachen zurückgegeben.
-                </td>
-              </tr>
-              <tr>
-                <td><code>root</code></td>
-                <td>Es wird nur ein Teilbaum der Klassifikation zurückgegeben.<br />
-                    Dieser hat als Root-Knoten die Kategorie, deren ID hier spezifiziert wurde.<br />
-                </td>
-              </tr>
-              <tr>
-                <td><code>nonempty</code></td>
-                <td>[ohne Value]<br />
-                    Es werden nur Kategorien ausgegeben, die auch mit Objekten verknüpft sind.
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    
-      <h4>Beispiel-Requests</h4>
-      <ul>
-        <li><a href="http://www.mycore.de/mir/api/v1/messages">http://www.mycore.de/mir/api/v1/messages</a></li>
-        <li><a href="http://www.mycore.de/mir/api/v1/classifications/state">http://www.mycore.de/mir/api/v1/classifications/state</a></li>
-        <li><a href="http://www.mycore.de/mir/api/v1/classifications/state?filter=nonempty">http://www.mycore.de/mir/api/v1/classifications/state?filter=nonempty</a></li>
-        <li><a href="http://www.mycore.de/mir/api/v1/classifications/marcrelator?filter=root:ctb;lang:de">http://www.mycore.de/mir/api/v1/classifications/marcrelator?filter=root:ctb;lang:de</a></li>
-      </ul>
-    </section>
-  </section>
+        <title>/objects/{$id}/derivates/{$derid}</title>
+        <h4>Anzeige eines einzelnen Derivates</h4>
+        <p>Dieser Request liefert das interne XML eines MyCoRe-Derivates zurück</p>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>{$id}</code></td>
+            <td>analog zu <a href="#/objects/{$id}">/objects/{$id}</a></td>
+          </tr>
+          <tr>
+            <td><code>{$derid}</code></td>
+            <td>
+              entspricht im Standardfall der MyCoRe-Derivate-ID,<br />
+              im Spezialfall hat die ID die Form <code>prefix:other-id</code>
 
-  <section>
-    <title>I18N Support</title>
+              <table class="table table-bordered">
+                <cols><col width="100px"></col></cols>
+                <tr>
+                  <td><code>prefix</code></td>
+                  <td>einziger Wert ist <code>label</code> für das Label eines Derivates
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <h4>Beispiel-Requests</h4>
+        <ul>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003</a></li>
+          <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <title>/objects/{$id}/derivates/{$derid}/files</title>
+        <h4>Auflistung der Dateien eines Derivates</h4>
+        <p>Mit diesem Request enthält man ein Directory-Listing aller im Derivate abgelegten Dateien.</p>
+
+         <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>{$id}</code></td>
+            <td>analog zu <a href="#/objects/{$id}">/objects/{$id}</a></td>
+          </tr>
+          <tr>
+            <td><code>{$derid}</code></td>
+            <td>analog zu <a href="#/objects/{$id}/derivates/{$derid}">/objects/{$id}/derivates/{$derid}</a></td>
+          </tr>
+        </table>
+
+        <h4>Parameter</h4>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>format</code></td>
+            <td>mögliche Werte sind: <code>xml</code> (default) und <code>json</code></td>
+          </tr>
+        </table>
+
+        <h4>Beispiel-Requests</h4>
+         <ul>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002/files">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002/files</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/files">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/files</a></li>
+          <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/files">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/files</a></li>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <title>Anzeige / Download einer Datei aus einem Derivat</title>
+      <p>Diese Funktionalität wird nicht über die REST-API, sondern über die File-API bereitgestellt. Die URL
+         kann man dem <code>@href</code>-Attribut der Auflistung der Dateien entnehmen (siehe obige Beispiel-Requests für <tt>/objects/{$id}/derivates/{$derid}/files</tt>).
+      </p>
+      <h4>Beispiel-Requests</h4>
+        <ul>
+          <li><a href="http://www.mycore.de/mir/servlets/MCRFileNodeServlet/Document_derivate_00000002/handreichung-publikationsfonds.pdf">http://www.mycore.de/mir/servlets/MCRFileNodeServlet/Document_derivate_00000002/handreichung-publikationsfonds.pdf</a></li>
+          <li><a href="http://rosdok.uni-rostock.de/file/rosdok_document_0000006760/rosdok_derivate_0000025090/ppn746606281.cover.jpg">http://rosdok.uni-rostock.de/file/rosdok_document_0000006760/rosdok_derivate_0000025090/ppn746606281.cover.jpg</a></li>
+        </ul>
+    </section>
+    <section>
+      <title>Klassifikationen anzeigen</title>
+      <section>
+        <title>/classifications</title>
+        <h4>Auflistung aller Klassifikationen</h4>
+        <p>Dieser Request listet alle in der Anwendung installierten Klassifikationen auf.</p>
+
+        <h4>Parameter</h4>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr><td><code>format</code></td>
+            <td>mögliche Werte sind: <code>json</code> (default) und <code>xml</code></td>
+          </tr>
+        </table>
+
+        <h4>Beispiel-Requests</h4>
+        <ul>
+          <li><a href="http://www.mycore.de/mir/api/v1/classifications">http://www.mycore.de/mir/api/v1/classifications/</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/classifications?format=xml">http://www.mycore.de/mir/api/v1/classifications?format=xml</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <title>/classifications/{$classid}</title>
+        <h4>Anzeigen einer Klassifikation</h4>
+        <p>Dieser Request zeigt eine bestimmte Klassifikation an, welche in der MyCoRe-Anwendung aktiv ist.</p>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr><td><code>{$classid}</code></td><td>entspricht der ID einer Klassifikation</td></tr>
+        </table>
+
+        <h4>Parameter</h4>
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>format</code></td>
+            <td>mögliche Werte sind: <code>xml</code> (default) und <code>json</code></td>
+          </tr>
+          <tr>
+            <td><code>filter</code></td>
+            <td><p>enhält eine durch Semikolon <code>;</code> getrennte Liste von Schlüssel-Wert-Paaren,
+                Schlüssel und Wert sind durch Doppelpunkt <code>:</code> getrennt,
+                für einige Schlüssel wurden keine Werte definiert,
+                folgende Schlüssel können verwendet werden:
+                </p>
+              <table class="table table-bordered">
+                <cols><col width="100px"></col></cols>
+                <tr>
+                  <td><code>lang</code></td>
+                  <td>Es werden nur Label der Sprache zurückgegebenen, die dem angegebenen ISO-Kürzel enstpricht.<br />
+                      Wenn <code>lang</code> nicht gesetzt ist, werden Label für sämtliche definierte Sprachen zurückgegeben.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>root</code></td>
+                  <td>Es wird nur ein Teilbaum der Klassifikation zurückgegeben.<br />
+                      Dieser hat als Root-Knoten die Kategorie, deren ID hier spezifiziert wurde.<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>nonempty</code></td>
+                  <td>[ohne Wert]<br />
+                      Es werden nur Kategorien ausgegeben, die auch mit Objekten verknüpft sind.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <h4>Beispiel-Requests</h4>
+        <ul>
+          <li><a href="http://www.mycore.de/mir/api/v1/messages">http://www.mycore.de/mir/api/v1/messages</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/classifications/state">http://www.mycore.de/mir/api/v1/classifications/state</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/classifications/state?filter=nonempty">http://www.mycore.de/mir/api/v1/classifications/state?filter=nonempty</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/classifications/marcrelator?filter=root:ctb;lang:de">http://www.mycore.de/mir/api/v1/classifications/marcrelator?filter=root:ctb;lang:de</a></li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <title>I18N-Support</title>
       <section>
         <title>/messages</title>
-        <p><strong>Abruf aller Message-Properties</strong></p>     
+        <h4>Abruf aller Message-Properties</h4>
         <p>
           Dieser Request listet alle in der Anwendung definierten Message-Properties auf.
         </p>
@@ -352,7 +360,7 @@
           <cols><col width="100px"></col></cols>
           <tr>
             <td><code>format</code></td>
-            <td>Mögliche Werte sind: <code>property</code> (default, Standard-Property-Format), <code>json</code> und <code>xml</code>.</td>
+            <td>mögliche Werte sind: <code>property</code> (default, Standard-Property-Format), <code>json</code> und <code>xml</code></td>
           </tr>
           <tr>
             <td><code>lang</code></td>
@@ -363,7 +371,7 @@
             <td>eine mit Semikolon <code>;</code> getrennte Liste von Message-Key-Prefixes</td>
           </tr>
         </table>
-      
+
         <h4>Beispiel-Requests</h4>
         <ul>
           <li><a href="http://www.mycore.de/mir/api/v1/messages">http://www.mycore.de/mir/api/v1/messages</a></li>
@@ -374,23 +382,23 @@
 
       <section>
         <title>/messages/{$key}</title>
-        <p><strong>Anzeigen eines Message-Eintrages</strong></p>   
+        <h4>Anzeigen eines Message-Eintrages</h4>
         <p>Dieser Request zeigt ein einzelnes Message-Property an.</p>
         <table class="table table-bordered">
           <cols><col width="100px"></col></cols>
           <tr><td><code>{$key}</code></td><td>entspricht einem Message-Key</td></tr>
         </table>
-        
+
         <h4>Parameter</h4>
         <table class="table table-bordered">
           <cols><col width="100px"></col></cols>
           <tr><td><code>format</code></td>
-              <td>Mögliche Werte sind: <code>text</code> (default), <code>property</code> (Standard-Property-Format), <code>xml</code> und <code>json</code>.</td>
+              <td>mögliche Werte sind: <code>text</code> (default), <code>property</code> (Standard-Property-Format), <code>xml</code> und <code>json</code></td>
           </tr>
           <tr>
             <td><code>lang</code></td>
-            <td>ein von der Anwendung unterstütztes ISO-Sprachkürzel (default: <code>de</code>).</td>
-          </tr>    
+            <td>ein von der Anwendung unterstütztes ISO-Sprachkürzel (default: <code>de</code>)</td>
+          </tr>
         </table>
         <h4>Beispiel-Requests</h4>
         <ul>
@@ -400,7 +408,7 @@
         </ul>
       </section>
     </section>
-    
+
     <section>
       <title>Suche</title>
       <p>
@@ -409,41 +417,42 @@
       </p>
       <section>
         <title>/search</title>
-        <p><strong>Stellen einer Suchanfrage</strong></p>
-        <warning>prototypische Implementierung</warning>
-        
+        <h4>Stellen einer Suchanfrage</h4>
+        <p><span class="label label-danger">Achtung:</span> prototypische Implementierung</p>
+
         <h4>Parameter</h4>
         <p>
           Die Parameter orientieren sich an der SOLR-Syntax.
-          Weitere Informationen über die Syntax entnehme man der <a href="http://wiki.apache.org/solr/CommonQueryParameters">SOLR-Dokumentation</a>
-          <table class="table table-bordered">
-            <cols><col width="100px"></col></cols>
-            <tr>
-              <td><code>q</code></td>
-              <td>eine Such-Anfrage in SOLR-Query-Syntax</td>
-            </tr>
-            <tr>
-              <td><code>sort</code></td>
-              <td><p>Sortierfeld und Sortierreihenfole in SOLR-Syntax mit Leerzeichen getrennt (<code>sort_field sort_order</code>).
-                </p>
-                <table class="table table-bordered">
-                <cols><col width="100px"></col></cols>
-                  <tr>
-                    <td><code>sort_field</code></td>
-                    <td>ein in de MyCoRe-Anwendung definiertes Suchfeld<br />
-                         z.B.: id, category, recordIdentifier
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code>sort_order</code></td>
-                    <td>erlaubte Werte sind: <code>asc</code> und <code>desc</code></td>
-                  </tr>
-                 </table>
-             </td>
-           </tr>
-          </table>
+          Weitere Informationen über die Syntax sind in der <a href="http://wiki.apache.org/solr/CommonQueryParameters">SOLR-Dokumentation</a>
+          zu finden.
         </p>
-        
+        <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>q</code></td>
+            <td>eine Such-Anfrage in SOLR-Query-Syntax</td>
+          </tr>
+          <tr>
+            <td><code>sort</code></td>
+            <td><p>Sortierfeld und Sortierreihenfole in SOLR-Syntax mit Leerzeichen getrennt (<code>sort_field sort_order</code>).
+              </p>
+              <table class="table table-bordered">
+              <cols><col width="100px"></col></cols>
+                <tr>
+                  <td><code>sort_field</code></td>
+                  <td>ein in de MyCoRe-Anwendung definiertes Suchfeld<br />
+                       z.B.: id, category, recordIdentifier
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>sort_order</code></td>
+                  <td>erlaubte Werte sind: <code>asc</code> und <code>desc</code></td>
+                </tr>
+               </table>
+            </td>
+          </tr>
+        </table>
+
         <h4>Beispiel-Requests</h4>
         <ul>
           <li><a href="http://www.mycore.de/mir/api/v1/search?q=mods.title:Open-Access">http://www.mycore.de/mir/api/v1/search?q=mods.title:Open-Access</a></li>
