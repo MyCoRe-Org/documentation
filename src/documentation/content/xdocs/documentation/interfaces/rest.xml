@@ -26,7 +26,7 @@
           <h4>Parameter</h4>
           
           <table class="table table-bordered">
-            <cols><col width="10em"></col></cols>
+            <cols><col width="100px"></col></cols>
             <tr>
               <td><code>format</code></td>
               <td>Mögliche Werte sind: <code>xml</code> (default) und <code>json</code>.</td>
