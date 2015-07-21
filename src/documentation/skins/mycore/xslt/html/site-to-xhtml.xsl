@@ -5,7 +5,7 @@
                 xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
                 exclude-result-prefixes="i18n">
 
-    <xsl:import href="../../../common/xslt/html/site-to-xhtml.xsl" />
+    <xsl:import href="lm://transform.skin.common.html.site-to-xhtml"/>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     main template
@@ -20,7 +20,7 @@
             </xsl:choose>
         </xsl:variable>
 
-<html lang="de">
+<html>
     <head>
         <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css' />
@@ -554,10 +554,9 @@ $(document).ready(function() {
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template name="footer_menu">
         <div id="footer_menu" class="pull-right">
-            <a href="{$root}contact/index.html"><i18n:text i18n:catalogue="menu">Kontakt</i18n:text></a> |
-            <a href="{$root}impressum/index.html"><i18n:text i18n:catalogue="menu">Impressum</i18n:text></a>
+            <a href="{$root}contact/index.html"><i18n:text i18n:catalogue="menu" i18n:key="Kontakt" /></a> |
+            <a href="{$root}impressum/index.html"><i18n:text i18n:catalogue="menu" i18n:key="Impressum" /></a>
         </div>
-
     </xsl:template>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

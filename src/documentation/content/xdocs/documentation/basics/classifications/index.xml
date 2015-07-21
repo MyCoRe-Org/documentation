@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -25,20 +25,20 @@
     <p class="fett">Allgemeines</p>
     <p>
     Klassifikationen sind wie bereits angedeutet Sammlungen fest stehender Begriffe, welche noch ggf. hierarchisch
-    strukturiert sein können. In Bereichen des Bibliothekswesens werden sie auch als Normdateien bezeichnet. Der
+    strukturiert sein kÃ¶nnen. In Bereichen des Bibliothekswesens werden sie auch als Normdateien bezeichnet. Der
     Vorteil ist, dass bei einer interaktiven Suche immer die richtigen und eindeutigen Begriffe angezeigt und
-    gefunden werden. Für den Import und Export solcher Klassifikationen wurde in MyCoRe eine XML-Darstellung festgelegt,
+    gefunden werden. FÃ¼r den Import und Export solcher Klassifikationen wurde in MyCoRe eine XML-Darstellung festgelegt,
     welche intern in SQL-Tabellen abgelegt wird. Als Schnittstelle dient hier ein Interface, welches durch
     verschiedene Persistence Layer implementiert werden kann. Standard ist dabei die Hibernate-Implementierung.
     </p>
     <p class="fett">Elemente einer Klassifikation</p>
     <p>
-    Klassifikationen haben immer ein Grundgerüst, welches die ID, das Datenmodellschema und einen oder mehrere Label
-    enthält. Ein Label wiederum enthält Informationen zur Sprache sowie einen Text und ein optionales Beschreibungsfeld.
+    Klassifikationen haben immer ein GrundgerÃ¼st, welches die ID, das Datenmodellschema und einen oder mehrere Label
+    enthÃ¤lt. Ein Label wiederum enthÃ¤lt Informationen zur Sprache sowie einen Text und ein optionales Beschreibungsfeld.
     Alle Elemente einer Klassifikation sind in Kategoriefeldern gespeichert. Jede Kategorie hat wiederum eine ID als
-    Attribut. Weiterhin enthält eine Kategorie Labels mit den Attributen Sprache, Text und Beschreibung (optional).
-    Eine weitere Option ist ein Element URL welches eine URL als Referenz für die Kategorie enthält. Die ist z.B. bei
-    Listen von Einrichtungen sehr interessant. Kategorien können ineinander geschachtelt auftreten.
+    Attribut. Weiterhin enthÃ¤lt eine Kategorie Labels mit den Attributen Sprache, Text und Beschreibung (optional).
+    Eine weitere Option ist ein Element URL welches eine URL als Referenz fÃ¼r die Kategorie enthÃ¤lt. Die ist z.B. bei
+    Listen von Einrichtungen sehr interessant. Kategorien kÃ¶nnen ineinander geschachtelt auftreten.
     </p>
 
     <img src="images/mycore_klassifikationen_uml.jpg" alt="Datenmodell-Graphik" title="Datenmodell-Graphik"/>

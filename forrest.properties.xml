@@ -17,10 +17,11 @@
 -->
 <properties>
 <!--
-    # codename: Dispatcher
-    # Dispatcher is using a fallback mechanism for theming.
-    # You can configure the theme name and its extension here
-    -->
+This is a configuration file for the new properties system.
+See faq.html#version
+And see each plugin's documentation for all available properties.
+-->
+
+  <property name="output.pdf.fontFamily.TOCFontFamily" value="serif"/>
   <property name="dispatcher.theme" value="pelt"/>
-  <property name="dispatcher.theme-ext" value=".fv"/>
 </properties>

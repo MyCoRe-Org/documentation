@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -10,9 +10,9 @@
     <section>
       <title>Datenexport</title>
       <p>
-        MyCoRe-Daten werden im XML-Format abgespeichert und können in beliebige
-        Formate exportiert werden. Hier soll beschrieben werden, wie dafür z.B. die
-        bibutils genutzt werden können. Weitere Formate (CSV) können ergänzt werden.
+        MyCoRe-Daten werden im XML-Format abgespeichert und kÃ¶nnen in beliebige
+        Formate exportiert werden. Hier soll beschrieben werden, wie dafÃ¼r z.B. die
+        bibutils genutzt werden kÃ¶nnen. Weitere Formate (CSV) kÃ¶nnen ergÃ¤nzt werden.
       </p>
     </section>
 

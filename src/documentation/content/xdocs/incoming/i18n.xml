@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -19,7 +19,7 @@ Beispiel 2 (ein einzelner Wert als Text):
 
 http://www.mycore.de:8291/servlets/MCRLocaleServlet/de/metaData.accessDenied
 
-Vorzugsweise würde man ersteres verwenden, da dies weniger roundtrips 
+Vorzugsweise wÃ¼rde man ersteres verwenden, da dies weniger roundtrips
 bedeutet. Statt "de" geht auch "en", etc.
       </p>
     </section>

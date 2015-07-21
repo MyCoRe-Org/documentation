@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -10,10 +10,10 @@
   <section>
    <title>Einbindung virtueller Host-Namen mit Hilfe des Apache-Web-Servers</title>
    <p>
-   Standardmäßig ist der Apache2 in den Installations-CDs aller gängigen Linux-Distributionen und in MacOS enthalten.
-   Für Windows muss ein gesonderter Download erfolgen (<a href="#chapter_2">Kapitel 2</a>). Der Quellcode des Apache2 liegt auf
-   <em>http://httpd.apache.org</em> für ein Download bereit. Die folgende Beschreibung bezieht sich auf die
-   Apache-version 2.0.x. Die weitere Beschreibung bezieht sich hinsichtlich der Pfade auf ein UNIX/MacOS-System, für
+   StandardmÃ¤ÃŸig ist der Apache2 in den Installations-CDs aller gÃ¤ngigen Linux-Distributionen und in MacOS enthalten.
+   FÃ¼r Windows muss ein gesonderter Download erfolgen (<a href="#chapter_2">Kapitel 2</a>). Der Quellcode des Apache2 liegt auf
+   <em>http://httpd.apache.org</em> fÃ¼r ein Download bereit. Die folgende Beschreibung bezieht sich auf die
+   Apache-version 2.0.x. Die weitere Beschreibung bezieht sich hinsichtlich der Pfade auf ein UNIX/MacOS-System, fÃ¼r
    Windows sind die dazu korrespondierenden Pfade zu nutzen.
    </p>
 
@@ -22,7 +22,7 @@
     <p>
     Die Einbindung des Proxy-modules ist relativ einfach zu bewerkstelligen. In der Datei <em>/etc/sysconfig/apache2</em>
     sind in der Zeile der Variable <strong>APACHE_MODULES</strong> die Module <strong>proxy,proxy_http,proxy_connect</strong>
-    hinzuzufügen. Nach der Änderung ist der Neustart des Apache-Servers erforderlich.
+    hinzuzufÃ¼gen. Nach der Ã„nderung ist der Neustart des Apache-Servers erforderlich.
     </p>
    </section>
 
@@ -33,9 +33,9 @@
     <em>/etc/apache2/httpd.conf</em> und <em>/etc/apache2/http-vhosts.conf</em> konfiguriert.
     </p>
     <p>
-    In der Datei <em>/etc/apache2/httpd.conf</em> ist die Include-Anweisung für das Lesen der Zusatzkonfiguration
-    <em>http-vhosts.conf</em> zu aktivieren. Anschließend wird der eigentliche virtuelle Host in dieser Datei definiert.
-    Dabei sind natürlich die Pfade zu den einzelnen Verzeichnissen entsprechend den aktuellen Gegebenheiten anzupassen.
+    In der Datei <em>/etc/apache2/httpd.conf</em> ist die Include-Anweisung fÃ¼r das Lesen der Zusatzkonfiguration
+    <em>http-vhosts.conf</em> zu aktivieren. AnschlieÃŸend wird der eigentliche virtuelle Host in dieser Datei definiert.
+    Dabei sind natÃ¼rlich die Pfade zu den einzelnen Verzeichnissen entsprechend den aktuellen Gegebenheiten anzupassen.
     </p>
 
     <pre class="brush: xml">
@@ -71,7 +71,7 @@
 </VirtualHost>]]></pre>
 
     <p>
-    Nach dieser Änderung ist zuerst die Servlet-Engine zu starten. Anschließend kann der Apache-Server mit
+    Nach dieser Ã„nderung ist zuerst die Servlet-Engine zu starten. AnschlieÃŸend kann der Apache-Server mit
     <code>/usr/sbin/rcapache2</code> neu gestartet werden.
     </p>
    </section>

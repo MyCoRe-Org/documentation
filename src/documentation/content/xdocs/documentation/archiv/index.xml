@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
   <header>
-    <title>Übersicht</title>
+    <title>Ãœbersicht</title>
   </header>
   <body>
 
       <p>Alte Dokumentation wird hier aufbewahrt und steht somit Anwendern vergangener Release-Versionen
-      auch weiterhin zur Verfügung. Wir empfehlen jedoch ein baldmögliches Update auf das aktuelle
+      auch weiterhin zur VerfÃ¼gung. Wir empfehlen jedoch ein baldmÃ¶gliches Update auf das aktuelle
       Release. Ab Version 2013.06 wird es keine derartige Versionierung der Dokumentation mehr geben.
       Wir dokumentieren ab sofort fortschreitend und halten an den entsprechenden Stellen fest, wenn ein
-      Feature erst ab Version xy verfügbar ist oder entfällt.</p>
+      Feature erst ab Version xy verfÃ¼gbar ist oder entfÃ¤llt.</p>
       <ul>
         <li>Dokumentation zum <a href="site:version_2_2">Pre-Release 2.2</a></li>
       </ul>

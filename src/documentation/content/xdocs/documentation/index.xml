@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
   <header>
-    <title>Übersicht</title>
+    <title>Ãœbersicht</title>
   </header>
   <body>
 
     <section id="documentation">
       <title>Dokumentation</title>
       <note label="Hinweis">Die MyCoRe-Dokumentation wird gerade komplett umstrukturiert. Daher kann es sein, dass einige
-      Inhalte noch nicht wieder wie gewohnt zur Verfügung stehen. Wir bitten dies zu entschuldigen! Bitte
+      Inhalte noch nicht wieder wie gewohnt zur VerfÃ¼gung stehen. Wir bitten dies zu entschuldigen! Bitte
       nutzen Sie alternativ die <a href="site:chapter1_ug22">Dokumentation im Archivbereich</a>.</note>
     </section>
 
     <section id="howto">
       <title>HowTo's</title>
       <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo">HowTo's (Wiki)</a>
-      <p>beschreiben in knappen Anleitungen, wie etwas gemacht wird und wie häufige MyCoRe-Probleme gelöst werden können.</p>
+      <p>beschreiben in knappen Anleitungen, wie etwas gemacht wird und wie hÃ¤ufige MyCoRe-Probleme gelÃ¶st werden kÃ¶nnen.</p>
     </section>
 
     <section id="migration">
@@ -52,9 +52,9 @@
         </li>
         <li>
           <a href="site:apidocs">Aktuelle API Dokumentation (Javadocs)</a>.<br/>
-          Diese Seite umfasst sämtliche Klassen des MyCoRe-Build-Prozesses, unter Umständen auch solche, die nicht in mycore-complete enthalten sind.<br/>
-          Die Javadocs der einzelnen MyCoRe-Komponenten erreichen sie über die <a href="http://www.mycore.de/generated/mycore/">MyCoRe-Maven-Hauptseite</a> (jeweils Eintrag unter "Modules" -> "Project Reports" -> "JavaDocs").<br/>
-          Javadocs für älteren Versionen sind über die <a href="site:maven">Maven Site</a> erreichbar ("Project Reports" -> "JavaDocs").
+          Diese Seite umfasst sÃ¤mtliche Klassen des MyCoRe-Build-Prozesses, unter UmstÃ¤nden auch solche, die nicht in mycore-complete enthalten sind.<br/>
+          Die Javadocs der einzelnen MyCoRe-Komponenten erreichen sie Ã¼ber die <a href="http://www.mycore.de/generated/mycore/">MyCoRe-Maven-Hauptseite</a> (jeweils Eintrag unter "Modules" -> "Project Reports" -> "JavaDocs").<br/>
+          Javadocs fÃ¼r Ã¤lteren Versionen sind Ã¼ber die <a href="site:maven">Maven Site</a> erreichbar ("Project Reports" -> "JavaDocs").
         </li>
       </ul>
     </section>
@@ -62,10 +62,10 @@
     <section id="doc_archive">
       <title>Archiv</title>
       <p>Alte Dokumentation wird hier aufbewahrt und steht somit Anwendern vergangener Release-Versionen
-      auch weiterhin zur Verfügung. Wir empfehlen jedoch ein baldmögliches Update auf das aktuelle
+      auch weiterhin zur VerfÃ¼gung. Wir empfehlen jedoch ein baldmÃ¶gliches Update auf das aktuelle
       Release. Ab Version 2013.06 wird es keine derartige Versionierung der Dokumentation mehr geben.
       Wir dokumentieren ab sofort fortschreitend und halten an den entsprechenden Stellen fest, wenn ein
-      Feature erst ab Version xy verfügbar ist oder entfällt.</p>
+      Feature erst ab Version xy verfÃ¼gbar ist oder entfÃ¤llt.</p>
       <ul>
         <li>Dokumentation zum <a href="site:version_2_2">Pre-Release 2.2</a></li>
       </ul>

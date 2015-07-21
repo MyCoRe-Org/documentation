@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -10,15 +10,15 @@
      <section>
     <title>Mapping der Klassifikationen</title>
   <p>
-    Für einen DINI-konformen Betrieb der OAI-Schnittstelle müssen
-    verschiedene Sets unterstützt werden. Sets werden im OAI-PMH Standard
-    verwendet, um Dokumente zu gruppieren. Sie ermöglichen selektives
+    FÃ¼r einen DINI-konformen Betrieb der OAI-Schnittstelle mÃ¼ssen
+    verschiedene Sets unterstÃ¼tzt werden. Sets werden im OAI-PMH Standard
+    verwendet, um Dokumente zu gruppieren. Sie ermÃ¶glichen selektives
     Harvesting und entsprechen konzeptionell den Klassifikationen in
-    MyCoRe. Deshalb wurden zunächst Klassifikationen für die Sets
-    erstellt, die für das DINI-Zertifikat zu implementieren sind. Sie
+    MyCoRe. Deshalb wurden zunÃ¤chst Klassifikationen fÃ¼r die Sets
+    erstellt, die fÃ¼r das DINI-Zertifikat zu implementieren sind. Sie
     stehen im DocPortal als class_ddc_sg.xml, class_diniPublType.xml und
-    class_diniVersion.xml zur Verfügung und müssen in die eigene Anwendung
-    übernommen werden.
+    class_diniVersion.xml zur VerfÃ¼gung und mÃ¼ssen in die eigene Anwendung
+    Ã¼bernommen werden.
     </p>
   <p>
     Sollen Dokumente im XmetaDissPlus-Format ausgeliefert werden, sind weitere
@@ -29,14 +29,14 @@
     Im einfachsten Fall lassen sich diese Klassifikationen direkt in einem
     MyCoRe-Datenmodell verwenden. Allerdings werden die meisten
     MyCoRe-Anwendungen eigene Klassifikationen besitzen, z.B eine
-    detaillierte DDC oder detailliertere Klassifikation für
-    Dokumententypen. Für diese Fälle wurde in MyCoRe ein Mapping-Verfahren
+    detaillierte DDC oder detailliertere Klassifikation fÃ¼r
+    Dokumententypen. FÃ¼r diese FÃ¤lle wurde in MyCoRe ein Mapping-Verfahren
     implementiert.
     </p>
   <p>
-    Das Datenmodell muss dafür zunächst um ein Datenfeld mappings/mapping
-    ergänzt werden. Dieses Feld wird dann beim Einfügen oder Aktualisieren
-    der Dokumente automatisch befüllt.
+    Das Datenmodell muss dafÃ¼r zunÃ¤chst um ein Datenfeld mappings/mapping
+    ergÃ¤nzt werden. Dieses Feld wird dann beim EinfÃ¼gen oder Aktualisieren
+    der Dokumente automatisch befÃ¼llt.
     </p>
     <p>
     <pre class="brush: xml"><![CDATA[
@@ -46,10 +46,10 @@
     </element>]]></pre>
     </p>
   <p>
-    Die eigenen Klassifikationen werden um ein Label mit dem künstlichen
+    Die eigenen Klassifikationen werden um ein Label mit dem kÃ¼nstlichen
     Sprach-Attribut<code>x-mapping</code> erweitert. Als Wert wird
     Klassifikations-ID und Kategorie-ID getrennt durch einen Doppelpunkt
-    dort eingetragen. Mehre Werte können durch Leerzeichen getrennt
+    dort eingetragen. Mehre Werte kÃ¶nnen durch Leerzeichen getrennt
     eingetragen werden. z.B.:
     </p>
     <pre class="brush: xml"><![CDATA[
@@ -61,7 +61,7 @@
     XmetaDissPlusThesisLevel:thesis.doctoral diniVersion:publishedVersion" />
   </category>]]></pre>
   <p>
-    Das Mapping wird per EventHandler aktiviert und sollte möglichst früh
+    Das Mapping wird per EventHandler aktiviert und sollte mÃ¶glichst frÃ¼h
     aufgerufen werden, zumindest noch vor dem Start der Indexierung.
     </p>
     <pre class="brush: shell; gutter: false;">

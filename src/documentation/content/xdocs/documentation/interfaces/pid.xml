@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
   <header>
     <title>Persistent Identifier</title>
     <abstract>
-      MyCoRe bietet verschiedene Möglichkeiten an, Persistente Identifier zu generieren. Es ist
-      möglich URNs oder Handle zu erzeugen. Für die Registrierung einer DOI wird aktuell ein
+      MyCoRe bietet verschiedene MÃ¶glichkeiten an, Persistente Identifier zu generieren. Es ist
+      mÃ¶glich URNs oder Handle zu erzeugen. FÃ¼r die Registrierung einer DOI wird aktuell ein
       Stylesheet angeboten, das aus MyCoRe-MODS-Objekten ein datacite-Format generiert, das dann
       entsprechend zur Registrierung genutzt werden kann.
     </abstract>
@@ -28,31 +28,31 @@
     <section>
       <title>URN in der Anwendung</title>
       <p>
-        Um die URN-Vergabe für Dokumente und deren Derivate zu aktivieren, muss das folgende
-        Property für die entsprechenden MyCoRe-Objekttypen definiert werden:
+        Um die URN-Vergabe fÃ¼r Dokumente und deren Derivate zu aktivieren, muss das folgende
+        Property fÃ¼r die entsprechenden MyCoRe-Objekttypen definiert werden:
       </p>
       <pre class="brush: bash">
         MCR.URN.Enabled.Objects=mods
       </pre>
       <p>
-        Soll für mehrere Objekttypen die URN-Vergabe ermöglicht werden, so
-        müssen alle Typen durch Komma getrennt an dieser Stelle angegeben werden:
+        Soll fÃ¼r mehrere Objekttypen die URN-Vergabe ermÃ¶glicht werden, so
+        mÃ¼ssen alle Typen durch Komma getrennt an dieser Stelle angegeben werden:
       </p>
       <pre class="brush: bash">
         MCR.URN.Enabled.Objects=document,file,certificate
       </pre>
       <p>
-        In der Anwendung MIR ist die URN-Vergabe für MODS-Dokumente standardmäßig
-        aktiviert. Werden Dateien angehangen, so kann über das Aktionen-Menü des
-        jeweiligen Derivates eine URN für das Derivat erzeugt werden.
+        In der Anwendung MIR ist die URN-Vergabe fÃ¼r MODS-Dokumente standardmÃ¤ÃŸig
+        aktiviert. Werden Dateien angehangen, so kann Ã¼ber das Aktionen-MenÃ¼ des
+        jeweiligen Derivates eine URN fÃ¼r das Derivat erzeugt werden.
       </p>
     </section>
     <section>
       <title>Das MCRAddURNToObjectServlet</title>
       <p>
         In der Anwendung kann das <a href="http://www.mycore.de/generated/mycore/apidocs/index.html?org/mycore/urn/servlets/MCRAddURNToObjectServlet.html"
-        >MCRAddURNToObjectServlet</a> genutzt werden, um je nach Anforderung die URN zu erzeugen. Dafür stehen die folgenden
-        Optionen zur Verfügung:
+        >MCRAddURNToObjectServlet</a> genutzt werden, um je nach Anforderung die URN zu erzeugen. DafÃ¼r stehen die folgenden
+        Optionen zur VerfÃ¼gung:
       </p>
       <table class="table">
         <tr>
@@ -63,19 +63,19 @@
         <tr>
           <td>object</td>
           <td>ObjectID / DerivatID</td>
-          <td>Pflichtangabe, übergibt die ID des Objektes bzw. Derivates, für das eine URN erzeugt werden soll; ohne weitere Parameter wird bei Angabe einer
+          <td>Pflichtangabe, Ã¼bergibt die ID des Objektes bzw. Derivates, fÃ¼r das eine URN erzeugt werden soll; ohne weitere Parameter wird bei Angabe einer
               Objekt-ID eine URN in den Metadaten eingetragen, bei Angabe einer Derivat-ID bekommt das Derivat eine URN und alle enthaltenen Dateien bekommen
               eine darauf aufbauende URN-granular</td>
         </tr>
         <tr>
           <td>target</td>
           <td>"file" oder "derivate"</td>
-          <td>optional und nur in Kombination mit <code>object=&lt;DerivatID&gt;</code> möglich; "file" gibt an, dass die URN
-              für eine einzelne Datei erzeugt werden soll; "derivate" gibt an, dass die URN nur für das Derivat erzeugt werden soll</td>
+          <td>optional und nur in Kombination mit <code>object=&lt;DerivatID&gt;</code> mÃ¶glich; "file" gibt an, dass die URN
+              fÃ¼r eine einzelne Datei erzeugt werden soll; "derivate" gibt an, dass die URN nur fÃ¼r das Derivat erzeugt werden soll</td>
         </tr>
         <tr>
           <td>file</td>
-          <td>Pfad zur Datei innerhalb des Derivates, für die eine URN erzeugt werden soll</td>
+          <td>Pfad zur Datei innerhalb des Derivates, fÃ¼r die eine URN erzeugt werden soll</td>
           <td>optional und nur in Kombination mit <code>object=&lt;DerivatID&gt;</code> und <code>target=file</code></td>
         </tr>
       </table>
@@ -91,11 +91,11 @@
     <section>
       <title>Die Implementierung</title>
       <p>
-        Die URN-Funktionalität wird in der MyCoRe-Komponente <code>mycore-urn</code> bereitgestellt.
+        Die URN-FunktionalitÃ¤t wird in der MyCoRe-Komponente <code>mycore-urn</code> bereitgestellt.
       </p>
       <p>
         In der Basisimplementierung sorgt der <a href="http://www.mycore.de/generated/mycore/apidocs/index.html?org/mycore/urn/services/MCRURNProvider.html"
-        >MCRURNProvider</a> für die Erzeugung
+        >MCRURNProvider</a> fÃ¼r die Erzeugung
         der URN. Dieser generiert die URN nach einem in den Properties definierten Schema:
       </p>
       <pre class="brush: bash">
@@ -107,21 +107,21 @@
           #MCR.URN.SubNamespace.Default.NISSBuilder=org.mycore.urn.services.MCRNISSBuilderUUID
       </pre>
       <p>
-        Die gelisteten Properties zeigen die Standard-Konfiguration. Diese können (und sollten) entsprechend in den
-        Properties der Anwendung angepasst werden. Die Komponente <code>mycore-urn</code> bringt zwei Möglichkeiten mit,
+        Die gelisteten Properties zeigen die Standard-Konfiguration. Diese kÃ¶nnen (und sollten) entsprechend in den
+        Properties der Anwendung angepasst werden. Die Komponente <code>mycore-urn</code> bringt zwei MÃ¶glichkeiten mit,
         eine URN zu generieren. Es kann eine UUID (<a href="http://www.mycore.de/generated/mycore/apidocs/index.html?org/mycore/urn/services/MCRNISSBuilderUUID.html"
         >MCRNISSBuilderUUID</a>) erzeugt werden, oder anhand des Zeitpunktes, zu dem die URN
-        erzeugt wird. Das genaue Muster dafür kann mittels des NISSPattern-Properties
+        erzeugt wird. Das genaue Muster dafÃ¼r kann mittels des NISSPattern-Properties
         (<a href="http://www.mycore.de/generated/mycore/apidocs/index.html?org/mycore/urn/services/MCRNISSBuilderDateCounter.html"
         >MCRNISSBuilderDateCounter</a>) definiert werden.
       </p>
       <p>
-        Reichen die Optionen über die Properties nicht aus und die URNs sollen mit einem
-        anderen Aufbau generiert werden, so muss dafür eine eigene Klasse geschrieben werden,
+        Reichen die Optionen Ã¼ber die Properties nicht aus und die URNs sollen mit einem
+        anderen Aufbau generiert werden, so muss dafÃ¼r eine eigene Klasse geschrieben werden,
         die das <code>org.mycore.services.urn.IURNProvider</code>-Interface implementiert oder
         einfacher gleich von <code>org.mycore.services.urn.AbstractURNProvider</code>
         abgeleitet wird. Die neue Klasse muss dann mit dem vollen Klassenpfad als Wert
-        für das Property <code>MCR.URN.Provider.Class</code> gesetzt werden.
+        fÃ¼r das Property <code>MCR.URN.Provider.Class</code> gesetzt werden.
       </p>
       <p>
         Die erzeugten URNs werden sowohl in der Datenbanktabelle
@@ -134,7 +134,7 @@
     <p>in Arbeit</p>
   </section>
   <section>
-    <title>DOI-Registrierung über datacite</title>
+    <title>DOI-Registrierung Ã¼ber datacite</title>
     <p>
       <span class="label label-info">2015.03</span> Es wird aktuell an der Bereitstellung eines
       Dienstes zur Erstellung und Registrierung einer DOI bei dataCite gearbeitet. Aktuell kann
@@ -152,17 +152,17 @@
       diese entsprechend der Konfiguration erstellt.
     </p>
     <div style="float:right;text-align:right;">
-      <img src="images/mir/register_doi_menu.png" alt="MIR-Aktionen-Menü mit aktivierter DOI-Registrierung" />
-      <p class="klein"><strong>Abbildung 1:</strong> MIR-Aktionen-Menü einer Publikation</p>
+      <img src="images/mir/register_doi_menu.png" alt="MIR-Aktionen-MenÃ¼ mit aktivierter DOI-Registrierung" />
+      <p class="klein"><strong>Abbildung 1:</strong> MIR-Aktionen-MenÃ¼ einer Publikation</p>
     </div>
     <p>
-      Die Anwendung MIR stellt diese Funktionalität bereit, wenn das entsprechende Property
-      <code>MIR.registerDOI=true</code> gesetzt wird. Dann erscheint im Aktionen-Menü eines
-      einzelnen Objektes ein weiterer Menüpunkt "DOI Registrieren".
+      Die Anwendung MIR stellt diese FunktionalitÃ¤t bereit, wenn das entsprechende Property
+      <code>MIR.registerDOI=true</code> gesetzt wird. Dann erscheint im Aktionen-MenÃ¼ eines
+      einzelnen Objektes ein weiterer MenÃ¼punkt "DOI Registrieren".
     </p>
     <p>
       <span class="label label-info">Hinweis:</span>
-      Dieser Dienst befindet sich noch im Aufbau! Die Übernahme der DOI in die Metadaten und
+      Dieser Dienst befindet sich noch im Aufbau! Die Ãœbernahme der DOI in die Metadaten und
       die Registrierung bei DataCite muss derzeit von Hand realisiert werden.
     </p>
   </section>

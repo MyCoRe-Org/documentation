@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
@@ -11,7 +11,7 @@
       <title>DFG-Viewer</title>
       <p>
         Am Beispiel des DFG-Viewer soll gezeigt werden, wie Bildbetrachter von Drittanbietern
-        eingebunden werden können.
+        eingebunden werden kÃ¶nnen.
       </p>
     </section>
 
