@@ -70,6 +70,9 @@
       <map:match pattern="classifications/*.xml">
         <map:read src="{properties:resources}/classifications/{1}.xml" mime-type="text/xml" />
       </map:match>
+      <map:match pattern="classifications/*.html">
+        <map:read src="{properties:resources}/classifications/{1}.html" mime-type="text/html" />
+      </map:match>
       <map:match pattern="classifications/*.rdf">
         <map:generate src="{properties:resources}/classifications/{1}.xml" type="file" />
         <map:transform src="{properties:resources.stylesheets}/mcrclass2rdf.xsl" type="xslt" />
