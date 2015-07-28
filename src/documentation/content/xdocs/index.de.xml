@@ -70,11 +70,11 @@
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Release 2015.02</title>
-          <message>Im Februar erschien das Zwischenrelease 2015.02</message>
-          <url>http://mycore.de/generated/mycore-2015.02/project-reports.html</url>
-          <date>11. Mai 2015</date>
-          <author>Kathleen Neumann</author>
+          <title>Release 2015.05</title>
+          <message>Im Mai erschien das Release 2015.05.0 (LTS 2015) mit „Long Term Support“</message>
+          <url>http://mycore.de/generated/mycore-2015.05/project-reports.html</url>
+          <date>28. Juli 2015</date>
+          <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
