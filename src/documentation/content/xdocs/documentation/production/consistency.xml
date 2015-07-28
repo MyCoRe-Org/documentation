@@ -121,7 +121,7 @@
       </p>
       <p>um alle Derivate eines Projektes zu bearbeiten lautet das Kommando</p>
       <p>
-        <code>mycore.sh repair mcrdata.xml in content store {store_id} for project ID {project_id}</code>
+        <code>mycore.sh repair mcrdata.xml in content store {store_id} for project id {project_id}</code>
       </p>
       <p>Um die Konsistenz zwischen den Derivate-verzeichnissen auf der Platte und der Tabelle MCRFSNODES zu prüfen und
         ggf. Fehler zu korrigieren sind die nachfolgenden Kommandos entwickelt worden. Hierbei ist zu beachten, dass
