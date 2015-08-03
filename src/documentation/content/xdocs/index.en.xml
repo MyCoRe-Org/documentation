@@ -70,11 +70,11 @@
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Release 2015.05</title>
-          <message>In May, the long term support release 2015.05 (LTS 2015) was published.</message>
-          <url>http://mycore.de/generated/mycore-2015.05/project-reports.html</url>
-          <date>28. Juli 2015</date>
-          <author>Wiebke Oeltjen</author>
+          <title>Release 2015.07</title>
+          <message>The last JDK-1.7 compatible release is now available.</message>
+          <url>http://mycore.de/download/release.html</url>
+          <date>03. August 2015</date>
+          <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>

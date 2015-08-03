@@ -10,17 +10,14 @@
 
   <div style="margin-bottom:50px;">
     <p>
-      <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.12/" title="DocPortal download on sourceforge">
-      <img src="/images/download_docportal_201412.png" alt="DocPortal download on sourceforge"
-      style="float:right;margin:0px 0px 10px 10px;" title="DocPortal download on sourceforge" /></a>
-      You can integrate the latest MyCoRe version <a href="site:release">Release 2014.12</a> in your application
-      using maven or as download on <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.12/"
-      >Sourceforge</a>. An alternative is DocPortal, the sample application including MyCoRe v2014.12, which is
-      also available on Sourceforge.
+      You can get the latest MyCoRe version directly using Maven or from the
+      <a href="http://artifactory.mycore.de/">MyCoRe Artifactory</a>. Alternatively
+      you can download the <a href="site:mir">MIR application</a>, an out-of-the-box
+      solution for institutional repositories.
     </p>
     <p>
       Besides the official current release, you can also use our long term support release (LTS)
-      <a href="site:lts_release">2014.06</a>, which is supported til next LTS (ca. 1 year).
+      <a href="site:lts_release">2015.05</a>, which is supported til next LTS (ca. 1 year).
     </p>
     <p>
       All older versions are archived.

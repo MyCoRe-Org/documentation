@@ -18,6 +18,112 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <section>
+    <title>Release 2014.06 (LTS)</title>
+  <p>
+    After the introduction of Solr as an alternative to Lucene 2013, this year's
+  LTS Release 2014.06 doesn't contain Lucene support anymore.
+  Since Lucene support is only excluded, it is still possible to operate
+  on Lucene running applications with the current MyCoRe.
+  For more information, see the <a href="site:migrate2014.06">section on migration</a>.
+  </p>
+  <p>
+    The old WCMS has also been replaced by a much more flexible solution.
+  This provides extensive support of multilingualism and the possibility
+  to define a wide variety of menu trees.
+  </p>
+  <p>
+    You can find an overview of all innovations on the documentation site
+    <a href="site:whats_new">"Was ist neu?"</a>. A detailed list of changes
+    is provided in the <a href="site:changelog">Changelog</a>. This is a long term
+    support release (LTS), so we support this version for one year.
+  </p>
+
+  <p>
+    If you have your application already near version 2014.06, you only have to update
+    your pom.xml (docportal/config):
+
+    <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2014.06.0.1-SNAPSHOT&lt;/version>
+[...]
+&lt;dependency>
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>[2014.06.0.1-SNAPSHOT,2014.06.1)&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
+
+    In the next step you have to build your application again (<code>ant resolve create.jar
+    create.scripts create.webapp</code>).
+  </p>
+
+  <p>
+    <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
+      ><img src="/images/download_docportal_201406.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
+    As an alternative DocPortal is available as download with <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
+    >Release 2014.06</a>. You can find the corresponding installation guidelines
+    in the <a href="site:install">UserGuide</a>.There are instructions for the
+    <a href="site:migrate2014.06">Migration</a> as well provided.
+  </p>
+  <p>
+    Furthermore there is a MyCoRe
+    <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.06/">jar file</a>
+    ready for download, therewith you can use the MyCoRe kernel in your own application
+    independent from DocPortal. MyCoRe can be integrated as well via Maven.
+  </p>
+
+  <h2>Was ist neu?</h2>
+      <p>
+        Das am 20. Juni 2014 erschienene LTS-Release 2014.06 bringt die nachfolgend gelisteten großen Neuerungen mit sich. Eine detaillierte
+        Aufstellung aller Änderungen, Bugfixes etc. ist im <a href="/download/changelog.html#Release+2014.06+-+LTS">ChangeLog</a> zu finden.
+      </p>
+
+      <h3>Ausgliederung Lucene</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Suche und Indexierung auf Basis von Lucene befindet sich nun in einem separaten Mavenmodul mycore-legacy-search. Damit stellt der
+          MyCoRe-Kern nun nur noch eine Solr-Unterstützung für die Suche zur Verfügung.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+
+      <h3>WCMS2</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die neue WCMS-Komponente ermöglicht grundsätzlich, wie schon der Vorgänger, statische Webseiten rund um das Repository anzulegen, zu
+          ändern oder zu löschen. Dabei unterstützt das WCMS nun auch alle aktuell von MyCoRe bereitgestellten Funktionen, wie z.B. die Möglichkeit
+          in einer Seite sowohl sprachabhängige als auch sprachunabhängige Bereiche zu definieren. Es ist ebenfalls möglich beliebige Menüs zu definieren.
+          Damit entfällt die starre Nutzung von „main“ und „below“.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Matthias Eichner, et.al</dd>
+      </dl>
+
+      <h3>Verschlüsselte Übertragung über https</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Auf MyCoRe basierende Anwendungen können nun auch vollständig über https genutzt werden. Alle Komponenten wurden dahingehend geprüft und
+          ggf. angepasst.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler, Matthias Eichner und Kathleen Neumann</dd>
+      </dl>
+  </section>
+
+  <section>
     <title>Release 2014.03 - ‚Lenzing‘</title>
     <p>
       All changes, new features etc. are summarized below.

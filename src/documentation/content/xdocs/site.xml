@@ -57,8 +57,8 @@ See http://forrest.apache.org/docs/linking.html for more info
   <download      label="Download"           href="download/" tab="download">
     <howtoget    label="Übersicht"          href="index.html" />
     <whats_new   label="Was ist neu?"       href="whats_new.html" />
-    <release     label="Release 2014.12"    href="release.html" />
-    <lts_release label="LTS-Release 2014.06"    href="lts_release.html" />
+    <release     label="Release 2015.07"    href="release.html" />
+    <lts_release label="LTS-Release 2015.05"    href="lts_release.html" />
     <logos       label="Material"           href="logos.html" />
     <license     label="Lizenzbedingungen"  href="license.html" />
     <dl_archive  label="Archiv"             href="archive.html" />
@@ -228,7 +228,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         </version_2_0>
       </doc_archive>
     </overview>
-    
+
     <!-- Mit MyCoRe starten -->
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
       <mir                   label="MIR"               href="mir.html" />
@@ -249,7 +249,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         <installation_dp          label="Installation &amp; Aufbau" href="installation.html" />
       </docportal>
     </getting_started>
-    
+
     <!-- Grundlagen -->
     <content               label="Grundlagen"          href="basics/">
       <module_structure      label="Modulstruktur"     href="module_structure.html" />
@@ -287,7 +287,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <query_language      label="Query-Language"    href="query_language.html" />
       <extract             label="Daten extrahieren" href="extract.html" />
     </search>
-    
+
     <!-- Weboberfläche -->
     <frontend              label="Weboberfläche"     href="frontend/">
       <static_content      label="Statische Webinhalte"  href="static_content.html" />
@@ -309,7 +309,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <basket              label="Korbfunktion"          href="basket.html" />
       <integrated_wcms     label="WCMS"                  href="wcms.html" />
     </frontend>
-    
+
     <!-- Benutzer und Rechte -->
     <permissions           label="Benutzer und Rechte"   href="permissions/">
       <user_management     label="Benutzerverwaltung"    href="user_management.html" />
@@ -319,18 +319,18 @@ See http://forrest.apache.org/docs/linking.html for more info
       <broadcasting        label="Nachrichtenfenster"    href="broadcasting.html" />
       <session_listing     label="Session Listing"       href="session_listing.html" />
     </permissions>
-    
+
     <!-- Workflow -->
     <workflow              label="Workflow"              href="workflow/">
       <wf_overview         label="Übersicht"             href="index.html" />
       <swf                 label="SimpleWorkFlow"        href="swf.html" />
     </workflow>
-    
+
     <!-- Datenexport -->
     <export                label="Datenexport"           href="export/">
       <bibutils            label="Bibutils"              href="index.html" />
     </export>
-    
+
     <!-- Schnittstellen -->
     <interfaces            label="Schnittstellen"        href="interfaces/">
       <webservices         label="WebServices"           href="webservices.html" />
@@ -340,13 +340,13 @@ See http://forrest.apache.org/docs/linking.html for more info
       <google              label="Google-Sitemap"        href="google_sitemap.html" />
       <sword               label="SWORD"                 href="sword.html" />
     </interfaces>
-    
+
     <!-- veraltete Komponenten -->
     <old_components        label="veraltete Komponenten" href="old_components/">
       <editorframework     label="Editorframework"       href="editor_framework.html" />
       <query_service       label="QueryService"          href="query_service.html" />
     </old_components>
-    
+
     <!-- Laufender Betrieb -->
     <production            label="Laufender Betrieb"     href="production/">
       <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
@@ -366,7 +366,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <migrate13_20        label="1.3 &#8658; 2.0"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
       <migrate12_13        label="1.2 &#8658; 1.3"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
     </migrate>
-    
+
     <!-- Für Entwickler -->
     <developer             label="Für Entwickler"    href="developer/">
       <vocabular           label="Vokabular"                  href="vocabular.html" />

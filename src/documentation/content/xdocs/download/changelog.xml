@@ -7,89 +7,387 @@
 
  <body>
 
+  <!-- Include required JS files -->
+  <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+  <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
   <section>
   <title>Changes in MyCoRe</title>
 
   <section>
-  <title>Version 2015.01 (current head tree)</title>
-  <!-- ul>
+    <title>Version 2015.08 - Current Head</title>
 
-    <li>New features</li>
-    <ul>
-      <li>xxx</li>
-      <li>xxx</li>
-    </ul>
+    <pre class="brush: xml;gutter: false;">
+      &lt;dependency>
+        &lt;groupId>org.mycore&lt;/groupId>
+        &lt;artifactId>mycore-{component}&lt;/artifactId>
+        &lt;version>2015.08-SNAPSHOT&lt;/version>
+      &lt;/dependency>
+    </pre>
 
-    <li>Fixed Bugs</li>
-    <ul>
-      <li>xxx</li>
-      <li>xxx</li>
-    </ul>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore/project-reports.html">maven site</a></p>
 
-    <li>Changes</li>
-    <ul>
-      <li>xxx</li>
-      <li>xxx</li>
-    </ul>
-    
-    <li>Removed</li>
-    <ul>
-      <li>xxx</li>
-      <li>xxx</li>
-    </ul>
+  </section>
 
-  </ul-->
+
+  <section>
+    <title>Version 2015.07 - ‚Last Tequila Sour‘</title>
+
+    <pre class="brush: xml;gutter: false;">
+      &lt;dependency>
+        &lt;groupId>org.mycore&lt;/groupId>
+        &lt;artifactId>mycore-{component}&lt;/artifactId>
+        &lt;version>2015.07&lt;/version>
+      &lt;/dependency>
+    </pre>
+
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.07/project-reports.html">maven site</a></p>
+    <ul>
+        <li>Fixed Bugs</li>
+        <ul>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1016">MCR-1016</a>] - update of mycorederivate does not support XEditor</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1015">MCR-1015</a>] - category ident in select options doesn't work in IE10 and Chrome</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1014">MCR-1014</a>] - Remove dependency from mcr-urn to mcr-iview2</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1005">MCR-1005</a>] - ContentStoreSelectionRules.xml do not work</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-994">MCR-994</a>] - boolean OR falsch ausgewertet, wenn alleine</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-987">MCR-987</a>] - wrong search servlet in classification browser stylesheet</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-976">MCR-976</a>] - MCRObjectStructure.setParent() sets parent in schema invalid order</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-973">MCR-973</a>] - wrong transformin of conditions in MCRQLSearchServlet</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-970">MCR-970</a>] - ACL rules cache does not invalidate entries</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-969">MCR-969</a>] - new created related object still contains invalid xlink:href="mir_mods_00000000"</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-954">MCR-954</a>] - can't edit webpage containing &lt;printlatestobjects /></li>
+        </ul>
+
+        <li>Improvements</li>
+        <ul>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1012">MCR-1012</a>] - add numChildren/here/* to MCRPathXML</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1009">MCR-1009</a>] - CLI command to fix directory sizes in Database for a specific derivate.</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1004">MCR-1004</a>] - The MCRBasicFileAttributeViewImpl should check that file attributes are synchronized</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1001">MCR-1001</a>] - MCRCache support timestamp parameter on put</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-996">MCR-996</a>] - add mods:accessCondition to classification support</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-988">MCR-988</a>] - Provide SOLR/Bootstrap classificationBrowserData Stylesheet</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-977">MCR-977</a>] - pass UserAgent in MCRParameterCollector</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-974">MCR-974</a>] - provide defaults for MCR.LayoutTransformerFactory.Default.Ignore property</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-918">MCR-918</a>] - template "printlatestobjects" should be part of core functionality</li>
+        </ul>
+
+        <li>New Feature</li>
+        <ul>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-999">MCR-999</a>] - Implement configurable attribute mapping</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-978">MCR-978</a>] - simple function to detect if mobile device in MCRXMLFunctions</li>
+        </ul>
+
+        <li>Tasks</li>
+        <ul>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-991">MCR-991</a>] - Update dependencies</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-982">MCR-982</a>] - QueuedJob</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-975">MCR-975</a>] - remove deprecated methods, interfaces from MCRURIResolver</li>
+        </ul>
+    </ul>
+  </section>
+
+  <section>
+    <title>Version 2015.05.0 - LTS 2015</title>
+
+    <pre class="brush: xml;gutter: false;">
+      &lt;dependency>
+        &lt;groupId>org.mycore&lt;/groupId>
+        &lt;artifactId>mycore-{component}&lt;/artifactId>
+        &lt;version>2015.05.0&lt;/version>
+      &lt;/dependency>
+    </pre>
+
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.05.0/project-reports.html">maven site</a></p>
+    <ul>
+
+      <li>Fixed Bugs</li>
+      <ul>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-964">MCR-964</a>] - MCRPath.toPhysicalPath() may throw Exception if not all configured stores have an existing baseDirectory</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-963">MCR-963</a>] - SolrClient may hang on connection timeout</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-961">MCR-961</a>] - mods title output shows always the first title tag in xml</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-953">MCR-953</a>] - MCRSolrProxyServlet with "qt" does not support parameters with multiple values</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-951">MCR-951</a>] - hidden update for delete request</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-950">MCR-950</a>] - if related item id in new mods object is given, no parent structure will be created</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-949">MCR-949</a>] - can't use $parameter in default attribute</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-948">MCR-948</a>] - Shutdown may hang if SOLR is not available</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-945">MCR-945</a>] - Classification Editor is broken in Internet Explorer</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-944">MCR-944</a>] - do not create new mcrobject if no metadata is given (mods related item)</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-943">MCR-943</a>] - category.top and dynamic fields *.top doesn't check for mods:relatedItem</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-939">MCR-939</a>] - register form allows  special characters in user login</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-938">MCR-938</a>] - owner can't list it's users and user owned can't doesn't have permissions to change their data</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-937">MCR-937</a>] - can't edit user with owner defined</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-931">MCR-931</a>] - relatedItems may result in parents get detached</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-930">MCR-930</a>] - Inherited metadata gets lost after editing document</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-927">MCR-927</a>] - related items created using MCRExtractRelatedItemsEventHandler are empty</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-924">MCR-924</a>] - MCRStaticXMLFileServlet does not check read permissions</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-923">MCR-923</a>] - several NPE in o.m.m.MCRMODSClassificationSupport</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-919">MCR-919</a>] - Property MCR.Persistence.URN.XPath.{type} is ignored</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-917">MCR-917</a>] - deprecated properties are not resolved</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-909">MCR-909</a>] - MCRModsDateHelper should ignore timezone in getter and setter when date format is without timezone too</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-908">MCR-908</a>] - default configuration missing for MCR.Module-solr.ConcurrentUpdateSolrServer.Enabled</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-905">MCR-905</a>] - javadoc for MCRLoginServlet describes a not valid action "logout"</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-902">MCR-902</a>] - DB restart leads to hibernate.TransactionException</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-734">MCR-734</a>] - remove usage of MCRContants.DATE_FORMAT</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-725">MCR-725</a>] - MCRURLRetriever throws NPE if no condition is available</li>
+      </ul>
+
+      <li>Improvements</li>
+      <ul>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-966">MCR-966</a>] - Add support to map JPA annotated classes during Hibernate configuration</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-965">MCR-965</a>] - add MCRContent.sendTo(Path)</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-957">MCR-957</a>] - only create new MCRObject for related item if xlink:href contains MCRObjectID</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-956">MCR-956</a>] - Support encrypted PDFs</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-946">MCR-946</a>] - CreaterRuleStrategie should allow a list of categories</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-940">MCR-940</a>] - Ignore IOException: "Broken pipe"</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-934">MCR-934</a>] - MCRCommand throw NPE if command method is not static</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-932">MCR-932</a>] - Improve "xslt {0} with file {1}"</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-929">MCR-929</a>] - enable SMTP authentication</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-926">MCR-926</a>] - Provide better error messages in MCRSourceConent</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-925">MCR-925</a>] - Update DFG structure dataset.</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-920">MCR-920</a>] - MCRMetadataManager should store createdby service flag on update</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-912">MCR-912</a>] - add first version of datacite stylesheet to enable DOI registration</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-911">MCR-911</a>] - rename classes and methods do metadata inheritance to "share metadata"</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-904">MCR-904</a>] - MCRLogoutServlet should support url parameter as redirect after logout</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-888">MCR-888</a>] - searchfields for relatedItem</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-789">MCR-789</a>] - SolrSearch should support different RequestHandler</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-788">MCR-788</a>] - mods export should resolve GND</li>
+      </ul>
+
+      <li>New Feature</li>
+      <ul>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-947">MCR-947</a>] - make it possible set exceptions for dynamic field generation</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-921">MCR-921</a>] - support loading classifications from URL</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-910">MCR-910</a>] - Link MODS documents to other MODS documents</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-786">MCR-786</a>] - Migration command for servflags createdby and modifiedby</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-730">MCR-730</a>] - MyCoRe always generates URN-granular</li>
+      </ul>
+
+      <li>Tasks</li>
+      <ul>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-958">MCR-958</a>] - update to MODS 3.6</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-952">MCR-952</a>] - Remove "legacy" from class and package names in mycore-solr</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-914">MCR-914</a>] - remove unnecessary user commands</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-913">MCR-913</a>] - missing export of roles</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-907">MCR-907</a>] - Update mycore-solr to SOLR-J 5.1.0</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-906">MCR-906</a>] - Update dependencies</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-903">MCR-903</a>] - please add citation_doi to highwire press tags</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-879">MCR-879</a>] - add servstates while new mycore object is created</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-860">MCR-860</a>] - move DP properties to MCR - Logging System </li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-858">MCR-858</a>] - move DP properties to MCR - URN</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-857">MCR-857</a>] - move DP properties to MCR - OAI Data Provider</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-856">MCR-856</a>] - move DP properties to MCR - Helix Server - File Content Store</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-855">MCR-855</a>] - move DP properties to MCR - Editor</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-845">MCR-845</a>] - move properties from docportal/config/mycore.properties.private to mycore</li>
+      </ul>
+
+    </ul>
+  </section>
+
+
+  <section>
+    <title>Version 2015.02 - ‚Titty Twister‘</title>
+
+    <pre class="brush: xml;gutter: false;">
+      &lt;dependency>
+        &lt;groupId>org.mycore&lt;/groupId>
+        &lt;artifactId>mycore-{component}&lt;/artifactId>
+        &lt;version>2015.02&lt;/version>
+      &lt;/dependency>
+    </pre>
+
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.02/project-reports.html">maven site</a></p>
+    <ul>
+      <li>Fixed Bugs</li>
+      <ul>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-898">MCR-898</a>] - Random 404 error while loading static css or js files</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-896">MCR-896</a>] - Uploaded files with leading blanks in their file names are inadequately supported</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-890">MCR-890</a>] - MCRIView2Tools cannot read image tiles</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-871">MCR-871</a>] - swf throws forbidden API invocations</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-869">MCR-869</a>] - Space characters in directory names are not supported by MCRFileNodeServlet</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-868">MCR-868</a>] - conditions in conference proceeding doesn't work</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-866">MCR-866</a>] - tei files in transcription folder are not correct added to physical section</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-863">MCR-863</a>] - Files are not removed from solr index after deletion of a derivate</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-862">MCR-862</a>] - MCRURLRetriever.getURLforID() throws NPE</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-840">MCR-840</a>] - Cannot change password if the username contains umlauts</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-898">MCR-792</a>] - METS Files doesnt sync with database</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-638">MCR-638</a>] - get MCRException if parent is missing</li>
+      </ul>
+
+      <li>Improvements</li>
+      <ul>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-892">MCR-892</a>] - MCRConstants doesn't contain namespace for XML</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-886">MCR-886</a>] - file urls in RestAPI should be configurable</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-885">MCR-885</a>] - XEditor needs a target to handle Ajax submits for Subselect</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-884">MCR-884</a>] - Fix warning about missing attribute "MCR-Artifact-Id" in Manifest</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-876">MCR-876</a>] - Allow default values for missing parameters</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-874">MCR-874</a>] - we need a more dynamic template to show classification label in metadata view</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-872">MCR-872</a>] - MCRDerivateServlet needs configurable redirect URL</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-864">MCR-864</a>] - Use POST to submit XEditor forms</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-667">MCR-667</a>] - remove datamodel2*.xsl from mycore-base</li>
+      </ul>
+
+      <li>New Features</li>
+      <ul>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-883">MCR-883</a>] - Shibboleth support</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-877">MCR-877</a>] - mycore-restapi component</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-844">MCR-844</a>] - Add a Servlet to transform and deliver xml files from a derivate</li>
+      </ul>
+
+      <li>Tasks</li>
+      <ul>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-875">MCR-875</a>] - IndexOutOfBoundsException: Index: 0, Size: 0 contains no useful information for debugging</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-865">MCR-865</a>] - Update dependencies</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-859">MCR-859</a>] - move DP properties to MCR - Applet JAR signing Parameters</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-854">MCR-854</a>] - move DP properties to MCR - Mail</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-853">MCR-853</a>] - move DP properties to MCR - User Management</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-852">MCR-852</a>] - move DP properties to MCR - Webservices</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-851">MCR-851</a>] - move DP properties to MCR - JDBC Parameter (need to build scripts)</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-850">MCR-850</a>] - move DP properties to MCR - System directories</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-849">MCR-849</a>] - move DP properties to MCR - WEB browser base URL</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-847">MCR-847</a>] - move DP properties to MCR - System titles</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-846">MCR-846</a>] - move DP properties to MCR - File Upload</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-793">MCR-793</a>] - sync TEI files with mets.xml</li>
+        <li>[<a href="https://mycore.atlassian.net/browse/MCR-791">MCR-791</a>] - Integrate JIRA in Maven build process</li>
+      </ul>
+
+    </ul>
   </section>
 
   <section>
   <title>Version 2014.12 - ‚Mumme‘</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.12/changelog.html">maven site</a></p>
-  <ul>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2014.12/project-reports.html">maven site</a></p>
 
-    <li>New features</li>
     <ul>
-	    <li>added MCRContentServlet to provide support for reliable browser cache and HTTP range requests
-	        currently used by MCRFileNodeServlet and MCRObjectServlet</li>
-	    <li>mycore-solr: added support to mycoreobject-dynamicfields.xsl to index remote content</li>
-	    <li>added cache info support to MCRContent classes</li>
-	    <li>added MCRXMLFunctions.hasParentCategory(String classificationId, String categoryId)</li>
-	    <li>mycore-mods: add schema support for MODS 3.5</li>
-	    <li>mycore-mods: support classification typeOfResource</li>
-	    <li>When using MCRConfigurationDir comments are added to mycore.active.properties</li>
-    </ul>
+      <li>New features</li>
+      <ul>
+        <li>mycore-iview2: added MCRPDFThumbnailServlet to generate thumbnails from PDF documents</li>
+        <li>added MCRQRCodeServlet to generate QR codes</li>
+        <li>Added property MCR.IFS2.SyncLastModifiedOnSVNCommit=true (default).
+            If the property is true, the
+            last modified date of the metadata file is the exactly same as from the SVN commit.</li>
+        <li>added MCRCORSFilter to activate Cross Origin Resource Sharing when needed</li>
+        <li>mycore-webcli: display server-side exceptions</li>
+        <li>mycore-classeditor: added category filter (requires solr-classification)</li>
+        <li>mycore-mods: Added event handler to extract related items from MODS and store them as separate
+            objects linked as parent and/or via xlink:href</li>
+        <li>MCRLanguageDetector: added "detectLanguageByCharacter" to get language by script</li>
+        <li>MCRISO8601Date: added 'now' method to get current point in time</li>
+        <li>mycore-solr: added support to index classifications (used by classification editor)</li>
+        <li>mycore-xeditor: added support for variables in i18n in xed:output</li>
+        <li>added MCRXMLFunctions.normalizeUnicode() to normalize a String to KFC norm</li>
+        <li>mycore-solr: added support to use different SOLR cores</li>
+        <li>mycore-oai: added implementation for 'set handling' with SOLR</li>
+        <li>mycore-oai: support 'sortby' in MCROAISolrSearcher</li>
+        <li>added support for HTML entities in MyCoReWebPageProvider</li>
+        <li>mycore-xeditor: Implemented Jaxen extension functions for xedf:generate-id(...) and
+            xedf:call-java('class','method',arguments...) to use within XPath expressions</li>
+        <li>mycore-mods: added rdfA support</li>
+        <li>added MCRPathContent to use java.nio.file.Path to serve content</li>
+        <li>added first "java.nio.file" implementation on IFS1 classes</li>
+        <li>added MCRDFGLinkServlet to construct links for DFG-Viewer</li>
+        <li>mycore-iview2: added support to use mycore-viewer</li>
+        <li>added "move" to MCREvent</li>
+        <li>added MCRDecoratedIteratable to decorate an Iteratable :D</li>
+      </ul>
 
-    <li>Fixed Bugs</li>
-    <ul>
-	    <li>mycore-webcli: fixed "process {0}"  (2014-03-07)</li>
-	    <li>MCRFileImportExport: properly close MCRMD5InputStream  (2014-02-21)</li>
-	    <li>MCRConfigurationInputStream should respect dependencies between mycore components  (2014-02-21)
-	        - Issue: <a href="https://sourceforge.net/p/mycore/bugs/684">684</a>)</li>
-	    <li>fixed handling of references in editor framework  (2014-02-18)</li>
-	    <li>added mycore-xeditor to integration steps of mycore-complete  (2014-02-18)</li>
-	    <li>mycore-acl-editor2: fixed layout  (2014-02-14)</li>
-	    <li>fixed missing searchfields.xml exception  (2014-02-11)</li>
-    </ul>
+      <li>Fixed Bugs</li>
+      <ul>
+        <li>mycore-solr: fixed hit list order on grouped results  (2014-11-14)</li>
+        <li>mycore-mods: fixed NPE in MCRMODSEmbargoFilter  (2014-11-14)</li>
+        <li>MCRPersistentServlet: send 401 instead of 500 if permission denied  (2014-11-10)</li>
+        <li>mycore-xeditor: send 404 if request comes in after session timed out  (2014-11-10</li>
+        <li>added language support for text in MCRMetaHistoryDate  (2014-11-05)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/728">728</a></li>
+        <li>When using solr searcher in oai interface the ListSets verb my not be working Thanks to Silvio Hermann.  (2014-11-03)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/727">727</a></li>
+        <li>MCRMetaDerivateLink.isValid() always returns false Thanks to Silvio Hermann.  (2014-10-27)
+            - Issue: <a href="https://sourceforge.net/p/mycore/bugs/726">726</a></li>
+        <li>fixed many encoding bugs revealed by forbiddenapis  (2014-10-22)</li>
+        <li>mycore-xeditor: replacing variables in xed:include/@uri did not work  (2014-10-09)</li>
+        <li>mycore-user2: fixed invalid permission check in MCRRoleResolver  (2014-10-08)</li>
+        <li>removed mycore-iview2 dependency from mycore-solr Thanks to Robert Stephan.  (2014-10-01)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/708">708</a></li>
+        <li>mycore-oai: made cursor attribute of resumtionToken compliant with standard  (2014-10-01)</li>
+        <li>he $CurrentGroup parameter of a default ACL is no more supported since USER2-System Thanks to Christian Windolf.  (2014-10-01)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/712">712</a></li>
+        <li>mycore-wcms2: fix whitespaces occur between inline elements  (2014-10-01)</li>
+        <li>can't see new menu entries created with wcms2 Thanks to Kathleen Neumann.  (2014-10-03)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/703">703</a></li>
+        <li>duplicate entry in mcrdata.xml when existing file gets updated Thanks to Jens Kupferschmidt.  (2014-10-01)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/649">649</a></li>
+        <li>mycore-wcms2: fix NPE when moving XML file of new entry  (2014-10-01)</li>
+        <li>mycore-swf: MCRSimpleWorkflowManager: NPE in getWorkflowFile() Thanks to Ralph Hollenbach.  (2014-09-29)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/721">721</a></li>
+        <li>mycore-xeditor: Use relative XPaths instead of position in parent when swapping repeated
+            elements.  (2014-09-11)</li>
+        <li>mycore-xeditor: Repeater up/down buttons do not work when repeated element is direct child of root element  (2014-09-11)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/720">720</a></li>
+        <li>mycore-xeditor: added default rules to preserve /mycoreobject/structure/ and /mycoreobject/service/ Thanks to Jens Kupferschmidt.  (2014-09-08)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/718">718</a></li>
+        <li>mycore-oai: ListRecords response with the last element of the complete list must contain an empty resumptionToken. Thanks to Paul Borchert.  (2014-09-02)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/717">717</a></li>
+        <li>mycore-mods: classification typeOfResource can't be valid: Use underscore in category IDs, they will be converted to spaces in MODS. Thanks to Kathleen Neumann.  (2014-08-26)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/702">702</a></li>
+        <li>Docportal/MyCore 2014.06.0: can't map IPv6 to IPv4 Thanks to Kathleen Neumann.  (2014-08-26)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/716">716</a></li>
+        <li>Try to fix bug #677 (MCRDirectory.hasChildren() returns wrong result) by waiting for response from server after sending last bytes
+            of file. Thanks to Thomas Scheffler.  (2014-08-26)
+          - Issue: <a href="https://sourceforge.net/p/mycore/bugs/677">677</a></li>
+        <li>fixed sorting of startup classes in MCRStartupHandler  (2014-08-15)</li>
+        <li>mycore-user2: do not throw ServletException if login fails in MCRServlet3LoginServlet  (2014-08-13)</li>
+        <li>fixed a bug that new MCRFile could not be safed correctly in DB  (2014-07-24)</li>
+        <li>if "href" attribute is not given in navigation.xml check acl rights against "dir"
+            attribute  (2014-06-25)</li>
+        <li>fix class cast exception while using setname() on MCRDirectories  (2014-06-25)</li>
+        <li>mycore-iview2: don't use minfied js version if debug mode is set to true  (2014-06-23)</li>
+      </ul>
 
-    <li>Changes</li>
-    <ul>
-	    <li>mycore-wcms2 get support for access checks and fixes in I18N keys</li>
-	    <li>changed order of MCREventHandler</li>
-	    <li>Update to SOLRJ 4.7.0</li>
-    </ul>
-    
-    <li>Removed</li>
-    <ul>
-	    <li>MCRObjectServlet: removed support for browsing in MCRResults</li>
-	    <li>removed MCR.UploadApplet.BackgroundColor property (moved to docportal)</li>
-	    <li>removed mycore-acl-editor (replaced by mycore-acl-editor2)</li>
-    </ul>
+      <li>Changes</li>
+      <ul>
+        <li>MCRMetaLink classes can handle @xlink:role</li>
+        <li>mycore-user2: provide setPassword(MCRUser, String) method to MCRUserManager</li>
+        <li>mycore-mods: on MODS export add identifier[@type='uri'] if not already present</li>
+        <li>mycore-xeditor: Refactored repeater insert/append button. Method to create new elements can be
+            chosen now via @method="build|clone". Removed "add" target, it is not needed any more.</li>
+        <li>mycore-user2: MCRUser can be disabled</li>
+        <li>mycore-solr: added support for responses that are embedded in mycoreobject to response-utils.xsl</li>
+        <li>MCRServlet: do not overwrite Access-Control-Allow-Origin header</li>
+        <li>refactored org.mycore.datamodel.classification2 package</li>
+        <li>mycore-mets: synchronize ALTO files with mets.xml</li>
+        <li>mycore-iview2: removed usage of MCRFile and MCRDirectory (replaced by niofs)</li>
+        <li>classification: made many void methods return something useful</li>
+        <li>MCRServletContentHelper: if 'dl' parameter is present, set Content-Disposition to attachment</li>
+        <li>MCRMetaDerivateLink uses niofs to access files</li>
+        <li>mycore-mods: normalize mods.name* and mods.author search fields to KFC unicode</li>
+        <li>MCR{Compress,Tar,Zip}Servlet use niofs to access files from derivate</li>
+        <li>mycore-oai: use MCROAISolrSearcher by default</li>
+        <li>MCRMetaPersonName: added numeration, affix and title to comply with MARC21</li>
+        <li>mycore-mods: added searchfield mods.embargo</li>
+        <li>mycore-xeditor: improved calculation of cancel URL</li>
+        <li>add topological sorting of MyCoRe IDs to load and update from directory commands</li>
+        <li>mycore-xeditor: avoid wide select boxes in item2options.xsl</li>
+        <li>MCRXMLFunctions.formatISODate uses servers locale timezone by default and not UTC</li>
+        <li>extract code from MCRContentServlet to MCRServletContentHelper to make it usable in Jersey.</li>
+        <li>MCRFileNodeServlet uses Path-API to access files and directories (small changes in XML for
+            directories)</li>
+        <li>mycore-classeditor: create a new db transaction for every category to update/delete</li>
+        <li>mycore-xeditor: Added anchors to return to after a repeater control button has done its work.</li>
+        <li>improved error handling on jersey text/html requests</li>
+        <li>mycore-iview2: use jersey resources for configuration</li>
+        <li>mycore-wcms2: file browser uses relative path to immages and shows only images in overview</li>
+      </ul>
 
-  </ul>
+      <li>Removed</li>
+      <ul>
+        <li>searchfields.xsd moved to mycore-legacy-search</li>
+        <li>mycore-mods: removed code specific to BMEL project</li>
+      </ul>
+    </ul>
   </section>
 
   <section>
     <title>Release 2014.06 - LTS</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.06/changelog.html">maven site</a></p>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2014.06/project-reports.html">maven site</a></p>
     <ul>
       <li>New features</li>
       <ul>
@@ -182,7 +480,7 @@
 
   <section>
     <title>Release 2014.03 - ‚Lenzing‘</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.03/changelog.html">maven site</a></p>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2014.03/project-reports.html">maven site</a></p>
     <ul>
       <li>New features</li>
       <ul>
@@ -226,7 +524,7 @@
 
   <section>
     <title>Release 2014.02 - ‚Kindl‘</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.02/changelog.html">maven site</a></p>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2014.02/project-reports.html">maven site</a></p>
     <ul>
       <li>New features</li>
       <ul>
@@ -299,7 +597,7 @@
 
   <section>
     <title>Release 2014.01 - ‚T&atilde;t Ni&ecirc;n‘</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2014.01/changelog.html">maven site</a></p>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2014.01/project-reports.html">maven site</a></p>
     <ul>
       <li>New features</li>
       <ul>
@@ -388,7 +686,7 @@
 
   <section>
   <title>Version 2013.11</title>
-  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.11/changelog.html">maven site</a></p>
+  <p>more details see <a href="http://www.mycore.de/generated/mycore-2013.11/project-reports.html">maven site</a></p>
   <ul>
 
     <li>New features
@@ -477,7 +775,7 @@
   </section>
   <section>
   <title>Version 2013.08</title>
-  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.08/changelog.html">maven site</a></p>
+  <p>more details see <a href="http://www.mycore.de/generated/mycore-2013.08/project-reports.html">maven site</a></p>
   <ul>
 
     <li>New features:
@@ -556,7 +854,7 @@
 
   <section>
   <title>Version 2013.06.0.2 - LTS</title>
-  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0.2/changelog.html">maven site</a></p>
+  <p>more details see <a href="http://www.mycore.de/generated/mycore-2013.06.0.2/project-reports.html">maven site</a></p>
   <ul>
 
     <li>New features:
@@ -605,7 +903,7 @@
 
   <section>
   <title>Version 2013.06.0.1 - LTS</title>
-  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0.1/changelog.html">maven site</a></p>
+  <p>more details see <a href="http://www.mycore.de/generated/mycore-2013.06.0.1/project-reports.html">maven site</a></p>
   <ul>
 
     <li>New features:
@@ -654,7 +952,7 @@
 
   <section>
   <title>Version 2013.06 - LTS</title>
-  <p>see also <a href="http://www.mycore.de/generated/mycore-2013.06.0/changelog.html">maven site</a></p>
+  <p>more details see <a href="http://www.mycore.de/generated/mycore-2013.06.0/project-reports.html">maven site</a></p>
   <ul>
 
     <li>New features:
@@ -800,7 +1098,7 @@
 
   <section>
     <title>Version 2013.05 - Beta 2</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2013.05/changelog.html">maven site</a></p>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2013.05/project-reports.html">maven site</a></p>
     <ul>
       <li>New features:
         <ul>
@@ -893,7 +1191,7 @@
 
   <section>
     <title>Prerelease 2.1.80 - Beta 1</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2.1.80/changelog.html">maven site</a></p>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2.1.80/project-reports.html">maven site</a></p>
     <ul>
       <li>New features:
         <ul>
@@ -956,7 +1254,7 @@
 
   <section>
   <title>Version 2.1</title>
-  <p>see also <a href="http://www.mycore.de/generated/mycore-2.1.0/changelog.html">maven site</a></p>
+  <p>more details see <a href="http://www.mycore.de/generated/mycore-2.1.0/project-reports.html">maven site</a></p>
   <ul>
 
     <li>New features:</li>
@@ -1030,7 +1328,7 @@
 
   <section>
     <title>Prerelease 2.0.94</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2.0.94/changelog.html">maven site</a></p>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2.0.94/project-reports.html">maven site</a></p>
     <ul>
       <li>New features:
         <ul>
@@ -1090,7 +1388,7 @@
 
   <section>
     <title>Prerelease 2.0.93</title>
-    <p>see also <a href="http://www.mycore.de/generated/mycore-2.0.93/changelog.html">maven site</a></p>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2.0.93/project-reports.html">maven site</a></p>
     <ul>
       <li>New features:
        <ul>
@@ -1254,7 +1552,22 @@
   <title>Changes in DocPortal</title>
 
   <section>
-  <title>Version 2014.02 (current head tree)</title>
+  <title>Version 2015.06 (current head tree)</title>
+  <ul>
+    <li>New Features:</li>
+    <ul>
+      <li>...</li>
+    </ul>
+    <li>Changes:</li>
+    <ul>
+      <li>..</li>
+    </ul>
+  </ul>
+
+  </section>
+
+  <section>
+  <title>Version 2015.05</title>
   <ul>
     <li>New Features:</li>
     <ul>
@@ -1372,6 +1685,11 @@
   </ul>
   </section>
   </section>
+
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
 
  </body>
 </document>

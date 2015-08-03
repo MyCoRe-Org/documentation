@@ -3,7 +3,7 @@
 
 <document xml:lang="en">
 <header>
- <title>Release 2014.12 - ‚Mumme‘</title>
+ <title>Release 2015.07 - ‚Last Tequila Sour‘</title>
 </header>
 
  <body>
@@ -18,159 +18,31 @@
 
   <p>
     All changes, new features etc. are summarized below.
-    If your application is already near version 2014.12, you only have to update
-    your pom.xml (docportal/config):
+    If your application is already near version 2015.07, you only have to update
+    your pom.xml (using DocPortal, you find this file in docportal/config):
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2014.12.1-SNAPSHOT&lt;/version>
+&lt;version>2015.07&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
-  &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>2014.12.1-SNAPSHOT&lt;/version>
+  &lt;artifactId>mycore-{component}&lt;/artifactId>
+  &lt;version>2015.07&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
 
-    In the next step you have to build your application again (<code>ant resolve create.jar
-    create.scripts create.webapp</code>).
+    In the next step you have to build your application again <code>mvn clean install</code> or in
+    DocPortal <code>ant resolve &amp;&amp; create.jar create.scripts create.webapp</code>.
   </p>
 
   <p>
-    Furthermore there is a MyCoRe
-    <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.12/">jar file</a>
-    ready for download, therewith you can use the MyCoRe kernel in your own application
-    independent from DocPortal. MyCoRe can be integrated as well via Maven.
+    See <a href="changelog.html#Version+2015.07+-+%E2%80%9ALast+Tequila+Sour%E2%80%98">Changelog</a> for
+    development information.
   </p>
-  <h2>Changes in this version include</h2>
-  <h3>New features</h3>
-  <ul>
-    <li>mycore-iview2: added MCRPDFThumbnailServlet to generate thumbnails from PDF documents</li>
-    <li>added MCRQRCodeServlet to generate QR codes</li>
-    <li>Added property MCR.IFS2.SyncLastModifiedOnSVNCommit=true (default).
-        If the property is true, the
-        last modified date of the metadata file is the exactly same as from the SVN commit.</li>
-    <li>added MCRCORSFilter to activate Cross Origin Resource Sharing when needed</li>
-    <li>mycore-webcli: display server-side exceptions</li>
-    <li>mycore-classeditor: added category filter (requires solr-classification)</li>
-    <li>mycore-mods: Added event handler to extract related items from MODS and store them as separate
-        objects linked as parent and/or via xlink:href</li>
-    <li>MCRLanguageDetector: added "detectLanguageByCharacter" to get language by script</li>
-    <li>MCRISO8601Date: added 'now' method to get current point in time</li>
-    <li>mycore-solr: added support to index classifications (used by classification editor)</li>
-    <li>mycore-xeditor: added support for variables in i18n in xed:output</li>
-    <li>added MCRXMLFunctions.normalizeUnicode() to normalize a String to KFC norm</li>
-    <li>mycore-solr: added support to use different SOLR cores</li>
-    <li>mycore-oai: added implementation for 'set handling' with SOLR</li>
-    <li>mycore-oai: support 'sortby' in MCROAISolrSearcher</li>
-    <li>added support for HTML entities in MyCoReWebPageProvider</li>
-    <li>mycore-xeditor: Implemented Jaxen extension functions for xedf:generate-id(...) and
-        xedf:call-java('class','method',arguments...) to use within XPath expressions</li>
-    <li>mycore-mods: added rdfA support</li>
-    <li>added MCRPathContent to use java.nio.file.Path to serve content</li>
-    <li>added first "java.nio.file" implementation on IFS1 classes</li>
-    <li>added MCRDFGLinkServlet to construct links for DFG-Viewer</li>
-    <li>mycore-iview2: added support to use mycore-viewer</li>
-    <li>added "move" to MCREvent</li>
-    <li>added MCRDecoratedIteratable to decorate an Iteratable :D</li>
-  </ul>
-
-  <h3>Fixed Bugs</h3>
-  <ul>
-    <li>mycore-solr: fixed hit list order on grouped results  (2014-11-14)</li>
-    <li>mycore-mods: fixed NPE in MCRMODSEmbargoFilter  (2014-11-14)</li>
-    <li>MCRPersistentServlet: send 401 instead of 500 if permission denied  (2014-11-10)</li>
-    <li>mycore-xeditor: send 404 if request comes in after session timed out  (2014-11-10</li>
-    <li>added language support for text in MCRMetaHistoryDate  (2014-11-05)
-        - Issue: <a href="https://sourceforge.net/p/mycore/bugs/728">728</a></li>
-    <li>When using solr searcher in oai interface the ListSets verb my not be working Thanks to Silvio Hermann.  (2014-11-03)
-        - Issue: <a href="https://sourceforge.net/p/mycore/bugs/727">727</a></li>
-    <li>MCRMetaDerivateLink.isValid() always returns false Thanks to Silvio Hermann.  (2014-10-27)
-        - Issue: <a href="https://sourceforge.net/p/mycore/bugs/726">726</a></li>
-    <li>fixed many encoding bugs revealed by forbiddenapis  (2014-10-22)</li>
-    <li>mycore-xeditor: replacing variables in xed:include/@uri did not work  (2014-10-09)</li>
-    <li>mycore-user2: fixed invalid permission check in MCRRoleResolver  (2014-10-08)</li>
-    <li>removed mycore-iview2 dependency from mycore-solr Thanks to Robert Stephan.  (2014-10-01)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/708">708</a></li>
-    <li>mycore-oai: made cursor attribute of resumtionToken compliant with standard  (2014-10-01)</li>
-    <li>he $CurrentGroup parameter of a default ACL is no more supported since USER2-System Thanks to Christian Windolf.  (2014-10-01)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/712">712</a></li>
-    <li>mycore-wcms2: fix whitespaces occur between inline elements  (2014-10-01)</li>
-    <li>can't see new menu entries created with wcms2 Thanks to Kathleen Neumann.  (2014-10-03)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/703">703</a></li>
-    <li>duplicate entry in mcrdata.xml when existing file gets updated Thanks to Jens Kupferschmidt.  (2014-10-01)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/649">649</a></li>
-    <li>mycore-wcms2: fix NPE when moving XML file of new entry  (2014-10-01)</li>
-    <li>mycore-swf: MCRSimpleWorkflowManager: NPE in getWorkflowFile() Thanks to Ralph Hollenbach.  (2014-09-29)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/721">721</a></li>
-    <li>mycore-xeditor: Use relative XPaths instead of position in parent when swapping repeated
-        elements.  (2014-09-11)</li>
-    <li>mycore-xeditor: Repeater up/down buttons do not work when repeated element is direct child of root element  (2014-09-11)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/720">720</a></li>
-    <li>mycore-xeditor: added default rules to preserve /mycoreobject/structure/ and /mycoreobject/service/ Thanks to Jens Kupferschmidt.  (2014-09-08)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/718">718</a></li>
-    <li>mycore-oai: ListRecords response with the last element of the complete list must contain an empty resumptionToken. Thanks to Paul Borchert.  (2014-09-02)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/717">717</a></li>
-    <li>mycore-mods: classification typeOfResource can't be valid: Use underscore in category IDs, they will be converted to spaces in MODS. Thanks to Kathleen Neumann.  (2014-08-26)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/702">702</a></li>
-    <li>Docportal/MyCore 2014.06.0: can't map IPv6 to IPv4 Thanks to Kathleen Neumann.  (2014-08-26)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/716">716</a></li>
-    <li>Try to fix bug #677 (MCRDirectory.hasChildren() returns wrong result) by waiting for response from server after sending last bytes
-        of file. Thanks to Thomas Scheffler.  (2014-08-26)
-      - Issue: <a href="https://sourceforge.net/p/mycore/bugs/677">677</a></li>
-    <li>fixed sorting of startup classes in MCRStartupHandler  (2014-08-15)</li>
-    <li>mycore-user2: do not throw ServletException if login fails in MCRServlet3LoginServlet  (2014-08-13)</li>
-    <li>fixed a bug that new MCRFile could not be safed correctly in DB  (2014-07-24)</li>
-    <li>if "href" attribute is not given in navigation.xml check acl rights against "dir"
-        attribute  (2014-06-25)</li>
-    <li>fix class cast exception while using setname() on MCRDirectories  (2014-06-25)</li>
-    <li>mycore-iview2: don't use minfied js version if debug mode is set to true  (2014-06-23)</li>
-  </ul>
-
-  <h3>Changes</h3>
-  <ul>
-    <li>MCRMetaLink classes can handle @xlink:role</li>
-    <li>mycore-user2: provide setPassword(MCRUser, String) method to MCRUserManager</li>
-    <li>mycore-mods: on MODS export add identifier[@type='uri'] if not already present</li>
-    <li>mycore-xeditor: Refactored repeater insert/append button. Method to create new elements can be
-        chosen now via @method="build|clone". Removed "add" target, it is not needed any more.</li>
-    <li>mycore-user2: MCRUser can be disabled</li>
-    <li>mycore-solr: added support for responses that are embedded in mycoreobject to response-utils.xsl</li>
-    <li>MCRServlet: do not overwrite Access-Control-Allow-Origin header</li>
-    <li>refactored org.mycore.datamodel.classification2 package</li>
-    <li>mycore-mets: synchronize ALTO files with mets.xml</li>
-    <li>mycore-iview2: removed usage of MCRFile and MCRDirectory (replaced by niofs)</li>
-    <li>classification: made many void methods return something useful</li>
-    <li>MCRServletContentHelper: if 'dl' parameter is present, set Content-Disposition to attachment</li>
-    <li>MCRMetaDerivateLink uses niofs to access files</li>
-    <li>mycore-mods: normalize mods.name* and mods.author search fields to KFC unicode</li>
-    <li>MCR{Compress,Tar,Zip}Servlet use niofs to access files from derivate</li>
-    <li>mycore-oai: use MCROAISolrSearcher by default</li>
-    <li>MCRMetaPersonName: added numeration, affix and title to comply with MARC21</li>
-    <li>mycore-mods: added searchfield mods.embargo</li>
-    <li>mycore-xeditor: improved calculation of cancel URL</li>
-    <li>add topological sorting of MyCoRe IDs to load and update from directory commands</li>
-    <li>mycore-xeditor: avoid wide select boxes in item2options.xsl</li>
-    <li>MCRXMLFunctions.formatISODate uses servers locale timezone by default and not UTC</li>
-    <li>extract code from MCRContentServlet to MCRServletContentHelper to make it usable in Jersey.</li>
-    <li>MCRFileNodeServlet uses Path-API to access files and directories (small changes in XML for
-        directories)</li>
-    <li>mycore-classeditor: create a new db transaction for every category to update/delete</li>
-    <li>mycore-xeditor: Added anchors to return to after a repeater control button has done its work.</li>
-    <li>improved error handling on jersey text/html requests</li>
-    <li>mycore-iview2: use jersey resources for configuration</li>
-    <li>mycore-wcms2: file browser uses relative path to immages and shows only images in overview</li>
-  </ul>
-  
-  <h3>Removed</h3>
-  <ul>
-    <li>searchfields.xsd moved to mycore-legacy-search</li>
-    <li>mycore-mods: removed code specific to BMEL project</li>
-  </ul>
-
 
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
   <script type="text/javascript">

@@ -3,7 +3,7 @@
 
 <document xml:lang="en">
 <header>
- <title>Release 2014.06 (LTS)</title>
+ <title>Release 2015.05 (LTS)</title>
 </header>
 
  <body>
@@ -16,18 +16,6 @@
     -->
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
   <p>
-    After the introduction of Solr as an alternative to Lucene 2013, this year's 
-	LTS Release 2014.06 doesn't contain Lucene support anymore. 
-	Since Lucene support is only excluded, it is still possible to operate 
-	on Lucene running applications with the current MyCoRe. 
-	For more information, see the <a href="site:migrate2014.06">section on migration</a>.
-  </p>
-  <p>
-    The old WCMS has also been replaced by a much more flexible solution. 
-	This provides extensive support of multilingualism and the possibility 
-	to define a wide variety of menu trees.
-  </p>
-  <p>
     You can find an overview of all innovations on the documentation site
     <a href="site:whats_new">"Was ist neu?"</a>. A detailed list of changes
     is provided in the <a href="site:changelog">Changelog</a>. This is a long term
@@ -35,19 +23,19 @@
   </p>
 
   <p>
-    If you have your application already near version 2014.06, you only have to update
+    If you have your application already near version 2015.05, you only have to update
     your pom.xml (docportal/config):
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2014.06.0.1-SNAPSHOT&lt;/version>
+&lt;version>2015.05.0.1-SNAPSHOT&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>[2014.06.0.1-SNAPSHOT,2014.06.1)&lt;/version>
+  &lt;version>[2015.05.0.1-SNAPSHOT,2015.05.1)&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -56,20 +44,8 @@
     create.scripts create.webapp</code>).
   </p>
 
-  <p>
-    <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
-      ><img src="/images/download_docportal_201406.png" alt="Link zum SF-Download" style="float:right;margin:0 10px 20px 10px;" /></a>
-    As an alternative DocPortal is available as download with <a href="https://sourceforge.net/projects/mycore/files/docportal/2014.06/"
-    >Release 2014.06</a>. You can find the corresponding installation guidelines
-    in the <a href="site:install">UserGuide</a>.There are instructions for the
-    <a href="site:migrate2014.06">Migration</a> as well provided.
-  </p>
-  <p>
-    Furthermore there is a MyCoRe
-    <a href="https://sourceforge.net/projects/mycore/files/mycore/2014.06/">jar file</a>
-    ready for download, therewith you can use the MyCoRe kernel in your own application
-    independent from DocPortal. MyCoRe can be integrated as well via Maven.
-  </p>
+  <p>This page is currently under construction. See you again soon!</p>
+
 
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
   <script type="text/javascript">
