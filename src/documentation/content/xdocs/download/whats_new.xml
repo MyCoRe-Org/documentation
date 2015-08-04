@@ -12,8 +12,112 @@
     <section>
       <title>Long-Term-Support-Release 2015.05</title>
 
-      <p>Diese Seite befindet sich im Aufbau.</p>
+      <h2>IView2 und der MyCoRe-Viewer</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die IView2-Komponente wurde komplett überarbeitet und der Viewer-Code in ein eigenes
+          MyCoRe-Projekt ausgelagert: den MyCoRe-Viewer. So kann man auch unabhängig von MyCoRe den Viewer
+          benutzen. <br />
+          Mit dem neuen MyCoRe-Viewer stehen nun Texthighlighting, eine Touch-Oberfläche und die Anzeige von
+          Metadaten, sowie viele kleinere Neuerungen zur Verfügung. Weiterhin kann neben Bildern nun auch PDF
+          angezeigt werden.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Sebastian Hofmann</dd>
+      </dl>
 
+      <h2>IFS2-Layout Migrationskommando für einzelne ContentStores</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          xxx
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt</dd>
+      </dl>
+
+      <h2>Nutzung der nio.file-API</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Für ein zeitgemäßes Arbeiten mit Dateien stellt Java mit dem JDK 1.7 die
+          <a href="http://www.infoq.com/articles/java7-nio2">NIO File API</a> zur Verfügung.
+          Diese API wird nun von MyCoRe unterstützt und beispielsweise vom interne Dateisystem
+          genutzt.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler, Jens Kupferschmidt und Frank Lützenkirchen</dd>
+      </dl>
+
+      <h2>SOLR-Kinddokumente, historisches Datum und Mehrsprachigkeit</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die Solr-Suchfunktionalität wird ständig weiter entwickelt. So unterstützt MyCoRe nun auch
+          die Solr-Kinddokumente und auch einer optimalen Suche über mehrsprachig erfasste Metadaten wird
+          gearbeitet. <br />
+          Das historische Datum, ein <a href="/documentation/basics/mcrobject/mcrobject_datatypes.html#Syntax+des+Metadaten-Basistyps+MCRMetaHistoryDate"
+          >MyCoRe-Datentyp</a>, wurde komplett überarbeitet und aktualisiert.
+          Auch eine entsprechende Solr-Unterstützung wurde implementiert und befindet sich aktuell
+          bereits in Leipzig im Einsatz.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt, Thomas Scheffler, Kathleen Neumann</dd>
+      </dl>
+
+      <h2>Webservices (SOAP) entfernt</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die SOAP-Schnittstelle wurde nun entfernt. Eine verteilte Suche kann mittels Solr realisiert
+          werden. Für andere API-Anforderungen steht nun auch eine REST-Schnittstelle zur Verfügung. Siehe
+          dazu den nachfolgenden Punkt.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+
+      <h2>REST (lesend)</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Als Schnittstelle nach aussen steht nun eine REST-Schnittstelle zur Verfügung. Diese
+          erlaubt momentan nur einen lesenden Zugriff. Ein schreibender Zugriff ist für 2016 geplant.
+          Alle Details zur REST-Schnittstelle sind unter <a href="site:rest">Dokumentation ->
+          Schnittstellen -> REST</a> zu finden.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Robert Stephan</dd>
+      </dl>
+
+      <h2>HTML5-Upload</h2>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Eine erste Version des HTML5-Uploads ist bereits realisiert. Diese ist momentan nur in der
+          MIR-Anwendung integriert und wird bis 2016 in den MyCoRe-Kern fliessen. Er kann jedoch nach
+          Übernahme der entsprechenden Dateien schon jetzt in die eigene Anwendung integriert werden.
+          Fragen dazu gern an die <a href="mailto:mycore-user@lists.sourceforge.net"
+          >MyCoRe-Userliste</a>.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Nils Verheyen, Frank Lützenkirchen</dd>
+      </dl>
 
     <!-- h2>Titel der Änderung</h2>
     <dl>
@@ -26,5 +130,6 @@
       <dt>Realisiert von:</dt>
       <dd>xxx</dd>
     </dl -->
+    </section>
   </body>
 </document>
