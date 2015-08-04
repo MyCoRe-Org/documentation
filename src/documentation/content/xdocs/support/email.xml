@@ -7,40 +7,40 @@
 </header>
 
  <body>
-   <p><strong>Schreiben Sie uns!</strong></p> 
+   <p><strong>Schreiben Sie uns!</strong></p>
    <p><strong>Mailingliste für Anwender: MyCoRe-User</strong></p>
   <div class="margin">
   In der Mailingliste <a href="mailto:mycore-user@lists.sourceforge.net">
   mycore-user@lists.sourceforge.net</a> werden alle Fragen der Nutzung von MyCoRe, DocPortal und MIR
-  diskutiert. Über diese Liste werden Anwender auch über neue Releases, wichtige Bugfixes und neue 
-  Funktionen benachrichtigt. Diese Liste ist offen. Wenn Sie ein Problem haben oder einen Fehler im 
-  MyCoRe-Kern, in der DocPortal- oder MIR-Anwendung entdecken, schicken Sie bitte eine Email an diese 
+  diskutiert. Über diese Liste werden Anwender auch über neue Releases, wichtige Bugfixes und neue
+  Funktionen benachrichtigt. Diese Liste ist offen. Wenn Sie ein Problem haben oder einen Fehler im
+  MyCoRe-Kern, in der DocPortal- oder MIR-Anwendung entdecken, schicken Sie bitte eine Email an diese
   Liste. Oft ist das Problem in der Community bereits bekannt und wir können Ihnen helfen.
   <ul>
-    <li><a href="mailto:mycore-user@lists.sourceforge.net">Email an MyCoRe-User Liste schreiben</a></li>
-    <li><a target="_blank" href="https://lists.sourceforge.net/lists/listinfo/mycore-user" 
-    title="MyCoRe-User-Liste abonnieren">MyCoRe-User Liste abonnieren</a></li>
+    <li><a href="mailto:mycore-user@lists.sourceforge.net">Email an MyCoRe-User-Liste schreiben</a></li>
+    <li><a href="https://lists.sourceforge.net/lists/listinfo/mycore-user"
+    title="MyCoRe-User-Liste abonnieren">MyCoRe-User-Liste abonnieren</a></li>
     <li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=mycore-user"
-    target="_blank" title="Email-Archiv der MyCoRe-User-Liste bei Sourceforge">Archiv der Liste MyCoRe-User</a></li>
+    title="Email-Archiv der MyCoRe-User-Liste bei Sourceforge">Archiv der Liste MyCoRe-User</a></li>
   </ul>
   </div>
   <br/>
   <p><strong>Fehler melden</strong></p>
   <div class="margin">
-  Wenn das Problem über die MyCoRe-User Liste nicht gelöst werden kann, können Sie auch eine offizielle 
+  Wenn das Problem über die MyCoRe-User Liste nicht gelöst werden kann, können Sie auch eine offizielle
   Fehlermeldung über unser <a href="https://mycore.atlassian.net/issues/?filter=10400"
-  target="_blank" title="MyCoRe Jira Issue Tracking System">
-  MyCoRe Jira Issue Tracking System</a> eingeben (dazu ist eine Anmeldung im <a href="https://mycore.atlassian.net/admin/users/sign-up">Atlassian Cloud System</a> notwendig). Die Entwickler erhalten dann automatisch eine 
+  title="MyCoRe Jira Issue Tracking System">
+  MyCoRe Jira Issue Tracking System</a> eingeben (dazu ist eine Anmeldung im <a href="https://mycore.atlassian.net/admin/users/sign-up">Atlassian Cloud System</a> notwendig). Die Entwickler erhalten dann automatisch eine
   Benachrichtigung, und es ist sichergestellt, daß Ihr Problem weiter verfolgt wird.
   </div>
   <br/>
   <p><strong>Mailingliste für Entwickler: MyCoRe-Developer</strong></p>
   <div class="margin">
-  Die MyCoRe-Developer-Mailingliste dient der internen Absprache und Kommunikation zwischen den 
-  MyCoRe-Entwicklern. Hier werden Funktionen und Quellcode des MyCoRe Kerns und der DocPortal Anwendung 
+  Die MyCoRe-Developer-Mailingliste dient der internen Absprache und Kommunikation zwischen den
+  MyCoRe-Entwicklern. Hier werden Funktionen und Quellcode des MyCoRe-Kerns und der DocPortal-Anwendung
   diskutiert. Diese Liste ist geschlossen.
   <ul>
-    <li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=mycore-developer" target="_blank"
+    <li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=mycore-developer"
     title="Email-Archiv der MyCoRe-Developer-Liste bei Sourceforge">
     Archiv der Mailingliste MyCoRe-Developer (bis 3. Juni 2015) bei SourceForge.</a></li>
   </ul>
@@ -48,24 +48,24 @@
   <br/>
   <p><strong>MyCoRe-Wiki</strong></p>
   <div class="margin">
-  Unser <a href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" target="_blank" title="Link zum MyCoRe Wiki">MyCoRe-Wiki</a> dient ebenfalls der internen 
-  Organisation der Entwickler-Community, der Sammlung von Ideen und Architekturvorschlägen, der Pflege 
+  Unser <a href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" title="Link zum MyCoRe-Wiki">MyCoRe-Wiki</a> dient ebenfalls der internen
+  Organisation der Entwickler-Community, der Sammlung von Ideen und Architekturvorschlägen, der Pflege
   von ToDo-Listen etc. Teile des Wikis sind aber offen zugänglich.
   </div>
   <br/>
   <p><strong>MyCoRe IRC-Kanal</strong></p>
   <div class="margin">
-  Im IRC-Kanal (<strong>Server: irc.freenode.net, Channel: mycore</strong>) sind alle willkommen, die 
-  sich zum Thema MyCoRe austauschen wollen. Alle Fragen und Vorschläge werden zur Kenntnis genommen, 
-  bitte haben Sie aber Verständnis, wenn nicht immer gleich eine Reaktion erfolgt. Oft sind aber einige 
-  Entwickler oder Anwender online, so dass Sie direkt eine Antwort erhalten können. Ein Medium für eine 
+  Im IRC-Kanal (<strong>Server: irc.freenode.net, Channel: mycore</strong>) sind alle willkommen, die
+  sich zum Thema MyCoRe austauschen wollen. Alle Fragen und Vorschläge werden zur Kenntnis genommen,
+  bitte haben Sie aber Verständnis, wenn nicht immer gleich eine Reaktion erfolgt. Oft sind aber einige
+  Entwickler oder Anwender online, so dass Sie direkt eine Antwort erhalten können. Ein Medium für eine
   zwanglose und direkte Kommunikation. Weitere Hilfe zu IRC unter <a href="http://www.irchelp.org"
-  target="_blank" title="IRChelp.org Internet Relay Chat (IRC) help archive">
+  title="IRChelp.org Internet Relay Chat (IRC) help archive">
   www.irchelp.org</a> und im <a href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/MyCoReKanal"
-  target="_blank" title="Wiki-Beitrag MyCoReKanal">
+  title="Wiki-Beitrag MyCoReKanal">
   Wiki</a>.
   </div>
   <br/>
  </body>
- 
+
 </document>
