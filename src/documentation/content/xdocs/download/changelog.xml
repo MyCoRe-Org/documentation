@@ -64,6 +64,7 @@
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-1009">MCR-1009</a>] - CLI command to fix directory sizes in Database for a specific derivate.</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-1004">MCR-1004</a>] - The MCRBasicFileAttributeViewImpl should check that file attributes are synchronized</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-1001">MCR-1001</a>] - MCRCache support timestamp parameter on put</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-997">MCR-997</a>] - ACL rules for user should support '*' wildcards</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-996">MCR-996</a>] - add mods:accessCondition to classification support</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-988">MCR-988</a>] - Provide SOLR/Bootstrap classificationBrowserData Stylesheet</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-977">MCR-977</a>] - pass UserAgent in MCRParameterCollector</li>
