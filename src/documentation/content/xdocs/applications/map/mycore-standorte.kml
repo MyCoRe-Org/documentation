@@ -334,7 +334,7 @@
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://www.diss.fu-berlin.de"><img class="icon" alt="icon" src="map/icons/icon_berlin_fu.png" /></a>
-                <a href="http://www.diss.fu-berlin.de">Elektronischen Publizieren von Dissertationen und Habilitationsschriften</a>
+                <a href="http://www.diss.fu-berlin.de">Elektronisches Publizieren von Dissertationen und Habilitationsschriften</a>
             </div>
             <p>Freie Universität Berlin (Universitätsbibliothek)</p>
           ]]>
@@ -349,7 +349,7 @@
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://edocs.fu-berlin.de"><img class="icon" alt="icon" src="map/icons/icon_berlin_fu.png" /></a>
-                <a href="http://edocs.fu-berlin.de">Dokumentenserver der Freien Universität Berlin</a>
+                <a href="http://edocs.fu-berlin.de">Dokumentenserver der FU Berlin</a>
             </div>
             <p>Freie Universität Berlin (Universitätsbibliothek)</p>
           ]]>
@@ -394,6 +394,22 @@
       </Point>
     </Placemark>
     <Placemark>
+      <name>&amp;lt;intR>&#178;Dok</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://intr2dok.vifa-recht.de/">
+                  <img class="icon" alt="icon" src="map/icons/icon_berlin_intR2Dok.png" />
+                </a>
+                <a href="http://intr2dok.vifa-recht.de/content/index.xml">Der Fachinformationsdienst &#60;intR&#62;&#178;Dok</a>
+             </div>
+            <p>Staatsbibliothek zu Berlin</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>13.377889,52.516338,0</coordinates>
+      </Point>
+    </Placemark>    <Placemark>
       <name>OpenAgrar</name>
       <description><![CDATA[
             <div class="mcrmap_item">
