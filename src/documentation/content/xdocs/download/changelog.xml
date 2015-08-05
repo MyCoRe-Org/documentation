@@ -48,6 +48,7 @@
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-1016">MCR-1016</a>] - update of mycorederivate does not support XEditor</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-1015">MCR-1015</a>] - category ident in select options doesn't work in IE10 and Chrome</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-1014">MCR-1014</a>] - Remove dependency from mcr-urn to mcr-iview2</li>
+          <li>[<a href="https://mycore.atlassian.net/browse/MCR-1011">MCR-1011</a>] - OutOfBound in MCRFileNodeServlet</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-1005">MCR-1005</a>] - ContentStoreSelectionRules.xml do not work</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-994">MCR-994</a>] - boolean OR falsch ausgewertet, wenn alleine</li>
           <li>[<a href="https://mycore.atlassian.net/browse/MCR-987">MCR-987</a>] - wrong search servlet in classification browser stylesheet</li>
