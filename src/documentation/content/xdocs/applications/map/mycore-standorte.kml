@@ -409,14 +409,15 @@
       <Point>
         <coordinates>13.377889,52.516338,0</coordinates>
       </Point>
-    </Placemark>    <Placemark>
+    </Placemark>
+    <Placemark>
       <name>OpenAgrar</name>
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://openagrar.bmelv-forschung.de/">
                   <img class="icon" alt="icon" src="map/icons/icon_berlin_openagrar.png" />
                 </a>
-                <a href="http://openagrar.bmel-forschung.de">Publikationsservers OpenAgrar</a>
+                <a href="http://openagrar.bmel-forschung.de">Publikationsserver OpenAgrar</a>
             </div>
             <p>Bundesministerium für Ernährung und Landwirtschaft (BMEL)</p>
           ]]>
