@@ -353,7 +353,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />
       <batch               label="Batch-Betrieb"         href="batch_with_cli.html" />
       <vhost               label="Virtueller Host"       href="vhost.html" />
-      <tips                label="Tipps"                 href="tips.html" />
+      <tips                label="Tipps"                 href="tipps.html" />
     </production>
 
     <!-- Migration -->
