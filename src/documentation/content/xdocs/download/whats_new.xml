@@ -33,7 +33,10 @@
       <dl>
         <dt>Beschreibung:</dt>
         <dd>
-          xxx
+          Um eine Migration vom alten IFS1-ContentStore auf den IFS2-ContentStore zu ermöglichen, wurden
+          Migrationskommandos bereitgestellt. Eine Beschreibung dieser Kommandos ist in der
+          <a href="../documentation/production/tipps.html#Nutzung+Content+Store+IFS+2">Dokumentation ->
+          Laufender Betrieb -> Tipps</a> zu finden.
           <br />
           <br />
         </dd>
