@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Servlets zur Manipulation von MyCoRe-Objekten</title>
+    <version>2015-08-12</version>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+    </authors>
+    <abstract>
+      Neben kompletten Workflow-Szenarien gibt es auch eine Reihe einzelner Servlets, aus denen sich
+      Arbeitsabläufe zur Bearbeitung der Metadaten und digitalen Objekte ableiten lassen. Dieser Abschnitt beschäftigt
+      sich mit dem Aufruf dieser Servlets.
+    </abstract>
+  </header>
+  <body>
+
+   <!-- Include required JS files -->
+    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+
+    <section>
+      <title>Das MCRDerivateServlet</title>
+      <p>
+        Mit Hilfe des MCRDerivateServlet können manipulationen an den Derivaten vorgenommen werden. Mit dem
+        <code>todo</code>
+        <em>ssetfile</em>
+        kann die Startdatei festgelegt werden. Mit
+        <em>sdelfile</em>
+        wird eine Datei aus dem Derivate gelöscht.
+      </p>
+      <p>Syntax des Servlet-Aufrufes:</p>
+      <pre class="brush: xml;">
+<![CDATA[{$WebApplicationBaseURL}servlets/MCRDerivateServlet?derivateid={$derId}&amp;objectid={$objID}&amp;todo=ssetfile&amp;file={$fileName}]]></pre>
+      <p>Beispiel des Servlet-Aufrufes:</p>
+      <pre class="brush: xml;">
+<![CDATA[http://localhost:8291/servlets/MCRDerivateServlet?derivateid=MIR_derivate_00000001&amp;objectid=MIR_mir_00000001&amp;todo=ssetfile&amp;file=myimage04.jpg]]></pre>
+      <ul>
+        <li>
+          <code>derivateid</code>
+          - die MyCoReID des derivates, welches bearbeitet werden soll.
+        </li>
+        <li>
+          <code>objectid</code>
+          - die MyCoReID des Metadatenobjektes, zu dem das Derivate gehört.
+        </li>
+        <li>
+          <code>todo</code>
+          - die Funktion, welche ausgeführt werden soll.
+        </li>
+        <li>
+          <code>file</code>
+          - der Pfad zu der Datei, auf welche die Funktion ausgeführt werden soll.
+        </li>
+      </ul>
+    </section>
+
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+  </body>
+</document>
