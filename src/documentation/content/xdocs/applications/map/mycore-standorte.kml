@@ -505,7 +505,7 @@
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://papyri-leipzig.dl.uni-leipzig.de/"><img class="icon" alt="icon" src="map/icons/icon_diverse_papyrus1.png" /></a>
-                <a href="http://papyri-leipzig.dl.uni-leipzig.de/">Papyrus und Ostraka Projekt (Halle-Jena-Leipzig)</a>
+                <a href="http://papyri-leipzig.dl.uni-leipzig.de/">Papyrus und Ostraka Projekt</a>
             </div>
             <p>Universität Leipzig (URZ/Universitätsbibliothek)</p>
           ]]>
@@ -531,7 +531,7 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>Islamische Handschriften der UB Leipzig</name>
+      <name>Islamische Handschriften</name>
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://www.islamic-manuscripts.net/"><img class="icon" alt="icon" src="map/icons/icon_leipzig_islamhandubl.png" /></a>
@@ -546,11 +546,11 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>Damaszener Familienbibliothek Refaiya an der UB Leipzig</name>
+      <name>Damaszener Familienbibliothek Refaiya</name>
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://www.islamic-manuscripts.net/"><img class="icon" alt="icon" src="map/icons/icon_leipzig_refaiya.png" /></a>
-                <a href="http://www.islamic-manuscripts.net/">Damaszener Familienbibliothek Refaiya an der UB Leipzig</a>
+                <a href="http://www.islamic-manuscripts.net/">Damaszener Familienbibliothek Refaiya</a>
             </div>
             <p>Universität Leipzig (URZ/Universitätsbibliothek)</p>
           ]]>
@@ -580,7 +580,7 @@
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://www.manuscripts-java.org/"><img class="icon" alt="icon" src="map/icons/icon_leipzig_java.png" /></a>
-                <a href="http://www.manuscripts-java.org/">Handschriften der Region Zentral Java (Indonesien)</a>
+                <a href="http://www.manuscripts-java.org/">Handschriften der Region Zentral Java (Ind.)</a>
             </div>
             <p>Universität Leipzig (URZ/Universitätsbibliothek)</p>
           ]]>
@@ -685,13 +685,13 @@
 <!-- Jena                                                                                                              -->
 <!-- ***************************************************************************************************************** -->
     <Placemark>
-      <name>DBT</name>
+      <name>Digitale Bibliothek Thüringen</name>
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://www.db-thueringen.de/"><img class="icon" alt="icon" src="map/icons/icon_jena_dbt.png" /></a>
-                <a href="http://www.db-thueringen.de/">Digitale Bibliothek Thüringen (Halle-Jena-Leipzig)</a>
+                <a href="http://www.db-thueringen.de/">DBT (Halle-Jena-Leipzig)</a>
             </div>
-            <p>Friedrich-Schiller-Universität Jena (Rechenzentrum, Bibliothek)</p>
+            <p>Friedrich-Schiller-Universität Jena (RZ, ThULB)</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -706,7 +706,7 @@
                 <a href="http://zs.thulb.uni-jena.de/"><img class="icon" alt="icon" src="map/icons/icon_jena_journals.png" /></a>
                 <a href="http://zs.thulb.uni-jena.de/">Zeitschriftenportal</a>
             </div>
-            <p>Friedrich-Schiller-Universität Jena (Rechenzentrum, Bibliothek)</p>
+            <p>Friedrich-Schiller-Universität Jena (RZ, ThULB)</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -721,7 +721,7 @@
                 <a href="http://archive.thulb.uni-jena.de/hisbest/"><img class="icon" alt="icon" src="map/icons/icon_jena_hisbest.png" /></a>
                 <a href="http://archive.thulb.uni-jena.de/hisbest/">Historische Bestände</a>
             </div>
-            <p>Friedrich-Schiller-Universität Jena (Rechenzentrum, Bibliothek)</p>
+            <p>Friedrich-Schiller-Universität Jena (RZ, ThULB)</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -734,9 +734,9 @@
       <description><![CDATA[
             <div class="mcrmap_item">
                 <a href="http://papyri-leipzig.dl.uni-leipzig.de/"><img class="icon" alt="icon" src="map/icons/icon_diverse_papyrus1.png" /></a>
-                <a href="http://http://papyri-leipzig.dl.uni-leipzig.de/">Papyrus und Ostraka Projekt (Halle-Jena-Leipzig)</a>
+                <a href="http://http://papyri-leipzig.dl.uni-leipzig.de/">Papyrus und Ostraka Projekt</a>
             </div>
-            <p>Friedrich-Schiller-Universität Jena (Rechenzentrum, Bibliothek)</p>
+            <p>Friedrich-Schiller-Universität Jena (RZ, ThULB)</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
