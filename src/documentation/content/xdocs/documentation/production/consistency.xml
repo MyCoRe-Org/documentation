@@ -349,13 +349,20 @@
           <code>mycore.sh rebuild solr content index</code>
         </p>
         <p>
-          <code>mycore.sh rebuild solr classification index</code>
-        </p>
-        <p>
           <code>mycore.sh restricted rebuild solr metadata index for objecttype {0}</code>
         </p>
         <p>
           <code>mycore.sh restricted rebuild solr metadata index for object {0}</code>
+        </p>
+         <p>
+          <code>mycore.sh restricted synchronize metadata index for objecttype {0}</code>
+        </p>
+        <p>Anschließend kann der SOLR-Index wieder optimiert werden.</p>
+        <p>
+          <code>mycore.sh optimize solr index</code>
+        </p>
+        <p>
+          <code>mycore.sh synchronize metadata index</code>
         </p>
         <p>Ggf. kann dieser auch komplett gelöscht und dann neu angelegt werden. Die dazu erforderlichen Kommandos sind:
         </p>
@@ -364,6 +371,34 @@
         </p>
         <p>
           <code>mycore.sh rebuild solr metadata and content index</code>
+        </p>
+        <p>
+          <code>mycore.sh drop solr classification index</code>
+        </p>
+        <p>
+          <code>mycore.sh rebuild solr classification index</code>
+        </p>
+        <p>Auch einzelne Teile des Index können per Kommando gezielt gelöscht werden.</p>
+        <p>
+          <code>mycore.sh delete from solr index for type {0}</code>
+        </p>
+        <p>
+          <code>mycore.sh delete from solr index by id {0}</code>
+        </p>
+        <p>Neben den Auswahlmöglichkeiten über MyCoRe-ID und Objekt-Type besteht auch die Möglichkeit eines Selects über 
+           eine SOLR-Suche und die Nutzung des Ergebnisses zur Weiterverarbeitung.</p>
+        <p>
+          <code>mycore.sh select objects with solr query {0}</code>
+        </p>
+        <p>
+          <code>mycore.sh restricted rebuild solr metadata index for selected</code>
+        </p>
+        <p>
+          <code>mycore.sh restricted rebuild solr content index for selected</code>
+        </p>
+        <p>Zum Schluss noch die Möglichkeit, eine neue URL für den SOLR-Server zu setzen.</p>
+         <p>
+          <code>mycore.sh set solr server {0}</code>
         </p>
         <p>Diese Möglichkeit sollte jedoch nur in Ausnahmefällen genutzt werden, da sie ggf. je nach Datenmenge länger
           dauern könnte.
