@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>MIR</title>
-    <version>2015-06-08</version>
+    <version>2015-08-24</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
@@ -26,32 +26,32 @@
       <title>Installation</title>
       <h2>Voraussetzungen</h2>
       <ul>
-        <li>Tomcat v7.0.27 oder höher (bzw. ServletContainer mit Servlet-3.0-Unterstützung)</li>
+        <li>Tomcat v8 oder höher (bzw. ServletContainer mit Servlet-3.1-Unterstützung)</li>
         <li>Solr-Server</li>
         <li>relationales Datenbanksystem</li>
         <li>bibutils</li> <!-- TODO! -->
       </ul>
       <h3>Download</h3>
       <p>
-        Hier kann das aktuelle <a href="#" data-role="artifactResolver" data-artifact="mir-webapp" data-suffix=".war">MIR-Paket</a>
-        heruntergeladen werden. Dieses kann mit dem Context 'mir' direkt in einen Servlet Container ausgeliefert (deployed) werden.
+        Hier kann das aktuelle <a href="mir.war" data-role="artifactResolver" data-artifact="mir-webapp" data-suffix=".war" download="mir.war">MIR-Paket</a>
+        (speichern als <code>mir.war</code>) heruntergeladen werden. Dieses kann mit dem Context 'mir' direkt in einen Servlet Container ausgeliefert (deployed) werden.
       </p>
       <p>
         Für administrative Zwecke kann zusätzlich eine MIR-CLI in zwei verschiedenen Formaten heruntergeladen werden:
       </p>
       <ol>
-        <li><a href="#" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".zip">ZIP archive</a></li>
-        <li><a href="#" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".tar.gz">tar.gz archive</a></li>
+        <li><a href="mir-cli.zip" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".zip" download="mir-cli.zip">ZIP archive</a> (speichern als <code>mir-cli.zip</code>)</li>
+        <li><a href="mir-cli.tar.gz" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".tar.gz" download="mir-cli.tar.gz">tar.gz archive</a> (speichern als <code>mir-cli.tar.gz</code>)</li>
       </ol>
       <h3>Solr-Installation</h3>
       <p>
-        Sollte kein eigener Solr-Server bereitstehen, kann hier eine speziell für MyCoRe-Anwendungen zusammengestellte
-        <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr/4.8.1/solr-4.8.1.war">Solr-Version</a>
-        heruntergeladen und ebenfalls mit dem Context 'solr' in den Servlet Container ausgeliefert werden.
+        Sollte kein eigener Solr-Server bereitstehen, kann hier die
+        <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr/4.10.4-SNAPSHOT/solr-4.10.4-20150727.132631-1.war" download="solr.war">Solr-Version 4.10</a>
+        (speichern als <code>solr.war</code>, enthält alle für MyCoRe notwendigen Bibliotheken) heruntergeladen und ebenfalls mit dem Context 'solr' in den Servlet Container ausgeliefert werden.
       </p>
       <p>
-        Das dazugehörige <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr-home/4.8.1/solr-home-4.8.1.zip">Solr-Home</a>
-        kann direkt bei Solr geholt werden oder alternativ ebenfalls über den hier bereitgestellten Link.
+        Das dazugehörige <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr-home/4.10.4-SNAPSHOT/solr-home-4.10.4-20150727.132634-1.zip" download="solr-home.zip">Solr-Home 4.10</a>
+        (speichern als <code>solr-home.zip</code>) kann direkt bei Solr oder alternativ über den hier bereitgestellten Link geholt werden.
       </p>
       <p>
         <span class="label label-info">Hinweis:</span> Die MyCoRe-Solr-Version beinhaltet eine vorkonfigurierte Sicherheitseinstellung,
@@ -101,7 +101,7 @@
       </p>
       <p>
         Dokumentation, Download und Installationsanleitung zu den bibutils sind auf der <a href="http://sourceforge.net/projects/bibutils/">Sourceforge-Projekt-Seite</a>
-        zu finden. Für Windows kann eine veraltete Version (3.4, aktuell ist 5.5 - Stand 11/2014) auf der <a href="http://bibutils.refbase.org/">ehemaligen bibutils-Homepage</a> heruntergeladen
+        zu finden. Für Windows kann eine veraltete Version (3.4, aktuell ist 5.6 - Stand 08/2015) auf der <a href="http://bibutils.refbase.org/">ehemaligen bibutils-Homepage</a> heruntergeladen
         werden.
       </p>
 
