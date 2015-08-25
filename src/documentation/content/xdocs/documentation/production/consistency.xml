@@ -200,6 +200,8 @@
       </section>
       <section>
         <title>METS-Daten</title>
+        <!-- to implement -->
+        <!-- 
         <p>Auch die angelegten mets.xml-Dateien können auf Konsistenz geprüft werden. Besonders ist zu prüfen, ob die
           Einträge in den mets.xml-Dateien mit denen in der Tabelle MCRFSNODES übereinstimmen. Das folgende Kommando
           sucht alle Mets-Dateien in Derivaten für eine Projekt-ID und prüft diese mit dem Inhalt der
@@ -208,6 +210,7 @@
         <p>
           <code>mycore.sh check mets.xml against mcrfsnodes for base id {base_id}</code>
         </p>
+        -->
         <p>
           Für bereits bestehende mets.xml-Dateien kann auch eine Valisierung erfolgen. Dabei ist aber ein vorheriges
           <em>select</em>
