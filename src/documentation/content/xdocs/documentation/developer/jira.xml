@@ -92,6 +92,13 @@
         </ol>
       </section>
       <section>
+        <title>Eclipse und Jira</title>
+        <p>
+          Über den Eclipse-Connector kann man Jira auch ins Eclipse einbinden. Details dazu sind in der
+          <a href="https://confluence.atlassian.com/display/IDEPLUGIN/Using+JIRA+in+the+Eclipse+Connector">Atlassian-Dokumentation</a> beschrieben.
+        </p>
+      </section>
+      <section>
         <title>Tipps und Tricks im Umgang mit Jira</title>
         <section>
           <title>Probleme bei der Ticket-Ansicht</title>
