@@ -55,7 +55,7 @@
       <news>
         <newsentry>
           <title>MyCoRe-Workshop</title>
-          <message>Ankündigung: Am 11. Nov. 2015 findet der MyCoRe-Workshop in Ilmenau statt.</message>
+          <message>Ankündigung und Einladung: Der MyCoRe-Workshop findet am 11. Nov. 2015 statt. Ort: Universitätsbibliothek Ilmenau.</message>
           <url>site:workshop</url>
           <date>15. Juli 2015</date>
           <author>Wiebke Oeltjen</author>
@@ -63,9 +63,9 @@
         </newsentry>
         <newsentry>
           <title>Konferenz</title>
-          <message>MyCoRe ist am 7. + 8. Sept. bei den Open-Access-Tage 2015 in Zürich.</message>
-          <url>http://www.open-access.net/community/open-access-tage/open-access-tage-2015-zuerich/</url>
-          <date>15. Juli 2015</date>
+          <message>MyCoRe ist am 17. Sept. 2015 auf der "FORGE"-Konferenz in Hamburg: "Forschungsdaten in den Geisteswissenschaften".</message>
+          <url>https://www.gwiss.uni-hamburg.de/gwin/ueber-uns/forge2015.html</url>
+          <date>09. September 2015</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
