@@ -3,8 +3,18 @@
 
 <document>
   <header>
-    <title>Access Control List (ACL) Integration</title>
-    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten</abstract>
+    <title>Zugriffskontrolle über ACL</title>
+    <version>2015-09-23</version>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]"/>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]"/>
+    </authors>
+    <abstract>
+      Mit Hilfe sogenannter Access Control Lists (ACL, dt. Zugriffssteuerungslisten) kann der Zugriff auf
+      Daten und Funktionen in MyCoRe-Anwendungen eingegrenzt werden. Eine ACL legt dabei fest, in welchem
+      Umfang einzelne Nutzer oder Gruppen Zugriff auf bestimmte Objekte (Metadaten, Dateien, Webseiten ...)
+      haben. Diese können sehr feingranular spezifiziert werden, z.B. lesen, erstellen, bearbeiten oder löschen.
+    </abstract>
   </header>
 <body>
 
@@ -15,9 +25,53 @@
    language you want to highlight
    -->
   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+  <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <section>
    <title>Allgemeines</title>
+   <p>
+     Aufbau der ACLs, Privilegien, POOLPRIVILIGES - Erläuterung folgt.
+   </p>
+  </section>
+
+  <section>
+    <title>Rechte an Objekten</title>
+    <p>
+      Für MyCoRe-Objekte können folgende Rechte spezifiziert werden:
+    </p>
+    <ul>
+      <li>read             -> Nutzer darf dieses Objekt lesen</li>
+      <li>view             -> Nutzer darf das Elternobjekt dieses Objektes lesen </li>
+      <li>write            -> Nutzer darf dieses Objekt bearbeiten</li>
+      <li>delete           -> Nutzer darf Objekt mit dieser ID löschen</li>
+      <li>addurn           -> Nutzer hat das Recht eine URN für dieses Objekt zu erzeugen</li>
+      <li>accKeyEnabled    -> Zugriffsschlüssel-Strategie wird verwendet</li>
+      <li>readKey          -> Leseschlüssel für dieses Objekt ist hinterlegt</li>
+      <li>writeKey         -> Schreibschlüssel für dieses Objekt ist hinterlegt</li>
+    </ul>
+    <p>
+      Aktuell nur in der MIR-Anwendung verfügbar gibt es ein Stylesheet (mir-rights.xsl), das diese Informationen sammelt
+      und in XML-Form an die Metadaten anhängt.
+    </p>
+    <pre class="brush: xml"><![CDATA[<mycoreobject xsi:noNamespaceSchemaLocation="datamodel-mods.xsd" ID="mir_mods_00000005" label="mir_mods_00000005" version="2015.03-SNAPSHOT">
+  [...]
+  <rights>
+    <right id="mir_mods_00000005" view="" read=""/>
+    <right id="mir_mods_00000006" read=""/>
+    <right id="Document_derivate_00000008" view="" read=""/>
+  </rights>
+</mycoreobject>
+    ]]></pre>
+    <p>
+      So wird für das Objekt selbst und alle Kind- und Elternobjekte ein Eintrag angefügt, der wenn das jeweilige Recht
+      verfügbar ist, dies als Attribut mit leerem Wert enthält. Dieses XML kann dann in den Stylesheets ausgewertet werden,
+      ohne jedesmal über einen URI-Aufruf die ACL erneut abzufragen.
+    </p>
+    <pre class="brush: xml"><![CDATA[<xsl:key use="@id" name="rights" match="/mycoreobject/rights/right" />
+[...]
+<xsl:param name="accessedit" select="key('rights', $id)/@write" />
+<xsl:param name="accessdelete" select="key('rights', $id)/@delete" />
+    ]]></pre>
   </section>
 
   <section>
@@ -89,6 +143,75 @@
       MCR.EventHandler.MCRObject.1.class=org.mycore.access.MCRRemoveAclEventHandler
       MCR.EventHandler.MCRDerivate.1.class=org.mycore.access.MCRRemoveAclEventHandler
       MCR.Access.Strategy.Class=org.mycore.access.strategies.MCRParentRuleStrategy
+      </pre>
+    </section>
+    <section>
+      <title>Methode 4: Urheber (Creator)</title>
+      <p>
+        Bei dieser Methode darf der Autor (bzw. eine in den Properties festgelegte Rolle) Dokumente anlegen, bearbeiten und
+        Dateien anhängen, so lange sich dieses Dokument in einem ebenfalls über ein Property festgelegten Zustand (servstate)
+        befindet. Ggf. darf der Autor auch Löschrechte an seinen Dokumenten haben. Ansonsten gilt die Objekt-Typ-Strategie.
+      </p>
+      <pre class="brush: shell">
+      MCR.EventHandler.MCRObject.1.class=org.mycore.access.MCRRemoveAclEventHandler
+      MCR.EventHandler.MCRDerivate.1.class=org.mycore.access.MCRRemoveAclEventHandler
+      MCR.Access.Strategy.Class=org.mycore.access.strategies.MCRCreatorRuleStrategy
+      # You can also specify a comma separated list of categories like: state:submitted,state:new
+      MCR.Access.Strategy.SubmittedCategory=state:submitted
+      MCR.Access.Strategy.CreatorRole=submitter
+      </pre>
+    </section>
+    <section>
+      <title>Methode 5: Derivat-Zugriff</title>
+      <p>
+        Angehangene Dokumente (Derivate) können zugriffsbeschränkt werden durch Gruppierung über Kategorisierung (Klassifikationen).
+        So kann beispielsweise der Zugriff auf einen IP-Adressbereich oder bestimmte Gruppen eingeschränkt werden. Die aktuelle
+        Implementierung erlaubt, dass die Zuordnung in die Klassifikation direkt im Dokument festgelegt und für alle angehangenen
+        Derivate inkl. deren Dateien gilt. Es wird überlegt, ob eine flexiblere Implementierung sinnvoll ist, die es ermöglicht
+        einzelne Derivate zuzuordnen. Für die Dokumente gilt die Urheber-Strategie.
+      </p>
+      <pre class="brush: shell">
+      MCR.EventHandler.MCRObject.1.class=org.mycore.access.MCRRemoveAclEventHandler
+      MCR.EventHandler.MCRDerivate.1.class=org.mycore.access.MCRRemoveAclEventHandler
+      MCR.Access.Strategy.Class=org.mycore.mir.authorization.MIRStrategy
+      # You can also specify a comma separated list of categories like: state:submitted,state:new
+      MCR.Access.Strategy.SubmittedCategory=state:submitted
+      MCR.Access.Strategy.CreatorRole=submitter
+      </pre>
+    </section>
+    <section>
+      <title>Methode 6: Zugriffsschlüssel</title>
+      <p>
+        Es wird geprüft, ob für das Objekt Lese- oder Schreibschlüssel vorhanden sind. Ansonsten gilt die MIRStrategy
+      </p>
+      <pre class="brush: shell">
+      MCR.EventHandler.MCRObject.1.class=org.mycore.access.MCRRemoveAclEventHandler
+      MCR.EventHandler.MCRDerivate.1.class=org.mycore.access.MCRRemoveAclEventHandler
+      MCR.Access.Strategy.Class=org.mycore.mir.authorization.accesskeys.MIRAccessKeyStrategy
+      # You can also specify a comma separated list of categories like: state:submitted,state:new
+      MCR.Access.Strategy.SubmittedCategory=state:submitted
+      MCR.Access.Strategy.CreatorRole=submitter
+      MIR.AccessKeyStrategy.ObjectTypes=mods,derivate
+      MCR.URIResolver.ModuleResolver.accesskeys=org.mycore.mir.authorization.accesskeys.MIRAccessKeyResolver
+      </pre>
+    </section>
+    <section>
+      <title>Methode 7: Besitzer</title>
+      <p>
+        Diese Strategie ist analog zur Urheber-Strategie (MCRCreatorRuleStrategy), jedoch können explizit ACLs vergeben
+        werden, die dann der Besitzer auf seine Objekte hat. Weiterhin kann über ein Property festgelegt werden, welche
+        Strategie ansonsten gelten soll (MIR.OwnerStrategy.FallbackClass).
+      </p>
+      <pre class="brush: shell">
+      MCR.EventHandler.MCRObject.1.class=org.mycore.access.MCRRemoveAclEventHandler
+      MCR.EventHandler.MCRDerivate.1.class=org.mycore.access.MCRRemoveAclEventHandler
+      MCR.Access.Strategy.Class=org.mycore.mir.authorization.accesskeys.MIROwnerStrategy
+      # You can also specify a comma separated list of categories like: state:submitted,state:new
+      MCR.Access.Strategy.SubmittedCategory=state:submitted
+      MCR.Access.Strategy.CreatorRole=submitter
+      MIR.OwnerStrategy.FallbackClass=org.mycore.mir.authorization.MIRStrategy
+      MIR.OwnerStrategy.ObjectTypes=mods,derivate
+      MIR.OwnerStrategy.AllowedPermissions=read,writedb
       </pre>
     </section>
   </section>

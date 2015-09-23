@@ -313,7 +313,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Benutzer und Rechte -->
     <permissions           label="Benutzer und Rechte"   href="permissions/">
       <user_management     label="Benutzerverwaltung"    href="user_management.html" />
-      <acl_integration     label="Access Control Listen" href="acl_integration.html" />
+      <acl_integration     label="Zugriffskontrolle"     href="acl_integration.html" />
       <use_docportal       label="... in DocPortal"      href="use_docportal.html" />
       <login_session       label="LoginServlet"          href="login_session.html" />
       <broadcasting        label="Nachrichtenfenster"    href="broadcasting.html" />
