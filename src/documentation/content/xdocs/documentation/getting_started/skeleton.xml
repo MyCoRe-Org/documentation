@@ -47,8 +47,11 @@
       <section>
         <title>1. Quellen herunterladen</title>
         <p>
-          Hier kann das aktuelle <a href="https://server.mycore.de/svn/skeleton/trunk/skeleton">Skeleton</a>
-          heruntergeladen werden: <code>https://server.mycore.de/svn/skeleton/trunk/skeleton</code>.
+          Hier kann das aktuelle <a href="https://server.mycore.de/svn/maven/skeleton/trunk">Skeleton</a>
+          heruntergeladen werden.
+        </p>
+        <p>
+          Das SVN Kommando lautet: <code>svn checkout https://server.mycore.de/svn/maven/skeleton/trunk</code>
         </p>
       </section>
 
