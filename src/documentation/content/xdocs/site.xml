@@ -240,7 +240,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         <web_cli             label="WebCLI"                    href="web_cli.html" />
         <cli_extension       label="Erweiterungen"             href="cli_extension.html" />
       </cli>
-      <properties            label="mycore.properties"         href="mcr_properties.html" />
+      <properties            label="Konfiguration &amp; Properties" href="mcr_properties.html" />
       <maven                 label="Buildprozess mit Maven"    href="maven.html" />
     </getting_started>
 

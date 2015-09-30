@@ -3,18 +3,32 @@
 
 <document>
   <header>
-    <title>MyCoRe-Properties</title>
+    <title>Konfiguration</title>
   </header>
   <body>
+
+    <section>
+      <title>Konfigurationsverzeichnis</title>
+      <p>Die Konfiguration der MyCoRe-Anwendung befindet sich typischer Weise unter:</p>
+      <ul>
+        <li>Windows: <code>c:\Users\&lt;username>\AppData\Local\MyCoRe\&lt;appname></code></li>
+        <li>Linux: <code>/home/&lt;username>/.mycore/&lt;appname></code></li>
+      </ul>
+      <p>
+        Wird eine Anwendung neu initialisiert, kann das Konfigurationsverzeichnis mit dem CLI-Befehl:
+        <code>create configuration directory</code> neu angelegt werden. Bestehende Konfigurationen
+        werden dabei nicht überschrieben!
+      </p>
+      <p>
+        for more information see <a href="http://www.mycore.de/generated/mycore/apidocs/org/mycore/common/config/MCRConfigurationDir.html">MCRConfigurationDir</a>
+      </p>
+    </section>
 
     <section>
       <title>MyCoRe-Properties</title>
       <p>
         Welche MyCoRe-Properties gibt es und wie sind sie anzupassen?
       </p>
-      <ul>
-        <li></li>
-      </ul>
     </section>
 
   </body>
