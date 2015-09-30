@@ -8,6 +8,7 @@
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Wiebke Oeltjen" />
+      <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
     </authors>
     <abstract>
       Zur Entwicklung einer eigenen MyCoRe-Anwendung stellen wir ein Anwendungsgerüst
@@ -46,19 +47,18 @@
 
       <section>
         <title>1. Quellen herunterladen</title>
+        <p>Zuerst sollte ein Arbeitsverzeichnis angelegt werden.<br /> 
+           (z.B. <code>C:\skeleton\workspace</code> oder <code>~/skeleton/workspace</code>).</p>
         <p>
-          Hier kann das aktuelle <a href="https://server.mycore.de/svn/maven/skeleton/trunk">Skeleton</a>
-          heruntergeladen werden.
-        </p>
-        <p>
-          Das SVN Kommando lautet: <code>svn checkout https://server.mycore.de/svn/maven/skeleton/trunk</code>
+          Danach wechselt man in dieses Verzeichnis und lädt das aktuelle <a href="https://server.mycore.de/svn/maven/skeleton/trunk">Skeleton</a>
+          mit dem Kommando <code>svn checkout https://server.mycore.de/svn/maven/skeleton/trunk</code> herunter.
         </p>
       </section>
 
       <section>
         <title>2. CLI erstellen</title>
         <p>
-          Mit dem Kommando <code>mvn clean install</code> wir die Skeleton Anwendung erstmals gebaut.
+          Im Arbeitsverzeichnis wird mit dem Kommando <code>mvn clean install</code> die Skeleton Anwendung erstmals gebaut.
           Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>zip.gz</code> für die MyCoRe-Kommandozeile zur Verfügung. Das <code>zip</code> bzw. <code>zip.gz</code>kann nun in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden.
         </p>
       </section>
@@ -69,14 +69,21 @@
         <p>
           Zuerst wechsel man in das gerade erstellte Verzeichnis der CLI, z.B.:
           <code>cd c:\skeleton\skeleton-cli-0.1-SNAPSHOT</code>
-          Anschließend wird das Konfigurations-Verzeichnis generiert, indem je nach Betriebssystem das folgende Kommando aufgerufen wird. Es ist darauf zu achten, dass der Name des Konfigurationsverzeichnisses dem Namen der Webanwendung entspricht, in diesem Beispiel also <code>skeleton</code>:
-        <dl>
-          <dt>Linux:</dt><dd> <code>bin/skeleton.sh create configuration directory</code></dd>
-          <dt>Windows:</dt><dd> <code>bin\skeleton.bat create configuration directory</code></dd>
-        </dl>
-          Im Nutzerverzeichnis wird damit ein MyCoRe-Konfigurationsverzeichnis generiert,
+         </p>
+         <p>
+           Anschließend wird das Konfigurations-Verzeichnis generiert, indem je nach Betriebssystem 
+           das folgende Kommando aufgerufen wird: 
+           <dl>
+            <dt>Linux:</dt><dd> <code>bin/skeleton.sh create configuration directory</code></dd>
+            <dt>Windows:</dt><dd> <code>bin\skeleton.bat create configuration directory</code></dd>
+          </dl>
+          Im Nutzerverzeichnis wird dadurch ein MyCoRe-Konfigurationsverzeichnis generiert,
           das unter Linux <code>~/.mycore/skeleton</code> heißt und bei Windows im Verzeichnis
-        <code>c:\Users\&#60;userName&#62;\AppData\Local\MyCoRe\skeleton\</code> zu finden ist.
+          <code>c:\Users\&#60;userName&#62;\AppData\Local\MyCoRe\skeleton\</code> zu finden ist.
+        </p>
+        <p>
+          Es ist darauf zu achten, dass der Name des Konfigurationsverzeichnisses dem Namen der 
+          Webanwendung entspricht, in diesem Beispiel also <code>skeleton</code>:
         </p>
         <h3>Datenbank konfigurieren</h3>
         <p>
