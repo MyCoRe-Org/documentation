@@ -56,17 +56,19 @@
       </section>
 
       <section>
-        <title>2. Deployen</title>
+        <title>2. CLI erstellen</title>
         <p>
-          Vor dem Deployen müssen gegebenenfalls Klassifikationen und Datenmodellspezifikationen ergänzt werden. Anschließend wird das Kommando <code>mvn clean install</code> aufgerufen.
+          Mit dem Kommando <code>mvn clean install</code> wir die Skeleton Anwendung erstmals gebaut.
           Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>zip.gz</code> für die MyCoRe-Kommandozeile zur Verfügung. Das <code>zip</code> bzw. <code>zip.gz</code>kann nun in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden.
         </p>
       </section>
-
-      <section>
+      
+       <section>
         <title>3. Konfigurieren</title>
         <h3>Konfigurationsverzeichnis generieren</h3>
         <p>
+          Zuerst wechsel man in das gerade erstellte Verzeichnis der CLI, z.B.:
+          <code>cd c:\skeleton\skeleton-cli-0.1-SNAPSHOT</code>
           Anschließend wird das Konfigurations-Verzeichnis generiert, indem je nach Betriebssystem das folgende Kommando aufgerufen wird. Es ist darauf zu achten, dass der Name des Konfigurationsverzeichnisses dem Namen der Webanwendung entspricht, in diesem Beispiel also <code>skeleton</code>:
         <dl>
           <dt>Linux:</dt><dd> <code>bin/skeleton.sh create configuration directory</code></dd>
@@ -75,8 +77,16 @@
           Im Nutzerverzeichnis wird damit ein MyCoRe-Konfigurationsverzeichnis generiert,
           das unter Linux <code>~/.mycore/skeleton</code> heißt und bei Windows im Verzeichnis
         <code>c:\Users\&#60;userName&#62;\AppData\Local\MyCoRe\skeleton\</code> zu finden ist.
-        <h3>Datenbank und Solr konfigurieren</h3>
-          Im Konfigurationsverzeichnis wird nun die Datenbank und Solr konfiguriert.
+        </p>
+        <h3>Datenbank konfigurieren</h3>
+        <p>
+          Zur Konfiguration der Datenbank muss die <code>hibernate.cfg.xml</code> im Konfigurationsverzeichnis
+          angepasst werden (siehe <a href="site:hibernate">Datenbank / Hibernate</a>).
+        </p>
+        
+        <h3>Solr konfigurieren</h3>
+        <p>
+        
         </p>
       </section>
 
@@ -101,6 +111,7 @@
            Im ersten Schritt muss das eigene <a href="site:mcrobj_datadef">Datenmodell</a> basierend auf den <a href="site:mcrobj_datatypes">MyCoRe-Datentypen</a>
            spezifiziert werden.
          </p>
+         <p>Das CLI muss neu gebaut werden (siehe 2.)</p>
        </section>
 
        <section>
