@@ -60,8 +60,9 @@
         MIR bringt H2 und HSQLDB als im-Speicher-laufende relationale Datenbanksysteme mit. Bei der Installation können diese beiden
         (neben verschiedenen anderen) gewählt werden. Dann ist nichts weiter zu tun. Soll eine andere Datenbank genutzt werden, so muss
         diese entsprechend im Wizard konfiguriert werden und ggf. weitere Anpassungen in der durch den Wizard angelegten <code>hibernate.cfg.xml</code>
-        vorgenommen werden. Das zur Datenbank passende Treiber-Paket wird im <code>lib</code>-Verzeichnis abgelegt und muss ggf. ersetzt werden, sollte der
-        Wizard kein passendes Paket finden können.
+        vorgenommen werden. Das zur Datenbank passende Treiber-Paket wird im <code>lib</code>-Verzeichnis abgelegt und muss ggf. ersetzt
+        werden, sollte der Wizard kein passendes Paket finden können. Weitere Information zur Konfiguration sind auf in der Dokumentation
+        zu <a href="site:hibernate">Datenbank &amp; Hibernate</a> zusammengetragen.
       </p>
 
       <h3>bibutils</h3>
