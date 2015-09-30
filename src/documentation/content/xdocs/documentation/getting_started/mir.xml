@@ -45,39 +45,10 @@
       </ol>
       <h3>Solr-Installation</h3>
       <p>
-        Sollte kein eigener Solr-Server bereitstehen, kann hier die
-        <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr/4.10.4-SNAPSHOT/solr-4.10.4-20150727.132631-1.war" download="solr.war">Solr-Version 4.10</a>
-        (speichern als <code>solr.war</code>, enthält alle für MyCoRe notwendigen Bibliotheken) heruntergeladen und ebenfalls mit dem Context 'solr' in den Servlet Container ausgeliefert werden.
-      </p>
-      <p>
-        Das dazugehörige <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr-home/4.10.4-SNAPSHOT/solr-home-4.10.4-20150727.132634-1.zip" download="solr-home.zip">Solr-Home 4.10</a>
-        (speichern als <code>solr-home.zip</code>) kann direkt bei Solr oder alternativ über den hier bereitgestellten Link geholt werden.
-      </p>
-      <p>
-        <span class="label label-info">Hinweis:</span> Die MyCoRe-Solr-Version beinhaltet eine vorkonfigurierte Sicherheitseinstellung,
-        wodurch der Solr-Server nur direkt von localhost bzw. 127.0.0.1 erreicht werden. Diese Einstellungen stehen in der Datei
-        <code>context.xml</code>, die unter <code>webapps/solr/META-INF</code> zu finden ist. Sollte diese Sicherheitsmassnahme nicht
-        gewünscht sein, so muss die Datei entsprechend angepasst werden.
-      </p>
-      <p>
-        Nach Installation des Solr-Servers muss diesem noch bekannt gemacht werden, wo das solr-home zu finden ist. Der MIR-Wizard legt dieses
-        Verzeichnis bei der Installation standardmäßig im MIR-Konfigurationsverzeichnis unter <code>mir/data/solr</code> an. Eine
-        Möglichkeit, dieses Verzeichnis bekannt zu machen, ist die o.g. <code>context.xml</code> um einen Environment-Eintrag
-        wie folgt zu ergänzen:
-      </p>
-      <pre class="brush: xml;"><![CDATA[
-<Context>
-  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
-         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
-  <Environment name="solr/home"
-               type="java.lang.String"
-               value="c:/Users/<userName>/AppData/Local/MyCoRe/mir/data/solr"
-               override="true" />
-</Context>]]></pre>
-      <p>
-        Soll nicht das vom MIR-Wizard angelegte solr-home verwendet werden, so muss das Verzeichnis <code>mir/data/solr/collection1</code>
-        entsprechend umkopiert werden. Auch der Name des Solr-Kerns kann beliebig angepasst werden. Wo der passende Kern gefunden werden kann, wird
-        im MIR-Wizard konfiguriert.
+        Soll ein eigener Solr-Server aufgesetzt werden, sind weitere Informationen dazu in unserer <a href="site:solr">Solr-Dokumentation</a> zu finden.
+        Den Solr-Kern für MIR liefert die Installation über den MIR-Wizard mit. Soll nicht das vom MIR-Wizard angelegte solr-home verwendet werden, so
+        muss das Verzeichnis <code>mir/data/solr/collection1</code> entsprechend umkopiert werden. Auch der Name des Solr-Kerns kann beliebig angepasst
+        werden. Wo der passende Kern gefunden werden kann, wird im MIR-Wizard konfiguriert.
       </p>
       <p>
         Weitere Möglichkeiten der Konfiguration und mehr Informationen zur Solr-Installation finden sich in der
