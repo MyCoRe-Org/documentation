@@ -36,8 +36,11 @@
 
       <h3>Voraussetzungen</h3>
       <ul>
-        <li>Tomcat v7.0.27 oder höher (bzw. ServletContainer mit Servlet-3.0-Unterstützung)</li>
-        <li>Solr-Server</li>
+        <li>JDK 1.8</li>
+        <li>Tomcat v8 oder höher (bzw. ServletContainer mit Servlet-3.1-Unterstützung)</li>
+        <li>SVN 1.8 oder höher</li>
+        <li>Maven 3 oder höher</li>
+        <li>Apache Solr 4.10</li>
         <li>relationales Datenbanksystem</li>
       </ul>
 
