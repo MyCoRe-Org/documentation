@@ -231,18 +231,17 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Mit MyCoRe starten -->
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
-      <mir                   label="MIR"               href="mir.html" />
-      <skeleton              label="Skeleton"          href="skeleton.html" />
-      <hibernate             label="Datenbank / Hibernate" href="hibernate.html" />
-      <cli                   label="Kommandozeile"     href="cli_and_commands/" >
-        <cli_overview        label="Übersicht"         href="index.html" />
-        <web_cli             label="WebCLI"            href="web_cli.html" />
-        <cli_extension       label="Erweiterungen"     href="cli_extension.html" />
+      <mir                   label="MIR"                       href="mir.html" />
+      <skeleton              label="Skeleton"                  href="skeleton.html" />
+      <hibernate             label="Datenbank &amp; Hibernate" href="hibernate.html" />
+      <solr                  label="Solr-Integration"          href="solr.html" />
+      <cli                   label="Kommandozeile"             href="cli_and_commands/" >
+        <cli_overview        label="Übersicht"                 href="index.html" />
+        <web_cli             label="WebCLI"                    href="web_cli.html" />
+        <cli_extension       label="Erweiterungen"             href="cli_extension.html" />
       </cli>
-      <buildprocess          label="Buildprozess"      href="build_and_config/">
-        <properties          label="mycore.properties" href="mcr_properties.html" />
-        <maven               label="Maven"             href="maven.html" />
-      </buildprocess>
+      <properties            label="mycore.properties"         href="mcr_properties.html" />
+      <maven                 label="Buildprozess mit Maven"    href="maven.html" />
     </getting_started>
 
     <!-- Grundlagen -->
@@ -278,7 +277,6 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Suche -->
     <search                label="Suche"             href="search/">
-      <solr                label="Solr-Integration"  href="solr.html" />
       <query_language      label="Query-Language"    href="query_language.html" />
       <extract             label="Daten extrahieren" href="extract.html" />
     </search>
