@@ -4,6 +4,10 @@
 <document>
   <header>
     <title>Konfiguration</title>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+    </authors>
+    <version>2015-09-30</version>
   </header>
   <body>
 
