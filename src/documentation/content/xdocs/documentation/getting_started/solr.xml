@@ -38,7 +38,7 @@
         <code>solr.war</code> über MyCoRe bereitgestellt, das direkt aus dem
         <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr">MyCoRe-Artifactory</a> bezogen
         werden kann. Die aktuelle Version ist die <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr/4.10.4-SNAPSHOT/solr-4.10.4-20150727.132631-1.war" download="solr.war">Solr-Version 4.10</a>
-        (speichern als <code>solr.war</code>.
+        (speichern als <code>solr.war</code>).
       </p>
       <p>
         Das dazugehörige Solr-Home-Verzeichnis, in dem dann die Konfigurationen der Suchfelder und der Index liegen, wird ebenfalls in
