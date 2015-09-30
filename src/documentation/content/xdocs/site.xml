@@ -243,11 +243,6 @@ See http://forrest.apache.org/docs/linking.html for more info
         <properties          label="mycore.properties" href="mcr_properties.html" />
         <maven               label="Maven"             href="maven.html" />
       </buildprocess>
-      <docportal             label="DocPortal"        href="docportal/">
-        <architecture_dp          label="Architektur"       href="architecture.html" />
-        <datamodel_dp             label="Datenmodell"       href="datamodel.html" />
-        <installation_dp          label="Installation &amp; Aufbau" href="installation.html" />
-      </docportal>
     </getting_started>
 
     <!-- Grundlagen -->
@@ -345,6 +340,11 @@ See http://forrest.apache.org/docs/linking.html for more info
     <old_components        label="veraltete Komponenten" href="old_components/">
       <editorframework     label="Editorframework"       href="editor_framework.html" />
       <query_service       label="QueryService"          href="query_service.html" />
+      <docportal           label="DocPortal"             href="docportal/">
+        <architecture_dp   label="Architektur"           href="architecture.html" />
+        <datamodel_dp      label="Datenmodell"           href="datamodel.html" />
+        <installation_dp   label="Installation &amp; Aufbau" href="installation.html" />
+      </docportal>
     </old_components>
 
     <!-- Laufender Betrieb -->
