@@ -3,8 +3,15 @@
 
 <document>
   <header>
-    <title>Hibernate</title>
-  </header>
+    <title>Datenbank/Hibernate</title>
+    <version>2015-09-30</version>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
+    </authors>
+    <abstract>
+      Konfiguration der Datenbank via Hibernate.
+    </abstract>
+   </header>
   <body>
 
     <section id="database">
@@ -58,12 +65,15 @@
   <artifactId>postgresql</artifactId>
   <version>9.4-1203-jdbc4</version>
 </dependency>]]></pre>
-	  Die passende Version des Datenbanktreibers findet man z.B. unter 
-	  <a href="http://mvnrepository.com/artifact/org.postgresql/postgresql"><br />http://mvnrepository.com/artifact/org.postgresql/postgresql</a>
+	  Die passende Version des Datenbanktreibers findet man z.B. unter <br />
+	  <a href="http://mvnrepository.com/artifact/org.postgresql/postgresql">http://mvnrepository.com/artifact/org.postgresql/postgresql</a>
       </p>
       <p><strong>Alternativ</strong> kann die JAR-Datei des Datenbanktreibers in das Unterverzeichnis <code>lib</code> 
       im <a href="site:properties">MyCoRe-Konfigurationsverzeichnis</a> kopiert werden.</p>
       <h5>2. Passen Sie die Hibernate-Konfiguration für das gewählt Datenbanksystem an.</h5>
+      <p>
+        In der Datei <code>hibernate.cfg.xml</code> im <a href="site:properties">MyCoRe-Konfigurationsverzeichnis</a> finden Sie schon einige Beispielkonfigurationen für die gängigen Datenbanksysteme. 
+   	  </p>
    </section>
   </body>
 </document>
