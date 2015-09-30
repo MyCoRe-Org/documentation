@@ -233,6 +233,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
       <mir                   label="MIR"               href="mir.html" />
       <skeleton              label="Skeleton"          href="skeleton.html" />
+      <hibernate             label="Datenbank / Hibernate" href="hibernate.html" />
       <cli                   label="Kommandozeile"     href="cli_and_commands/" >
         <cli_overview        label="Übersicht"         href="index.html" />
         <web_cli             label="WebCLI"            href="web_cli.html" />
@@ -240,7 +241,6 @@ See http://forrest.apache.org/docs/linking.html for more info
       </cli>
       <buildprocess          label="Buildprozess"      href="build_and_config/">
         <properties          label="mycore.properties" href="mcr_properties.html" />
-        <hibernate           label="Hibernate"         href="hibernate.html" />
         <maven               label="Maven"             href="maven.html" />
       </buildprocess>
       <docportal             label="DocPortal"        href="docportal/">
