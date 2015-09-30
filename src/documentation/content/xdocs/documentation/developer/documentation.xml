@@ -25,9 +25,8 @@
       <p> Die Dokumentation von MyCoRe und die Unterstützung der Entwickler erfolgt über mehrere Medien.</p>
       <ol>
         <li>
-          Die MyCoRe-Dokumentation wird zur Zeit für das aktuelle Release MyCoRe 2014.06 überarbeitet und mit Apache
-          Forrest erstellt.
-          <a href="site:overview"> http://www.mycore.de/documentation/index.html</a>
+          Die MyCoRe-Dokumentation wird mit Apache Forrest erstellt.
+          <a href="site:overview">http://www.mycore.de/documentation/index.html</a>
         </li>
         <li>
           Die Know-How- und Dokumentationsseiten der MyCoRe-Wiki-Installation
@@ -43,13 +42,12 @@
         Für die Mitarbeit an der Dokumentation ist ein checkout von
         <strong>documentation</strong>
         vom SVN-Trunk erforderlich.
-        Um die Dokumentation lokal zu aktivieren, ist die Installation von Apache Forrest
+        Um die Dokumentation lokal zu aktivieren, ist die Installation von Apache Forrest v0.9
         erforderlich. Es muss die Environment-Variable FORREST_HOME gesetzt werden. Für den Start ist in das
-        root-Verzeichnis der Dokumentation zu wechseln und das Kommando
-        <strong>forrest run</strong>
-        auszuführen. Nun kann die lokale Installation über
-        <a href="http://localhost:8888">http://localhost:8888</a>
-        im Browser aufgerufen werden.
+        root-Verzeichnis der Dokumentation zu wechseln. Vor der ersten Nutzung muss das Kommando <strong>ant config-fop</strong>
+        aufgerufen werden. Danach kann mit <strong>forrest run</strong> eine lokale Dokumentation gebaut und über
+        <a href="http://localhost:8888">http://localhost:8888</a> im Browser aufgerufen werden. Änderungen sind dabei
+        immer sofort sichtbar, es ist kein erneuter Aufruf nötig.
       </p>
       <p>
         Die Sprache der Dokumente ist wahlweise Deutsch oder Englisch.
