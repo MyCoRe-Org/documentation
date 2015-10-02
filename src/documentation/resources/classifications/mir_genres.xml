@@ -126,16 +126,16 @@
       </category>
     </category>
     <category ID="teaching_material">
-      <label xml:lang="x-hosts" text="standalone" />
+      <label xml:lang="x-hosts" text="standalone lecture" />
       <label xml:lang="de" text="Lehrmaterial" />
       <label xml:lang="en" text="Teaching Resource" />
       <category ID="lecture_resource">
-        <label xml:lang="x-hosts" text="standalone" />
+        <label xml:lang="x-hosts" text="standalone lecture" />
         <label xml:lang="de" text="Vorlesungsmaterial" />
         <label xml:lang="en" text="Lecture Resource" />
       </category>
       <category ID="course_resources">
-        <label xml:lang="x-hosts" text="standalone" />
+        <label xml:lang="x-hosts" text="standalone lecture" />
         <label xml:lang="en" text="Course Resources" />
         <label xml:lang="de" text="Kurs- und Seminarmaterial" />
       </category>
@@ -183,21 +183,26 @@
     <category ID="audio">
       <label xml:lang="en" text="Audio file" />
       <label xml:lang="de" text="Tondokument" />
-      <label xml:lang="x-hosts" text="standalone" />
+      <label xml:lang="x-hosts" text="standalone lecture" />
     </category>
     <category ID="video">
       <label xml:lang="en" text="Movie / Video" />
       <label xml:lang="de" text="Film / Video" />
-      <label xml:lang="x-hosts" text="standalone" />
+      <label xml:lang="x-hosts" text="standalone lecture" />
     </category>
     <category ID="picture">
       <label xml:lang="en" text="Picture" />
       <label xml:lang="de" text="Bild" />
-      <label xml:lang="x-hosts" text="standalone" />
+      <label xml:lang="x-hosts" text="standalone lecture" />
     </category>
     <category ID="broadcasting">
       <label xml:lang="en" text="Broadcasting" />
       <label xml:lang="de" text="Sendung" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="lecture">
+      <label xml:lang="en" text="Lecture" />
+      <label xml:lang="de" text="Vorlesung" />
       <label xml:lang="x-hosts" text="standalone" />
     </category>
   </categories>
