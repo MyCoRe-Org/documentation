@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>Mit dem 'Skeleton' zur eigenen Anwendung</title>
-    <version>2015-04-24</version>
+    <version>2015-09-30</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Wiebke Oeltjen" />
@@ -87,14 +87,18 @@
         </p>
         <h3>Datenbank konfigurieren</h3>
         <p>
-          Zur Konfiguration der Datenbank muss die <code>hibernate.cfg.xml</code> im Konfigurationsverzeichnis
+          Zur Konfiguration der Datenbank muss die <code>hibernate.cfg.xml</code> im <a href="site:properties">MyCoRe-Konfigurationsverzeichnis</a>
           angepasst werden (siehe <a href="site:hibernate">Datenbank / Hibernate</a>).
         </p>
         
         <h3>Solr konfigurieren</h3>
         <p>
-        
+          Um in der Anwendung suchen und recherchieren wird ein Solr-Suchserver benötigt.<br />
+          Dieser läuft als eigene Webanwendung, die in einem Servlet-Container (z.B. Tomcat) deployed 
+          und konfiguiert werden muss (siehe <a href="site:solr">Solr-Integration</a>).
         </p>
+        MyCoRe Properties: SOLR.server.url setzen
+        
       </section>
 
       <section>

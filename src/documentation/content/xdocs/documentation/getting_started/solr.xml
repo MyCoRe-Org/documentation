@@ -11,12 +11,9 @@
     </authors>
     <version>2015-09-30</version>
     <abstract>
-        Die MyCoRe-Anwendungen benötigen einen leistungsstarken Indexer für vielfältige Suchoperationen
-        innerhalb der Anwendungen. Daher hat sich das MyCoRe-Team für die Einbindung von Apache Solr
-        entschieden. MyCoRe bietet mit dieser Komponente dem Anwender die Möglichkeit, seine Daten auf einem Solr-Server
-        abzulegen und zu indizieren. Voraussetzung für die Verwendung der Solr-Komponente in der eigenen
-        MyCore-Anwendung ist, dass ein solcher Server vom Anwender angelegt und betrieben
-        wird. Informationen dazu enthält diese Anleitung.
+        Die MyCoRe-Anwendungen benötigen eine leistungsstarke Suchmaschine für vielfältige Suchoperationen.
+        Daher hat sich das MyCoRe-Team für die Einbindung von Apache Solr
+        entschieden. Wie man einen Solr-Server aufsetzt und betreibt wird in dieser Anleitung beschrieben.
     </abstract>
   </header>
 
@@ -29,9 +26,14 @@
      language you want to highlight
      -->
     <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-
+	
     <section>
-      <title>Aufbau eines Solr-Servers</title>
+      <title>Einrichtung eines Solr-Servers</title>
+      <p>Bevor man mit der Einrichtung des Solr-Servers beginnt, sollte man sich kurz
+         auf der Webseite <a href="http://lucene.apache.org/solr">http://lucene.apache.org/solr</a> mit dem System vertraut machen.</p>
+      <p>
+        Um die Konfiguration zu vereinfachen, stellt die MyCoRe-Community ein vorkonfiguriertes Paket zum Download bereit.
+      </p>
       <p>
         Der Solr-Server (bis Version 4) wird in Form eines <code>solr-{version}.war</code> Archives ausgeliefert.
         Da MyCoRe noch einige zusätzliche Bibliotheken benötigt, wird ein speziell konfiguriertes
@@ -66,7 +68,7 @@
 </Context>]]></pre>
 
       <p>
-        <span class="label label-info">Hinweis:</span> Die MyCoRe-Solr-Version beinhaltet eine vorkonfigurierte Sicherheitseinstellung,
+        <span class="label label-info">Hinweis:</span> Diese MyCoRe-Solr-Konfiguration beinhaltet eine Sicherheitseinstellung,
         wodurch der Solr-Server nur direkt von localhost bzw. 127.0.0.1 erreicht werden. Diese Einstellungen stehen in der Datei
         <code>context.xml</code>, die unter <code>webapps/solr/META-INF</code> zu finden ist. Sollte diese Sicherheitsmassnahme nicht
         gewünscht sein, so muss die Datei entsprechend angepasst werden.
@@ -78,7 +80,7 @@
     </section>
 
     <section>
-      <title>Konfiguration des Servers</title>
+      <title>Solr-Konfiguration für die eigene Anwendung</title>
       <p>Neben den speziellen Anpassungen für die konkrete Anwendung und deren Datenmodelle sind auch einige globale
         Einstellungen für jeden Core empfehlenswert.
       </p>
