@@ -145,6 +145,31 @@
            dazu finden sich in der <a href="site:xeditor">XEditor-Dokumentation</a>.
          </p>
        </section>
+       <section>
+         <title>3. Anzeige der Daten</title>
+         <p>
+           TODO: Detailansicht per XSLT
+         </p>
+       </section>
+       <section>
+         <title>4. Konfiguration der Suche</title>
+         <p>
+           TODO: SOLR-Konfiguration
+         </p>
+         <p>
+           TODO: Suchfeld-Mapping per XSLT
+          </p>
+       </section>
+       <section>
+         <title>5. Anpassung der Suchmasken und Trefferanzeige</title>
+         <p>
+           TODO: Suchmasken mit XEditor
+         </p>
+         <p>
+           TODO: Trefferlisten per XSLT
+          </p>
+       </section>
+         
      </section>
 
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
