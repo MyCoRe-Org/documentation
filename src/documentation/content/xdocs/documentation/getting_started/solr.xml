@@ -7,7 +7,7 @@
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
-      <person email="[EMAIL PROTECTED]" name="Silvio Hermann" />
+      <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
     </authors>
     <version>2015-10-21</version>
     <abstract>
@@ -26,7 +26,7 @@
      language you want to highlight
      -->
     <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-	
+
     <section>
       <title>Einrichtung eines Solr-Servers</title>
       <p>Bevor man mit der Einrichtung des Solr-Servers beginnt, sollte man sich kurz
@@ -35,40 +35,42 @@
         Um die Konfiguration zu vereinfachen, stellt die MyCoRe-Community ein vorkonfiguriertes Paket zum Download bereit.
       </p>
       <section>
-      <title>Solr-Server</title>
-      <p>
-        Der Solr-Server (bis Version 4) wird in Form eines <code>solr-{version}.war</code> Archives ausgeliefert.
-        Da MyCoRe noch einige zusätzliche Bibliotheken benötigt, wird ein speziell konfiguriertes
-        <code>solr.war</code> über MyCoRe bereitgestellt, das direkt aus dem
-        <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr">MyCoRe-Artifactory</a> bezogen
-        werden kann. Die aktuelle Version ist die <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr/4.10.4-SNAPSHOT/solr-4.10.4-20150727.132631-1.war" download="solr.war">Solr-Version 4.10</a>
-        (speichern als <code>solr.war</code>).
-      </p>
-      <p>Das <code>solr.war</code> wird in das <code>/webapps</code> Verzeichnis des Servlet-Containers (Tomcat) kopiert und von dort automatisch installiert.</p>
-     
+        <title>Solr-Server</title>
+        <p>
+          Der Solr-Server (bis Version 4) wird in Form eines <code>solr-{version}.war</code> Archives ausgeliefert.
+          Da MyCoRe noch einige zusätzliche Bibliotheken benötigt, wird ein speziell konfiguriertes
+          <code>solr.war</code> über MyCoRe bereitgestellt, das direkt aus dem
+          <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr">MyCoRe-Artifactory</a> bezogen
+          werden kann. Die aktuelle Version ist die <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr/4.10.4-SNAPSHOT/solr-4.10.4-20150727.132631-1.war" download="solr.war">Solr-Version 4.10</a>
+          (speichern als <code>solr.war</code>).
+        </p>
+        <p>
+          Das <code>solr.war</code> wird in das <code>/webapps</code> Verzeichnis des Servlet-Containers (Tomcat) kopiert
+          und von dort automatisch installiert.
+        </p>
       </section>
       <section>
         <title>Solr-Home-Verzeichnis</title>
+        <p>
+         Im Solr-Home-Verzeichnis werden die Konfiguration der Suchfelder und später der Such-Index abgelegt.
+         Zum Einstieg wird ebenfalls eine vorkonfigurierte Variante über das <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr">MyCoRe-Artifactory</a> bereitgestellt.
+         Hier der direkte Link, der zur Solr-Version 4.10 passt: <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr-home/4.10.4-SNAPSHOT/solr-home-4.10.4-20150727.132634-1.zip" download="solr-home.zip">Solr-Home 4.10</a>
+         (speichern als <code>solr-home.zip</code>). Alternativ kann alles direkt bei
+         <acronym title="Apache Solr ist ein eingetragenes Markenzeichen der Apache Software Foundation">
+         <a href="https://lucene.apache.org/solr/">Apache Solr</a></acronym> bezogen werden.
+       </p>
        <p>
-        Im Solr-Home-Verzeichnis werden die Konfiguration der Suchfelder und später der Such-Index abgelegt.
-        Zum Einstieg wird ebenfalls eine vorkonfigurierte Variante über das <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr">MyCoRe-Artifactory</a> bereitgestellt.
-        Hier der direkte Link, der zur Solr-Version 4.10 passt: <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr-home/4.10.4-SNAPSHOT/solr-home-4.10.4-20150727.132634-1.zip" download="solr-home.zip">Solr-Home 4.10</a>
-        (speichern als <code>solr-home.zip</code>). Alternativ kann alles direkt bei
-        <acronym title="Apache Solr ist ein eingetragenes Markenzeichen der Apache Software Foundation">
-        <a href="https://lucene.apache.org/solr/">Apache Solr</a></acronym> bezogen werden.
-      </p>
-      <p>
-        Das Solr-Home-Verzeichnis kann im MyCoRe-Datenverzeichnis abgelegt werden.
-        Da ein SOLR-Server in der Regel für mehre MyCoRe-Instanzen verwendet wird, empfielt sich jedoch ein zentraler Ort.
-        Die ZIP-Datei wird an die bevorzugte Stelle entpackt.
-     </p>
-     <p> 
-        Nun muss Solr noch bekannt gegeben werden, wo das Home-Verzeichnis zu finden ist. Diese Konfiguration kann man 
-        entweder unter <code>{tomcat_home}/conf/Catalina/{hostname|localhost}/solr.xml</code>
-        oder unter <code>{tomcat_home}/webapps/solr/META-INF/context.xml</code> vornehmen. Letztere befindet sich
-        bereits im vorgefertigten MyCoRe-Solr-WAR. Das angegebene Datenverzeichnis muss dabei existieren.
-      </p>
-      <pre class="brush: xml;"><![CDATA[
+         Das Solr-Home-Verzeichnis kann im MyCoRe-Datenverzeichnis abgelegt werden.
+         Da ein Solr-Server in der Regel für mehrere MyCoRe-Instanzen verwendet wird, empfiehlt sich jedoch ein zentraler Ort.
+         Die ZIP-Datei wird an die bevorzugte Stelle entpackt.
+       </p>
+       <p>
+         Nun muss Solr noch bekannt gegeben werden, wo das Home-Verzeichnis zu finden ist. Diese Konfiguration kann man
+         entweder unter <code>{tomcat_home}/conf/Catalina/{hostname|localhost}/solr.xml</code>
+         oder unter <code>{tomcat_home}/webapps/solr/META-INF/context.xml</code> vornehmen. Letztere befindet sich
+         bereits im vorgefertigten MyCoRe-Solr-WAR. Das angegebene Datenverzeichnis muss dabei existieren.
+       </p>
+       <pre class="brush: xml;"><![CDATA[
 <Context>
   <Valve className="org.apache.catalina.valves.RemoteAddrValve"
          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
@@ -78,42 +80,49 @@
                override="true" />
 </Context>]]></pre>
 
-      <p>
-        <span class="label label-info">Hinweis:</span> Diese Konfiguration beinhaltet eine Sicherheitseinstellung (<em>Valve</em>),
-        wodurch der Solr-Server nur direkt von localhost bzw. 127.0.0.1 erreicht werden. Diese Einstellungen stehen in der Datei
-        <code>context.xml</code>, die unter <code>webapps/solr/META-INF</code> zu finden ist. Sollte diese Sicherheitsmassnahme nicht
-        gewünscht sein, so muss die Datei entsprechend angepasst werden.
-      </p>
-      <section>
-      <title>SOLR-Cores</title>
-      <p>Auf einem Solr-Server lassen sich mehrere Bereiche (<em>Cores</em>) definieren, um den selben Server
-      für verschiedene Anwendungen und unterschiedlichen Konfigurationen betreiben zu können.<br />
-      In der Standard-Konfiguration ist ein Core mit dem Namen <code>collection1</code> vordefiniert.
-      Es wird empfohlen diesen als Basis für die eigene Core-Konfiguration zu verwenden.
-      Dazu wird im Solr-Home-Verzeichnis das <code>collection1</code>-Verzeichnis als <code>{appName}</code> dupliziert
-      oder umbenannt und in der Datei <code>core.properties</code> der Name mit <code>name={appName}</code> gesetzt.
-      </p>
-      <p>Wenn der Core <code>collection1</code> deaktiviert werden soll, muss einfach die Datei <code>core.properties</code>
-      aus dessen Konfigurationsverzeichnis gelöscht werden.</p>
+        <p>
+          <span class="label label-info">Hinweis:</span> Diese Konfiguration beinhaltet eine Sicherheitseinstellung (<em>Valve</em>),
+          wodurch der Solr-Server nur direkt von localhost bzw. 127.0.0.1 erreicht werden. Diese Einstellungen stehen in der Datei
+          <code>context.xml</code>, die unter <code>webapps/solr/META-INF</code> zu finden ist. Sollte diese Sicherheitsmassnahme nicht
+          gewünscht sein, so muss die Datei entsprechend angepasst werden.
+        </p>
       </section>
-    </section>
+      <section>
+        <title>Solr-Cores</title>
+        <p>
+          Auf einem Solr-Server lassen sich mehrere Bereiche (<em>Cores</em>) definieren, um den selben Server
+          für verschiedene Anwendungen und unterschiedlichen Konfigurationen betreiben zu können.<br />
+          In der Standard-Konfiguration ist ein Core mit dem Namen <code>collection1</code> vordefiniert.
+          Es wird empfohlen diesen als Basis für die eigene Core-Konfiguration zu verwenden.
+          Dazu wird im Solr-Home-Verzeichnis das <code>collection1</code>-Verzeichnis als <code>{appName}</code> dupliziert
+          oder umbenannt und in der Datei <code>core.properties</code> der Name mit <code>name={appName}</code> gesetzt.
+        </p>
+        <p>
+          Wenn der Core <code>collection1</code> deaktiviert werden soll, muss einfach die Datei <code>core.properties</code>
+          aus dessen Konfigurationsverzeichnis gelöscht werden.
+        </p>
+      </section>
      <p>
-        Weitere Möglichkeiten der Konfiguration und mehr Informationen zur Solr-Installation finden sich in der
-        <a href="http://wiki.apache.org/solr/SolrInstall">Solr-Dokumentation</a>.
+       Weitere Möglichkeiten der Konfiguration und mehr Informationen zur Solr-Installation finden sich in der
+       <a href="http://wiki.apache.org/solr/SolrInstall">Solr-Dokumentation</a>.
       </p>
     </section>
 
     <section>
       <title>Solr-Konfiguration für die eigene Anwendung</title>
-      <p>Die URL des SOLR-Servers muss in der Anwendung konfiguriert werden (<code>mycore.properties</code>-Datei
-      im MyCoRe-Konfigurationsverzeichnis) Das entsprechende Property muss z.B. wie folgt gesetzt werden: <br />
-      <code>MCR.Module-solr.ServerURL=http://localhost:8080/solr/{appName}</code>
-       </p>
-      <p>Neben den speziellen Anpassungen für die konkrete Anwendung und deren Datenmodelle sind auch einige globale
+      <p>
+        Die URL des Solr-Servers muss in der Anwendung konfiguriert werden (<code>mycore.properties</code>-Datei
+        im <a href="site:properties">MyCoRe-Konfigurationsverzeichnis</a>). Das entsprechende Property muss z.B.
+        wie folgt gesetzt werden: <br />
+        <code>MCR.Module-solr.ServerURL=http://localhost:8080/solr/{appName}</code>
+      </p>
+      <p>
+        Neben den speziellen Anpassungen für die konkrete Anwendung und deren Datenmodelle sind auch einige globale
         Einstellungen für jeden Core empfehlenswert.
       </p>
-      <p>So lässt sich beispielsweise der Update-Prozess beschleunigen, wenn man den UpdateHandler 
-      in der Core-Konfiguration (<code>conf/solrconfig.xml</code>) wie folgt konfiguriert:
+      <p>
+        So lässt sich beispielsweise der Update-Prozess beschleunigen, wenn man den UpdateHandler
+        in der Core-Konfiguration (<code>conf/solrconfig.xml</code>) wie folgt konfiguriert:
       </p>
       <pre class="brush: xml"><![CDATA[<autoCommit>
   <maxTime>1000</maxTime>
