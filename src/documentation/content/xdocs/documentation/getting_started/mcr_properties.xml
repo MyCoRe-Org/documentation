@@ -7,9 +7,17 @@
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
-    <version>2015-09-30</version>
+    <version>2015-10-21</version>
   </header>
   <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
 
     <section>
       <title>Konfigurationsverzeichnis</title>
@@ -24,6 +32,16 @@
         werden dabei nicht überschrieben!
       </p>
       <p>
+        Aufbau des neu erstellten Konfigurations-Verzeichnisses:
+      </p>
+      <pre class="brush: shell;gutter: false;">
+        /data
+        /lib
+        /resources
+        hibernate.cfg.xml
+        mycore.properties
+      </pre>
+      <p>
         for more information see <a href="http://www.mycore.de/generated/mycore/apidocs/org/mycore/common/config/MCRConfigurationDir.html">MCRConfigurationDir</a>
       </p>
     </section>
@@ -31,9 +49,46 @@
     <section>
       <title>MyCoRe-Properties</title>
       <p>
-        Welche MyCoRe-Properties gibt es und wie sind sie anzupassen?
+        TODO: Welche MyCoRe-Properties gibt es und wie sind sie anzupassen? Was macht <code>mycore.active.properties</code> und <code>mycore.resolved.properties</code>
       </p>
+      <table class="table table-striped">
+        <caption>Übersicht der wichtigsten Properties:</caption>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Beschreibung</th>
+            <th>Beispiel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MCR.NameOfProject</td>
+            <td>Name des Projektes</td>
+            <td>MIR</td>
+          </tr>
+          <tr>
+            <td>MCR.datadir</td>
+            <td>MyCoRe-Datenverzeichnis, enthält alle Daten</td>
+            <td>%MCR.basedir%/data (default)</td>
+          </tr>
+          <tr>
+            <td>MCR.Module-solr.ServerURL</td>
+            <td>URL zum Solr-Kern für die gegebene Anwendung</td>
+            <td>http://localhost:8080/solr/collection1</td>
+          </tr>
+          <tr>
+            <td>MCR.baseurl</td>
+            <td>Basis-URL unter der die Anwendung läuft</td>
+            <td>http://mycore.de/mir</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
 
   </body>
 </document>
