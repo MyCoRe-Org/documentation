@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>Mit dem 'Skeleton' zur eigenen Anwendung</title>
-    <version>2015-09-30</version>
+    <version>2015-10-21</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Wiebke Oeltjen" />
@@ -97,20 +97,57 @@
           Dieser läuft als eigene Webanwendung, die in einem Servlet-Container (z.B. Tomcat) deployed 
           und konfiguiert werden muss (siehe <a href="site:solr">Solr-Integration</a>).
         </p>
-        MyCoRe Properties: SOLR.server.url setzen
+        <p>Der Solr-Core <code>collection1</code> sollte in <code>skeleton</code> umbenannt werden.
+           Dazu  muss im Solr-Home-Verzeichnis das Verzeichnis für den Core umbenannt und darin
+           in der Datei <code>core.properties</code> der Name als Property<code>name=skeleton</code>
+           gesetzt werden.
+        </p>
+        <p>Dann kopieren Sie die Solr-Konfiguration (3 Dateien) für Skeleton aus dem Verzeichnis 
+        <code>/config/solr-home</code> der Skeleton-CLI Anwendung in den soeben erstellen Solr-Core
+        </p>
+        <p>Abschließend muss in den <code>mycore.properties</code> im MyCoRe-Konfigurations-Verzeichnis
+        die URL des Solr-Cores gesetzt werden.:<br />
+        <code>MCR.Module-solr.ServerURL=http://localhost:8080/solr/skeleton</code>
+        </p>
         
       </section>
 
       <section>
         <title>4. Daten laden</title>
         <p>
-          Nun können die Klassifikationen und Nutzer in die DB geladen werden. Dazu das Kommando aufrufen:
+          Nun können die Klassifikationen und Nutzer in die DB geladen werden.
+          Dazu wird folgendes Kommando verwendet:
         </p>
         <dl>
           <dt>Linux:</dt><dd> <code>bin/skeleton.sh process config/setup-commands.txt</code></dd>
           <dt>Windows:</dt><dd> <code>bin\skeleton.bat process config/setup-commands.txt</code></dd>
         </dl>
+        <p>Später kann die Datei setup-commands.txt 
+           um anwendungsspezifische Nutzer, Rechte und Klassifikationen ergänzt werden.</p>
        </section>
+       
+       <section>
+        <title>5. Anwendung deployen</title>
+        <p>
+          Abschließend soll jetzt die Webanwendung online gestellt werden.
+        </p>
+        <p>
+          Wenn Änderungen am Source-Code oder Konfiguration vorgenommen worden sind, 
+          dann muss die Anwendung nocheinmal
+          im Arbeitsverzeichnis mit dem Kommando <code>mvn clean install</code> neu gebaut werden.
+        </p>
+        <p>
+          Dadurch wird die Datei <code>skeleton-webapp\target\skeleton-0.1-SNAPSHOT.war</code>
+          erzeugt oder aktualisiert. Diese wird in <code>skeleton.war</code> umbenannt und
+          dann in das <code>\webapps</code>-Verzeichnis des Servlet-Containers (Tomcat) kopiert.
+          Der Servlet-Container entpackt und startet die Anwendung. 
+        </p>
+        <p>Herzlichen Glückwunsch! Ihre MyCoRe-Anwendung ist jetzt online:<br />
+        <a href="http://localhost:8080/skeleton"><big><b>http://localhost:8080/skeleton</b></big></a>
+        </p>
+      </section>
+       
+       Im Arbeitsverzeichnis wird mit dem Kommando mvn clean install die Skeleton Anwendung erstmals gebaut. Nun steht in skeleton-cli/target ein zip bzw. zip.gz für die MyCoRe-Kommandozeile zur Verfügung. Das zip bzw. zip.gzkann nun in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden
      </section>
 
      <section>
