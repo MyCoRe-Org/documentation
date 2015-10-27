@@ -272,6 +272,19 @@ MCR.Metadata.Type.simpledoc=true]]></pre>
 
      </section>
 
+     <section>
+       <title>Tipps im Umgang</title>
+       <section>
+         <title>Probleme beim Maven-Build im Eclipse</title>
+         <p>
+           Checkt man das Skeleton-Mavenmodul im Eclipse aus (inkl. installierter svn und maven-Plugins), ist darauf
+           zu achten, dass man bei bei den „Run Configurations“ beim Reiter „Refresh“ den Haken setzt bei
+           „Refresh resources upon completion“. Ansonsten kann es zu einer NullPointerException im Build-Prozess
+           kommen.
+         </p>
+       </section>
+     </section>
+
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
    <script type="text/javascript">
        SyntaxHighlighter.all()
