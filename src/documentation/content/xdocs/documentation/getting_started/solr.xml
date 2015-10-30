@@ -40,7 +40,8 @@
           Der Solr-Server (bis Version 4) wird in Form eines <code>solr-{version}.war</code> Archives ausgeliefert.
           Da MyCoRe noch einige zusätzliche Bibliotheken benötigt, wird ein speziell konfiguriertes
           <code>solr.war</code> über MyCoRe bereitgestellt, das direkt aus dem
-          <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr">MyCoRe-Artifactory</a> bezogen
+          <!-- TODO: insert this link again when current version is available as release -->
+          <!-- a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr" -->MyCoRe-Artifactory<!-- /a --> bezogen
           werden kann. Die aktuelle Version ist die <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr/4.10.4-SNAPSHOT/solr-4.10.4-20150727.132631-1.war" download="solr.war">Solr-Version 4.10</a>
           (speichern als <code>solr.war</code>).
         </p>
