@@ -32,6 +32,12 @@
           description="Eine Person oder Institution verwantwortlich für die Aufnahme von Fotografien, seien sie in ihrer ursprünglichen Form oder als Reproduktion verwendet." />
         <label xml:lang="x-miless" text="photographer" />
       </category>
+      <category ID="art">
+        <label xml:lang="en" text="Artist"
+          description="A person or organization responsible for creating a work by conceiving, and implementing, an original graphic design, drawing, painting, etc." />
+        <label xml:lang="de" text="Künstler(in)"
+          description="Eine Person oder Institution verwantwortlich für die Schaffung einer Arbeit durch Konzeption und Umsetzung des orignalen Grafik-Design, Zeichnung, Malerei, usw." />
+      </category>
       <category ID="prg">
         <label xml:lang="en" text="Programmer"
           description="Use for a person or organization responsible for the creation and/or maintenance of computer program design documents, source code, and machine-executable digital files and supporting documentation." />
