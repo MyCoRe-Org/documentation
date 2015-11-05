@@ -55,11 +55,11 @@
     <section>
       <title>Rollen</title>
 
-        <p>
-          Die XML-Ausprägung von Rollen ist relativ simpel gehalten. Sie enthält nur den Namen der Gruppe und einige
-          beschreibende Elemente.
-        </p>
-        <pre class="brush: xml;">
+      <p>
+        Die XML-Ausprägung von Rollen ist relativ simpel gehalten. Sie enthält nur den Namen der Gruppe und einige
+        beschreibende Elemente.
+      </p>
+      <pre class="brush: xml;">
 <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <role name="editor">
   <label xml:lang="de" 
@@ -104,37 +104,39 @@
 
       <section>
         <title>Kommandos</title>
-        <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Rollen ausgeführt werden.</p>
-      <dl>
-        <dt>
-          <code>add roles from user file {0}</code>
-        </dt>
-        <dd>Das Kommando läde Rollen aus einem vorgegeben File {0}.</dd>
-        <dt>
-          <code>import role from file {0}</code>
-        </dt>
-        <dd>Das Kommando importiert eine Rolle aus einem vorgegeben File {0}.</dd>
-        <dt>
-          <code>list all roles</code>
-        </dt>
-        <dd>Das Kommando listet alle konfigurierten Rollen auf.</dd>
-        <dt>
-          <code>list role {0}</code>
-        </dt>
-        <dd>Das Kommando listet eine konfigurierte Rolle {0}.</dd>
-        <dt>
-          <code>assign user {0} to role {1}</code>
-        </dt>
-        <dd>Das Kommando weist einen Benutzer {0} eine Rolle {1} zu.</dd>
-        <dt>
-          <code>unassign user {0} to role {1}</code>
-        </dt>
-        <dd>Das Kommando entfernt einen Benutzer {0} von einer Rolle {1}.</dd>
-        <dt>
-          <code>delete role {0}</code>
-        </dt>
-        <dd>Das Kommando löscht eine Rolle.</dd>
-      </dl>
+        <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Rollen ausgeführt
+          werden.
+        </p>
+        <dl>
+          <dt>
+            <code>add roles from user file {0}</code>
+          </dt>
+          <dd>Das Kommando läde Rollen aus einem vorgegeben File {0}.</dd>
+          <dt>
+            <code>import role from file {0}</code>
+          </dt>
+          <dd>Das Kommando importiert eine Rolle aus einem vorgegeben File {0}.</dd>
+          <dt>
+            <code>list all roles</code>
+          </dt>
+          <dd>Das Kommando listet alle konfigurierten Rollen auf.</dd>
+          <dt>
+            <code>list role {0}</code>
+          </dt>
+          <dd>Das Kommando listet eine konfigurierte Rolle {0}.</dd>
+          <dt>
+            <code>assign user {0} to role {1}</code>
+          </dt>
+          <dd>Das Kommando weist einen Benutzer {0} eine Rolle {1} zu.</dd>
+          <dt>
+            <code>unassign user {0} to role {1}</code>
+          </dt>
+          <dd>Das Kommando entfernt einen Benutzer {0} von einer Rolle {1}.</dd>
+          <dt>
+            <code>delete role {0}</code>
+          </dt>
+          <dd>Das Kommando löscht eine Rolle.</dd>
+        </dl>
       </section>
 
       <p>
@@ -143,25 +145,33 @@
 
     <section>
       <title>Nutzer</title>
-    <p>
-      Die Attribute von Benutzern/innen des Systems unterteilen sich in drei Bereiche:
-    </p>
-    <ol>
-      <li>Account-Informationen: dazu gehören ID, Passwort, Name, E-Mail-Adresse, ggf. Besitzer des Nutzers</li>
-      <li>Rollenzugehörigkeiten: ein Nutzer kann beliebig vielen Rollen angehören, z.B. administrator und editor</li>
-      <li>Attribute: hier können beliebige Eigenschaften des Nutzers abgelegt werden</li>
-    </ol>
-    <p>
-      Mit der Eigenschaft <code>locked</code> kann man festlegen, ob der Nutzer seine Daten selber ändern darf
-      oder nicht. Ist locked auf <code>true</code> gesetzt, dürfen alle Daten geändert werden. Setzt man den Wert
-      auf <code>false</code>, darf der Nutzer nur sein Passwort ändern. Alle anderen Daten sind geschützt und
-      können nur vom Administrator geändert werden.
-    </p>
-    <p>
-      Die Nutzer werden in der Datenbank abgespeichert, die XML-Repräsentation eines Benutzerobjektes
-      zeigt das folgende Codebeispiel:
-    </p>
-  <pre class="brush: xml;"><![CDATA[
+      <p>
+        Die Attribute von Benutzern des Systems unterteilen sich in drei Bereiche:
+      </p>
+      <ol>
+        <li>Account-Informationen: dazu gehören ID, Passwort, Name, E-Mail-Adresse, ggf. Besitzer des Nutzers</li>
+        <li>Rollenzugehörigkeiten: ein Nutzer kann beliebig vielen Rollen angehören, z.B. administrator und editor</li>
+        <li>Attribute: hier können beliebige Eigenschaften des Nutzers abgelegt werden</li>
+      </ol>
+      <p>
+        Mit der Eigenschaft
+        <code>locked</code>
+        kann man festlegen, ob der Nutzer seine Daten selber ändern darf
+        oder nicht. Ist locked auf
+        <code>true</code>
+        gesetzt, dürfen alle Daten geändert werden. Setzt man den Wert
+        auf
+        <code>false</code>
+        , darf der Nutzer nur sein Passwort ändern. Alle anderen Daten sind geschützt und
+        können nur vom Administrator
+        geändert werden.
+      </p>
+      <p>
+        Die Nutzer werden in der Datenbank abgespeichert, die XML-Repräsentation eines Benutzerobjektes
+        zeigt das
+        folgende Codebeispiel:
+      </p>
+      <pre class="brush: xml;"><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
 <user locked="false" name="editorTest" realm="local">
   <owner name="administrator" realm="local" />
@@ -207,8 +217,17 @@
           aufgerufen, diese listet alle Nutzer im System auf.
         </p>
         <p>
+          Für die Online-Arbeit muss der ausführende Nutzer das
+          Privileg
+          <code>administrate-users</code>
+          haben. Um neue Benutzer anzulegen ist weiterhin das Privileg
+          <code>create-users</code>
+          erforderlich.
+        </p>
+        <p>
           Die mycore-user2-Komponente stellt verschiedene Editoren für den Umgang mit dem Nutzer
-          bereit, die in der folgenden Übersicht beschrieben werden:
+          bereit, die in der
+          folgenden Übersicht beschrieben werden:
         </p>
         <table class="table table-striped">
           <thead>
@@ -250,60 +269,62 @@
 
       <section>
         <title>Kommandos</title>
-        <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Nutzer ausgeführt werden.</p>
-      <dl>
-        <dt>
-          <code>export all users to directory {0}</code>
-        </dt>
-        <dd>Das Kommando exportiert alle Nutzerdaten als XML-File in das Verzeichnis {0}.</dd>
-        <dt>
-          <code>import all users from directory {0}</code>
-        </dt>
-        <dd>Das Kommando importiert alle Nutzerdaten XML-Files aus dem Verzeichnis {0}.</dd>
-        <dt>
-          <code>update all users from directory {0}</code>
-        </dt>
-        <dd>Das Kommando aktualisiert alle Nutzerdaten aus den XML-Files aus dem Verzeichnis {0}.</dd>
-        <dt>
-          <code>list all users</code>
-        </dt>
-        <dd>Das Kommando listet alle vorhandenen Nutzer aus.</dd>
-        <dt>
-          <code>list user {0}</code>
-        </dt>
-        <dd>Das Kommando listet den Benutzer {0} aus.</dd>
-        <dt>
-          <code>import user {0} from File {1}</code>
-        </dt>
-        <dd>Das Kommando importiert einen Benutzer aus dem XML-File {1}.</dd>
-        <dt>
-          <code>export user {0} to file {1}</code>
-        </dt>
-        <dd>Das Kommando exportiert die Benutzerdaten in ein XML-File {1}.</dd>
-        <dt>
-          <code>set password for user {0} to {1}</code>
-        </dt>
-        <dd>Das Kommando setzt das Password für den Nutzer neu.</dd>
-        <dt>
-          <code>enable user {0}</code>
-        </dt>
-        <dd>Das Kommando setzt den Benutzer {0} auf 'enabled'. Der Benutzer kann sich einloggen.</dd>
-        <dt>
-          <code>disable user {0}</code>
-        </dt>
-        <dd>Das Kommando setzt den Benutzer {0} auf 'disabled'. Der Benutzer kann sich nicht mehr einloggen.</dd>
-        <dt>
-          <code>delete user {0}</code>
-        </dt>
-        <dd>Das Kommando löscht den Benutzer {0}.</dd>
+        <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Nutzer ausgeführt
+          werden.
+        </p>
+        <dl>
+          <dt>
+            <code>export all users to directory {0}</code>
+          </dt>
+          <dd>Das Kommando exportiert alle Nutzerdaten als XML-File in das Verzeichnis {0}.</dd>
+          <dt>
+            <code>import all users from directory {0}</code>
+          </dt>
+          <dd>Das Kommando importiert alle Nutzerdaten XML-Files aus dem Verzeichnis {0}.</dd>
+          <dt>
+            <code>update all users from directory {0}</code>
+          </dt>
+          <dd>Das Kommando aktualisiert alle Nutzerdaten aus den XML-Files aus dem Verzeichnis {0}.</dd>
+          <dt>
+            <code>list all users</code>
+          </dt>
+          <dd>Das Kommando listet alle vorhandenen Nutzer aus.</dd>
+          <dt>
+            <code>list user {0}</code>
+          </dt>
+          <dd>Das Kommando listet den Benutzer {0} aus.</dd>
+          <dt>
+            <code>import user {0} from File {1}</code>
+          </dt>
+          <dd>Das Kommando importiert einen Benutzer aus dem XML-File {1}.</dd>
+          <dt>
+            <code>export user {0} to file {1}</code>
+          </dt>
+          <dd>Das Kommando exportiert die Benutzerdaten in ein XML-File {1}.</dd>
+          <dt>
+            <code>set password for user {0} to {1}</code>
+          </dt>
+          <dd>Das Kommando setzt das Password für den Nutzer neu.</dd>
+          <dt>
+            <code>enable user {0}</code>
+          </dt>
+          <dd>Das Kommando setzt den Benutzer {0} auf 'enabled'. Der Benutzer kann sich einloggen.</dd>
+          <dt>
+            <code>disable user {0}</code>
+          </dt>
+          <dd>Das Kommando setzt den Benutzer {0} auf 'disabled'. Der Benutzer kann sich nicht mehr einloggen.</dd>
+          <dt>
+            <code>delete user {0}</code>
+          </dt>
+          <dd>Das Kommando löscht den Benutzer {0}.</dd>
         </dl>
       </section>
 
     </section>
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
   </body>
 </document>
 
