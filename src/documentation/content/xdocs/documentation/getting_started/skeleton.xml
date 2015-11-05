@@ -59,7 +59,8 @@
         <title>2. CLI erstellen</title>
         <p>
           Im Arbeitsverzeichnis wird mit dem Kommando <code>mvn clean install</code> die Skeleton Anwendung erstmals gebaut.
-          Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>zip.gz</code> für die MyCoRe-Kommandozeile zur Verfügung. Das <code>zip</code> bzw. <code>zip.gz</code>kann nun in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden.
+          Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>tar.gz</code> für die MyCoRe-Kommandozeile zur Verfügung. 
+          Das <code>zip</code> bzw. <code>tar.gz</code>kann nun in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden.
         </p>
       </section>
 
