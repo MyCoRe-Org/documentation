@@ -29,10 +29,11 @@
     </section>
 
     <section>
-      <title>Zugriff</title>
+      <title>Zugriffsrechte</title>
 
       <p>
-        Das Session-Listing-System ist durch eine Zugriffsregel geschützt. Hierfür ist das
+        Das Session-Listing-System ist durch eine Zugriffsregel geschützt. Nur berechtigte Nutzer dürfen diese
+        Funktionalität ausführen. Hierfür ist das
         <em>PRIVILEG</em>
         <strong>manage-sessions</strong>
         mittels des CLI-Kommandos
