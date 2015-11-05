@@ -3,48 +3,146 @@
 
 <document>
   <header>
-    <title>Die Benutzerverwaltung</title>
-    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten. Dieser Teil der Dokumentation beschreibt Funktionalität, Design, Implementierung und Nutzung des MyCoRe
-   Subsystems für die Benutzerverwaltung.</abstract>
+    <title>Managen der internen Rollen und Nutzer</title>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+    </authors>
+    <version>2015-11-05</version>
+    <abstract>Beschreibung der Möglichkeiten der Administration interner Rollen und Nutzer online und über
+      das CLI.
+    </abstract>
   </header>
-<body>
 
+  <body>
     <!-- Include required JS files -->
     <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
     <!-- At least one brush, eg. XML. You need to include a brush for every language you want to highlight -->
     <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
-   <section>
-    <title>Die Geschäftsprozesse der MyCoRe Benutzerverwaltung</title>
-    <p>
-    Das Benutzermanagement ist die Komponente von MyCoRe, in der die Verwaltung derjenigen Personen geregelt wird,
-    welche mit dem System umgehen (zum Beispiel als Autoren Dokumente einstellen). Zu dieser Verwaltung gehört auch die
-    Organisation von Benutzern in Gruppen. Eine weitere Aufgabe dieser Komponente ist das Ermöglichen einer An- und
-    Abmeldeprozedur.
-    </p>
-    <p>Ein UseCase-Diagramm (siehe Abbildung 2.3) zeigt eine Reihe typischer Geschäftsprozesse des Systems (ohne dabei
-    den Anspruch zu haben, alle Akteure zu benennen oder alle Assoziationen der Akteure mit den Geschäftsprozessen zu
-    definieren).
-    </p>
-    <p>
-    Offensichtlich dürfen nicht alle Akteure des Systems über die Berechtigungen verfügen, alle Geschäftsprozesse
-    durchführen zu können. Daher musste ein System von Permissions und Regeln implementiert werden: BenutzerInnen
-    haben Privilegien (z.B. die Berechtigung, neue BenutzerInnen zu erstellen). Die Vergabe der Permissions wird durch
-    die Mitgliedschaft der BenutzerInnen in Gruppen geregelt. Darüber hinaus muss das System definierten Regel gehorchen.
-    So genügt z.B. die Permission '<code>add user to group</code>' allein nicht, um genau das Hinzufügen eines Benutzers
-    zu einer Gruppe definieren zu können. Die Regel ist in diesem Fall, jeder Benutzer mit dieser Permission kann die
-    Zugehörigkeit nur zu Gruppen vergeben, in denen er oder sie selbst Mitglied ist. Auf diese Weise wird verhindert,
-    dass sich ein Benutzer oder eine Benutzerin selbst höhere Privilegien zuweisen kann. Die Privilegien und Regeln der
-    MyCoRe-Benutzerverwaltung werden weiter unten ausgeführt.
-    </p>
+    <section>
+      <title>Allgemeines</title>
+      <p>
+        MyCoRe bietet ein komplexes System zum Laden und Bearbeiten von Rollen und Nutzern. Dies kann
+        sowohl online über
+        die Nutzung von Servlet-Schnittstellen wie auch offline via Kommandos erfolgen.
+        Daneben ist es möglich externe
+        Authentifizierungsmechanismen einzubenden, welche aber nicht auf dieser Seite erläutert werden sollen.
+      </p>
+    </section>
 
-    <img src="images/progguide_2user_usecase.jpg" alt="Geschäftsprozesse" title="Geschäftsprozesse" />
-    <p class="klein"><strong>Abbildung 2.3:</strong> Geschäftsprozesse der Benutzerverwaltung in MyCoRe</p>
+    <section>
+      <title>Initialisierung des Rollen- und Nutzersystems</title>
+      <p>
+        Beim neu Anlegen einer Anwendung ist darauf zu achten, dass das Rollen- und Nutzersystem angelegt wurde. dies
+        geschiet mit dem folgenden Kommando. Anschließend ist die Rolle
+        <em>admin</em>
+        und der Nutzer
+        <em>administrator</em>
+        mit dem Password
+        <code>alleswirdgut</code>
+        angelegt.
+        <strong>Dieses sollte geändert werden!!!</strong>
+      </p>
+      <dl>
+        <dt>
+          <code>init superuser</code>
+        </dt>
+        <dd>Das Kommando initialisiert das Benutzersystem.</dd>
+      </dl>
+    </section>
 
-   </section>
+    <section>
+      <title>Rollen</title>
 
-   <section>
-    <title>Benutzer und Gruppen</title>
+        <p>
+          Die XML-Ausprägung von Rollen ist relativ simpel gehalten. Sie enthält nur den Namen der Gruppe und einige
+          beschreibende Elemente.
+        </p>
+        <pre class="brush: xml;">
+<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<role name="editor">
+  <label xml:lang="de" 
+    text="Die Beispielrolle editor" 
+    description="Eine Rolle zur Beschreibung der editor Gruppe" />
+  <label xml:lang="en" 
+    text="The demo editor role" 
+    description="A role demonstration for an editor group" />
+</role>]]></pre>
+
+      <section>
+        <title>Online-Administration</title>
+        <p>
+          Alle Rollen in MyCoRe in einer spezielle Klassifikation
+          <em>mcr-roles</em>
+          gespeichert und nutzen damit die Funktionalitäten des Klassifiaktionssystems. Dies gilt auch für die
+          Bearbeitung der Rollen. Hier kommt auch der Klassifikationseditor zu Einsatz.
+        </p>
+        <p>
+          Um die Administration der Rollen abzusichern, ist die Klassifikation
+          <em>mcr-roles</em>
+          über das Rechtesystem abgesichert. Für die Bearbeitung der Klassifikation
+          <em>mcr-roles</em>
+          sind daher Zugriffsrechte
+          <em>writedb</em>
+          und
+          <em>deletedb</em>
+          für diese Klassifikation in den ACL-Listen einzutragen. Hierbei ist die konkrete Ausprägung abhängig von der
+          genutzten Zugriffs-Strategie.Beispielsweise könnte der Eintrag für die Strategie 2 wie folgend aussehen:
+        </p>
+        <p>
+          <code>update permission writedb for id default_class with rulefile grant-admins.xml</code>
+          <code>update permission deletedb for id default_class with rulefile grant-admins.xml</code>
+        </p>
+        <p>
+          Nun kann der Klassifikationseditor für die Rollen mit
+          <code>/authorization/roles-editor.xml</code>
+          aufgerufen werden. Dieser Aufruf kann beispielweise in der Benutzernavigation bei entsprechender Berechtigung
+          angeboten werden.
+        </p>
+      </section>
+
+      <section>
+        <title>Kommandos</title>
+        <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Rollen ausgeführt werden.</p>
+      <dl>
+        <dt>
+          <code>add roles from user file {0}</code>
+        </dt>
+        <dd>Das Kommando läde Rollen aus einem vorgegeben File {0}.</dd>
+        <dt>
+          <code>import role from file {0}</code>
+        </dt>
+        <dd>Das Kommando importiert eine Rolle aus einem vorgegeben File {0}.</dd>
+        <dt>
+          <code>list all roles</code>
+        </dt>
+        <dd>Das Kommando listet alle konfigurierten Rollen auf.</dd>
+        <dt>
+          <code>list role {0}</code>
+        </dt>
+        <dd>Das Kommando listet eine konfigurierte Rolle {0}.</dd>
+        <dt>
+          <code>assign user {0} to role {1}</code>
+        </dt>
+        <dd>Das Kommando weist einen Benutzer {0} eine Rolle {1} zu.</dd>
+        <dt>
+          <code>unassign user {0} to role {1}</code>
+        </dt>
+        <dd>Das Kommando entfernt einen Benutzer {0} von einer Rolle {1}.</dd>
+        <dt>
+          <code>delete role {0}</code>
+        </dt>
+        <dd>Das Kommando löscht eine Rolle.</dd>
+      </dl>
+      </section>
+
+      <p>
+      </p>
+    </section>
+
+    <section>
+      <title>Nutzer</title>
     <p>
       Die Attribute von Benutzern/innen des Systems unterteilen sich in drei Bereiche:
     </p>
@@ -84,61 +182,128 @@
   <password hashType="sha1" hash="passwdsalt" />
 </user>
     ]]></pre>
-   </section>
-   <section>
-     <title>Anlegen, Ändern und Löschen von Nutzern</title>
-     <p>
-       Für die Verarbeitung der Nutzerdaten ist das <code>MCRUserServlet</code> zuständig. Der
-       Parameter <code>'action'</code> bestimmt, was getan werden soll. Mögliche Werte sind
-       <code>show</code>, <code>save</code>, <code>delete</code>, <code>password</code> (ggf.
-       mit Angabe der <code>'id'</code> als zweiten Parameter). Standardmäßig wird die Aktion
-       <code>search</code> aufgerufen, diese listet alle Nutzer im System auf.
-     </p>
-     <p>
-       Die mycore-user2-Komponente stellt verschiedene Editoren für den Umgang mit dem Nutzer
-       bereit, die in der folgenden Übersicht beschrieben werden:
-     </p>
-     <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Datei</th>
-          <th>Beschreibung</th>
-          <th>Beispielaufruf</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>new-user.xed</td>
-          <td>Erfassungsmaske zur Erstellung eines neuen Nutzers</td>
-          <td>authorization/new-user.xed?action=save</td>
-        </tr>
-        <tr>
-          <td>action=show</td>
-          <td>Nutzerdaten anzeigen</td>
-          <td>servlets/MCRUserServlet?action=show&amp;id=editorTest</td>
-        </tr>
-        <tr>
-          <td>change-user.xed</td>
-          <td>Daten eines Nutzers ändern</td>
-          <td>authorization/change-user.xed?action=save&amp;id=editorTest</td>
-        </tr>
-        <tr>
-          <td>change-password.xed</td>
-          <td>Passwort des angegebenen Nutzers ändern</td>
-          <td>authorization/change-password.xed?action=password&amp;id=editorTest</td>
-        </tr>
-        <tr>
-          <td>XSL.step=confirmDelete</td>
-          <td>Löschen des Nutzers mit Sicherheitsabfrage</td>
-          <td>servlets/MCRUserServlet?action=show&amp;id=editorTest&amp;XSL.step=confirmDelete</td>
-        </tr>
-      </tbody>
-     </table>
-   </section>
+
+      <section>
+        <title>Online-Administration</title>
+        <p>
+          Für die Verarbeitung der Nutzerdaten ist das
+          <code>MCRUserServlet</code>
+          zuständig. Der
+          Parameter
+          <code>'action'</code>
+          bestimmt, was getan werden soll. Mögliche Werte sind
+          <code>show</code>
+          ,
+          <code>save</code>
+          ,
+          <code>delete</code>
+          ,
+          <code>password</code>
+          (ggf.
+          mit Angabe der
+          <code>'id'</code>
+          als zweiten Parameter). Standardmäßig wird die Aktion
+          <code>search</code>
+          aufgerufen, diese listet alle Nutzer im System auf.
+        </p>
+        <p>
+          Die mycore-user2-Komponente stellt verschiedene Editoren für den Umgang mit dem Nutzer
+          bereit, die in der folgenden Übersicht beschrieben werden:
+        </p>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Datei</th>
+              <th>Beschreibung</th>
+              <th>Beispielaufruf</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>new-user.xed</td>
+              <td>Erfassungsmaske zur Erstellung eines neuen Nutzers</td>
+              <td>authorization/new-user.xed?action=save</td>
+            </tr>
+            <tr>
+              <td>action=show</td>
+              <td>Nutzerdaten anzeigen</td>
+              <td>servlets/MCRUserServlet?action=show&amp;id=editorTest</td>
+            </tr>
+            <tr>
+              <td>change-user.xed</td>
+              <td>Daten eines Nutzers ändern</td>
+              <td>authorization/change-user.xed?action=save&amp;id=editorTest</td>
+            </tr>
+            <tr>
+              <td>change-password.xed</td>
+              <td>Passwort des angegebenen Nutzers ändern</td>
+              <td>authorization/change-password.xed?action=password&amp;id=editorTest</td>
+            </tr>
+            <tr>
+              <td>XSL.step=confirmDelete</td>
+              <td>Löschen des Nutzers mit Sicherheitsabfrage</td>
+              <td>servlets/MCRUserServlet?action=show&amp;id=editorTest&amp;XSL.step=confirmDelete</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <title>Kommandos</title>
+        <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Nutzer ausgeführt werden.</p>
+      <dl>
+        <dt>
+          <code>export all users to directory {0}</code>
+        </dt>
+        <dd>Das Kommando exportiert alle Nutzerdaten als XML-File in das Verzeichnis {0}.</dd>
+        <dt>
+          <code>import all users from directory {0}</code>
+        </dt>
+        <dd>Das Kommando importiert alle Nutzerdaten XML-Files aus dem Verzeichnis {0}.</dd>
+        <dt>
+          <code>update all users from directory {0}</code>
+        </dt>
+        <dd>Das Kommando aktualisiert alle Nutzerdaten aus den XML-Files aus dem Verzeichnis {0}.</dd>
+        <dt>
+          <code>list all users</code>
+        </dt>
+        <dd>Das Kommando listet alle vorhandenen Nutzer aus.</dd>
+        <dt>
+          <code>list user {0}</code>
+        </dt>
+        <dd>Das Kommando listet den Benutzer {0} aus.</dd>
+        <dt>
+          <code>import user {0} from File {1}</code>
+        </dt>
+        <dd>Das Kommando importiert einen Benutzer aus dem XML-File {1}.</dd>
+        <dt>
+          <code>export user {0} to file {1}</code>
+        </dt>
+        <dd>Das Kommando exportiert die Benutzerdaten in ein XML-File {1}.</dd>
+        <dt>
+          <code>set password for user {0} to {1}</code>
+        </dt>
+        <dd>Das Kommando setzt das Password für den Nutzer neu.</dd>
+        <dt>
+          <code>enable user {0}</code>
+        </dt>
+        <dd>Das Kommando setzt den Benutzer {0} auf 'enabled'. Der Benutzer kann sich einloggen.</dd>
+        <dt>
+          <code>disable user {0}</code>
+        </dt>
+        <dd>Das Kommando setzt den Benutzer {0} auf 'disabled'. Der Benutzer kann sich nicht mehr einloggen.</dd>
+        <dt>
+          <code>delete user {0}</code>
+        </dt>
+        <dd>Das Kommando löscht den Benutzer {0}.</dd>
+        </dl>
+      </section>
+
+    </section>
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
    <script type="text/javascript">
        SyntaxHighlighter.all()
    </script>
-</body>
+  </body>
 </document>
 

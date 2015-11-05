@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Die Benutzerverwaltung</title>
+    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten. Dieser Teil der Dokumentation beschreibt Funktionalität, Design, Implementierung und Nutzung des MyCoRe
+   Subsystems für die Benutzerverwaltung.</abstract>
+  </header>
+<body>
+
+    <!-- Include required JS files -->
+    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+    <!-- At least one brush, eg. XML. You need to include a brush for every language you want to highlight -->
+    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+   <section>
+    <title>Die Geschäftsprozesse der MyCoRe Benutzerverwaltung</title>
+    <p>
+    Das Benutzermanagement ist die Komponente von MyCoRe, in der die Verwaltung derjenigen Personen geregelt wird,
+    welche mit dem System umgehen (zum Beispiel als Autoren Dokumente einstellen). Zu dieser Verwaltung gehört auch die
+    Organisation von Benutzern in Gruppen. Eine weitere Aufgabe dieser Komponente ist das Ermöglichen einer An- und
+    Abmeldeprozedur.
+    </p>
+    <p>Ein UseCase-Diagramm (siehe Abbildung 2.3) zeigt eine Reihe typischer Geschäftsprozesse des Systems (ohne dabei
+    den Anspruch zu haben, alle Akteure zu benennen oder alle Assoziationen der Akteure mit den Geschäftsprozessen zu
+    definieren).
+    </p>
+    <p>
+    Offensichtlich dürfen nicht alle Akteure des Systems über die Berechtigungen verfügen, alle Geschäftsprozesse
+    durchführen zu können. Daher musste ein System von Permissions und Regeln implementiert werden: BenutzerInnen
+    haben Privilegien (z.B. die Berechtigung, neue BenutzerInnen zu erstellen). Die Vergabe der Permissions wird durch
+    die Mitgliedschaft der BenutzerInnen in Gruppen geregelt. Darüber hinaus muss das System definierten Regel gehorchen.
+    So genügt z.B. die Permission '<code>add user to group</code>' allein nicht, um genau das Hinzufügen eines Benutzers
+    zu einer Gruppe definieren zu können. Die Regel ist in diesem Fall, jeder Benutzer mit dieser Permission kann die
+    Zugehörigkeit nur zu Gruppen vergeben, in denen er oder sie selbst Mitglied ist. Auf diese Weise wird verhindert,
+    dass sich ein Benutzer oder eine Benutzerin selbst höhere Privilegien zuweisen kann. Die Privilegien und Regeln der
+    MyCoRe-Benutzerverwaltung werden weiter unten ausgeführt.
+    </p>
+
+    <img src="images/progguide_2user_usecase.jpg" alt="Geschäftsprozesse" title="Geschäftsprozesse" />
+    <p class="klein"><strong>Abbildung 2.3:</strong> Geschäftsprozesse der Benutzerverwaltung in MyCoRe</p>
+
+   </section>
+
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
+</body>
+</document>
+
