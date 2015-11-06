@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Zugriffskontrolle über ACL</title>
+    <version>2015-09-23</version>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]"/>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]"/>
+    </authors>
+    <abstract>
+      Mit Hilfe sogenannter Access Control Lists (ACL, dt. Zugriffssteuerungslisten) kann der Zugriff auf
+      Daten und Funktionen in MyCoRe-Anwendungen eingegrenzt werden. Eine ACL legt dabei fest, in welchem
+      Umfang einzelne Nutzer oder Gruppen Zugriff auf bestimmte Objekte (Metadaten, Dateien, Webseiten ...)
+      haben. Diese können sehr feingranular spezifiziert werden, z.B. lesen, erstellen, bearbeiten oder löschen.
+    </abstract>
+  </header>
+<body>
+
+  <!-- Include required JS files -->
+  <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+  <!--
+   At least one brush, eg. XML. You need to include a brush for every
+   language you want to highlight
+   -->
+  <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+  <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+  <section>
+   <title>Allgemeines</title>
+   <p>
+     Aufbau der ACLs, Privilegien, POOLPRIVILIGES - Erläuterung folgt.
+   </p>
+  </section>
+
+
+  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+  <script type="text/javascript">
+    SyntaxHighlighter.all()
+  </script>
+</body>
+</document>
+
