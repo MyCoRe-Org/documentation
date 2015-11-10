@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>Mit dem 'Skeleton' zur eigenen Anwendung</title>
-    <version>2015-10-21</version>
+    <version>2015-11-10</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Wiebke Oeltjen" />
@@ -50,8 +50,9 @@
         <p>Zuerst sollte ein Arbeitsverzeichnis angelegt werden.<br />
            (z.B. <code>C:\skeleton\workspace</code> oder <code>~/skeleton/workspace</code>).</p>
         <p>
-          Danach wechselt man in dieses Verzeichnis und lädt das aktuelle <a href="https://server.mycore.de/svn/maven/skeleton/trunk">Skeleton</a>
-          mit dem Kommando <code>svn checkout https://server.mycore.de/svn/maven/skeleton/trunk</code> herunter.
+          Danach wechselt man in dieses Verzeichnis und lädt das aktuelle Release <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2015.11.0">Skeleton 2015.11.0</a>
+          mit dem Kommando <code>svn checkout https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2015.11.0 skeleton</code> herunter (oder alternativ den aktuellen Entwicklungszweig
+          <a href="https://server.mycore.de/svn/maven/skeleton/trunk">Skeleton Trunk</a> mit <code>svn checkout https://server.mycore.de/svn/maven/skeleton/trunk</code>).
         </p>
       </section>
 
@@ -69,7 +70,7 @@
         <h3>Konfigurationsverzeichnis generieren</h3>
         <p>
           Zuerst wechsel man in das gerade erstellte Verzeichnis der CLI, z.B.:
-          <code>cd c:\skeleton\skeleton-cli-0.1-SNAPSHOT</code>
+          <code>cd c:\skeleton\skeleton-cli</code>
          </p>
          <p>
            Anschließend wird das Konfigurationsverzeichnis generiert, indem je nach Betriebssystem
@@ -138,7 +139,7 @@
           im Arbeitsverzeichnis mit dem Kommando <code>mvn clean install</code> neu gebaut werden.
         </p>
         <p>
-          Dadurch wird die Datei <code>skeleton-webapp\target\skeleton-0.1-SNAPSHOT.war</code>
+          Dadurch wird die Datei <code>skeleton-webapp\target\skeleton-2015.11.0.war</code>
           erzeugt oder aktualisiert. Diese wird in <code>skeleton.war</code> umbenannt und
           dann in das <code>\webapps</code>-Verzeichnis des Servlet-Containers (Tomcat) kopiert.
           Der Servlet-Container entpackt und startet die Anwendung.
@@ -148,7 +149,10 @@
         </p>
       </section>
 
-       Im Arbeitsverzeichnis wird mit dem Kommando mvn clean install die Skeleton Anwendung erstmals gebaut. Nun steht in skeleton-cli/target ein zip bzw. zip.gz für die MyCoRe-Kommandozeile zur Verfügung. Das zip bzw. zip.gzkann nun in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden
+       Im Arbeitsverzeichnis wird mit dem Kommando mvn clean install die Skeleton Anwendung erstmals
+       gebaut. Nun steht in skeleton-cli/target ein zip bzw. zip.gz für die MyCoRe-Kommandozeile zur
+       Verfügung. Das zip bzw. zip.gzkann nun in einem beliebigen Projektverzeichnis auf dem
+       Anwendungs-Server entpackt werden.
      </section>
 
      <section>
