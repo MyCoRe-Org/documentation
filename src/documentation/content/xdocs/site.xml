@@ -64,8 +64,8 @@ See http://forrest.apache.org/docs/linking.html for more info
     <dl_archive  label="Archiv"             href="archive.html" />
     <subversion  label="Subversion"         href="subversion.html" />
     <changelog   label="ChangeLog"          href="changelog.html" />
-    <jenkins     label="Jenkins"            href="http://www.mycore.de/jenkins/" />
-    <artifactory label="Artifactory"        href="http://www.mycore.de/artifactory/" />
+    <bamboo      label="Bamboo"             href="https://bamboo.mycore.de/" />
+    <artifactory label="Artifactory"        href="http://artifactory.mycore.de/" />
   </download>
 
   <documentation           label="Dokumentation"     href="documentation/" tab="documentation">

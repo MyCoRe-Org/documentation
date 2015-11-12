@@ -43,7 +43,7 @@
       Erfolgreiche Builds werden in unserem Maven-Repository verfügbar gemacht:
     </p>
     <ul>
-      <li><a href="site:jenkins">Jenkins (Continuous-Integration)</a></li>
+      <li><a href="site:bamboo">Bamboo (Continuous-Integration)</a></li>
       <li><a href="site:artifactory">Artifactory (Maven-Repository)</a></li>
     </ul>
   </div>
