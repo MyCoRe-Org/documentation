@@ -86,6 +86,13 @@
           description="Eine Person oder Institution, die für die Begutachtung von Büchern, Filmen, Aufführungen, etc. verantwortlich ist." />
         <label xml:lang="x-miless" text="referee" />
       </category>
+      <category ID="ann">
+        <label xml:lang="en" text="Annotator"
+               description="Use for a person who makes manuscript annotations on an item." />
+        <label xml:lang="de" text="Kommentator(in)"
+               description="Eine Person oder Institution, die Kommentare zu einem Werk anbringt." />
+        <label xml:lang="x-miless" text="annotator" />
+      </category>
       <category ID="col">
         <label xml:lang="en" text="Collector"
           description="Use for a person or organization who has brought together material from various sources that has been arranged, described, and cataloged as a collection. A collector is neither the creator of the material nor a person to whom manuscripts in the ..." />
@@ -192,6 +199,33 @@
           description="Die Person oder Institution, die bei einem Besuch oder auf einem Meeting von einem Reporter, einem Meinungsforscher oder einer anderen Informationen sammelnden Person befragt wurde." />
         <label xml:lang="x-miless" text="interviewee" />
       </category>
+      <category ID="ivr">
+        <label xml:lang="en" text="Interviewer"
+               description="Use for a person or organization responsible for creating or contributing to a resource by acting as an interviewer, reporter, pollster, or some other information gathering agent." />
+        <label xml:lang="de" text="Interviewer"
+               description="Die Person oder Institution, die verantwortlich für das Erstellen oder Beitragen zu einer Quelle ist, und dabei als Interviewer, Reporter, Meinungsforscher oder andere Informationen sammelnde Person auftritt." />
+        <label xml:lang="x-miless" text="interviewee" />
+   	  </category>
+      <category ID="dtc">
+        <label xml:lang="en" text="Data contributor"
+               description="Use for a person or organization that submits data for inclusion in a database or other collection of data." />
+        <label xml:lang="de" text="Daten Beitragende(r)"
+               description="Die Person oder Institution, die Daten für Datenbanken oder anderen Datensammlungen einreicht." />
+        <label xml:lang="x-miless" text="dataContributor" />
+      </category>
+      <category ID="mdc">
+        <label xml:lang="en" text="Metadata contact"
+               description="Use for a person or organization primarily responsible for compiling and maintaining the original description of a metadata set (e.g., geospatial metadata set)." />
+        <label xml:lang="de" text="Metadaten Kontakt"
+               description="Die Person oder Institution, die hauptsächlich für die Pflege der Metadaten verantwortlich ist." />
+        <label xml:lang="x-miless" text="metadataContact" />
+      </category>
+    </category>
+    <category ID="own">
+      <label xml:lang="en" text="Owner"
+             description="A person or organization that currently owns an item or collection, i.e. has legal possession of a resource." />
+      <label xml:lang="de" text="Eigentümer"
+             description="Eine Person oder Institution, die derzeit im Besitz des Werkes oder der Sammlung ist." />
     </category>
     <category ID="cph">
       <label xml:lang="en" text="Copyright holder"
@@ -210,6 +244,12 @@
         description="Use for a person or organization responsible for organizing a meeting for which an item is the report or proceedings." />
       <label xml:lang="de" text="Veranstalter"
         description="Eine Person oder Institution, die verantwortlich für die Organisation eines Treffens ist. Dabei entstehen Reporte oder Konferenzbänder." />
+    </category>
+    <category ID="oth">
+      <label xml:lang="en" text="Other"
+             description="A role that has no equivalent in the list." />
+      <label xml:lang="de" text="Sonstige"
+             description="Eine Rolle die nicht in der Liste vorkommt." />
     </category>
   </categories>
 </mycoreclass>

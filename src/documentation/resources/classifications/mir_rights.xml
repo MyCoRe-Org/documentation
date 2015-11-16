@@ -36,5 +36,17 @@
       <label xml:lang="de" text="CC BY-NC-ND" />
       <label xml:lang="en" text="CC BY-NC-ND" />
     </category>
+    <category ID="odc_pddl">
+      <label xml:lang="en" text="PDDL - Public Domain Dedication and License" />
+      <label xml:lang="de" text="PDDL - Public Domain Dedication and License" />
+    </category>
+    <category ID="odc_by">
+      <label xml:lang="de" text="ODC-By - Attribution License" />
+      <label xml:lang="en" text="ODC-By - Attribution License" />
+    </category>
+    <category ID="odc_odbl">
+      <label xml:lang="de" text="ODC-ODbL - Open Database License" />
+      <label xml:lang="en" text="ODC-ODbL - Open Database License" />
+    </category>
   </categories>
 </mycoreclass>
