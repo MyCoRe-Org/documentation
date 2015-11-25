@@ -39,6 +39,25 @@
     </section>
 
     <section>
+      <title>Aufrufe</title>
+      <p>Die Aufrufe von Zugriffsrechten können über verschiedene API erfolgen. Hier die Beispiele für JAVA und XSLT.
+      </p>
+      <pre class="brush: xml"><![CDATA[boolean permission = MCRAccessManager.checkPermission("create-" + mycore_id.getBase());
+]]></pre>
+      <pre class="brush: xml"><![CDATA[boolean permission = MCRAccessManager.checkPermission(mycore_id, PERMISSION_WRITE);
+]]></pre>
+      <pre class="brush: xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:acl="xalan://org.mycore.access.MCRAccessManager" ...  exclude-result-prefixes="... acl">
+  ...
+  <xsl:if test="acl:checkPermission($obj_id,'readintern')">
+    ...
+  </xsl:if>
+  ...
+</xsl:stylesheet>
+]]></pre>
+    </section>
+
+    <section>
       <title>Privilegien</title>
       <p>
         Privilegien sind Zugriffsrechte, die sich nicht direkt auf ein einzelnes Datenobjekt beziehen. Vielmehr wird
