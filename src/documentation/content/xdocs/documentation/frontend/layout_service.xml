@@ -38,6 +38,44 @@
         (z.B. bibutils als Exportwerkzeug).
       </p>
       <p>
+        Der mehrstufige Layoutprozess gestattet es, die Ausgabe eines 
+        Stylesheets als Eingabe eines anderen zu verwenden und dabei auf 
+        unnötige Deserialisierungs- und Serialisierungsschritte zu verzichten. 
+        Wer das nutzen möchte, um das Seitenlayout vom Inhalt der Seite getrennt 
+        zu erzeugen, kann folgende Properties verwenden:
+      </p>
+      <source class="code"><![CDATA[
+        MCR.LayoutTransformerFactory.Default.Stylesheets=xsl/layout.xsl
+        MCR.LayoutTransformerFactory.Default.Ignore=mets,mets-dfg,alto]]></source>
+       <p>
+         Wenn <code>MCR.ContentTransformer.foo.Stylesheet</code> nicht definiert ist, dann 
+         tritt folgende Standardkonfiguration in Kraft, wenn es eine foo.xsl-Datei gibt:
+       </p>
+       <source class="code"><![CDATA[
+        MCR.ContentTransformer.foo.Stylesheet=xsl/foo.xsl,xsl/layout.xsl]]></source>
+       <p>
+        Ausnahmen definiert man entweder explizit, in dem man einen 
+        ContentTransformer definiert oder das Ignore-Property 
+        setzt. Das würde z.B. bei METS-Dokumente auf folgenden Konfiguration 
+        ausweichen:
+       </p>
+       <source class="code"><![CDATA[
+        MCR.ContentTransformer.mets.Stylesheet=xsl/mets.xsl]]></source>
+       <p>
+         oder mit XSL.Style=dfg auf:
+       </p>
+       <source class="code"><![CDATA[
+       MCR.ContentTransformer.mets-dfg.Stylesheet=xsl/mets-dfg.xsl]]></source>
+       <p>
+       Wenn ein "MCR.ContentTransformer.*.Stylesheet" 
+        Property definiert ist, aber kein passendes 
+        "MCR.ContentTransformer.*.Class" Property, wird automatisch der 
+        MCRXSLTransformer benutzt.
+      </p>
+    </section>
+    <section>
+      <title>Konfiguration von ContentTransformern</title>
+      <p>
         Als Beispiel für die Konfiguration von ContentTransformer soll die
         <a href="http://www.mycore.de/viewvc/viewvc.cgi/mycore/trunk/mycore-mods/src/main/resources/components/mods/config/mycore.properties?revision=24755&amp;view=markup">
         mycore.properties von mycore-mods</a> dienen.
