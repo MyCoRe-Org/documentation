@@ -1159,7 +1159,7 @@ sollte @static nicht gesetzt sein.</p>
     Ein solcher Java-Aufruf kann z. B. verwendet werden, um Teile eines Formulars abhängig von der Rolle des aktuell angemeldeten Benutzers anzuzeigen oder zu verbergen.
     Administratoren könnten z. B. andere oder komplexere Such- und Eingabefelder verwenden als andere Benutzer. Beispiel:
   </p>
-  <pre class="brush: xml"><![CDATA[<xed:if test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin')")>
+  <pre class="brush: xml"><![CDATA[<xed:if test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin')">
   Dieser Teil des Formulars ist nur für Administratoren sichtbar!
 </xed:if>]]></pre>
 
