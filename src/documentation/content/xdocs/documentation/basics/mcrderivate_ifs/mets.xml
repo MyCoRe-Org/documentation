@@ -62,6 +62,12 @@ select objects with solr query returnId:ArchNachl_cbu_00000002 AND objectType:de
 >ERROR: Some physical elements are not linked: [phys1]
       </pre>
     </section>
+    <section>
+      <title>METS-Editor</title>
+      <p>
+        Hier wird demnächst der METS-Editor beschrieben.
+      </p>
+    </section>
   </section>
 
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->

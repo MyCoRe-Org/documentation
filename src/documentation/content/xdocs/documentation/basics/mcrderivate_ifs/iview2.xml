@@ -3,52 +3,44 @@
 
 <document>
   <header>
-    <title>Der Bildbetrachter Version 2 (iview2)</title>
-    <abstract>Beschreibung der Komponente iview2</abstract>
+    <title>Die iView2-Komponente</title>
+    <abstract>
+      Diese Komponente bereitet Bilder, die in Derivaten abgelegt werden auf, damit diese im MyCoRe-eigenen
+      Bildbetrachter dargestellt werden können.
+    </abstract>
   </header>
 
   <body>
-    <section>
-      <title>Allgemeines</title>
-      <p>
-        MyCoRe bietet einen Bildbetrachter, „Image-Viewer“ genannt, für das komfortable Betrachten von Bilddaten an. Dieser
-        eignet
-        sich sehr gut für Bildarchive oder jegliche Content-Repositories in denen Bilddaten verwaltet und angezeigt werden
-        müssen. Der Bildbetrachter basiert (wie MyCoRe) auf Java und XML/XSL. Die Benutzerschnittstelle ist mit
-        Javascript
-        unter Verwendung der Frameworks PanoJS und jQuery realisiert.
-      </p>
-    </section>
+
+    <!-- Include required JS files -->
+    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+    <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
 
     <section>
-     <title>Die Integration des Bildbetrachter-Modules</title>
-    <p>
-      MyCoRe bietet einen komfortablen Bildbetrachter, um Dateien
-      verschiedener Formate anzuzeigen. Dazu wird die
-      Komponente <code>iview2</code> aus dem MyCoRe-Kern verwendet.
-      Diese Komponente ist im DocPortal
-      standardmässig integriert. Um sie zu deaktivieren
-      muss in mycore.properties.private das Property
-      <code>MCR.Components.Exclude</code>
-      um diese Komponente erweitert werden.
-    </p>
-    <p>
-      Eine Übersicht der verfügbaren Kommandos finden Sie im Abschnitt
-      <a href="site:cmd_iview_ug21">Kommandos
-        zur Arbeit mit dem ImageViewer</a>.
-    </p>
-    <p>
-      Der Bildbetrachter ist in DocPortal bereits in die Detailansicht des MyCoRe-Objekttyps
-      <code>document</code> integriert. Ist der Bildbetrachter deaktiviert oder sind keine
-      Kacheln vorhanden, wird dieser einfach nicht dargestellt. Für die Darstellung
-      in der document.xsl sind die folgenden Code-Zeilen verantwortlich:
-    </p>
-      <pre class="brush: xml"><![CDATA[
-    <!-- MCR-IView ..start -->
-    <xsl:call-template name="derivateView">
-      <xsl:with-param name="derivateID" select="@xlink:href" />
-    </xsl:call-template>
-    <!-- MCR - IView ..end -->]]></pre>
+      <title>Die Integration der Bildbetrachter-Komponente</title>
+      <p>
+        MyCoRe bietet einen komfortablen Bildbetrachter, um Dateien verschiedener Formate anzuzeigen. Dazu wird die
+        Komponente <code>iview2</code> aus dem MyCoRe-Kern verwendet. Diese bindet dann wiederum den
+        <a href="site:image_viewer">MyCoRe-Viewer</a> ein. Der iView2 erstellt (falls notwendig) die Kacheln und
+        ermöglicht die Einbindung des Viewers in die Anwendung.
+      </p>
+      <p>
+        Eine Übersicht der verfügbaren Kommandos finden Sie im Abschnitt
+        <a href="site:cmd_iview_ug21">Kommandos zur Arbeit mit dem ImageViewer</a>.
+      </p>
+      <p>
+        Der Bildbetrachter ist in der MIR-Anwendung bereits in die Detailansicht des MyCoRe-Objekttyps
+        <code>mods</code> integriert. Ist der Bildbetrachter deaktiviert oder sind keine
+        Kacheln vorhanden, wird dieser einfach nicht dargestellt. Für die Darstellung
+        ist die <a href="https://fisheye.mycore.de/browse/MyCoRe-SVN/maven/mir/trunk/mir-module/src/main/resources/xsl/metadata/mir-viewer.xsl?r=trunk"
+        >mir-viewer.xsl</a> verantwortlich.
+      </p>
     </section>
 
 
@@ -121,5 +113,10 @@
         </dd>
       </dl>
     </section>
+
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
   </body>
 </document>
