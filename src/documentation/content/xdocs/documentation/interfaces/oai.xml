@@ -4,9 +4,10 @@
 <document>
   <header>
     <title>Schnittstellen - OAI</title>
-    <version>2015-09-03</version>
+    <version>2016-02-15</version>
     <authors>
-      <person name="MyCoRe Autorenteam" email="[EMAIL PROTECTED]"/>
+      <person name="Robert Stephan" email="[EMAIL PROTECTED]"/>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]"/>
     </authors>
     <abstract>In diesem Abschnitt wird die Nutzung der integrierten OAI-Schnittstelle erläutert. Diese Schnittstelle
       liefert jedoch nicht die konkreten ausgelieferten Datenformate für das eigene Datenmodell wie Dublin Core, MODS,
@@ -39,15 +40,18 @@
         eingeflossen.
       </p>
       <p>
-        Die OAI-Schnittstelle ist auch im DocPortal bereits integriert und kann
+        Die OAI-Schnittstelle ist auch in der MIR-Anwendung bereits integriert und kann
         dort getestet werden:
       </p>
       <ul>
         <li>
-          <a href="http://www.mycore.de:8291/oai2?verb=Identify">OAI 2.0 Request Results</a>
+          <a href="http://mycore.de/mir/servlets/OAIDataProvider?verb=Identify">OAI 2.0 Request Results</a>
         </li>
         <li>
-          <a href="http://www.mycore.de:8291/oai2?verb=ListRecords&amp;metadataPrefix=epicur">Epicur als Ausgabeformat der OAI-Schnittstelle</a>
+          <a href="http://mycore.de/mir/servlets/OAIDataProvider?verb=ListRecords&metadataPrefix=epicur">xEpicur als Ausgabeformat der OAI-Schnittstelle</a>
+        </li>
+        <li>
+          <a href="http://mycore.de/mir/servlets/OAIDataProvider?verb=ListRecords&metadataPrefix=xMetaDissPlus">xMetaDiss als Ausgabeformat der OAI-Schnittstelle</a>
         </li>
       </ul>
     </section>
@@ -310,7 +314,7 @@ MCR.OAIDataProvider.MetadataFormat.oai_datacite.Schema=http://schema.datacite.or
     <section>
       <title>OAI-Validatoren</title>
       <p>Es gibt verschiedene Validatoren für die eigene OAI-Schnittstelle. Hier eine kurze Liste bekannter Seiten
-        (Stand 10/2014):
+        (Stand 10/2015):
       </p>
       <ul>
         <li>
