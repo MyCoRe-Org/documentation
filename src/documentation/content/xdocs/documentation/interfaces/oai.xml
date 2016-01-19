@@ -48,10 +48,10 @@
           <a href="http://mycore.de/mir/servlets/OAIDataProvider?verb=Identify">OAI 2.0 Request Results</a>
         </li>
         <li>
-          <a href="http://mycore.de/mir/servlets/OAIDataProvider?verb=ListRecords&metadataPrefix=epicur">xEpicur als Ausgabeformat der OAI-Schnittstelle</a>
+          <a href="http://mycore.de/mir/servlets/OAIDataProvider?verb=ListRecords&amp;metadataPrefix=epicur">xEpicur als Ausgabeformat der OAI-Schnittstelle</a>
         </li>
         <li>
-          <a href="http://mycore.de/mir/servlets/OAIDataProvider?verb=ListRecords&metadataPrefix=xMetaDissPlus">xMetaDiss als Ausgabeformat der OAI-Schnittstelle</a>
+          <a href="http://mycore.de/mir/servlets/OAIDataProvider?verb=ListRecords&amp;metadataPrefix=xMetaDissPlus">xMetaDiss als Ausgabeformat der OAI-Schnittstelle</a>
         </li>
       </ul>
     </section>
