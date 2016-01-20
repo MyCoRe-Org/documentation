@@ -6,50 +6,50 @@
     <title>Mapping von Klassifikationen</title>
   </header>
   <body>
-
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <!--
+    At least one brush, eg. XML. You need to include a brush for every
+    language you want to highlight
+    -->
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
      <section>
     <title>Mapping der Klassifikationen</title>
   <p>
-    Für einen DINI-konformen Betrieb der OAI-Schnittstelle müssen
-    verschiedene Sets unterstützt werden. Sets werden im OAI-PMH Standard
-    verwendet, um Dokumente zu gruppieren. Sie ermöglichen selektives
-    Harvesting und entsprechen konzeptionell den Klassifikationen in
-    MyCoRe. Deshalb wurden zunächst Klassifikationen für die Sets
-    erstellt, die für das DINI-Zertifikat zu implementieren sind. Sie
-    stehen im DocPortal als class_ddc_sg.xml, class_diniPublType.xml und
-    class_diniVersion.xml zur Verfügung und müssen in die eigene Anwendung
+    Für einen DINI-konformen Betrieb der OAI-Schnittstelle müssen verschiedene Sets unterstützt werden. Sets werden im OAI-PMH Standard
+    verwendet, um Dokumente zu gruppieren. Sie ermöglichen selektives Harvesting und entsprechen konzeptionell den Klassifikationen in
+    MyCoRe. Deshalb wurden zunächst Klassifikationen für die Sets erstellt, die für das DINI-Zertifikat zu implementieren sind. Sie
+    stehen auf <a href="http://mycore.de/classifications/">mycore.de/classifications</a> als <a href="http://mycore.de/classifications/ddc.xml"
+    >ddc.xml</a>, <a href="http://mycore.de/classifications/diniPublType.xml">diniPublType.xml</a> und
+    <a href="http://mycore.de/classifications/diniVersion.xml">diniVersion.xml</a> zur Verfügung und müssen in die eigene Anwendung
     übernommen werden.
     </p>
   <p>
-    Sollen Dokumente im XmetaDissPlus-Format ausgeliefert werden, sind weitere
-    Klassifikationen zu verwenden: class_dctermsDCMIType.xml und
-    class_XMetaDissPlusThesisLevel.xml
+    Sollen Dokumente im xMetaDissPlus-Format ausgeliefert werden, sind weitere Klassifikationen zu verwenden:
+    <a href="http://mycore.de/classifications/dctermsDCMIType.xml">dctermsDCMIType.xml</a> und
+    <a href="http://mycore.de/classifications/XMetaDissPlusThesisLevel.xml">XMetaDissPlusThesisLevel.xml</a>
     </p>
   <p>
-    Im einfachsten Fall lassen sich diese Klassifikationen direkt in einem
-    MyCoRe-Datenmodell verwenden. Allerdings werden die meisten
-    MyCoRe-Anwendungen eigene Klassifikationen besitzen, z.B eine
-    detaillierte DDC oder detailliertere Klassifikation für
-    Dokumententypen. Für diese Fälle wurde in MyCoRe ein Mapping-Verfahren
-    implementiert.
+    Im einfachsten Fall lassen sich diese Klassifikationen direkt in einem MyCoRe-Datenmodell verwenden. Allerdings werden die meisten
+    MyCoRe-Anwendungen eigene Klassifikationen besitzen, z.B eine detaillierte DDC oder detailliertere Klassifikation für
+    Dokumententypen. Für diese Fälle wurde in MyCoRe ein Mapping-Verfahren implementiert.
     </p>
   <p>
-    Das Datenmodell muss dafür zunächst um ein Datenfeld mappings/mapping
-    ergänzt werden. Dieses Feld wird dann beim Einfügen oder Aktualisieren
-    der Dokumente automatisch befüllt.
-    </p>
-    <p>
+    Das Datenmodell muss dafür zunächst um ein Datenfeld mappings/mapping ergänzt werden. Dieses Feld wird dann beim Einfügen oder Aktualisieren
+    der Dokumente automatisch befüllt. <span class="label label-info">seit 2016.01</span> Wird das MODS-Datenmodell genutzt, muss kein extra Datenfeld
+    ergänzt werden. Hier wird <code>mods:classification</code>
+    genutzt.
+  </p>
     <pre class="brush: xml"><![CDATA[
     <element name="mappings" minOccurs='0' maxOccurs='1'>
       <mcrmetaclassification name="mapping"
         class="MCRMetaClassification" minOccurs='1' maxOccurs='unbounded' />
     </element>]]></pre>
-    </p>
   <p>
-    Die eigenen Klassifikationen werden um ein Label mit dem künstlichen
-    Sprach-Attribut<code>x-mapping</code> erweitert. Als Wert wird
-    Klassifikations-ID und Kategorie-ID getrennt durch einen Doppelpunkt
-    dort eingetragen. Mehre Werte können durch Leerzeichen getrennt
+    Die eigenen Klassifikationen werden um ein Label mit dem künstlichen Sprach-Attribut<code>x-mapping</code> erweitert. Als Wert wird
+    Klassifikations-ID und Kategorie-ID getrennt durch einen Doppelpunkt dort eingetragen. Mehre Werte können durch Leerzeichen getrennt
     eingetragen werden. z.B.:
     </p>
     <pre class="brush: xml"><![CDATA[
@@ -61,14 +61,32 @@
     XmetaDissPlusThesisLevel:thesis.doctoral diniVersion:publishedVersion" />
   </category>]]></pre>
   <p>
-    Das Mapping wird per EventHandler aktiviert und sollte möglichst früh
-    aufgerufen werden, zumindest noch vor dem Start der Indexierung.
+    Das Mapping wird per <a href="site:eventhandler">EventHandler</a> aktiviert und sollte möglichst früh aufgerufen werden,
+    zumindest noch vor dem Start der Indexierung.
     </p>
     <pre class="brush: shell; gutter: false;">
-  MCR.EventHandler.MCRObject.1a.Class
-     =org.mycore.oai.classmapping.MCRClassificationMappingEventHandler
+  MCR.EventHandler.MCRObject.15.Class
+      =org.mycore.oai.classmapping.MCRClassificationMappingEventHandler
     </pre>
+    <p><span class="label label-info">seit 2016.01</span> Alternativ beim MODS-Klassifikations-Mapping:</p>
+    <pre class="brush: shell; gutter: false;">
+  MCR.EventHandler.MCRObject.016.Class
+      =org.mycore.mods.classification.MCRClassificationMappingEventHandler
+    </pre>
+    <p>
+      <span class="label label-info">seit 2016.01</span> Im resultierenden MODS wird der Eintrag durch das Attribut <code>generator</code>
+      eindeutig identifizierbar. Dieses enthält immer ein <code>-mycore</code> und setzt sich weiterhin aus Quell-Klassifikations-ID und
+      Ziel-Klassifikations-ID zusammen. Siehe dazu nachfolgendes Beispiel:
+    </p>
+    <pre class="brush: xml"><![CDATA[
+  <mods:classification
+    generator="mir_genres2diniPublType-mycore"
+    authorityURI="http://localhost:8291/mir/classifications/diniPublType"
+    valueURI="http://localhost:8291/mir/classifications/diniPublType#doctoralThesis"/>]]></pre>
   </section>
-
+   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+   <script type="text/javascript">
+       SyntaxHighlighter.all()
+   </script>
   </body>
 </document>

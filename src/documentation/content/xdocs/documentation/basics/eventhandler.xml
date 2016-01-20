@@ -156,6 +156,16 @@
             </td>
            </tr>
            <tr>
+            <td title="Nr. in Pipeline">optional<br/>016</td>
+            <td title="Klasse">Enthalten in mycore-mods<br/>org.mycore.mods.classification.MCRClassificationMappingEventHandler</td>
+           </tr>
+           <tr>
+            <td title="Beschreibung" colspan="2">
+            <span class="label label-info">seit 2016.01</span> Der MCRClassificationMappingEventHandler für MODS setzt MyCoRe-Klassifikationen
+            in spezielle Klassifikationen im MODS-Datenmodell für z.B. für DINI um.
+            </td>
+           </tr>
+           <tr>
             <td title="Nr. in Pipeline">optional<br/>017</td>
             <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRServiceFlagEventHandler</td>
            </tr>
