@@ -207,6 +207,14 @@
                 bestimmt ob die Übersichtsanzeige rechts unten im Viewer angezeigt wird
               </td>
             </tr>
+            <tr>
+              <td><code>canvas.startup.fitWidth</code></td>
+              <td>
+                <strong>(boolean)</strong><br/>
+                legt fest, ob beim Starten des Viewers das Dokument in der Breite eingepasst wird (true) oder
+                an die Viewergröße angepasst wird
+              </td>
+            </tr>
           </table>
         </section>
         <section>
@@ -435,6 +443,29 @@
           <p>
             Die Werte werden eins zu eins aus den MyCoRe-Properties durchgereicht (siehe Piwik-Modul).
           </p>
+        </section>
+        <section>
+          <title>Canvas-Konfiguration</title>
+          <table class="table table-bordered">
+            <tr>
+              <td><code>MCR.Module-iview2.canvas.overview.enabled</code></td>
+              <td>
+                disables the mini overview in the bottom right corner
+              </td>
+            </tr>
+            <tr>
+              <td><code>MCR.Module-iview2.canvas.overview.minVisibleSize</code></td>
+              <td>
+                this value specifies how large the viewer container must be (in px) to show the overview on startup. If the overview should not be shown by default the value can be set to a large value like 999999
+              </td>
+            </tr>
+            <tr>
+              <td><code>MCR.Module-iview2.canvas.startup.fitWidth</code></td>
+              <td>
+                if this property set to true the viewer will fit image width on startup
+              </td>
+            </tr>
+          </table>
         </section>
       </section>
 
