@@ -25,7 +25,7 @@
         <image>
           <title>anpassbar</title>
           <path>abbildung_anpassbar.jpg</path>
-          <link>site:documentation/overview</link>
+          <link>site:overview</link>
           <id>sphere_adaptable</id>
           <alt>Kugel mit mathematischen Formeln</alt>
           <description>
