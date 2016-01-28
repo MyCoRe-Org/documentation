@@ -55,17 +55,17 @@
       <news>
         <newsentry>
           <title>MyCoRe-Workshop</title>
-          <message>Der diesjährige MyCoRe-Workshop fand an der Universitätsbibliothek der TU Ilmenau statt.</message>
-          <url>https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2015</url>
+          <message>Der MyCoRe-User-Workshop 2015 fand an der Universitätsbibliothek der TU Ilmenau statt.</message>
+          <url>site:aw_workshop_2015</url>
           <date>13. November 2015</date>
           <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Konferenz</title>
-          <message>MyCoRe wurde am 17. Sept. auf der Tagung "Forschungsdaten in den Geisteswissenschaften" (FORGE 2015) präsentiert.</message>
-          <url>https://www.gwiss.uni-hamburg.de/gwin/ueber-uns/forge2015.html</url>
-          <date>09. September 2015</date>
+          <title>Entwickler-Konferenz</title>
+          <message>Die MyCoRe-Entwickler treffen sich zur ersten Entwickler-Konferenz 2016 in Hamburg. Termin: 1.-3. März.</message>
+          <url>https://www.rrz.uni-hamburg.de/</url>
+          <date>28. Januar 2016</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
