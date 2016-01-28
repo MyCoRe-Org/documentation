@@ -299,9 +299,9 @@
       <dd>
         Staatsbibliothek zu Berlin – Preußischer Kulturbesitz (in cooperation with Leipzig University)
         <ul>
-          <li>MyIHS project part for <a href="http://orient-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der SBB">cataloguing of oriental manuscripts on the
+          <li>MyIHS project part <a href="http://orient-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der SBB">cataloguing of oriental manuscripts on the
             Staatsbibliothek zu Berlin</a></li>
-          <li>MyIHS project part for <a href="http://turfan-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der KOHD">cataloguing of Turfan manuscripts of the KOHD
+          <li>MyIHS project part <a href="http://turfan-digital.staatsbibliothek-berlin.de/" title="Orientalische Handschriften der KOHD">cataloguing of Turfan manuscripts of the KOHD
             </a></li>
         </ul>
       </dd>
@@ -324,6 +324,28 @@
           <li>
             <a href="http://www.manuscript-treasury.net/" title="The Islamic Manuscript Association">The Islamic Manuscript Association
               </a>
+          </li>
+        </ul>
+      </dd>
+      <dt>
+        <strong>Gotha</strong>
+      </dt>
+      <dd>
+        University and Research Library Gotha
+        <ul>
+          <li>
+            MyIHS project part Oriental Manuscripts of the University and Research Library Gotha (non public projekt)
+          </li>
+        </ul>
+      </dd>
+      <dt>
+        <strong>Göttingen</strong>
+      </dt>
+      <dd>
+        Göttingen Academy of Sciences and Humanities
+        <ul>
+          <li>
+            MyIHS project part Katalogisierung der Orientalischen Handschriften in Deutschland - KOHD (non public projekt)
           </li>
         </ul>
       </dd>
