@@ -230,7 +230,7 @@ $(document).ready(function() {
                 language="javascript"
                 src="{$root}skin/jquery-1.7.1.min.js"></script>
         <xsl:if test="$path = 'applications/map.html'">
-          <script type="text/javascript" src="http://dev.openlayers.org/releases/OpenLayers-2.12/OpenLayers.js"></script>
+          <script type="text/javascript" src="http://dev.openlayers.org/releases/OpenLayers-2.13.1/OpenLayers.js"></script>
           <script type="text/javascript">
 <![CDATA[
       var map, select;
