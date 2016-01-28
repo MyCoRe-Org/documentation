@@ -4,12 +4,13 @@
 <document xml:lang="en">
 
 <header>
-  <title>All projects and locations</title>
+  <title>Projects and locations</title>
   <abstract>
+    From „A“ as Archive to "Z" as magaZine server ranges the variety of MyCoRe applications.
     Currently are about 60 MyCoRe applications running on
-    more than 20 locations in Germany. This list gives you an overview.
-    For further information please contact the particular project teams at
-    the specific location.
+    more than 20 locations in Germany. This list gives an overview.
+    For further information please contact the respective project teams at
+    the particular location.
   </abstract>
 </header>
 
@@ -144,20 +145,18 @@
           </li>
         </ul>
       </dd>
-<!--      <dt>
-        <strong>Halle</strong>
+      <dt>
+        <strong>Hamburg</strong>
       </dt>
       <dd>
-        Martin-Luther-Universität Halle-Wittenberg (Bibliothek,
-        Rechenzentrum)
+        Universität Hamburg (Faculty of Humanities, Regional Computer Center)
         <ul>
           <li>
-            Publikations- und Multimediaserver der Universitäts- und
-            Landesbibliothek Sachsen-Anhalt
-            <a href="http://edoc.bibliothek.uni-halle.de/" title="Digitale Hochschulbibliothek HALCoRe">HALCoRe</a>
+            Publication server of the Faculty of Humanities, 
+            <a href="https://www.dokserv.gwiss.uni-hamburg.de/" title="gwin-Dokumentenserver">gwin-Dokumentenserver</a>
           </li>
         </ul>
-      </dd> -->
+      </dd>
       <dt>
         <strong>Leipzig</strong>
       </dt>
@@ -353,16 +352,11 @@
         <strong>Hamburg</strong>
       </dt>
       <dd>
-        Universität Hamburg (Regionales Computer Center)
+        Universität Hamburg (Regional Computer Center)
         <ul>
           <li>
-            „Nepalese-German Manuscript Cataloguing Project“
-            <a href="http://mycms.rrz.uni-hamburg.de/ngmcp" title="The Nepalese-German Manuscript Cataloguing Project">NGMCP</a>
-          </li>
-          <li>
-            „Manuscript Cultures in Asia and Africa“ (Library Catalogue)
-            <a href="http://mycms.rrz.uni-hamburg.de/mcaa"
-              title="Manuscript Cultures in Asia and Africa, Library Catalogue">MCAA</a>
+            „Manuscript Cultures in Asia, Africa and Europe (Sonderforschungsbereich 950)“
+            <a href="http://mycms3.rrz.uni-hamburg.de/sfb950/" title="Manuscript Cultures in Asia, Africa and Europe">SFB950</a>
           </li>
           <li>
             „Encyclopaedia Aethiopica“
