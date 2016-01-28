@@ -118,12 +118,74 @@ aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt wer
 </section>
 
 <section>
-  <title>Formulare definieren</title>
+  <title>Ein erstes Beispiel</title>
+  <p>Das folgende Beispiel zeigt ein einfaches XEditor-Formular, das den Titel eines Dokumentes bearbeitet. 
+  Es ist an das Formular <code>simpledoc.xed</code> aus dem MyCoRe <a href="site:skeleton">Skeleton Projekt</a> angeleht.</p>
+  <pre class="brush: xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 
-  <section>
-    <title>Hello World</title>
-    <p>TODO</p>
+<MyCoReWebPage>
+  <section xml:lang="all" title="Erfassungsmaske">
+
+    <xed:form xmlns:xed="http://www.mycore.de/xeditor" role="form" class="form-horizontal">
+      <xed:source uri="mcrobject:{$id}" />
+
+      <xed:bind xpath="/mycoreobject">
+        <xed:bind xpath="metadata">
+
+          <xed:bind xpath="def.title[@class='MCRMetaLangText']/title">
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="title">
+                <xed:output i18n="editor.label.title" />
+              </label>
+              <div class="col-md-6">
+                <input id="title" placeholder="{i18n:editor.placeholder.title}" class="form-control input-md" type="text" />
+              </div>
+            </div>
+          </xed:bind>
+            
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="save"></label>
+            <div class="col-md-8">
+              <button id="save" class="btn btn-success updateobject" type="submit" xed:target="servlet" xed:href="UpdateObjectServlet">
+                <xed:output i18n="common.button.save" />
+              </button>
+            </div>
+          </div>
+
+        </xed:bind>
+      </xed:bind>
+    </xed:form>
+
   </section>
+</MyCoReWebPage>]]></pre>
+
+  <dl>
+    <dt>xed:form / Zeile 6</dt>
+    <dd>bildet den äusseren Rahmen jedes XEditor-Formulars und entspricht dem <code>&lt;form&gt;</code>-Element von HTML.</dd>
+    <dt>xed:source / Zeile 7</dt>
+    <dd>lädt das zu bearbeitende XML-Dokument von einer Quelle, die als URI angegeben wird. 
+    In diesem Fall wird der Parameter id verwendet, um über den <a href="site:mcruriresolver"><code>mcrobject:</code> Resolver</a> ein MyCoRe Metadaten-Objekt (Dokument, Publikation o.ä.) zu laden.
+    Wenn das Formular im Browser über <code>simpledoc.xed?id=skeleton_simpledoc_00000001</code> aufgerufen wird, wird das Objekt mit dieser ID geladen.
+    </dd>
+    <dt>xed:bind / Zeilen 9, 10 und 12</dt>
+    <dd>regelt die Abbildung zwischen Bereichen im XML-Dokument und den zugehörigen Bereichen im Eingabeformular. 
+    Verschachtelte <code>&lt;xed:bind&gt;</code> Elemente werden verwendet, um hierarchisch einzelne Metadaten-Felder auf einzelne Eingabefelder abzubilden.
+    In diesem Fall wird das Texteingabefeld für den Titel in Zeile 18 auf das XML-Element mit dem XPath <code>/mycoreobject/metadata/def.title/title</code> abgebildet.
+    </dd>
+    <dt>xed:output / i18n: / Zeilen 15 und 18</dt>
+    <dd>
+    wird für die Ausgabe von Werten oder Bezeichnungen, in diesem Fall <a href="site:multilang">mehrsprachige Beschriftungen für das Eingabefeld und einen Platzhalter aus den <code>messages-*.properties</code> Dateien</a>, verwendet. 
+    </dd>
+    <dt>xed:target / xed:href / Zeile 26</dt>
+    <dd>
+    definiert für den Absenden-Button des Formulars, wohin das resultierende XML-Dokument geschickt werden soll, in diesem Fall an das <code>UpdateObjectServlet</code>, das die Änderungen speichert.
+    </dd>
+  </dl>
+
+</section>
+
+<section>
+  <title>Formulare definieren</title>
 
 <section>
     <title><code>&lt;xed:form /&gt;</code></title>
