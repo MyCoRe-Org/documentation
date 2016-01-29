@@ -172,7 +172,7 @@ aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt wer
     Verschachtelte <code>&lt;xed:bind&gt;</code> Elemente werden verwendet, um hierarchisch einzelne Metadaten-Felder auf einzelne Eingabefelder abzubilden.
     In diesem Fall wird das Texteingabefeld für den Titel in Zeile 18 auf das XML-Element mit dem XPath <code>/mycoreobject/metadata/def.title/title</code> abgebildet.
     </dd>
-    <dt>xed:output / i18n: / Zeilen 15 und 18</dt>
+    <dt>xed:output / i18n: / Zeilen 15, 18 und 27</dt>
     <dd>
     wird für die Ausgabe von Werten oder Bezeichnungen, in diesem Fall <a href="site:multilang">mehrsprachige Beschriftungen für das Eingabefeld und einen Platzhalter aus den <code>messages-*.properties</code> Dateien</a>, verwendet. 
     </dd>
@@ -609,7 +609,7 @@ setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als 
 <section>
     <title>Ausgabe eines Wertes innerhalb von HTML-Attributen</title>
 <p>Syntax:</p>
-<pre class="brush: xml"><![CDATA[{XPath} oder {i18:key} oder {i18n:key,XPath}]]></pre>
+<pre class="brush: xml"><![CDATA[{XPath} oder {i18:key} oder {i18n:key,XPath} oder {i18n:translate(...)}]]></pre>
 
 <p>Enthält ein Attribut einen Ausdruck, der durch geschweifte Klammern umschlossen ist, wird dieser Ausdruck ausgewertet und an dieser Stelle im Attribut eingesetzt. Bei dem Ausdruck kann es sich um einen XPath-Ausdruck handeln, oder um einer mehrsprachigen Bezeichner aus den messages-*.properties Dateien. Der XPath-Ausdruck kann die XML-Struktur des bearbeiteten Dokumentes, sowie Variablen verwenden, die aus HTTP Request Parametern, Konfigurationsparametern aus mycore.properties oder MCRSession Variablen stammen. </p>
 
@@ -619,11 +619,12 @@ setzen und so beim Absenden des Formulars durchreichen. Die Buttons können als 
 <a href="{$WebApplicationBaseURL}receive/{@xlink:href}">Link zum reverenzierten Objekt</a>]]></pre>
 
 <p>Wenn der Ausdruck mit "i18n:" beginnt, wird der mehrsprachige Bezeichner aus den messages-*.properties Dateien ausgegeben, dessen Schlüssel angegeben ist. Es ist möglich, einen XPath-Ausdruck mit einem i18n Schlüssel zu kombinieren, indem Schlüssen und XPath Ausdruck durch ein Komma getrennt werden. In diesem Fall wird zunächst der XPath-Ausdruck ausgewertet, und der resultierende Wert in den mehrsprachigen Bezeichner eingesetzt. Der Bezeichner in den messages-*.properties Dateien muss einen entsprechenden Platzhalter vorsehen.</p>
+<p>Alternativ kann - wie in XSL Stylesheets - die Funktion i18n:translate(...) aufgerufen werden, die einem Aufruf der Methoden der Java-Klasse <code>org.mycore.services.i18n.MCRTranslation</code> entspricht.</p>
 
 <p>Beispiele:</p>
 
 <pre class="brush: xml"><![CDATA[<input type="submit" xed:target="cancel" value="{i18n:label.cancel}" />
-<input type="text" placeholder="{i18n:placeholder.date.issued}" />
+<input type="text" placeholder="{i18n:translate('placeholder.date.issued')}" />
 <img alt="{i18n:image.title,title[@type='main']}" src="{@href}" />]]></pre>
 </section>
 
