@@ -9,9 +9,9 @@
       <section>
         <title>Einleitung</title>
         <p>
-          Nachdem wir SourceForge mehr als 10 Jahre lang als Plattform genutzt haben, wagen wir nun (01/2015) den
-          Schritt hin zu einem umfangreicheren und mächtigeren Ticketsystem, das unseren mit der Zeit deutlich
-          gewachsenen Anforderungen besser gerecht wird. Alle SourceForge-Tickets wurden dahin migriert. Das
+          Nachdem wir SourceForge mehr als 10 Jahre lang als Plattform genutzt haben, setzen wir seit 2015 das 
+          Ticketsystem der umfangreicheren und mächtigen <a href="https://de.atlassian.com/software/jira">JIRA Software</a>
+          ein. Alle SourceForge-Tickets wurden dahin migriert. Das
           <a href="https://mycore.atlassian.net/">MyCoRe-JIRA</a> können wir als OpenSource-Community mit entsprechender
           OpenSource-Lizenz frei nutzen. Als anonymer Nutzer können Sie sich einen Überblick über unsere Tickets und
           aktuelle Entwicklungsarbeit verschaffen. Um neue Tickets anzulegen ist eine Registrierung notwendig.
