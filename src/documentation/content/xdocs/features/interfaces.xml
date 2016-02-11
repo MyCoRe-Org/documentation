@@ -74,7 +74,7 @@
       </p>
     </section>
     
-    <section>
+    <!-- <section>
       <title>z39.50 Schnittstelle</title>
       <p>
         MyCoRe bietet eine
@@ -83,7 +83,7 @@
         und beantwortet werden. Über diese Schnittstelle kann etwa ein MyCoRe-basierter Publikationsserver an einen
         herkömmlichen Bibliothekskatalog angebunden werden.
       </p>
-    </section>
+    </section> -->
     
     <section>
       <title>SWORD Schnittstelle</title>
