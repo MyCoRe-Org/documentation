@@ -11,111 +11,85 @@
   </header>
 
   <body>
-
-  <!-- Include required JS files -->
-    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-  <!--
-   At least one brush, eg. XML. You need to include a brush for every
-   language you want to highlight
-   -->
-    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-
     <section>
       <title>MyCoRe</title>
       <p>
-        <strong>MyCoRe</strong>
-        ist ein
-        <strong>Open Source Projekt</strong>
-        , welches hervorgegengen aus dem
-        <strong>MILESS-Projekt</strong>
-        der Universität Duisburg-Essen. Es ist Zusammenschluss von Entwicklern verschiedener Deutscher Universitäten
-        unb
-        bibliothekarischer Einrichtunge mit dem Ziel der gemeinsamen Weiterentwicklung des Framework. Dieses
-        <a href="site:team">Team</a>
-        bilder die
-        <strong>MyCoRe-Entwickler Community</strong>
-        .
+        <strong>MyCoRe</strong> ist ein <strong>Open-Source-Projekt</strong>, welches aus dem
+        <strong>MILESS-Projekt</strong> der Universität Duisburg-Essen hervorgegangen ist. Es ist
+        ein Zusammenschluss von Entwicklern verschiedener deutscher Universitäten und
+        bibliothekarischer Einrichtungen mit dem Ziel der gemeinsamen Weiterentwicklung des Frameworks.
+        Dieses <a href="site:team">Team</a> bildet die <strong>MyCoRe-Entwickler-Community</strong>.
       </p>
     </section>
 
     <section>
       <title>Geschäftsstelle</title>
       <p>
-        Die
-        <strong>MyCoRe-Entwickler Community</strong>
-        hat sich dazu entschlossen, zur Verbesserung der Kommunikation mit den Anwendern, zur Koordinierung der Arbeiten
-        und zur Außendarstellung des Projektes eine Geschäftsstelle einzurichten. Diese soll für alle Interessierten
-        eine erste Anlaufstelle sein.
+        Die <strong>MyCoRe-Entwickler-Community</strong> hat sich dazu entschlossen, zur Verbesserung der Kommunikation
+        mit den Anwendern, zur Koordinierung der Arbeiten und zur Außendarstellung des Projektes eine Geschäftsstelle
+        einzurichten. Diese soll für alle Interessierten eine erste Anlaufstelle sein.
       </p>
-      <p>Sie organisiert u. a. die mehrfach im Jahr stattfindenden Entwicklertreffen und den einmal im Jahr
-        durchgeführten Anwender-Workshop, zu dem alle MyCoRe-User recht herzlich eingeladen sind. Die Geschäftsstelle
-        ist zu erreichen unter:</p>
-      <p>Dr. Wiebke Oeltjen</p>
-      <p>MyCoRe Geschäftsstelle</p>
-      <p>RRZ der Universität Hamburg</p>
-      <p>Schlüterstr. 70</p>
-      <p>20146 Hamburg</p>
-      <p>Telefon: +49 (0)40-42838-2652</p>
-      <p>E-Mail: info@mycore.de</p>
+      <p>
+        Zum Aufgabenbereich der Geschäftsstelle gehört u.a. die Organisation der mehrfach im Jahr stattfindenden
+        Entwicklertreffen und des einmal im Jahr durchgeführten Anwender-Workshops, zu dem alle MyCoRe-Nutzer recht
+        herzlich eingeladen sind. Wie die Geschäftsstelle zu erreichen ist erfahren Sie unter <a href="site:contact">Kontakt</a>.
+      </p>
     </section>
 
     <section>
       <title>Kommunikation mit den Entwicklern</title>
       <p>
-        Neben dem hier vorliegenden Internetauftritt von
-        <strong>MyCore</strong>
-        wurden für die Benutzer und die Anwender
-        <a href="site:email">Mailinglisten</a>
-        eingerichtet. Daneben wird zur Ergänzenden Information der Nutzer und zur Entwicklerplanung und Diskussion eine
-        <a href="site:wiki">Wiki</a>
-        -Plattform eingerichtet, auf der auch viele
-        <em>How to?</em>
-        abgelegt sind. Fehlermeldungen können durch die Nutzer oder Entwickler direkt in unser Tracking System
-        <a href="https://mycore.atlassian.net/" target="_blank">Atlassian JIRA</a>
+        Neben dem hier vorliegenden Internetauftritt von <strong>MyCoRe</strong> wurden für verschiedene
+        <a href="site:email">Mailinglisten</a> eingerichtet. Daneben wird zur ergänzenden Information der Nutzer,
+        zur Entwicklerplanung und zur Diskussion ein <a href="site:wiki">Wiki</a> genutzt, auf der auch viele
+        <em>How to?</em>-Anleitungen abgelegt sind. Fehlermeldungen können durch die Nutzer oder Entwickler
+        direkt in unser Ticket-System <a href="https://mycore.atlassian.net/">Atlassian JIRA</a>
         abgesetzt werden.
       </p>
     </section>
 
     <section>
-      <title>Tools zur Entwicklung von MyCoRe</title>
-      <p>Als professionelles Open Source Projekt mit einer großen Verantwortung für die erstellten Anwendungen macht es
-        sich erforderlich, entsprechende Werkzeuge zur Team-getriebenen Entwicklung einzusetzen. Das vorliegende Bild
-        soll diese Strukturen darstellen. Im Einzelnen werden folgende Tools eingesetzt:
+      <title>Werkzeuge zur Entwicklung von MyCoRe</title>
+      <p>
+        Als professionelles Open-Source-Projekt mit einer großen Verantwortung für die erstellten Anwendungen ist es
+        hilfreich, entsprechende Werkzeuge zur Team-getriebenen Entwicklung einzusetzen. Abbildung 1 zeigt eine
+        Übersicht der Organisationsstruktur und die genutzten Werkzeuge.
+      </p>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/mycore-organisation.png" alt="Übersicht der MyCoRe-Organisation" style="margin:5px;padding:10px;border:1px solid gray;" width="550px" /><br />
+        <span class="klein"><strong>Abbildung 1:</strong> Übersicht der MyCoRe-Organisation</span>
+      </div>
+      <p>
+        Im Einzelnen wird folgende Software eingesetzt:
       </p>
       <ul>
         <li>
-          Als Entwickler-Plattform wird
-          <a href="https://eclipse.org/" target="_blank">Eclipse</a>
+          Als Entwickler-Plattform wird vorrangig
+          <a href="https://eclipse.org/">Eclipse</a>
           eingesetzt.
         </li>
         <li>
           Als Software-Versionierungssystem wird ein
-          <a href="https://subversion.apache.org/" target="_blank">Subversion-Server</a>
+          <a href="https://subversion.apache.org/">Subversion-Server</a>
           betrieben.
         </li>
         <li>
-          Werden Änderungen und Weiterentwicklunge in das Subversion-System commited, werden automatisch die Kommentare
-          in das Tracking-System eingebracht. Hier haben wir
-          <a href="https://mycore.atlassian.net/secure/Dashboard.jspa" target="_blank">Atlassian JIRA</a>
+          Werden Änderungen und Weiterentwicklungen in das Subversion-System commited, werden automatisch die Kommentare
+          in das entsprechende Ticket übernommen. Hier haben wir
+          <a href="https://mycore.atlassian.net/secure/Dashboard.jspa">Atlassian JIRA</a>
           im Einsatz.
         </li>
         <li>
           In zyklischen Abständen werden mittels
-          <a href="https://bamboo.mycore.de/allPlans.action" target="_blank">Atlassian Bamboo</a>
+          <a href="https://bamboo.mycore.de/allPlans.action">Atlassian Bamboo</a>
           Integrationstest durchgefüht.
         </li>
         <li>
           Erfolgreiche Builds von Releases und Snapshots des Codes werden im
-          <a href="http://artifactory.mycore.de/webapp/#/home" target="_blank">MyCoRe-Artifactory</a>
+          <a href="http://artifactory.mycore.de/webapp/#/home">MyCoRe-Artifactory</a>
           zur Nutzung via <em>Maven</em> bereitgestellt.
         </li>
       </ul>
     </section>
-      
-  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-    <script type="text/javascript">
-      SyntaxHighlighter.all()
-    </script>
   </body>
 </document>
