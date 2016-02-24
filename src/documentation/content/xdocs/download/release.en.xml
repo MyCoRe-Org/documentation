@@ -3,7 +3,7 @@
 
 <document xml:lang="en">
 <header>
- <title>Release 2015.07 - ‚Last Tequila Sour‘</title>
+ <title>Release 2016.02 - ‚Rusty Nail‘</title>
 </header>
 
  <body>
@@ -17,20 +17,19 @@
    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
 
   <p>
-    All changes, new features etc. are summarized below.
-    If your application is already near version 2015.07, you only have to update
+    If your application is already near version 2016.02, you only have to update
     your pom.xml (using DocPortal, you find this file in docportal/config):
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2015.07&lt;/version>
+&lt;version>2016.02&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-{component}&lt;/artifactId>
-  &lt;version>2015.07&lt;/version>
+  &lt;version>2016.02&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -40,7 +39,7 @@
   </p>
 
   <p>
-    See <a href="changelog.html#Version+2015.07+-+%E2%80%9ALast+Tequila+Sour%E2%80%98">Changelog</a> for
+    See <a href="changelog.html#Version+2016.02+-+%E2%80%9ARusty+Nail%E2%80%98">Changelog</a> for
     development information.
   </p>
 

@@ -3,7 +3,7 @@
 
 <document xml:lang="de">
 <header>
- <title>Release 2015.07 - ‚Last Tequila Sour‘</title>
+ <title>Release 2016.02 - ‚Rusty Nail‘</title>
 </header>
 
  <body>
@@ -21,12 +21,12 @@
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2015.07&lt;/version>
+&lt;version>2016.02&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-{component}&lt;/artifactId>
-  &lt;version>2015.07&lt;/version>
+  &lt;version>2016.02&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -36,7 +36,7 @@
   </p>
 
   <p>
-    Die Liste der Änderungen ist im <a href="changelog.html#Version+2015.07+-+%E2%80%9ALast+Tequila+Sour%E2%80%98">Changelog zu finden</a>
+    Die Liste der Änderungen ist im <a href="changelog.html#Version+2016.02+-+%E2%80%9ARusty+Nail%E2%80%98">Changelog zu finden</a>
   </p>
 
  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->

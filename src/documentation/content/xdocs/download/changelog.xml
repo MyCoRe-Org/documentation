@@ -15,18 +15,199 @@
   <title>Changes in MyCoRe</title>
 
   <section>
-    <title>Version 2015.08 - Current Head</title>
+    <title>Version 2016.03 - Current Head</title>
 
     <pre class="brush: xml;gutter: false;">
       &lt;dependency>
         &lt;groupId>org.mycore&lt;/groupId>
         &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2015.08-SNAPSHOT&lt;/version>
+        &lt;version>2016.03-SNAPSHOT&lt;/version>
       &lt;/dependency>
     </pre>
 
     <p>more details see <a href="http://www.mycore.de/generated/mycore/project-reports.html">maven site</a></p>
 
+  </section>
+
+  <section>
+    <title>Version 2016.02 - ‚Rusty Nail‘</title>
+
+    <pre class="brush: xml;gutter: false;">
+      &lt;dependency>
+        &lt;groupId>org.mycore&lt;/groupId>
+        &lt;artifactId>mycore-{component}&lt;/artifactId>
+        &lt;version>2016.02&lt;/version>
+      &lt;/dependency>
+    </pre>
+
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.02/project-reports.html">maven site</a></p>
+    <ul>
+      <li>Bug
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1024'>MCR-1024</a>] -         Slowly build of mcrdirectory
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1042'>MCR-1042</a>] -         MCRQL Date Range Query which uses TODAY will not work
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1085'>MCR-1085</a>] -         The execution of the cli command &quot;check classification&quot; causes the error &quot;Relation »mcrcategory« existiert nicht.&quot;
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1098'>MCR-1098</a>] -         mods.publisher shouldn&#39;t contain mods.name//role=pbl
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1099'>MCR-1099</a>] -         MyCoRe-Sword overwrites servlet-api 3.1.0 to 2.4
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1100'>MCR-1100</a>] -         mycore-sword depends on log4j-1.2 which conflicts with log4j-2
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1101'>MCR-1101</a>] -         mycore-sword depends on slf4j-log4j12 which conflicts with log4j-slf4j-impl
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1102'>MCR-1102</a>] -         Class org.mycore.backend.hibernate.MCRHIBCtrlCommands not found
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1106'>MCR-1106</a>] -         MCRMetaNumber is missing in mcrcommon-datamodel.xsd
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1107'>MCR-1107</a>] -         MCRQL Date Range Query always assumes fields of type MCRMetaHistoryDate
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1108'>MCR-1108</a>] -         MCRServlet3LoginServlet defines a new session cookie each time a website is loaded
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1119'>MCR-1119</a>] -         o.m.d.niofs.MCRPath.register(WatchService, Kind...) does not return
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1121'>MCR-1121</a>] -         MCREntityResolver may get FileSystemNotFoundException
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1122'>MCR-1122</a>] -         MCRPathContent.asByteArray() requires write access
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1124'>MCR-1124</a>] -         Xalan may leave InputStream of StreamSource open
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1125'>MCR-1125</a>] -         some mycore datatypes are missing in datamodel v2
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1128'>MCR-1128</a>] -         MCRSimpleModelXMLConverter.DEFAULT_PHYSICAL_TYPE must be &quot;page&quot;
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1132'>MCR-1132</a>] -         MCRSession has non-thread safe access to MCRServletJob
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1134'>MCR-1134</a>] -         xlink:title of derobject in mycoreobject does not get updated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1135'>MCR-1135</a>] -         mods.dateIssued had to be the date issued of this item, not of related item
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1139'>MCR-1139</a>] -         schema for MCRMetaPerson is created in invalid order
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1141'>MCR-1141</a>] -         MCRMetaNumber - according to javadocs restricted to strict pattern xxxxxxxxx.xxx
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1144'>MCR-1144</a>] -         o.m.f.c.MCRObjectCommands.delete(String) catches but does not handle MCRActiveLinkException or MCRException
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1145'>MCR-1145</a>] -         MCRVersionedMetadata.getRevision() does not return last revision of document
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1146'>MCR-1146</a>] -         XEditor loses session without cookie
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1148'>MCR-1148</a>] -         Allow to create other dates then createdate or modifydate (Validation failes)
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1154'>MCR-1154</a>] -         Change sessionID after login
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1156'>MCR-1156</a>] -         Faulty refactoring of &quot;!=&quot; to &quot;equals()&quot;
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1157'>MCR-1157</a>] -         lost about section for oai record
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1158'>MCR-1158</a>] -         MCRLanguageFactory may fail to initialize if database is not (yet) ready
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1160'>MCR-1160</a>] -         wrong type in derivate id causes string index out of bounds exception
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1170'>MCR-1170</a>] -         MCRMetadataManager swallows exceptions
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1172'>MCR-1172</a>] -         MCRActionMappingServlet doesn&#39;t work with tomcat 8.0.30
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1175'>MCR-1175</a>] -         rights of MCRPacker created files are set to o+rw
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1177'>MCR-1177</a>] -         update() method of MCRMetadataManager should not break when old parent no more exists
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1186'>MCR-1186</a>] -         return to hit list from hit browsing doesn&#39;t work (start=NaN)
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1191'>MCR-1191</a>] -         SecureToken V2 protected file are unprotected if filename contains whitespace characters
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1193'>MCR-1193</a>] -         JSON output of derivate directories is empty
+        </li>
+        </ul>
+      </li>
+      <li>
+        New Feature
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1026'>MCR-1026</a>] -         New method switchCurrentSession() in MCRSessionMgr
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1114'>MCR-1114</a>] -         command &quot;create configuration directory&quot;  should be more generic
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1140'>MCR-1140</a>] -         add MCRStreamUtils
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1142'>MCR-1142</a>] -         add MCRThrowFunction
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1150'>MCR-1150</a>] -         Add a servlet filter to debug request and responses
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1151'>MCR-1151</a>] -         Packaging Manager
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1153'>MCR-1153</a>] -         provide schema, namespace and set configuration for xmetadissplus
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1168'>MCR-1168</a>] -         MCRReadWriteGuard to simplify usage of ReadWriteLock
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1192'>MCR-1192</a>] -         add MCRToJSONTransformer
+        </li>
+        </ul>
+      </li>
+      <li>
+        Task
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1029'>MCR-1029</a>] -         MCR Session Handling in MCRFrontendUtils.getTrustedProxies
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1051'>MCR-1051</a>] -         default OAISetManager uses MCRConditions which still uses MCRQuery
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1113'>MCR-1113</a>] -         Update dependencies
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1116'>MCR-1116</a>] -         Make MCRFrontentUtil.getProperty() return an Optional
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1127'>MCR-1127</a>] -         MCRUploadServer should handle inputs for fileupload with non generic names and forms with multiple fileselect
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1155'>MCR-1155</a>] -         use &quot;FORM&quot; auth-method for MCRContainerLogin
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1171'>MCR-1171</a>] -         use new uploadform if exists
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1182'>MCR-1182</a>] -         use MCRAccessException if permission/privilege is missing
+        </li>
+        </ul>
+      </li>
+      <li>
+        Improvement
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1112'>MCR-1112</a>] -         Use maven-enforcer-plugin to check for banned dependencies
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1117'>MCR-1117</a>] -         Start language is defined by web browser
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1118'>MCR-1118</a>] -         simplify MCRISO8601Format
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1120'>MCR-1120</a>] -         create issue specific title if no title is given
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1161'>MCR-1161</a>] -         TempDir of Sword should be configurable
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1164'>MCR-1164</a>] -         Enhance classification mapping for mods
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1169'>MCR-1169</a>] -         Allow child objects to be deleted if parent does not exist
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1187'>MCR-1187</a>] -         make MCRURNAdder more generic
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1190'>MCR-1190</a>] -         MCRXSLTransformer uses configured SAXTransformerFactory
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1194'>MCR-1194</a>] -         Rest-API for file listing should support caching
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1195'>MCR-1195</a>] -         Rest-API should not implement transaction and MCRSession handling
+        </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <title>Version 2015.11 - ‚Old Fashioned‘</title>
+
+    <pre class="brush: xml;gutter: false;">
+      &lt;dependency>
+        &lt;groupId>org.mycore&lt;/groupId>
+        &lt;artifactId>mycore-{component}&lt;/artifactId>
+        &lt;version>2015.11&lt;/version>
+      &lt;/dependency>
+    </pre>
+
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.11/project-reports.html">maven site</a></p>
   </section>
 
 

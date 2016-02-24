@@ -70,18 +70,18 @@
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Release 2015.07</title>
-          <message>Das letzte JDK-1.7 kompatible Release ist ab sofort verfügbar.</message>
+          <title>Release 2016.02</title>
+          <message>Am 24.02.2016 erschien das letzte Release vor dem diesjährigen LTS.</message>
           <url>http://mycore.de/download/release.html</url>
-          <date>03. August 2015</date>
+          <date>24. Februar 2016</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Anwendung</title>
-          <message>Mit &lt;IntR>²Dok geht die erste MIR-Anwendung als Repository der ViFa-Recht online.</message>
-          <url>http://intr2dok.vifa-recht.de/</url>
-          <date>12. Januar 2015</date>
+          <title>MIR-Entwicklung</title>
+          <message>Parallel zum MyCoRe-LTS-Release wird es 2016 erstmalig mit MIR ein Anwendungs-LTS geben.</message>
+          <url>http://www.mycore.de/mir/</url>
+          <date>12. Januar 2016</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>

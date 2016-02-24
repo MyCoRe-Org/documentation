@@ -477,6 +477,16 @@
           Grundlagen -> Derivate -> <a href="site:iview2">IView2</a>.
         </p>
       </section>
+
+      <section>
+        <title>Download</title>
+        <p>
+          Der MyCoRe-Viewer ist eine eigene Bibliothek die einzeln heruntergeladen und unabhägig von
+          MyCoRe genutzt werden kann. Aktuell steht der Viewer in
+          <a href="https://mycore.atlassian.net/secure/ReleaseNote.jspa?version=10602&projectId=10009">Version 0.6</a>
+          zur Verfügung.
+        </p>
+      </section>
     </section>
 
     <section>
