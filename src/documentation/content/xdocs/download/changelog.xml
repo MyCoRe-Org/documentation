@@ -24,7 +24,6 @@
         &lt;version>2016.03-SNAPSHOT&lt;/version>
       &lt;/dependency>
     </pre>
-
     <p>more details see <a href="http://www.mycore.de/generated/mycore/project-reports.html">maven site</a></p>
 
   </section>
@@ -39,7 +38,6 @@
         &lt;version>2016.02&lt;/version>
       &lt;/dependency>
     </pre>
-
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.02/project-reports.html">maven site</a></p>
     <ul>
       <li>Bug
@@ -206,8 +204,155 @@
         &lt;version>2015.11&lt;/version>
       &lt;/dependency>
     </pre>
-
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.11/project-reports.html">maven site</a></p>
+    <ul>
+      <li>Sub-task
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1031'>MCR-1031</a>] -         MCRFSNODES
+        </li>
+        </ul>
+      </li>
+      <li>Bug
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-594'>MCR-594</a>] -         Verletzung des &quot;alles oder gar nicht&quot; Prinzips
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-689'>MCR-689</a>] -         Classification Editor creates empty en-lables by default
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-711'>MCR-711</a>] -         METSEditor does not support file names containing a plus sign
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-941'>MCR-941</a>] -         template=&quot;undefined&quot; may get added to item in navigation.xml
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-954'>MCR-954</a>] -         can&#39;t edit webpage containing &lt;printlatestobjects /&gt;
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-979'>MCR-979</a>] -         Files larger than 2 GB cannot be uploaded
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1022'>MCR-1022</a>] -         xed input doesn&#39;t work properly without optional type attribut
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1025'>MCR-1025</a>] -         selfregistration form bug - password != password2 but both inputs marked with green
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1027'>MCR-1027</a>] -         Fix javadoc comments for Java 8
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1030'>MCR-1030</a>] -         get IOException while uploading zip files in html5 upload
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1046'>MCR-1046</a>] -         Mets indexer produces illegal character in field name
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1054'>MCR-1054</a>] -         URL params for class editor didn&#39;t work
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1059'>MCR-1059</a>] -         mods.datePublished returns creation date if no dateIssued is set
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1064'>MCR-1064</a>] -         translation fall back fails when message key is not available
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1069'>MCR-1069</a>] -         CLI commands doesn&#39;t work with .. in path under windows
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1071'>MCR-1071</a>] -         derivate id should use projectID from containing object identifier
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1072'>MCR-1072</a>] -         MCRCategUtils#getCategoryIDMap throws NPE
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1077'>MCR-1077</a>] -         MCRObjectMetadata#mergeMetadata is not working correctly
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1087'>MCR-1087</a>] -         classeditor creates empty labels
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1090'>MCR-1090</a>] -         MODS schema has errors that results in invalid attributes added to elements
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1095'>MCR-1095</a>] -         variable solrParams ignores params in array
+        </li>
+        </ul>
+      </li>
+      <li>New Feature
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-933'>MCR-933</a>] -         New AccessStrategy for derivates using a classification
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1000'>MCR-1000</a>] -         Add method to persist MCRTransientUser to database and also do attribute mapping is needed
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1050'>MCR-1050</a>] -         turn off XSL template cache
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1058'>MCR-1058</a>] -         Add SecureToken V2 support to MCRFileNodeServlet
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1060'>MCR-1060</a>] -         Add support for HTML Video player with optional Wowza Streaming Engine backend
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1096'>MCR-1096</a>] -         MyCoRe Sword2 implementation
+        </li>
+        </ul>
+      </li>
+      <li>Task
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-990'>MCR-990</a>] -         Update to Servlet 3.1
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1021'>MCR-1021</a>] -         Update dependencies
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1033'>MCR-1033</a>] -         remove deprecated classes and methods
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1034'>MCR-1034</a>] -         org.jdom2.xpath has been deprecated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1035'>MCR-1035</a>] -         SVNUserNameAuthentication has been deprecated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1036'>MCR-1036</a>] -         reload() in com.sun.jersey.api.core.ScanningResourceConfig has been deprecated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1037'>MCR-1037</a>] -         shutdown() in org.apache.solr.client.solrj.SolrClient has been deprecated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1038'>MCR-1038</a>] -         getClientResponseStatus() in com.sun.jersey.api.client.ClientResponse has been deprecated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1039'>MCR-1039</a>] -         getYear() in java.util.Date has been deprecated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1045'>MCR-1045</a>] -         remove old mets-editor
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1052'>MCR-1052</a>] -         Add basic configuration for OpenAIRE compliance
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1068'>MCR-1068</a>] -         cli command &quot;create configuration dir&quot; should also create data dir
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1070'>MCR-1070</a>] -         need method in xmlfunctions to get user attributes
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1074'>MCR-1074</a>] -         update GND lod link
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1079'>MCR-1079</a>] -         mark double or simple methods as deprecated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1080'>MCR-1080</a>] -         moved MCRObjectUtils to o.m.d.m
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1086'>MCR-1086</a>] -         use multiple identifier for person name (mods 3.6)
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1089'>MCR-1089</a>] -         add searchfield for mods.subtitle
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1097'>MCR-1097</a>] -         Normalize permission names for additional features
+        </li>
+        </ul>
+      </li>
+      <li>Improvement
+        <ul>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-768'>MCR-768</a>] -         WCMS should return to last page visited
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-878'>MCR-878</a>] -         Upgrade to Log4J 2.x
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-955'>MCR-955</a>] -         Migrate to JDK 8
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-960'>MCR-960</a>] -         add language support for pt, es and ar
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-967'>MCR-967</a>] -         Integrate new MODS features from version 3.5 and 3.6
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-995'>MCR-995</a>] -         Make project IDs for derivate IDs more flexible
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1018'>MCR-1018</a>] -         normalize editor input
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1019'>MCR-1019</a>] -         give solr cli command a more comprehensible text
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1023'>MCR-1023</a>] -         METS servlet should store mets.xml file
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1041'>MCR-1041</a>] -         MCRUploadHandler should not handle database transactions
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1043'>MCR-1043</a>] -         Added new Mets-Editor
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1044'>MCR-1044</a>] -         MCRLocaleServlet is now deprecated
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1053'>MCR-1053</a>] -         add possibility to load additional custom description elements for OAI Identify
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1061'>MCR-1061</a>] -         after metadata submission, redirect to upload form
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1073'>MCR-1073</a>] -         Upgrade to Hibernate 5.0
+        </li>
+        <li>[<a href='https://mycore.atlassian.net/browse/MCR-1075'>MCR-1075</a>] -         required fields in user forms should have class required
+        </li>
+        </ul>
+      </li>
+    </ul>
   </section>
 
 

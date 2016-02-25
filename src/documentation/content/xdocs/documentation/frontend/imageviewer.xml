@@ -482,9 +482,13 @@
         <title>Download</title>
         <p>
           Der MyCoRe-Viewer ist eine eigene Bibliothek die einzeln heruntergeladen und unabhägig von
-          MyCoRe genutzt werden kann. Aktuell steht der Viewer in
-          <a href="https://mycore.atlassian.net/secure/ReleaseNote.jspa?version=10602&projectId=10009">Version 0.6</a>
-          zur Verfügung.
+          MyCoRe genutzt werden kann. Die aktuelle Releasversion mit deren Neuerungen kann im <a
+          href="https://mycore.atlassian.net/projects/MV?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&amp;status=released#"
+          >Jira</a> eingesehen werden.
+        </p>
+        <p>
+          Zum Download stehen die jeweiligen Releases im <a href="http://artifactory.mycore.de/webapp/#/artifacts/browse/tree/General/libs-releases-local/org/mycore/mycore-viewer"
+          >MyCoRe-Artifactory</a> zur Verfügung.
         </p>
       </section>
     </section>
