@@ -19,7 +19,7 @@
           <id>sphere_manysided</id>
           <alt>Kugel mit vielen farbigen Flächen</alt>
           <description>
-            für Online-Archive, Dokumentenserver, Bildersammlungen uvm.
+           für Repositorien, Online-Archive, Dokumentenserver uvm.
           </description>
         </image>
         <image>
@@ -54,14 +54,6 @@
       <map title="Alle Projekte auf einer Karte anzeigen" label="Karte" />
       <news>
         <newsentry>
-          <title>MyCoRe-Workshop</title>
-          <message>Der MyCoRe-User-Workshop 2015 fand an der Universitätsbibliothek der TU Ilmenau statt.</message>
-          <url>site:aw_workshop_2015</url>
-          <date>13. November 2015</date>
-          <author>Wiebke Oeltjen</author>
-          <image>sf</image>
-        </newsentry>
-        <newsentry>
           <title>Entwickler-Konferenz</title>
           <message>Die MyCoRe-Entwickler treffen sich zur ersten Entwickler-Konferenz 2016 in Hamburg. Termin: 1.-3. März.</message>
           <url>https://www.rrz.uni-hamburg.de/</url>
@@ -83,6 +75,14 @@
           <url>http://www.mycore.de/mir/</url>
           <date>12. Januar 2016</date>
           <author>Kathleen Neumann</author>
+          <image>sf</image>
+        </newsentry>
+        <newsentry>
+          <title>Anwendung</title>
+          <message>Der Dokumentenserver „GWIN“ ist auf der Basis von MIR an der Fakultät Geisteswissenschaften der Univ. Hamburg nun online.</message>
+          <url>https://www.dokserv.gwiss.uni-hamburg.de/content/index.xml</url>
+          <date>25. Februar 2016</date>
+          <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
       </news>
