@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- based upon DINI-Zertifikat Dokumenten und Publikationsservice 2010,DINI Schriften 3-de [Version 3.1, März 2011] -->
-<!-- See also: http://www.dnb.de/DE/Service/DigitaleDienste/DNBBibliografie/gliederungDnb.html -->
+<!-- See also: DDC-Sachgruppen der deutschsprachigen Nationalbibliografien
+               http://nbn-resolving.org/urn:nbn:de:101-2014050500 -->
 
 <mycoreclass ID="SDNB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Sachgruppen der Deutschen Nationalbibliographie" />
@@ -219,38 +220,14 @@
     <category ID="620">
       <label xml:lang="de" text="620 Ingenieurwissenschaften und Maschinenbau" />
       <label xml:lang="en" text="620 Engineering &amp; allied operations" />
-      <category ID="620.1">
-        <label xml:lang="de" text="620.1 Materialwissenschaften" />
-        <label xml:lang="en" text="620.1 Materialwissenschaften" />
-      </category>
-    </category>
-    <category ID="621">
-      <label xml:lang="de" text="621 Energie-, Elektrotechnik &amp; Maschinenbau" />
-      <label xml:lang="en" text="621 Energie-, Elektrotechnik &amp; Maschinenbau" />
-      <category ID="621.0">
-        <label xml:lang="de" text="621.0 Energietechnik" />
-        <label xml:lang="en" text="621.0 Energietechnik" />
     </category>
     <category ID="621.3">
       <label xml:lang="de" text="621.3 Elektrotechnik, Elektronik" />
       <label xml:lang="en" text="621.3 Electrical Engineering, Electronics" />
     </category>
-      <category ID="621.8">
-        <label xml:lang="de" text="621.8 Maschinenbau" />
-        <label xml:lang="en" text="621.8 Maschinenbau" />
-      </category>
-    </category>
-    <category ID="622">
-      <label xml:lang="de" text="622 Bergbau" />
-      <label xml:lang="en" text="622 Bergbau" />
-    </category>
     <category ID="624">
       <label xml:lang="de" text="624 Ingenieurbau und Umwelttechnik" />
       <label xml:lang="en" text="624 Structural and Environmental Engineering" />
-    </category>
-    <category ID="628">
-      <label xml:lang="de" text="628 Umwelttechnik" />
-      <label xml:lang="en" text="628 Umwelttechnik" />
     </category>
     <category ID="630">
       <label xml:lang="de" text="630 Landwirtschaft, Veterinärmedizin" />
@@ -267,10 +244,6 @@
     <category ID="660">
       <label xml:lang="de" text="660 Technische Chemie" />
       <label xml:lang="en" text="660 Chemical engineering" />
-    </category>
-    <category ID="669">
-      <label xml:lang="de" text="669 Hüttenwesen" />
-      <label xml:lang="en" text="669 Hüttenwesen" />
     </category>
     <category ID="670">
       <label xml:lang="de" text="670 Industrielle und handwerkliche Fertigung" />
