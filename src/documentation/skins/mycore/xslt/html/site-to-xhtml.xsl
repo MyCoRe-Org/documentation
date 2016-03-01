@@ -382,7 +382,7 @@ $(document).ready(function() {
     site-logo
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template name="site-logo">
-        <a href="{$root}"><img src = "{$root}images/logo_mycore.png"
+        <a href="{$root}"><img src = "{$root}images/logo_mycore_my_content_repository.png"
              id  = "mycore_logo"
              alt = "MyCoRe Logo" /></a>
     </xsl:template>
