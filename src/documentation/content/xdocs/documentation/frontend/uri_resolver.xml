@@ -584,6 +584,17 @@ xslStyle:mycoreobject-mods,mods2dc?derivate=mycore_derivate_00000001:mcrobject:m
       </section>
 
       <section>
+        <title>data:[mime-type[;param1=value1[;param2=value=2]]]{,content}</title>
+        <p>
+          liefert den Inhalt einer Data-URL zurück.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+data:text/html;charset=utf-8,%3Ch1%3EHello%20MyCoRe!%3C%2Fh1%3E]]></source>
+        </p>
+      </section>
+      
+      <section>
         <title>xslTransform:[TransformParms]</title>
         <p>
           dieses Vorschaltelement funktioniert wie
