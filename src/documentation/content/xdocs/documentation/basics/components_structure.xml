@@ -3,15 +3,15 @@
 
 <document>
   <header>
-    <title>Modulstruktur des MyCoRe-Kerns</title>
+    <title>Komponenten des MyCoRe-Kerns</title>
     <version>2015-05-04</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Thomas Scheffler" />
     </authors>
     <abstract>
-      Die vorliegende Seite behandelt die Modulstruktur des MyCoRe-Kerns sowie weitere im Zusammenhang mit
-      MyCoRe nutzbare Module.
+      Die vorliegende Seite behandelt die Komponenten des MyCoRe-Kerns sowie weitere im Zusammenhang mit
+      MyCoRe nutzbare Bibliotheken.
     </abstract>
   </header>
   <body>
@@ -27,19 +27,19 @@
     <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
 
     <section>
-      <title>MyCoRe-Module (Stand 2015.02)</title>
+      <title>MyCoRe-Komponenten (Stand 2015.02)</title>
       <p>
-        MyCoRe ist kein monolithisches Stystem. Vielmehr besteht der Kern uas einzelnen Modulen, welche sowohl einzeln
+        MyCoRe ist kein monolithisches System. Vielmehr besteht der Kern aus einzelnen Modulen, welche sowohl einzeln
         inklusive ihrer Abhängigkeiten genutzt werden können, wie auch als komplette *.jar-Datei bereitsteht. Die
         nachfolgende alphabetische Auflistung gibt eine Übersicht über die verfügbaren Teile. Je nach Erfordernissen und
-        Entwicklungen kann es vorkommen, dass einzelne Module im Laufe der MyCoRe Entwicklung im Laufe der Zeit bei
-        Releases neu hinzukommen oder entfallen. Diese Dokumentation spiegelt den oben genannten Releasestand wieder.
+        Entwicklungen kann es vorkommen, dass einzelne Komponenten im Laufe der MyCoRe-Entwicklung im Laufe der Zeit bei
+        Releases neu hinzukommen oder entfallen. Diese Dokumentation spiegelt den oben genannten Release-Stand wieder.
       </p>
       <section>
-        <title>Liste der Module</title>
+        <title>Liste der Komponenten</title>
         <table class="table">
           <tr>
-            <th>Modulname</th>
+            <th>Komponentname</th>
             <th>Beschreibung</th>
             <th>&nbsp;</th>
             <th>abhängig von</th>
@@ -52,19 +52,19 @@
           </tr>
           <tr>
             <td>base</td>
-            <td>Basismodul für alle anderen Komponenten</td>
+            <td>Basis für alle anderen Komponenten</td>
             <td>required</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
             <td>broadcasting</td>
-            <td>Integriert ein benachrichtigungssystem inerhalb der Web-Anwendung</td>
+            <td>Integriert ein Benachrichtigungssystem innerhalb der Web-Anwendung</td>
             <td>deprecate</td>
             <td>base</td>
           </tr>
           <tr>
             <td>buildtools</td>
-            <td>Werkzeuge für die Integration von MyCoRe-Modulen über das ANT-Build-Tool</td>
+            <td>Werkzeuge für die Integration von MyCoRe-Komponenten über das ANT-Build-Tool</td>
             <td>optional</td>
             <td>base</td>
           </tr>
@@ -87,8 +87,7 @@
           <tr>
             <td>coma</td>
             <td>Prototypische Entwicklung eines Content-Manager zu entwickeln, mit dem man
-              einen Überblick über den
-              gesamten Bestand an Daten (evtl. auch
+              einen Überblick über den gesamten Bestand an Daten (evtl. auch
               Metadaten) hat.
             </td>
             <td>optional</td>
@@ -96,7 +95,7 @@
           </tr>
           <tr>
             <td>complete</td>
-            <td>spezieller Modul zum Zusammenbau eines mycore-complte.jar, welches alle Module enthält (siehe unten)
+            <td>spezielle Komponente zum Zusammenbau eines mycore-complete.jar, welches alle Komponenten enthält (siehe unten)
             </td>
             <td>&nbsp;</td>
             <td>alle</td>
@@ -109,7 +108,7 @@
           </tr>
           <tr>
             <td>ifs</td>
-            <td>alte Komponente des MyCoRe Internal File Systems, Version 1</td>
+            <td>alte Komponente des MyCoRe-Internal-File-Systems, Version 1</td>
             <td>deprecate</td>
             <td>base</td>
           </tr>
@@ -137,19 +136,19 @@
           </tr>
           <tr>
             <td>meta</td>
-            <td>Dummy-module, der die Verweise auf alle Module zum Bau von mycore-complte.jar enthält</td>
+            <td>Dummy-Komponente, die die Verweise auf alle Komponenten zum Bau von mycore-complete.jar enthält</td>
             <td>&nbsp;</td>
             <td>base</td>
           </tr>
           <tr>
             <td>mets</td>
-            <td>Komponenten zur bereitstellung von METS-Daten für die gespeicherten Derivate</td>
+            <td>Komponente zur Bereitstellung von METS-Daten für die gespeicherten Derivate</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>migration-2015</td>
-            <td>Modul mit Werkzeugen zur Migration auf MyCoRe Release 2015</td>
+            <td>Komponente mit Werkzeugen zur Migration auf das MyCoRe-Release 2015</td>
             <td>optional</td>
             <td>base</td>
           </tr>
@@ -161,7 +160,7 @@
           </tr>
           <tr>
             <td>oai</td>
-            <td>Implementierung eines OAI Data Provider für die MyCoRe-Webanwendung</td>
+            <td>Implementierung eines OAI-Data-Providers für die MyCoRe-Webanwendung</td>
             <td>optional</td>
             <td>
               base
@@ -173,7 +172,7 @@
           </tr>
           <tr>
             <td>restapi</td>
-            <td>Implementierung einer REST API</td>
+            <td>Implementierung einer REST-API</td>
             <td>optional</td>
             <td>
               base
@@ -201,7 +200,7 @@
           </tr>
           <tr>
             <td>sword</td>
-            <td>Implementierung einer SWord-Schnittstelle, Version 2</td>
+            <td>Implementierung einer Sword-Schnittstelle, Version 2</td>
             <td>optional</td>
             <td>base</td>
           </tr>
@@ -247,7 +246,7 @@
           </tr>
           <tr>
             <td>z3950</td>
-            <td>Implementierung einer Z3950 Schnittstelle</td>
+            <td>Implementierung einer Z3950-Schnittstelle</td>
             <td>deprecate</td>
             <td>base</td>
           </tr>
@@ -255,8 +254,8 @@
       </section>
 
       <section>
-        <title>Liste zusätzlicher Komponenten</title>
-        <p>Die nun aufgelistete zusätzlichen Maven-Module sind im Subversion-system im Baum maven zu finden.</p>
+        <title>Liste weiterer Maven-Module</title>
+        <p>Die nun aufgelisteten zusätzlichen Maven-Module sind im Subversion-System im Baum <code>maven</code> zu finden.</p>
         <table class="table">
           <tr>
             <th>Komponente</th>
@@ -265,7 +264,7 @@
           </tr>
           <tr>
             <td>datamodel-plugin</td>
-            <td>Eine erweiterung zur Erstellung eigender Datenmodelldefinitionen in eigenen Maven-Modulen</td>
+            <td>Eine Erweiterung zur Erstellung eigener Datenmodelldefinitionen in eigenen Maven-Modulen</td>
             <td>0.6-SNAPSHOT</td>
           </tr>
           <tr>
@@ -275,7 +274,7 @@
           </tr>
           <tr>
             <td>mets-printer</td>
-            <td>Dein Basis-Projekt mit dem man die PDF-Funktion des MyCoRe-Viewers benutzen kann
+            <td>Basis-Projekt mit dem man die PDF-Funktion des MyCoRe-Viewers benutzen kann
             </td>
             <td>1.0-SNAPSHOT</td>
           </tr>
@@ -283,15 +282,14 @@
       </section>
 
       <section>
-        <title>Integration einzelner MyCoRe-Module</title>
+        <title>Integration einzelner MyCoRe-Komponenten</title>
       </section>
       <p>
-        MyCoRe-Module können einzeln je nach Bedarf in die eigene Anwendung integriert werden. Dazu sind lediglich die
-        entsprechenden Angaben in der
-        <em>pom.xml</em>
-        -Datei zu machen. Wichtig ist dabei, auf Abhängigkeiten zu achten (siehe oben). Alle Module sollten auch den
-        selben Versionsstand haben, um Kompatibilitätsprobleme zu vermeiden. Die Integration der in den Modulen
-        enthaltenen Teile erfolgt entsprechend den Servlet3-Regeln.
+        MyCoRe-Komponenten können einzeln je nach Bedarf in die eigene Anwendung integriert werden. Dazu sind lediglich die
+        entsprechenden Angaben in der <em>pom.xml</em>-Datei zu machen. Wichtig ist dabei, auf Abhängigkeiten zu achten
+        (siehe oben). Alle Komponenten sollten auch den selben Versionsstand haben, um Kompatibilitätsprobleme zu vermeiden.
+        Die Integration der in den Komponenten enthaltenen Teile erfolgt entsprechend den
+        <a href="https://jcp.org/en/jsr/detail?id=340">Servlet-3.1-Regeln</a>.
       </p>
       <pre class="brush: xml;">
 <![CDATA[<project>

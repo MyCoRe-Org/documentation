@@ -5,8 +5,8 @@
   <header>
     <title>Gestaltung eigener MyCoRe-Metadatenobjekte</title>
     <authors>
-      <person name="Robert Stephan" />
-      <person name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
     <version>2015-04-14</version>
     <abstract>In diesem Abschnitt wird der Syntax der Definitionsdatei für eigene Metadatenmodelle nach dem
@@ -68,8 +68,7 @@
         <li>
           <em>name</em>
           im Element beschreibt den Tagnamen des inneren Elementes. Der äußere wird daraufhin gebildest als
-          <em>def.{name}</em>
-          .
+          <em>def.{name}</em>.
         </li>
         <li>
           <em>minOccurs</em>
@@ -107,75 +106,74 @@
       <table class="table">
         <tr>
           <th>
-            <em>type</em>
-            -Element
+            <em>type</em>-Element
           </th>
           <th>MyCoRe-Datenmodellklasse</th>
         </tr>
         <tr>
           <td>text
           </td>
-          <td>MCRMetaLangText
+          <td><a href="mcrobject_datatypes.html#Freier+Text+(MCRMetaLangText)">MCRMetaLangText</a>
           </td>
         </tr>
         <tr>
           <td>boolean
           </td>
-          <td>MCRMetaBoolean
+          <td><a href="mcrobject_datatypes.html#Boolesche+Werte+%28MCRMetaBoolean%29">MCRMetaBoolean</a>
           </td>
         </tr>
         <tr>
           <td>classification
           </td>
-          <td>MCRMetaClassification
+          <td><a href="mcrobject_datatypes.html#Klassifikationen+(MCRMetaClassification)">MCRMetaClassification</a>
           </td>
         </tr>
         <tr>
           <td>link
           </td>
-          <td>MCRMetaLinkID
+          <td><a href="mcrobject_datatypes.html#Externe+Links+und+interne+Verknüpfungen+(MCRMetaLink+und+MCRMetaLinkID)">MCRMetaLinkID</a>
           </td>
         </tr>
         <tr>
           <td>href
           </td>
-          <td>MCRMetaLink
+          <td><a href="mcrobject_datatypes.html#Externe+Links+und+interne+Verknüpfungen+(MCRMetaLink+und+MCRMetaLinkID)">MCRMetaLink</a>
           </td>
         </tr>
         <tr>
           <td>derlink
           </td>
-          <td>MCRMetaDerivateLink
+          <td><a href="mcrobject_datatypes.html#Verknüpfung+zu+Dateien+(MCRMetaDerivateLink)">MCRMetaDerivateLink</a>
           </td>
         </tr>
         <tr>
           <td>date
           </td>
-          <td>MCRMetaISO8601Date
+          <td><a href="mcrobject_datatypes.html#Datumsangaben+(MCRMetaISO8601Date)">MCRMetaISO8601Date</a>
           </td>
         </tr>
         <tr>
           <td>number
           </td>
-          <td>MCRMetaNumber
+          <td><a href="mcrobject_datatypes.html#Zahlenwerte+(MCRMetaNumber)">MCRMetaNumber</a>
           </td>
         </tr>
         <tr>
           <td>xml
           </td>
-          <td>MCRMetaXML
+          <td><a href="mcrobject_datatypes.html#Beliebiges+XML+(MCRMetaXML)">MCRMetaXML</a>
           </td>
         </tr>
         <tr>
           <td>historydate
           </td>
-          <td>MCRMetaHistoryDate
+          <td><a href="mcrobject_datatypes.html#Historische+Datumsangaben+(MCRMetaHistoryDate)">MCRMetaHistoryDate</a>
           </td>
         </tr>
         <tr>
           <td>personname
           </td>
-          <td>MCRMetaPersonName
+          <td><a href="mcrobject_datatypes.html#Namen+natürlicher+Personen+(MCRMetaPersonName)">MCRMetaPersonName</a>
           </td>
         </tr>
       </table>

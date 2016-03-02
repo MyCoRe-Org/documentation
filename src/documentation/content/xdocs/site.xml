@@ -90,12 +90,11 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Grundlagen -->
     <content               label="Grundlagen"          href="basics/">
-      <module_structure      label="Modulstruktur"     href="module_structure.html" />
       <mcrobject             label="MyCoRe-Objekte"    href="mcrobject/">
         <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
         <mcrobj_id           label="MCRObject-ID"      href="mcrobject_id.html" />
+        <mcrobj_datadef      label="Datenmodell"       href="mcrobject_datadef.html" />
         <mcrobj_datatypes    label="Datentypen"        href="mcrobject_datatypes.html" />
-        <mcrobj_datadef      label="Datenmodelle"      href="mcrobject_datadef.html" />
         <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html" />
       </mcrobject>
       <mcrderivate           label="Derivate"          href="mcrderivate_ifs/">
@@ -116,6 +115,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         <classif_editor      label="Editor"            href="classification_editor.html" />
         <classif_mapping     label="Mapping"           href="classification_mapping.html" />
       </classifications>
+      <mcr_components        label="Komponenten"       href="components_structure.html" />
       <eventhandler          label="EventHandler"      href="eventhandler.html" />
       <mcrobj_linktables     label="Linktabellen"      href="mcrobject/linktables.html" />
     </content>

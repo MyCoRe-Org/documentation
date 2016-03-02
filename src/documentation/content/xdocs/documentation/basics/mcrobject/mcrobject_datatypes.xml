@@ -5,12 +5,13 @@
   <header>
     <title>Datentypen</title>
     <authors>
-      <person name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
     <version>2014-11-26</version>
     <abstract>Beschreibung der MyCoRe Basis-Datentypen</abstract>
   </header>
-  
+
   <body>
 
    <!-- Include required JS files -->
@@ -33,18 +34,18 @@
         atomaren Typen und anwendungsspezifischen komplexen Typen zu unterscheiden. Eine Auflistung finden Sie in
         nachfolgender Tabelle.
       </p>
-      <table>
+      <table class="table">
         <tr>
           <th>Einfache Typen</th>
           <th>Komplexe Typen</th>
         </tr>
         <tr>
           <td>MCRMetaBoolean</td>
-          <td>MCRMetaAccessRule (nur intern verwendet)</td>
+          <td>MCRMetaAddress</td>
         </tr>
         <tr>
           <td>MCRMetaClassification</td>
-          <td>MCRMetaAddress</td>
+          <td>MCRMetaDerivateLink</td>
         </tr>
         <tr>
           <td>MCRMetaISBN</td>
@@ -56,11 +57,11 @@
         </tr>
         <tr>
           <td>MCRMetsLangText</td>
-          <td>MCRMetaDerivateLink (nur intern verwendet)</td>
+          <td>MCRMetaXML</td>
         </tr>
         <tr>
           <td>MCRMetaLink</td>
-          <td>MCRMetaIFS (nur intern verwendet)</td>
+          <td></td>
         </tr>
         <tr>
           <td>MCRMetaLinkID</td>
@@ -74,48 +75,13 @@
           <td>MCRMetaNumber</td>
           <td />
         </tr>
-        <tr>
-          <td>MCRMetaXML</td>
-          <td />
-        </tr>
       </table>
       <p class="klein">Tabelle: MyCoRe-Basisdatentypen</p>
 
     </section>
-    <section>
-      <title>Syntax des Metadatentyps MCRMetaAccessRule</title>
-      <p>
-        Der Basistyp MCRMetaAccessRule ist für den Import/Export von Access Control Lists (ACL's) gedacht. Der Metadatentyp
-        stellt einen Container für die entsprechenden Access-Conditions dar und wird nur im MCRService-Teil verwendet.
-      </p>
-      <pre class="brush: xml;">
-<![CDATA[<servacls class="MCRMetaAccessRule">
-  <servacl permission="...">
-    <condition format="xml">
-     ...
-    </condition>
-  </servacl>
-</servacls>
-
-<servacls class="MCRMetaAccessRule">
-  <servacl permission="read">
-    <condition format="xml">
-      <boolean operator="and">
-        <!-- USER OR GROUP -->
-      <boolean operator="or" />
-        <!-- DATE -->
-      <boolean operator="and" />
-        <!-- IP -->
-      <boolean operator="or" />
-        <!-- -->
-      </boolean>
-    </condition>
-  </servacl>
-</servacls>]]></pre>
-    </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaAddress</title>
+      <title>Adresse (MCRMetaAddress)</title>
       <p>
         Der Basistyp MCRMetaAddress beinhaltet eine Liste von postalischen Anschriften in der Ausprägung eines
         XML-Abschnittes. Dabei wird berücksichtigt, dass die Anschrift in verschiedenen Sprachen und in international
@@ -154,7 +120,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaBoolean</title>
+      <title>Boolesche Werte (MCRMetaBoolean)</title>
       <p>
         Der Basistyp MCRMetaBoolean beinhaltet eine Liste von Wahrheitswerten mit zugehörigen type Attributen. Folgende Werte
         sind zulässig:
@@ -183,7 +149,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadaten-Basistyps MCRMetaClassification</title>
+      <title>Klassifikationen (MCRMetaClassification)</title>
       <p>
         Der Basistyp MCRMetaClassification dient der Einbindung von Klassifikationen und deren Kategorien in die Metadaten.
         Beide Identifizierer zusammen beschreiben einen Kategorieeintrag vollständig. Dabei ist für die categid eine,
@@ -208,7 +174,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadaten-Basistyps MCRMetaHistoryDate</title>
+      <title>Historische Datumsangaben (MCRMetaHistoryDate)</title>
       <p>
         Der Basistyps MCRMetaHistoryDate ist speziell kreiert, um Datumsangaben für historische Projekte speichern und suchen
         zu können. Dabei wird sowohl ein verbaler Text wie eine konkrete Datumskonvertierung mit dem dazugehörigen
@@ -289,7 +255,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaISBN</title>
+      <title>ISBN (MCRMetaISBN)</title>
       <p>
         Dieser Metadatentyp ist ganz speziell zur
         <span class="T4">Speicherung</span>
@@ -312,7 +278,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaISO8601Date</title>
+      <title>Datumsangaben (MCRMetaISO8601Date)</title>
       <p>
         Dieser Metadatentyp ist wie MCRMetaDate für das Speichern von Zeitangaben gedacht. Er bietet jedoch eine höhere
         zeitliche Auflösung, bis in den Millisekundenbereich. Unterstützt werden alle Formate der Informationsseite des W3C
@@ -346,7 +312,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaLangText</title>
+      <title>Freier Text (MCRMetaLangText)</title>
       <p>
         Der Basistyp MCRMetaLangText dient der Speicherung einer Liste von Textabschnitten mit zugehöriger Sprachangabe. Über
         das form Attribut kann noch spezifizier werden, in welcher Form der Text geschrieben ist.
@@ -371,7 +337,7 @@
     </section>
 
     <section>
-      <title>Syntax der Metadatentypen MCRMetaLink und MCRMetaLinkID</title>
+      <title>Externe Links und interne Verknüpfungen (MCRMetaLink und MCRMetaLinkID)</title>
       <p>
         Der Basistyp MCRMetaLink wurde geschaffen, um eine Verknüpfung verschiedener MyCoRe-Objekte untereinander zu
         realisieren. Außerdem können hier genauso Verweise auf beliebige externe Referenzen abgelegt werden. Der Typ
@@ -420,7 +386,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaNBN</title>
+      <title>NBN (MCRMetaNBN)</title>
       <p>
         Diese Metadatentyp ist ganz speziell zur Speicherung einer NBN gedacht. Er gestattet nur eine Kardinalität.
       </p>
@@ -438,7 +404,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaNumber</title>
+      <title>Zahlenwerte (MCRMetaNumber)</title>
       <p>
         Der Basistyp MCRMetaNumber ermöglicht das Speichern und Suchen von Zahlenwerten. Die Zahlendarstellung kann je nach
         Sprache, d. h. im Deutschen mit Komma und im Englischen mit Punkt, angegeben werden. Weiterhin sind die
@@ -466,9 +432,10 @@
 
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaDerivateLink</title>
+      <title>Verknüpfung zu Dateien (MCRMetaDerivateLink)</title>
       <p>
-        Der Basistyp MCRMetaDerivateLink ermöglicht
+        Der Basistyp MCRMetaDerivateLink ermöglicht auf konkrete Dateien in beliebigen Derivaten
+        zu verlinken.
       </p>
       <p>XML-Syntax des Metadaten-Basistyps MCRMetaDerivateLink:</p>
       <pre class="brush: xml;">
@@ -488,15 +455,18 @@
 
       <p>
         Subselect:
-        <code>&lt;subselect id="sub.derivate" type="servlet" href="servlets/MCRMetaDerivateLinkServlet"
-          i18n="editor.search.choose.derivate" /></code>
       </p>
+      <pre class="brush: xml;">
+<![CDATA[<subselect id="sub.derivate"
+         type="servlet"
+         href="servlets/MCRMetaDerivateLinkServlet"
+         i18n="editor.search.choose.derivate" />]]></pre>
     </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaPersonName</title>
+      <title>Namen natürlicher Personen (MCRMetaPersonName)</title>
       <p class="Standard">
-        Der Basistyp MCRMetaPerson beinhaltet eine Liste von Namen für natürlicheoder juristische Personen. Dabei wird
+        Der Basistyp MCRMetaPerson beinhaltet eine Liste von Namen für natürliche oder juristische Personen. Dabei wird
         berücksichtigt, dass die Namen in verschiedenen Sprachen und international gängigen Formen auftreten können. Das
         Attribut
         <em>type</em>
@@ -566,7 +536,7 @@
     </section>
 
     <section>
-      <title>Syntax des Metadatentyps MCRMetaXML</title>
+      <title>Beliebiges XML (MCRMetaXML)</title>
       <p>
         Der Basistyp MCRMetaXML wurde zusätzlich als Container für einen beliebigen XML-Baum in das Projekt integriert.
         Dieser wird in den Textknoten des Subtags gestellt und kann dort theoretisch beliebig groß sein. Achten Sie aber
