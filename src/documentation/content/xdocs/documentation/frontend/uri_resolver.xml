@@ -606,9 +606,13 @@ xslTransform:mycoreobject-txt:file:object.txt]]></source>
       </section>
       
       <section>
-        <title>data:[mime-type[;param1=value1[;param2=value=2]]]{,content}</title>
+        <title>data:[DataURLParams]</title>
         <p>
           liefert den Inhalt einer Data-URL zurück.
+        </p>
+        <p class="break">
+          <source><![CDATA[
+data:[mime-type[;param1=value1[;param2=value=2]]]{,content}]]></source>
         </p>
         <p class="break">
           <source><![CDATA[
