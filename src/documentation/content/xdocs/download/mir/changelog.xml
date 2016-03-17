@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document>
+<header>
+  <title>Changes in MIR</title>
+  <abstract>Changelog for MIR - the MyCoRe / MODS institutional repository.</abstract>
+  <version>2016-03-17</version>
+  <authors>
+    <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+  </authors>
+</header>
+
+ <body>
+
+  <!-- Include required JS files -->
+  <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+  <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+  <section>
+  <title>MIR Changelog</title>
+
+  <section>
+    <title>Version 2016.03 - Current Head</title>
+
+    <p>For details see <a href="http://www.mycore.de/generated/mir/project-reports.html">maven site</a></p>
+
+  </section>
+
+    <section>
+      <title>Version 0.4 - based on MyCoRe release 2015.02</title>
+
+      <ul>
+        <li>Bug
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-127'>MIR-127</a>] -         repair bootswatch variable usage to bring bootswatch themes back to work
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-230'>MIR-230</a>] -         selenium findElement(By.id(&quot;loginURL&quot;)) failes
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-255'>MIR-255</a>] -         relatedItem autocomplete fill operation is not reliable
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-262'>MIR-262</a>] -         Wizard dosn&#39;t show all installation log output since log4j2 update
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-275'>MIR-275</a>] -         relatedItem autocomplete does not work correctly with some genre editors
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-283'>MIR-283</a>] -         Title of lecture not stored when creating course material
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-284'>MIR-284</a>] -         When creating course material type of ressource not stored
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-286'>MIR-286</a>] -         Cannot save object (dissertation) after import over ppn
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-287'>MIR-287</a>] -         Thumnails and viewer of &#39;PDF&#39; does not show up
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-289'>MIR-289</a>] -         do not show accessCondition if empty
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-305'>MIR-305</a>] -         multiple term search gets to many results
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-322'>MIR-322</a>] -         edit object with person with gnd - the gnd bagde is not displayed
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-324'>MIR-324</a>] -         site reload after select a person
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-325'>MIR-325</a>] -         broken gnd-link in the badge of person search
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-326'>MIR-326</a>] -         actionmapping.xml contains invalid characters in URLs
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-327'>MIR-327</a>] -         I18N Key Missing:  ???component.mods.metaData.dictionary.identifier.oclc???
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-330'>MIR-330</a>] -         wrong identifier gets selected when editing some imported documents
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-333'>MIR-333</a>] -         search on hitlist ignores current filter / search params
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-334'>MIR-334</a>] -         create a new user causes an exception in userExists (MirSelfRegistrationServlet)
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-338'>MIR-338</a>] -         MIRAccessKeyStrategy shouldn&#39;t allow access to objects if user haven&#39;t a access key
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-339'>MIR-339</a>] -         Performance on metadata view is too slow
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-341'>MIR-341</a>] -         editor -  wrong use of mods:subject/mods:topic, need refacturing  relation subject to subjectgroup
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-343'>MIR-343</a>] -         relItemSearch ignores required attributes
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-345'>MIR-345</a>] -         child link in meta view does not work
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-347'>MIR-347</a>] -         ImageWare ACL check requests permission instead of POOLPRIVILEGE
+            </li>
+          </ul>
+        </li>
+        <li>
+          New Feature
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-306'>MIR-306</a>] -         add xmetadissplus as OAI output format
+            </li>
+          </ul>
+        </li>
+        <li>
+          Task
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-59'>MIR-59</a>] -         enhance classification mapping for mods
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-78'>MIR-78</a>] -         refacture metadata view
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-155'>MIR-155</a>] -         beautify new html5 file upload
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-259'>MIR-259</a>] -         show action menu also if not logged in
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-272'>MIR-272</a>] -         move xeditor form scripts to separate file
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-276'>MIR-276</a>] -         add copy functionality
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-280'>MIR-280</a>] -         refacture derivate usage in metadata, read file only once
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-281'>MIR-281</a>] -         refacturing upload form
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-291'>MIR-291</a>] -         add PICA3 as export format
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-298'>MIR-298</a>] -         add xmetadissplus as OAI output format
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-300'>MIR-300</a>] -         In detailview display action button next to cardbutton.
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-311'>MIR-311</a>] -         use attribute type for mods:note managed by classification
+            </li>
+          </ul>
+        </li>
+        <li>
+          Sub-task
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-312'>MIR-312</a>] -         MIR.ImageWare.requiredIdentifier doesn&#39;t support only PPN
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-313'>MIR-313</a>] -         rename zip package to ppn
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-314'>MIR-314</a>] -         show export button only for specific categories in mir_rights
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-318'>MIR-318</a>] -         multiple player windows
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-323'>MIR-323</a>] -         users other than superuser doesn&#39;t have permission to create package
+            </li>
+          </ul>
+        </li>
+        <li>
+          Improvement
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-74'>MIR-74</a>] -         add version info to system info panel in metadata view
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-146'>MIR-146</a>] -         refacture forms (search form and editor forms)
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-170'>MIR-170</a>] -         add zdbid import from mods component
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-253'>MIR-253</a>] -         update xeditor forms
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-271'>MIR-271</a>] -         add xeditor fields for start and end date
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-274'>MIR-274</a>] -         hide genre categories with x-editor=&quot;false&quot; when no child categories available
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-288'>MIR-288</a>] -         show children as tree and with volume, issue or chapter, ordered by date issued
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-290'>MIR-290</a>] -         required select fields shouldn&#39;t be selected per default
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-294'>MIR-294</a>] -         Classification labels should be used instead of i18n properties
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-299'>MIR-299</a>] -         hit return in related item search leads to internal server error
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-307'>MIR-307</a>] -         allow application urns also in metadata
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-309'>MIR-309</a>] -         add about section to OAI record
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-310'>MIR-310</a>] -         MIRSwordIngester should use MCRSwordMediaHandler to handle files
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-316'>MIR-316</a>] -         viewer in metadata page - disable mini overview and fit document width on startup
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-319'>MIR-319</a>] -         add special page for deleted or blocked documents
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-321'>MIR-321</a>] -         Add information message after editing metadata
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-335'>MIR-335</a>] -         If a video is protected by securetoken it should be opened in integrated player (for all users that are not editors or admin -&gt; acl).
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-340'>MIR-340</a>] -         File listing in metadata view should use REST-API of MyCoRe
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Version 0.3 - Workshop 2015 based on MyCoRe release 2015.11</title>
+
+      <ul>
+        <li>Bug
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-116'>MIR-116</a>] -         on metadata page containing information is missing if type is series etc
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-120'>MIR-120</a>] -         mir should use mycore state classification
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-141'>MIR-141</a>] -         fix classification browser headlines, remove &lt;label /&gt;
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-145'>MIR-145</a>] -         include breadcrumb into cosmol
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-150'>MIR-150</a>] -         Setup does not load classifications
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-154'>MIR-154</a>] -         MIR wizard throws InitializerError because of access check in MCRStaticXMLFileServlet
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-163'>MIR-163</a>] -         we use different bootstrap/bootswatch versions, configuration must be simplifyed
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-165'>MIR-165</a>] -         mir:role.repeated can&#39;t be used twice in one MIR editor
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-166'>MIR-166</a>] -         register form allows  special characters in user login
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-167'>MIR-167</a>] -         validation message hover doesn&#39;t work
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-169'>MIR-169</a>] -         PPN usage leads to mods schema errors
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-171'>MIR-171</a>] -         Search via badges doesn&#39;t use state filter
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-179'>MIR-179</a>] -         importing data from gvk into mir incorrect in some cases
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-192'>MIR-192</a>] -         can&#39;t create new derivate if URN exists
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-196'>MIR-196</a>] -         No Form fields for genre &quot;picture&quot;
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-197'>MIR-197</a>] -         ACL rule &quot;require login&quot; doesn&#39;t work with MIRStrategy
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-205'>MIR-205</a>] -         Support all bootswatch themes
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-213'>MIR-213</a>] -         MIRViewerConfigurationStrategy throws MissingFormatArgumentException when MIR.CustomLayout.JS is set
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-222'>MIR-222</a>] -         layout for validation messages creates invalid html
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-223'>MIR-223</a>] -         MIR throws Too many activate() calls
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-224'>MIR-224</a>] -         metadata view doesn&#39;t show files within directories
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-225'>MIR-225</a>] -         can&#39;t delete files within directory using MCRDerivateServlet
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-226'>MIR-226</a>] -         mcr:categId don&#39;t work
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-231'>MIR-231</a>] -         validation failes in admin editor
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-235'>MIR-235</a>] -         search in person browsing doesn&#39;t work properly
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-236'>MIR-236</a>] -         searchfield mods.name contains date information
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-239'>MIR-239</a>] -         GND for name type=corporate isn&#39;t resolved
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-240'>MIR-240</a>] -         author role is shown in basket view
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-247'>MIR-247</a>] -         using mods:name with classification support leads to NPE
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-249'>MIR-249</a>] -         GND search doesn&#39;t works with https://lobid.org
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-250'>MIR-250</a>] -         show dateIssued badge only if available
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-263'>MIR-263</a>] -         Permission for creating classification is create-class
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-264'>MIR-264</a>] -         child document creation via sub menu failes
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-266'>MIR-266</a>] -         move all fileupload files to common-resources
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-267'>MIR-267</a>] -         Exclude servlet-api 2.4 from mycore-sword
+            </li>
+          </ul>
+        </li>
+        <li>
+          New Feature
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-161'>MIR-161</a>] -         add possibility to define restrictions on derivate access
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-188'>MIR-188</a>] -         Allow ACL checks for derivate against categories of owning document
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-198'>MIR-198</a>] -         Implement access keys which acquires permissions to read and/or write of MCRObject or MCRDerivates
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-202'>MIR-202</a>] -         Add support for research data
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-220'>MIR-220</a>] -         Add support to link documents to any classification
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-265'>MIR-265</a>] -         Sword2 implementation for MIR
+            </li>
+          </ul>
+        </li>
+        <li>
+          Task
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-118'>MIR-118</a>] -         add acl rules for admin-editor etc. and fix spelling of &quot;guest&quot;
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-122'>MIR-122</a>] -         intergrate video.js into metadata view
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-140'>MIR-140</a>] -         implement subselect for related items (like host, series ...)
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-172'>MIR-172</a>] -         make cosmol header responsive
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-183'>MIR-183</a>] -         add facets in result list for all searches
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-187'>MIR-187</a>] -         Increase default limit of fileupload to 4GB
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-203'>MIR-203</a>] -         show publication state on hit list
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-209'>MIR-209</a>] -         provide an URI resolver to get information if access key exists
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-210'>MIR-210</a>] -         define form fields for new genres teaching_material, lecture_resource ...
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-211'>MIR-211</a>] -         add generic editor template for classifications
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-227'>MIR-227</a>] -         need consistent version management for bootstrap, jquery and fontawesome
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-229'>MIR-229</a>] -         Upgrade to Log4J 2.x
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-233'>MIR-233</a>] -         upgrade typeahead to version 0.11.1
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-234'>MIR-234</a>] -         change editor organization to publisher organization and make it searchable
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-241'>MIR-241</a>] -         Use eventType=&quot;publish&quot; for originInfo
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-243'>MIR-243</a>] -         date picker for the editor
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-246'>MIR-246</a>] -         refacture ppn import
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-261'>MIR-261</a>] -         Refacture result list
+            </li>
+          </ul>
+        </li>
+        <li>
+          Sub-task
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-81'>MIR-81</a>] -         structure
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-82'>MIR-82</a>] -         metadata
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-83'>MIR-83</a>] -         def.modsContainer
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-85'>MIR-85</a>] -         Titel
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-86'>MIR-86</a>] -         Titel abgekürzt
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-87'>MIR-87</a>] -         Personennamen
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-88'>MIR-88</a>] -         Körperschaften
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-89'>MIR-89</a>] -         Erscheinungsland
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-90'>MIR-90</a>] -         Erscheinungsjahr
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-91'>MIR-91</a>] -         Sprache
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-92'>MIR-92</a>] -         Signatur der UB
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-93'>MIR-93</a>] -         Links
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-94'>MIR-94</a>] -         Abstract
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-95'>MIR-95</a>] -         DNB Sachgruppen
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-96'>MIR-96</a>] -         Stichworte
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-97'>MIR-97</a>] -         TypeOfResource
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-99'>MIR-99</a>] -         Embargo
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-100'>MIR-100</a>] -         Status
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-101'>MIR-101</a>] -         Konferenzen
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-103'>MIR-103</a>] -         2. Quelle
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-104'>MIR-104</a>] -         &quot;Erscheinungsort&quot; Report
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-106'>MIR-106</a>] -         Heft
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-107'>MIR-107</a>] -         Jahrgang des Artikels
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-108'>MIR-108</a>] -         Patente
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-109'>MIR-109</a>] -         Sendungen
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-111'>MIR-111</a>] -         Verknüpfung parent/child
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-129'>MIR-129</a>] -         metadata boxes shouldn&#39;t be in a hard grid layout
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-159'>MIR-159</a>] -         mods:subject
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-176'>MIR-176</a>] -         file list and containing objects looks different to the other metadata blocks
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-177'>MIR-177</a>] -         move action and basket menu down to label block
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-178'>MIR-178</a>] -         If object is in basket, show &#39;remove from basket&#39; instead of no button
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-180'>MIR-180</a>] -         add help icon and messages
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-181'>MIR-181</a>] -         group editor fields with div id=&quot;&quot;, which repeated together
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-191'>MIR-191</a>] -         add missing fields
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-193'>MIR-193</a>] -         add mods:nonSort to title
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-194'>MIR-194</a>] -         use &lt;rights&gt;-section in mycoreobject xml
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-207'>MIR-207</a>] -         put info button and repeater button in one grid column
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-214'>MIR-214</a>] -         autocompletion for relatedItem in dynamic editor
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-232'>MIR-232</a>] -         Log4J2 logger output isn&#39;t configured for CLI
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-257'>MIR-257</a>] -         create a derivate edit form for MIR
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-268'>MIR-268</a>] -         add required attribute to formfields
+            </li>
+          </ul>
+        </li>
+        <li>
+          Improvement
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-2'>MIR-2</a>] -         prompt for confirmation deleting files
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-52'>MIR-52</a>] -         extend MCRMODSInheritanceManager.java
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-131'>MIR-131</a>] -         open left side menu in cosmol dependent on screen resolution
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-132'>MIR-132</a>] -         update default urn resolver (dnb germany)
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-133'>MIR-133</a>] -         URN should be presented readable in metadata view
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-134'>MIR-134</a>] -         left side menu should stay toggled after click on link
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-135'>MIR-135</a>] -         add possibility to add user defined javascript
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-136'>MIR-136</a>] -         separate javascript where possible into an external file
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-137'>MIR-137</a>] -         use label &#39;x-hosts&#39; from mir-genre classification for objectActions
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-138'>MIR-138</a>] -         use ppn import from mycore-mods
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-139'>MIR-139</a>] -         for better layout development we need more fine granular watch tasks
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-142'>MIR-142</a>] -         check layout stylesheets for core functionality and move them to mycore if needed
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-143'>MIR-143</a>] -         include datacite functionality
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-144'>MIR-144</a>] -         provide citation formatting functionality
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-147'>MIR-147</a>] -         refacture basket/bookmark menu and page
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-148'>MIR-148</a>] -         beautify login/user menu
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-149'>MIR-149</a>] -         include GND/VIAF search also for organisations
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-152'>MIR-152</a>] -         sort result list by score and dateIssued
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-157'>MIR-157</a>] -         provide a possibility to create metadata for conference, course etc.
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-158'>MIR-158</a>] -         add possibility to enter rights holder
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-173'>MIR-173</a>] -         add start-link to left side menu in cosmol
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-174'>MIR-174</a>] -         refacture hit list
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-175'>MIR-175</a>] -         add possibility to disable filter options and make them more responsive
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-182'>MIR-182</a>] -         owner should find his documents
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-184'>MIR-184</a>] -         show altmetrics in citation box
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-185'>MIR-185</a>] -         layout fine tuning
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-186'>MIR-186</a>] -         add an OpenAIRE-Compliant configuration
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-189'>MIR-189</a>] -         use webjars for jquery and bootstrap
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-190'>MIR-190</a>] -         refacture index.jsp
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-195'>MIR-195</a>] -         enable google sitemap
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-199'>MIR-199</a>] -         Not all searches shows creators publications
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-200'>MIR-200</a>] -         add possibility to define ACLs for adding new URN
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-201'>MIR-201</a>] -         Can&#39;t find token for MIR-Wizard in log
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-208'>MIR-208</a>] -         form select doctype
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-219'>MIR-219</a>] -         enhance person name information
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-228'>MIR-228</a>] -         Wizard should use port from current webapplicationserver
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-248'>MIR-248</a>] -         provide submit template for new CreateObjectAppendDerivateServlet
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-252'>MIR-252</a>] -         Support &lt;etal /&gt; from MODS 3.5
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-254'>MIR-254</a>] -         use project id property for new object id in xeditor
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+
+  <section>
+    <title>Version 0.2 - based on MyCoRe release 2015.02</title>
+
+    <ul>
+      <li>Bug
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-1'>MIR-1</a>] -         using mir.war -&gt; tomcat shutdown doesn&#39;t stop all processes
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-64'>MIR-64</a>] -         show GND link only for the first author in list
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-65'>MIR-65</a>] -         empty action menu after URN generation and no URN is shown
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-66'>MIR-66</a>] -         Can&#39;t delete single file in derivate
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-72'>MIR-72</a>] -         link in wf mail isn&#39;t clickable
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-73'>MIR-73</a>] -         content of comments field in metadata is missing
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-75'>MIR-75</a>] -         embargo filter creates wrong mycore xml for derobjects
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-77'>MIR-77</a>] -         create article throws array out of bounds exception
+          </li>
+        </ul>
+      </li>
+      <li>
+        Improvement
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-67'>MIR-67</a>] -         institution browser doesn&#39;t work
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-71'>MIR-71</a>] -         don&#39;t show system information to guest users
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-113'>MIR-113</a>] -         dynamic editor -&gt; param standalone default
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-114'>MIR-114</a>] -         Please ask before shutdown server
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-115'>MIR-115</a>] -         Add more params for database configuration
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-117'>MIR-117</a>] -         use classification for rights
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-124'>MIR-124</a>] -         Cosmol menu shouldn&#39;t be a drop down menu
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-125'>MIR-125</a>] -         separate cosmol less commandos to specialized cosmol less files
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-130'>MIR-130</a>] -         add highwire press tags citation_* from mycore-mods to metadata view
+          </li>
+        </ul>
+      </li>
+      <li>
+        Task
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-57'>MIR-57</a>] -         include miless xeditor forms in mods component
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-61'>MIR-61</a>] -         include OAI interface
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-62'>MIR-62</a>] -         remove default-layout
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-63'>MIR-63</a>] -         create second layout template with left menu bar
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-70'>MIR-70</a>] -         enable database schema configuration
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-123'>MIR-123</a>] -         Please add mycore.de/impressum content to MIR
+          </li>
+        </ul>
+      </li>
+      <li>
+        Sub-task
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-110'>MIR-110</a>] -         Buch in Serie
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-121'>MIR-121</a>] -         implement multiple layouts inside the grunt file
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <title>Version 0.1 - Workshop 2014</title>
+    <p>Initial Version, based on OpenAgrar code.</p>
+    <ul>
+      <li>Task
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-57'>MIR-57</a>] -         include miless xeditor forms in mods component
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MIR-58'>MIR-58</a>] -         genre classification to mods component
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+
+
+  </section>
+
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
+
+ </body>
+</document>

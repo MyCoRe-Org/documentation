@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document>
+<header>
+  <title>Release 0.4</title>
+  <abstract>
+    Based on MyCoRe release 2015.02 and last release before first LTS 2016 release will be announced.
+  </abstract>
+  <version>2016-03-17</version>
+  <authors>
+    <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+  </authors>
+</header>
+
+ <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+  <p>
+    Hier kann das aktuelle <a href="mir.war" data-role="artifactResolver" data-artifact="mir-webapp" data-suffix=".war" download="mir.war">MIR-Paket</a>
+    (speichern als <code>mir.war</code>) heruntergeladen werden. Dieses kann mit dem Context 'mir' direkt in einen Servlet Container ausgeliefert (deployed) werden.
+  </p>
+  <p>
+    Für administrative Zwecke kann zusätzlich eine MIR-CLI in zwei verschiedenen Formaten heruntergeladen werden:
+  </p>
+  <ol>
+    <li><a href="mir-cli.zip" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".zip" download="mir-cli.zip">ZIP archive</a> (speichern als <code>mir-cli.zip</code>)</li>
+    <li><a href="mir-cli.tar.gz" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".tar.gz" download="mir-cli.tar.gz">tar.gz archive</a> (speichern als <code>mir-cli.tar.gz</code>)</li>
+  </ol>
+
+
+  <p>
+    Die Liste der Änderungen ist im <a href="changelog.html#Version+0.4+-+based+on+MyCoRe+release+2015.02">Changelog zu finden</a>
+  </p>
+
+  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+  <script type="text/javascript">
+     SyntaxHighlighter.all()
+  </script>
+
+   <!-- START SNIPPET: downloadCode -->
+   <script type="text/javascript">
+     "use strict";
+     (function($) {
+     $(document).ready(function() {
+     //Chrome support
+     if (typeof String.prototype.endsWith !== 'function') {
+     String.prototype.endsWith = function(suffix) {
+     return this.indexOf(suffix, this.length - suffix.length) !== -1;
+     };
+     }
+     $.fn.resolveArtifacts = function(version) {
+     this.each(function() {
+     var element = $(this);
+     var artifact = element.attr('data-artifact');
+     var suffix = element.attr('data-suffix');
+     $.getJSON('http://artifactory.mycore.de/api/search/gavc', {
+     "g" : "org.mycore.mir",
+     "a" : artifact,
+     "v" : version
+     }, function(data, textStatus, jqXHR) {
+     var results = data.results;
+     var uris = [];
+     for (var i = results.length - 1; i >= 0; i--) {
+     var e = results[i];
+     if (e.uri.endsWith(suffix)) {
+     uris.push(e.uri);
+     }
+     }
+     uris.sort().reverse();
+     $.getJSON(uris[0], function(data, textStatus, jqXHR) {
+     element.attr('href', data.downloadUri);
+     });
+     });
+     });
+     return this;
+     };
+     var version = "0.4";
+     $('[data-role=artifactResolver]').resolveArtifacts(version);
+     });
+     })(jQuery);
+   </script>
+   <!-- END SNIPPET: downloadCode -->
+  </body>
+
+</document>

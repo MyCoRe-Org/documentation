@@ -33,6 +33,7 @@
       </ul>
       <h3>Download</h3>
       <p>
+        Informationen zum aktuellen Release und ein Changelog befinden sich im <a href="site:mir_release">Download-Bereich</a>.
         Hier kann das aktuelle <a href="mir.war" data-role="artifactResolver" data-artifact="mir-webapp" data-suffix=".war" download="mir.war">MIR-Paket</a>
         (speichern als <code>mir.war</code>) heruntergeladen werden. Dieses kann mit dem Context 'mir' direkt in einen Servlet Container ausgeliefert (deployed) werden.
       </p>
@@ -174,7 +175,7 @@
               });
               return this;
             };
-            var version = "0.3-SNAPSHOT";
+            var version = "2016.03-SNAPSHOT";
             $('[data-role=artifactResolver]').resolveArtifacts(version);
           });
         })(jQuery);
