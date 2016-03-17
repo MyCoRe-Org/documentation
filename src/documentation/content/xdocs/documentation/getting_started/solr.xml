@@ -42,7 +42,7 @@
           <code>solr.war</code> über MyCoRe bereitgestellt, das direkt aus dem
           <!-- TODO: insert this link again when current version is available as release -->
           <!-- a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr" -->MyCoRe-Artifactory<!-- /a --> bezogen
-          werden kann. Die aktuelle Version ist die <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr/4.10.4-SNAPSHOT/solr-4.10.4-20150727.132631-1.war" download="solr.war">Solr-Version 4.10</a>
+          werden kann. Die aktuelle Version ist die <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr/4.10.4.1-SNAPSHOT/solr-4.10.4.1-20151110.123030-1.war" download="solr.war">Solr-Version 4.10</a>
           (speichern als <code>solr.war</code>).
         </p>
         <p>
@@ -55,7 +55,7 @@
         <p>
          Im Solr-Home-Verzeichnis werden die Konfiguration der Suchfelder und später der Such-Index abgelegt.
          Zum Einstieg wird ebenfalls eine vorkonfigurierte Variante über das <a href="http://artifactory.mycore.de/libs-releases-local/org/mycore/solr/solr">MyCoRe-Artifactory</a> bereitgestellt.
-         Hier der direkte Link, der zur Solr-Version 4.10 passt: <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr-home/4.10.4-SNAPSHOT/solr-home-4.10.4-20150727.132634-1.zip" download="solr-home.zip">Solr-Home 4.10</a>
+         Hier der direkte Link, der zur Solr-Version 4.10 passt: <a href="http://artifactory.mycore.de/libs-snapshots-local/org/mycore/solr/solr-home/4.10.4.1-SNAPSHOT/solr-home-4.10.4.1-20151110.123043-1.zip" download="solr-home.zip">Solr-Home 4.10</a>
          (speichern als <code>solr-home.zip</code>). Alternativ kann alles direkt bei
          <acronym title="Apache Solr ist ein eingetragenes Markenzeichen der Apache Software Foundation">
          <a href="https://lucene.apache.org/solr/">Apache Solr</a></acronym> bezogen werden.

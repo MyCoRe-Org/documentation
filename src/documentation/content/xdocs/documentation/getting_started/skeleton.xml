@@ -50,8 +50,8 @@
         <p>Zuerst sollte ein Arbeitsverzeichnis angelegt werden.<br />
            (z.B. <code>C:\skeleton\workspace</code> oder <code>~/skeleton/workspace</code>).</p>
         <p>
-          Danach wechselt man in dieses Verzeichnis und lädt das aktuelle Release <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2015.11.0">Skeleton 2015.11.0</a>
-          mit dem Kommando <code>svn checkout https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2015.11.0 skeleton</code> herunter (oder alternativ den aktuellen Entwicklungszweig
+          Danach wechselt man in dieses Verzeichnis und lädt das aktuelle Release <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2016.02.0">Skeleton 2016.02.0</a>
+          mit dem Kommando <code>svn checkout https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2016.02.0 skeleton</code> herunter (oder alternativ den aktuellen Entwicklungszweig
           <a href="https://server.mycore.de/svn/maven/skeleton/trunk">Skeleton Trunk</a> mit <code>svn checkout https://server.mycore.de/svn/maven/skeleton/trunk</code>).
         </p>
       </section>
@@ -122,7 +122,7 @@
         </p>
         <dl>
           <dt>Linux:</dt><dd> <code>bin/skeleton.sh process config/setup-commands.txt</code></dd>
-          <dt>Windows:</dt><dd> <code>bin\skeleton.bat process config/setup-commands.txt</code></dd>
+          <dt>Windows:</dt><dd> <code>bin\skeleton.bat process config\setup-commands.txt</code></dd>
         </dl>
         <p>Später kann die Datei setup-commands.txt
            um anwendungsspezifische Nutzer, Rechte und Klassifikationen ergänzt werden.</p>
