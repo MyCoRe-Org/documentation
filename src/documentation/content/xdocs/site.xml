@@ -127,7 +127,8 @@ See http://forrest.apache.org/docs/linking.html for more info
         <mcrderiv_mets       label="METS"              href="mets.html" />
       </mcrderivate>
       <classifications       label="Klassifikationen"  href="classifications/">
-        <classif_xml         label="XML-Format"        href="classification_datamodel.html" />
+        <classif_index       label="Übersicht"         href="classification_index.html" />
+        <classif_xml         label="Datenmodell"       href="classification_datamodel.html" />
         <classif_commands    label="Kommandos"         href="classification_commands.html" />
         <classif_browser     label="Browser"           href="classification_browser.html" />
         <classif_editor      label="Editor"            href="classification_editor.html" />
