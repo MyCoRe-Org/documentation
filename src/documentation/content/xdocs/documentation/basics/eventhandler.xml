@@ -54,11 +54,11 @@
      <section>
       <title>Die Konfiguration des EventHandler-Managers</title>
       <p>
-      Für die Nutzung des EventHandler-Konzeptes gib es in der vom kern mitgelieferten Konfiguration <em>mycore.properties</em>
+      Für die Nutzung des EventHandler-Konzeptes gib es in der vom Kern mitgelieferten Konfiguration <em>mycore.properties</em>
       eine Reihe von Voreinstellungen, welche im Standardfall vollständig funktionieren. Sollen davon abweichende
-      Implementierungen zu Einsatz kommen, so sind die entsprechenden Properies in den lokalen Property-Dateien zu
+      Implementierungen zum Einsatz kommen, so sind die entsprechenden Properies in den lokalen Property-Dateien zu
       überschreiben. Sollen Schritte zwischen zwei Handlern durch eigene Handler durchgeführt werden, können diese
-      über das nummernschema an die entsprechende Stelle eingefügt werden.
+      über das Nummernschema an die entsprechende Stelle eingefügt werden.
       </p>
       <p>
       Für jeden Event-Typ (in diesem Fall ist es <code>MCRObject = MCREvent.OBJECT_TYPE</code>) ist eine Kette von Handlern
@@ -177,6 +177,15 @@
             </td>
            </tr>
            <tr>
+            <td title="Nr. in Pipeline">optional<br/>018</td>
+            <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.pi.MCRPersistentIdentifierEventHandler</td>
+           </tr>
+           <tr>
+            <td title="Beschreibung" colspan="2">
+            Die Beschreibung zum MCRPersistentIdentifierEventHandler folgt.
+            </td>
+           </tr>
+           <tr>
             <td valign="top" title="Nr. in Pipeline">020</td>
             <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRXMLMetadataEventHandler</td>
            </tr>
@@ -230,7 +239,8 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>070</td>
-            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.datamodel.common.MCRURNEventHandler</td>
+<!--            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.datamodel.common.MCRURNEventHandler</td> -->
+            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.urn.events.MCRURNEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
@@ -309,7 +319,7 @@
            </tr>
            <tr>
             <td valign="top" title="Nr. in Pipeline">030</td>
-            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.datamodel.common.MCRURNEventHandler</td>
+            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.urn.events.MCRURNEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
@@ -362,8 +372,8 @@
         </table>
       </section>
 
-      <section>
-        <title>EventHandler für MCRFile</title>
+     <section>
+        <title>EventHandler für MCRPath</title>
         <table class="table table-striped event-handler-table">
           <tbody>
            <tr>
@@ -388,11 +398,11 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>020</td>
-            <td title="Klasse">Enthalten in mycore-iview2; erforderlich bei Nutzung von IView2<br/>org.mycore.iview2.events.MCRImageTilerEventHandler</td>
+            <td title="Klasse">Enthalten in mycore-iview2; erforderlich bei Nutzung von IView2<br/>org.mycore.iview2.events.MCRImageTileEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
-            Der MCRImageTilerEventHandler initialisiert das Kacheln der Datenobjekte, sofern diese von einem passenden
+            Der MCRImageTileEventHandler initialisiert das Kacheln der Datenobjekte, sofern diese von einem passenden
             Bildtyp sind.
             </td>
            </tr>
@@ -410,7 +420,7 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>035</td>
-            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.datamodel.common.MCRURNEventHandler</td>
+            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.urn.events.MCRURNEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
