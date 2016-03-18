@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document>
+<header>
+  <title>Changes in Skeleton</title>
+  <abstract>Changelog for Skeleton</abstract>
+  <version>2016-03-17</version>
+  <authors>
+    <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+  </authors>
+</header>
+
+ <body>
+
+  <!-- Include required JS files -->
+  <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+  <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+  <section>
+  <title>Skeleton Changelog</title>
+
+  <section>
+    <title>Version 2016.03 - Current Head</title>
+
+    <p>For details see ...</p>
+
+  </section>
+
+  <section>
+    <title>Version 2016.02</title>
+    <p>work in progress ...</p>
+  </section>
+
+    <section>
+      <title>Version 2015.11</title>
+      <p>initial version</p>
+    </section>
+  </section>
+
+
+ <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+ <script type="text/javascript">
+     SyntaxHighlighter.all()
+ </script>
+
+ </body>
+</document>

@@ -67,11 +67,11 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mir_release     label="Release 0.4"        href="release.html" />
       <mir_changelog   label="Changelog"              href="changelog.html" />
     </dl_mir>
-    <!--dl_skeleton            label="Skeleton"               href="skeleton/">
+    <dl_skeleton            label="Skeleton"               href="skeleton/">
       <skeleton_release     label="Release 2016.02"        href="release.html" />
       <skeleton_changelog   label="Changelog"              href="changelog.html" />
     </dl_skeleton>
-    <dl_viewer            label="Viewer"               href="viewer/">
+    <!-- dl_viewer            label="Viewer"               href="viewer/">
       <viewer_release     label="Release 2016.02"        href="release.html" />
       <viewer_changelog   label="Changelog"              href="changelog.html" />
     </dl_viewer -->

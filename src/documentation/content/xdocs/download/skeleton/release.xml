@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document>
+<header>
+  <title>Release 2016.02</title>
+  <version>2016-03-18</version>
+  <authors>
+    <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+  </authors>
+</header>
+
+ <body>
+
+   <!-- Include required JS files -->
+   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+   <p>
+     Das aktuelle Skeleton-Release basiert auf dem MyCoRe-Release 2016.02. Um eine bestehende
+     Skeleton-Anwendung auf dieses Release zu aktualisieren muss lediglich die Version in
+     der pom.xml angepasst werden. Vergleichen Sie dazu mit der
+     <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2016.02/pom.xml">pom.xml</a> im SVN.
+   </p>
+   <p>
+     Eine Migration von <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2015.11.0">skeleton-2015.11.0</a>
+     ist nicht notwendig. Für Detailfragen wenden Sie sich gern an die <a href="mailto:mycore-user@lists.sourceforge.net"
+     >MyCoRe-Userliste</a>.
+   </p>
+   <div style="text-align:center;margin:30px 0;">
+     <img src="images/skeleton/screenshot_index.png" alt="Startbildschirm" style="margin:10px;" width="550px" /><br />
+     <span class="klein"><strong>Abbildung:</strong> Startseite nach Installation von Skeleton</span>
+   </div>
+  </body>
+
+</document>

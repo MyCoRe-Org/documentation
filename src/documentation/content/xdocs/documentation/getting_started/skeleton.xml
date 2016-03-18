@@ -50,8 +50,8 @@
         <p>Zuerst sollte ein Arbeitsverzeichnis angelegt werden.<br />
            (z.B. <code>C:\skeleton\workspace</code> oder <code>~/skeleton/workspace</code>).</p>
         <p>
-          Danach wechselt man in dieses Verzeichnis und lädt das aktuelle Release <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2016.02.0">Skeleton 2016.02.0</a>
-          mit dem Kommando <code>svn checkout https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2016.02.0 skeleton</code> herunter (oder alternativ den aktuellen Entwicklungszweig
+          Danach wechselt man in dieses Verzeichnis und lädt das aktuelle Release <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2016.02">Skeleton 2016.02</a>
+          mit dem Kommando <code>svn checkout https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2016.02 skeleton</code> herunter (oder alternativ den aktuellen Entwicklungszweig
           <a href="https://server.mycore.de/svn/maven/skeleton/trunk">Skeleton Trunk</a> mit <code>svn checkout https://server.mycore.de/svn/maven/skeleton/trunk</code>).
         </p>
       </section>
@@ -60,7 +60,7 @@
         <title>2. CLI erstellen</title>
         <p>
           Im Arbeitsverzeichnis wird mit dem Kommando <code>mvn clean install</code> die Skeleton Anwendung erstmals gebaut.
-          Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>tar.gz</code> für die MyCoRe-Kommandozeile zur Verfügung. 
+          Nun steht in <code>skeleton-cli/target</code> ein <code>zip</code> bzw. <code>tar.gz</code> für die MyCoRe-Kommandozeile zur Verfügung.
           Das <code>zip</code> bzw. <code>tar.gz</code>kann nun in einem beliebigen Projektverzeichnis auf dem Anwendungs-Server entpackt werden.
         </p>
       </section>
@@ -89,9 +89,14 @@
         </p>
         <h3>Datenbank konfigurieren</h3>
         <p>
-          Zur Konfiguration der Datenbank muss die <code>hibernate.cfg.xml</code> im <a href="site:properties">MyCoRe-Konfigurationsverzeichnis</a>
+          Zur Konfiguration der Datenbank muss die <code>hibernate.cfg.xml</code> im
+          <a href="site:properties">MyCoRe-Konfigurationsverzeichnis</a>
           angepasst werden (siehe <a href="site:hibernate">Datenbank / Hibernate</a>).
         </p>
+         <p>
+           <span class="label label-warning">Seit 2016.03</span> wird die Datenbank in der
+           <code>persistence.xml</code> unter <code>resources/META-INF</code> konfiguriert.
+         </p>
 
         <h3>Solr konfigurieren</h3>
         <p>
