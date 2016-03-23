@@ -434,13 +434,12 @@
           </tr>
           <tr>
             <td><code>sort</code></td>
-            <td><p>Sortierfeld und Sortierreihenfole in SOLR-Syntax mit Leerzeichen getrennt (<code>sort_field sort_order</code>).
-              </p>
+            <td><p>Sortierfeld und Sortierreihenfole in SOLR-Syntax mit Leerzeichen getrennt (<code>sort_field sort_order</code>).</p>
               <table class="table table-bordered">
               <cols><col width="100px"></col></cols>
                 <tr>
                   <td><code>sort_field</code></td>
-                  <td>ein in de MyCoRe-Anwendung definiertes Suchfeld<br />
+                  <td>ein in der MyCoRe-Anwendung definiertes Suchfeld<br />
                        z.B.: id, category, recordIdentifier
                   </td>
                 </tr>
@@ -450,6 +449,26 @@
                 </tr>
                </table>
             </td>
+          </tr>
+          <tr>
+            <td><code>wt</code></td>
+            <td><p>Rückgabeformat, erlaubte Werte sind u.a.: <code>xml</code> (default), <code>json</code> oder <code>csv</code>.</p></td>
+          </tr>
+          <tr>
+            <td><code>start</code></td>
+            <td><p>für Treffernavigation: Position des ersten zurückgegebenen Treffers in der Trefferliste im Bezug auf die Gesamttreffermenge.</p></td>
+          </tr>
+          <tr>
+            <td><code>rows</code></td>
+            <td><p>für Treffernavigation: Anzahl der Treffer (default <code>10</code>), die in der Trefferliste zurückgegeben werden sollen.</p></td>
+          </tr>
+          <tr>
+            <td><code>fq</code></td>
+            <td><p>Filter-Query: zusätzliche Query zum Einschränken der Treffermenge. Diese Query hat keine Auswirkungen auf die Berechnung des Rankings (<tt>score</tt>) eines Treffers.</p></td>
+          </tr>
+          <tr>
+            <td><code>fl</code></td>
+            <td><p>Field-List: beschränkt die in der Trefferliste zurückgelieferten Felder.</p></td>
           </tr>
         </table>
 
