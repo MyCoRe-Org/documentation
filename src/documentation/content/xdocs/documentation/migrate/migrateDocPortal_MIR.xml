@@ -53,6 +53,19 @@
         Das Stylesheet kann dabei nur eine Basis sein. Es ist jeweils zu prüfen, ob die
         Datenübernahme vollständig und inhaltlich korrekt ist.
       </p>
+      <p>
+        Analog dazu müssen die Derivate exportiert werden und auch dabei muss ein speziell
+        angepasstest <a href="/downloads/migrate2mods-derivate.xsl">Migrationsstylesheet</a>
+        genutzt werden. Dieses Stylesheet passt jedoch nur die Objekt-ID an, da diese im
+        Rahmen der Objekttyp-Migration von <code>*_document_*</code> auf <code>*_mods_*</code>
+        umbenannt werden muss.
+      </p>
+      <pre class="brush: bash;gutter: false;">
+      > export derivate {0} to directory {1} with migrate2mods
+
+      {0} ID des Derivates
+      {1} Zielverzeichnis
+      </pre>
 
     </section>
 
