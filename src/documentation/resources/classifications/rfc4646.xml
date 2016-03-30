@@ -86,6 +86,12 @@
     </category>
     <category ID="uk">
       <label xml:lang="de" text="Ukrainisch" />
+      <label xml:lang="en" text="Lithuanian" />
+      <label xml:lang="x-term" text="lit" />
+      <label xml:lang="x-bibl" text="lit" />
+    </category>
+    <category ID="lt">
+      <label xml:lang="de" text="Litauisch" />
       <label xml:lang="en" text="Ukrainian" />
       <label xml:lang="x-term" text="ukr" />
       <label xml:lang="x-bibl" text="ukr" />
@@ -221,6 +227,12 @@
       <label xml:lang="en" text="Rundi" />
       <label xml:lang="x-term" text="run" />
       <label xml:lang="x-bibl" text="run" />
+    </category>
+    <category ID="und">
+      <label xml:lang="de" text="Nicht zu entscheiden" />
+      <label xml:lang="en" text="Undetermined" />
+      <label xml:lang="x-term" text="und" />
+      <label xml:lang="x-bibl" text="und" />
     </category>
   </categories>
 </mycoreclass>
