@@ -44,10 +44,9 @@
         <xsl:value-of select="substring-after(mycoreobject/@ID,'_document_')"/>
       </xsl:attribute>
       <xsl:attribute name="xsi:noNamespaceSchemaLocation">
-        <xsl:value-of select="datamodel-mods.xsd"/>
+        <xsl:value-of select="'datamodel-mods.xsd'"/>
       </xsl:attribute>
       <xsl:copy-of select="mycoreobject/@version"/>
-      <xsl:copy-of select="mycoreobject/@xsi:noNamespaceSchemaLocation"/>
       <structure>
         <xsl:copy-of select="mycoreobject/structure/parents"/>
       </structure>
@@ -55,9 +54,9 @@
         <def.modsContainer class="MCRMetaXML" notinherit="true">
           <modsContainer>
             <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
-              <xsl:apply-templates />
+              <xsl:apply-templates select="mycoreobject/metadata" />
               <xsl:call-template name="originInfo" />
-              <mods:identifier type="intern">
+              <mods:identifier type="local">
                 <xsl:value-of select="mycoreobject/@ID" />
               </mods:identifier>
             </mods:mods>
@@ -93,7 +92,7 @@
 
 
   <xsl:template name="originInfo">
-    <xsl:if test="//metadata/dates or //metadata/origins or //metadata/places">
+    <xsl:if test="//metadata/dates or //metadata/places"><!-- or //metadata/origins -->
       <mods:originInfo eventType="publication">
         <xsl:if test="//metadata/places">
           <mods:place>
@@ -351,7 +350,16 @@
         <xsl:value-of select="'http://www.mycore.org/classifications/mir_genres#'"/>
         <xsl:variable name="categid" select="@categid" />
         <xsl:variable name="myURI" select="concat('classification:metadata:0:children:',@classid, ':', $categid)" />
-        <xsl:value-of select="document($myURI)//category[@ID=$categid]/label[@xml:lang='en']/@text" />
+        <xsl:variable name="genre" select="document($myURI)//category[@ID=$categid]/label[@xml:lang='en']/@text" />
+        <xsl:choose>
+          <!-- TODO: add your genre mapping here -->
+          <xsl:when test="contains($genre,'preprint, paper, report')"><xsl:value-of select="'report'"/></xsl:when>
+          <xsl:when test="contains($genre,'Periodical, Series')"><xsl:value-of select="'journal'"/></xsl:when>
+          <xsl:when test="contains($genre,'lecture')"><xsl:value-of select="'lecture_resource'"/></xsl:when>
+          <xsl:when test="contains($genre,'diploma thesis')"><xsl:value-of select="'diploma_thesis'"/></xsl:when>
+          <xsl:when test="contains($genre,'educational material')"><xsl:value-of select="'course_resource'"/></xsl:when>
+          <xsl:otherwise><xsl:value-of select="$genre"/></xsl:otherwise>
+        </xsl:choose>
       </xsl:attribute>
     </mods:genre>
   </xsl:template>
@@ -369,6 +377,9 @@
         <xsl:when test="contains($format,'text/document')">
           <xsl:value-of select="'text'"/>
         </xsl:when>
+    <xsl:when test="contains($format,'image')">
+          <xsl:value-of select="'still image'"/>
+        </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="$format"/>
         </xsl:otherwise>
@@ -383,7 +394,9 @@
   <xsl:template match="relation">
     <mods:relatedItem type="references">
       <mods:titleInfo>
-        <xsl:value-of select="." /> <!-- Inhalt ergänzen falls kein frei Text-->
+      <mods:title>
+          <xsl:value-of select="." /> <!-- Inhalt ergänzen falls kein frei Text-->
+    </mods:title>
       </mods:titleInfo>
     </mods:relatedItem>
   </xsl:template>
@@ -471,9 +484,9 @@
   </xsl:template>
 
   <xsl:template match="identifier">
-    <mods:location type="intern">
+    <mods:identifier type="intern">
         <xsl:value-of select="." />
-    </mods:location>
+    </mods:identifier>
   </xsl:template>
 
   <xsl:template match="languages">
@@ -481,11 +494,18 @@
   </xsl:template>
 
   <xsl:template match="language">
-    <mods:language usage="primary">
-      <mods:languageTerm authority="rfc4646" type="code">
-        <xsl:value-of select="$language" />
-      </mods:languageTerm>
-    </mods:language>
+      <mods:language usage="primary">
+        <mods:languageTerm authority="rfc4646" type="code">
+      <xsl:choose>
+        <xsl:when test="not(contains($language, 'xx'))">
+              <xsl:value-of select="$language" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="'und'" /><!-- undetermined (ISO code "und") -->
+        </xsl:otherwise>
+          </xsl:choose>
+        </mods:languageTerm>
+      </mods:language>
   </xsl:template>
 
 
@@ -568,7 +588,7 @@
 
   <xsl:template match="servdates">
     <servdates class="MCRMetaISO8601Date">
-      <servdate type="createdate">
+      <servdate type="createdate" inherited="0">
         <xsl:choose>
           <xsl:when test="not(contains(servdate[@type='createdate'], 'T'))">
             <xsl:value-of select="concat(servdate[@type='createdate'],'T00:00:00.000Z')" />
@@ -578,7 +598,7 @@
           </xsl:otherwise>
         </xsl:choose>
       </servdate>
-      <servdate type="modifydate">
+      <servdate type="modifydate" inherited="0">
         <xsl:choose>
           <xsl:when test="not(contains(servdate[@type='modifydate'], 'T'))">
             <xsl:value-of select="concat(servdate[@type='modifydate'],'T00:00:00.000Z')" />
