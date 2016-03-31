@@ -44,10 +44,10 @@
         abgelegt werden. Danach kann in der CLI der folgende Befehl ausgeführt werden.
       </p>
       <pre class="brush: bash;gutter: false;">
-      > export object {0} to directory {1} with migrate2mods
+        > export object {0} to directory {1} with migrate2mods
 
-      {0} ID des Objektes
-      {1} Zielverzeichnis
+        {0} ID des Objektes
+        {1} Zielverzeichnis
       </pre>
       <p>
         Das Stylesheet kann dabei nur eine Basis sein. Es ist jeweils zu prüfen, ob die
@@ -61,10 +61,17 @@
         umbenannt werden muss.
       </p>
       <pre class="brush: bash;gutter: false;">
-      > export derivate {0} to directory {1} with migrate2mods
+        > export derivate {0} to directory {1} with migrate2mods
 
-      {0} ID des Derivates
-      {1} Zielverzeichnis
+        {0} ID des Derivates
+        {1} Zielverzeichnis
+      </pre>
+      <p>
+        Zu guter Letzt müssen noch die Dateinamen angepasst werden. Aus beispielsweise DocPortal_document_00000001.xml wird dann
+        mir_mods_00000001.xml. Unter Linux kann das bequem über einen Shell-Befehl erfolgen, z.B.:
+      </p>
+      <pre class="brush: bash;gutter: false;">
+        sudo rename 's/DocPortal_document_(\d{8}).xml/mir_mods_$1.xml/g' DocPortal_document_*.xml
       </pre>
 
     </section>
