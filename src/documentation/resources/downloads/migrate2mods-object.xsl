@@ -357,7 +357,7 @@
           <xsl:when test="contains($genre,'Periodical, Series')"><xsl:value-of select="'journal'"/></xsl:when>
           <xsl:when test="contains($genre,'lecture')"><xsl:value-of select="'lecture_resource'"/></xsl:when>
           <xsl:when test="contains($genre,'diploma thesis')"><xsl:value-of select="'diploma_thesis'"/></xsl:when>
-          <xsl:when test="contains($genre,'educational material')"><xsl:value-of select="'course_resource'"/></xsl:when>
+          <xsl:when test="contains($genre,'educational material')"><xsl:value-of select="'course_resources'"/></xsl:when>
           <xsl:otherwise><xsl:value-of select="$genre"/></xsl:otherwise>
         </xsl:choose>
       </xsl:attribute>
@@ -377,8 +377,11 @@
         <xsl:when test="contains($format,'text/document')">
           <xsl:value-of select="'text'"/>
         </xsl:when>
-    <xsl:when test="contains($format,'image')">
+        <xsl:when test="contains($format,'image')">
           <xsl:value-of select="'still image'"/>
+        </xsl:when>
+        <xsl:when test="contains($format,'video')">
+          <xsl:value-of select="'moving image'"/>
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="$format"/>
