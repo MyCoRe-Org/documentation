@@ -85,13 +85,13 @@
       <label xml:lang="x-bibl" text="rus" />
     </category>
     <category ID="uk">
-      <label xml:lang="de" text="Ukrainisch" />
+      <label xml:lang="de" text="Litauisch" />
       <label xml:lang="en" text="Lithuanian" />
       <label xml:lang="x-term" text="lit" />
       <label xml:lang="x-bibl" text="lit" />
     </category>
     <category ID="lt">
-      <label xml:lang="de" text="Litauisch" />
+      <label xml:lang="de" text="Ukrainisch" />
       <label xml:lang="en" text="Ukrainian" />
       <label xml:lang="x-term" text="ukr" />
       <label xml:lang="x-bibl" text="ukr" />
