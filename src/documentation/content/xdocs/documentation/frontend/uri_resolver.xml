@@ -164,7 +164,7 @@ classification:{editor['['formatAlias']']|editorComplete|metadata}:{Levels}[:noE
                 noch unterschiedliche Formatanweisungen enthalten, die mit
                 <code>formatAlias</code>
                 referenziert werden.Das Property
-                <code>MCR.UriResolver.classification.format.{formatAlias}</code>
+                <code>MCR.UriResolver.Classification.Format.{formatAlias}</code>
                 enthält dann die Formatieranweisung.
                 Diese besteht aus beliebigem Text kombiniert mit Platzhaltern:
                 <ul>
@@ -195,7 +195,7 @@ classification:{editor['['formatAlias']']|editorComplete|metadata}:{Levels}[:noE
                 bereitet die Klassifikation für die Nutzung in der Editor-Selectbox auf. Dabei wird die für die SOLR
                 Suche erforderliche Notation für den
                 <em>value</em>
-                <code>ClassID:categid</code>
+                <code>ClassID:CategID</code>
                 verwendet.
               </li>
             </ul>
@@ -203,11 +203,8 @@ classification:{editor['['formatAlias']']|editorComplete|metadata}:{Levels}[:noE
           <li>
             <code>Levels</code>
             gibt an, wieviel Hierarchiestufen dargestellt werden. Bei Angabe der CategID ist dies die
-            Anzahl der
-            Kindkategoriehierarchiestufen. Ist Levels „
-            <code>-1</code>
-            “ angegeben, so bedeutet dies „komplette
-            Hierarchie“.
+            Anzahl der Kindkategoriehierarchiestufen. 
+            Ist Levels „<code>-1</code>“ angegeben, so bedeutet dies „komplette Hierarchie“.
           </li>
           <li>
             <code>noEmptyLeaves</code>
@@ -253,6 +250,11 @@ classification:editor[CountDocument]:2:noEmptyLeaves:children:DocPortal_class_00
 classification:editorComplete:3:noEmptyLeaves:children:MyCoRe_class_00000001:Categ0003
 
 classification:metadata:0:parents:DocPortal_class_00000001:Unis.Jena]]></source>
+        </p>
+        <p>Mit dem Property <code>MCR.URIResolver.Classification.Sort.{ClassID}</code>
+           kann gesteuert werden, ob die Label in der zurückgelieferten Klassifikation 
+           alphabetisch sortiert ausgegeben werden sollen (default=<tt>true</tt>). 
+           Mit dem Wert <tt>false</tt> wird die interne Sortierung (Reihenfolge der Knoten im XML) verwendet.
         </p>
       </section>
 
