@@ -167,7 +167,7 @@
       <label xml:lang="x-hosts" text="journal newspaper standalone" />
     </category>
     <category ID="research_data">
-      <label xml:lang="x-host" text="standalone" />
+      <label xml:lang="x-hosts" text="standalone" />
       <label xml:lang="de" text="Forschungsdaten" />
       <label xml:lang="en" text="Research Data" />
     </category>
