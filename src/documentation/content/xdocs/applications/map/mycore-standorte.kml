@@ -147,8 +147,8 @@
       <name>NGMCP</name>
       <description><![CDATA[
             <div class="mcrmap_item">
-                <a href="http://mycms.rrz.uni-hamburg.de/ngmcp"><img class="icon" alt="icon" src="map/icons/icon_hamburg_ngmcp.png" /></a>
-                <a href="http://mycms.rrz.uni-hamburg.de/ngmcp">Nepalese-German Manuscript Cataloguing Project</a>
+                <a href="http://mycms3.rrz.uni-hamburg.de/sfb950/content/NGMCP/ngmcp.xml"><img class="icon" alt="icon" src="map/icons/icon_hamburg_ngmcp.png" /></a>
+                <a href="http://mycms3.rrz.uni-hamburg.de/sfb950/content/NGMCP/ngmcp.xml">Nepalese-German Manuscript Cataloguing Project</a>
             </div>
             <p>Universität Hamburg (Regionales Rechenzentrum)</p>
           ]]>
