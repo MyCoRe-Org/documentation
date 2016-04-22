@@ -292,7 +292,7 @@
       <section>
         <title>/classifications/{$classid}</title>
         <h4>Anzeigen einer Klassifikation</h4>
-        <p>Dieser Request zeigt eine bestimmte Klassifikation an, welche in der MyCoRe-Anwendung aktiv ist.</p>
+        <p>Dieser Request zeigt eine Klassifikation aus der MyCoRe-Anwendung an.</p>
         <table class="table table-bordered">
           <cols><col width="100px"></col></cols>
           <tr><td><code>{$classid}</code></td><td>entspricht der ID einer Klassifikation</td></tr>
@@ -335,6 +335,62 @@
               </table>
             </td>
           </tr>
+          <tr>
+            <td><code>style</code></td>
+            <td><p>enhält eine durch Semikolon <code>;</code> getrennte Liste von Werten,
+            die die Ausgabe der Klassifikation steuert. Derzeit wird <code>style</code> nur mit<tt> format=json</tt> verwendet.
+                </p>
+              <table class="table table-bordered">
+                <cols><col width="100px"></col></cols>
+                <tr>
+                  <td><code>checkboxtree</code></td>
+                  <td>Die JSON-Ausgabe erfolgt so, dass sie als Eingabe für die Javascript-Komponente <a href="https://github.com/pjekel/cbtree">Dijit CheckBox Tree</a> verwendet werden kann.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>checked</code></td>
+                  <td>
+                  nur gemeinsam mit <tt>checkboxtree</tt> zu verwenden)<br />
+                  Alle Einträge werden mit dem Parameter <tt>checked:true</tt> ausgegeben.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>jstree</code></td>
+                  <td><p>Die JSON-Ausgabe erfolgt so, dass sie als Eingabe für die Javascript-Komponente <a href="https://www.jstree.com/">jsTree</a> verwendet werden kann.</p>
+                   <p>Das HTML-Beispiel <a href="/downloads/snippets/jstree_demo.html">jstree_demo.html</a> zeigt, wie man mittels AJAX und <tt>jsTree</tt> Klassifikationen in eine Webseite einbetten kann.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>opened</code></td>
+                  <td>
+                    (nur gemeinsam mit <tt>jstree</tt> zu verwenden)<br />
+                    Der komplette Baum wird geöffnet dargestellt.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>disabled</code></td>
+                  <td>
+                    (nur gemeinsam mit <tt>jstree</tt> zu verwenden)<br />
+                    Der komplette Baum wird <em>readOnly</em> dargestellt.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>selected</code></td>
+                  <td>
+                    (nur gemeinsam mit <tt>jstree</tt> zu verwenden)<br />
+                    Alle Einträge des Baumes werden ausgewählt.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td><code>callback</code></td>
+            <td><p>Für <tt>format=json</tt> wird die Ausgabe in einer Javascript-Callback-Funktion
+                   mit dem angegebenen Namen gekapselt. Mittels JSONP lässt sich so die Same-Origin-Policy des Webbrowsers umgehen.</p>
+              
+            </td>
+          </tr>
         </table>
 
         <h4>Beispiel-Requests</h4>
@@ -343,6 +399,7 @@
           <li><a href="http://www.mycore.de/mir/api/v1/classifications/state">http://www.mycore.de/mir/api/v1/classifications/state</a></li>
           <li><a href="http://www.mycore.de/mir/api/v1/classifications/state?filter=nonempty">http://www.mycore.de/mir/api/v1/classifications/state?filter=nonempty</a></li>
           <li><a href="http://www.mycore.de/mir/api/v1/classifications/marcrelator?filter=root:ctb;lang:de">http://www.mycore.de/mir/api/v1/classifications/marcrelator?filter=root:ctb;lang:de</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/classifications/mir_genres?format=json&amp;style=jstree;opened&amp;callback=opentree">http://www.mycore.de/mir/api/v1/classifications/mir_genres?format=json&amp;style=jstree;opened&amp;callback=opentree</a></li>
         </ul>
       </section>
     </section>
@@ -469,6 +526,12 @@
           <tr>
             <td><code>fl</code></td>
             <td><p>Field-List: beschränkt die in der Trefferliste zurückgelieferten Felder.</p></td>
+          </tr>
+          <tr>
+            <td><code>json.wrf</code></td>
+            <td><p>Name der Wrapper-Funktion, die die JSON-Ausgabe umschließt. Diese wird in AJAX/Javascript als Callback Funktion aufgerufen.</p>
+                <p>Das HTML-Beispiel <a href="/downloads/js_counting.html">js_counting.html</a> zeigt, wie man ein Suchergebnis per AJAX und JQuery in eine Webseite einbettet.</p>
+            </td>
           </tr>
         </table>
 

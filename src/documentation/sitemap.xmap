@@ -67,7 +67,7 @@
           </map:when>
         </map:select>
       </map:match>
-      <map:match pattern="downloads/*">
+      <map:match pattern="downloads/**">
         <map:read src="{properties:resources}/downloads/{1}" />
       </map:match>
       <map:match pattern="classifications/*.xml">

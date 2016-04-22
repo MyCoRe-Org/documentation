@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MyCoRe Javascript and REST-API Searcher Demo</title>
+<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+<script>
+	$.ajax({
+		type : "GET",
+		url : "http://mycore.de/mir/api/v1/search?q=*:*&rows=0&wt=json&json.wrf=?",
+		dataType : "jsonp",
+		success : function(data) {
+			$('#doc_count').text(data.response.numFound);
+		},
+	});
+</script>
+</head>
+<body>
+	<!-- see also: http://jquery-howto.blogspot.de/2013/09/jquery-cross-domain-ajax-request.html -->
+	<h1>MyCoRe Document Counter</h1>
+	<p>Dieses Beispiel zeigt, wie man das JSON-Ergebnis einer SOLR-Anfrage mit AJAX ausliest und mit JQuery weiterverarbeiten kann.
+	
+	<h2>
+		Im MIR-Repository befinden sich derzeit <span id="doc_count">[Anz]</span> Dokumente.
+	</h2>
+</body>
+</html>
