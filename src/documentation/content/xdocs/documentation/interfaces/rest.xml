@@ -530,7 +530,7 @@
           <tr>
             <td><code>json.wrf</code></td>
             <td><p>Name der Wrapper-Funktion, die die JSON-Ausgabe umschließt. Diese wird in AJAX/Javascript als Callback Funktion aufgerufen.</p>
-                <p>Das HTML-Beispiel <a href="/downloads/js_counting.html">js_counting.html</a> zeigt, wie man ein Suchergebnis per AJAX und JQuery in eine Webseite einbettet.</p>
+                <p>Das HTML-Beispiel <a href="/downloads/snippets/js_counting.html">js_counting.html</a> zeigt, wie man ein Suchergebnis per AJAX und JQuery in eine Webseite einbettet.</p>
             </td>
           </tr>
         </table>
