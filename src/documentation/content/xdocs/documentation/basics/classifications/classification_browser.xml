@@ -248,7 +248,7 @@
     <pre class="brush: shell; gutter: false;">
   Beispiel:
 
- classification="bmelv_genres"
+ classification="mir_genres"
           field="category.top"
      addclassid="true"
     </pre>

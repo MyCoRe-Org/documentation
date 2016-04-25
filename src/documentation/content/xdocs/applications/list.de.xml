@@ -24,13 +24,13 @@
           <li>
             <a href="http://edocs.fu-berlin.de"
               title="Dokumentenserver der Freien Universität Berlin">Dokumentenserver</a>
-            <em>(<a href="http://www.dini.de/dini-zertifikat" 
+            <em>(<a href="http://www.dini.de/dini-zertifikat"
             title="link to DINI certificate">DINI-zertifiziert</a>)</em>
           </li>
           <li>
-            <a href="http://www.diss.fu-berlin.de/" title="Link zum Dissertationsserver 
-            der Freien Universität Berlin">Dissertationsserver</a> 
-            <em>(<a href="http://www.dini.de/dini-zertifikat" 
+            <a href="http://www.diss.fu-berlin.de/" title="Link zum Dissertationsserver
+            der Freien Universität Berlin">Dissertationsserver</a>
+            <em>(<a href="http://www.dini.de/dini-zertifikat"
             title="link to DINI certificate">DINI-zertifiziert</a>)</em>
           </li>
         </ul>
@@ -41,7 +41,7 @@
           <li>
             Dokumentenserver für wissenschaftliche Publikationen in den Bereichen der internationalen und interdisziplinären Rechtsforschung:
             <a href="http://intr2dok.vifa-recht.de"
-              title="link to Institutional Repository of the Staatsbibliothek zu Berlin">&#60;intR&#62;&#178;Dok</a> 
+              title="link to Institutional Repository of the Staatsbibliothek zu Berlin">&#60;intR&#62;&#178;Dok</a>
           </li>
         </ul>
       </dd>
@@ -127,8 +127,8 @@
               Elektronische Bibliothek</a>
             enthält elektronische Semesterapparate und andere Lehrmaterialien
             im Volltext, insbesondere auch multimediale Lehrmaterialien
-            wie Audio- und Videomaterial in verschiedenen Formaten. 
-            Der <a href="http://geb.uni-giessen.de/geb/" 
+            wie Audio- und Videomaterial in verschiedenen Formaten.
+            Der <a href="http://geb.uni-giessen.de/geb/"
             title="Link zum Gießener Hochschulschriftenserver">Gießener Hochschulschriftenserver</a> ist <em>DINI-zertifiziert</em>.
           </li>
         </ul>
@@ -139,9 +139,9 @@
       <dd>
         Gemeinsamer Bibliotheksverbund (GBV)
         <ul>
-          <li>Publikationsserver <a href="http://openagrar.bmelv-forschung.de" title="Link zum Publikationsserver OpenAgrar">OpenAgrar</a>
-          - Institutional Repository (IR) für sechs Bibliotheken der Ressortforschungseinrichtungen des Bundesministerium für Ernährung,
-          Landwirtschaft und Verbraucherschutz (BMELV-Forschung)</li>
+          <li>Publikationsserver <a href="https://openagrar.bmel-forschung.de" title="Link zum Publikationsserver OpenAgrar">OpenAgrar</a>
+          - Institutional Repository (IR) für sechs Bibliotheken der Ressortforschungseinrichtungen des Bundesministerium für Ernährung und
+          Landwirtschaft (BMEL-Forschung)</li>
         </ul>
       </dd>
       <dt>
@@ -151,7 +151,7 @@
         Universität Hamburg (Fakultät für Geisteswissenschaften, Rechenzentrum)
         <ul>
           <li>
-            Dokumentenserver der Fakultät für Geisteswissenschaften, 
+            Dokumentenserver der Fakultät für Geisteswissenschaften,
             <a href="https://www.dokserv.gwiss.uni-hamburg.de/" title="gwin-Dokumentenserver">gwin-Dokumentenserver</a>
           </li>
         </ul>
@@ -260,10 +260,10 @@
         Statistisches Bundesamt (DESTATIS)
         <ul>
           <li>
-            Die 
+            Die
             <a href="https://www.destatis.de/GPStatistik/"
               title="Link zur Statistischen Bibliothek der Statistischen Ämter des Bundes und der Länder">"Statistische Bibliothek" der Statistischen Ämter des Bundes und der Länder</a>
-            Publikationenserver für alle elektronischen Veröffentlichungen der Statistischen Ämter der Länder und des Statistischen Bundesamtes, archiviert auch im Format PDF/A-1b. 
+            Publikationenserver für alle elektronischen Veröffentlichungen der Statistischen Ämter der Länder und des Statistischen Bundesamtes, archiviert auch im Format PDF/A-1b.
           </li>
         </ul>
       </dd>
@@ -317,7 +317,7 @@
         <strong>Cambridge University (UK)</strong>
       </dt>
       <dd>
-        The Islamic Manuscript Association 
+        The Islamic Manuscript Association
         <ul>
           <li>
             MyIHS-Teilprojekt <a href="http://www.manuscript-treasury.net/" title="The Islamic Manuscript Association">The Islamic Manuscript Association
@@ -382,7 +382,7 @@
         Friedrich-Schiller-Universität Jena (Rechenzentrum, Bibliothek)
         <ul>
           <li>
-            <a href="http://archive.thulb.uni-jena.de/ThHStAW/" title="Link zum Digitalen Archiv der Thüringischen Staatsarchive">Digitales 
+            <a href="http://archive.thulb.uni-jena.de/ThHStAW/" title="Link zum Digitalen Archiv der Thüringischen Staatsarchive">Digitales
               Archiv der Thüringischen Staatsarchive</a>
           </li>
           <li>
@@ -485,7 +485,7 @@
               Familienbibliothek Refaiya an der UBL</a>
           </li>
           <li>
-            <a href="http://nusantara.dl.uni-leipzig.de/" title="Historische Handschriften Indonesien">Historische Handschriften 
+            <a href="http://nusantara.dl.uni-leipzig.de/" title="Historische Handschriften Indonesien">Historische Handschriften
               Indonesien</a> (Entstanden aus den Kooperationsprojekten 'Banda Aceh' und 'Java' des auswärtigen Amts) </li>
         </ul>
       </dd>
@@ -600,7 +600,7 @@
         Universität Duisburg-Essen (Universitätsbibliothek)
         <ul>
           <li>
-            Die Bilddatenbank „Metropolenzeichen - Visuelle Mehrsprachigkeit in der Metropole Ruhr“ 
+            Die Bilddatenbank „Metropolenzeichen - Visuelle Mehrsprachigkeit in der Metropole Ruhr“
           </li>
         </ul>
       </dd>
