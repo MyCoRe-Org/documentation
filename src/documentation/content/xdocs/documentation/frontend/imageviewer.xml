@@ -153,6 +153,13 @@
                 ist die URL zur MyCoRe-Instanz (damit der Viewer Ressourcen nachladen kann)
               </td>
             </tr>
+             <tr>
+              <td><code>onClose</code></td>
+              <td>
+                <strong>(function)</strong><br/>
+                  gibt eine Funktion, an die beim Schließen des Viewers ausgeführt werden soll.
+              </td>
+            </tr>   
           </table>
           <p>
             Folgende Parameter sind Optional:
