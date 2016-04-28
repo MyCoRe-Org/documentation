@@ -73,6 +73,13 @@
       <pre class="brush: bash;gutter: false;">
         sudo rename 's/DocPortal_document_(\d{8}).xml/mir_mods_$1.xml/g' DocPortal_document_*.xml
       </pre>
+      <p>
+        Analog kann der Befehl auch für die Derivate genutzt werden:
+      </p>
+      <pre class="brush: bash;gutter: false;">
+        sudo rename 's/DocPortal_derivate_(\d{8}).xml/mir_derivate_$1.xml/g' DocPortal_derivate_*.xml
+        sudo rename 's/DocPortal_derivate_(\d{8})/mir_derivate_$1/' DocPortal_derivate_*
+      </pre>
 
     </section>
 
