@@ -1,0 +1,26 @@
+derzeit werden im Admineditor die folgenden Datumstypen verwendet:
+
+Veröffentlichung -> mods:originInfo[@eventType='publication']/mods:dateIssued[@encoding='w3cdtf']
+
+Erstellung ->
+mods:originInfo[@eventType='creation']/mods:dateCreated[@encoding='w3cdtf']
+
+Erfassung ->
+mods:originInfo[@eventType='collection']/mods:dateCaptured[@encoding='w3cdtf']
+
+Überpüfung ->
+mods:originInfo[@eventType='review']/mods:dateOther[@type='reviewed'][@encoding='w3cdtf']
+
+Aktualisierung ->
+mods:originInfo[@eventType='update']/mods:dateModified[@encoding='w3cdtf']
+
+Promotion / Abschluss -> mods:originInfo[@eventType='creation']/mods:dateOther[@type='accepted'][@encoding='w3cdtf']
+
+Einreichung ->
+mods:originInfo[@eventType='creation']/mods:dateOther[@type='submitted'][@encoding='w3cdtf']
+
+Zeiträume lassen sich angeben in dem man im Datumsfeld hinten auf den Pfeil klickt und "Zeitraum" auswählt. Für offene Zeiträume lässt man einfach ein Feld frei.
+
+Mit dem Datepicker lassen sich auch nur Jahre und Monate auswählen wenn man einfach nicht weiter auswählt, z.B. wenn man direkt nach dem Jahr aufhört.
+
+In der Metadatenansicht sollten auch alle Datumstype richtig angezeigt werden, ganze und offene Zeiträume werden dort auch angezeigt.

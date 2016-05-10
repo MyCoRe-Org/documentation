@@ -1,0 +1,45 @@
+ohne der umfangreichen Doku (https://logging.apache.org/log4j/2.x/manual/index.html) vorzugreifen, möchte ich ein paar Starthilfen geben.
+
+Für die MIR-Anwendung habe ich eine Log4j 2.x Konfiguration erstellt, die man als guten Startpunkt für eigene Experimente nutzen kann:
+
+https://server.mycore.de/svn/maven/mir/trunk/mir-webapp/src/main/resources/log4j2.xml?r=33318
+
+Dort sieht man auch die Verwendung von %X{loginId}, mit der man an die Nutzerkennung kommt.
+
+Sobald kommende Nacht die JavaDocs online sind könnt ihr euch auch die zwei Log4j Lookups zu Gemüte führen:
+
+${mcrcfg:MCR.basedir} liefert zum Beispiel den Wert des Properties zurück
+
+${mcruser:role:admin,editor,submitter,reader} liefert die Rolle des Nutzers zurück, die als erstes passt, als z.B. "editor". Passt keine wird null zurück gegeben, wenn man diesen Fall auswerten will muss man in der Konfiguration einfach den String nocheinmal angeben (es findet keine Ersetzung statt).
+
+${mcruser:id} macht das gleiche wir %X{loginId} beim LayoutPattern. Weitere Möglichkeiten sind %X{ipAdress} und %X{mcrSession} und %X{language}.
+
+Hier mal ein schönes Beispiel-Snippet (mit Null-Value ziemlich weit unten):
+
+<RollingFile name="Rolling-Remain" fileName="${mcrcfg:MCR.basedir}/logs/other.log" filePattern="${mcrcfg:MCR.basedir}/logs/other-%d{yyyy-MM-dd}-%i.log.gz">
+  <PatternLayout>
+    <pattern>%d{ISO8601} %p %c{1.} [%t] %m%n</pattern>
+  </PatternLayout>
+  <Policies>
+    <SizeBasedTriggeringPolicy size="1 MB" />
+  </Policies>
+  <DefaultRolloverStrategy max="10" />
+</RollingFile>
+<Routing name="Roles">
+  <Routes pattern="$${mcruser:role:admin,editor,submitter}">
+    <Route>
+      <RollingFile name="Rolling-${mcruser:role:admin,editor,submitter}" fileName="${mcrcfg:MCR.basedir}/logs/role-${mcruser:role:admin,editor,submitter}.log"
+
+filePattern="${mcrcfg:MCR.basedir}/logs/role-${mcruser:role:admin,editor,submitter}-%d{yyyy-MM-dd}-%i.log.gz">
+        <PatternLayout>
+          <pattern>%d{ISO8601} %X{loginId} %p %c{1.} [%t] %m%n%ex</pattern>
+        </PatternLayout>
+        <Policies>
+          <SizeBasedTriggeringPolicy size="100 MB" />
+        </Policies>
+        <DefaultRolloverStrategy max="10" />
+      </RollingFile>
+    </Route>
+    <Route key="${mcruser:role:admin,editor,submitter}" ref="Rolling-Remain" />
+  </Routes>
+</Routing>

@@ -1,0 +1,5 @@
+mit "save searchfields of index {0} to stylesheet file {1}" ein XSL-Stylesheet für "metadata" erzeugen und die templates als Vorlagen für eigene SOLR-Felder verwenden:
+
+Beispiel MCRSearcher Suchfeld "foo":
+
+<mcr:foo> umschreiben in <field name="foo">

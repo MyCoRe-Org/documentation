@@ -1,0 +1,29 @@
+
+
+
+Hallo Kathleen,
+
+Wenn ich mich recht entsinne wa das recht einfach:
+
+0. Für IFS2 habe ich die Store-Klasse in die base-properties eingetragen.
+
+1. in mycore.properties.private
+MCR.IFS.ContentStore.IFS2.BaseDir=%MCR.datadir%/new_ifs2_content_dir
+MCR.IFS.ContentStore.IFS2.URI%MCR.datadir%/new_ifs2_content_dir
+
+2. In dem File ContentStoreSelectionRules.xml
+z.B. default="IFS2"
+je, nach dem, wie du die ContentStoreSelectionRules definiert hast.
+
+3. Nun solltest du mal über deine Daten die beschriebenen Tests laufen lassen,
+um Leichen zu finden
+
+4. Migrieren der Daten
+
+move derivates from content store FS to content store IFS2 for owner
+{derivate-id}
+
+move derivates from content store FS to content store IFS2 for filetype
+{jpeg/tiff/xml/...}
+
+Das sollte reichen.
