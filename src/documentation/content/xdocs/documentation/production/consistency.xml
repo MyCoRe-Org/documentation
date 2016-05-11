@@ -7,7 +7,7 @@
     <authors>
       <person name="Jens Kupferschmidt" />
     </authors>
-    <version>2015-08-13</version>
+    <version>2016-05-11</version>
     <abstract>
       Der Abschnitt beschreibt Vorgehensweisen zur Prüfung der Daten einer MyCoRe-Anwendung und deren
       Korrekturmöglichkeiten.
@@ -52,7 +52,9 @@
         </p>
         <p>
           <strong>Reparaturhinweis:</strong>
-          Am sinnvollsten ist der direkte Zugriff auf das MCRObject unter data/metadata mittels geeignetem XML-Editor z.
+          Es ist abzuklären wohin und warum die Derivate verschwunden sind. Ist klar, dass das Derivate nicht mehr
+          existiert, so sollte der Eintrag in den Objektdaten entfernt werden. Am sinnvollsten ist der direkte Zugriff
+          auf das MCRObject unter data/metadata mittels geeignetem XML-Editor z.
           B.
           <strong>vi</strong>
           .
@@ -67,7 +69,10 @@
         </p>
         <p>
           <strong>Reparaturhinweis:</strong>
-          Offensichtlich sind die fehlerhaften Derivate nicht mehr verknüpft und können gelöscht werden. Hierfür sollte
+          Offensichtlich sind die fehlerhaften Derivate nicht mehr verknüpft. Es ist abzuklären, ob nur der Verweis im
+          Objekt fehlt oder das Derivat nicht mehr zugeordnet werden kann. In diesem Fall kann das Derivate gelöscht
+          werden.
+          Hierfür sollte
           zuerst das Kommando
         </p>
         <p>
@@ -106,6 +111,11 @@
       <p>
         <code>mycore.sh check mcrfsnodes of derivates with project id {project_id}</code>
       </p>
+      <p>
+        <strong>Reparaturhinweis:</strong>
+        Die Reparatur ist abhängig vom verwendete Store. Für den Store IFS2 sind in den folgenden Abschitten Wege
+        aufgezeigt.
+      </p>
     </section>
 
     <section>
@@ -117,17 +127,30 @@
         bereits Kommandos, welche diese Datei mit dem aktuellen Stand in Verzeichnis zu synchronisieren.
       </p>
       <p>
+        <strong>Reparaturhinweis:</strong>
+        Die Synchronisation der daten kann mittels folgender Kommandos wieder hergestellt werden.
+      </p>
+      <p>
         <code>mycore.sh repair mcrdata.xml in content store {store_id} for derivate {derivate_id}</code>
       </p>
       <p>um alle Derivate eines Projektes zu bearbeiten lautet das Kommando</p>
       <p>
-        <code>mycore.sh repair mcrdata.xml in content store {store_id} for project id {project_id}</code>
+        <code>mycore.sh repair mcrdata.xml in content store {store_id} for project ID {project_id}</code>
       </p>
-      <p>Um die Konsistenz zwischen den Derivate-verzeichnissen auf der Platte und der Tabelle MCRFSNODES zu prüfen und
-        ggf. Fehler zu korrigieren sind die nachfolgenden Kommandos entwickelt worden. Hierbei ist zu beachten, dass
+      <p>Um die Konsistenz zwischen den Derivate-Verzeichnissen auf der Platte und der Tabelle MCRFSNODES zu prüfen 
+        sind die nachfolgenden Kommandos entwickelt worden. Hierbei ist zu beachten, dass
         eine Reparatur für ein ganzes Projekt nur bedingt sinnvoll ist. Vorher sollten auf jeden Fall mit den
-        Check-Kommandos die fehlerhaften Tabelleneinträge ausgelistet und verifiziert sein! Das Repair-Kommando leistet
-        folgende Dinge:
+        Check-Kommandos die fehlerhaften Tabelleneinträge ausgelistet und verifiziert sein! 
+      </p>        
+      <p>
+        <code>mycore.sh check mcrfsnodes of content store {store_id} for derivate {derivate_id}</code>
+      </p>
+      <p>
+        <code>mycore.sh check mcrfsnodes of content store {store_id} for project id {project_id}</code>
+      </p>
+      <p>
+        <strong>Reparaturhinweis:</strong>
+        Die Repair-Kommandos leisten folgende Dinge:
       </p>
       <ul>
         <li>Prüfen, ob es einen Eintrag für Dateien und Verzeichnisse der im Derivate vorhandenen Daten in der
@@ -138,16 +161,10 @@
         </li>
       </ul>
       <p>
-        <code>mycore.sh check mcrfsnodes of content store {store_id} for derivate {derivate_id}</code>
-      </p>
-      <p>
-        <code>mycore.sh check mcrfsnodes of content store {store_id} for project id {project_id}</code>
-      </p>
-      <p>
         <code>mycore.sh repair mcrfsnodes of content store {store_id} for derivate {derivate_id}</code>
       </p>
       <p>
-        <code>mycore.sh repair mcrfsnodes of content store {store_id} for project id {project_id}</code>
+        <code>mycore.sh repair mcrfsnodes of content store {store_id} for project ID {project_id}</code>
       </p>
     </section>
 
@@ -220,8 +237,10 @@
           <code>mycore.sh validate selected mets</code>
         </p>
         <p>Sind noch keine mets.xml-Dateien vorhanden und sollen diese schon mal in ihrer Grundform angelegt werden, so
-          generiert diese das nacholgende Kommando für ein einzelnes Derivat {0} oder eine Derivatgruppe einer angegebenen
-          Projekt-ID {0}</p>
+          generiert diese das nacholgende Kommando für ein einzelnes Derivat {0} oder eine Derivatgruppe einer
+          angegebenen
+          Projekt-ID {0}
+        </p>
         <p>
           <code>mycore.sh add mets files for derivate {0}</code>
         </p>
@@ -357,7 +376,7 @@
         <p>
           <code>mycore.sh restricted rebuild solr metadata index for object {0}</code>
         </p>
-         <p>
+        <p>
           <code>mycore.sh restricted synchronize metadata index for objecttype {0}</code>
         </p>
         <p>Anschließend kann der SOLR-Index wieder optimiert werden.</p>
@@ -388,8 +407,9 @@
         <p>
           <code>mycore.sh delete from solr index by id {0}</code>
         </p>
-        <p>Neben den Auswahlmöglichkeiten über MyCoRe-ID und Objekt-Type besteht auch die Möglichkeit eines Selects über 
-           eine SOLR-Suche und die Nutzung des Ergebnisses zur Weiterverarbeitung.</p>
+        <p>Neben den Auswahlmöglichkeiten über MyCoRe-ID und Objekt-Type besteht auch die Möglichkeit eines Selects über
+          eine SOLR-Suche und die Nutzung des Ergebnisses zur Weiterverarbeitung.
+        </p>
         <p>
           <code>mycore.sh select objects with solr query {0}</code>
         </p>
@@ -400,7 +420,7 @@
           <code>mycore.sh restricted rebuild solr content index for selected</code>
         </p>
         <p>Zum Schluss noch die Möglichkeit, eine neue URL für den SOLR-Server zu setzen.</p>
-         <p>
+        <p>
           <code>mycore.sh set solr server {0}</code>
         </p>
         <p>Diese Möglichkeit sollte jedoch nur in Ausnahmefällen genutzt werden, da sie ggf. je nach Datenmenge länger
