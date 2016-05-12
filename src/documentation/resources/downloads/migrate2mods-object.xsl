@@ -56,6 +56,7 @@
             <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
               <xsl:apply-templates select="mycoreobject/metadata" />
               <xsl:call-template name="originInfo" />
+              <xsl:call-template name="rights" />
               <mods:identifier type="local">
                 <xsl:value-of select="mycoreobject/@ID" />
               </mods:identifier>
@@ -134,32 +135,220 @@
   </xsl:template>
 
   <xsl:template match="titles">
-    <xsl:apply-templates select="title" />
+    <xsl:call-template name="printTitles" />
   </xsl:template>
 
-  <xsl:template match="title[not(@type='subtitle')]">
-    <mods:titleInfo xml:lang="{@xml:lang}">
+  <xsl:template name="printTitles">
+    <xsl:choose>
+      <!-- mehr als ein Haupttitel angegeben -->
+      <xsl:when test="count(//metadata/titles/title[@type='main' or @type='original-main' or not(@type)]) &gt; 1">
+        <xsl:choose>
+
+          <!-- mehr als ein Haupttitel mit type="main" angegeben -->
+          <xsl:when test="count(//metadata/titles/title[@type='main']) &gt; 1">
+            <xsl:choose>
+              <xsl:when test="//metadata/titles/title[@type='main'][@xml:lang=$language]">
+                <xsl:call-template name="printMainTitle">
+                  <xsl:with-param name="titlePath" select="//metadata/titles/title[@type='main'][@xml:lang=$language]" />
+                </xsl:call-template>
+                <xsl:if test="count(//metadata/titles/title[@type='main'][@xml:lang=$language]) &gt; 1" >
+                  <xsl:for-each select="//metadata/titles/title[@type='main'][@xml:lang=$language]">
+                    <xsl:if test="position() &gt; 1">
+                      <xsl:call-template name="printAltTitle">
+                        <xsl:with-param name="titlePath" select="." />
+                      </xsl:call-template>
+                    </xsl:if>
+                  </xsl:for-each>
+                </xsl:if>
+                <xsl:for-each select="//metadata/titles/title[@type='main' and not(@xml:lang=$language)]">
+                  <xsl:call-template name="printTranslatedTitle">
+                    <xsl:with-param name="titlePath" select="." />
+                  </xsl:call-template>
+                </xsl:for-each>
+                <xsl:for-each select="//metadata/titles/title[not(@type)]">
+                  <xsl:call-template name="printAltTitle">
+                    <xsl:with-param name="titlePath" select="." />
+                  </xsl:call-template>
+                </xsl:for-each>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:call-template name="printMainTitle">
+                  <xsl:with-param name="titlePath" select="(//metadata/titles/title[@type='main'])[1]" />
+                </xsl:call-template>
+                <xsl:for-each select="//metadata/titles/title[@type='main']">
+                  <xsl:if test="position() &gt; 1">
+                    <xsl:call-template name="printTranslatedTitle">
+                      <xsl:with-param name="titlePath" select="." />
+                    </xsl:call-template>
+                  </xsl:if>
+                </xsl:for-each>
+                <xsl:for-each select="//metadata/titles/title[not(@type)]">
+                  <xsl:call-template name="printAltTitle">
+                    <xsl:with-param name="titlePath" select="." />
+                  </xsl:call-template>
+                </xsl:for-each>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:when>
+
+          <!-- mehr als ein Haupttitel mit type="original-main" angegeben -->
+          <xsl:when test="count(//metadata/titles/title[@type='original-main']) &gt; 1">
+            <xsl:choose>
+              <xsl:when test="//metadata/titles/title[@type='original-main'][@xml:lang=$language]">
+                <xsl:call-template name="printMainTitle">
+                  <xsl:with-param name="titlePath" select="//metadata/titles/title[@type='original-main'][@xml:lang=$language]" />
+                </xsl:call-template>
+                <xsl:if test="count(//metadata/titles/title[@type='original-main'][@xml:lang=$language]) &gt; 1" >
+                  <xsl:for-each select="//metadata/titles/title[@type='original-main'][@xml:lang=$language]">
+                    <xsl:if test="position() &gt; 1">
+                      <xsl:call-template name="printAltTitle">
+                        <xsl:with-param name="titlePath" select="." />
+                      </xsl:call-template>
+                    </xsl:if>
+                  </xsl:for-each>
+                </xsl:if>
+                <xsl:for-each select="//metadata/titles/title[@type='original-main' and not(@xml:lang=$language)]">
+                  <xsl:call-template name="printTranslatedTitle">
+                    <xsl:with-param name="titlePath" select="." />
+                  </xsl:call-template>
+                </xsl:for-each>
+                <xsl:for-each select="//metadata/titles/title[not(@type)]">
+                  <xsl:call-template name="printAltTitle">
+                    <xsl:with-param name="titlePath" select="." />
+                  </xsl:call-template>
+                </xsl:for-each>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:call-template name="printMainTitle">
+                  <xsl:with-param name="titlePath" select="(//metadata/titles/title[@type='original-main'])[1]" />
+                </xsl:call-template>
+                <xsl:for-each select="//metadata/titles/title[@type='original-main']">
+                  <xsl:if test="position() &gt; 1">
+                    <xsl:call-template name="printTranslatedTitle">
+                      <xsl:with-param name="titlePath" select="." />
+                    </xsl:call-template>
+                  </xsl:if>
+                </xsl:for-each>
+                <xsl:for-each select="//metadata/titles/title[not(@type)]">
+                  <xsl:call-template name="printAltTitle">
+                    <xsl:with-param name="titlePath" select="." />
+                  </xsl:call-template>
+                </xsl:for-each>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:when>
+
+          <!-- genau ein Haupttitel mit type="main" angegeben -->
+          <xsl:when test="count(//metadata/titles/title[@type='main']) = 1">
+            <xsl:call-template name="printMainTitle">
+              <xsl:with-param name="titlePath" select="//metadata/titles/title[@type='main']" />
+            </xsl:call-template>
+            <xsl:for-each select="//metadata/titles/title[not(@type)]">
+              <xsl:call-template name="printTranslatedTitle">
+                <xsl:with-param name="titlePath" select="." />
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:when>
+
+          <!-- genau ein Haupttitel mit type="original-main" angegeben -->
+          <xsl:when test="count(//metadata/titles/title[@type='original-main']) = 1">
+            <xsl:call-template name="printMainTitle">
+              <xsl:with-param name="titlePath" select="//metadata/titles/title[@type='original-main']" />
+            </xsl:call-template>
+            <xsl:for-each select="//metadata/titles/title[not(@type)]">
+              <xsl:call-template name="printTranslatedTitle">
+                <xsl:with-param name="titlePath" select="." />
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:when>
+
+          <!-- mehrere Titel ohne type-Angabe -->
+          <xsl:when test="count(//metadata/titles/title[not(@type)]) &gt; 1">
+            <xsl:choose>
+              <xsl:when test="//metadata/titles/title[not(@type)][@xml:lang=$language]">
+                <xsl:call-template name="printMainTitle">
+                  <xsl:with-param name="titlePath" select="//metadata/titles/title[not(@type)][@xml:lang=$language]" />
+                </xsl:call-template>
+                <xsl:if test="count(//metadata/titles/title[not(@type)][@xml:lang=$language]) &gt; 1" >
+                  <xsl:for-each select="//metadata/titles/title[not(@type)][@xml:lang=$language]">
+                    <xsl:if test="position() &gt; 1">
+                      <xsl:call-template name="printAltTitle">
+                        <xsl:with-param name="titlePath" select="." />
+                      </xsl:call-template>
+                    </xsl:if>
+                  </xsl:for-each>
+                </xsl:if>
+                <xsl:for-each select="//metadata/titles/title[not(@type) and not(@xml:lang=$language)]">
+                  <xsl:call-template name="printTranslatedTitle">
+                    <xsl:with-param name="titlePath" select="." />
+                  </xsl:call-template>
+                </xsl:for-each>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:call-template name="printMainTitle">
+                  <xsl:with-param name="titlePath" select="(//metadata/titles/title[not(@type)])[1]" />
+                </xsl:call-template>
+                <xsl:for-each select="//metadata/titles/title[not(@type)]">
+                  <xsl:if test="position() &gt; 1">
+                    <xsl:call-template name="printTranslatedTitle">
+                      <xsl:with-param name="titlePath" select="." />
+                    </xsl:call-template>
+                  </xsl:if>
+                </xsl:for-each>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:when>
+
+      <!-- genau ein Haupttitel angegeben -->
+      <xsl:when test="count(//metadata/titles/title[@type='main' or @type='original-main' or not(@type)]) = 1">
+        <xsl:call-template name="printMainTitle">
+          <xsl:with-param name="titlePath" select="//metadata/titles/title[@type='main' or @type='original-main' or not(@type)]" />
+        </xsl:call-template>
+      </xsl:when>
+    </xsl:choose>
+
+    <!-- Alternative Titel  -->
+    <xsl:for-each select="//metadata/titles/title[@type='alt']">
+      <xsl:call-template name="printAltTitle">
+        <xsl:with-param name="titlePath" select="." />
+      </xsl:call-template>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template name="printMainTitle">
+    <xsl:param name="titlePath" />
+    <mods:titleInfo xml:lang="{$titlePath/@xml:lang}">
       <mods:title>
-        <xsl:value-of select="." />
+        <xsl:value-of select="$titlePath/text()" />
       </mods:title>
-      <xsl:variable name="titleLang" select="@xml:lang" />
-      <xsl:if test="../title[@type='subtitle' and @xml:lang=$titleLang]">
-        <mods:subTitle>
-          <xsl:value-of select="../title[@type='subtitle' and @xml:lang=$titleLang]" />
-        </mods:subTitle>
-      </xsl:if>
+    </mods:titleInfo>
+    <xsl:variable name="titleLang" select="$titlePath/@xml:lang" />
+    <xsl:if test="//metadata/titles/title[@type='subtitle' and @xml:lang=$titleLang]">
+      <mods:subTitle>
+        <xsl:value-of select="//metadata/titles/title[@type='subtitle' and @xml:lang=$titleLang]" />
+      </mods:subTitle>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="printTranslatedTitle">
+    <xsl:param name="titlePath" />
+    <mods:titleInfo type="translated" xml:lang="{$titlePath/@xml:lang}">
+      <mods:title>
+        <xsl:value-of select="$titlePath/text()" />
+      </mods:title>
     </mods:titleInfo>
   </xsl:template>
 
-  <xsl:template match="title[@type='alt']">
-    <!-- mods:titleInfo type="alternative" xml:lang="{@xml:lang}" -->
-    <mods:titleInfo type="translated" xml:lang="{@xml:lang}">
+  <xsl:template name="printAltTitle">
+    <xsl:param name="titlePath" />
+    <mods:titleInfo type="alternative" xml:lang="{$titlePath/@xml:lang}">
       <mods:title>
-        <xsl:value-of select="." />
+        <xsl:value-of select="$titlePath/text()" />
       </mods:title>
     </mods:titleInfo>
   </xsl:template>
-
 
   <xsl:template match="descriptions">
     <xsl:apply-templates />
@@ -204,7 +393,8 @@
   </xsl:template>
 
   <xsl:template match="creators">
-    <xsl:apply-templates select="creator[@xml:lang=$language]"/>
+    <!-- xsl:apply-templates select="creator[@xml:lang=$language]"/ --><!-- Hinweis: Autor fehlt, wenn Dokumentsprache englisch und Autor in Sprache deutsch erfasst -->
+    <xsl:apply-templates select="creator"/>
   </xsl:template>
 
   <xsl:template match="creator">
@@ -245,6 +435,15 @@
           <xsl:value-of select="@categid" />
         </mods:classification>
       </xsl:when>
+      <xsl:when test="@classid='DocPortal_class_00000007'"><!-- SDNB Klassifikation -->
+        <mods:classification authority="sdnb" displayLabel="sdnb">
+          <xsl:choose>
+            <!-- TODO: add your sdnb mapping here -->
+            <xsl:when test="contains(@categid,'DNB0005.A')"><xsl:value-of select="'610'"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="@categid" /></xsl:otherwise>
+          </xsl:choose>
+        </mods:classification>
+      </xsl:when>
       <xsl:otherwise>
         <mods:classification>
           <xsl:value-of select="." /> <!--Passendes Attribute einfügen-->
@@ -280,7 +479,8 @@
   </xsl:template>
 
   <xsl:template match="publishers">
-    <xsl:apply-templates select="publisher[@xml:lang=$language]"/>
+    <!-- xsl:apply-templates select="publisher[@xml:lang=$language]"/ -->
+    <xsl:apply-templates select="publisher" />
   </xsl:template>
 
   <xsl:template match="publisher">
@@ -311,7 +511,8 @@
 
 
   <xsl:template match="contributors">
-    <xsl:apply-templates select="contributor[@xml:lang=$language]"/>
+    <!-- xsl:apply-templates select="contributor[@xml:lang=$language]" / -->
+    <xsl:apply-templates select="contributor"/>
   </xsl:template>
 
   <xsl:template match="contributor">
@@ -345,12 +546,12 @@
   </xsl:template>
 
   <xsl:template match="type">
+    <xsl:variable name="categid" select="@categid" />
+    <xsl:variable name="myURI" select="concat('classification:metadata:0:children:',@classid, ':', $categid)" />
+    <xsl:variable name="genre" select="document($myURI)//category[@ID=$categid]/label[@xml:lang='en']/@text" />
     <mods:genre type="intern" authorityURI="http://www.mycore.org/classifications/mir_genres">
       <xsl:attribute name="valueURI">
         <xsl:value-of select="'http://www.mycore.org/classifications/mir_genres#'"/>
-        <xsl:variable name="categid" select="@categid" />
-        <xsl:variable name="myURI" select="concat('classification:metadata:0:children:',@classid, ':', $categid)" />
-        <xsl:variable name="genre" select="document($myURI)//category[@ID=$categid]/label[@xml:lang='en']/@text" />
         <xsl:choose>
           <!-- TODO: add your genre mapping here -->
           <xsl:when test="contains($genre,'preprint, paper, report')"><xsl:value-of select="'report'"/></xsl:when>
@@ -391,15 +592,16 @@
   </xsl:template>
 
   <xsl:template match="relations">
-    <xsl:apply-templates select="relation[@xml:lang=$language]"/>
+    <!-- xsl:apply-templates select="relation[@xml:lang=$language]" / -->
+    <xsl:apply-templates select="relation" />
   </xsl:template>
 
   <xsl:template match="relation">
     <mods:relatedItem type="references">
       <mods:titleInfo>
-      <mods:title>
+        <mods:title>
           <xsl:value-of select="." /> <!-- Inhalt ergänzen falls kein frei Text-->
-    </mods:title>
+        </mods:title>
       </mods:titleInfo>
     </mods:relatedItem>
   </xsl:template>
@@ -428,21 +630,20 @@
     </mods:relatedItem>
   </xsl:template>
 
-  <xsl:template match="rights">
-    <xsl:apply-templates select="right[@xml:lang=$language]"/>
-  </xsl:template>
-
-  <xsl:template match="right">
-    <mods:accessCondition type="use and reproduction">
-      rights_reserved
-    </mods:accessCondition>
-    <mods:accessCondition type="copyrightMD">
-      <cmd:rights.holder>
-        <cmd:name>
-          <xsl:value-of select="." />
-        </cmd:name>
-      </cmd:rights.holder>
-    </mods:accessCondition>
+  <xsl:template name="rights">
+    <!-- TODO: fill in default rights here-->
+    <mods:accessCondition type="use and reproduction" xlink:href="http://www.mycore.org/classifications/mir_licenses#rights_reserved" />
+    <xsl:if test="//metadata/rights/right">
+      <mods:accessCondition type="copyrightMD">
+        <cmd:copyright xmlns:cmd="http://www.cdlib.org/inside/diglib/copyrightMD" copyright.status="copyrighted" publication.status="published" xsi:schemaLocation="http://www.cdlib.org/inside/diglib/copyrightMD http://www.cdlib.org/groups/rmg/docs/copyrightMD.xsd">
+          <cmd:rights.holder>
+            <cmd:name>
+              <xsl:value-of select="//metadata/rights/right" />
+            </cmd:name>
+          </cmd:rights.holder>
+        </cmd:copyright>
+      </mods:accessCondition>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="rightlinks">
@@ -513,19 +714,53 @@
 
 
   <xsl:template match="keywords">
-    <xsl:apply-templates select="keyword[@xml:lang=$language]"/>
+    <!-- xsl:apply-templates select="keyword[@xml:lang=$language]"/ -->
+    <xsl:apply-templates select="keyword" />
   </xsl:template>
 
   <xsl:template match="keyword">
-    <mods:subject>
-      <mods:topic>
-        <xsl:value-of select="." />
-      </mods:topic>
-    </mods:subject>
+    <xsl:choose>
+      <!-- contains comma-separated list -->
+      <xsl:when test="contains(.,',')">
+        <mods:subject>
+          <xsl:call-template name="splitKeywords">
+            <xsl:with-param name="text" select="." />
+          </xsl:call-template>
+        </mods:subject>
+      </xsl:when>
+      <xsl:otherwise>
+        <mods:subject>
+          <mods:topic>
+            <xsl:value-of select="." />
+          </mods:topic>
+        </mods:subject>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="splitKeywords">
+    <xsl:param name="text" />
+    <xsl:param name="separator" select="','"/>
+    <xsl:choose>
+      <xsl:when test="not(contains($text, $separator))">
+        <mods:topic>
+          <xsl:value-of select="normalize-space($text)"/>
+        </mods:topic>
+      </xsl:when>
+      <xsl:otherwise>
+        <mods:topic>
+          <xsl:value-of select="normalize-space(substring-before($text, $separator))"/>
+        </mods:topic>
+        <xsl:call-template name="splitKeywords">
+          <xsl:with-param name="text" select="substring-after($text, $separator)"/>
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="coverages">
-    <xsl:apply-templates select="coverage[@xml:lang=$language]"/>
+    <!-- xsl:apply-templates select="coverage[@xml:lang=$language]" / -->
+    <xsl:apply-templates select="coverage"/>
   </xsl:template>
 
   <xsl:template match="coverage">
@@ -553,12 +788,13 @@
   </xsl:template>
 
   <xsl:template match="notes">
-    <xsl:apply-templates select="note[@xml:lang=$language]"/>
+    <!-- xsl:apply-templates select="note[@xml:lang=$language]" /-->
+    <xsl:apply-templates select="note" />
   </xsl:template>
 
   <xsl:template match="note">
     <xsl:if test="not(@type='feet')">  <!-- Nur Kommentare in mods:note mappen -->
-      <mods:note>
+      <mods:note type="mcr_intern">
         <xsl:value-of select="." />
       </mods:note>
     </xsl:if>
@@ -578,7 +814,8 @@
 
 
   <xsl:template match="sizes">
-    <xsl:apply-templates select="size[@xml:lang=$language]"/>
+    <!-- xsl:apply-templates select="size[@xml:lang=$language]" / -->
+    <xsl:apply-templates select="size" />
   </xsl:template>
 
   <xsl:template match="size">
