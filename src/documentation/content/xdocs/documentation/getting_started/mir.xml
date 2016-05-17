@@ -232,6 +232,51 @@
       <pre class="brush: shell;gutter: false;">
         MCR.LayoutTransformerFactory.Default.Stylesheets=xsl/mir-myapp-layout.xsl
       </pre>
+
+      <section>
+        <title>Aktivierung der Selbst-Registrierung</title>
+        <p>
+          Um als Alternative zur Anmeldung auch eine Selbstregistrierung anzubieten, kann dies in der <code>realms.xml</code> im Verzeichnis <code>data</code>
+          konfiguriert werden. Dazu muss der nachstehende Code ergänzt werden (siehe dazu auch die <a href="/downloads/mir/realms.xml">hier verfügbare
+          vollständige realms.xml).</a>
+        </p>
+        <pre class="brush: xml"><![CDATA[  <realm id="registerUser" setable="false">
+    <label xml:lang="de">Registrierung</label>
+    <label xml:lang="en">Register</label>
+    <login url="../authorization/new-author.xed" redirectParameter="url">
+      <label xml:lang="de">Neue Benutzerkennung anlegen</label>
+      <label xml:lang="en">Create new User ID</label>
+      <info>
+        <label xml:lang="de">
+          Neuen Benutzer für die Anwendung registrieren.
+        </label>
+        <label xml:lang="en">
+          Register new user for application.
+        </label>
+      </info>
+    </login>
+  </realm>]]></pre>
+        <p>
+          MIR bringt bereits entsprechende Formulare und Logik mit. Um Spam zu vermeiden nutzen diese das Google-Captcha, für das entsprechend ein
+          Schlüsselpaar registriert und in der MyCoRe-Konfiguration eingetragen werden muss. Details zur Registrierung finden Sie auf den entsprechenden
+          <a href="https://www.google.com/recaptcha">Google-Seiten</a>. Wenn Sie das Schlüsselpaar registriert haben, tragen Sie dieses in die
+          <code>mycore.properties</code> wie folgt ein:
+        </p>
+        <pre class="brush: shell;">
+          ##############################################################################
+          #                                                                            #
+          # Google - ReCaptcha (https://www.google.com/recaptcha)                      #
+          # registered for: www.mycore.de                                              #
+          #                                                                            #
+          ##############################################################################
+
+            MIR.ReCaptcha.secret.key=1234hierkommtdannderprivateschluesselhin4321
+            MIR.ReCaptcha.site.key=5678undhierderoeffentlicheschluessel8765
+        </pre>
+        <p>
+          Diese Konfiguration ist so auch auf <a href="http://www.mycore.org/mir/">mycore.org/mir/</a> aktiv und kann dort getestet werden.
+        </p>
+      </section>
     </section>
     <section>
       <title>Aktualisierung</title>
