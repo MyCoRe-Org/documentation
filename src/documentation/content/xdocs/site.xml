@@ -88,8 +88,6 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   <documentation           label="Dokumentation"     href="documentation/" tab="documentation">
 
-      <!-- howtos                label="HowTo's"           href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/HowTo" / -->
-
     <!-- Mit MyCoRe starten -->
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
       <overview              label="Übersicht"                 href="../index.html" />
@@ -183,14 +181,8 @@ See http://forrest.apache.org/docs/linking.html for more info
       <swf                 label="SimpleWorkFlow"        href="swf.html" />
     </workflow>
 
-    <!-- Datenexport -->
-    <export                label="Datenexport"           href="export/">
-      <bibutils            label="Bibutils"              href="index.html" />
-    </export>
-
     <!-- Schnittstellen -->
     <interfaces            label="Schnittstellen"        href="interfaces/">
-      <webservices         label="WebServices"           href="webservices.html" />
       <rest                label="REST"                  href="rest.html" />
       <oai                 label="OAI"                   href="oai.html" />
       <pid                 label="Persistent Identifier" href="pid.html" />
@@ -245,6 +237,7 @@ See http://forrest.apache.org/docs/linking.html for more info
           <datamodel_dp      label="Datenmodell"           href="datamodel.html" />
           <installation_dp   label="Installation &amp; Aufbau" href="installation.html" />
         </docportal>
+        <webservices         label="WebServices"           href="webservices.html" />
       </old_components>
       <version_201404 label="MyCoRe 2014.04" href="archiv/version201404/">
         <install               label="Installation"      href="install.html" />
