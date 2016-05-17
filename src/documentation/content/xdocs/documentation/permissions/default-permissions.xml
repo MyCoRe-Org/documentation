@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Standardzugriffsrechte</title>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+    </authors>
+    <version>2016-05-17</version>
+    <abstract>Beschreibung der benötigten Standardrechte</abstract>
+  </header>
+
+  <body>
+
+  <!-- Include required JS files -->
+    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+  <!--
+   At least one brush, eg. XML. You need to include a brush for every
+   language you want to highlight
+   -->
+    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+
+    <section>
+      <title>Allgemeines</title>
+      <p>MyCoRe kennt eine ganze Reihe festgelegter Privilegien und Zugriffsrechte, welche auf dieser Seite beschrieben
+        werden. Bei den meißten ist es empfehlenswert, diese nur für den Systemadministrator freizuschalten.
+      </p>
+    </section>
+
+    <section>
+      <title>Zugriffsrechte</title>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Recht</th>
+            <th>Typ</th>
+            <th>Beschreibung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>administrate-users</td>
+            <td>Priv.</td>
+            <td>Legt fest, wer lokale Benutzer administrieren darf.</td>
+          </tr>
+          <tr>
+            <td>create-class</td>
+            <td>Priv.</td>
+            <td>Legt fest, welcher Benutzer eine Klasssifikation anlegen darf.</td>
+          </tr>
+          <tr>
+            <td>create-users</td>
+            <td>Priv.</td>
+            <td>Legt fest, wer neue lokale Benutzer anlegen darf.</td>
+          </tr>
+          <tr>
+            <td>manage-sessions</td>
+            <td>Priv.</td>
+            <td>Legt fest, wer das Session Listing benutzen darf.</td>
+          </tr>
+          <tr>
+            <td>use-aclEditor</td>
+            <td>Priv.</td>
+            <td>Legt fest, wer berechtigt ist, den ACL-Editor zu nutzen. Dieses Privileg sollte gut geschützt sein!</td>
+          </tr>
+          <tr>
+            <td>use-wcms</td>
+            <td>Priv.</td>
+            <td>Legt fest, wer mit dem Web Content Management arbeiten und Seiteninhalte verändern darf.</td>
+          </tr>
+          <tr>
+            <td>use-webcli</td>
+            <td>Priv.</td>
+            <td>Legt fest, wer Kommandos über das WebCLI ausführen darf. Dieses Privileg sollte gut geschützt sein!</td>
+          </tr>
+          <tr>
+            <td>writedb</td>
+            <td>default-class</td>
+            <td>Legt fest, wer an dem Rollensystem arbeiten darf, also auch neue Rollen anlegen oder löschen kann.
+              Achtung, für die Klassifikation mcr-roles muss ein spezielles Recht gesetzt werden!</td>
+          </tr>
+          <tr>
+            <td>writedb</td>
+            <td>mcr-roles</td>
+            <td>Legt fest, wer an dem Rollensystem arbeiten darf, also auch neue Rollen anlegen oder löschen kann.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+      
+  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+  </body>
+</document>
