@@ -54,10 +54,10 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>Developer Conference</title>
-          <message>The first meeting of all MyCoRe developer 2016 took place at the University Hamburg from 1. until 3. March.</message>
-          <!--<url>https://www.rrz.uni-hamburg.de/</url>-->
-          <date>4. März 2016</date>
+          <title>MyCoRe Workshop</title>
+          <message>The date for the MyCoRe User Workshop 2016 is set! Workshop: 9. Nov. 2016, Hands-on-Workshop: 10. Nov.</message>
+          <url>site:workshop</url>
+          <date>18. Mai 2016</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
@@ -79,9 +79,9 @@
         </newsentry>
         <newsentry>
           <title>Application</title>
-          <message>The institutional repository "GWIN" is - based on MIR - at the Fakulty of Humanities of Univ. Hamburg now online. </message>
-          <url>https://www.dokserv.gwiss.uni-hamburg.de/content/index.xml</url>
-          <date>25. Februar 2016</date>
+          <message>The "Epigraphische Datenbank" is now - based on Skeleton - at the "Universität Hamburg" online.</message>
+          <url>https://www.epigraphik.uni-hamburg.de/</url>
+          <date>18. Mai 2016</date>
           <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
