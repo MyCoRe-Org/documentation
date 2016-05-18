@@ -3,60 +3,27 @@
 
 <document>
   <header>
-    <title>MyCoRe-Workshop 2015</title>
+    <title>MyCoRe-Workshop 2016</title>
   </header>
 <body>
 
 <section>
-<title>Einladung</title>
-  <p>Auch dieses Jahr laden die MyCoRe-Entwickler und die MyCoRe-Geschäftsstelle herzlich zum <strong>MyCoRe-Anwenderworkshop</strong> ein. 
-	 Wir freuen uns, an der <strong><a title="Universitätsbibliothek Ilmenau" href="https://www.tu-ilmenau.de/ub/allgemein/lageplan/">Universitätsbibliothek Ilmenau</a></strong> zu Gast sein zu dürfen!<br/>
-	 Termin für den Workshop: <strong>Mittwoch, 11.11.2015</strong>, Beginn: 9 Uhr. Fortsetzung am <strong>Donnerstag, 12.11.2015</strong> als "Hands-on-Workshop", Beginn: 9 Uhr, Ende: 12 Uhr.<br/>
-   Anreisetag: 10.11.2015, <em>Get-together: 19 Uhr</em> im Restaurant "Bel Canto" (im Hotel Tanne, Lindenstraße 38).</p>
-  <p> 
-     Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen MyCoRe-Anwenderinnen, MyCoRe-Anwendern und Interessierten zu ermöglichen. Deshalb sind kurze Beiträge und Berichte über eigene Entwicklungen gewünscht und willkommen! Die MyCoRe-Entwickler werden neue Entwicklungen vorstellen und es wird Gelegenheit für Fragen an die Entwickler geben. </p>
-  <p> 
-     Die Themen des Workshops werden noch gesammelt und rechtzeitig vorher bekannt gegeben.
-     Anregungen und Vorschläge können auf der <strong><a title="MyCoRe-Wiki Vorschläge" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag" >Themenvorschlagsseite</a></strong> im MyCoRe-Wiki eingetragen werden. Oder senden Sie eine Nachricht an die <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
+<title>Ankündigung</title>
+  <p>Auch dieses Jahr soll es einen <strong>MyCoRe-Anwenderworkshop</strong> geben. 
+   Der Termin steht fest: 
+   <ul>
+     <li>Anreisetag: <strong>Dienstag, 08.11.2016</strong>, <em>Get-together um 19 Uhr</em>, </li>
+     <li>Workshop: <strong>Mittwoch, 09.11.2016</strong>, Beginn: 9 Uhr, ganztägig.</li>
+     <li>„Hands-on-Workshop“: <strong>Donnerstag, 10.11.2016</strong>, Beginn: 9 Uhr, voraussichtliches Ende: 12 Uhr.</li>
+   </ul>
+   Der Ablauf soll wie im letzten Jahr sein.
+   Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen MyCoRe-Anwenderinnen, MyCoRe-Anwendern und Interessierten zu ermöglichen. Deshalb sind wieder kurze Beiträge und Berichte über eigene Entwicklungen gewünscht und willkommen! Die MyCoRe-Entwickler werden neue Entwicklungen vorstellen und es wird Gelegenheit für Fragen an die Entwickler geben. </p>
+  <p>Der <strong>Ort</strong> steht noch nicht fest. Vorschläge sind willkommen und können der <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a> gerne mitgeteilt werden.</p>
+  <p><strong>Weitere Informationen</strong></p>
+  <p>Falls Sie Fragen oder Vorschläge für Themen haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
 
-<p><strong>Weitere Informationen</strong></p>
-  <p>Die Agenda des Workshops <!-- kann im <a title="MyCoRe-Wiki Workshop 2015 Agenda" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2015" >Wiki</a> eingesehen werden, --> wird bekannt gegeben, sobald die Themensammlung abgeschlossen ist.
-  Falls Sie Fragen oder Vorschläge haben, wenden Sie sich bitte an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
-
-<p>
-    Der Workshop findet im „Veranstaltungsraum“ der <a title="Universitätsbibliothek der TU Ilmenau" href="https://www.tu-ilmenau.de/ub/allgemein/lageplan/">Universitätsbibliothek</a> an der Technischen Universität Ilmenau statt. Ausgerichtet wird der Workshop von der Universitätsbibliothek Ilmenau.
-
-  <p><strong>Adresse</strong></p>
-    Universitätsbibliothek Ilmenau <br />
-    Raum 2050 „Veranstaltungsraum“    <br />
-    Langewiesener Str. 37 <br />
-    98693 Ilmenau <br />
-</p>
-<!--<p class="fett">Siehe <a title="Ortsbeschreibung im Wiki" href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014#Verkehrsanbindung_und_Anreise">Ortsbeschreibung im Wiki</a>.</p> -->
 </section>
 
-
-<p><strong>Hotelinformationen</strong></p>
-<p>
-    Im <strong> „<a title="Link zum Hotel Tanne" href="http://www.hotel-tanne-thueringen.de/">Hotel Tanne</a>“</strong> ist ein Kontingent an Zimmern zu besonderen Konditionen für Workshop-Teilnehmerinnen und -Teilnehmer reserviert, bitte bei der Buchung das Stichwort „MyCoRe-Workshop“ nennen. Weitere Informationen finden Sie im <a title="Auswahl an Hotels im Wiki" href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2015/OrganisatorischesIlmenau#Hotelinformationen">Wiki</a>.
-  </p>
- <section>
- <title>Anmeldung</title>
-
- <p> <strong>Anmeldung zum Workshop</strong> bitte formlos per Mail an <a href="mailto:info@mycore.de">info@mycore.de</a> unter Nennung der Daten: von wann bis wann Sie teilnehmen, ob wir eine Platzreservierung für abends einplanen sollen und ob ein WLAN-Zugang benötigt wird (Universitätsangehörigen steht <a href="http://www.tu-ilmenau.de/it-service/gaeste/wlan-und-vpn/wlan/">eduroam</a> zur Verfügung):
-   <ul>
-     <li>Betreff: Teilnahme am MyCoRe-Workshop</li>
-   </ul>
-   <ol>
-     <li>„Ich nehme am Workshop teil: </li>
-     <ul><li> Mittwoch, den 11.11.2015 ganztägig </li><li>und am Donnerstag 12.11.2015 von 9 bis 12 Uhr.</li></ul>
-     <li>Bitte für den 10.11.2015 abends beim Get-together mit Abendessen (auf Selbstzahlerbasis) einen Platz für mich reservieren.</li>
-     <li>Bitte für das gemeinsame Abendesse (auf Selbstzahlerbasis) am Mittwoch Abend (11.11.2015) einen Platz reservieren.</li>
-     <li>Ich benötige einen WLAN-Zugang: ja|nein“</li>
-   </ol>  
- 
- </p> 
-</section> 
 </body>
 </document>
 
