@@ -402,7 +402,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <email      label="Mailinglisten"      href="email.html" />
     <team       label="Team"               href="team.html" />
     <workshops  label="Workshops"          href="workshops/" >
-    <!-- <workshop            label="Anwender-Workshop"          href="workshop.html" /> -->
+    <workshop            label="MyCoRe-Workshop 2016"       href="workshop.html" /> 
     <aw_workshop_2015    label="Ilmenau 2015"               href="ilmenau_2015.html" />
     <dbt-workshop        label="DBT-Workshop 2014"          href="dbt-workshop.html" />
     <aw_workshop_2014    label="Braunschweig 2014"          href="braunschweig_2014.html" />
