@@ -105,7 +105,7 @@
                 <a href="http://www.lexm.uni-hamburg.de/"><img class="icon" alt="icon" src="map/icons/icon_hamburg_lexm.png" /></a>
                 <a href="http://www.lexm.uni-hamburg.de/">Online-Lexikon exilierter Musiker und Musikerinnen der NS-Zeit</a>
             </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -120,7 +120,22 @@
                 <a href="https://www.konversionen.uni-hamburg.de/"><img class="icon" alt="icon" src="map/icons/icon_hamburg_deko.png" /></a>
                 <a href="https://www.konversionen.uni-hamburg.de/">Digitale Edition Konversionserzählungen</a>
             </div>
-            <p>Universität Hamburg (Fakultät für Geisteswissenschaften, RRZ)</p>
+            <p>Universität Hamburg</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>9.986604,53.569587,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Epigraphische Datenbank</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="https://www.epigraphik.uni-hamburg.de"><img class="icon" alt="icon" src="map/icons/icon_hamburg_epidb.png" /></a>
+                <a href="https://www.epigraphik.uni-hamburg.de">Epigraphische Datenbank zum antiken Kleinasien</a>
+            </div>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -135,7 +150,7 @@
                 <a href="https://www.dokserv.gwiss.uni-hamburg.de/"><img class="icon" alt="icon" src="map/icons/icon_hamburg_gwn.png" /></a>
                 <a href="https://www.dokserv.gwiss.uni-hamburg.de/">gwin Dokumentenserver</a>
             </div>
-            <p>Universität Hamburg (Fakultät für Geisteswissenschaften, RRZ)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -150,7 +165,7 @@
                 <a href="http://mycms3.rrz.uni-hamburg.de/sfb950/content/NGMCP/ngmcp.xml"><img class="icon" alt="icon" src="map/icons/icon_hamburg_ngmcp.png" /></a>
                 <a href="http://mycms3.rrz.uni-hamburg.de/sfb950/content/NGMCP/ngmcp.xml">Nepalese-German Manuscript Cataloguing Project</a>
             </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -165,7 +180,7 @@
                 <a href="http://mycms.rrz.uni-hamburg.de/mcaa"><img class="icon" alt="icon" src="map/icons/icon_hamburg_aai.png" /></a>
                 <a href="http://mycms.rrz.uni-hamburg.de/mcaa">Manuscript Cultures in Asia and Africa</a>
             </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -180,22 +195,7 @@
                 <a href="http://mycms.rrz.uni-hamburg.de/eae"><img class="icon" alt="icon" src="map/icons/icon_hamburg_aai.png" /></a>
                 <a href="http://mycms.rrz.uni-hamburg.de/eae">Encyclopaedia Aethiopica</a>
             </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
-          ]]>
-        </description>
-      <styleUrl>#style_MyCoRe-Pin</styleUrl>
-      <Point>
-        <coordinates>9.986604,53.569587,0</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>MCGlossary</name>
-      <description><![CDATA[
-            <div class="mcrmap_item">
-                <a href="http://mycms.rrz.uni-hamburg.de/mcglossary"><img class="icon" alt="icon" src="map/icons/icon_hamburg_aai.png" /></a>
-                <a href="http://mycms.rrz.uni-hamburg.de/mcglossary">Mehrsprachiges Glossar des Asien-Afrika-Instituts</a>
-            </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -210,7 +210,7 @@
                 <a href="http://mycms.rrz.uni-hamburg.de/domlib"><img class="icon" alt="icon" src="map/icons/icon_hamburg_aai.png" /></a>
                 <a href="http://mycms.rrz.uni-hamburg.de/domlib">Digital Oriental Manuscript Library</a>
             </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -225,7 +225,7 @@
                 <a href="http://mycms3.rrz.uni-hamburg.de/sfb950"><img class="icon" alt="icon" src="map/icons/icon_hamburg_sfb.png" /></a>
                 <a href="http://mycms3.rrz.uni-hamburg.de/sfb950">Manuskriptkulturen in Asien, Afrika und Europa</a>
             </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -240,7 +240,7 @@
                 <a href="http://www.josta.uni-hamburg.de/"><img class="icon" alt="icon" src="map/icons/icon_hamburg_josta.png" /></a>
                 <a href="http://www.josta.uni-hamburg.de/">Die mittelalterlichen Statuten des Johanniterordens</a>
             </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
@@ -255,7 +255,7 @@
                 <a href="http://www.schuredo.uni-hamburg.de/"><img class="icon" alt="icon" src="map/icons/icon_hamburg_schuredo.png" /></a>
                 <a href="http://www.schuredo.uni-hamburg.de/">Die mittelalterlichen Schuld- und Rechnungsbücher des Deutschen Ordens um 1400</a>
             </div>
-            <p>Universität Hamburg (Regionales Rechenzentrum)</p>
+            <p>Universität Hamburg</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
