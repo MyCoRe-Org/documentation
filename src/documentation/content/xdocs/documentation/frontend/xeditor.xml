@@ -4,9 +4,10 @@
 <document>
   <header>
     <title>Das MyCoRe XEditor-Framework</title>
-    <version>2014-12-04</version>
+    <version>2016-05-19</version>
     <authors>
       <person name="Frank Lützenkirchen" email="[EMAIL PROTECTED]"/>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]"/>
     </authors>
     <abstract>
       Das MyCoRe XEditor-Framework stellt Funktionalität zur Gestaltung von HTML-Formularen bereit, die XML-Dokumente bearbeiten oder erstellen.
@@ -119,7 +120,7 @@ aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt wer
 
 <section>
   <title>Ein erstes Beispiel</title>
-  <p>Das folgende Beispiel zeigt ein einfaches XEditor-Formular, das den Titel eines Dokumentes bearbeitet. 
+  <p>Das folgende Beispiel zeigt ein einfaches XEditor-Formular, das den Titel eines Dokumentes bearbeitet.
   Es ist an das Formular <code>simpledoc.xed</code> aus dem MyCoRe <a href="site:skeleton">Skeleton Projekt</a> angeleht.</p>
   <pre class="brush: xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 
@@ -142,7 +143,7 @@ aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt wer
               </div>
             </div>
           </xed:bind>
-            
+
           <div class="form-group">
             <label class="col-md-4 control-label" for="save"></label>
             <div class="col-md-8">
@@ -163,18 +164,18 @@ aus dem MyCoRe Kern überschrieben oder durch ein anderes Stylesheet ersetzt wer
     <dt>xed:form / Zeile 6</dt>
     <dd>bildet den äusseren Rahmen jedes XEditor-Formulars und entspricht dem <code>&lt;form&gt;</code>-Element von HTML.</dd>
     <dt>xed:source / Zeile 7</dt>
-    <dd>lädt das zu bearbeitende XML-Dokument von einer Quelle, die als URI angegeben wird. 
+    <dd>lädt das zu bearbeitende XML-Dokument von einer Quelle, die als URI angegeben wird.
     In diesem Fall wird der Parameter id verwendet, um über den <a href="site:mcruriresolver"><code>mcrobject:</code> Resolver</a> ein MyCoRe Metadaten-Objekt (Dokument, Publikation o.ä.) zu laden.
     Wenn das Formular im Browser über <code>simpledoc.xed?id=skeleton_simpledoc_00000001</code> aufgerufen wird, wird das Objekt mit dieser ID geladen.
     </dd>
     <dt>xed:bind / Zeilen 9, 10 und 12</dt>
-    <dd>regelt die Abbildung zwischen Bereichen im XML-Dokument und den zugehörigen Bereichen im Eingabeformular. 
+    <dd>regelt die Abbildung zwischen Bereichen im XML-Dokument und den zugehörigen Bereichen im Eingabeformular.
     Verschachtelte <code>&lt;xed:bind&gt;</code> Elemente werden verwendet, um hierarchisch einzelne Metadaten-Felder auf einzelne Eingabefelder abzubilden.
     In diesem Fall wird das Texteingabefeld für den Titel in Zeile 18 auf das XML-Element mit dem XPath <code>/mycoreobject/metadata/def.title/title</code> abgebildet.
     </dd>
     <dt>xed:output / i18n: / Zeilen 15, 18 und 27</dt>
     <dd>
-    wird für die Ausgabe von Werten oder Bezeichnungen, in diesem Fall <a href="site:multilang">mehrsprachige Beschriftungen für das Eingabefeld und einen Platzhalter aus den <code>messages-*.properties</code> Dateien</a>, verwendet. 
+    wird für die Ausgabe von Werten oder Bezeichnungen, in diesem Fall <a href="site:multilang">mehrsprachige Beschriftungen für das Eingabefeld und einen Platzhalter aus den <code>messages-*.properties</code> Dateien</a>, verwendet.
     </dd>
     <dt>xed:target / xed:href / Zeile 26</dt>
     <dd>
@@ -1232,12 +1233,17 @@ sollte @static nicht gesetzt sein.</p>
   </p>
   <pre class="brush: xml"><![CDATA[<xed:output xpath="xed:call-java('Checker','isValid',mods:identifier[@type='issn'])" />]]></pre>
   <pre class="brush: java"><![CDATA[public class Checker {
-
   /* Dummy */
   public static String isValid( List<Element> nodes ) {
     return "The ID you gave me is valid. Have a nice day.";
   }
 }]]></pre>
+
+  <p>
+    Erwartet die aufgerufene Java-Methode einen Übergabeparameter vom Typ String, muss die xpath-Angabe entsprechend als String <code>string(/mycoreobject/@ID)</code>übergeben
+    werden. Nachfolgend ein Beispiel bei dem außerdem ein Property aus der Datei <code>mycore.property</code> geprüft wird.
+  </p>
+  <pre class="brush: xml"><![CDATA[<xed:when test="$MIR.registerDOI='true' and xed:call-java('org.mycore.pi.frontend.MCRIdentifierXSLUtils','hasIdentifierRegistered','Datacite',string(/mycoreobject/@ID),'')">]]></pre>
 
 </section>
 
