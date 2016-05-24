@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>REST-API</title>
-    <version>2015-07-21</version>
+    <version>2016-05-24</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
     </authors>
@@ -216,12 +216,38 @@
 
         <h4>Beispiel-Requests</h4>
         <ul>
-          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002</a></li>
-          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003</a></li>
-          <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002">http://www.mycore.de/mir/api/v1<br />/objects/mir_mods_00000003/derivates/Document_derivate_00000002</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003">http://www.mycore.de/mir/api/v1<br />/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003</a></li>
+          <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover">http://rosdok.uni-rostock.de/api/v1<br />/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover</a></li>
         </ul>
       </section>
 
+      <section>
+        <title>/objects/{$id}/derivates/{$derid}/open</title>
+        <h4>Öffnen der Hauptdatei eines Derivates</h4>
+        <p>Mit diesem Request lässt sich die Hauptdatei eines Derivates anzeigen. Es erfolgt ein Redirect-Request auf
+        die MyCoRe File API.</p>
+
+         <table class="table table-bordered">
+          <cols><col width="100px"></col></cols>
+          <tr>
+            <td><code>{$id}</code></td>
+            <td>analog zu <a href="#/objects/{$id}">/objects/{$id}</a></td>
+          </tr>
+          <tr>
+            <td><code>{$derid}</code></td>
+            <td>analog zu <a href="#/objects/{$id}/derivates/{$derid}">/objects/{$id}/derivates/{$derid}</a></td>
+          </tr>
+        </table>
+
+        <h4>Beispiel-Requests</h4>
+         <ul>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002/open">http://www.mycore.de/mir/api/v1<br />/objects/mir_mods_00000003/derivates/Document_derivate_00000002/open</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/open">http://www.mycore.de/mir/api/v1<br />/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/open</a></li>
+          <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/open">http://rosdok.uni-rostock.de/api/v1<br />/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/open</a></li>
+        </ul>
+      </section>
+      
       <section>
         <title>/objects/{$id}/derivates/{$derid}/files</title>
         <h4>Auflistung der Dateien eines Derivates</h4>
