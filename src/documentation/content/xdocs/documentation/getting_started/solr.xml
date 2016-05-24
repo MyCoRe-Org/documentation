@@ -135,6 +135,13 @@
 <autoSoftCommit>
   <maxTime>1000</maxTime>
 </autoSoftCommit>]]></pre>
+
+      <p>
+        <span class="label label-warning">Achtung:</span> 
+        In der Datei <code>solrconfig.xml</code> muss für den Request Handler <code>/select</code> der Parameter <tt>fq</tt>
+        um die in der eigenen Anwendung verwendeten MyCoRe-Objekttypen ergänzt werden, z.B.:
+      </p>
+      <pre class="brush: xml"><![CDATA[<str name="fq">objectType:("disshab" OR "thesis" OR "document")</str>]]></pre>
     </section>
 
    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
