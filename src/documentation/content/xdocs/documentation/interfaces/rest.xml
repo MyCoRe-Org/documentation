@@ -249,7 +249,7 @@
       </section>
       
       <section>
-        <title>/objects/{$id}/derivates/{$derid}/files</title>
+        <title>/objects/{$id}/derivates/{$derid}/contents/{$path}</title>
         <h4>Auflistung der Dateien eines Derivates</h4>
         <p>Mit diesem Request enthält man ein Directory-Listing aller im Derivate abgelegten Dateien.</p>
 
@@ -263,6 +263,10 @@
             <td><code>{$derid}</code></td>
             <td>analog zu <a href="#/objects/{$id}/derivates/{$derid}">/objects/{$id}/derivates/{$derid}</a></td>
           </tr>
+          <tr>
+            <td><code>{$path}</code></td>
+            <td>optional: Pfad zu einem Verzeichnis im Derivate, dessen Inhalt hier ausgegeben werden soll</td>
+          </tr>
         </table>
 
         <h4>Parameter</h4>
@@ -272,13 +276,17 @@
             <td><code>format</code></td>
             <td>mögliche Werte sind: <code>xml</code> (default) und <code>json</code></td>
           </tr>
+           <tr>
+            <td><code>depth</code></td>
+            <td>Anzahl der Verzeichnisebenen, die zurückgeliefert werden sollen (default: <code>-1</code> für alle)</td>
+          </tr>
         </table>
 
         <h4>Beispiel-Requests</h4>
          <ul>
-          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002/files">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002/files</a></li>
-          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/files">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/files</a></li>
-          <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/files">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/files</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/Document_derivate_00000002/contents">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003<br />/derivates/Document_derivate_00000002/contents</a></li>
+          <li><a href="http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003/derivates/label:data%20object%20from%20mir_mods_00000003/contents">http://www.mycore.de/mir/api/v1/objects/mir_mods_00000003<br />/derivates/label:data%20object%20from%20mir_mods_00000003/contents</a></li>
+          <li><a href="http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281/derivates/label:Cover/contents">http://rosdok.uni-rostock.de/api/v1/objects/recordIdentifier:rosdok%252Fppn746606281<br />/derivates/label:Cover/contents</a></li>
         </ul>
       </section>
     </section>
