@@ -133,6 +133,8 @@
             <li>In that view, you see the log messages of the selected item. Select one of the messages and choose from the context menu Show revision properties.</li>
             <li>Select svn:log and then from the context menu Edit.... This opens a new dialog where you can change the log message (if allowed on the server).</li>
           </ol>
+          <p>Anschließend sollte im JIRA-Ticket ein Kommentar ergänzt werden (das geht nicht automatisch). Die SVN-Revisionsnummer wird mit <tt>r{revision_nr}</tt> angegeben.
+             Dadurch verlinkt JIRA automatisch auf den Commit im FishEye.</p>
         </section>
       </section>
   </body>
