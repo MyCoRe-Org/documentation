@@ -15,10 +15,6 @@
 
  <body>
 
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-
   <p>
     Hier kann das aktuelle <a href="mir.war" data-role="artifactResolver" data-artifact="mir-webapp" data-suffix=".war" download="mir.war">MIR-Paket</a>
     (speichern als <code>mir.war</code>) heruntergeladen werden. Dieses kann mit dem Context 'mir' direkt in einen Servlet Container ausgeliefert (deployed) werden.
@@ -35,11 +31,6 @@
   <p>
     Die Liste der Änderungen ist im <a href="changelog.html#Version+0.4+-+based+on+MyCoRe+release+2015.02">Changelog zu finden</a>
   </p>
-
-  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-  <script type="text/javascript">
-     SyntaxHighlighter.all()
-  </script>
 
    <!-- START SNIPPET: downloadCode -->
    <script type="text/javascript">

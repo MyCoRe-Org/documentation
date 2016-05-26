@@ -24,6 +24,11 @@
     <head>
         <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css' />
+        <!-- Include required JS files -->
+        <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+        <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
+        <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
+        <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
         <xsl:call-template name="html-meta" />
         <xsl:call-template name="meta-data" />
         <xsl:call-template name="meta-title" />
@@ -156,6 +161,10 @@ $(document).ready(function() {
 });
 ]]>
 </script>
+      <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+      <script type="text/javascript">
+          SyntaxHighlighter.all()
+      </script>
 
     </body>
 </html>

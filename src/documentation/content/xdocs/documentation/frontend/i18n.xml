@@ -11,17 +11,6 @@
     <version>2015-06-18</version>
   </header>
   <body>
-
-   <!-- Include required JS files -->
-    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
     <section>
       <title>Die Nutzung von I18N</title>
       <p>
@@ -71,7 +60,7 @@
           <source><![CDATA[
 mycore.component.basis.part.subpart = Mein Text]]></source>
         </p>
-      
+
       <p>in folgenden Bereichen von MyCoRe kann ein i18n-Property eingesetzt werden:</p>
       <table class="table">
         <tr>
@@ -126,11 +115,5 @@ mycore.component.basis.part.subpart = Mein Text]]></source>
       </table>
 
     </section>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-    <script type="text/javascript">
-      SyntaxHighlighter.all()
-    </script>
-
   </body>
 </document>

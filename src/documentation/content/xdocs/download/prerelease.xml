@@ -9,11 +9,6 @@
   auftretenden Fehler umgehend an die Community, um ein optimales Release zu gewährleisten.</abstract>
 </header>
  <body>
-
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-
   <p>
   Neben dem aktuellen Release stellt das Entwickler-Team in unregelmäßigen Abständen auch Vorabversionen
   zum nächsten Release, sogenannte Prereleases, zur Verfügung. Auf diesem Wege sollen die Benutzer unseres
@@ -126,11 +121,5 @@
         users.</li>
     <li>removed componente mycore-classhandler (old classification browser and editor)</li>
   </ul>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
-
 </body>
 </document>

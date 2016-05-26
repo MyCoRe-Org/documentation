@@ -8,14 +8,6 @@
 
 <body>
 
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-
  <p>
  Die Quellcodes, Konfigurations- und Beispieldateien sowie die Dokumentation zum MyCoRe Projekt werden in
  einem <a href="http://subversion.apache.org/" title="Subversion">Subversion</a> Repository
@@ -103,10 +95,5 @@
  <a href="http://www.mycore.de/svn-rss/documentation.xml" class="moz-txt-link-freetext">http://www.mycore.de/svn-rss/documentation.xml</a><br/>
  <a href="http://www.mycore.de/svn-rss/miless.xml" class="moz-txt-link-freetext">http://www.mycore.de/svn-rss/miless.xml</a>
  </p>
-
- <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
- <script type="text/javascript">
-     SyntaxHighlighter.all()
- </script>
 </body>
 </document>

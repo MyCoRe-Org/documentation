@@ -10,13 +10,6 @@
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
     <abstract>In diesem Abschnitt wird die Struktur einer Klassifikation und ihre Repräsentation im XML-Format beschrieben.</abstract>
-      <!-- At least one brush, eg. XML. You need to include a brush for every language you want to highlight -->
-    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-   <!-- Include required JS files -->
-    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-
   </header>
   <body>
     <section>
@@ -32,7 +25,7 @@
         <section>
           <title>Rootelement</title>
           <p>Das Rootelement (<code>&lt;mycoreclass&gt;</code>) enthält die ID der Klassifikation, ein oder mehrere Bezeichner
-             <code>label</code>in verschiedenen Sprachen und einen Container <code>categories</code>, 
+             <code>label</code>in verschiedenen Sprachen und einen Container <code>categories</code>,
              der die Einträge der Klassifikation speichert.
           </p>
           <p>Die <code>ID</code> kann maximal 32 Zeichen lang sein und darf die Zeichen
@@ -41,10 +34,10 @@
         </section>
         <section>
           <title>Kategorie</title>
-          <p>Als Kategorien (<code>&lt;category&gt;</code>) bezeichnen man die Einträge der Klassifikation. 
+          <p>Als Kategorien (<code>&lt;category&gt;</code>) bezeichnen man die Einträge der Klassifikation.
              Kategorien können hierarchisch geschachtelt werden. Sie enthalten eine ID,
              einen oderer mehrere Bezeichner <code>label</code> für verschiedene Sprachen
-             und optional eine URL <code>url</code>. Diese kann verwendet werden, um auf eine Webseite 
+             und optional eine URL <code>url</code>. Diese kann verwendet werden, um auf eine Webseite
              mit weiteren Informationen oder der Beschreibung des Klassifikationseintrages zu verlinken.
           </p>
            <p>Die <code>ID</code> kann maximal 128 Zeichen lang sein und darf die Zeichen
@@ -54,9 +47,9 @@
         <section>
           <title>Bezeichner</title>
           <p>
-            Bezeichner (<code>&lt;label&gt;</code>) werden verwendet, um die Klassifikation und ihre Einträge zu bennennen. 
+            Bezeichner (<code>&lt;label&gt;</code>) werden verwendet, um die Klassifikation und ihre Einträge zu bennennen.
             Label sind wiederholbar, um auch Übersetzungen des Begriffes speichern zu können.
-            Sie bestehen aus einem Sprachattribut <code>xml:lang</code> und einem Textfeld <code>text</code>. 
+            Sie bestehen aus einem Sprachattribut <code>xml:lang</code> und einem Textfeld <code>text</code>.
             Optional können zusätzliche Angaben zur Verwendung des Eintrages in einem Beschreibungsfeld <code>description</code> abgelegt werden.
           </p>
           <p>Die Länge von Text und Beschreibung kann jeweils maximal 4096 Zeichen betragen. Das Sprachattribut kann maximal 255 Zeichen lang sein
@@ -71,7 +64,7 @@
         <title>Besonderheiten</title>
           <section>
             <title>x- Sprachcodes</title>
-        <p>In MyCoRe wird das Label zur Speicherung zusätzlicher Informationen für die Weiterverabeitung der 
+        <p>In MyCoRe wird das Label zur Speicherung zusätzlicher Informationen für die Weiterverabeitung der
            Klassifikationen verwendet. Dazu werden zusätzliche Label mit privaten Sprachcodes (gemäß den Regeln des RFC4646) definiert.
            Die Sprachcodes bestehen aus dem Prefix <code>x-</code> und weiteren Blöcken aus jeweils max. 8 Zeichen (Zahlen oder Buchstaben),
            die durch <tt>-</tt> getrennt werden.
@@ -81,12 +74,12 @@
           <li><strong><code>x-uri</code></strong> für Bezeichner in Form einer URI.<br />
               URIs sind mit URLs (HTTP-Adressen) verwandt und werden vor allem im Context von Linked Data eingesetzt.<br />
               Im <a href="http://www.loc.gov/standards/mods/">MODS</a>-Metadatenmodell werden sie zur Speicherung von
-              Klassifikationen in Form von <tt>authorityURI</tt> und <tt>valueURI</tt> Attributen verwendet. 
+              Klassifikationen in Form von <tt>authorityURI</tt> und <tt>valueURI</tt> Attributen verwendet.
               Anhand des <tt>x-uri</tt>-Labels kann MyCoRe diese Klassifikationen erkennen und verarbeiten.<br /><br /></li>
-           
+
            <li><strong><code>x-auth</code></strong> als Marker für Klassifikationen, die im <a href="http://www.loc.gov/standards/mods/">MODS</a>-Metadatenmodell
               mit dem Attribut <tt>authority</tt> gekennzeichnet wurden.<br /><br /></li>
-           
+
            <li><strong><code>x-mapping</code></strong> für das <a href="site:classifications/classif_mapping">Klassifikationsmapping</a>.<br />
               Wenn Metadaten z.B. über die OAI-Schnittstelle an externe Services ausgeliefert werden, werden häufige andere Klassifikationseinträge benötigt.
               Um Mehrfacheingaben zu vermeiden, bietet MyCoRe mit dem Klassifikationsmapping die Möglichkeit, dass nur eine primäre Klassifikation erfasst wird.
@@ -103,10 +96,10 @@
           <li>Institutionen: <code>Unis</code> &rarr; <code>Unis.Rostock</code> &rarr; <code>Unis.Rostock.UB</code></li>
           <li>DDC:&emsp;&emsp;&emsp;&nbsp;&nbsp;<code>5</code> &rarr; <code>56</code> &rarr; <code>567</code></li>
         </ul>
-        <p>Für das Funktionieren des Klassifikationssystems ist das jedoch keine Voraussetzung.</p>  
-        
+        <p>Für das Funktionieren des Klassifikationssystems ist das jedoch keine Voraussetzung.</p>
+
       </section>
-      
+
       <section>
         <title>XML Format</title>
         <p>Das folgende XML-Grundgerüst kann für das Schreiben eigener Klassifikationen verwendet werden:</p>
@@ -143,22 +136,18 @@
       <title>Für Entwickler</title>
       <p>Intern erfolgt die Speicherung der Klassifikationen in mehreren verknüpften <em>Datenbanktabellen</em>:</p>
       <ul>
-        <li>In der Tabelle <tt>mcrcategory</tt> werden Klassifikationseinträge und ihre hierarchische Struktur 
-            gespeichert. Die Hierarchie wird als <em>Nested Set Model</em> 
+        <li>In der Tabelle <tt>mcrcategory</tt> werden Klassifikationseinträge und ihre hierarchische Struktur
+            gespeichert. Die Hierarchie wird als <em>Nested Set Model</em>
             (s. <a href="https://en.wikipedia.org/wiki/Nested_set_model"> Wikipedia</a>) abgebildet.
         </li>
-        <li>Die Tabelle <tt>mcrcategorylabels</tt> enthält die mehrsprachigen Bezeichner und Beschreibungen 
+        <li>Die Tabelle <tt>mcrcategorylabels</tt> enthält die mehrsprachigen Bezeichner und Beschreibungen
             der Klassifikationseinträge</li>
-        <li>Das Mapping von MyCoRe-Objekten zu Klassifikationseinträgen wird in der Tabelle 
+        <li>Das Mapping von MyCoRe-Objekten zu Klassifikationseinträgen wird in der Tabelle
             <tt>mcrcategorylink</tt> gespeichert</li>
       </ul>
-      
-      
+
+
     </section>
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-      <script type="text/javascript">
-        SyntaxHighlighter.all()
-      </script>
     </section>
   </body>
 </document>

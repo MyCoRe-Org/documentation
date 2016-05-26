@@ -7,24 +7,12 @@
     <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten verschiedener Anwenderzugänge wie die MyCoRe-Kommandozeile und die Webanwendung.</abstract>
   </header>
 <body>
-
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
-
    <section>
    <title>Der Layout-Service</title>
    <p>
      ToDo: Allgemeine Beschreibung des Layout-Services
    </p>
-   
+
    <section>
    <title>XSL-Info-Servlet</title>
    <p>
@@ -77,7 +65,7 @@
      >http://www.mycore.de:8291/servlets/MCRXSLInfoServlet</a>
    </p>
    </section>
-   
+
      <section>
        <title>XSL-FO</title>
        <p>
@@ -94,7 +82,7 @@
        </p>
        <pre class="brush: bash">
 ##############################################################################
-# XSL-FO Formatter            
+# XSL-FO Formatter
 ##############################################################################
 
   # Class that implements MCRFoFormatterInterface
@@ -103,7 +91,7 @@
   MCR.LayoutService.FoFormatter.FOP.config=myConfigFile
       </pre>
       <p>
-        Für FOP kann noch eine Konfigurationsdatei im Classpath angegeben werden, die 
+        Für FOP kann noch eine Konfigurationsdatei im Classpath angegeben werden, die
         z. B. andere Fonts einsetzt.</p>
      </section>
    </section>
@@ -304,13 +292,6 @@
     haben, so sehen Sie Ihre neu integrierten Kommandos.</li>
     </ol>
    </section>
-
-
- <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
- <script type="text/javascript">
-     SyntaxHighlighter.all()
- </script>
- 
 </body>
 </document>
 

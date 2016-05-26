@@ -13,16 +13,6 @@
   </header>
   <body>
 
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
   <section>
     <title>Nutzung der URN-Vergabe</title>
     <section>
@@ -130,20 +120,31 @@
     </section>
   </section>
   <section>
-    <title>Handel</title>
-    <p>in Arbeit</p>
-  </section>
-  <section>
     <title>DOI-Registrierung über datacite</title>
     <p>
-      <span class="label label-info">2015.03</span> Es wird aktuell an der Bereitstellung eines
-      Dienstes zur Erstellung und Registrierung einer DOI bei dataCite gearbeitet. Aktuell kann
-      basierend auf dem MyCoRe-MODS-Datenmodell dir folgende Konfiguration genutzt werden:
+      <span class="label label-info">2016.06</span> Um DOIs aus der MyCoRe-Anwendung heraus
+      zu prägen und bei DataCite über die REST-API zu registrieren stellt MyCoRe die Komponente
+      <code>mycore-pi</code> mit einer entsprechenden Implementierung bereit. Diese
+      basiert auf dem MyCoRe-MODS-Datenmodell. Mit der folgenden Konfiguration kann die
+      DOI-Registrierung aktiviert werden:
     </p>
     <pre class="brush: bash">
-      MCR.DOI.Prefix=10.5072
-      MCR.DOI.HostingInstitution=MyCoRe Community
-      MCR.DOI.NISSPattern=yyyyMMdd-HHmmss
+  MCR.DOI.Prefix=10.5072
+  MCR.DOI.HostingInstitution=MyCoRe Community
+  MCR.DOI.NISSPattern=yyyyMMdd-HHmmss
+  MCR.PI.Registration.Datacite=org.mycore.pi.doi.MCRDOIRegistrationService
+  MCR.PI.Registration.Datacite.Inscriber=MODSDOI
+  MCR.PI.Registration.Datacite.Generator=DateDOI
+  MCR.PI.Registration.Datacite.RegisterBaseURL=http://intr2dok.vifa-recht.de
+  MCR.PI.Registration.Datacite.Username=
+  MCR.PI.Registration.Datacite.Password=
+#  MCR.PI.Registration.Datacite.UseTestPrefix=true
+
+  MCR.PI.Registration.Datacite.Transformer=datacite
+  MCR.PI.Generator.UUIDDOI=org.mycore.pi.doi.MCRUUIDDOIGenerator
+  MCR.PI.Generator.DateDOI=org.mycore.pi.doi.MCRCreateDateDOIGenerator
+  MCR.PI.Inscriber.MODSDOI=org.mycore.mods.identifier.MCRMODSDOIPersistentIdentifierInscriber
+  MCR.PI.Parsers.doi=org.mycore.pi.doi.MCRDOIParser
     </pre>
     <p>
       Nachdem die Anwendung entsprechend konfiguriert wurde, kann mittels des URL-Parameters
@@ -160,16 +161,6 @@
       <code>MIR.registerDOI=true</code> gesetzt wird. Dann erscheint im Aktionen-Menü eines
       einzelnen Objektes ein weiterer Menüpunkt "DOI Registrieren".
     </p>
-    <p>
-      <span class="label label-info">Hinweis:</span>
-      Dieser Dienst befindet sich noch im Aufbau! Die Übernahme der DOI in die Metadaten und
-      die Registrierung bei DataCite muss derzeit von Hand realisiert werden.
-    </p>
   </section>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
   </body>
 </document>

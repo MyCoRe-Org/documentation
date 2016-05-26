@@ -7,18 +7,6 @@
     <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten verschiedener Anwenderzugänge wie die MyCoRe-Kommandozeile und die Webanwendung.</abstract>
   </header>
 <body>
-
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
-
    <section>
    <title>Der Layout-Service</title>
    <p>
@@ -221,13 +209,6 @@
     haben, so sehen Sie Ihre neu integrierten Kommandos.</li>
     </ol>
    </section>
-
-
- <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
- <script type="text/javascript">
-     SyntaxHighlighter.all()
- </script>
- 
 </body>
 </document>
 

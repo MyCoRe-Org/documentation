@@ -14,17 +14,6 @@
     </abstract>
   </header>
   <body>
-
-   <!-- Include required JS files -->
-    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
     <section>
       <title>Das Metadatenmodell</title>
       <p>
@@ -207,10 +196,5 @@
         <li><a href="http://artifactory.mycore.de/webapp/browserepo.html?pathId=plugins-snapshots-local%3Aorg%2Fmycore%2Fplugins%2Fdatamodel-plugin">Link zum Artifactory</a></li>
       </ul>
     </section>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-    <script type="text/javascript">
-      SyntaxHighlighter.all()
-    </script>
   </body>
 </document>

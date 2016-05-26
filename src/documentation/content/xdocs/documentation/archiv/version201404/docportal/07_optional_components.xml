@@ -11,17 +11,6 @@
     </abstract>
   </header>
 <body>
-
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
   <section>
    <title>Die Zusammenarbeit mit anderen DocPortal-Installationen</title>
    <p>
@@ -348,20 +337,20 @@
     <p>
     Der Parameter <code>noEmptyLeaves</code> des Klassifikations-URIResolvers ist nur für  den Rückgabetyp <code>editor</code>
     implementiert - Dieses Feature funktioniert hier nicht!
-  </p> 
+  </p>
   <p>
-    Mit dem Property FilterEmptySets kann bestimmt werden, ob auch leere Sets bei einem ListSets-Request zurückgegeben werden. 
-    Ist es aktiviert, wird beim Erzeugen der Set-Menge für jeden Eintrag mit einer Suchanfrage geprüft, ob auch Dokumente existieren. 
+    Mit dem Property FilterEmptySets kann bestimmt werden, ob auch leere Sets bei einem ListSets-Request zurückgegeben werden.
+    Ist es aktiviert, wird beim Erzeugen der Set-Menge für jeden Eintrag mit einer Suchanfrage geprüft, ob auch Dokumente existieren.
     Da dieses Vorgehen zu Lasten der Performance gehen kann, ist abzuwägen, ob der Einsatz bei großen Set-Mengen sinnvoll ist.
   </p>
   <pre class="brush: xml; gutter: false;"> MCR.OAIDataProvider.OAI2.FilterEmptySets=true</pre>
-   
+
   <p>
     Wenn der Name des Sets nicht mit dem Namen der zugrunde liegenden Klassifikation übereinstimmt kann in den Properties
     ein Mapping angegeben werden:
   </p>
   <pre class="brush: xml; gutter: false;"> MCR.OAIDataProvider.OAI2.MapSetToClassification.doc-type=diniPublType</pre>
-  
+
   <p>
     <b>Statische Sets</b> (Sets mit immer gleichen Einträgen) lassen sich wie folgt aus einer XML-Datei einlesen:
   </p>
@@ -395,12 +384,12 @@
       <setSpec>objectType:person</setSpec>
       <setName>Personen</setName>
     </set>
-    
+
   </ListSets>]]></pre>
   <p>Zu Beachten ist hierbei die Verwendung des OAI Namensraumes.</p>
-  
+
   <p>
-    Bei statisch definierten Sets muss für jeden Eintrag ein Property definiert werden, 
+    Bei statisch definierten Sets muss für jeden Eintrag ein Property definiert werden,
     welches eine Suchanfrage für die Dokumente des Sets zurückliefert. Dabei ist zu beachten,
     dass Doppelpunkte in der Java-Property-Syntax durch <code>\:</code> ersetzt werden müssen.
   </p>
@@ -627,11 +616,6 @@
      raten daher momentan vom produktiven Einsatz ab!</note>
    </p>
    </section>
-
- <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
- <script type="text/javascript">
-     SyntaxHighlighter.all()
- </script>
 </body>
 </document>
 

@@ -7,17 +7,6 @@
     <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten</abstract>
   </header>
   <body>
-
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
    <section>
     <title>Klassifikationsbrowser</title>
     <p>
@@ -84,7 +73,7 @@
     <img src="images/klassifikationsbrowser.png" alt="Klassifikationsbrowser" style="margin:5px;padding:10px;border:1px solid gray;" /><br />
     <span class="klein"><strong>Abbildung 2.14.1:</strong> Klassifikationsbrowser in einer MyCoRe-Anwendung</span>
   </div>
-  
+
   <section>
     <title>Die Parameter im Detail</title>
     <h4>classification="{ClassificationID}"</h4>
@@ -231,7 +220,7 @@
     Zum Beispiel:<br />
     <code>http://localhost:8291/modules/classeditor/classificationEditor.xml?XSL.classeditor.debug=true&amp;XSL.classeditor.showId=true</code>
     </p>
-    <table>  
+    <table>
       <tr>
         <th>Parameter</th>
         <th>Werte</th>
@@ -262,7 +251,7 @@
     Unter <code>http://localhost:8291/modules/classeditor/classificationEditorDiag.xml</code> kann
     zusätzlich ein Dialog basierender Klassifikationseditor aufgerufen werden.
     </p>
-    
+
     <h4>ACL</h4>
     <p>
     Um Anwendern die Möglichkeit zu geben mit dem Klassifikationseditor zu arbeiten müssen vorher
@@ -300,11 +289,6 @@ Um alle css Formatierungen korrekt anzuzeigen muss der Body-Tag die Klasse des a
     <p>Die Handhabung des Klassifikationseditors ist im <a href="site:classif_editor_ug22"
         >UserGuide</a> beschrieben.</p>
 </section>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
 </body>
 </document>
 

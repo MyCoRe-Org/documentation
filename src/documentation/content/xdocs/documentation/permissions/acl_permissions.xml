@@ -21,15 +21,6 @@
   </header>
   <body>
 
-  <!-- Include required JS files -->
-    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-  <!--
-   At least one brush, eg. XML. You need to include a brush for every
-   language you want to highlight
-   -->
-    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-
     <section>
       <title>Allgemeines</title>
       <p>ACLs und Privilegien sind in MyCoRe in zwei SQL-Tabellen gespeichert. Die Tabelle MCRACCESS enthält die
@@ -75,8 +66,8 @@
   xsi:noNamespaceSchemaLocation="MCRPermissions.xsd"
   xmlns:xml="http://www.w3.org/XML/1998/namespace"
 >
-  <mcrpermission name="manage-sessions" 
-    description="Administration rights for the session system" 
+  <mcrpermission name="manage-sessions"
+    description="Administration rights for the session system"
     ruledescription="For administrators only">
     <condition format="xml">
       <boolean operator="or">
@@ -206,11 +197,6 @@
         <dd>Das Kommando löscht alle Permissions.</dd>
       </dl>
     </section>
-    
-  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-    <script type="text/javascript">
-      SyntaxHighlighter.all()
-    </script>
   </body>
 </document>
 

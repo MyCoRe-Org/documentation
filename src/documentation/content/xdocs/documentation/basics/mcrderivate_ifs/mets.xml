@@ -7,13 +7,6 @@
   </header>
 
   <body>
-    <!-- Include required JS files -->
-    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-    <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
    <section>
    <title>Allgemein</title>
    <p>
@@ -69,10 +62,5 @@ select objects with solr query returnId:ArchNachl_cbu_00000002 AND objectType:de
       </p>
     </section>
   </section>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
   </body>
 </document>

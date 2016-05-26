@@ -18,15 +18,6 @@
   </header>
 
   <body>
-
-    <!-- Include required JS files -->
-    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-    <!--
-     At least one brush, eg. XML. You need to include a brush for every
-     language you want to highlight
-     -->
-    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-
     <section>
       <title>Einrichtung eines Solr-Servers</title>
       <p>Bevor man mit der Einrichtung des Solr-Servers beginnt, sollte man sich kurz
@@ -143,10 +134,5 @@
       </p>
       <pre class="brush: xml"><![CDATA[<str name="fq">objectType:("disshab" OR "thesis" OR "document")</str>]]></pre>
     </section>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
   </body>
 </document>

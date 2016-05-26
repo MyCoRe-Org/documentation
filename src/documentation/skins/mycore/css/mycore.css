@@ -488,5 +488,14 @@ a:hover.sphereLink {
 
     .table { font-size: 1em;}
     .event-handler-table tbody > tr:nth-child(2n) > td {padding-bottom: 25px;}
+
+    code {
+      padding: 2px 4px;
+      color: #2F647E;
+      white-space: nowrap;
+      background-color: #f6f6f6;
+      border: 0px;
+    }
+
 }
 }

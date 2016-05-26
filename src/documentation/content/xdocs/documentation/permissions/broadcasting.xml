@@ -13,15 +13,6 @@
   </header>
 
   <body>
-  <!-- Include required JS files -->
-    <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-  <!--
-   At least one brush, eg. XML. You need to include a brush for every
-   language you want to highlight
-   -->
-    <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-    <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-
     <section>
       <title>Allgemeines</title>
       <p>
@@ -49,8 +40,8 @@
   xsi:noNamespaceSchemaLocation="MCRPermissions.xsd"
   xmlns:xml="http://www.w3.org/XML/1998/namespace"
 >
-  <mcrpermission name="manage-broadcasting" 
-    description="Administration rights for the session system" 
+  <mcrpermission name="manage-broadcasting"
+    description="Administration rights for the session system"
     ruledescription="For administrators only">
     <condition format="xml">
       <boolean operator="or">
@@ -78,24 +69,24 @@
   <!-- on = client will autmatically listen for new messages by AJAX -->
   <!-- off client won't listen for new messages -->
   <power>on</power>
-   
+
   <!-- Seconds, in which intervall the client will ask for new messages -->
   <refreshRate>60</refreshRate>
-    
+
   <!-- true | false -->
-  <!-- true = User will get the same message again, if a new session is opened, even though the user already received 
+  <!-- true = User will get the same message again, if a new session is opened, even though the user already received
     the message. This should be used, if a user login will be used by more than one person -->
   <!-- false = Each user will get a message only on times, indepently on the session. -->
   <sessionSensitive>false</sessionSensitive>
-    
+
   <message.header>Sehr geehrte Mitarbeiter</message.header>
   <message.tail>Ihr Administrator</message.tail>
   <!-- <group/> &| <user> -->
-    
-  <!-- allowGuestGroup ("true|false")  if set to true all "gast" users are listen on the channel, if "false" only 
+
+  <!-- allowGuestGroup ("true|false")  if set to true all "gast" users are listen on the channel, if "false" only
     user != "gast" are listen -->
   <receivers allowGuestGroup="false"/>
-    
+
   <!-- <from> & <to> (ISO 8601) are NOT supported yet, -> use @send -->
   <!-- @send = ever | never --><!-- ever = send continuasly -->
   <!-- never = do NOT send -->
@@ -103,7 +94,7 @@
     <from>2015-10-20T10:17:42.920Z</from>
     <to>2015-10-20T10:17:42.920Z</to>
   </onAirTime>
-    
+
 </mcr-module-broadcasting>]]></pre>
 
       <p> Einbinden in die Anwendung</p>
@@ -112,7 +103,7 @@
         navigation.xml folgender Eintrag zu tätigen.
       </p>
       <pre class="brush: xml">
-<![CDATA[<item 
+<![CDATA[<item
   href="/servlets/MCRBroadcastingServlet?mode=getReceiverList"
   type="extern"
   target="_self"
@@ -131,11 +122,6 @@
       <pre class="brush: xml">&lt;xsl:call-template name="module-broadcasting.getHeader"/&gt;</pre>
       <p>Informationen zu Benutzung des Modules finden Sie im MyCoRe User Guide.</p>
     </section>
-    
-  <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-    <script type="text/javascript">
-      SyntaxHighlighter.all()
-    </script>
+
   </body>
 </document>
-  

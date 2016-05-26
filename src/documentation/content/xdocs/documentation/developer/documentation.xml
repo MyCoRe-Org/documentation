@@ -3,23 +3,13 @@
 <document>
   <header>
     <title>Dokumentation</title>
-    <version>2014-11-26</version>
+    <version>2016-05-26</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
   </header>
   <body>
-
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
     <section>
       <title>Allgemeines</title>
       <p> Die Dokumentation von MyCoRe und die Unterstützung der Entwickler erfolgt über mehrere Medien.</p>
@@ -75,33 +65,27 @@
         <title>Code-Beispiele mit Syntax-Highlighting</title>
         <p>
           Für eine gut lesbare Darstellung der Code-Beispiele nutzen wir den <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>,
-          eine JavaScript-Entwicklung.
+          eine JavaScript-Entwicklung. Dazu muss ein <code>&lt;pre&gt;</code>-Tag mit der CSS-Klasse <code>brush: [language];</code> definiert werden:
         </p>
         <pre class="brush: xml;"><![CDATA[
- <body>
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
+<pre class="brush: xml;"><![CDATA[
+  <example>Dies ist ein XML-Codebeispiel</example>
+</pre>]]></pre>
+        <p>
+          Standardmäßig stehen die Layouts <code>brush: xml</code>, <code>brush: bash</code> und <code>brush: java</code>
+          zur Verfügung. Sollten weitere Layouts benötigt werden, können diese wie folgt eingebunden werden, z.B. <code>brush: sql</code>,:
+        </p>
+        <pre class="brush: xml;"><![CDATA[
    <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
+    You need to include a brush for every language you want to highlight
     -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
+   <script type="text/javascript" src="/documentation/skin/shBrushSql.js"></script>
 
-   [...]
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
- <body>]]></pre>
+   <pre class="brush: sql; gutter: false;">
+     SELECT * FROM mcrcategory;
+   </pre>
+   ]]></pre>
       </section>
     </section>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
   </body>
 </document>

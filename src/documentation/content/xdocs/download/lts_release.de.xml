@@ -8,16 +8,6 @@
 
  <body>
 
-    <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
   <p>
     <!-- Weitere Informationen dazu
     finden Sie im <a href="site:migrate2014.06">Abschnitt zur Migration</a>. -->
@@ -74,11 +64,6 @@
     von DocPortal für die eigene Anwendung genutzt werden. MyCoRe kann auch über Maven
     eingebunden werden.
   </p -->
-
- <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
- <script type="text/javascript">
-     SyntaxHighlighter.all()
- </script>
 
   </body>
 

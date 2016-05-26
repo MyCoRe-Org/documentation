@@ -7,14 +7,6 @@
 </header>
 
  <body>
-
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
   <p>
     You can find an overview of all innovations on the documentation site
     <a href="site:whats_new">"Was ist neu?"</a>. A detailed list of changes
@@ -45,11 +37,5 @@
   </p>
 
   <p>This page is currently under construction. See you again soon!</p>
-
-
- <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-  <script type="text/javascript">
-     SyntaxHighlighter.all()
-  </script>
   </body>
 </document>

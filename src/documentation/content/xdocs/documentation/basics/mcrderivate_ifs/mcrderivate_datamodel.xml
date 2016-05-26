@@ -8,17 +8,6 @@
     ist notwendig, um eigene Datensätze für zu erstellen.</abstract>
   </header>
 <body>
-
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
-
   <section>
    <title>Das Speichermodell für die Multimediadaten (IFS)</title>
    <p>
@@ -68,11 +57,5 @@
        wird versucht Dateien wie index.html usw. zu finden.</li>
    </ul>
   </section>
-
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
 </body>
 </document>

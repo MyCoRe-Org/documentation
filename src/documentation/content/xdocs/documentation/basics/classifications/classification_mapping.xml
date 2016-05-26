@@ -6,20 +6,11 @@
     <title>Mapping von Klassifikationen</title>
   </header>
   <body>
-   <!-- Include required JS files -->
-   <script type="text/javascript" src="/documentation/skin/shCore.js"></script>
-   <!--
-    At least one brush, eg. XML. You need to include a brush for every
-    language you want to highlight
-    -->
-   <script type="text/javascript" src="/documentation/skin/shBrushXml.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushBash.js"></script>
-   <script type="text/javascript" src="/documentation/skin/shBrushJava.js"></script>
      <section>
     <title>Allgemein</title>
-    <p>Wenn Metadaten z.B. über die OAI-Schnittstelle an externe Services ausgeliefert werden sollen, 
+    <p>Wenn Metadaten z.B. über die OAI-Schnittstelle an externe Services ausgeliefert werden sollen,
        werden häufige andere Klassifikationseinträge benötigt.
-       Um Mehrfacheingaben zu vermeiden, bietet MyCoRe mit dem <em>Klassifikationsmapping</em> die Möglichkeit, 
+       Um Mehrfacheingaben zu vermeiden, bietet MyCoRe mit dem <em>Klassifikationsmapping</em> die Möglichkeit,
        dass nur eine primäre Klassifikation erfasst werden muss.
        MyCoRe ergänzt dann die äquivalenten Einträge der anderen Klassifikationen automatisch.<br />
     </p>
@@ -46,9 +37,9 @@
      <section>
       <title>Anreicherung der Klassifikation</title>
       <p>
-        Die Definition des Mappings erfolgt, indem die Klassifikationseinträge um ein Label mit dem künstlichen Sprach-Attribut 
+        Die Definition des Mappings erfolgt, indem die Klassifikationseinträge um ein Label mit dem künstlichen Sprach-Attribut
         <code>x-mapping</code> erweitert werden.
-        Als Wert wird <em>Klassifikations-ID</em> und <em>Kategorie-ID</em> getrennt durch einen Doppelpunkt dort eingetragen. 
+        Als Wert wird <em>Klassifikations-ID</em> und <em>Kategorie-ID</em> getrennt durch einen Doppelpunkt dort eingetragen.
         Mehre Werte können durch Leerzeichen getrennt werden. z.B.:
       </p>
       <pre class="brush: xml"><![CDATA[
@@ -61,10 +52,10 @@
   </category>]]></pre>
    </section>
    <section><title>Technische Umsetzung</title>
-      
+
     <section><title>in einer "klassischen" MyCoRe-Anwendung</title>
       <p>Das Datenmodell wird um ein Datenfeld <tt>mappings/mapping</tt> ergänzt werden. Dieses Feld wird dann beim Einfügen oder Aktualisieren
-         der Dokumente automatisch befüllt. 
+         der Dokumente automatisch befüllt.
       </p>
       <pre class="brush: xml"><![CDATA[
     <element name="mappings" minOccurs='0' maxOccurs='1'>
@@ -102,10 +93,5 @@
     valueURI="http://localhost:8291/mir/classifications/diniPublType#doctoralThesis"/>]]></pre>
     </section>
   </section>
-
-   <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-   <script type="text/javascript">
-       SyntaxHighlighter.all()
-   </script>
   </body>
 </document>
