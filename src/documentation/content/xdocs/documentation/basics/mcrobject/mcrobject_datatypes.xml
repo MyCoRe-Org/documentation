@@ -8,7 +8,7 @@
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
-    <version>2014-11-26</version>
+    <version>2016-05-26</version>
     <abstract>Beschreibung der MyCoRe Basis-Datentypen</abstract>
   </header>
 
@@ -37,28 +37,20 @@
           <td>MCRMetaDerivateLink</td>
         </tr>
         <tr>
-          <td>MCRMetaISBN</td>
+          <td>MCRMetaISO8601Date</td>
           <td>MCRMetaHistoryDate</td>
         </tr>
         <tr>
-          <td>MCRMetaISO8601Date</td>
+          <td>MCRMetsLangText</td>
           <td>MCRMetaPersonName</td>
         </tr>
         <tr>
-          <td>MCRMetsLangText</td>
-          <td>MCRMetaXML</td>
-        </tr>
-        <tr>
           <td>MCRMetaLink</td>
-          <td></td>
+          <td>MCRMetaXML</td>
         </tr>
         <tr>
           <td>MCRMetaLinkID</td>
           <td></td>
-        </tr>
-        <tr>
-          <td>MCRMetaNBN</td>
-          <td />
         </tr>
         <tr>
           <td>MCRMetaNumber</td>
@@ -244,29 +236,6 @@
     </section>
 
     <section>
-      <title>ISBN (MCRMetaISBN)</title>
-      <p>
-        Dieser Metadatentyp ist ganz speziell zur
-        <span class="T4">Speicherung</span>
-        einer ISBN gedacht. Er gestattet nur
-        eine Kardinalität.
-      </p>
-      <p>Syntax des Metadaten-Basistyps MCRMetaISBN:</p>
-
-      <pre class="brush: xml;">
-<![CDATA[<tag class="MCRMetaISBN" heritable="...">
-  <subtag>ISBN</subtag>
-</tag>]]></pre>
-
-      <p>Syntax des Metadaten-Basistyps MCRMetaISBN:</p>
-
-      <pre class="brush: xml;">
-<![CDATA[<isbns class="MCRMetaISBN" heritable="..." >
-  <isbn>1-234-56567-4</isbn>
-</isbn>]]></pre>
-    </section>
-
-    <section>
       <title>Datumsangaben (MCRMetaISO8601Date)</title>
       <p>
         Dieser Metadatentyp ist wie MCRMetaDate für das Speichern von Zeitangaben gedacht. Er bietet jedoch eine höhere
@@ -328,33 +297,31 @@
     <section>
       <title>Externe Links und interne Verknüpfungen (MCRMetaLink und MCRMetaLinkID)</title>
       <p>
-        Der Basistyp MCRMetaLink wurde geschaffen, um eine Verknüpfung verschiedener MyCoRe-Objekte untereinander zu
-        realisieren. Außerdem können hier genauso Verweise auf beliebige externe Referenzen abgelegt werden. Der Typ
-        MCRMetaLink ist eine Implementation des W3C XLink Standards (siehe ’XLM Linking Language (XLink) Version 1.0’).
-        Auf dieser Basis enthält der MyCoRe-Metadatentyp zwei Arten von Links - eine Referenz und einen bidirektionalen
-        Link.
-        Bei beiden werden jedoch in MCRMetaLink nicht alle Möglichkeiten der XLink Spezifikation ausgeschöpft, da dies für
+        Der Basistyp MCRMetaLink wurde geschaffen, um eine Verknüpfung  auf beliebige externe Referenzen zu realisieren.
+        Der Typ MCRMetaLink ist eine Implementation des W3C XLink Standards (siehe ’XLM Linking Language (XLink) Version 1.0’).
+        Auf dieser Basis können mit dem MyCoRe-Metadatentyp MCRMetaLink zwei Arten von Links - eine Referenz und einen 
+        bidirektionalen Link erstellt werden.
+        Bei beiden Arten werden jedoch in MCRMetaLink nicht alle Möglichkeiten der XLink Spezifikation ausgeschöpft, da dies für
         die in MyCoRe benötigten Funktionalitäten nicht erforderlich ist.
       </p>
       <p>
-        Im Referenztyp ist das Attribut xlink:type=’locator’ immer anzugeben. Die eigentliche Referenz wird im xlink:href
-        Attribut notiert. Dabei kann die Referenz eine URL oder eine MCRObjectID sein. Daneben können noch weitere
-        Informationen im xlink:label angegeben werden, die Rolle einer verlinkten Person. Der Referenztyp kommt im
-        DocPortal
-        bei der Verlinkung von Dokumenten und Personen zum Einsatz. Um den Update-Aufwand in Grenzen zu halten, wurde die
-        genannte Verbindung als Referenz konzipiert. Somit weiß das referenzierte Objekt in der Beispielanwendung nichts
-        über
-        den Verweis.
+        Im Referenztyp ist das Attribut <em>xlink:type=’locator’</em> immer anzugeben. 
+        Die eigentliche Referenz wird im <em>xlink:href</em>
+        Attribut notiert. Dabei ist die Referenz eine URL. Daneben können noch weitere
+        Informationen im xlink:label angegeben werden, hier ist aber auf die in der Spezifikation von XLink definierte
+        Zeichenmenge zu achten! Weierhin kann ein <em>xlink:title</em> angegeben werden.
       </p>
       <p>
         Alternativ dazu besteht die Möglichkeit eines bidirektionalen Links. Dieser wird sowohl in der Link-Quelle wie auch
-        im Link-Ziel eingetragen. Der Typ ist in diesem Fall xlink:type=’arc’. Weiterhin sind die Attribute xlink:from und
-        xlink:to erforderlich. Optional kann noch ein Titel in xlink:title mitgegeben werden.
+        im Link-Ziel eingetragen. Der Typ ist in diesem Fall <em>xlink:type=’arc’</em>. Weiterhin sind die Attribute <em>xlink:from</em> und
+        <em>xlink:to</em> erforderlich. Optional kann noch ein Titel in <em>xlink:title</em> mitgegeben werden.
       </p>
       <p>
         Der Basistyp MCRMetaLinkID entspricht im Aufbau dem MCRMetaLink. Der einzige Unterschied ist, dass die Attribute
-        xlink:href, xlink:from und xlink:to nur mit MCRObjectIDs belegt werden dürfen.
+        xlink:href, xlink:from und xlink:to nur mit MCRObjectIDs belegt werden dürfen. Dieser spezielle Datentyp wir zur Verknüpfung von
+        MyCoRe-Objekten untereinander verwendet. Dabei kommt in der Regel die Referenz-Variante, also <em>xlink:href</em>, zum Einsatz.
       </p>
+      
       <p>XML-Syntax des Metadaten-Basistyps MCRMetaLink:</p>
       <pre class="brush: xml;">
 <![CDATA[<tag class="MCRMetaLink" heritable="...">
@@ -363,33 +330,27 @@
   ...
 </tag>]]></pre>
 
-      <p>Beispiel des Metadaten-Basistyps MCRMetaLink:</p>
-
+      <p>XML-Syntax des Metadaten-Basistyps MCRMetaLinkID:</p>
       <pre class="brush: xml;">
-<![CDATA[<urls class="MCRMetaLink" heritable="false">
+<![CDATA[<tag class="MCRMetaLink" heritable="...">
+  <subtag xlink:type="locator" xlink:href="..." xlink:title="..."/>
+  ...
+</tag>]]></pre>
+
+      <p>Beispiel des Metadaten-Basistyps MCRMetaLink:</p>
+      <pre class="brush: xml;">
+<![CDATA[<def.url class="MCRMetaLink" heritable="false">
   <url xlink:type="locator" xlink:href="http://www.zoje.de" xlink:label="ZOJE"
        xlink:title="Eine externe URL"/>
   <url xlink:type="arc" xlink:from="mcr_object_id_1" xlink:to="mcr_object_id_2"
        xlink:title="Link zwischen Objekten"/>
-</urls>]]></pre>
-    </section>
+</def.url>]]></pre>
 
-    <section>
-      <title>NBN (MCRMetaNBN)</title>
-      <p>
-        Diese Metadatentyp ist ganz speziell zur Speicherung einer NBN gedacht. Er gestattet nur eine Kardinalität.
-      </p>
-      <p>Syntax des Metadaten-Basistyps MCRMetaNBN:</p>
+      <p>Beispiel des Metadaten-Basistyps MCRMetaLinkID:</p>
       <pre class="brush: xml;">
-<![CDATA[<tag class="MCRMetaNBN" heritable="...">
-  <subtag>NBN</subtag>
-</tag>]]></pre>
-
-      <p>Beispiel des Metadaten-Basistyps MCRMetaNBN:</p>
-      <pre class="brush: xml;">
-<![CDATA[<nbns class="MCRMetaNBN" heritable="...">
-  <nbn>urn:nbn:1-2334</nbn>
-</nbns>]]></pre>
+<![CDATA[<def.ref class="MCRMetaLinkID" heritable="false">
+  <ref xlink:type="locator" xlink:href="MCR_mods_00000010" xlink:title="Document 20"/>
+</def.ref>]]></pre>
     </section>
 
     <section>
