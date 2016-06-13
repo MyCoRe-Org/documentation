@@ -37,7 +37,7 @@
     </category>
     <category ID="thesis">
       <label xml:lang="x-hosts" text="series standalone" />
-      <label xml:lang="x-editor" text="false" />
+      <label xml:lang="x-group" text="true" />
       <label xml:lang="en" text="Thesis" />
       <label xml:lang="de" text="Hochschulschriften" />
       <category ID="exam">
