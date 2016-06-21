@@ -106,13 +106,13 @@ See http://forrest.apache.org/docs/linking.html for more info
         <mcrobj_id           label="MCRObject-ID"      href="mcrobject_id.html" />
         <mcrobj_datadef      label="Datenmodell"       href="mcrobject_datadef.html" />
         <mcrobj_datatypes    label="Datentypen"        href="mcrobject_datatypes.html" />
-        <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html">
-          <mcrobject_commands  label="Kommandos"       href="#mcrobject_commands" type="hidden" />
+        <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html" type="leaf">
+          <mcrobject_commands  label="Kommandos"       href="#mcrobject_commands" type="hidden"/>
         </mcrobj_commands>
       </mcrobject>
       <mcrderivate           label="Derivate"          href="mcrderivate_ifs/">
         <mcrder_xml          label="XML-Format"        href="mcrderivate_datamodel.html" />
-        <mcrder_commands     label="Kommandos"         href="mcrderivate_commands.html">
+        <mcrder_commands     label="Kommandos"         href="mcrderivate_commands.html" type="leaf">
           <mcrderivate_commands  label="Kommandos"       href="#mcrderivate_commands" type="hidden" />
         </mcrder_commands>
         <mcrder_metadata     label="Derivat-Metadaten speichern" href="store_derivmetadata.html" />
@@ -169,7 +169,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Benutzer und Rechte -->
     <permissions           label="Benutzer und Rechte"   href="permissions/">
       <user_system         label="Benutzersystem"        href="user_system.html" />
-      <user_management     label="Nutzer und Rollen"     href="user_management.html">
+      <user_management     label="Nutzer und Rollen"     href="user_management.html" type="leaf">
       	<role_commands     label="Kommandos"             href="#role_commands" type="hidden" />
       	<user_commands     label="Kommandos"             href="#user_commands" type="hidden" />
       </user_management>
