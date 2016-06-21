@@ -133,6 +133,8 @@
       	<ul>
       		<li><a href="site:permissions/user_management/user_commands">Kommandos zur Verwaltung von Nutzern</a></li>
         	<li><a href="site:permissions/user_management/role_commands">Kommandos zur Verwaltung von Nutzerrollen</a></li>
+        	<li><a href="site:content/mcrobject/mcrobj_commands/mcrobject_commands">Kommandos zur Verwaltung von MyCoRe Objekten</a></li>
+       		<li><a href="site:content/mcrderivate/mcrder_commands/mcrderivate_commands">Kommandos zur Verwaltung von MyCoRe Derivaten</a></li>
         </ul>
     
   	</section>

@@ -6,8 +6,11 @@
     <title>Kommandos zum Verwalten der Derivate</title>
   </header>
   <body>
-   <section>
+   <section  id="mcrderivate_commands">
     <title>Kommandos zur Verwaltung der Derivate</title>
+         <p>Über die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a> können folgende Befehle zur Verwaltung von 
+            MyCoRe Derivaten ausgeführt werden:
+        </p>
     <dl>
     <dt><code>load derivate from file {0}</code></dt>
     <dd></dd>
