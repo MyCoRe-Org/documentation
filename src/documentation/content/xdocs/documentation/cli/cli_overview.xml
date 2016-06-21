@@ -125,5 +125,16 @@
         </dd>
       </dl>
     </section>
+    
+    <section>
+      <title>Übersicht der weiteren MyCoRe Kommandos</title>
+      <p>Weitere Kommandos werden in den Abschnitten dokumentiert, die die entsprechende Kompontente oder Funktionalität beschreiben.
+      </p>
+      	<ul>
+      		<li><a href="site:permissions/user_management/user_commands">Kommandos zur Verwaltung von Nutzern</a></li>
+        	<li><a href="site:permissions/user_management/role_commands">Kommandos zur Verwaltung von Nutzerrollen</a></li>
+        </ul>
+    
+  	</section>
   </body>
 </document>

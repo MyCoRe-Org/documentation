@@ -97,9 +97,9 @@
         </p>
       </section>
 
-      <section>
+      <section id="role_commands">
         <title>Kommandos</title>
-        <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Rollen ausgeführt
+        <p>Über die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a> können auch alle administrativen Operationen für Rollen ausgeführt
           werden.
         </p>
         <dl>
@@ -262,9 +262,9 @@
         </table>
       </section>
 
-      <section>
+      <section id="user_commands">
         <title>Kommandos</title>
-        <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Nutzer ausgeführt
+        <p>Über die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a> können auch alle administrativen Operationen für Nutzer ausgeführt
           werden.
         </p>
         <dl>
