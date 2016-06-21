@@ -6,9 +6,11 @@
     <title>Kommandos zum Verwalten von Klassifikationen</title>
   </header>
   <body>
-   <section>
+  <section id="class_commands">
     <title>Kommandos zum Verwalten von Klassifikationen</title>
-
+    <p>Über die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a> können folgende Befehle zur Verwaltung von 
+      Klassifikationen ausgeführt werden:
+    </p>
     <dl class="kasten">
     <dt><code>load classification from file {0}</code></dt>
     <dd>Es wird eine Klassifikation in Form einer XML-Definition aus der Datei {0} gelesen und in das System geladen.</dd>

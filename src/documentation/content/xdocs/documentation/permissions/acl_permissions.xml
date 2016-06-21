@@ -141,10 +141,10 @@
 </condition>]]></pre>
     </section>
 
-    <section>
+    <section id="acl_commands">
       <title>Kommandos</title>
-      <p>Über das Commandline Tool von MyCoRe können auch alle administrativen Operationen für Rollen ausgeführt
-        werden.
+      <p>Über die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a> können auch alle administrativen Operationen für die 
+      Zugriffskontrolle ausgeführt werden.
       </p>
       <dl>
         <dt>

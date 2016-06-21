@@ -20,8 +20,8 @@
         Neben der interaktiven Arbeit über die WEB-Oberfläche kann es bei Produktivanwendungen immer wieder zu dem
         Erfordeniss kommen, via Script Änderungen an den daten vornehmen zu müssen. Hierfür können die MyCoRe-Kommandos
         in Shell-Scripts eingebunden werden. Neben Kommandos für eine feste Gruppe von Daten oder die Auswahl aller
-        Daten bietet das Commandline Interface (CLI) auch die Möglichkeit Daten zu selektieren und dann auf diese
-        Auswahl zuzugreifen.
+        Daten bietet die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a> auch die Möglichkeit Daten zu selektieren 
+        und dann auf diese Auswahl zuzugreifen.
       </p>
     </section>
 

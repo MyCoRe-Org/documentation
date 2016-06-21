@@ -18,13 +18,12 @@
     <section>
       <title>Allgemeines</title>
       <p>
-        Diese Abschnitt beschreibt die Möglichkeiten, die Konsistenz der eigenen Anwendung zu prüfen und ggf.
-        Korrekturen vorzunehmen. Dabei wird vor allem von den flach auf der Platte gespeicherten Metadaten und Bildern
-        ausgegangen. Diese Stellen die Grundlage für eventuelle Korrekturen dar, da in MyCoRe einige Datenteile nur
+        Diese Abschnitt beschreibt Kommandos für die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a>,
+        um die Konsistenz der eigenen Anwendung zu prüfen und ggf. Korrekturen vorzunehmen. Dabei wird vor allem 
+        von den flach auf der Platte gespeicherten Metadaten und Bildern
+        ausgegangen. Diese stellen die Grundlage für eventuelle Korrekturen dar, da in MyCoRe einige Datenteile nur
         sekundär wirken bzw. für eine akzeptable Performacne-Verbesserung existieren. Ein Überblick dazu ist auf der
-        Seite
-        <strong>Backup und Recovery</strong>
-        zu finden.
+        Seite <strong><a href="site:production/backup">Backup und Recovery</a></strong> zu finden.
       </p>
     </section>
 

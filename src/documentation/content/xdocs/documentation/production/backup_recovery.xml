@@ -46,24 +46,17 @@
       </p>
     </section>
 
-    <section>
-      <title>Backup</title>
+    <section id="backup_commands">
+      <title>Backupkommandos</title>
       <p>
         Ein weiterer Schritt zur Sicherung der daten ist das komplette Auslesen des Datenbestandes und die
-        Speicherung
-        auf einem externen
-        (ggf. Netzwerk-) Filesystem. Mit dieser Methode lassen sich auch Migrationen
-        durchführen. Das
-        Commandline-Interface (CLI) von
-        MyCoRe hält dafür einige Kommandos bereit, welche die Daten in
-        definierte
-        Verzeichnis
-        ablegen. Ggf. können die Kommandos auch in Scripte eingebaut werden und über cron-Jobs
-        zyklisch
-        gestartet
-        werden. Neben den eigentlichen Daten können auch Benutzerinformationen und Klassifikationen
-        gesichert
-        werden.
+        Speicherung auf einem externen (ggf. Netzwerk-) Filesystem. Mit dieser Methode lassen sich auch Migrationen
+        durchführen. Die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a>
+        hält dafür einige Kommandos bereit, welche die Daten in definierte
+        Verzeichnisse ablegen. 
+        Ggf. können die Kommandos auch in Scripte eingebaut werden und über cron-Jobs
+        zyklisch gestartet werden. Neben den eigentlichen Daten können auch Benutzerinformationen und Klassifikationen
+        gesichert werden.
       </p>
       <p>Export für MyCoRe-Objekte</p>
       <dl>
@@ -152,11 +145,11 @@
       </dl>
     </section>
 
-    <section>
-      <title>Recovery</title>
+    <section id="recovery_commands">
+      <title>Recoverykommandos</title>
       <p>
         Die mittels der Export-Kommandos gesicherten Daten können im Bedarfsfall wieder in ein ggf. neu erstelltes
-        System eingespielt werden. Dabei sollte die nachfolgende reihenfolge eingehalten werden.
+        System über die <a href="site:cli/cli_overview">MyCoRe Kommandozeile</a> eingespielt werden. Dabei sollte die nachfolgende Reihenfolge eingehalten werden.
       </p>
       <ol>
         <li>Laden der Klassifikationen</li>

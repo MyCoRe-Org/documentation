@@ -131,10 +131,16 @@
       <p>Weitere Kommandos werden in den Abschnitten dokumentiert, die die entsprechende Kompontente oder Funktionalität beschreiben.
       </p>
       	<ul>
+      		<li><a href="site:content/mcrobject/mcrobj_commands/mcrobject_commands">Kommandos zur Verwaltung von MyCoRe Objekten</a></li>
+       		<li><a href="site:content/mcrderivate/mcrder_commands/mcrderivate_commands">Kommandos zur Verwaltung von MyCoRe Derivaten</a></li>
+      		<li><a href="site:content/classifications/classif_commands/class_commands">Kommandos zur Verwaltung von Klassifikationen</a></li>
       		<li><a href="site:permissions/user_management/user_commands">Kommandos zur Verwaltung von Nutzern</a></li>
         	<li><a href="site:permissions/user_management/role_commands">Kommandos zur Verwaltung von Nutzerrollen</a></li>
-        	<li><a href="site:content/mcrobject/mcrobj_commands/mcrobject_commands">Kommandos zur Verwaltung von MyCoRe Objekten</a></li>
-       		<li><a href="site:content/mcrderivate/mcrder_commands/mcrderivate_commands">Kommandos zur Verwaltung von MyCoRe Derivaten</a></li>
+        	<li><a href="site:permissions/acl_permissions/acl_commands">Kommandos für die Verwaltung der Zugriffskontrolle über ACL</a></li>
+  			<li><a href="site:production/backup/backup_commands">Kommandos zum Backup von MyCoRe Daten</a></li>
+        	<li><a href="site:production/backup/recovery_commands">Kommandos zum Wiederherstellen von MyCoRe Daten</a></li>
+  			<li><a href="site:production/consistency">Kommandos für die Überprüfung und Wiederherstellung der Konsistenz</a></li>
+            <li><a href="site:production/batch">Kommandos für den Batchbetrieb</a></li>
         </ul>
     
   	</section>

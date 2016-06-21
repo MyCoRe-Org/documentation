@@ -126,7 +126,9 @@ See http://forrest.apache.org/docs/linking.html for more info
       <classifications       label="Klassifikationen"  href="classifications/">
         <classif_index       label="Übersicht"         href="classification_index.html" />
         <classif_xml         label="Datenmodell"       href="classification_datamodel.html" />
-        <classif_commands    label="Kommandos"         href="classification_commands.html" />
+        <classif_commands    label="Kommandos"         href="classification_commands.html" type="leaf">
+          <class_commands    label="Kommandos"       href="#class_commands" type="hidden" />
+        </classif_commands>
         <classif_browser     label="Browser"           href="classification_browser.html" />
         <classif_editor      label="Editor"            href="classification_editor.html" />
         <classif_mapping     label="Mapping"           href="classification_mapping.html" />
@@ -173,7 +175,9 @@ See http://forrest.apache.org/docs/linking.html for more info
       	<role_commands     label="Kommandos"             href="#role_commands" type="hidden" />
       	<user_commands     label="Kommandos"             href="#user_commands" type="hidden" />
       </user_management>
-      <acl_permissions     label="ACLs und Permissions"  href="acl_permissions.html" />
+      <acl_permissions     label="ACLs und Permissions"  href="acl_permissions.html" type="leaf">
+        <acl_commands      label="ACL Kommandos"         href="#acl_commands" />
+      </acl_permissions>
       <acl_strategies      label="Zugriffsstrategien"    href="acl_strategies.html" />
       <default-permissions  label="Standardzugriffsrechte"    href="default-permissions.html" />
       <login_session       label="LoginServlet"          href="login_session.html" />
@@ -200,7 +204,11 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Laufender Betrieb -->
     <production            label="Laufender Betrieb"     href="production/">
-      <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
+      <backup              label="Backup &amp; Recovery" href="backup_recovery.html" type="leaf" >
+        <backup_commands   label="Backupkommandos"       href="#backup_commands" type="hidden" />
+        <recovery_commands  label="Recoverykommandos"      href="#recovery_commands" type="hidden" />		
+      	
+      </backup>
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />
       <batch               label="Batch-Betrieb"         href="batch_with_cli.html" />
       <vhost               label="Virtueller Host"       href="vhost.html" />
