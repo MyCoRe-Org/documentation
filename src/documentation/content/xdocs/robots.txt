@@ -207,14 +207,15 @@ Disallow: /
 #
 
 User-agent: *
+Allow: /mir/servlets/MCRFileNodeServlet/
 Disallow: /viewvc/
 Disallow: /svn/
 Disallow: /jenkins/
 Disallow: /hudson/
 Disallow: /artifactory/
 Disallow: /documentation/archiv/
-#
-# Limit the Crawl-speed
-# delay in seconds
-#
-Crawl-delay: 40
+Disallow: /mir/servlets/
+Disallow: /mir/browse/
+Disallow: /mir/rsc/
+Disallow: /mir/api/
+Sitemap: http://www.mycore.de/mir/sitemap_google.xml
