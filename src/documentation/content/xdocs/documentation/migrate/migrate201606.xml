@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+
+  <header>
+    <title>Migration Release 2015-05 nach 2016-06</title>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+    </authors>
+    <version>2016-07-10</version>
+    <abstract>
+      Diese Seite fasst alle Informationen für die Migration von Release 2015-05 nach Release 2016-06 zusammen.
+    </abstract>
+  </header>
+
+  <body>
+
+    <section id="requirements_201606">
+      <title>Voraussetzungen für das Release</title>
+      <p>Das Release 2016.06 setzt folgende Systemkomponenten voraus:
+      </p>
+      <ul>
+        <li>Java 8</li>
+        <li>Servlet Container 3.1</li>
+      </ul>
+      <p>Diese Systemkomponenten sind in folgenden Distributionen enthalten, welche bei einzelnen Community-Mitgliedern
+        im Einsatz sind.
+      </p>
+      <ul>
+        <li>Open SuSE Leap 42.1</li>
+        <li>SuSE SLES 12 SP 1</li>
+      </ul>
+    </section>
+
+    <section id="log4j">
+      <title>Umstellung auf log4j 2.x</title>
+      <p>
+        Mit Umstellung auf das Release 2016.06 wurde auch der Einsatz log4j mit Version 2.x beschlossen. Der folgende
+        Abschitt beschreibt die notwendigen Umstellungen eigenen Java-Codes und der log4j Konfiguration. Eine Übersichte
+        der erforderlichen Änderungen bekommt man unter
+        <a href="https://logging.apache.org/log4j/2.x/manual/migration.html" target="_blank">https://logging.apache.org/log4j/2.x/manual/migration.html
+        </a>
+        . Die wichtigsten Punkte sind:
+      </p>
+      <ul>
+        <li>
+          Der Import erfolgt jetzt von
+          <code>org.apache.logging.log4j</code>
+          .
+        </li>
+        <li>
+          Die Instanz des Loggers wird jetzt mit
+          <code>LogManager.getLogger([ggf. xyz.class])</code>
+          geholt.
+        </li>
+        <li>Aus der Datei <em>mycore.properties</em> können alle Einträge <code>log4j.logger....</code> für den alten Logger entfernt werden.
+        </li>
+        <li>Die Konfiguration des Logging-Systemes muss nun in der Datei <em>log4j2.xml</em> unter <em>src/main/resources</em> festgelegt werden (siehe unten).</li>
+      </ul>
+      <pre class="brush: xml;">
+<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+  <appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{ISO8601} %-5p %X{loginId} %c{1}: %m%n%ex" />
+    </Console>
+  </appenders>
+  <loggers>
+    <root level="info">
+      <appender-ref ref="Console" />
+    </root>
+    <logger name="org.hibernate" level="error" />
+    <logger name="org.mycore.frontend.editor.validation" level="info" />
+    ...
+  </loggers>
+</configuration>]]></pre>
+    </section>
+
+  </body>
+
+</document>
