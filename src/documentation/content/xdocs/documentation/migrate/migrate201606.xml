@@ -34,6 +34,21 @@
       </ul>
     </section>
 
+    <section id="dependency_versions">
+      <title>Versionsnummern für Produkte von Open Source Drittanbietern</title>
+      <p>MyCoRe und die darauf basierenden Anwendungen nutzen eine Reihe von Bibliotheken anderer Open Source Projekte.
+        Die für das Release 2016.06 verwendeten sind hier aufgelistet, sofern sie für die Ergänzung duch eigenen Code
+        relevant sind. Einige Bibliotheken werden nur intern benötigt oder befriedigen Abhängigkeiten. Diese sind hier
+        nicht erwähnt.
+      </p>
+      <ul>
+        <li>jdom2 - 2.0.6</li>
+        <li>log4j - 2.6.1</li>
+        <li>postgres - 9.4-1206-jdbc42 - optional</li>
+        <li>servlet - 3.1.0</li>
+      </ul>
+    </section>
+
     <section id="log4j">
       <title>Umstellung auf log4j 2.x</title>
       <p>
@@ -55,9 +70,20 @@
           <code>LogManager.getLogger([ggf. xyz.class])</code>
           geholt.
         </li>
-        <li>Aus der Datei <em>mycore.properties</em> können alle Einträge <code>log4j.logger....</code> für den alten Logger entfernt werden.
+        <li>
+          Aus der Datei
+          <em>mycore.properties</em>
+          können alle Einträge
+          <code>log4j.logger....</code>
+          für den alten Logger entfernt werden.
         </li>
-        <li>Die Konfiguration des Logging-Systemes muss nun in der Datei <em>log4j2.xml</em> unter <em>src/main/resources</em> festgelegt werden (siehe unten).</li>
+        <li>
+          Die Konfiguration des Logging-Systemes muss nun in der Datei
+          <em>log4j2.xml</em>
+          unter
+          <em>src/main/resources</em>
+          festgelegt werden (siehe unten).
+        </li>
       </ul>
       <pre class="brush: xml;">
 <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -76,6 +102,14 @@
     ...
   </loggers>
 </configuration>]]></pre>
+    </section>
+
+    <section id="JPA">
+      <title>Umstellung auf die Java Persitence API (JPA)</title>
+      <p>Mit Release 2016.06 wurde die Persitence-API für Datenbanken auf JPA-Nutzung umgestellt. Damit entfallen die
+        Hibernate-Konfigurationen ersatzlos.
+      </p>
+      <p>ToDo by Jens</p>
     </section>
 
   </body>
