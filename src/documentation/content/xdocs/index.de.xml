@@ -54,8 +54,8 @@
       <map title="Alle Projekte auf einer Karte anzeigen" label="Karte" />
       <news>
         <newsentry>
-          <title>Terminankündigung</title>
-          <message>Der Termin für den MyCoRe-User-Workshop 2016 steht fest! Workshop-Tag: 9. Nov. 2016, Hands-on-Workshop: 10. Nov.</message>
+          <title>Ankündigung</title>
+          <message>Der MyCoRe-User-Workshop 2016 findet in Leipzig statt! Workshop-Tag: 9. Nov. 2016, Hands-on-Workshop: 10. Nov.</message>
           <url>site:workshop</url>
           <date>18. Mai 2016</date>
           <author>Wiebke Oeltjen</author>
