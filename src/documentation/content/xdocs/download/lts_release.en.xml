@@ -3,7 +3,7 @@
 
 <document xml:lang="en">
 <header>
- <title>Release 2015.05 (LTS)</title>
+ <title>Release 2016.06 (LTS)</title>
 </header>
 
  <body>
@@ -15,19 +15,19 @@
   </p>
 
   <p>
-    If you have your application already near version 2015.05, you only have to update
+    If you have your application already near version 2016.06, you only have to update
     your pom.xml (docportal/config):
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2015.05.0.1-SNAPSHOT&lt;/version>
+&lt;version>2016.06.0.1-SNAPSHOT&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>[2015.05.0.1-SNAPSHOT,2015.05.1)&lt;/version>
+  &lt;version>[2016.06.0.1-SNAPSHOT,2016.06.1)&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>

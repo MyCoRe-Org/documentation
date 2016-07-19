@@ -59,16 +59,16 @@ See http://forrest.apache.org/docs/linking.html for more info
     <dl_mycore   label="MyCoRe">
       <whats_new   label="Was ist neu?"           href="whats_new.html" />
       <release     label="Release 2016.02"        href="release.html" />
-      <lts_release label="LTS-Release 2015.05"    href="lts_release.html" />
+      <lts_release label="LTS-Release 2016.06"    href="lts_release.html" />
       <changelog   label="Changelog"              href="changelog.html" />
       <dl_archive  label="Release-Archiv"         href="archive.html" />
     </dl_mycore>
     <dl_mir            label="MIR"                    href="mir/">
-      <mir_release     label="Release 0.4"        href="release.html" />
+      <mir_release     label="Release 2016.06"        href="release.html" />
       <mir_changelog   label="Changelog"              href="changelog.html" />
     </dl_mir>
     <dl_skeleton            label="Skeleton"               href="skeleton/">
-      <skeleton_release     label="Release 2016.02"        href="release.html" />
+      <skeleton_release     label="Release 2016.06"        href="release.html" />
       <skeleton_changelog   label="Changelog"              href="changelog.html" />
     </dl_skeleton>
     <!-- dl_viewer            label="Viewer"               href="viewer/">
@@ -143,7 +143,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <cli_overview        label="Übersicht"           href="cli_overview.html" />
       <cli_extension       label="Erweiterungen"       href="cli_extension.html" />
     </cli>
-    
+
     <!-- Suche -->
     <search                label="Suche"             href="search/">
       <query_language      label="Query-Language"    href="query_language.html" />
@@ -172,8 +172,8 @@ See http://forrest.apache.org/docs/linking.html for more info
     <permissions           label="Benutzer und Rechte"   href="permissions/">
       <user_system         label="Benutzersystem"        href="user_system.html" />
       <user_management     label="Nutzer und Rollen"     href="user_management.html" type="leaf">
-      	<role_commands     label="Kommandos"             href="#role_commands" type="hidden" />
-      	<user_commands     label="Kommandos"             href="#user_commands" type="hidden" />
+        <role_commands     label="Kommandos"             href="#role_commands" type="hidden" />
+        <user_commands     label="Kommandos"             href="#user_commands" type="hidden" />
       </user_management>
       <acl_permissions     label="ACLs und Permissions"  href="acl_permissions.html" type="leaf">
         <acl_commands      label="ACL Kommandos"         href="#acl_commands" />
@@ -206,8 +206,8 @@ See http://forrest.apache.org/docs/linking.html for more info
     <production            label="Laufender Betrieb"     href="production/">
       <backup              label="Backup &amp; Recovery" href="backup_recovery.html" type="leaf" >
         <backup_commands   label="Backupkommandos"       href="#backup_commands" type="hidden" />
-        <recovery_commands  label="Recoverykommandos"      href="#recovery_commands" type="hidden" />		
-      	
+        <recovery_commands  label="Recoverykommandos"      href="#recovery_commands" type="hidden" />
+
       </backup>
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />
       <batch               label="Batch-Betrieb"         href="batch_with_cli.html" />
@@ -418,7 +418,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <email      label="Mailinglisten"      href="email.html" />
     <team       label="Team"               href="team.html" />
     <workshops  label="Workshops"          href="workshops/" >
-    <workshop            label="MyCoRe-Workshop 2016"       href="workshop.html" /> 
+    <workshop            label="MyCoRe-Workshop 2016"       href="workshop.html" />
     <aw_workshop_2015    label="Ilmenau 2015"               href="ilmenau_2015.html" />
     <dbt-workshop        label="DBT-Workshop 2014"          href="dbt-workshop.html" />
     <aw_workshop_2014    label="Braunschweig 2014"          href="braunschweig_2014.html" />

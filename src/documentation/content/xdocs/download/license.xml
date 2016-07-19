@@ -10,8 +10,8 @@
 
     <p>
       MyCoRe ist als Open Source unter der GNU General Public License (kurz "GPL") verfügbar. Die GPL ist im Original unter
-      <a target="_blank" href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a> nachzulesen,
-      in deutscher Übersetzung unter <a target="_blank" href="http://www.gnu.de/gpl-ger.html">http://www.gnu.de/gpl-ger.html</a>.
+      <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a> nachzulesen,
+      in deutscher Übersetzung unter <a href="http://www.gnu.de/gpl-ger.html">http://www.gnu.de/gpl-ger.html</a>.
       Innerhalb von MyCoRe finden Sie die GPL als Link im Kopfbereich jeder Java-Quellcodedatei, sowie im vollen Text in der
       Datei license.txt.
     </p>

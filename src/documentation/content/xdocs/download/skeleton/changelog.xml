@@ -17,15 +17,32 @@
   <title>Skeleton Changelog</title>
 
   <section>
-    <title>Version 2016.03 - Current Head</title>
+    <title>Version 2016.07 - Current Head</title>
 
     <p>For details see ...</p>
 
   </section>
 
   <section>
-    <title>Version 2016.02</title>
+    <title>Version 2016.06 - LTS</title>
+
     <p>work in progress ...</p>
+
+  </section>
+
+  <section>
+    <title>Version 2016.02</title>
+    <p>
+      Dieses Skeleton-Release basiert auf dem MyCoRe-Release 2016.02. Um eine bestehende
+      Skeleton-Anwendung auf dieses Release zu aktualisieren muss lediglich die Version in
+      der pom.xml angepasst werden. Vergleichen Sie dazu mit der
+      <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2016.02/pom.xml">pom.xml</a> im SVN.
+    </p>
+    <p>
+      Eine Migration von <a href="https://server.mycore.de/svn/maven/skeleton/tags/skeleton-2015.11.0">skeleton-2015.11.0</a>
+      ist nicht notwendig. Für Detailfragen wenden Sie sich gern an die <a href="mailto:mycore-user@lists.sourceforge.net"
+      >MyCoRe-Userliste</a>.
+    </p>
   </section>
 
     <section>

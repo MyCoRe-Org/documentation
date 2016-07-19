@@ -14,6 +14,245 @@
  <body>
 
   <section>
+    <title>Release 2015.05 (LTS)</title>
+    <p>
+      A detailed list of changes is provided in the <a href="site:changelog">Changelog</a>. This is a long term
+      support release (LTS), so we support this version for one year.
+    </p>
+    <p>
+      If you have your application already near version 2016.06, you only have to update
+      your pom.xml (docportal/config):
+
+      <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2016.06.0.1-SNAPSHOT&lt;/version>
+[...]
+&lt;dependency>
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>[2016.06.0.1-SNAPSHOT,2016.06.1)&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
+
+        In the next step you have to build your application again (<code>ant resolve create.jar
+        create.scripts create.webapp</code>).
+      </p>
+
+      <h2>Was ist neu?</h2>
+      <h3>IView2 und der MyCoRe-Viewer</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die IView2-Komponente wurde komplett überarbeitet und der Viewer-Code in ein eigenes
+          MyCoRe-Projekt ausgelagert: den MyCoRe-Viewer. So kann man auch unabhängig von MyCoRe den Viewer
+          benutzen. <br />
+          Mit dem neuen MyCoRe-Viewer stehen nun Texthighlighting, eine Touch-Oberfläche und die Anzeige von
+          Metadaten, sowie viele kleinere Neuerungen zur Verfügung. Weiterhin kann neben Bildern nun auch PDF
+          angezeigt werden.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Sebastian Hofmann</dd>
+      </dl>
+
+      <h3>IFS2-Layout Migrationskommando für einzelne ContentStores</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Um eine Migration vom alten IFS1-ContentStore auf den IFS2-ContentStore zu ermöglichen, wurden
+          Migrationskommandos bereitgestellt. Eine Beschreibung dieser Kommandos ist in der
+          <a href="../documentation/production/tipps.html#Nutzung+Content+Store+IFS+2">Dokumentation ->
+          Laufender Betrieb -> Tipps</a> zu finden.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt</dd>
+      </dl>
+
+      <h3>Nutzung der nio.file-API</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Für ein zeitgemäßes Arbeiten mit Dateien stellt Java mit dem JDK 1.7 die
+          <a href="http://www.infoq.com/articles/java7-nio2">NIO File API</a> zur Verfügung.
+          Diese API wird nun von MyCoRe unterstützt und beispielsweise vom interne Dateisystem
+          genutzt.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler, Jens Kupferschmidt und Frank Lützenkirchen</dd>
+      </dl>
+
+      <h3>SOLR-Kinddokumente, historisches Datum und Mehrsprachigkeit</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die Solr-Suchfunktionalität wird ständig weiter entwickelt. So unterstützt MyCoRe nun auch
+          die Solr-Kinddokumente und auch einer optimalen Suche über mehrsprachig erfasste Metadaten wird
+          gearbeitet. <br />
+          Das historische Datum, ein <a href="/documentation/basics/mcrobject/mcrobject_datatypes.html#Syntax+des+Metadaten-Basistyps+MCRMetaHistoryDate"
+          >MyCoRe-Datentyp</a>, wurde komplett überarbeitet und aktualisiert.
+          Auch eine entsprechende Solr-Unterstützung wurde implementiert und befindet sich aktuell
+          bereits in Leipzig im Einsatz.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Jens Kupferschmidt, Thomas Scheffler, Kathleen Neumann</dd>
+      </dl>
+
+      <h3>Webservices (SOAP) entfernt</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Die SOAP-Schnittstelle wurde nun entfernt. Eine verteilte Suche kann mittels Solr realisiert
+          werden. Für andere API-Anforderungen steht nun auch eine REST-Schnittstelle zur Verfügung. Siehe
+          dazu den nachfolgenden Punkt.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Thomas Scheffler</dd>
+      </dl>
+
+      <h3>REST (lesend)</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Als Schnittstelle nach aussen steht nun eine REST-Schnittstelle zur Verfügung. Diese
+          erlaubt momentan nur einen lesenden Zugriff. Ein schreibender Zugriff ist für 2016 geplant.
+          Alle Details zur REST-Schnittstelle sind unter <a href="site:rest">Dokumentation ->
+          Schnittstellen -> REST</a> zu finden.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Robert Stephan</dd>
+      </dl>
+
+      <h3>HTML5-Upload</h3>
+      <dl>
+        <dt>Beschreibung:</dt>
+        <dd>
+          Eine erste Version des HTML5-Uploads ist bereits realisiert. Diese ist momentan nur in der
+          MIR-Anwendung integriert und wird bis 2016 in den MyCoRe-Kern fliessen. Er kann jedoch nach
+          Übernahme der entsprechenden Dateien schon jetzt in die eigene Anwendung integriert werden.
+          Fragen dazu gern an die <a href="mailto:mycore-user@lists.sourceforge.net"
+          >MyCoRe-Userliste</a>.
+          <br />
+          <br />
+        </dd>
+        <dt>Realisiert von:</dt>
+        <dd>Nils Verheyen, Frank Lützenkirchen</dd>
+      </dl>
+  </section>
+
+  <section>
+    <title>Release 2016.02 - ‚Rusty Nail‘</title>
+    <p>
+      All changes, new features etc. are summarized below.
+      If your application is already near version 2016.02, you only have to update
+      your pom.xml (docportal/config):
+
+      <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2016.02&lt;/version>
+[...]
+&lt;dependency>
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>2016.02&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
+
+      In the next step you have to build your application again (<code>ant resolve create.jar
+      create.scripts create.webapp</code>).
+    </p>
+
+    <p>
+      Furthermore there is a MyCoRe
+      <a href="http://artifactory.mycore.de/webapp/#/artifacts/browse/tree/General/libs-releases-local/org/mycore/mycore-complete/2016.02">jar file</a>
+      ready for download, therewith you can use the MyCoRe kernel in your own application
+      independent from DocPortal. MyCoRe can be integrated as well via Maven.
+    </p>
+  </section>
+
+  <section>
+    <title>Release 2015.11 - ‚Old Fashioned‘</title>
+    <p>
+      All changes, new features etc. are summarized below.
+      If your application is already near version 2015.11, you only have to update
+      your pom.xml (docportal/config):
+
+      <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2015.11&lt;/version>
+[...]
+&lt;dependency>
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>2015.11&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
+
+      In the next step you have to build your application again (<code>ant resolve create.jar
+      create.scripts create.webapp</code>).
+    </p>
+
+    <p>
+      Furthermore there is a MyCoRe
+      <a href="http://artifactory.mycore.de/webapp/#/artifacts/browse/tree/General/libs-releases-local/org/mycore/mycore-complete/2015.11">jar file</a>
+      ready for download, therewith you can use the MyCoRe kernel in your own application
+      independent from DocPortal. MyCoRe can be integrated as well via Maven.
+    </p>
+  </section>
+
+  <section>
+    <title>Release 2015.07 - ‚Last Tequila Sour‘</title>
+    <p>
+      All changes, new features etc. are summarized below.
+      If your application is already near version 2015.07, you only have to update
+      your pom.xml (docportal/config):
+
+      <pre class="brush: xml;gutter: false;">
+[...]
+&lt;groupId>org.mycore&lt;/groupId>
+&lt;artifactId>application-model&lt;/artifactId>
+&lt;version>2015.07&lt;/version>
+[...]
+&lt;dependency>
+  &lt;groupId>org.mycore&lt;/groupId>
+  &lt;artifactId>mycore-complete&lt;/artifactId>
+  &lt;version>2015.07&lt;/version>
+  &lt;optional>false&lt;/optional>
+&lt;/dependency>
+[...]</pre>
+
+      In the next step you have to build your application again (<code>ant resolve create.jar
+      create.scripts create.webapp</code>).
+    </p>
+
+    <p>
+      Furthermore there is a MyCoRe
+      <a href="http://artifactory.mycore.de/webapp/#/artifacts/browse/tree/General/libs-releases-local/org/mycore/mycore-complete/2015.07">jar file</a>
+      ready for download, therewith you can use the MyCoRe kernel in your own application
+      independent from DocPortal. MyCoRe can be integrated as well via Maven.
+    </p>
+  </section>
+
+  <section>
     <title>Release 2014.06 (LTS)</title>
   <p>
     After the introduction of Solr as an alternative to Lucene 2013, this year's

@@ -39,7 +39,7 @@
           <id>sphere_lasting</id>
           <alt>Weltkugel mit Wald und Wasser</alt>
           <description>
-            kontinuierliche Community-Entwicklung über mehr als 10 Jahre
+            seit 15 Jahren kontinuierliche Community-Entwicklung
           </description>
         </image>
       </images>
@@ -62,18 +62,18 @@
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Release 2016.02</title>
-          <message>Am 24.02.2016 erschien das letzte Release vor dem diesjährigen LTS.</message>
-          <url>http://mycore.de/download/release.html</url>
-          <date>24. Februar 2016</date>
+          <title>LTS-Release 2016.06</title>
+          <message>Seit dem 27.06.2016 steht das LongTermSupport-Release 2016.06 zur Verfügung.</message>
+          <url>http://mycore.de/download/lts_release.html</url>
+          <date>27. Juni 2016</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>MIR-Entwicklung</title>
-          <message>Parallel zum MyCoRe-LTS-Release wird es 2016 erstmalig mit MIR ein Anwendungs-LTS geben.</message>
-          <url>http://www.mycore.de/mir/</url>
-          <date>12. Januar 2016</date>
+          <title>Update</title>
+          <message>MIR und Skeleton sind auf Basis des 2016er LTS.</message>
+          <url>http://www.mycore.de/download/skeleton/release.html</url>
+          <date>19. Juni 2016</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
