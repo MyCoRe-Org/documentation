@@ -19,13 +19,11 @@
     <section>
       <title>Für den Betrieb einer MyCoRe-Anwendung</title>
       <ul>
-        <li>JDK 1.8</li>
+        <li>JRE 1.8</li>
         <li>Tomcat v8 oder höher (bzw. ServletContainer mit Servlet-3.1-Unterstützung)</li>
-        <li>Maven 3 oder höher</li>
         <li>Apache Solr 4.10</li>
         <li>relationales Datenbanksystem (<a href="http://docs.jboss.org/hibernate/orm/5.1/javadocs/org/hibernate/dialect/package-summary.html">hibernatefähig</a>)</li>
       </ul>
-
     </section>
 
     <section>
@@ -35,9 +33,34 @@
         weiterhin:
       </p>
       <ul>
-        <li>Maven</li>
+        <li>JDK 1.8</li>
+        <li>Maven 3 oder höher</li>
         <li>SVN 1.8 oder höher</li>
       </ul>
+    </section>
+
+    <section>
+      <title>Installation</title>
+
+      <h3>Solr-Installation</h3>
+      <p>
+        Für die Suchfunktionalität von MyCoRe wird ein Solr-Server vorausgesetzt. Informationen zur Installation speziell für MyCoRe
+        sind in der entsprechenden <a href="site:solr">Solr-Dokumentation</a> zu finden. Umfassende Informationen zur Solr-Installation
+        und Konfiguration finden sich in der <a href="http://wiki.apache.org/solr/SolrInstall">Solr-Dokumentation</a> von Apache.
+      </p>
+
+      <h3>Relationales Datenbanksystem</h3>
+      <p>
+        MIR und Skeleton zeigen, wie H2 als im-Speicher-laufendes relationales Datenbanksystem (<a href="https://de.wikipedia.org/wiki/In-Memory-Datenbank">In-Memory-Datenbank</a>)
+        genutzt werden kann. In diesem Fall muss kein relationales Datenbanksystem bereitgestellt werden. Für den Produktivbetrieb empfehlen wir jedoch die Verwendung
+        eines herkömmlichen Datenbankmanagementsystems, dass nicht den Arbeitsspeicher als Datenspeicher nutzt..
+      </p>
+      <p>
+        Die Anbindung der Datenbank erfolgt über JPA und Hibernate, daher muss eine entsprechende Hibernate-Unterstützung verfügbar sein.
+        Prüfen Sie also bitte vor der Wahl Ihres Systems, ob diese vorliegt. Nutzen Sie dazu die <a href="http://docs.jboss.org/hibernate/orm/5.1/javadocs/org/hibernate/dialect/package-summary.html">Dialekt-Übersicht</a>.
+      </p>
+
+
     </section>
 
   </body>
