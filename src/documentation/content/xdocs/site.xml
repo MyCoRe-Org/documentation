@@ -101,37 +101,37 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Grundlagen -->
     <content               label="Grundlagen"          href="basics/">
-      <mcrobject             label="MyCoRe-Objekte"    href="mcrobject/">
-        <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
-        <mcrobj_id           label="MCRObject-ID"      href="mcrobject_id.html" />
-        <mcrobj_datadef      label="Datenmodell"       href="mcrobject_datadef.html" />
-        <mcrobj_datatypes    label="Datentypen"        href="mcrobject_datatypes.html" />
-        <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html" type="leaf">
-          <mcrobject_commands  label="Kommandos"       href="#mcrobject_commands" type="hidden"/>
-        </mcrobj_commands>
+      <mcrobject             label="MyCoRe-Objekte"      href="mcrobject/">
+        <mcrobj_xml            label="XML-Format"          href="mcrobject_datamodel.html" />
+        <mcrobj_id             label="MCRObject-ID"        href="mcrobject_id.html" />
+        <mcrobj_datadef        label="Datenmodell"         href="mcrobject_datadef.html" />
+        <mcrobj_datatypes      label="Datentypen"          href="mcrobject_datatypes.html" />
+        <mcrobj_commands       label="Kommandos"           href="mcrobject_commands.html" />
+      	<mcrobj_commands__mcrobject_commands 
+      	                       label="Kommandos"           href="mcrobject_commands.html#mcrobject_commands" type="hidden" />
       </mcrobject>
-      <mcrderivate           label="Derivate"          href="mcrderivate_ifs/">
-        <mcrder_xml          label="XML-Format"        href="mcrderivate_datamodel.html" />
-        <mcrder_commands     label="Kommandos"         href="mcrderivate_commands.html" type="leaf">
-          <mcrderivate_commands  label="Kommandos"       href="#mcrderivate_commands" type="hidden" />
-        </mcrder_commands>
-        <mcrder_metadata     label="Derivat-Metadaten speichern" href="store_derivmetadata.html" />
-        <mcrder_ifs          label="IFS / IFS2"        href="ifs.html" />
-        <mcrder_zip          label="ZIP-Dateien"       href="zipfiles.html" />
-        <mcrder_streaming    label="StreamingServer"   href="streamingserver.html" />
-        <mcrder_fileupload   label="File-Upload"       href="fileupload_applet.html" />
-        <iview2              label="IView2"            href="iview2.html" />
-        <mcrderiv_mets       label="METS"              href="mets.html" />
+      <mcrderivate           label="Derivate"            href="mcrderivate_ifs/">
+        <mcrder_xml            label="XML-Format"          href="mcrderivate_datamodel.html" />
+        <mcrder_commands       label="Kommandos"           href="mcrderivate_commands.html" />
+          <mcrder_commands__mcrderivate_commands  
+                               label="Kommandos"           href="mcrderivate_commands.html#mcrderivate_commands" type="hidden" />
+        <mcrder_metadata       label="Derivat-Metadaten speichern" href="store_derivmetadata.html" />
+        <mcrder_ifs            label="IFS / IFS2"        href="ifs.html" />
+        <mcrder_zip            label="ZIP-Dateien"       href="zipfiles.html" />
+        <mcrder_streaming      label="StreamingServer"   href="streamingserver.html" />
+        <mcrder_fileupload     label="File-Upload"       href="fileupload_applet.html" />
+        <iview2                label="IView2"            href="iview2.html" />
+        <mcrderiv_mets         label="METS"              href="mets.html" />
       </mcrderivate>
       <classifications       label="Klassifikationen"  href="classifications/">
-        <classif_index       label="Übersicht"         href="classification_index.html" />
-        <classif_xml         label="Datenmodell"       href="classification_datamodel.html" />
-        <classif_commands    label="Kommandos"         href="classification_commands.html" type="leaf">
-          <class_commands    label="Kommandos"       href="#class_commands" type="hidden" />
-        </classif_commands>
-        <classif_browser     label="Browser"           href="classification_browser.html" />
-        <classif_editor      label="Editor"            href="classification_editor.html" />
-        <classif_mapping     label="Mapping"           href="classification_mapping.html" />
+        <classif_index         label="Übersicht"         href="classification_index.html" />
+        <classif_xml           label="Datenmodell"       href="classification_datamodel.html" />
+        <classif_commands      label="Kommandos"         href="classification_commands.html" />
+        <classif_commands__class_commands      
+                               label="Kommandos"         href="classification_commands.html#class_commands" type="hidden" />
+        <classif_browser       label="Browser"           href="classification_browser.html" />
+        <classif_editor        label="Editor"            href="classification_editor.html" />
+        <classif_mapping       label="Mapping"           href="classification_mapping.html" />
       </classifications>
       <mcr_components        label="Komponenten"       href="components_structure.html" />
       <eventhandler          label="EventHandler"      href="eventhandler.html" />
@@ -171,13 +171,14 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Benutzer und Rechte -->
     <permissions           label="Benutzer und Rechte"   href="permissions/">
       <user_system         label="Benutzersystem"        href="user_system.html" />
-      <user_management     label="Nutzer und Rollen"     href="user_management.html" type="leaf">
-        <role_commands     label="Kommandos"             href="#role_commands" type="hidden" />
-        <user_commands     label="Kommandos"             href="#user_commands" type="hidden" />
-      </user_management>
-      <acl_permissions     label="ACLs und Permissions"  href="acl_permissions.html" type="leaf">
-        <acl_commands      label="ACL Kommandos"         href="#acl_commands" />
-      </acl_permissions>
+      <user_management     label="Nutzer und Rollen"     href="user_management.html" />
+      <user_management__role_commands     
+                           label="Kommandos"             href="user_management.html#role_commands" type="hidden" />
+      <user_management__user_commands     
+                           label="Kommandos"             href="user_management.html#user_commands" type="hidden" />
+      <acl_permissions     label="ACLs und Permissions"  href="acl_permissions.html" />
+      <acl_permissions__acl_commands      
+                           label="ACL Kommandos"         href="acl_permissions.html#acl_commands" />
       <acl_strategies      label="Zugriffsstrategien"    href="acl_strategies.html" />
       <default-permissions  label="Standardzugriffsrechte"    href="default-permissions.html" />
       <login_session       label="LoginServlet"          href="login_session.html" />
@@ -204,11 +205,11 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Laufender Betrieb -->
     <production            label="Laufender Betrieb"     href="production/">
-      <backup              label="Backup &amp; Recovery" href="backup_recovery.html" type="leaf" >
-        <backup_commands   label="Backupkommandos"       href="#backup_commands" type="hidden" />
-        <recovery_commands  label="Recoverykommandos"      href="#recovery_commands" type="hidden" />
-
-      </backup>
+      <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
+      <backup__backup_commands   
+                           label="Backupkommandos"       href="backup_recovery.html#backup_commands" type="hidden" />
+      <backup__recovery_commands  
+                           label="Recoverykommandos"      href="backup_recovery.html#recovery_commands" type="hidden" />		
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />
       <batch               label="Batch-Betrieb"         href="batch_with_cli.html" />
       <vhost               label="Virtueller Host"       href="vhost.html" />
