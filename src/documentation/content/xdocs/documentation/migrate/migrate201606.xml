@@ -108,8 +108,9 @@
       <p>
         Mit Release 2016.06 wurde die Persistence-API für Datenbanken auf JPA-Nutzung umgestellt. Damit entfallen die
         Hibernate-Konfigurationen ersatzlos. Die Konfiguration der Datenbankanbindung findet statt dessen in der persistence.xml statt.
-        Eine Vorlage der Konfiguration befindet sich im <a href="http://www.mycore.de/viewvc/viewvc.cgi/mycore/branches/mycore-2016.06.0.x/mycore-base/src/main/resources/configdir.template/"
-        >configdir.template</a>
+        Dabei können die Einträge aus der hibernate.cgf.xml in die persistence.xml übernommen werden. Eine Vorlage der Konfiguration
+        befindet sich im <a href="http://www.mycore.de/viewvc/viewvc.cgi/mycore/branches/mycore-2016.06.0.x/mycore-base/src/main/resources/configdir.template/"
+        >configdir.template</a>.
       </p>
       <p>
         Wichtig ist, dass die <code>persistence.xml</code> in einem <code>META-INF</code>-Verzeichnis im <code>CLASSPATH</code>
@@ -133,7 +134,7 @@
 #Forward all WebSocket connections via HTTP
 ProxyPass /mir/ws/ ws://localhost:{HTTP-Port}/mir/ws/
 
-#Forward rest via AJP
+#Forward other via AJP
 ProxyPass /mir ajp://localhost:{AJP-Port}/mir
 ProxyPassReverse /mir ajp://localhost:{AJP-Port}/mir
      </pre>

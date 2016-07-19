@@ -7,7 +7,7 @@
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
-    <version>2015-10-21</version>
+    <version>2016-07-19</version>
   </header>
   <body>
     <section>
@@ -29,19 +29,17 @@
         /data
         /lib
         /resources
-        hibernate.cfg.xml
+          /META-INF
+            persistence.xml
         mycore.properties
       </pre>
       <p>
-        for more information see <a href="http://www.mycore.de/generated/mycore/apidocs/org/mycore/common/config/MCRConfigurationDir.html">MCRConfigurationDir</a>
+        Weitere Informationen dazu siehe <a href="http://www.mycore.de/generated/mycore/apidocs/org/mycore/common/config/MCRConfigurationDir.html">MCRConfigurationDir</a>
       </p>
     </section>
 
     <section>
       <title>MyCoRe-Properties</title>
-      <p>
-        TODO: Welche MyCoRe-Properties gibt es und wie sind sie anzupassen? Was macht <code>mycore.active.properties</code> und <code>mycore.resolved.properties</code>
-      </p>
       <table class="table table-striped">
         <caption>Übersicht der wichtigsten Properties:</caption>
         <thead>
@@ -74,6 +72,9 @@
           </tr>
         </tbody>
       </table>
+      <!-- p>
+        TODO: Welche MyCoRe-Properties gibt es und wie sind sie anzupassen? Was macht <code>mycore.active.properties</code> und <code>mycore.resolved.properties</code>
+      </p -->
     </section>
   </body>
 </document>

@@ -15,7 +15,7 @@
 ---------------------------------------------------------------------------- */
     div#nav_block {
         margin: auto auto;              /* center top menu */
-        width:690px;                    /* set size top menu */
+        width:900px;                    /* set size top menu */
         }
     ul#tabs {
         margin: 4px 0 0 0;              /* align adjustment */
@@ -24,7 +24,7 @@
     ul#tabs li {
         float: left;
         list-style: none;
-        margin: 0 10px 0 10px;          /* some space between the entries */
+        margin: 0 20px 0 20px;          /* some space between the entries */
         }
     ul#tabs a {
         font-size: 14px;
@@ -63,6 +63,7 @@
 /* submenu container */
     #submenu {
         color: #666;                    /* normal menu color */
+        margin-top: 20px;
         }
 /* all lists */
     #submenu ul {
