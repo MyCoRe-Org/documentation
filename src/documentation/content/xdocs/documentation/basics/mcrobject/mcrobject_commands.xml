@@ -68,12 +68,15 @@
           <code>delete all objects of type {0}</code>
         </dt>
         <dd>Das Kommando löscht alle eingestellten Objekte mit der angegebenen MCRObjectType {0}.</dd>
+         <dt>
+          <code>delete all objects in topological order</code>
+        </dt>
+        <dd>Das Kommando löscht alle Objekte im Repository unter Berücksichtigung ihrer Eltern-Kind-Beziehungen und der Beziehungen der Objekte untereinander.</dd>
         <dt>
           <code>select objects with query {0}</code>
         </dt>
         <dd>Das Kommando selektiert MCRObject via MCRQL und speichert sie in eine temporäre Liste. Jeder Aufruf des
-          Kommandos
-          überschreibt die Liste.
+          Kommandos überschreibt die Liste.
         </dd>
         <dt>
           <code>execute for selected {0}</code>
