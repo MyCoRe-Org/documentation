@@ -24,7 +24,7 @@
         geändert:
       </p>
       <ul>
-        <li>JDK 1.8 (vorher 7)</li>
+        <li>JDK 1.8 (vorher 1.7)</li>
         <li>Servlet Container 3.1 (vorher 3.0)</li>
       </ul>
       <p>
@@ -104,11 +104,54 @@
     </section>
 
     <section id="JPA">
-      <title>Umstellung auf die Java Persitence API (JPA)</title>
-      <p>Mit Release 2016.06 wurde die Persitence-API für Datenbanken auf JPA-Nutzung umgestellt. Damit entfallen die
-        Hibernate-Konfigurationen ersatzlos.
+      <title>Umstellung auf die Java-Persistence-API (JPA)</title>
+      <p>
+        Mit Release 2016.06 wurde die Persistence-API für Datenbanken auf JPA-Nutzung umgestellt. Damit entfallen die
+        Hibernate-Konfigurationen ersatzlos. Die Konfiguration der Datenbankanbindung findet statt dessen in der persistence.xml statt.
+        Eine Vorlage der Konfiguration befindet sich im <a href="http://www.mycore.de/viewvc/viewvc.cgi/mycore/branches/mycore-2016.06.0.x/mycore-base/src/main/resources/configdir.template/"
+        >configdir.template</a>
       </p>
-      <p>ToDo by Jens</p>
+      <p>
+        Wichtig ist, dass die <code>persistence.xml</code> in einem <code>META-INF</code>-Verzeichnis im <code>CLASSPATH</code>
+        liegen muss.
+      </p>
+    </section>
+
+    <section id="websockets">
+      <title>Nutzung der neuen WebCLI mit Websockets</title>
+      <p>
+        Das LTS 2016.06 bringt eine neue WebCLI mit, die Websockets nutzt. Verwendet man einen Tomcat hinter einem Apache
+        mit mod_proxy_ajp, sind folgende Anpassungen nötig.
+      </p>
+      <ul>
+        <li>ggf. Aktualisierung des Apache auf 2.4.5 (oder höher)</li>
+        <li>Installation von proxy_wstunnel (unter Ubuntu mit <code>sudo a2enmod proxy_wstunnel</code>)</li>
+        <li>Anpassung der Konfiguration (am Beispiel MIR):</li>
+      </ul>
+
+      <pre class="brush: bash;">
+#Forward all WebSocket connections via HTTP
+ProxyPass /mir/ws/ ws://localhost:{HTTP-Port}/mir/ws/
+
+#Forward rest via AJP
+ProxyPass /mir ajp://localhost:{AJP-Port}/mir
+ProxyPassReverse /mir ajp://localhost:{AJP-Port}/mir
+     </pre>
+     <p>
+       Falls es auch noch zukünftige WebSocket-Einsätze geben sollte, dann sollten diese unterhalb von
+       <code>$WebAppBaseDir/ws/{Komponente oder Modul}/...</code> laufen. Im Falle der Web-CLI für MIR ist das:
+       <code>/mir/ws/mycore-webcli/socket</code>.
+     </p>
+    </section>
+
+    <section id="solr">
+      <title>Solr</title>
+      <p>ToDo</p>
+    </section>
+
+    <section id="ACLs">
+      <title>ACLs</title>
+      <p>ToDo</p>
     </section>
 
   </body>
