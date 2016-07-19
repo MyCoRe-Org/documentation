@@ -4,14 +4,14 @@
 <document>
 
   <header>
-    <title>Migration Release 2015-05 nach 2016-06</title>
+    <title>Migration Release 2015.05 nach 2016.06</title>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
     <version>2016-07-10</version>
     <abstract>
-      Diese Seite fasst alle Informationen für die Migration von Release 2015-05 nach Release 2016-06 zusammen.
+      Diese Seite fasst alle Informationen für die Migration vom LTS-Release 2015.05 zum LTS-Release 2016.06 zusammen.
     </abstract>
   </header>
 
@@ -19,34 +19,38 @@
 
     <section id="requirements_201606">
       <title>Voraussetzungen für das Release</title>
-      <p>Das Release 2016.06 setzt folgende Systemkomponenten voraus:
+      <p>
+        Die <a href="site:requirements">Systemanforderungen</a> haben sich für das Release 2016.06 wie folgt
+        geändert:
       </p>
       <ul>
-        <li>Java 8</li>
-        <li>Servlet Container 3.1</li>
+        <li>JDK 1.8 (vorher 7)</li>
+        <li>Servlet Container 3.1 (vorher 3.0)</li>
       </ul>
-      <p>Diese Systemkomponenten sind in folgenden Distributionen enthalten, welche bei einzelnen Community-Mitgliedern
-        im Einsatz sind.
+      <p>
+        Diese Systemkomponenten sind in folgenden Distributionen enthalten, welche bei einzelnen
+        Community-Mitgliedern im Einsatz sind.
       </p>
       <ul>
         <li>Open SuSE Leap 42.1</li>
         <li>SuSE SLES 12 SP 1</li>
+        <li>Ubuntu </li>
       </ul>
-    </section>
 
-    <section id="dependency_versions">
-      <title>Versionsnummern für Produkte von Open Source Drittanbietern</title>
-      <p>MyCoRe und die darauf basierenden Anwendungen nutzen eine Reihe von Bibliotheken anderer Open Source Projekte.
-        Die für das Release 2016.06 verwendeten sind hier aufgelistet, sofern sie für die Ergänzung duch eigenen Code
-        relevant sind. Einige Bibliotheken werden nur intern benötigt oder befriedigen Abhängigkeiten. Diese sind hier
-        nicht erwähnt.
-      </p>
-      <ul>
-        <li>jdom2 - 2.0.6</li>
-        <li>log4j - 2.6.1</li>
-        <li>postgres - 9.4-1206-jdbc42 - optional</li>
-        <li>servlet - 3.1.0</li>
-      </ul>
+      <section id="dependency_versions">
+        <title>Versionsnummern für Produkte von Open Source Drittanbietern</title>
+        <p>MyCoRe und die darauf basierenden Anwendungen nutzen eine Reihe von Bibliotheken anderer Open Source Projekte.
+          Die für das Release 2016.06 verwendeten sind hier aufgelistet, sofern sie für die Ergänzung duch eigenen Code
+          relevant sind. Einige Bibliotheken werden nur intern benötigt oder befriedigen Abhängigkeiten. Diese sind hier
+          nicht erwähnt.
+        </p>
+        <ul>
+          <li>jdom2 - 2.0.6</li>
+          <li>log4j - 2.6.1</li>
+          <li>postgres - 9.4-1206-jdbc42 - optional</li>
+          <li>servlet - 3.1.0</li>
+        </ul>
+      </section>
     </section>
 
     <section id="log4j">

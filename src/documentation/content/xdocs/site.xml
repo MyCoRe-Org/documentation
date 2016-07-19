@@ -91,6 +91,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Mit MyCoRe starten -->
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
       <overview              label="Übersicht"                 href="../index.html" />
+      <requirements          label="Anforderungen (NEU)"       href="requirements.html" />
       <mir                   label="MIR"                       href="mir.html" />
       <skeleton              label="Skeleton"                  href="skeleton.html" />
       <hibernate             label="Datenbank &amp; Hibernate" href="hibernate.html" />
@@ -101,37 +102,37 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Grundlagen -->
     <content               label="Grundlagen"          href="basics/">
-      <mcrobject             label="MyCoRe-Objekte"      href="mcrobject/">
-        <mcrobj_xml            label="XML-Format"          href="mcrobject_datamodel.html" />
-        <mcrobj_id             label="MCRObject-ID"        href="mcrobject_id.html" />
-        <mcrobj_datadef        label="Datenmodell"         href="mcrobject_datadef.html" />
-        <mcrobj_datatypes      label="Datentypen"          href="mcrobject_datatypes.html" />
+      <mcrobject             label="MyCoRe-Objekte"    href="mcrobject/">
+        <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
+        <mcrobj_id           label="MCRObject-ID"      href="mcrobject_id.html" />
+        <mcrobj_datadef      label="Datenmodell"       href="mcrobject_datadef.html" />
+        <mcrobj_datatypes    label="Datentypen"        href="mcrobject_datatypes.html" />
         <mcrobj_commands       label="Kommandos"           href="mcrobject_commands.html" />
-      	<mcrobj_commands__mcrobject_commands 
-      	                       label="Kommandos"           href="mcrobject_commands.html#mcrobject_commands" type="hidden" />
+        <mcrobj_commands__mcrobject_commands
+                               label="Kommandos"           href="mcrobject_commands.html#mcrobject_commands" type="hidden" />
       </mcrobject>
-      <mcrderivate           label="Derivate"            href="mcrderivate_ifs/">
-        <mcrder_xml            label="XML-Format"          href="mcrderivate_datamodel.html" />
-        <mcrder_commands       label="Kommandos"           href="mcrderivate_commands.html" />
-          <mcrder_commands__mcrderivate_commands  
-                               label="Kommandos"           href="mcrderivate_commands.html#mcrderivate_commands" type="hidden" />
-        <mcrder_metadata       label="Derivat-Metadaten speichern" href="store_derivmetadata.html" />
-        <mcrder_ifs            label="IFS / IFS2"        href="ifs.html" />
-        <mcrder_zip            label="ZIP-Dateien"       href="zipfiles.html" />
-        <mcrder_streaming      label="StreamingServer"   href="streamingserver.html" />
-        <mcrder_fileupload     label="File-Upload"       href="fileupload_applet.html" />
-        <iview2                label="IView2"            href="iview2.html" />
-        <mcrderiv_mets         label="METS"              href="mets.html" />
+      <mcrderivate           label="Derivate"          href="mcrderivate_ifs/">
+        <mcrder_xml          label="XML-Format"        href="mcrderivate_datamodel.html" />
+        <mcrder_commands     label="Kommandos"         href="mcrderivate_commands.html" />
+        <mcrder_commands__mcrderivate_commands
+                             label="Kommandos"         href="mcrderivate_commands.html#mcrderivate_commands" type="hidden" />
+        <mcrder_metadata     label="Derivat-Metadaten speichern" href="store_derivmetadata.html" />
+        <mcrder_ifs          label="IFS / IFS2"        href="ifs.html" />
+        <mcrder_zip          label="ZIP-Dateien"       href="zipfiles.html" />
+        <mcrder_streaming    label="StreamingServer"   href="streamingserver.html" />
+        <mcrder_fileupload   label="File-Upload"       href="fileupload_applet.html" />
+        <iview2              label="IView2"            href="iview2.html" />
+        <mcrderiv_mets       label="METS"              href="mets.html" />
       </mcrderivate>
       <classifications       label="Klassifikationen"  href="classifications/">
-        <classif_index         label="Übersicht"         href="classification_index.html" />
-        <classif_xml           label="Datenmodell"       href="classification_datamodel.html" />
-        <classif_commands      label="Kommandos"         href="classification_commands.html" />
-        <classif_commands__class_commands      
-                               label="Kommandos"         href="classification_commands.html#class_commands" type="hidden" />
-        <classif_browser       label="Browser"           href="classification_browser.html" />
-        <classif_editor        label="Editor"            href="classification_editor.html" />
-        <classif_mapping       label="Mapping"           href="classification_mapping.html" />
+        <classif_index       label="Übersicht"         href="classification_index.html" />
+        <classif_xml         label="Datenmodell"       href="classification_datamodel.html" />
+        <classif_commands    label="Kommandos"         href="classification_commands.html" />
+        <classif_commands__class_commands
+                             label="Kommandos"         href="classification_commands.html#class_commands" type="hidden" />
+        <classif_browser     label="Browser"           href="classification_browser.html" />
+        <classif_editor      label="Editor"            href="classification_editor.html" />
+        <classif_mapping     label="Mapping"           href="classification_mapping.html" />
       </classifications>
       <mcr_components        label="Komponenten"       href="components_structure.html" />
       <eventhandler          label="EventHandler"      href="eventhandler.html" />
@@ -172,15 +173,15 @@ See http://forrest.apache.org/docs/linking.html for more info
     <permissions           label="Benutzer und Rechte"   href="permissions/">
       <user_system         label="Benutzersystem"        href="user_system.html" />
       <user_management     label="Nutzer und Rollen"     href="user_management.html" />
-      <user_management__role_commands     
+      <user_management__role_commands
                            label="Kommandos"             href="user_management.html#role_commands" type="hidden" />
-      <user_management__user_commands     
+      <user_management__user_commands
                            label="Kommandos"             href="user_management.html#user_commands" type="hidden" />
       <acl_permissions     label="ACLs und Permissions"  href="acl_permissions.html" />
-      <acl_permissions__acl_commands      
+      <acl_permissions__acl_commands
                            label="ACL Kommandos"         href="acl_permissions.html#acl_commands" />
       <acl_strategies      label="Zugriffsstrategien"    href="acl_strategies.html" />
-      <default-permissions  label="Standardzugriffsrechte"    href="default-permissions.html" />
+      <default-permissions label="Standardzugriffsrechte" href="default-permissions.html" />
       <login_session       label="LoginServlet"          href="login_session.html" />
       <acl_integration     label="Anwendungsintegration"     href="acl_integration.html" />
       <broadcasting        label="Nachrichtenfenster"    href="broadcasting.html" />
@@ -206,10 +207,10 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Laufender Betrieb -->
     <production            label="Laufender Betrieb"     href="production/">
       <backup              label="Backup &amp; Recovery" href="backup_recovery.html" />
-      <backup__backup_commands   
+      <backup__backup_commands
                            label="Backupkommandos"       href="backup_recovery.html#backup_commands" type="hidden" />
-      <backup__recovery_commands  
-                           label="Recoverykommandos"      href="backup_recovery.html#recovery_commands" type="hidden" />		
+      <backup__recovery_commands
+                           label="Recoverykommandos"     href="backup_recovery.html#recovery_commands" type="hidden" />
       <consistency         label="Konsistenzprüfung"     href="consistency.html" />
       <batch               label="Batch-Betrieb"         href="batch_with_cli.html" />
       <vhost               label="Virtueller Host"       href="vhost.html" />
@@ -217,16 +218,16 @@ See http://forrest.apache.org/docs/linking.html for more info
     </production>
 
     <!-- Migration -->
-    <migrate               label="Migration"         href="migrate/">
-      <migrateDP_MIR       label="DocPortal &#8658; MIR"          href="migrateDocPortal_MIR.html" />
-      <migrate2016.06      label="2015.05 &#8658; 2016.06"        href="migrate201606.html" />
-      <migrate2014.06      label="2014.03 &#8658; 2014.06"        href="migrate201406.html" />
+    <migrate               label="Migration"                href="migrate/">
+      <migrateDP_MIR       label="DocPortal &#8658; MIR"    href="migrateDocPortal_MIR.html" />
+      <migrate2016.06      label="2015.05 &#8658; 2016.06"  href="migrate201606.html" />
+      <migrate2014.06      label="2014.03 &#8658; 2014.06"  href="migrate201406.html" />
       <migrate2013.08_11   label="2013.08 &#8658; 2013.11"  href="migrate201308_201311.html" />
       <migrate2013.06_08   label="2013.06 &#8658; 2013.08"  href="migrate201306_201308.html" />
-      <migrate21_2013.06   label="2.1 &#8658; 2013.06"    href="migrate21_201306.html" />
-      <migrate20_21        label="2.0 &#8658; 2.1"        href="migrate20_21.html" />
-      <migrate13_20        label="1.3 &#8658; 2.0"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
-      <migrate12_13        label="1.2 &#8658; 1.3"        href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
+      <migrate21_2013.06   label="2.1 &#8658; 2013.06"      href="migrate21_201306.html" />
+      <migrate20_21        label="2.0 &#8658; 2.1"          href="migrate20_21.html" />
+      <migrate13_20        label="1.3 &#8658; 2.0"          href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version13_20" />
+      <migrate12_13        label="1.2 &#8658; 1.3"          href="http://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Dokumentation/Migration/Version12_13" />
     </migrate>
 
     <!-- Für Entwickler -->
@@ -284,7 +285,7 @@ See http://forrest.apache.org/docs/linking.html for more info
           <section05 label="5 XEditor"    href="05_xeditor.html" />
           <section05 label="6 SolR"    href="06_solr.html" />
         </components>
-        <componentes            label="alte Komponenten"         href="components.html" />
+        <componentes            label="alte Komponenten"   href="components.html" />
         <mymaker               label="DocPortal"           href="docportal/">
           <mm_about            label="1. Übersicht"        href="04_docportal.html" as_pdf="true" />
           <mm_configuration    label="2. Konfiguration"    href="45_configuration.html" as_pdf="true" />

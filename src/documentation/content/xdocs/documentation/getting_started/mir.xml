@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>MIR</title>
-    <version>2015-08-24</version>
+    <version>2016-07-19</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
@@ -14,10 +14,11 @@
     <section>
       <title>Installation</title>
       <h2>Voraussetzungen</h2>
+      <p>
+        Neben den allgemein für MyCoRe-Anwendungen geltenden <a href="site:requirements">Systemanforderungen</a> benötigen Sie für den Betrieb einer
+        MIR-Anwendung noch die folgende Software:
+      </p>
       <ul>
-        <li>Tomcat v8 oder höher (bzw. ServletContainer mit Servlet-3.1-Unterstützung)</li>
-        <li>Solr-Server</li>
-        <li>relationales Datenbanksystem</li>
         <li>bibutils</li> <!-- TODO! -->
       </ul>
       <h3>Download</h3>

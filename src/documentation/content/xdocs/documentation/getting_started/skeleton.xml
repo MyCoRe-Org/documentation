@@ -25,14 +25,10 @@
       </p>
 
       <h3>Voraussetzungen</h3>
-      <ul>
-        <li>JDK 1.8</li>
-        <li>Tomcat v8 oder höher (bzw. ServletContainer mit Servlet-3.1-Unterstützung)</li>
-        <li>SVN 1.8 oder höher</li>
-        <li>Maven 3 oder höher</li>
-        <li>Apache Solr 4.10</li>
-        <li>relationales Datenbanksystem</li>
-      </ul>
+      <p>
+        Für die Anwendungsentwicklung mit Skeleton benötigen Sie die unter <a href="site:requirements">Systemanforderungen</a>
+        beschriebene Software.
+      </p>
 
       <section>
         <title>1. Quellen herunterladen</title>
@@ -101,7 +97,7 @@
         <p>Dann kopiert man die Solr-Konfiguration für Skeleton (3 Dateien) aus dem Verzeichnis
         <code>/config/solr-home</code> der Skeleton-CLI Anwendung in den soeben erstellen Solr-Core
         </p>
-        <p>Abschließend wird im MyCoRe-Konfigurationsverzeichnis die URL des Solr-Cores 
+        <p>Abschließend wird im MyCoRe-Konfigurationsverzeichnis die URL des Solr-Cores
         in der Datei <code>mycore.properties</code> gesetzt:<br />
         <code>MCR.Module-solr.ServerURL=http://localhost:8080/solr/skeleton</code>
         </p>
@@ -252,35 +248,35 @@ MCR.Metadata.Type.simpledoc=true]]></pre>
          <title>4. Konfiguration der Suche</title>
          <p>An dieser Stelle können natürlich nicht die vielfältigen Möglichkeiten, die Solr bietet
          vorgestellt und dokumentiert werden. Dazu verweisen wir auf die Literatur und die Solr Homepage.</p>
-         <p>Die Informationen hier sollen als Einstiegspunkt dienen und helfen, sich bei 
+         <p>Die Informationen hier sollen als Einstiegspunkt dienen und helfen, sich bei
          der Konfiguration zurechtzufinden. Vor allem sollen die MyCoRe-spezifischen Besonderheiten dargestellt werden.</p>
-         
+
          <h4>Suchfeld-Definition im Solr Core</h4>
          <p>
            Die Definition erfolgt in der Datei <code>schema.xml</code> im Solr Core Konfigurationsverzeichnis.
            Wir empfehlen jedoch alle Änderungen im <em>Skeleton </em>Konfigurationsverzeichnis vorzunehmen und
            die Dateien bei Änderungen in den Solr Core zu kopieren. Dadurch lassen sich auch die Solr Konfigurationsdateien
            mit den anderen Dateien des eigenen Projektes unter Versionskontrolle verwalten.
-           
-           Die Schema Datei befindet sich unter:  
+
+           Die Schema Datei befindet sich unter:
            <code>skeleton-cli\src\main\config\solr-home\skeleton\conf\schema.xml</code>
-          
-           Die Syntax der Suchfelddefinitionen entnehme man dem Solr Wiki oder 
-           einem gutes Solr Buch. 
+
+           Die Syntax der Suchfelddefinitionen entnehme man dem Solr Wiki oder
+           einem gutes Solr Buch.
            </p>
            <h5>Beispiel</h5>
-  			<pre class="brush: xml;gutter: false;"><![CDATA[<field name="ds.title" type="text_general" multiValued="true" stored="true" />]]>
+        <pre class="brush: xml;gutter: false;"><![CDATA[<field name="ds.title" type="text_general" multiValued="true" stored="true" />]]>
             </pre>
             <p>
-  			Das Attribut <tt>type</tt> referenziert eine an anderer Stelle im Schema
-  			definierte Typ-Definition. In dieser ist festgelegt, wie Solr die Daten
-  			beim Import und die Terme von Suchanfragen verarbeiten sollen (z.B: Tokenisierung (Zerlegung in Worte), Normalisierung (Umlaute), Stammformreduktion, ...)
-  			<br />Mit dem Attribut <tt>multiValued</tt> wird angegeben, ob das Indexfeld wiederholbar ist.
-  			ID-Werte und Felder nach denen sortiert werden soll, sollte nicht mehrfach vorkommen.
-  			<br />Mit dem Attribut <tt>stored</tt> wird angegeben, ob neben der Solr-internen Form
-  			auch noch die Ausgangsform des Feldwertes gespeichert werden soll. Gespeicherte Felder können
-  			z.B. dazu genutzt werden, Trefferlisten direkt aus der XML-Rückgabe einer Solr Anfrage
-  		 	zu generieren, ohne nochmal auf das MyCoRe Datenobjekt zugreifen zu müssen.
+        Das Attribut <tt>type</tt> referenziert eine an anderer Stelle im Schema
+        definierte Typ-Definition. In dieser ist festgelegt, wie Solr die Daten
+        beim Import und die Terme von Suchanfragen verarbeiten sollen (z.B: Tokenisierung (Zerlegung in Worte), Normalisierung (Umlaute), Stammformreduktion, ...)
+        <br />Mit dem Attribut <tt>multiValued</tt> wird angegeben, ob das Indexfeld wiederholbar ist.
+        ID-Werte und Felder nach denen sortiert werden soll, sollte nicht mehrfach vorkommen.
+        <br />Mit dem Attribut <tt>stored</tt> wird angegeben, ob neben der Solr-internen Form
+        auch noch die Ausgangsform des Feldwertes gespeichert werden soll. Gespeicherte Felder können
+        z.B. dazu genutzt werden, Trefferlisten direkt aus der XML-Rückgabe einer Solr Anfrage
+         zu generieren, ohne nochmal auf das MyCoRe Datenobjekt zugreifen zu müssen.
          </p>
            <h4>Suchfeld-Mapping per XSLT</h4>
            <p>
@@ -299,7 +295,7 @@ MCR.Metadata.Type.simpledoc=true]]></pre>
            vorgenommen. Diese Datei produziert XML nach folgendem Vorbild:
            </p>
            <pre class="brush: xml;gutter: false;"><![CDATA[<field name="feldname">feldwert</field>]]>
-            </pre>  
+            </pre>
            <p>
            Die Feldnamen beziehen sich auf die in der Solr Konfiguration (<code>schema.xml</code>)
            definierten Felder.
@@ -310,7 +306,7 @@ MCR.Metadata.Type.simpledoc=true]]></pre>
 </xsl:for-each>]]>
            </pre>
        </section>
-       
+
        <section>
          <title>5. Anpassung der Suchmasken und Trefferanzeige</title>
          <p>
