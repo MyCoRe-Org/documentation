@@ -91,7 +91,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Mit MyCoRe starten -->
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
       <overview              label="Übersicht"                 href="../index.html" />
-      <requirements          label="Anforderungen (NEU)"       href="requirements.html" />
+      <requirements          label="Anforderungen"             href="requirements.html" />
       <mir                   label="MIR"                       href="mir.html" />
       <skeleton              label="Skeleton"                  href="skeleton.html" />
       <hibernate             label="Datenbank &amp; Hibernate" href="hibernate.html" />
