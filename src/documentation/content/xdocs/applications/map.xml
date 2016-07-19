@@ -6,8 +6,5 @@
   </header>
   <body>
       <div id="map_div"></div>
-      <div id="map_contribution" style="width: 600px; font-size: 70%; text-align:right;">
-        Map Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> <img style="padding-top:3px;" src="http://developer.mapquest.com/content/osm/mq_logo.png" />
-      </div>
   </body>
 </document>

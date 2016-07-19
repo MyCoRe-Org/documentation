@@ -7,6 +7,9 @@
   height: auto !important;
 }
 
+.olPopup{
+	background-color:#E6EDF5;
+}
 .olPopup h2 {
   font-size: 14px;
   margin-top: 0px;

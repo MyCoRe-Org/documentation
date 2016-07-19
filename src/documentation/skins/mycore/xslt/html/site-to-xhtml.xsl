@@ -261,8 +261,8 @@ $(document).ready(function() {
                   transitionEffect: "resize"
                 }
         );
-        map.addLayer(mapquestLayer);
-
+       // map.addLayer(mapquestLayer);
+map.addLayer(new OpenLayers.Layer.OSM("OpenStreetMap"));
         var clusterStrategy = new OpenLayers.Strategy.Cluster( { distance: 25, threshold: 1 } );
 
         var style = new OpenLayers.Style( {
