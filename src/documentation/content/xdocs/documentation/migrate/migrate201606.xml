@@ -34,12 +34,12 @@
       <ul>
         <li>Open SuSE Leap 42.1</li>
         <li>SuSE SLES 12 SP 1</li>
-        <li>Ubuntu </li>
+        <li>Ubuntu 16.04 LTS</li>
       </ul>
 
       <section id="dependency_versions">
         <title>Versionsnummern für Produkte von Open Source Drittanbietern</title>
-        <p>MyCoRe und die darauf basierenden Anwendungen nutzen eine Reihe von Bibliotheken anderer Open Source Projekte.
+        <p>MyCoRe und die darauf basierenden Anwendungen nutzen eine Reihe von Bibliotheken anderer Open-Source-Projekte.
           Die für das Release 2016.06 verwendeten sind hier aufgelistet, sofern sie für die Ergänzung duch eigenen Code
           relevant sind. Einige Bibliotheken werden nur intern benötigt oder befriedigen Abhängigkeiten. Diese sind hier
           nicht erwähnt.
@@ -59,15 +59,12 @@
         Mit Umstellung auf das Release 2016.06 wurde auch der Einsatz log4j mit Version 2.x beschlossen. Der folgende
         Abschitt beschreibt die notwendigen Umstellungen eigenen Java-Codes und der log4j Konfiguration. Eine Übersichte
         der erforderlichen Änderungen bekommt man unter
-        <a href="https://logging.apache.org/log4j/2.x/manual/migration.html" target="_blank">https://logging.apache.org/log4j/2.x/manual/migration.html
-        </a>
-        . Die wichtigsten Punkte sind:
+        <a href="https://logging.apache.org/log4j/2.x/manual/migration.html"
+        >https://logging.apache.org/log4j/2.x/manual/migration.html</a>. Die wichtigsten Punkte sind:
       </p>
       <ul>
         <li>
-          Der Import erfolgt jetzt von
-          <code>org.apache.logging.log4j</code>
-          .
+          Der Import erfolgt jetzt von<code>org.apache.logging.log4j</code>.
         </li>
         <li>
           Die Instanz des Loggers wird jetzt mit
@@ -75,8 +72,7 @@
           geholt.
         </li>
         <li>
-          Aus der Datei
-          <em>mycore.properties</em>
+          Aus der Datei <em>mycore.properties</em>
           können alle Einträge
           <code>log4j.logger....</code>
           für den alten Logger entfernt werden.
@@ -84,8 +80,7 @@
         <li>
           Die Konfiguration des Logging-Systemes muss nun in der Datei
           <em>log4j2.xml</em>
-          unter
-          <em>src/main/resources</em>
+          unter <em>src/main/resources</em>
           festgelegt werden (siehe unten).
         </li>
       </ul>
