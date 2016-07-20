@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="marcrgt">
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="marcgt">
   <label xml:lang="en" text="MARC Genre Term List"
     description="This list includes terms that describe general categories, or genres that may be applied to various types of information resources" />
   <label xml:lang="de" text="MARC Genre Liste" />
