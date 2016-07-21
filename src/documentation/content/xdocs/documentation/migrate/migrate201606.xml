@@ -9,9 +9,10 @@
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
-    <version>2016-07-10</version>
+    <version>2016-07-21</version>
     <abstract>
-      Diese Seite fasst alle Informationen für die Migration vom LTS-Release 2015.05 zum LTS-Release 2016.06 zusammen.
+      Diese Seite fasst alle Informationen für die Migration vom LTS-Release 2015.05 zum LTS-Release 2016.06
+      zusammen.
     </abstract>
   </header>
 
@@ -20,7 +21,9 @@
     <section id="requirements_201606">
       <title>Voraussetzungen für das Release</title>
       <p>
-        Die <a href="site:requirements">Systemanforderungen</a> haben sich für das Release 2016.06 wie folgt
+        Die
+        <a href="site:requirements">Systemanforderungen</a>
+        haben sich für das Release 2016.06 wie folgt
         geändert:
       </p>
       <ul>
@@ -29,7 +32,8 @@
       </ul>
       <p>
         Diese Systemkomponenten sind in folgenden Distributionen enthalten, welche bei einzelnen
-        Community-Mitgliedern im Einsatz sind.
+        Community-Mitgliedern
+        im Einsatz sind.
       </p>
       <ul>
         <li>Open SuSE Leap 42.1</li>
@@ -39,9 +43,12 @@
 
       <section id="dependency_versions">
         <title>Versionsnummern für Produkte von Open Source Drittanbietern</title>
-        <p>MyCoRe und die darauf basierenden Anwendungen nutzen eine Reihe von Bibliotheken anderer Open-Source-Projekte.
-          Die für das Release 2016.06 verwendeten sind hier aufgelistet, sofern sie für die Ergänzung duch eigenen Code
-          relevant sind. Einige Bibliotheken werden nur intern benötigt oder befriedigen Abhängigkeiten. Diese sind hier
+        <p>MyCoRe und die darauf basierenden Anwendungen nutzen eine Reihe von Bibliotheken anderer
+          Open-Source-Projekte.
+          Die für das Release 2016.06 verwendeten sind hier aufgelistet, sofern sie für die
+          Ergänzung duch eigenen Code
+          relevant sind. Einige Bibliotheken werden nur intern benötigt oder befriedigen
+          Abhängigkeiten. Diese sind hier
           nicht erwähnt.
         </p>
         <ul>
@@ -59,12 +66,15 @@
         Mit Umstellung auf das Release 2016.06 wurde auch der Einsatz log4j mit Version 2.x beschlossen. Der folgende
         Abschitt beschreibt die notwendigen Umstellungen eigenen Java-Codes und der log4j Konfiguration. Eine Übersichte
         der erforderlichen Änderungen bekommt man unter
-        <a href="https://logging.apache.org/log4j/2.x/manual/migration.html"
-        >https://logging.apache.org/log4j/2.x/manual/migration.html</a>. Die wichtigsten Punkte sind:
+        <a href="https://logging.apache.org/log4j/2.x/manual/migration.html">https://logging.apache.org/log4j/2.x/manual/migration.html
+        </a>
+        . Die wichtigsten Punkte sind:
       </p>
       <ul>
         <li>
-          Der Import erfolgt jetzt von<code>org.apache.logging.log4j</code>.
+          Der Import erfolgt jetzt von
+          <code>org.apache.logging.log4j</code>
+          .
         </li>
         <li>
           Die Instanz des Loggers wird jetzt mit
@@ -72,7 +82,8 @@
           geholt.
         </li>
         <li>
-          Aus der Datei <em>mycore.properties</em>
+          Aus der Datei
+          <em>mycore.properties</em>
           können alle Einträge
           <code>log4j.logger....</code>
           für den alten Logger entfernt werden.
@@ -80,7 +91,8 @@
         <li>
           Die Konfiguration des Logging-Systemes muss nun in der Datei
           <em>log4j2.xml</em>
-          unter <em>src/main/resources</em>
+          unter
+          <em>src/main/resources</em>
           festgelegt werden (siehe unten).
         </li>
       </ul>
@@ -107,13 +119,24 @@
       <title>Umstellung auf die Java-Persistence-API (JPA)</title>
       <p>
         Mit Release 2016.06 wurde die Persistence-API für Datenbanken auf JPA-Nutzung umgestellt. Damit entfallen die
-        Hibernate-Konfigurationen ersatzlos. Die Konfiguration der Datenbankanbindung findet statt dessen in der persistence.xml statt.
-        Dabei können die Einträge aus der hibernate.cgf.xml in die persistence.xml übernommen werden. Eine Vorlage der Konfiguration
-        befindet sich im <a href="http://www.mycore.de/viewvc/viewvc.cgi/mycore/branches/mycore-2016.06.0.x/mycore-base/src/main/resources/configdir.template/"
-        >configdir.template</a>.
+        Hibernate-Konfigurationen ersatzlos. Die Konfiguration der Datenbankanbindung findet statt dessen in der
+        persistence.xml statt.
+        Dabei können die Einträge aus der hibernate.cgf.xml in die persistence.xml übernommen
+        werden. Eine Vorlage der Konfiguration
+        befindet sich im
+        <a
+          href="http://www.mycore.de/viewvc/viewvc.cgi/mycore/branches/mycore-2016.06.0.x/mycore-base/src/main/resources/configdir.template/">
+          configdir.template
+        </a>
+        .
       </p>
       <p>
-        Wichtig ist, dass die <code>persistence.xml</code> in einem <code>META-INF</code>-Verzeichnis im <code>CLASSPATH</code>
+        Wichtig ist, dass die
+        <code>persistence.xml</code>
+        in einem
+        <code>META-INF</code>
+        -Verzeichnis im
+        <code>CLASSPATH</code>
         liegen muss.
       </p>
     </section>
@@ -121,28 +144,36 @@
     <section id="websockets">
       <title>Nutzung der neuen WebCLI mit Websockets</title>
       <p>
-        Das LTS 2016.06 bringt eine neue WebCLI mit, die Websockets nutzt. Verwendet man einen Tomcat hinter einem Apache
+        Das LTS 2016.06 bringt eine neue WebCLI mit, die Websockets nutzt. Verwendet man einen Tomcat hinter einem
+        Apache
         mit mod_proxy_ajp, sind folgende Anpassungen nötig.
       </p>
       <ul>
         <li>ggf. Aktualisierung des Apache auf 2.4.5 (oder höher)</li>
-        <li>Installation von proxy_wstunnel (unter Ubuntu mit <code>sudo a2enmod proxy_wstunnel</code>)</li>
+        <li>
+          Installation von proxy_wstunnel (unter Ubuntu mit
+          <code>sudo a2enmod proxy_wstunnel</code>
+          )
+        </li>
         <li>Anpassung der Konfiguration (am Beispiel MIR):</li>
       </ul>
 
       <pre class="brush: bash;">
-#Forward all WebSocket connections via HTTP
-ProxyPass /mir/ws/ ws://localhost:{HTTP-Port}/mir/ws/
+        #Forward all WebSocket connections via HTTP
+        ProxyPass /mir/ws/ ws://localhost:{HTTP-Port}/mir/ws/
 
-#Forward other via AJP
-ProxyPass /mir ajp://localhost:{AJP-Port}/mir
-ProxyPassReverse /mir ajp://localhost:{AJP-Port}/mir
-     </pre>
-     <p>
-       Falls es auch noch zukünftige WebSocket-Einsätze geben sollte, dann sollten diese unterhalb von
-       <code>$WebAppBaseDir/ws/{Komponente oder Modul}/...</code> laufen. Im Falle der Web-CLI für MIR ist das:
-       <code>/mir/ws/mycore-webcli/socket</code>.
-     </p>
+        #Forward other via AJP
+        ProxyPass /mir ajp://localhost:{AJP-Port}/mir
+        ProxyPassReverse /mir
+        ajp://localhost:{AJP-Port}/mir
+      </pre>
+      <p>
+        Falls es auch noch zukünftige WebSocket-Einsätze geben sollte, dann sollten diese unterhalb von
+        <code>$WebAppBaseDir/ws/{Komponente oder Modul}/...</code>
+        laufen. Im Falle der Web-CLI für MIR ist das:
+        <code>/mir/ws/mycore-webcli/socket</code>
+        .
+      </p>
     </section>
 
     <section id="solr">
@@ -153,6 +184,141 @@ ProxyPassReverse /mir ajp://localhost:{AJP-Port}/mir
     <section id="ACLs">
       <title>ACLs</title>
       <p>ToDo</p>
+    </section>
+
+    <section id="ANT">
+      <title>Nutzung von Apache-Ant als Build Tool</title>
+      <p>Einige ältere, oft komplexe Anwendungen basieren in ihrem Build-Prozess noch auf Apache-Ant. Auch mit Release
+        2016.06 kann die Anwendung grundsätzlich so weiter gebaut werden. Dabei sind einige Dinge jedoch zu beachten.
+      </p>
+      <section>
+        <title>Laden der erforderlichen Jars via pom.xml</title>
+        <p>
+          Das MyCoRe Release ist komplett auf den Maven Build Prozess ausgerichtet. Für die Nutzung unter Ant-Build ist
+          das MyCoRe-complete.jar erforderlich. Dieses und alle sonstigen erforderlichen JARs können via Maven pom.xml
+          integriert werden. Leider ist die Apache Maven-Ant-Task obsolete und wird seit 2014 nicht mehr unterstützt.
+          Daher wurde der folgende, recht simple Weg genutzt, alle erforderlichen Dateien entsprechend zu laden.
+          Grundlage bilde eine eigene
+          <em>pom.xml</em>
+          , welche verarbeitet wird. Nachfolgend ein Beispiel:
+        </p>
+        <pre class="brush: xml;">
+<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>org.mycore</groupId>
+  <artifactId>application-model</artifactId>
+  <version>5.1</version>
+  
+  <properties>
+    <mycore.version>2015.05.0.1-SNAPSHOT</mycore.version>
+    <postgres.version>9.4-1206-jdbc42</postgres.version>
+    ...
+  </properties>
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>MyCoRe HQ</id>
+      <url>http://artifactory.mycore.de/mycore-releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>MyCoRe HQ Snapshots</id>
+      <url>http://artifactory.mycore.de/mycore-snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  
+  <repositories>
+    <repository>
+      <id>local</id>
+      <url>file:///home/dptadmin/.m2/repository</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>MyCoRe HQ</id>
+      <url>http://artifactory.mycore.de/mycore-releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>MyCoRe HQ Snapshots</id>
+      <url>http://artifactory.mycore.de/mycore-snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <outputDirectory>
+            ${build.directory}/lib
+          </outputDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artifactId>mycore-complete</artifactId>
+      <version>${mycore.version}</version>
+    </dependency>
+    ...
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>${postgres.version}</version>
+    </dependency>    
+  </dependencies>
+</project>]]></pre>
+        <p>
+          Nun kann der Aufruf über Ant wie folgend ausgeführt werden. dabei werden alle JARs in das Verzeichnis
+          <em>lib</em>
+          unter dem angegebenen Parameter
+          <em>build.directory</em>
+          gespeichert.
+        </p>
+        <pre class="brush: xml;">
+<![CDATA[<target name="resolve" description="resolve libraries">
+  <echo level="info">Resolve jars with maven</echo>
+  <exec executable="/usr/local/bin/mvn">
+    <arg value="-fpom.xml" />
+    <arg value="-Dbuild.directory=..." />
+    <arg value="dependency:copy-dependencies" />
+  </exec>
+</target>]]></pre>
+      </section>
     </section>
 
   </body>
