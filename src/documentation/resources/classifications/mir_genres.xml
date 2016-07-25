@@ -46,54 +46,54 @@
       <label xml:lang="x-group" text="true" />
       <label xml:lang="en" text="Thesis" />
       <label xml:lang="de" text="Hochschulschriften" />
-      <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:workingPaper" />
+      <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:workingPaper XMetaDissPlusThesisLevel:other" />
       <category ID="exam">
         <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="en" text="Exam" />
         <label xml:lang="de" text="Staatsexamensarbeit" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis" />
+        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:Staatsexamen" />
       </category>
       <category ID="dissertation">
         <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="de" text="Dissertation" />
         <label xml:lang="en" text="Dissertation" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:doctoralThesis" />
+        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:doctoralThesis XMetaDissPlusThesisLevel:thesis.doctoral" />
       </category>
       <category ID="habilitation">
         <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="de" text="Habilitation" />
         <label xml:lang="en" text="Habilitation" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:doctoralThesis" />
+        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:doctoralThesis XMetaDissPlusThesisLevel:thesis.habilitation" />
       </category>
       <category ID="diploma_thesis">
         <label xml:lang="x-hosts" text="series standalone diniPublType:masterThesis" />
         <label xml:lang="de" text="Diplomarbeit" />
         <label xml:lang="en" text="Diploma thesis" />
-        <label xml:lang="x-mapping" text="marcgt:thesis" />
+        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:Diplom" />
       </category>
       <category ID="master_thesis">
         <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="de" text="Abschlussarbeit (Master)" />
         <label xml:lang="en" text="Master thesis" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis" />
+        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:master" />
       </category>
       <category ID="bachelor_thesis">
         <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="en" text="Bachelor thesis" />
         <label xml:lang="de" text="Abschlussarbeit (Bachelor)" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:bachelorThesis" />
+        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:bachelorThesis XMetaDissPlusThesisLevel:bachelor" />
       </category>
       <category ID="student_resarch_project">
         <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="en" text="Student research project" />
         <label xml:lang="de" text="Studienarbeit" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:StudyThesis" />
+        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:StudyThesis XMetaDissPlusThesisLevel:other" />
       </category>
       <category ID="magister_thesis">
         <label xml:lang="x-hosts" text="series standalone" />
         <label xml:lang="de" text="Magisterarbeit" />
         <label xml:lang="en" text="Magister thesis" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis" />
+        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:M.A." />
       </category>
     </category>
     <category ID="collection">
