@@ -9,7 +9,7 @@
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
-    <version>2016-07-21</version>
+    <version>2016-07-25</version>
     <abstract>
       Diese Seite fasst alle Informationen für die Migration vom LTS-Release 2015.05 zum LTS-Release 2016.06
       zusammen.
@@ -191,6 +191,7 @@
       <p>Einige ältere, oft komplexe Anwendungen basieren in ihrem Build-Prozess noch auf Apache-Ant. Auch mit Release
         2016.06 kann die Anwendung grundsätzlich so weiter gebaut werden. Dabei sind einige Dinge jedoch zu beachten.
       </p>
+
       <section>
         <title>Laden der erforderlichen Jars via pom.xml</title>
         <p>
@@ -319,6 +320,83 @@
   </exec>
 </target>]]></pre>
       </section>
+
+      <section>
+        <title>Nutzung der BuildTools</title>
+        <p>
+          MyCoRe birngt im mycore-complete.jar die Komponente buildtools und die Datei
+          <em>integrate.xml</em>
+          mit. Somit werden für die folgenden AntTasks Ergänzungen aus dem Kern geladen. Die Auswahl der zu
+          bearbeitenden Komponenten erfolgt über das Property
+          <code>MCR.Components.Exclude</code>
+          .
+        </p>
+        <ul>
+          <li>
+            <strong>complie</strong>
+            - Ergänzt Compile-Läufe in der Anwendung
+          </li>
+          <li>
+            <strong>config</strong>
+            - Ergänzt Konfigurationsdateien in der Anwendung
+          </li>
+          <li>
+            <strong>create.default-rules</strong>
+            - Ergänzt Permission Konfigurationen in der Anwendung
+          </li>
+          <li>
+            <strong>create.scripts</strong>
+            - Ergänzt Skripte im CLI der Anwendung
+          </li>
+          <li>
+            <strong>create.users</strong>
+            - Ergänzt Benutzerdaten in der Anwendung
+          </li>
+          <li>
+            <strong>i18n</strong>
+            - ergänzt Übersetzungsdateien in der Anwendung
+          </li>
+          <li>
+            <strong>webapp</strong>
+            - ergänzt Dateien im Web-Bereich der Anwendung
+          </li>
+        </ul>
+        <p>
+          Die
+          <strong>buildtools</strong>
+          werden in der
+          <em>project</em>
+          -Zeile der
+          <em>build.xml</em>
+          mit
+          <code>xmlns:mcr="antlib:org.mycore.buildtools"</code>
+          definiert. Danach stehen folgende AntTasks zusätzlich zur Verfügung:
+        </p>
+        <ul>
+          <li>
+            <code>mcr:integrate target="..." classpathref="build.classpath"</code>
+            - initialisiert den Aufruf der integrate.xml über die nicht-ausgeschlossenen Komponenten
+          </li>
+          <li>
+            <code>mcr:config propertyfile="${build.config}/mycore.properties" mergefile="..."</code>
+            - mischt die im Attribut
+            <em>mergefile</em>
+            benannte Datei in das
+            <em>propertyfile</em>
+          </li>
+          <li>
+            <code>mcr:config action="addInclude" "propertyfile="${build.config}/mycore.properties" kex="MCR...."
+              value="..."</code>
+            - ergänzt in der Property-Datei
+            <em>propertyfile</em>
+            das Item
+            <em>key</em>
+            um den angegebenen
+            <em>value</em>
+          </li>
+        </ul>
+      </section>
+
     </section>
 
   </body>
