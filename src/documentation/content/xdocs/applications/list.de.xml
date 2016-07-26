@@ -373,6 +373,10 @@
             „Digital Oriental Manuscript Library“
             <a href="http://mycms.rrz.uni-hamburg.de/domlib" title="Digital Oriental Manuscript Library">DOMLib</a>
           </li>
+          <li>
+            „P. Walter Jacob Archiv“ mit Theaterdatenbank
+            <a href="https://mycms-vs01.rrz.uni-hamburg.de/exillit/" title="P. Walter Jacob Archiv">PWJA</a>
+          </li>
         </ul>
       </dd>
       <dt>
@@ -619,9 +623,9 @@
     </dl>
   </section><!-- Ende - Bilddatenbanken -->
 
-<!-- Sonstiges -->
+<!-- Sonstige -->
   <section>
-    <title>Sonstiges</title>
+    <title>Sonstige</title>
     <dl>
       <dt>
         <strong>Hamburg</strong>
@@ -630,24 +634,21 @@
         Universität Hamburg (Regionales Rechenzentrum)
         <ul>
           <li>
+            „Glossar zur Geschichte der mittelalterlichen Stadt“
+            <a href="https://www.glogemis.uni-hamburg.de/" title="GLOGEMIS">GLOGEMIS</a>
+          </li>
+          <li>
             „Die mittelalterlichen Statuten des Johanniterordens“
             <a href="http://www.josta.uni-hamburg.de/" title="JoSta">JoSta</a>
+          </li>
+          <li>
+            „Promptuarium Ecclesiasticum Medii Aevi“
+            <a href="https://www.proema.uni-hamburg.de/" title="Proema">Proema</a>
           </li>
           <li>
             „Die mittelalterlichen Schuld- und Rechnungsbücher des Deutschen
             Ordens um 1400“
             <a href="http://www.schuredo.uni-hamburg.de/" title="SchuReDO">SchuReDO</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>
-        <strong>Leipzig</strong>
-      </dt>
-      <dd>
-        Universität Leipzig (Universitätsrechenzentrum / -bibliothek)
-        <ul>
-          <li>
-            Die <a href="http://139.18.24.5:8861/" title="Forschungsdatenrepositorium DGPuK">Forschungsdatenrepositorium DGPuK</a>
           </li>
         </ul>
       </dd>
