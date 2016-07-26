@@ -61,7 +61,7 @@
         </li>
         <li>
           <em>minOccurs</em>
-          beschreibt die mindeste Anzahl der Wiederholungen des inneren Tags. Ist nichts angegeben, wird 0 angenommen.
+          beschreibt die mindeste Anzahl der Wiederholungen des inneren Tags. Ist nichts angegeben, wird 1 angenommen.
         </li>
         <li>
           <em>maxOccurs</em>
