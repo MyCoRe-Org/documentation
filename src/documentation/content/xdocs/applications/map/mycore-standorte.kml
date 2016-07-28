@@ -1245,5 +1245,26 @@
       </Point>
     </Placemark>
 
+<!-- ***************************************************************************************************************** -->
+<!-- Cambridge                                                                                                         -->
+<!-- ***************************************************************************************************************** -->
+    <Placemark>
+      <name>ITIM Catalogue</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://www.manuscript-treasury.net/" title="Link zum International Treasury of Islamic Manuscripts"><img class="icon" alt="icon" src="map/icons/icon_itim.png" /></a>
+                <a href="http://www.manuscript-treasury.net/" title="Link zum International Treasury of Islamic Manuscripts">International Treasury of Islamic Manuscripts</a>
+            </div>
+            <p>The Islamic Manuscript Association Ltd, Cambgidge</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>0.116667,52.2,0</coordinates>
+      </Point>
+    </Placemark>
+    
+    
+    
   </Document>
 </kml>
