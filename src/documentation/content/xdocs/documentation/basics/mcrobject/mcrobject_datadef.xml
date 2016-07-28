@@ -136,7 +136,7 @@
         </li>
         <li>
           <em>maxOccurs</em>
-          beschreibt die maximale Anzahl der Wiederholungen des inneren Tags. Ist nichts angegebn, wird 1 angenommen.
+          beschreibt die maximale Anzahl der Wiederholungen des inneren Tags. Ist nichts angegeben, wird 1 angenommen.
         </li>
         <li>
           Das
@@ -146,6 +146,30 @@
           erweitert werden, wenn das äußere Tag nicht den Namen
           <em>def.{name}</em>
           haben soll.
+        </li>
+        <li>
+          Das
+          <em>element</em>
+          kann um das Attribut
+          <em>heritable</em>
+          (true|false)
+          erweitert werden, wenn alle inneren Tags vererbbar sein sollen und in den Daten das
+          <em>heritable</em>
+          Attribut auf
+          <em>true</em>
+          stehen soll. Ist nichts angegeben, wird false angenommen.
+        </li>
+        <li>
+          Das
+          <em>element</em>
+          kann um das Attribut
+          <em>notinherited</em>
+          (true|false)
+          erweitert werden, wenn die inneren Tags eines übergeordneten Objekts nicht geerbt werden dürfen und in den Daten das
+          <em>notinherited</em>
+          Attribut auf
+          <em>true</em>
+          stehen soll. Ist nichts angegeben, wird false angenommen.
         </li>
         <li>
           Das Subtag
