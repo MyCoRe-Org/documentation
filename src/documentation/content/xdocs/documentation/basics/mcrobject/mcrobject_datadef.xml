@@ -2,18 +2,21 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
+
   <header>
     <title>Gestaltung eigener MyCoRe-Metadatenobjekte</title>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
-    <version>2015-04-14</version>
+    <version>2016-07-25</version>
     <abstract>In diesem Abschnitt wird der Syntax der Definitionsdatei für eigene Metadatenmodelle nach dem
       MyCoRe-Datamodell-Prinzip 2 vorgestellt. Weiterhin folgt eine Beschreibung der Integration in den Build-Prozess.
     </abstract>
   </header>
+
   <body>
+
     <section>
       <title>Das Metadatenmodell</title>
       <p>
@@ -24,15 +27,75 @@
         <em>def.</em>
         erweiter wird.
       </p>
+      <p>
+        Um auch alte Datenmodelle über die neue Datenmodelldefinition beschreiben zu können, wurde im Elemen
+        <em>elemnt</em>
+        das Attribut
+        <em>wrapper</em>
+        eingeführt. Für ältere Definitionen des Datenmodell 2, welche nicht das Attribut
+        <em>required</em>
+        nutzen
+        , ist weiterhin folgende implizite Annahme gültig und wird umgesetzt:
+      </p>
+      <ul>
+        <li>
+          Für
+          <code>minOccurs="0"</code>
+          wird dieses für das äußere Tag gesetzt, das innere Tag hat kein
+          <em>minOccurs</em>
+          und steht damit per default auf 1.
+        </li>
+      </ul>
+      <p>Weiterhin gilt:</p>
+      <ul>
+        <li>
+          <em>maxOccurs</em>
+          wird immer im äußeren Tag nicht angegeben und steht per default auf 1.
+        </li>
+        <li>
+          Ist
+          <em>minOccurs</em>
+          nicht angegeben, wird es im inneren Tag auf 1 per default gesetzt.
+        </li>
+        <li>
+          Ist
+          <em>required="false"</em>
+          angegeben, wird
+          <em>minOccurs</em>
+          im äußeren Tag auf 0 gesetzt.
+        </li>
+        <li>
+          Ist
+          <em>maxOccurs</em>
+          nicht angegeben wird für das innere Tag implizit per default 1 angenommen.
+        </li>
+        <li>
+          Das
+          <em>required</em>
+          -Attribut sollte zur besseren Lesbarkeit der Konfiguration mit angegben werden.
+        </li>
+      </ul>
       <pre class="brush: xml;">
-<![CDATA[<objecttype name="document" isChild="false" isParent="false" hasDerivates="true" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datamodel.xsd">
+<![CDATA[<objecttype name="document" isChild="false" isParent="false" hasDerivates="true" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datamodel.xsd">
   <metadata>
+    <!-- a required classmark in old notation with unique inner tag -->
+    <element name="classmark" type="text"/>
+    <!-- a required title in maximal 3 languages -->
+    <element name="title" type="text" required="true" maxOccurs='3'/>
+    <!-- an optional author in old notation with unbounded inner tag -->
     <element name="author" type="text" minOccurs='0' maxOccurs='unbounded'/>
-    <element name="title" type="text" minOccurs='1' maxOccurs='1'/>
+    <!-- an optional keyword with unbounded inner tag and wrapped outer tag name -->
+    <element name="keyword" type="text" required="false" wrapper="keywords" maxOccurs='unbounded'/>
+    <!-- an optional measurement in 2 or 3 dimensions -->
+    <element name="measurement" type="number" required="false" minOccurs="2" maxOccurs='3'/>
+    <!-- a required subject in old notation with unique inner tag -->
     <element name="subject" type="classification" minOccurs='1' maxOccurs='1'>
       <classification id="subject"/>
     <element>
-    <element name="link" type="link" minOccurs='1' maxOccurs='1'>
+    <!-- a required link list with unbounded inner tag -->
+    <element name="link" type="link" required="true" maxOccurs='unbounded'>
       <target type="person"/>
     <element>
   </metadata>
@@ -57,7 +120,15 @@
         <li>
           <em>name</em>
           im Element beschreibt den Tagnamen des inneren Elementes. Der äußere wird daraufhin gebildest als
-          <em>def.{name}</em>.
+          <em>def.{name}</em>
+          .
+        </li>
+        <li>
+          <em>required</em>
+          legt fest, ob das Element ein Pflichtfeld ist. Mögliche Werte sind 'true' und 'false'. Ist nichts angegeben,
+          wird 'true' angenommen' bzw. es wird
+          <em>minOcurrs</em>
+          ausgewertet.
         </li>
         <li>
           <em>minOccurs</em>
@@ -65,8 +136,16 @@
         </li>
         <li>
           <em>maxOccurs</em>
-          beschreibt die maximale Anzahl der Wiederholungen des inneren Tags. Ist nichts angegebn, wird unbounded
-          angenommen.
+          beschreibt die maximale Anzahl der Wiederholungen des inneren Tags. Ist nichts angegebn, wird 1 angenommen.
+        </li>
+        <li>
+          Das
+          <em>element</em>
+          kann um das Attribut
+          <em>wrapper</em>
+          erweitert werden, wenn das äußere Tag nicht den Namen
+          <em>def.{name}</em>
+          haben soll.
         </li>
         <li>
           Das Subtag
@@ -82,87 +161,90 @@
           <em>type</em>
           den MCRObjectType des Link-Ziels an.
         </li>
-        <li>
-          Das
-          <em>element</em>
-          kann um das Attribut
-          <em>wrapper</em>
-          erweitert werden, wenn das äußere Tag nicht den Namen
-          <em>def.{name}</em>
-          haben soll.
-        </li>
       </ul>
       <table class="table">
         <tr>
           <th>
-            <em>type</em>-Element
+            <em>type</em>
+            -Element
           </th>
           <th>MyCoRe-Datenmodellklasse</th>
         </tr>
         <tr>
           <td>text
           </td>
-          <td><a href="mcrobject_datatypes.html#Freier+Text+(MCRMetaLangText)">MCRMetaLangText</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Freier+Text+(MCRMetaLangText)">MCRMetaLangText</a>
           </td>
         </tr>
         <tr>
           <td>boolean
           </td>
-          <td><a href="mcrobject_datatypes.html#Boolesche+Werte+%28MCRMetaBoolean%29">MCRMetaBoolean</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Boolesche+Werte+%28MCRMetaBoolean%29">MCRMetaBoolean</a>
           </td>
         </tr>
         <tr>
           <td>classification
           </td>
-          <td><a href="mcrobject_datatypes.html#Klassifikationen+(MCRMetaClassification)">MCRMetaClassification</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Klassifikationen+(MCRMetaClassification)">MCRMetaClassification</a>
           </td>
         </tr>
         <tr>
           <td>link
           </td>
-          <td><a href="mcrobject_datatypes.html#Externe+Links+und+interne+Verknüpfungen+(MCRMetaLink+und+MCRMetaLinkID)">MCRMetaLinkID</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Externe+Links+und+interne+Verknüpfungen+(MCRMetaLink+und+MCRMetaLinkID)">MCRMetaLinkID</a>
           </td>
         </tr>
         <tr>
           <td>href
           </td>
-          <td><a href="mcrobject_datatypes.html#Externe+Links+und+interne+Verknüpfungen+(MCRMetaLink+und+MCRMetaLinkID)">MCRMetaLink</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Externe+Links+und+interne+Verknüpfungen+(MCRMetaLink+und+MCRMetaLinkID)">MCRMetaLink</a>
           </td>
         </tr>
         <tr>
           <td>derlink
           </td>
-          <td><a href="mcrobject_datatypes.html#Verknüpfung+zu+Dateien+(MCRMetaDerivateLink)">MCRMetaDerivateLink</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Verknüpfung+zu+Dateien+(MCRMetaDerivateLink)">MCRMetaDerivateLink</a>
           </td>
         </tr>
         <tr>
           <td>date
           </td>
-          <td><a href="mcrobject_datatypes.html#Datumsangaben+(MCRMetaISO8601Date)">MCRMetaISO8601Date</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Datumsangaben+(MCRMetaISO8601Date)">MCRMetaISO8601Date</a>
           </td>
         </tr>
         <tr>
           <td>number
           </td>
-          <td><a href="mcrobject_datatypes.html#Zahlenwerte+(MCRMetaNumber)">MCRMetaNumber</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Zahlenwerte+(MCRMetaNumber)">MCRMetaNumber</a>
           </td>
         </tr>
         <tr>
           <td>xml
           </td>
-          <td><a href="mcrobject_datatypes.html#Beliebiges+XML+(MCRMetaXML)">MCRMetaXML</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Beliebiges+XML+(MCRMetaXML)">MCRMetaXML</a>
           </td>
         </tr>
         <tr>
           <td>historydate
           </td>
-          <td><a href="mcrobject_datatypes.html#Historische+Datumsangaben+(MCRMetaHistoryDate)">MCRMetaHistoryDate</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Historische+Datumsangaben+(MCRMetaHistoryDate)">MCRMetaHistoryDate</a>
           </td>
         </tr>
         <tr>
           <td>personname
           </td>
-          <td><a href="mcrobject_datatypes.html#Namen+natürlicher+Personen+(MCRMetaPersonName)">MCRMetaPersonName</a>
+          <td>
+            <a href="mcrobject_datatypes.html#Namen+natürlicher+Personen+(MCRMetaPersonName)">MCRMetaPersonName</a>
           </td>
         </tr>
       </table>
@@ -173,7 +255,8 @@
       <p>
         Um eine XML-Schema-Datei der eigenen Metadatendefinition innerhalb eines zu bauenden *.jar-Files während des
         Build-Prozesses zu bauen und mit zu integrieren, muss die Datenmodell-Datei innerhalb des Maven-Modules unter
-        <code>{maven-modul}/src/main/datamodel/def/{xyz}.xml</code> stehen.
+        <code>{maven-modul}/src/main/datamodel/def/{xyz}.xml</code>
+        stehen.
       </p>
       <pre class="brush: xml;">
 <![CDATA[<plugin>
@@ -191,9 +274,18 @@
 
       <p>Weiterführende Informationen:</p>
       <ul>
-        <li><a href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014?action=AttachFile&amp;do=view&amp;target=Stephan_MyCoRe_Datenmodell_2014.pdf">"MyCoRe Datenmodeldefinition"</a> (Vortrag von Robert Stephan, Braunschweig 11/2014)</li>
-        <li><a href="http://www.mycore.de/generated/datamodel-plugin/plugin-info.html">Link zur Maven-Site mit weiterer Dokumentation</a></li>
-        <li><a href="http://artifactory.mycore.de/webapp/browserepo.html?pathId=plugins-snapshots-local%3Aorg%2Fmycore%2Fplugins%2Fdatamodel-plugin">Link zum Artifactory</a></li>
+        <li>
+          <a
+            href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2014?action=AttachFile&amp;do=view&amp;target=Stephan_MyCoRe_Datenmodell_2014.pdf">"MyCoRe Datenmodeldefinition"</a>
+          (Vortrag von Robert Stephan, Braunschweig 11/2014)
+        </li>
+        <li>
+          <a href="http://www.mycore.de/generated/datamodel-plugin/plugin-info.html">Link zur Maven-Site mit weiterer Dokumentation</a>
+        </li>
+        <li>
+          <a
+            href="http://artifactory.mycore.de/webapp/browserepo.html?pathId=plugins-snapshots-local%3Aorg%2Fmycore%2Fplugins%2Fdatamodel-plugin">Link zum Artifactory</a>
+        </li>
       </ul>
     </section>
   </body>
