@@ -43,7 +43,7 @@
           </description>
         </image>
       </images>
-      <location number="60+" label="Projects" title="show list of all locations" />
+      <location number="70+" label="Projects" title="show list of all locations" />
       <members>
         <member href="http://duepublico.uni-duisburg-essen.de/" label="DuEPublico" title="Zum Dokumentenserver der Universität Duisburg-Essen" />
         <member href="http://intr2dok.vifa-recht.de/" label="&lt;intR&gt;²Dok" title="Fachinformationsdienst für internationale und interdisziplinäre Rechtsforschung" />

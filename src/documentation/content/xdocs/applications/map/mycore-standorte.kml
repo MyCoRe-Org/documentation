@@ -265,7 +265,79 @@
     </Placemark>
 
 <!-- ***************************************************************************************************************** -->
-<!-- Rostock                                                                                                              -->
+<!-- Hannover                                                                                                    -->
+<!-- ***************************************************************************************************************** -->
+    <Placemark>
+      <name>NOA</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="https://noa.gwlb.de/"><img class="icon" alt="icon" src="map/icons/icon_hannover_noa.png" /></a>
+                <a href="https://noa.gwlb.de/">Niedersächsisches Online Archiv</a>
+            </div>
+            <p>Gottfried Wilhelm Leibniz Bibliothek (GWLB)</p>
+         ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>9.7308807,52.3652968,0</coordinates>
+      </Point>
+    </Placemark>
+
+<!-- ***************************************************************************************************************** -->
+<!-- Hagen                                                                                                    -->
+<!-- ***************************************************************************************************************** -->
+    <Placemark>
+      <name>deposit_hagen</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="https://ub-deposit.fernuni-hagen.de/"><img class="icon" alt="icon" src="map/icons/icon_hagen_deposit.png" /></a>
+                <a href="https://ub-deposit.fernuni-hagen.de/">deposit_hagen</a>
+            </div>
+            <p>FernUniversität in Hagen (Universitätsbibliothek)</p>
+         ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>7.4924313,51.37759,0</coordinates>
+      </Point>
+    </Placemark>
+
+<!-- ***************************************************************************************************************** -->
+<!-- Göttingen                                                                                                    -->
+<!-- ***************************************************************************************************************** -->
+    <Placemark>
+      <name>VZG-Reposis</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service"><img class="icon" alt="icon" src="map/icons/icon_goettingen_reposis.png" /></a>
+                <a href="https://www.gbv.de/Verbundzentrale/serviceangebote/reposis-repository-service">VZG-Reposis</a>
+            </div>
+            <p>Verbundzentrale des GBV (VZG)</p>
+         ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>9.9352354,51.5391773,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>VZG-Journals</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="https://journals.gbv.de/"><img class="icon" alt="icon" src="map/icons/icon_goettingen_journals.png" /></a>
+                <a href="https://journals.gbv.de/">VZG-Journals</a>
+            </div>
+            <p>Verbundzentrale des GBV (VZG)</p>
+         ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>9.9352354,51.5391773,0</coordinates>
+      </Point>
+    </Placemark>
+
+<!-- ***************************************************************************************************************** -->
+<!-- Rostock                                                                                                           -->
 <!-- ***************************************************************************************************************** -->
     <Placemark>
       <name>RosDok</name>
@@ -360,67 +432,20 @@
 <!-- Berlin                                                                                                          -->
 <!-- ***************************************************************************************************************** -->
     <Placemark>
-      <name>FU Dissertationen Online</name>
+      <name>OpenAgrar</name>
       <description><![CDATA[
             <div class="mcrmap_item">
-                <a href="http://www.diss.fu-berlin.de"><img class="icon" alt="icon" src="map/icons/icon_berlin_fu.png" /></a>
-                <a href="http://www.diss.fu-berlin.de">Elektronisches Publizieren von Dissertationen und Habilitationsschriften</a>
-            </div>
-            <p>Freie Universität Berlin (Universitätsbibliothek)</p>
-          ]]>
-        </description>
-      <styleUrl>#style_MyCoRe-Pin</styleUrl>
-      <Point>
-        <coordinates>13.377889,52.516338,0</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>FU Dokumentenserver Online</name>
-      <description><![CDATA[
-            <div class="mcrmap_item">
-                <a href="http://edocs.fu-berlin.de"><img class="icon" alt="icon" src="map/icons/icon_berlin_fu.png" /></a>
-                <a href="http://edocs.fu-berlin.de">Dokumentenserver der FU Berlin</a>
-            </div>
-            <p>Freie Universität Berlin (Universitätsbibliothek)</p>
-          ]]>
-        </description>
-      <styleUrl>#style_MyCoRe-Pin</styleUrl>
-      <Point>
-        <coordinates>13.377889,52.516338,0</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Orient Digital</name>
-      <description><![CDATA[
-            <div class="mcrmap_item">
-                <a href="http://orient-digital.staatsbibliothek-berlin.de/">
-                  <img class="icon" alt="icon" src="map/icons/icon_berlin_sbb.png" title="Projekt zur Einführung des Katalogprogrammes MyIHS" />
+                <a href="https://openagrar.bmel-forschung.de/">
+                  <img class="icon" alt="icon" src="map/icons/icon_berlin_openagrar.png" />
                 </a>
-                <a href="http://orient-digital.staatsbibliothek-berlin.de/">Orientalische Handschriften der SBB</a>
+                <a href="https://openagrar.bmel-forschung.de">Publikationsserver OpenAgrar</a>
             </div>
-            <p>Staatsbibliothek zu Berlin</p>
+            <p>Bundesministerium für Ernährung und Landwirtschaft (BMEL)</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
       <Point>
-        <coordinates>13.377889,52.516338,0</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>KOHD Digital</name>
-      <description><![CDATA[
-            <div class="mcrmap_item">
-                <a href="http://turfan-digital.staatsbibliothek-berlin.de/">
-                  <img class="icon" alt="icon" src="map/icons/icon_berlin_sbb.png" />
-                </a>
-                <a href="http://turfan-digital.staatsbibliothek-berlin.de/">Die Berliner Turfansammlung</a>
-             </div>
-            <p>Staatsbibliothek zu Berlin</p>
-          ]]>
-        </description>
-      <styleUrl>#style_MyCoRe-Pin</styleUrl>
-      <Point>
-        <coordinates>13.377889,52.516338,0</coordinates>
+        <coordinates>13.3802361,52.5138359,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
@@ -437,24 +462,88 @@
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
       <Point>
-        <coordinates>13.377889,52.516338,0</coordinates>
+        <coordinates>13.3669673,52.506525,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>OpenAgrar</name>
+      <name>FU Dissertationen Online</name>
       <description><![CDATA[
             <div class="mcrmap_item">
-                <a href="https://openagrar.bmel-forschung.de/">
-                  <img class="icon" alt="icon" src="map/icons/icon_berlin_openagrar.png" />
-                </a>
-                <a href="https://openagrar.bmel-forschung.de">Publikationsserver OpenAgrar</a>
+                <a href="http://www.diss.fu-berlin.de"><img class="icon" alt="icon" src="map/icons/icon_berlin_fu.png" /></a>
+                <a href="http://www.diss.fu-berlin.de">Elektronisches Publizieren von Dissertationen und Habilitationsschriften</a>
             </div>
-            <p>Bundesministerium für Ernährung und Landwirtschaft (BMEL)</p>
+            <p>Freie Universität Berlin (Universitätsbibliothek)</p>
           ]]>
         </description>
       <styleUrl>#style_MyCoRe-Pin</styleUrl>
       <Point>
-        <coordinates>13.377889,52.516338,0</coordinates>
+        <coordinates>13.28749,52.4525264,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>FU Dokumentenserver Online</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://edocs.fu-berlin.de"><img class="icon" alt="icon" src="map/icons/icon_berlin_fu.png" /></a>
+                <a href="http://edocs.fu-berlin.de">Dokumentenserver der FU Berlin</a>
+            </div>
+            <p>Freie Universität Berlin (Universitätsbibliothek)</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>13.28749,52.4525264,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Orient Digital</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://orient-digital.staatsbibliothek-berlin.de/">
+                  <img class="icon" alt="icon" src="map/icons/icon_berlin_sbb.png" title="Projekt zur Einführung des Katalogprogrammes MyIHS" />
+                </a>
+                <a href="http://orient-digital.staatsbibliothek-berlin.de/">Orientalische Handschriften der SBB</a>
+            </div>
+            <p>Staatsbibliothek zu Berlin</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>13.3669673,52.506525,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>KOHD Digital</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://turfan-digital.staatsbibliothek-berlin.de/">
+                  <img class="icon" alt="icon" src="map/icons/icon_berlin_sbb.png" />
+                </a>
+                <a href="http://turfan-digital.staatsbibliothek-berlin.de/">Die Berliner Turfansammlung</a>
+             </div>
+            <p>Staatsbibliothek zu Berlin</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>13.3669673,52.506525,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Publikationsserver des IAI-SPK</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://publications.iai.spk-berlin.de/">
+                  <img class="icon" alt="icon" src="map/icons/icon_berlin_iai.png" />
+                </a>
+                <a href="http://publications.iai.spk-berlin.de/">Der Publikationsserver des IAI</a>
+             </div>
+            <p>Ibero Amerikanisches Institut Preußischer Kulturbesitz</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>13.3669673,52.506525,0</coordinates>
       </Point>
     </Placemark>
 
