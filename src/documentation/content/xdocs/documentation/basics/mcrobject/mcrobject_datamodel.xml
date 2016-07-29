@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>XML-Syntax eines MyCoRe-Objektes</title>
-    <version>2016-03-02</version>
+    <version>2016-07-29</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
@@ -177,7 +177,11 @@
         <em>true</em>
         oder
         <em>false</em>
-        möglich.
+        möglich. Das Attribute <em>notinherit</em> legt die Eigenschaft eines Elements fest, von dem Parent-Element zu erben. Auch hier sind die booleschen Werte
+        <em>true</em>
+        oder
+        <em>false</em>
+        möglich. Ist <code>heritable="true"</code> und <em>notinherit</em> nicht angegeben, so wird implizit <code>notinherit="false"</code> angenommen.
       </p>
       <p>
         Für MyCoRe wurden einige Basismetadatentypen festgelegt, mit denen die Mehrzahl der bisher in Betracht kommenden
@@ -198,14 +202,13 @@
         eingeführt. Dieses ist NICHT durch den Anwender zu
         verändern!
         Es wird gesetzt, wenn das betreffende Metadatum von
-        einem Elternteil geerbt wurde (siehe Vererbung).
-        Diese
-        Information ist für die Datenpräsentation sehr hilfreich.
+        einem Elternteil geerbt wurde (siehe Vererbung) und gibt die Stufe der Vererbung an.
+        Diese Information ist für die Datenpräsentation sehr hilfreich.
       </p>
 
       <pre class="brush: xml;">
 <![CDATA[<metadata>
-  <... class="MCRMeta..." heritable="...">
+  <... class="MCRMeta..." heritable="..." notinherit="...">
    ...
   </...>
   ...
