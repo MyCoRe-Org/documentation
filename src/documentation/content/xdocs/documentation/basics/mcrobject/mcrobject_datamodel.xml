@@ -204,8 +204,8 @@
       </p>
 
       <pre class="brush: xml;">
-<![CDATA[<metadata xml:lang="...">
-  <... class="MCRMeta..." heritabel="...">
+<![CDATA[<metadata>
+  <... class="MCRMeta..." heritable="...">
    ...
   </...>
   ...
