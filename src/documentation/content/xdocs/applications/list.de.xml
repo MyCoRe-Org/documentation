@@ -393,10 +393,10 @@
         <strong>Gotha</strong>
       </dt>
       <dd>
-        Universitäts- und Forschungsbibliothekbibliothek Gotha
+        Forschungsbibliothekbibliothek Gotha der Universität Erfurt
         <ul>
           <li>
-            MyIHS-Teilprojekt Orientalische Handschriften der Universitäts- und Forschungsbibliothekbibliothek Gotha (nicht öffentliches Projekt)
+            MyIHS-Teilprojekt <a href="http://www.manuscripts-gotha.uni-jena.de/" title="Orientalischen Handschriften der Forschungsbibliothek Gotha">Orientalischen Handschriften der Forschungsbibliothek Gotha</a>
           </li>
         </ul>
       </dd>
@@ -404,10 +404,13 @@
         <strong>Göttingen</strong>
       </dt>
       <dd>
-        Akademie der Wissenschaften zu Göttingen
+        Akademie der Wissenschaften zu Göttingen - KOHD
         <ul>
           <li>
-            MyIHS-Teilprojekt Katalogisierung der Orientalischen Handschriften in Deutschland - KOHD (nicht öffentliches Projekt)
+            MyIHS-Teilprojekt Katalogisierung der Orientalischen Handschriften in Deutschland (nicht öffentliches Projekt)
+          </li>
+          <li>
+            Papyri-Teilprojekt Katalogisierung der koptischen Papyri (nicht öffentliches Projekt)
           </li>
         </ul>
       </dd>
@@ -524,6 +527,10 @@
         bereitgestellt durch die Universität Leipzig (Universitätsrechenzentrum / -bibliothek)
         <ul>
           <li>
+            <a href="http://www.organapapyrologica.net/" title="Organa Papyrologica">Organa Papyrologica</a> vereint eine einheitliche
+            Rechercheplattform aller digitalen Papyrussammlungen (Papyrus-Portal) und das <strong>Neue Fachwörterbuch der griechischen Verwaltungssprache</strong>
+          </li>
+          <li>
             <a href="http://papyri-collection.dl.uni-leipzig.de/" title="Eine Kollektion verschiedener deutscher Papyrussammlungen">Eine Kollektion verschiedener deutscher Papyrussammlungen</a>
           </li>
           <li>
@@ -532,10 +539,6 @@
           <li>
             <a href="http://papyri-leipzig.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Halle-Jena-Leipzig">
               Halle-Jena-Leipzig</a>
-          </li>
-          <li>
-            Das <a href="http://www.papyrusportal.de/" title="Papyrus Portal">Papyrus Portal</a> als einheitliche
-            Rechercheplattform aller digitalen Papyrussammlungen
           </li>
         </ul>
       </dd>
