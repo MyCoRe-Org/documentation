@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>Servlets zur Manipulation von MyCoRe-Objekten</title>
-    <version>2015-08-12</version>
+    <version>2016-08-04</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
@@ -15,6 +15,63 @@
     </abstract>
   </header>
   <body>
+
+    <section>
+      <title>Das (MCR)CreateObjectServlet / (MCR)UpdateObjectServlet</title>
+      <p>
+        Als erste Funktionalität soll das Create und Update von MyCoRe-Metadaten-Objekten
+        <em>MCRObject</em>
+        beschrieben werden.
+      </p>
+      <p>
+        Innerhalb der HTML-Navigation in der Anwendung wird die entsprechende XEditor-Seite aufgerufen. Dabei ist es
+        möglich, dem Aufruf eine MyCoRe-ProjektID mitzugeben, welche dann für das Generieren der
+        <em>MCRObjectID</em>
+        genutzt wird.
+      </p>
+      <p>
+        Der Codebaustein
+        <code>... href="/editor_form_work.xed?origin=BachDigital" ...</code>
+        für Create ruft ein XEditor-Formular auf und übergibt die ProjectID
+        <em>BachDigital</em>
+        . Für den Update-Aufruf ist das
+        <em>origin</em>
+        -Attribut weg zu lassen.
+      </p>
+      <p>Innerhalb des Formulars sind dann Abschnitte für die Umsetzung der MCRObjectID und die Submit-Button
+        vorzusehen.</p>
+      <pre class="brush: xml;">
+<![CDATA[...
+  <xed:choose>
+    <xed:when test="string-length($origin) &gt; 0">
+      <xed:bind xpath="@ID" initially="{$origin}_work_00000000" />
+    </xed:when>
+    <xed:when test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','getCurrentUserAttribute','origin')">
+      <xed:bind xpath="@ID" initially="{xed:call-java('org.mycore.common.xml.MCRXMLFunctions','getCurrentUserAttribute','origin')}_work_00000000" />
+    </xed:when>
+    <xed:otherwise>
+      <xed:bind xpath="@ID" initially="{$MIR.projectid.default}_work_00000000" />
+    </xed:otherwise>
+  </xed:choose>
+...
+  <button type="submit" class="btn btn-default" xed:target="cancel">
+    <xed:output i18n="button.cancel" />
+  </button>
+  <xed:choose>
+    <!-- xed:when test="/mycoreobject/@ID = 'BachDigital_work_00000000'" -->
+    <xed:when test="contains(/mycoreobject/@ID, '_00000000')">
+      <button type="submit" class="btn btn-primary" xed:target="servlet" xed:href="CreateObjectServlet">
+        <xed:output i18n="button.save" />
+      </button>
+    </xed:when>
+    <xed:otherwise>
+      <button type="submit" class="btn btn-primary" xed:target="servlet" xed:href="UpdateObjectServlet">
+        <xed:output i18n="button.save" />
+      </button>
+    </xed:otherwise>
+  </xed:choose>
+...]]></pre>
+    </section>
 
     <section>
       <title>Das MCRDerivateServlet</title>
