@@ -17,29 +17,40 @@
   <body>
 
     <section>
-      <title>Das (MCR)CreateObjectServlet / (MCR)UpdateObjectServlet</title>
+      <title>Das MCRCreateObjectServlet / MCRUpdateObjectServlet / MCRDeleteObjectServlet</title>
       <p>
-        Als erste Funktionalität soll das Create und Update von MyCoRe-Metadaten-Objekten
+        Als erste Funktionalitäten sollen
+        <em>Create</em>
+        ,
+        <em>Update</em>
+        und
+        <em>Delete</em>
+        von MyCoRe-Metadaten-Objekten
+        (
         <em>MCRObject</em>
+        )
         beschrieben werden.
       </p>
       <p>
-        Innerhalb der HTML-Navigation in der Anwendung wird die entsprechende XEditor-Seite aufgerufen. Dabei ist es
-        möglich, dem Aufruf eine MyCoRe-ProjektID mitzugeben, welche dann für das Generieren der
+        <strong>CREATE</strong>
+      </p>
+      <p>
+        Für ein neu anzulegendes Objekt kann innerhalb der HTML-Navigation in der Anwendung die entsprechende
+        XEditor-Seite aufgerufen werden. Dabei ist es
+        möglich, dem Aufruf eine MyCoRe-ProjektID mitzugeben, welche dann
+        für das Generieren der
         <em>MCRObjectID</em>
         genutzt wird.
       </p>
       <p>
-        Der Codebaustein
-        <code>... href="/editor_form_work.xed?origin=BachDigital" ...</code>
-        für Create ruft ein XEditor-Formular auf und übergibt die ProjectID
-        <em>BachDigital</em>
-        . Für den Update-Aufruf ist das
-        <em>origin</em>
-        -Attribut weg zu lassen.
+        Der Codebaustein für
+        <em>Create</em>
+        <code>... href="/editor_form_my_xed.xed?origin={ProjectID}" ...</code>
+        ruft ein XEditor-Formular auf und übergibt die ProjectID.
       </p>
       <p>Innerhalb des Formulars sind dann Abschnitte für die Umsetzung der MCRObjectID und die Submit-Button
-        vorzusehen.</p>
+        vorzusehen.
+      </p>
       <pre class="brush: xml;">
 <![CDATA[...
   <xed:choose>
@@ -71,6 +82,65 @@
     </xed:otherwise>
   </xed:choose>
 ...]]></pre>
+      <p>
+        <strong>UPDATE</strong>
+      </p>
+      <p>
+        Der Codebaustein für
+        <em>Update</em>
+        <code>... href="/editor_form_my_xed.xed?id={MCRObjectID}" ...</code>
+        ruft ein XEditor-Formular auf und übergibt die MCRObjectID. Im
+        <em>editor_form_my_xed.xed</em>
+        sollten dann folgende Zeilen enthalten sein:
+      </p>
+      <pre class="brush: xml;">
+<![CDATA[...
+  <xed.cancel url="/receive/{$id}" />
+  <xed.cancel url="/" />
+  <xed.source url="mcrobject:{$id}" />
+...]]></pre>
+      <p>
+        <strong>DELETE</strong>
+      </p>
+      <p>
+        Der Codebaustein für
+        <em>Delete</em>
+        <code>... href="/servlets/object/delete?id={MCRObjectID}"</code>
+        ist recht simpel. Er ruft direkt das MCRDeletObjectServlet auf. Für Anwendunge ist es natürlich sinnvoll, hier
+        noch eine Sicherheitsabfrage einzubauen.
+      </p>
+    </section>
+
+    <section>
+      <title>Das MCRLockServlet</title>
+      <p>Das MCRLockServlet ist ein Wrapper um dem Update-Ablauf und soll sicher stellen, dass ein MyCoRe-Object nur von
+        einem Nutzer gleichzeitig verarbeitet werden kann. Der Aufruf ist:
+      </p>
+      <pre class="brush: xml;">
+<![CDATA[.../servlets/MCRLockServlet?url={my_update}.xed&amp;id={my_id}]]></pre>
+      <p>Folgende Parameter sind anzugeben:
+      </p>
+      <ul>
+        <li>url - die URL der XEditor-Seite, welche aufzurufen ist.
+        </li>
+        <li>id - MCRObjectID des Datenobjektes, welches verarbeitet werden soll.</li>
+        <li>
+          action - (optional)
+          <em>lock</em>
+          oder
+          <em>unlock</em>
+        </li>
+      </ul>
+      <p>
+        Ein
+        <em>unlock</em>
+        erfolgt unter den Bidingungen:
+      </p>
+      <ul>
+        <li>Das Submit war erfolgreich.</li>
+        <li>Es erfolgte ein Abbruch der Verarbeitung (cancel).</li>
+        <li>Die Session für die verrabeitung ist abgebrochen.</li>
+      </ul>
     </section>
 
     <section>
