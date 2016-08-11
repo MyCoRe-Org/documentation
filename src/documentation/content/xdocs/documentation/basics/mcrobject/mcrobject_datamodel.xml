@@ -159,7 +159,7 @@
         dass
         alle Datentypen bestimmte gemeinsame Eigenschaften haben. Es ist auch jederzeit möglich, weitere Typen
         den Projekten
-        der Anwender hinzuzufügen. Diese Definitionen sind analg der von MyCoRe mitgebrachten Vorlagen zu
+        der Anwender hinzuzufügen. Diese Definitionen sind analog der von MyCoRe mitgebrachten Vorlagen zu
         erstellen.
       </p>
       <p>
@@ -226,7 +226,7 @@
       <title>Aufbau des XML-Knotens service</title>
       <p>
         Für die Einrichtung eines Workflow und um die Wartung großer Datenmengen zu vereinfachen sowie für den Import /
-        Export der ACL's wurde der XML-Abschnitt service in das Metadatenobjekt integriert. Hier sind Informationen wie
+        Export der ACL's, wurde der XML-Abschnitt service in das Metadatenobjekt integriert. Hier sind Informationen wie
         Datumsangaben, ACL's und Flags für die Verarbeitung im Batch-Betrieb enthalten. Achtung, die Tag-Namen sind fest
         vorgegeben und dürfen nicht anderweitig verwendet werden!
       </p>

@@ -20,7 +20,7 @@
         komplexer Daten. Diese Strukturen bilden die MyCoRe-Datentypen, welche von der Dateneingabe bis hin zur
         Validierung
         und Datenpräsentation für einen einheitlichen Umgang mit den Daten sorgen. Dabei ist zwischen einfachen, recht
-        atomaren Typen und anwendungsspezifischen komplexen Typen zu unterscheiden. Eine Auflistung finden Sie in
+        atomaren Typen und anwendungsspezifischen, komplexen Typen zu unterscheiden. Eine Auflistung finden Sie in
         nachfolgender Tabelle.
       </p>
       <table class="table">
@@ -158,13 +158,13 @@
       <title>Historische Datumsangaben (MCRMetaHistoryDate)</title>
       <p>
         Der Basistyps MCRMetaHistoryDate ist speziell kreiert, um Datumsangaben für historische Projekte speichern und suchen
-        zu können. Dabei wird sowohl ein verbaler Text wie eine konkrete Datumskonvertierung mit dem dazugehörigen
+        zu können. Dabei wird sowohl ein verbaler Text, sowie eine konkrete Datumskonvertierung mit dem dazugehörigen
         Kalender
         gespeichert. Das Datum wird im Format des angegebenen Kalenders abgelegt, auch für die Zeit vor Einführung des selben.
         Zur Implementierung des Datentyps wurde die frei verfügbare ICU-Library der Firma IBM genutzt. Sie bietet eine Reihe
         von Kalendern an, die so für diesen Datentyp nun verfügbar sind. Alle Datumsangaben werden zur internen
         Verarbeitung
-        in MyCoRe in eine Julian Day Number, also eine fortlaufende Tageszahl, umgerechnet. Diese wird neben einer Lesbaren
+        in MyCoRe in eine Julian Day Number, also eine fortlaufende Tageszahl, umgerechnet. Diese wird neben einer lesbaren
         Form in dem Datentyp MCRMetaHistoryDate gespeichert.
       </p>
       <p>
@@ -175,7 +175,7 @@
           Im
           <em>text</em>
           -Feld steht ein beliebiger String gemäß den Projektvorgaben. Dieses Feld ist für verschiedene Sprachen
-          wiederholbar
+          wiederholbar.
         </li>
         <li>
           Die Felder
@@ -240,12 +240,12 @@
       <p>
         Dieser Metadatentyp ist wie MCRMetaDate für das Speichern von Zeitangaben gedacht. Er bietet jedoch eine höhere
         zeitliche Auflösung, bis in den Millisekundenbereich. Unterstützt werden alle Formate der Informationsseite des W3C
-        (http://www.w3.org/TR/NOTE-datetime). Sie enthält nähere Informationen zu den Formaten und zur ISO-Norm:ISO 8601
+        (http://www.w3.org/TR/NOTE-datetime). Sie enthält nähere Informationen zu den Formaten und zur ISO-Norm: ISO 8601
         :
-        1998 (E)
+        1998 (E).
       </p>
       <p>
-        Wie MCRMetaDate unterstützt MCRMetaISO8601Date die Verwendung des type-Attributs, auf Grund seiner
+        Wie MCRMetaDate unterstützt MCRMetaISO8601Date die Verwendung des type-Attributs. Auf Grund seiner
         Sprachunabhängigkeit in der Formatierung der Datumsangabe fehlt die Unterstützung für das lang-Attribut. Das
         Verwenden von MCRMetaISO8601Date ermöglicht eine Syntaxprüfung der Datumsangabe bereits auf XMLSchema-Ebene, durch
         den dort definierten Datentyp xsd:duration, auf dem der MyCoRe-Datentyp abgebildet wird.
@@ -273,7 +273,7 @@
       <title>Freier Text (MCRMetaLangText)</title>
       <p>
         Der Basistyp MCRMetaLangText dient der Speicherung einer Liste von Textabschnitten mit zugehöriger Sprachangabe. Über
-        das form Attribut kann noch spezifizier werden, in welcher Form der Text geschrieben ist.
+        das form Attribut kann noch spezifiziert werden, in welcher Form der Text geschrieben ist.
       </p>
       <p>XML-Syntax des Metadaten-Basistyps MCRMetaLangText:</p>
       <pre class="brush: xml;">
@@ -299,8 +299,8 @@
       <p>
         Der Basistyp MCRMetaLink wurde geschaffen, um eine Verknüpfung  auf beliebige externe Referenzen zu realisieren.
         Der Typ MCRMetaLink ist eine Implementation des W3C XLink Standards (siehe ’XLM Linking Language (XLink) Version 1.0’).
-        Auf dieser Basis können mit dem MyCoRe-Metadatentyp MCRMetaLink zwei Arten von Links - eine Referenz und einen 
-        bidirektionalen Link erstellt werden.
+        Auf dieser Basis können mit dem MyCoRe-Metadatentyp MCRMetaLink zwei Arten von Links - eine Referenz und ein 
+        bidirektionaler Link erstellt werden.
         Bei beiden Arten werden jedoch in MCRMetaLink nicht alle Möglichkeiten der XLink Spezifikation ausgeschöpft, da dies für
         die in MyCoRe benötigten Funktionalitäten nicht erforderlich ist.
       </p>
@@ -308,7 +308,7 @@
         Im Referenztyp ist das Attribut <em>xlink:type=’locator’</em> immer anzugeben. 
         Die eigentliche Referenz wird im <em>xlink:href</em>
         Attribut notiert. Dabei ist die Referenz eine URL. Daneben können noch weitere
-        Informationen im xlink:label angegeben werden, hier ist aber auf die in der Spezifikation von XLink definierte
+        Informationen im <em>xlink:label</em> angegeben werden, hier ist aber auf die in der Spezifikation von XLink definierte
         Zeichenmenge zu achten! Weierhin kann ein <em>xlink:title</em> angegeben werden.
       </p>
       <p>
@@ -318,7 +318,7 @@
       </p>
       <p>
         Der Basistyp MCRMetaLinkID entspricht im Aufbau dem MCRMetaLink. Der einzige Unterschied ist, dass die Attribute
-        xlink:href, xlink:from und xlink:to nur mit MCRObjectIDs belegt werden dürfen. Dieser spezielle Datentyp wir zur Verknüpfung von
+        xlink:href, xlink:from und xlink:to nur mit MCRObjectIDs belegt werden dürfen. Dieser spezielle Datentyp wird zur Verknüpfung von
         MyCoRe-Objekten untereinander verwendet. Dabei kommt in der Regel die Referenz-Variante, also <em>xlink:href</em>, zum Einsatz.
       </p>
       
@@ -439,7 +439,7 @@
         <em>affix</em>
         und
         <em>prefix</em>
-        Namenszusätze wie 'von', 'de' usw. fullname enthält nochmal den
+        Namenszusätze wie 'von', 'de' usw. <em>fullname</em> enthält nochmal den
         automatisch zusammengesetzten Namen.
       </p>
       <p>XML-Syntax des Metadaten-Basistyps MCRMetaPersonName:</p>

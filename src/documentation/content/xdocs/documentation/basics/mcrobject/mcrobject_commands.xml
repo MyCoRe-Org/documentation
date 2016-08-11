@@ -27,19 +27,19 @@
         <dt>
           <code>load object from file {0}</code>
         </dt>
-        <dd>Das Kommando läd ein neues MCRObject von angegebenen vollständigen Dateipfad {0}.</dd>
+        <dd>Das Kommando lädt ein neues MCRObject vom angegebenen vollständigen Dateipfad {0}.</dd>
         <dt>
           <code>load all objects from directory {0}</code>
         </dt>
-        <dd>Das Kommando läd alle neuen MCRObject, welche sich in dem vollständigen Verzeichnispfad {0} befinden.</dd>
+        <dd>Das Kommando lädt alle neuen MCRObject, welche sich in dem vollständigen Verzeichnispfad {0} befinden.</dd>
         <dt>
           <code>update object from file {0}</code>
         </dt>
-        <dd>Das Kommando läd oder aktualisiert ein MCRObject von angegebenen vollständigen Dateipfad {0}.</dd>
+        <dd>Das Kommando lädt oder aktualisiert ein MCRObject vom angegebenen vollständigen Dateipfad {0}.</dd>
         <dt>
           <code>update all objects from directory {0}</code>
         </dt>
-        <dd>Das Kommando läd oder aktualisiert alle MCRObject, welche sich in dem vollständigen Verzeichnispfad {0}
+        <dd>Das Kommando lädt oder aktualisiert alle MCRObject, welche sich in dem vollständigen Verzeichnispfad {0}
           befinden.
         </dd>
         <dt>
@@ -95,10 +95,10 @@
         <dd>
           Das Kommando transformiert das angegebene MyCoRe Objekt {0} mit einer XSL-Datei {1}. Das
           Kommando ist hilfreich
-          um fehlerhafte Datenbestände zu reparieren. Selektieren sie dazu zuerst alle fehlerhaften Objekte mit dem
+          um fehlerhafte Datenbestände zu reparieren. Selektieren Sie dazu zuerst alle fehlerhaften Objekte mit dem
           <code>select objects with query {0}</code>
           Kommando. Anschließend können
-          sie mit 'execute for selected xslt {x} with file myfix.xsl' die Objekte
+          Sie mit 'execute for selected xslt {x} with file myfix.xsl' die Objekte
           reparieren.
         </dd>
       </dl>

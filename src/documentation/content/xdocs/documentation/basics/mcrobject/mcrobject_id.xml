@@ -79,7 +79,7 @@
       <code>MCRObjectID</code>
       eine zentrale Rolle im ganzen
       MyCoRe-Projekt spielt. Über sie werden alle Daten identifiziert und referenziert. Es sind daher die vorgegebenen
-      Regeln streng einzuhalten. Da es derzeit für den Datentyp zum anhängen nur eine
+      Regeln streng einzuhalten. Da es derzeit für den Datentyp zum Anhängen nur eine
       <code>type</code>
       -Bezeichnung gibt,
       kann es beim Design eines Projektes hilfreich sein, sich für eine Gruppe von Projektkürzeln zu entscheiden, z. B.

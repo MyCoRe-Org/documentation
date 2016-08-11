@@ -25,11 +25,11 @@
         befinden. Alle anderen Teile werden automatisch gebaut. Die Definition geht weiterhin davon aus, dass die
         äußeren Tag-Namen entsprechend mit
         <em>def.</em>
-        erweiter wird.
+        erweiterbar sind.
       </p>
       <p>
-        Um auch alte Datenmodelle über die neue Datenmodelldefinition beschreiben zu können, wurde im Elemen
-        <em>elemnt</em>
+        Um auch alte Datenmodelle über die neue Datenmodelldefinition beschreiben zu können, wurde im Element
+        <em>element</em>
         das Attribut
         <em>wrapper</em>
         eingeführt. Für ältere Definitionen des Datenmodell 2, welche nicht das Attribut
@@ -119,7 +119,7 @@
         </li>
         <li>
           <em>name</em>
-          im Element beschreibt den Tagnamen des inneren Elementes. Der äußere wird daraufhin gebildest als
+          im Element beschreibt den Tagnamen des inneren Elementes. Der Äußere wird daraufhin gebildet als
           <em>def.{name}</em>
           .
         </li>
@@ -132,7 +132,7 @@
         </li>
         <li>
           <em>minOccurs</em>
-          beschreibt die mindeste Anzahl der Wiederholungen des inneren Tags. Ist nichts angegeben, wird 1 angenommen.
+          beschreibt die minimale Anzahl der Wiederholungen des inneren Tags. Ist nichts angegeben, wird 1 angenommen.
         </li>
         <li>
           <em>maxOccurs</em>
@@ -277,8 +277,8 @@
     <section>
       <title>Erzeugen von XML-Schema-Dateien in eigenen Maven-Modulen</title>
       <p>
-        Um eine XML-Schema-Datei der eigenen Metadatendefinition innerhalb eines zu bauenden *.jar-Files während des
-        Build-Prozesses zu bauen und mit zu integrieren, muss die Datenmodell-Datei innerhalb des Maven-Modules unter
+        Um eine XML-Schema-Datei der eigenen Metadatendefinition, innerhalb eines zu bauenden *.jar-Files während des
+        Build-Prozesses, zu bauen und mit zu integrieren, muss die Datenmodell-Datei innerhalb des Maven-Modules unter
         <code>{maven-modul}/src/main/datamodel/def/{xyz}.xml</code>
         stehen.
       </p>
