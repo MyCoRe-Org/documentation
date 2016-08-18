@@ -336,11 +336,11 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>MyIHS</name>
+      <name>KOHD</name>
       <description><![CDATA[
             <div class="mcrmap_item">
-                <a href="https://adw-goe.de/"><img class="icon" alt="icon" src="map/icons/icon_goettingen_KOHD.png" /></a>
-                MyIHS-Teilprojekt Katalogisierung der Orientalischen Handschriften in Deutschland (nicht öffentliches Projekt)
+                <a href="http://orient-mss.kohd.adw-goe.de/"><img class="icon" alt="icon" src="map/icons/icon_goettingen_KOHD.png" /></a>
+                <a href="http://orient-mss.kohd.adw-goe.de/">MyIHS-Teilprojekt „Katalogisierung der Orientalischen Handschriften in Deutschland“</a>
             </div>
             <p>Akademie der Wissenschaften zu Göttingen - KOHD</p>
          ]]>
