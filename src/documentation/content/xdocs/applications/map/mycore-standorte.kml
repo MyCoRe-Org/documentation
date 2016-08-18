@@ -1007,6 +1007,25 @@
     </Placemark>
 
 <!-- ***************************************************************************************************************** -->
+<!-- Gotha                                                                                                            -->
+<!-- ***************************************************************************************************************** -->
+    <Placemark>
+      <name>Forschungsbibliothekbibliothek Gotha der Universität Erfurt</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://www.manuscripts-gotha.uni-jena.de/"><img class="icon" alt="icon" src="map/icons/icon_gotha_uni_erfurt.png" /></a>
+                <a href="http://www.manuscripts-gotha.uni-jena.de/">MyIHS-Teilprojekt Orientalischen Handschriften der Forschungsbibliothek Gotha</a>
+            </div>
+            <p>Forschungsbibliothekbibliothek Gotha der Universität Erfurt</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>10.718333,50.948889,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- ***************************************************************************************************************** -->
 <!-- Halle                                                                                                             -->
 <!-- ***************************************************************************************************************** -->
     <Placemark>
