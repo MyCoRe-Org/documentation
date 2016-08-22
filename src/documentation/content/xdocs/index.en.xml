@@ -17,7 +17,7 @@
           <path>abbildung_vielseitig.jpg</path>
           <link>site:features/index</link>
           <id>sphere_manysided</id>
-          <alt>Kugel mit vielen farbigen Flächen</alt>
+          <alt>versatile</alt>
           <description>
             for repositories, archives, digitised image collections and much more
           </description>
@@ -27,7 +27,7 @@
           <path>abbildung_anpassbar.jpg</path>
           <link>site:overview</link>
           <id>sphere_adaptable</id>
-          <alt>Bullet with mathematic formulas</alt>
+          <alt>adaptable</alt>
           <description>
             with own data model, search function, layout for your own repository
           </description>
@@ -37,7 +37,7 @@
           <path>abbildung_nachhaltig.jpg</path>
           <link>site:team</link>
           <id>sphere_lasting</id>
-          <alt>Globe with forrest and water</alt>
+          <alt>persistent</alt>
           <description>
             continuous developement in a community since more than 10 years
           </description>

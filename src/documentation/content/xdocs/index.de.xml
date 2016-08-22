@@ -17,7 +17,7 @@
           <path>abbildung_vielseitig.jpg</path>
           <link>site:features/index</link>
           <id>sphere_manysided</id>
-          <alt>Kugel mit vielen farbigen Flächen</alt>
+          <alt>Vielseitigkeit</alt>
           <description>
            für Repositorien, Online-Archive, Dokumentenserver uvm.
           </description>
@@ -27,7 +27,7 @@
           <path>abbildung_anpassbar.jpg</path>
           <link>site:overview</link>
           <id>sphere_adaptable</id>
-          <alt>Kugel mit mathematischen Formeln</alt>
+          <alt>Anpassbarkeit</alt>
           <description>
             mit eigenem Datenmodell, Suche, Layout zum eigenen Repository
           </description>
@@ -37,7 +37,7 @@
           <path>abbildung_nachhaltig.jpg</path>
           <link>site:team</link>
           <id>sphere_lasting</id>
-          <alt>Weltkugel mit Wald und Wasser</alt>
+          <alt>Nachhaltigkeit</alt>
           <description>
             seit 15 Jahren kontinuierliche Community-Entwicklung
           </description>
