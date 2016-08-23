@@ -101,7 +101,7 @@
       <p>
         <code>mycore.sh check derivates of mcrfsnodes with project id {project_id}</code>
       </p>
-      <p>Hier wird geprüft, ob für ein verzeichnetes Derivate Einträge in der MCRFSNODES hat und ob diese korrekte
+      <p>Hier wird geprüft, ob für ein Verzeichnetes Derivate Einträge in der MCRFSNODES hat und ob diese korrekte
         Verweise auf existierende Dateien haben.
       </p>
       <p>Im Gegenzug kann auch geprüft werden, ob in der Tabelle MCRFSNODES Einträge sind, welche keine existierenden
@@ -127,14 +127,16 @@
       </p>
       <p>
         <strong>Reparaturhinweis:</strong>
-        Die Synchronisation der daten kann mittels folgender Kommandos wieder hergestellt werden.
+        Die Synchronisation der Daten kann mittels folgender Kommandos wieder hergestellt werden.
       </p>
       <p>
-        <code>mycore.sh repair mcrdata.xml in content store {store_id} for derivate {derivate_id}</code>
+        <code>mycore.sh repair mcrdata.xml for project id {project_id} in content store {store_id}</code>
       </p>
-      <p>um alle Derivate eines Projektes zu bearbeiten lautet das Kommando</p>
       <p>
-        <code>mycore.sh repair mcrdata.xml in content store {store_id} for project ID {project_id}</code>
+        <code>mycore.sh repair mcrdata.xml for object {object_id} in content store {store_id}</code>
+      </p>
+      <p>
+        <code>mycore.sh repair mcrdata.xml for derivate {derivate_id} in content store {store_id}</code>
       </p>
       <p>Um die Konsistenz zwischen den Derivate-Verzeichnissen auf der Platte und der Tabelle MCRFSNODES zu prüfen 
         sind die nachfolgenden Kommandos entwickelt worden. Hierbei ist zu beachten, dass
@@ -142,10 +144,13 @@
         Check-Kommandos die fehlerhaften Tabelleneinträge ausgelistet und verifiziert sein! 
       </p>        
       <p>
-        <code>mycore.sh check mcrfsnodes of content store {store_id} for derivate {derivate_id}</code>
+        <code>mycore.sh check mcrfsnodes for project id {project_id} of content store {store_id}</code>
       </p>
       <p>
-        <code>mycore.sh check mcrfsnodes of content store {store_id} for project id {project_id}</code>
+        <code>mycore.sh check mcrfsnodes for object {object_id} of content store {store_id}</code>
+      </p>
+      <p>
+        <code>mycore.sh check mcrfsnodes for derivate {derivate_id} of content store {store_id}</code>
       </p>
       <p>
         <strong>Reparaturhinweis:</strong>
@@ -160,10 +165,13 @@
         </li>
       </ul>
       <p>
-        <code>mycore.sh repair mcrfsnodes of content store {store_id} for derivate {derivate_id}</code>
+        <code>mycore.sh repair mcrfsnodes for project id {project_id} of content store {store_id}</code>
       </p>
       <p>
-        <code>mycore.sh repair mcrfsnodes of content store {store_id} for project ID {project_id}</code>
+        <code>mycore.sh repair mcrfsnodes for object {object_id} of content store {store_id}</code>
+      </p>
+      <p>
+        <code>mycore.sh repair mcrfsnodes for derivate {derivate_id} of content store {store_id}</code>
       </p>
     </section>
 
