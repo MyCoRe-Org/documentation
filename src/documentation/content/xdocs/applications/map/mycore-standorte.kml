@@ -17,6 +17,25 @@
     </Style>
 
 <!-- ***************************************************************************************************************** -->
+<!-- Bremen                                                                                                              -->
+<!-- ***************************************************************************************************************** -->
+    <Placemark>
+      <name>Günter Grass Medienarchiv</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a href="http://grass-medienarchiv.gbv.de"><img class="icon" alt="icon" src="map/icons/icon_bremen_ggrass.png" /></a>
+                <a href="http://grass-medienarchiv.gbv.de">Webdatenbank des Medienarchivs</a>
+            </div>
+            <p>Bremen: Günter Grass Stiftung (Medienarchiv)</p>
+        ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>8.6520714,53.1677201,0</coordinates>
+      </Point>
+    </Placemark>
+
+<!-- ***************************************************************************************************************** -->
 <!-- Kiel                                                                                                              -->
 <!-- ***************************************************************************************************************** -->
     <Placemark>
