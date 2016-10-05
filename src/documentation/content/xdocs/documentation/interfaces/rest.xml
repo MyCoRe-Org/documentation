@@ -562,6 +562,14 @@
             <td><p>Field-List: beschränkt die in der Trefferliste zurückgelieferten Felder.</p></td>
           </tr>
           <tr>
+            <td><code>facet</code></td>
+            <td><p><code>facet=true</code> erzeugt Informationen über Facetten in der SOLR Query Response.</p></td>
+          </tr>
+          <tr>
+            <td><code>facet.field</code></td>
+            <td><p>wiederholbarer Parameter, der die auszugebenden Facettenfelder spezifiziert.</p></td>
+          </tr>
+          <tr>
             <td><code>json.wrf</code></td>
             <td><p>Name der Wrapper-Funktion, die die JSON-Ausgabe umschließt. Diese wird in AJAX/Javascript als Callback Funktion aufgerufen.</p>
                 <p>Das HTML-Beispiel <a href="/downloads/snippets/js_counting.html">js_counting.html</a> zeigt, wie man ein Suchergebnis per AJAX und JQuery in eine Webseite einbettet.</p>
