@@ -3,12 +3,30 @@
 <document>
   <header>
     <title>Gemeinsame Entwicklungsplattformen</title>
+    <version>2016-10-13</version>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
+    <abstract>Der Abschnitt beschreibt Werkzeuge und Zugänge zu den Entwicklerbereichen von MyCoRe.
+    </abstract>
   </header>
   <body>
 
       <section>
+        <title>Git-Zugang</title>
+        <p> Das Entwicklerteam hat sich entschlossen, die MyCoRe-Quellcodes vom eigenen Subversion-Server auf
+        GitHub zu verschieben. Neben einer besseren Wahrnehmung von MyCoRe in der Open Source Gemeinde sollen 
+        die besseren Team-Arbeitsmöglichkeiten von Git ausgenutzt werden. Die Umstellung fand im Oktober 2016
+        für den aktuellen Master-Code (trunk) und das release 2016.06 statt. Die Code-Entwicklung ist dabei 
+        weiter an JIRA und BAMBOO gekoppelt.</p>
+        <p>Alle Projekte der MyCoRe Community sind unter <a href="https://github.com/MyCoRe-Org" target="_blank">https://github.com/MyCoRe-Org</a> 
+        zu finden.</p>
+      </section>
+
+      <section>
         <title>Subversion-Zugang</title>
-        <p> Der Quellcode der MyCoRe-Kerns und einiger Anwendungen, z. B. der Beispielanwendung DocPortal, wird auf
+        <p> Der Quellcode der MyCoRe-Kerns und einiger Anwendungen, z. B. der Beispielanwendung MIR, wird auf
           einem Subversion-Server an der Universität Duisburg-Essen verwaltet.
         </p>
         <p> Aktuell gib es zwei Zugangsmöglichkeiten: über HTTP im lesenden Zugriff und über SSH mit Schreibrechten
@@ -39,7 +57,18 @@
           des Nutzerverzeichnisses angefügt wird. Der entsprechende Bereich trägt den Namen
           <code>[auto-props]</code>.
         </note>
+        <note label="Weiter Repositories für Anwendungen">
+          Neben dem zentralen Repository auf <code>mycore.de</code> gibt es noch einige Subversion-Systeme der
+          Anwendungsentwickler. Diese enthalten produktive Anwendungen der Einrichtungen und stellen Code für 
+          die Nachnutzung in eigenen Anwendungen bereit. Diese Applikationen stellen auch weitere Beispiellösunge
+          zur Anwendung von MyCoRe dar.
+          <ul>
+            <li>SVN in Leipzig - <a href="http://svnextern.dl.uni-leipzig.de/viewsvn/" target="_blank">svnextern.dl.uni-leipzig.de</a> - 
+            Ansprechpartner ist Jens Kupferschmidt</li>
+          </ul>
+        </note>
       </section>
+      
       <section>
         <title>Maven Grundsystem</title>
         <p>
