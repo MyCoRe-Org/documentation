@@ -22,6 +22,41 @@
         weiter an JIRA und BAMBOO gekoppelt.</p>
         <p>Alle Projekte der MyCoRe Community sind unter <a href="https://github.com/MyCoRe-Org" target="_blank">https://github.com/MyCoRe-Org</a> 
         zu finden.</p>
+        <p>Hinweise zum Umgang mit Git von Kathleen Neumann sind <a href="https://github.com/kkrebs/sep-22-developers/blob/master/class-notes/summary.md" target="_blank">hier</a>
+         zu finden.</p>
+         <section>
+           <title>Integration von MyCoRe-Git in Eclipse</title>
+           <p>Um das MyCoRe-Git-Repository auszuchecken und in Eclipse zu integrieren sollte zuerst <em>Git</em> auf dem
+           lokalen Rechner installiert werden. Anschließend ist die Konfiguration entsprechend der obigen Doku zu setzen.
+           Nun können in Eclipse folgende aktivitäten ausgeführt werden:</p>
+           <ul>
+             <li>in die Git-Ansicht wechseln</li>
+             <li><code>clone a git repository</code> auswählen</li>
+             <li>als Source <code>https://github.com/MyCoRe-Org/mycore.git</code> eintagen</li>
+             <li>eigenes Git Login und Pw eintragen</li>
+             <li><code>deselect all</code> und dann <code>select master</code> auswählen</li>
+             <li>Directory festlegen (z. B. ~/workspace); origin als Bezeichner lassen</li>
+             <li>... und laden</li>
+           </ul>
+           <p>Nun ist der Codestand im Git-View sichtbar. Jetzt soll der Code auch in der Java-Ansicht verfügbar sein.
+           Dazu sind folgende Schritte notwendig.</p>
+           <ul>
+             <li>in die Git-Ansicht wechseln</li>
+             <li>im <em>Working Tree</em> der ausgecheckten Daten <code>Import projects</code></li>
+             <li>dort <code>Import General Project</code> auswählen</li>
+             <li>anschießend in die Java-Ansicht wechseln und mit </li>
+             <li><code>Import existing Maven projects</code> die gewünschen MyCoRe-Komponenten auswählen</li>
+           </ul>
+           <p>Um vom Master auf ein bestimmtes Release zu wechseln sind folgende Schritte zu tun.</p>
+           <ul>
+             <li>in die Git-Ansicht wechseln</li>
+             <li>auf dem Master rechte Maustaste <code>Fetch from upstream</code></li>
+             <li>da unter <em>Remote tracking</em> <code>checkout as new branch</code> auswählen</li>
+           </ul>
+           <note label="Anschalten der Warnung für die pom.xml">
+           Hierfür ist die jeweilige <code>pom.xml</code> zu öffnen. Ober erscheint eine Warnung. Auf der Warnung rechte Maustaste und <em>Make goal update-project-license as ignored in eclipse build</em> markieren.
+           </note>
+         </section>
       </section>
 
       <section>
@@ -74,7 +109,7 @@
         <p>
           Neben der Installation von Subversion für die Arbeit mit einem zentralen Code-Repository ist ab Version 2.1
           auch das Produkt Maven (<a href="http://maven.apache.org/">http://maven.apache.org/</a>)
-          erforderlich, um an den Kernkomponenten zu arbeiten. Installieren Sie Maven gemäß Anleitung der Home Page
+          (Version 3.3.9 oder höher) erforderlich, um an den Kernkomponenten zu arbeiten. Installieren Sie Maven gemäß Anleitung der Home Page
           und setzen Sie die Umgebungsvariablen M2_HOME und MAVEN_OPTS. Binden Sie das mvn-Kommando in den Suchpfad mit
           ein.
         </p>
