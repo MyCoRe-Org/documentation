@@ -23,15 +23,20 @@
         System-Kommandozeile auch die Arbeit direkt über ein Web-Interface. Es stehen dabei auch alle Kommandos bereit,
         welche via Cli genutzt werden können. WebCli ist eine vollständige und eigenständige Komponente in MyCoRe.
         Für
-        die Nutzung sind Apache 2.4.5 oder höher und Tomcat 8.x oder eine vergleichbare Servlet-Engine (Jetty 9.3.12) erforderlich.
+        die Nutzung sind Apache 2.4.5 oder höher und Tomcat 8.x oder eine vergleichbare Servlet-Engine (Jetty 9.3.12)
+        erforderlich.
       </p>
     </section>
 
     <section>
       <title>Integration in die Web-Anwendung</title>
-      <p>Die Integration der Komponente ist recht einfach. Natürlich muss selbige im benutzten MyCore-Code enthalten
+      <p>
+        Die Integration der Komponente ist recht einfach. Natürlich muss selbige im benutzten MyCore-Code enthalten
         sein. In der Anwendung ist einfach die folgende Web-Seite aufzurufen, welche natürlich vorher in die Anwendung
-        kopiert wurde. Das WebCLI-Modul kommuniziert über WebSockets mit der Anwendung.
+        kopiert wurde. Das WebCLI-Modul kommuniziert über WebSockets mit der Anwendung. Weiterhin ist für die Nutzung
+        die Permission
+        <code>use-webcli</code>
+        erforderlich.
       </p>
       <p>
         <code>/modules/webcli/launchpad.xml</code>
@@ -95,7 +100,8 @@
       <title>WebSocket nicht über localhost</title>
       <p>
         Für den Fall, dass die Kommunikation zwischen Apache und Tomcat nicht über
-        eine gesicherte Verbindung stattfinden soll,
+        eine gesicherte Verbindung
+        stattfinden soll,
         müssen noch folgende Schritte/Änderungen erledigt werden:
       </p>
       <p>
@@ -105,7 +111,11 @@
         <code>$HOME/.keystore</code>
         zu speichern.
       </p>
-      <p>2. Der Connector im <code>server.xml</code> ist anzupassen.</p>
+      <p>
+        2. Der Connector im
+        <code>server.xml</code>
+        ist anzupassen.
+      </p>
       <pre class="brush: xml"><![CDATA[...
     <Connector port="{HTTP-Port}" protocol="org.apache.coyote.http11.Http11NioProtocol"
                scheme="https" SSLEnabled="true"
