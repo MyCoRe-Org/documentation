@@ -6,6 +6,8 @@
     <title>Die Kommandos über die Web Schnittstelle (WebCli)</title>
     <version>2016-10-20</version>
     <authors>
+      <person name="Thomas Scheffler" email="[EMAIL PROTECTED]" />
+      <person name="Paul.Borchert" email="[EMAIL PROTECTED]" />
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
     </authors>
@@ -20,6 +22,8 @@
       <p> Das Command Line Interface (CLI) wurde ja bereits beschrieben. MyCoRe gestattet neben der Arbeit über die
         System-Kommandozeile auch die Arbeit direkt über ein Web-Interface. Es stehen dabei auch alle Kommandos bereit,
         welche via Cli genutzt werden können. WebCli ist eine vollständige und eigenständige Komponente in MyCoRe.
+        Für
+        die Nutzung sind Apache 2.4.5 oder höher und Tomcat 8.x oder eine vergleichbare Servlet-Engine erforderlich.
       </p>
     </section>
 
@@ -27,15 +31,96 @@
       <title>Integration in die Web-Anwendung</title>
       <p>Die Integration der Komponente ist recht einfach. Natürlich muss selbige im benutzten MyCore-Code enthalten
         sein. In der Anwendung ist einfach die folgende Web-Seite aufzurufen, welche natürlich vorher in die Anwendung
-        kopiert wurde.</p>
-      <p><code>/modules/webcli/launchpad.xml</code>
+        kopiert wurde. Das WebCLI-Modul kommuniziert über WebSockets mit der Anwendung.
+      </p>
+      <p>
+        <code>/modules/webcli/launchpad.xml</code>
       </p>
     </section>
 
     <section>
       <title>Besonderheiten der Nutzung unter HTTPS</title>
-      <p>...</p>
+      <p>
+        Für die Nutzung des WebCli wird sowohl der HTTPS-Connector (mit AJP-Connector) wie der HTTP-Connector benötigt.
+        Dabei wird davon ausgegangen, dass Apache und Tomcat auf einem Host liegen und intern über
+        <em>localhost</em>
+        kommunizieren. Beide müssen in der
+        <code>server.xml</code>
+        für unterschiedliche Ports definiert werden. Hier ein Beispiel:
+      </p>
+      <pre class="brush: xml"><![CDATA[...
+    <Connector port="{HTTP-Port}" protocol="HTTP/1.1"
+               URIEncoding="UTF-8"
+               connectionTimeout="20000"
+               useBodyEncodingForUri="false"
+               debug="0"
+               redirectPort="8443" />
+...
+    <Connector port="{AJP-Port}" protocol="AJP/1.3"
+               redirectPort="8443" />
+...
+]]></pre>
+      <p>
+        Nun folgt die Konfiguration des Apache-Webservers. Hier ist als erstes das Modul
+        <strong>proxy_wstunnel</strong>
+        erforderlich. Dies erfolgt je nach OS im entsprechenden Konfigurationsfile durch hinzufügen der Module
+        <code>a2enmod proxy_wstunnel</code>
+        .
+      </p>
+      <p>
+        unter SuSE:
+        <code>/etc/sysconfig/apache2</code>
+      </p>
+      <p>
+        unter Ubuntu:
+        <code>/etc/apache2</code>
+      </p>
+      <p>Nun ist noch die Konfiguration im virtuellen Host erforderlich.</p>
+      <pre class="brush: xml"><![CDATA[...
+        <Location />
+             ProxyPass ajp://localhost:{AJP-Port}/
+             ProxyPassReverse ajp://localhost:{AJP-Port}/
+             Require all granted
+        </Location>
+
+        <Location /ws/>
+             ProxyPass ws://localhost:{HTTP-Port}/ws/
+             Require all granted
+        </Location>
+...
+]]></pre>
     </section>
 
+    <section>
+      <title>WebSocket nicht über localhost</title>
+      <p>
+        Für den Fall, dass die Kommunikation zwischen Apache und Tomcat nicht über
+        eine gesicherte Verbindung stattfinden soll,
+        müssen noch folgende Schritte/Änderungen erledigt werden:
+      </p>
+      <p>
+        1. Es ist ein unsigniertes Zertifikat mit
+        <code>keytool -genkey -alias generic -keyalg RSA</code>
+        zu erzeugen und unter
+        <code>$HOME/.keystore</code>
+        zu speichern.
+      </p>
+      <p>2. Der Connector im <code>server.xml</code> ist anzupassen.</p>
+      <pre class="brush: xml"><![CDATA[...
+    <Connector port="{HTTP-Port}" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               scheme="https" SSLEnabled="true"
+               secure="true" clientAuth="false" sslProtocol="TLS" keyAlias="generic"
+               keystoreFile="${user.home}/.keystore" keystorePass="{AJP-Port}"  />
+...
+]]></pre>
+      <p>3. Der Eintrag für den WebSocket ist anzupassen.</p>
+      <pre class="brush: xml"><![CDATA[...
+      <Location /ws/>
+           ProxyPass wss://localhost:{HTTP-Port}/ws/
+           Require all granted
+      </Location>
+...
+]]></pre>
+    </section>
   </body>
 </document>
