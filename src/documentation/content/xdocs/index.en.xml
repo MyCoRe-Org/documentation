@@ -63,7 +63,11 @@
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>LTS-Release 2016.06</title>
+          <title>Announcement</title>
+          <message>MyCoRe is now using the Git version control system and the code is provided in a repository at GitHub.</message>
+          <url>site:eclipse</url>
+          <date>19. Oktober 2016</date>
+          <author>Wiebke Oeltjen</author>
           <message>Since 27. May 2016 our LongTermSupport release for 2016 is available.</message>
           <url>http://mycore.de/download/release.html</url>
           <date>27. Juni 2016</date>
@@ -72,7 +76,7 @@
         </newsentry>
         <newsentry>
           <title>Update</title>
-          <message>MIR and Skeleton are using current LTS version 2016.06.0.1</message>
+          <message>MIR and Skeleton are using the current LongTermSupport release version 2016.06.</message>
           <url>http://www.mycore.de/download/skeleton/release.html</url>
           <date>19. Juni 2016</date>
           <author>Kathleen Neumann</author>

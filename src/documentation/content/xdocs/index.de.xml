@@ -63,16 +63,16 @@
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>LTS-Release 2016.06</title>
-          <message>Seit dem 27.06.2016 steht das LongTermSupport-Release 2016.06 zur Verfügung.</message>
-          <url>http://mycore.de/download/lts_release.html</url>
-          <date>27. Juni 2016</date>
-          <author>Kathleen Neumann</author>
+          <title>Mitteilung</title>
+          <message>Der MyCoRe-Code wird jetzt mit dem Versionsverwaltungssystem Git in einem Repository bei GitHub bereitgestellt.</message>
+          <url>site:eclipse</url>
+          <date>19. Oktober 2016</date>
+          <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
           <title>Update</title>
-          <message>MIR und Skeleton sind auf Basis des 2016er LTS.</message>
+          <message>MIR und Skeleton sind auf der Basis des aktuellen LongTermSupport-Release 2016.06.</message>
           <url>http://www.mycore.de/download/skeleton/release.html</url>
           <date>19. Juni 2016</date>
           <author>Kathleen Neumann</author>
