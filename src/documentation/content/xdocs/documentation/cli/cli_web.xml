@@ -23,7 +23,7 @@
         System-Kommandozeile auch die Arbeit direkt über ein Web-Interface. Es stehen dabei auch alle Kommandos bereit,
         welche via Cli genutzt werden können. WebCli ist eine vollständige und eigenständige Komponente in MyCoRe.
         Für
-        die Nutzung sind Apache 2.4.5 oder höher und Tomcat 8.x oder eine vergleichbare Servlet-Engine erforderlich.
+        die Nutzung sind Apache 2.4.5 oder höher und Tomcat 8.x oder eine vergleichbare Servlet-Engine (Jetty 9.3.12) erforderlich.
       </p>
     </section>
 
