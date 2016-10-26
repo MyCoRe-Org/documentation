@@ -170,7 +170,7 @@ MCR.OAIDataProvider.OAI2.Adapter.RecordURIPattern=xslStyle:{mcrobject_type}2{for
         werden, einschränken und sortieren.
       </p>
       <pre class="brush: xml; gutter: false;">
-MCR.OAIDataProvider.OAI2.Search.Restriction=objectType = document
+MCR.OAIDataProvider.OAI2.Search.Restriction=objectType:document
 MCR.OAIDataProvider.OAI2.Search.SortBy=modified descending, id descending
 MCR.OAIDataProvider.OAI2.Search.FromUntil=modified
       </pre>
