@@ -21,10 +21,9 @@
       <title>Allgemeines</title>
       <p> Das Command Line Interface (CLI) wurde ja bereits beschrieben. MyCoRe gestattet neben der Arbeit über die
         System-Kommandozeile auch die Arbeit direkt über ein Web-Interface. Es stehen dabei auch alle Kommandos bereit,
-        welche via Cli genutzt werden können. WebCli ist eine vollständige und eigenständige Komponente in MyCoRe.
-        Für
-        die Nutzung sind Apache 2.4.5 oder höher und Tomcat 8.x oder eine vergleichbare Servlet-Engine (Jetty 9.3.12)
-        erforderlich.
+        welche via Cli genutzt werden können. WebCli ist eine Komponente in MyCoRe.
+        Für die Nutzung ist ein Servlet-Container mit Unterstützung für die Servlet-API 3.1 erfordelich.
+        Dafür eignet sich also ein Tomcat ab Version 8 oder Jetty ab Version 9.1.
       </p>
     </section>
 
@@ -44,21 +43,20 @@
     </section>
 
     <section>
-      <title>Besonderheiten der Nutzung unter HTTPS</title>
+      <title>Besonderheiten bei Verwendung von AJP</title>
       <p>
-        Für die Nutzung des WebCli wird sowohl der HTTPS-Connector (mit AJP-Connector) wie der HTTP-Connector benötigt.
-        Dabei wird davon ausgegangen, dass Apache und Tomcat auf einem Host liegen und intern über
-        <em>localhost</em>
-        kommunizieren. Beide müssen in der
+        Betreibt man die MyCoRe-Anwendung hinter einem Apache-Web-Server, so bindet man diesen in der Regel per
+        <a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy_ajp.html">AJP-Protokoll</a> an den Servlet-Container.
+        Das AJP-Protokoll unterstützt keine Web-Sockets, die für die Funktion des WebCLI notwendig sind.
+        Für die Nutzung des WebClI wird daher sowohl der AJP-Connector als auch der HTTP-Connector von Tomcat benötigt.
+        Dabei wird davon ausgegangen, dass Apache und Tomcat auf einem Host liegen und intern unverschlüsselt über
+        <em>localhost</em> kommunizieren. Beide Konnektoren müssen in der
         <code>server.xml</code>
         für unterschiedliche Ports definiert werden. Hier ein Beispiel:
       </p>
       <pre class="brush: xml"><![CDATA[...
     <Connector port="{HTTP-Port}" protocol="HTTP/1.1"
-               URIEncoding="UTF-8"
                connectionTimeout="20000"
-               useBodyEncodingForUri="false"
-               debug="0"
                redirectPort="8443" />
 ...
     <Connector port="{AJP-Port}" protocol="AJP/1.3"
@@ -68,7 +66,7 @@
       <p>
         Nun folgt die Konfiguration des Apache-Webservers. Hier ist als erstes das Modul
         <strong>proxy_wstunnel</strong>
-        erforderlich. Dies erfolgt je nach OS im entsprechenden Konfigurationsfile durch hinzufügen der Module
+        erforderlich (ab Apache httpd 2.4.5). Dies erfolgt je nach OS in der entsprechenden Konfigurationsdatei durch Hinzufügen des Moduls
         <code>a2enmod proxy_wstunnel</code>
         .
       </p>
@@ -97,11 +95,10 @@
     </section>
 
     <section>
-      <title>WebSocket nicht über localhost</title>
+      <title>Verschlüsselte Verbindung zwischen Apache und Tomcat</title>
       <p>
-        Für den Fall, dass die Kommunikation zwischen Apache und Tomcat nicht über
-        eine gesicherte Verbindung
-        stattfinden soll,
+        Für den Fall, dass die Kommunikation zwischen Apache und Tomcat über
+        eine gesicherte Verbindung stattfinden soll,
         müssen noch folgende Schritte/Änderungen erledigt werden:
       </p>
       <p>
@@ -117,7 +114,7 @@
         ist anzupassen.
       </p>
       <pre class="brush: xml"><![CDATA[...
-    <Connector port="{HTTP-Port}" protocol="org.apache.coyote.http11.Http11NioProtocol"
+    <Connector port="{HTTPS-Port}" protocol="org.apache.coyote.http11.Http11NioProtocol"
                scheme="https" SSLEnabled="true"
                secure="true" clientAuth="false" sslProtocol="TLS" keyAlias="generic"
                keystoreFile="${user.home}/.keystore" keystorePass="{AJP-Port}"  />
@@ -126,7 +123,7 @@
       <p>3. Der Eintrag für den WebSocket ist anzupassen.</p>
       <pre class="brush: xml"><![CDATA[...
       <Location /ws/>
-           ProxyPass wss://localhost:{HTTP-Port}/ws/
+           ProxyPass wss://{Tomcat-Host}:{HTTPS-Port}/ws/
            Require all granted
       </Location>
 ...
