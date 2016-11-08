@@ -48,7 +48,7 @@
         Betreibt man die MyCoRe-Anwendung hinter einem Apache-Web-Server, so bindet man diesen in der Regel per
         <a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy_ajp.html">AJP-Protokoll</a> an den Servlet-Container.
         Das AJP-Protokoll unterstützt keine Web-Sockets, die für die Funktion des WebCLI notwendig sind.
-        Für die Nutzung des WebClI wird daher sowohl der AJP-Connector als auch der HTTP-Connector von Tomcat benötigt.
+        Für die Nutzung des WebCLI wird daher sowohl der AJP-Connector als auch der HTTP-Connector von Tomcat benötigt.
         Dabei wird davon ausgegangen, dass Apache und Tomcat auf einem Host liegen und intern unverschlüsselt über
         <em>localhost</em> kommunizieren. Beide Konnektoren müssen in der
         <code>server.xml</code>
