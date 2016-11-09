@@ -3,7 +3,8 @@
 
 <document>
   <header>
-    <title>Datenbank/Hibernate</title>
+    <title>Datenbank / Hibernate</title>
+    <release>2015.05</release>
     <version>2015-09-30</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
