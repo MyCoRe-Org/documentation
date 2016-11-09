@@ -30,6 +30,7 @@ imported document-to-html.xsl for details.
       <xsl:if test="normalize-space(header/release)!=''">
         <div style="text-align:right">
           <xsl:for-each select="header/release">
+            <span>&#160;</span>
             <span class="label label-info">
               <xsl:value-of select="text()"/>
             </span>
