@@ -4,13 +4,19 @@
 <document>
   <header>
     <title>Das EventHandler-Modell</title>
-    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten</abstract>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-11-09</version>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
+    <abstract>Funktionsprinzipien und Implementierungen der Eventhandler</abstract>
   </header>
 <body>
     <section>
      <title>Allgemein</title>
      <p>
-     <span class="label label-info">seit 1.2 (2005)</span>
      Das EventHandler-Basispaket realisiert eine bessere Trennung der Code-Schichten des Datenmodells und der
      Backends. Im Datenmodell werden nur Ereignisse ausgelöst werden (z.B. create, delete usw.), welche dann
      bestimmt durch die Konfiguration in den
@@ -218,16 +224,6 @@
             </td>
            </tr>
            <tr>
-            <td title="Nr. in Pipeline">optional<br/>050</td>
-            <td title="Klasse">Enthalten in mycore-legacy-search; erforderlich bei Nutzung von Lucene<br/>org.mycore.frontend.indexbrowser.lucene.MCRIndexBrowserEventHandler</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Der MCRIndexBrowserEventHandler löscht für das übergebene Objekt den aktuellen IndexBrowser Cache.<br/>
-            <span class="label label-danger">deprecated seit 2014.06</span>
-            </td>
-           </tr>
-           <tr>
             <td title="Nr. in Pipeline">optional<br/>060</td>
             <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
            </tr>
@@ -255,17 +251,6 @@
             <td title="Beschreibung" colspan="2">
             Der MCRSolrIndexEventHandler indexiert die Metadatenobjekte für Solr, sofern diese von einem passenden
             Datentyp sind.
-            </td>
-           </tr>
-           <tr>
-            <td title="Nr. in Pipeline">Alternative<br/>zu 100</td>
-            <td title="Klasse">Enthalten in mycore-legacy-search; erforderlich bei Nutzung von Lucene<br/>lucene-metadata</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Dieser Eintrag in der EventHandler-Liste ruft einen Indexer für Metadaten auf. Der Aufruf erfolgt über das Property
-            MCR.EventHandler.MCRDerivate.xxx.Indexer=...<br/>
-            <span class="label label-danger">deprecated seit 2014.06</span>
             </td>
            </tr>
            <tr>
@@ -387,16 +372,6 @@
             </td>
            </tr>
            <tr>
-            <td title="Nr. in Pipeline">Alternative<br/>zu 010</td>
-            <td title="Klasse">Enthalten in mycore-legacy-search<br/>lucene-content</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Dieser Eintrag in der EventHandler-Liste ruft einen Lucene-Indexer für Datenobjekte auf. Der Aufruf erfolgt über das Property
-            MCR.EventHandler.MCRFile.xxx.Indexer=...
-            </td>
-           </tr>
-           <tr>
             <td title="Nr. in Pipeline">optional<br/>020</td>
             <td title="Klasse">Enthalten in mycore-iview2; erforderlich bei Nutzung von IView2<br/>org.mycore.iview2.events.MCRImageTileEventHandler</td>
            </tr>
@@ -454,6 +429,7 @@
            <tr>
             <td title="Beschreibung" colspan="2">
             Nutzt beispielsweise einen Webservice des GBV zur Vergabe eines Handle, fragt diesen ab und trägt den Wert dann in das Derivat-XML ein.
+            <span class="label label-danger">deprecated seit 2016.06</span>
             </td>
            </tr>
           </tbody>
