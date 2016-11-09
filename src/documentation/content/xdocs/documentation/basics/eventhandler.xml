@@ -11,7 +11,7 @@
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
     </authors>
-    <abstract>Funktionsprinzipien und Implementierungen der Eventhandler</abstract>
+    <abstract>Funktionsprinzipien und Implementierungen der EventHandler</abstract>
   </header>
 <body>
     <section>

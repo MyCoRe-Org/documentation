@@ -4,7 +4,8 @@
 <document>
   <header>
     <title>Komponenten des MyCoRe-Kerns</title>
-    <version>2015-05-04</version>
+    <release>2016.06</release>
+    <version>2016-11-09</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Thomas Scheffler" />
@@ -16,7 +17,7 @@
   </header>
   <body>
     <section>
-      <title>MyCoRe-Komponenten (Stand 2015.02)</title>
+      <title>MyCoRe-Komponenten</title>
       <p>
         MyCoRe ist kein monolithisches System. Vielmehr besteht der Kern aus einzelnen Modulen, welche sowohl einzeln
         inklusive ihrer Abhängigkeiten genutzt werden können, wie auch als komplette *.jar-Datei bereitsteht. Die
@@ -48,7 +49,7 @@
           <tr>
             <td>broadcasting</td>
             <td>Integriert ein Benachrichtigungssystem innerhalb der Web-Anwendung</td>
-            <td>deprecate</td>
+            <td><span class="label label-danger">deprecate</span></td>
             <td>base</td>
           </tr>
           <tr>
@@ -88,12 +89,6 @@
             </td>
             <td>&nbsp;</td>
             <td>alle</td>
-          </tr>
-          <tr>
-            <td>handle</td>
-            <td>?</td>
-            <td>optional</td>
-            <td>base</td>
           </tr>
           <tr>
             <td>ifs</td>
@@ -138,7 +133,7 @@
           <tr>
             <td>migration-2015</td>
             <td>Komponente mit Werkzeugen zur Migration auf das MyCoRe-Release 2015</td>
-            <td>optional</td>
+            <td><span class="label label-danger">deprecate</span></td>
             <td>base</td>
           </tr>
           <tr>
@@ -158,6 +153,12 @@
               <br />
               solr
             </td>
+          </tr>
+          <tr>
+            <td>pi</td>
+            <td>Codesammlung zur Arbeit mit PURL - derzeit wird nur DOI unterstützt</td>
+            <td>optional</td>
+            <td>base</td>
           </tr>
           <tr>
             <td>restapi</td>
@@ -184,7 +185,7 @@
           <tr>
             <td>swf</td>
             <td>Implementierung eines einfachen Workflow-Systems</td>
-            <td>deprecate</td>
+            <td><span class="label label-danger">deprecate</span></td>
             <td>base</td>
           </tr>
           <tr>
@@ -196,7 +197,7 @@
           <tr>
             <td>urn</td>
             <td>Implementierung einer URN-Vergabe für Objekte der Anwendung</td>
-            <td>optional</td>
+            <td><span class="label label-danger">deprecate</span></td>
             <td>base</td>
           </tr>
           <tr>
@@ -231,12 +232,6 @@
             <td>xeditor</td>
             <td>Ein Gestaltungsystem für die Erstellung von Editorformularen, Version 2</td>
             <td>optional</td>
-            <td>base</td>
-          </tr>
-          <tr>
-            <td>z3950</td>
-            <td>Implementierung einer Z3950-Schnittstelle</td>
-            <td>deprecate</td>
             <td>base</td>
           </tr>
         </table>
