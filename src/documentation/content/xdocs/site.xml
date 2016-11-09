@@ -95,6 +95,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mir                   label="MIR"                       href="mir.html" />
       <skeleton              label="Skeleton"                  href="skeleton.html" />
       <hibernate             label="Datenbank &amp; Hibernate" href="hibernate.html" />
+      <jpa                   label="Datenbank &amp; JPA"       href="jpa.html" />
       <solr                  label="Solr-Integration"          href="solr.html" />
       <properties            label="Konfiguration &amp; Properties" href="mcr_properties.html" />
       <maven                 label="Buildprozess mit Maven"    href="maven.html" />
