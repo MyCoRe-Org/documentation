@@ -4,7 +4,13 @@
 <document>
   <header>
     <title>Die Link Tabellen</title>
-    <abstract>Funktionsprinzipien und Implementierungen von Kernkomponenten</abstract>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
+    <abstract>Die Seite beschreibt die Referenztabelle über Links zwischen MyCoRe-Objekten.</abstract>
   </header>
 <body>
 

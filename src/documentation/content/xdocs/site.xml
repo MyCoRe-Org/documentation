@@ -137,7 +137,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       </classifications>
       <mcr_components        label="Komponenten"       href="components_structure.html" />
       <eventhandler          label="EventHandler"      href="eventhandler.html" />
-      <mcrobj_linktables     label="Linktabellen"      href="mcrobject/linktables.html" />
+      <mcrobj_linktables     label="Linktabellen"      href="linktables.html" />
     </content>
 
     <!-- Command Line Interface -->
