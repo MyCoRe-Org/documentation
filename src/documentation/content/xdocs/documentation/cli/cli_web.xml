@@ -4,7 +4,8 @@
 <document>
   <header>
     <title>Die Kommandos über die Web Schnittstelle (WebCli)</title>
-    <version>2016-10-20</version>
+    <version>2016-11-08</version>
+    <release>2016.06</release>
     <authors>
       <person name="Thomas Scheffler" email="[EMAIL PROTECTED]" />
       <person name="Paul.Borchert" email="[EMAIL PROTECTED]" />
