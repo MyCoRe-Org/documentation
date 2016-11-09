@@ -528,7 +528,7 @@ map.addLayer(new OpenLayers.Layer.OSM("OpenStreetMap"));
 <!-- TODO: remove inline styles -->
     <xsl:template match="div[@id='skinconf-pdflink']">
         <xsl:if test="not($config/disable-pdf-link) or $disable-pdf-link = 'false'">
-            <div class="pdflink" style="position: relative;float: right;" title="Portable Document Format">
+            <div class="pdflink" style="position: relative;float: right; margin-top:10px;" title="Portable Document Format">
                 <a style="display: block;text-align: center;" href="{$filename-noext}.pdf" class="dida">
                     <img class="skin" style="display: block;" src="{$root}images/pdficon_large.png" alt="PDF -icon" />
                 </a>

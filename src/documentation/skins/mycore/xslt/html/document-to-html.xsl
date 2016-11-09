@@ -27,6 +27,15 @@ imported document-to-html.xsl for details.
       <xsl:apply-templates select="header/link"/>
     </meta-data>
     <div id="content">
+      <xsl:if test="normalize-space(header/release)!=''">
+        <div style="text-align:right">
+          <xsl:for-each select="header/release">
+            <span class="label label-info">
+              <xsl:value-of select="text()"/>
+            </span>
+          </xsl:for-each>
+        </div>
+      </xsl:if>
       <xsl:apply-templates select="body" mode="carry-body-attribs"/>
       <div id="skinconf-printlink"/>
       <div id="skinconf-xmllink"/>
