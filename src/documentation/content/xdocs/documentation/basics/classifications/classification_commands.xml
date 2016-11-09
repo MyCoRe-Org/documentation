@@ -4,6 +4,12 @@
 <document>
   <header>
     <title>Kommandos zum Verwalten von Klassifikationen</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-06-22</version>
+    <authors>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
   <body>
   <section id="class_commands">

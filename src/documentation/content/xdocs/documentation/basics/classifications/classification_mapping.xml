@@ -4,6 +4,11 @@
 <document>
   <header>
     <title>Mapping von Klassifikationen</title>
+    <release>2016.06</release>
+    <version>2016-05-26</version>
+    <authors>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
   <body>
      <section>
@@ -72,7 +77,6 @@
   </section>
   <section>
     <title>in einer MyCoRe-Anwendung mit MODS-Datenmodell</title>
-    <p><span class="label label-info">seit 2016.01</span></p>
     <p>Wird das MODS-Datenmodell genutzt, muss kein zusätzlichen Datenfeld ergänzt werden. In diesem Fall werden die
        generierten Einträge als zusätzliche <code>mods:classification</code> Elemente abgespeichert.
        </p>

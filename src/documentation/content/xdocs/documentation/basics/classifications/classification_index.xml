@@ -4,6 +4,9 @@
 <document>
   <header>
     <title>Klassifikationen</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-03-18</version>
      <authors>
       <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
