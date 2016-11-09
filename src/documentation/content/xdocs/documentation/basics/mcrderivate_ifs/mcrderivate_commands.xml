@@ -4,6 +4,13 @@
 <document>
   <header>
     <title>Kommandos zum Verwalten der Derivate</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-06-21</version>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
   <body>
    <section  id="mcrderivate_commands">

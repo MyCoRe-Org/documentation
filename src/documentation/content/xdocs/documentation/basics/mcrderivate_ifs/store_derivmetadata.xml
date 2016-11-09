@@ -4,6 +4,13 @@
 <document>
   <header>
     <title>Die Speicherung der Derivat-Metadaten</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-05-26</version>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
 
   <body>
