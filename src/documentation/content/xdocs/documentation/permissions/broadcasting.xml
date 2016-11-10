@@ -4,11 +4,13 @@
 <document>
   <header>
     <title>Die Broadcasting-Komponente (broadcasting)</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2015-11-05</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
-    <version>2015-11-05</version>
     <abstract>Beschreibung der Komponente zum Erzeugen von Nachrichtenfenstern in der Web-Anwendung</abstract>
   </header>
 

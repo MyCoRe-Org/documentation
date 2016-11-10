@@ -4,6 +4,13 @@
 <document>
   <header>
     <title>Das Login-Servlet und MCRSession</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-05-26</version>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+    </authors>
     <abstract>
       Das Frontend ist Teil der Basiskomponente (mycore-base) und beinhaltet unter anderem die allgemeine Logik
       zur Erstellung der Webinhalte und für die Kommandozeile.

@@ -4,6 +4,9 @@
 <document>
   <header>
     <title>Managen der internen Rollen und Nutzer</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-11-09</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />

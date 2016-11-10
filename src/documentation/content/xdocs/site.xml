@@ -175,13 +175,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <permissions           label="Benutzer und Rechte"   href="permissions/">
       <user_system         label="Benutzersystem"        href="user_system.html" />
       <user_management     label="Nutzer und Rollen"     href="user_management.html" />
-      <user_management__role_commands
-                           label="Kommandos"             href="user_management.html#role_commands" type="hidden" />
-      <user_management__user_commands
-                           label="Kommandos"             href="user_management.html#user_commands" type="hidden" />
       <acl_permissions     label="ACLs und Permissions"  href="acl_permissions.html" />
-      <acl_permissions__acl_commands
-                           label="ACL Kommandos"         href="acl_permissions.html#acl_commands" />
       <acl_strategies      label="Zugriffsstrategien"    href="acl_strategies.html" />
       <default-permissions label="Standardzugriffsrechte" href="default-permissions.html" />
       <login_session       label="LoginServlet"          href="login_session.html" />

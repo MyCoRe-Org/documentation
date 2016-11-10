@@ -4,6 +4,8 @@
 <document>
   <header>
     <title>Strategien zur Verwendung von ACL</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
     <version>2015-09-23</version>
     <authors>
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />

@@ -4,10 +4,12 @@
 <document>
   <header>
     <title>Standardzugriffsrechte</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-05-17</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
-    <version>2016-05-17</version>
     <abstract>Beschreibung der benötigten Standardrechte</abstract>
   </header>
 

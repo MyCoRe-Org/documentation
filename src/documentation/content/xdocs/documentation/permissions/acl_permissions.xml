@@ -4,6 +4,8 @@
 <document>
   <header>
     <title>Zugriffskontrolle über ACL</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
     <version>2015-11-10</version>
     <authors>
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
