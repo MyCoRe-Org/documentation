@@ -230,9 +230,10 @@ See http://forrest.apache.org/docs/linking.html for more info
     <developer             label="Für Entwickler"             href="developer/">
       <maven               label="Maven Site"                 href="http://www.mycore.de/generated/" />
       <apidocs             label="Javadocs"                   href="http://www.mycore.de/generated/mycore/apidocs/" />
-      <vocabular           label="Vokabular"                  href="vocabular.html" />
       <eclipse             label="Entwicklungsplattformen"    href="eclipse.html" />
       <jira                label="JIRA"                       href="jira.html" />
+      <git                 label="Arbeit mit Git"             href="work_with_git.html" />
+      <vocabular           label="Vokabular"                  href="vocabular.html" />
       <codestyle           label="Code-Style"                 href="codestyle.html" />
       <conventions         label="Namenskonventionen"         href="conventions.html" />
       <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
