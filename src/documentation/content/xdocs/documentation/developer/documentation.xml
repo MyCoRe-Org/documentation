@@ -50,17 +50,21 @@
         <p>
           Um auf der Webseite Seitenautor und letzte Änderung ausgeben zu lassen, sind die header-tags <code>&lt;authors</code> und
           <code>&lt;version></code> zu verwenden. Die Angabe der Personennamen erfolgt in der Form "Vorname Nachname", die Version
-          enthält das Datum der aktuellen Änderung in ISO-Form: YYYY-MM-DD:
+          enthält das Datum der aktuellen Änderung in ISO-Form: YYYY-MM-DD. Weiterhin ist anzugeben, für welcher Releases diese
+          Seite Gültigkeit hat. Dabei können auch, wie im Beispiel, mehrere Release-Stände angegeben werden, wenn dies zutrifft.
         </p>
         <pre class="brush: xml;"><![CDATA[
   <header>
     <title>Meine Testseite</title>
-    <version>2014-11-26</version>
+    <release>2015.05</release>
+    <release>2016.06</release>
+    <version>2016-11-11</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Max Mustermann" />
     </authors>
   </header>]]></pre>
       </section>
+      
       <section>
         <title>Code-Beispiele mit Syntax-Highlighting</title>
         <p>
@@ -86,6 +90,14 @@
    </pre>
    ]]></pre>
       </section>
+      
+      <section>
+        <title>Markieren von Funktionen, die bei folgenden Releases entfallen</title>
+        <p>
+          Um zu markieren, dass die beschriebene Funktion beim nächsten Release entfällt, ist folgender Codeabschnitt vorgesehen.
+        </p>
+      </section>
+      <pre class="brush: xml;"><![CDATA[<span class="label label-danger">deprecate</span>]]></pre>
     </section>
   </body>
 </document>
