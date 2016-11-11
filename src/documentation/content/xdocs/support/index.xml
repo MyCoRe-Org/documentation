@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>MyCoRe-Community</title>
-    <version>2016-01-28</version>
+    <version>2016-11-11</version>
     <authors>
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
     </authors>
@@ -56,7 +56,7 @@
         Übersicht der Organisationsstruktur und die genutzten Werkzeuge.
       </p>
       <div style="text-align:center;margin:10px 0;">
-        <img src="images/mycore-organisation.png" alt="Übersicht der MyCoRe-Organisation" style="margin:5px;padding:10px;border:1px solid gray;" width="550px" /><br />
+        <img src="images/mycore_organization.png" alt="Übersicht der MyCoRe-Organisation" style="margin:5px;padding:10px;border:1px solid gray;" width="550px" /><br />
         <span class="klein"><strong>Abbildung 1:</strong> Übersicht der MyCoRe-Organisation</span>
       </div>
       <p>
@@ -69,7 +69,12 @@
           eingesetzt.
         </li>
         <li>
-          Als Software-Versionierungssystem wird ein
+          Als Software-Versionierungssystem wird der MyCoRe-Code bei
+          <a href="https://github.com/MyCoRe-Org/">GitHub</a> gehostet.
+          betrieben.
+        </li>
+        <li>
+          Daneben werden durch einzelne Entwicklereinrichtungen noch
           <a href="https://subversion.apache.org/">Subversion-Server</a>
           betrieben.
         </li>
