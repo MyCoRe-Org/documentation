@@ -28,6 +28,10 @@
         <a href="site:eclipse">Eclipse-Dokumentation</a>
         verwiesen.
       </p>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/mycore_git-structure.png" alt="Übersicht der MyCoRe-Git-Prozesse" style="margin:5px;padding:10px;border:1px solid gray;" width="550px" /><br />
+        <span class="klein"><strong>Abbildung 1:</strong> Übersicht der MyCoRe-Git-Prozesse</span>
+      </div>
     </section>
 
     <section>
