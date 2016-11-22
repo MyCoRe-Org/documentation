@@ -166,7 +166,7 @@
               });
               return this;
             };
-            var version = "2016.03-SNAPSHOT";
+            var version = "2016.06.0.2-SNAPSHOT";
             $('[data-role=artifactResolver]').resolveArtifacts(version);
           });
         })(jQuery);
