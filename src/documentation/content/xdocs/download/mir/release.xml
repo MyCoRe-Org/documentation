@@ -3,14 +3,13 @@
 
 <document>
 <header>
-  <title>Release 2016.06 - coming soon</title>
+  <title>Release 2016.06</title>
   <abstract>
-    The current release (MIR 0.4) based on MyCoRe release 2016.02 and is the last release before
-    first LTS 2016 release will be announced.
+    The current release (MIR 2016.06.0.1) based on MyCoRe LongTermSupport-Release 2016.06 is now online.
   </abstract>
-  <version>2016-03-17</version>
+  <version>2016-11-22</version>
   <authors>
-    <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+    <person email="[EMAIL PROTECTED]" name="Wiebke Oeltjen" />
   </authors>
 </header>
 
@@ -30,7 +29,7 @@
 
 
   <p>
-    Die Liste der Änderungen ist im <a href="changelog.html#Version+0.4+-+based+on+MyCoRe+release+2015.02">Changelog zu finden</a>
+    Die Liste der Änderungen ist im <a href="changelog.html#Version+2016.06.0.1+-+based+on+MyCoRe+release+2016.06">Changelog zu finden</a>
   </p>
 
    <!-- START SNIPPET: downloadCode -->
@@ -70,7 +69,7 @@
      });
      return this;
      };
-     var version = "0.4";
+     var version = "2016.06.0.1";
      $('[data-role=artifactResolver]').resolveArtifacts(version);
      });
      })(jQuery);
