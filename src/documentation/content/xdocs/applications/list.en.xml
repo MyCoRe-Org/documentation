@@ -432,7 +432,11 @@
         <ul>
           <li>
             “Manuscript Cultures in Asia, Africa and Europe (Sonderforschungsbereich 950)”
-            <a href="http://mycms3.rrz.uni-hamburg.de/sfb950/" title="Manuscript Cultures in Asia, Africa and Europe">SFB950</a>
+            <a href="http://mycms-vs04.rrz.uni-hamburg.de/sfb950/" title="Manuscript Cultures in Asia, Africa and Europe">SFB950</a>
+          </li>
+          <li>
+            “The Nepalese-German Manuscript Cataloguing Project”
+            <a href="https://catalogue.ngmcp.uni-hamburg.de/" title="Nepalese-German Manuscript Cataloguing Project">NGMCP</a>
           </li>
           <li>
             “Digitale Edition Konversionserzählungen”
