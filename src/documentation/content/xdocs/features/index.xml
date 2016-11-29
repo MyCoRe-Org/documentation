@@ -17,9 +17,11 @@
         Das CoRe in MyCoRe steht für „Content Repository“ oder wahlweise für „Core“ (Kern),
         das „My“ für die lokale Anpassung und Nutzung. Neben diesem Kern, der als eine in
         der Programmiersprache Java implementierte Klassenbibliothek (mycore.jar) realisiert ist,
-        stellen wir eine Beispielanwendung mit dem Namen „DocPortal“ zur Verfügung, die
-        einerseits als Demonstrations- und Testumgebung dient, andererseits als Vorlage
-        und Anwendungsgerüst für eigene MyCoRe-basierte Anwendungen verwendet werden kann.
+        stellen wir eine Beispielanwendung mit dem Namen „MIR“ zur Verfügung, die
+        als Demonstrations- und Testumgebung dient, aber auch als Basis für einen
+        eigenen MyCoRe-basierter Dokumentenserver verwendet werden kann. Eine weitere 
+        Beispielanwendung mit dem Namen „Skeleton“ steht als Anwendungsgerüst 
+        für eigene MyCoRe-basierte Anwendungen zur Verfügung.  
       </p>
       <div style="text-align:center;margin:10px 0;">
         <img src="images/mycore_architecture.png" alt="MyCoRe-Achitektur" style="margin:5px 0px;border:1px solid gray;padding:10px 30px;" width="590px" /><br />
@@ -32,9 +34,10 @@
         Bereitstellung mächtiger, umfangreicher Funktionen und in der Flexibilität. Beispielsweise
         sind das Metadatenmodell, die Weboberflächen, Such- und Eingabemasken frei
         konfigurierbar. Den Aufbau von MyCoRe skizziert das oben stehende Architekturbild.
-        Daneben kann DocPortal als Framework verstanden werden, welches gerade
+        Daneben kann „MIR“ als Framework verstanden werden, welches gerade
         Einsteigern alles in die Hand gibt, um einen ersten eigenen Dokumentenserver auf Basis
-        von MyCoRe aufzusetzen.
+        von MyCoRe aufzusetzen, während das „Skeleton“ ein Grundgerüst für eine eigene 
+        MyCoRe-Anwendung verstanden werden kann.
       </p>
       <p>
         MyCoRe hat seinen Ursprung in der MILESS-Software, einem an der Universität Essen

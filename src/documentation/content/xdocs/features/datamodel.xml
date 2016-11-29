@@ -75,9 +75,8 @@
         und die Abbildung auf MyCoRe Klassifikationen.
       </p>
       <p>
-        MODS wird zukünftig das von MyCoRe empfohlene Metadatenformat für Publikationsserver werden,
-        dem wir besondere Aufmerksamkeit und Funktionalität widmen. So wird die MyCoRe Beispielanwendung "DocPortal"
-        bald durch eine MODS-basierte Anwendung abgelöst.
+        MODS ist das von MyCoRe empfohlene Metadatenformat für Publikationsserver,
+        dem wir besondere Aufmerksamkeit und Funktionalität widmen. So ist die MyCoRe-Beispielanwendung "MIR" eine auf MODS-basierende Anwendung.
       </p>
     </section>
     <section>
