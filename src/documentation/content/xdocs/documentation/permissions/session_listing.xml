@@ -4,9 +4,8 @@
 <document>
   <header>
     <title>Das Session Listing (session-listing)</title>
-    <release>2015.05</release>
     <release>2016.06</release>
-    <version>2015-11-05</version>
+    <version>2016-12-02</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
@@ -70,7 +69,7 @@
         Der MyCoRe-Kern enthält schon alle Dateien für die Integration der Komponente. Sie muss
         lediglich noch aufgerufen
         werden, z. B. in der navigation.xml mit
-        <code>href="/servlets/MCRSessionListingServlet"</code>
+        <code>href="/modules/session-listing/sessionListing.xml"</code>
         .
       </p>
     </section>
