@@ -167,6 +167,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcrclassbrowser     label="ClassificationBrowser" href="classification_browser.html" />
       <xeditor             label="Formulare erstellen"   href="xeditor.html" />
       <image_viewer        label="Bildbetrachter"        href="imageviewer.html" />
+      <mets_editor         label="METS-Editor"           href="mets_editor.html" />
       <basket              label="Korbfunktion"          href="basket.html" />
       <integrated_wcms     label="WCMS"                  href="wcms.html" />
     </frontend>
