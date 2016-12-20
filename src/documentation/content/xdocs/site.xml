@@ -189,6 +189,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Workflow -->
     <workflow              label="Workflow"              href="workflow/">
       <wf_overview         label="Single Servlets"       href="single_servlets.html" />
+      <fileupload          label="File Upload"           href="fileupload.html" />
       <swf                 label="SimpleWorkFlow"        href="swf.html" />
     </workflow>
 

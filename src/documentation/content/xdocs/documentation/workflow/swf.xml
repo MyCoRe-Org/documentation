@@ -4,6 +4,11 @@
 <document>
   <header>
     <title>Simple Workflow</title>
+    <release>2015.05</release>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+    </authors>
+    <abstract>Diese Funktionalitäten sind mit 2016.06 deprecate und werden mit 2017.x entfernt.</abstract>
   </header>
 <body>
   <section>

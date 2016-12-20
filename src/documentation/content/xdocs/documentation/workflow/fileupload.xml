@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>File Upload für digitale Objekte</title>
+    <release>2016.06</release>
+    <version>2016-12-20</version>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+    </authors>
+    <abstract>
+      Im Rahmen des Workfolw wird der Upload mittels eines implementierten Mechanismus realisiert. Dabei wird
+      Wert auf die Kompatibilität zu Standardverfahren gelegt.
+    </abstract>
+  </header>
+  <body>
+
+    <section>
+      <title>Das MCRUploadViaFormServlet</title>
+      <p>Dieses Servlet nimmt Daten aus einem Upload Formular entgegen und legt die digitalen Objekte im MyCoRe-System
+        als Derivate ab. Um ganze Verzeichnisse abzulegen, sind diese in ein Zip-File zu packen. Selbiges wird dann
+        automatisch ausgepackt. Um Zip-Files direkt abzulegen ist unten stehendes Property zu setzten.
+      </p>
+      <p>Syntax des Servlet-Aufrufes:</p>
+      <pre class="brush: xml;">
+<![CDATA[{$WebApplicationBaseURL}servlets/MCRUploadViaFormServlet?uploadId={$uploadId}&amp;method=formBasedUpload&amp;cancelUrl={cancelUrl}&amp;parentObjectID={$parentObjectID}&amp;derivateID={$derivateID}]]></pre>
+      <ul>
+        <li>
+          <code>uploadId</code>
+          - eine eindeutige ID für den Upload. Diese wird beim Aufruf der Upload-Seite generiert.
+        </li>
+        <li>
+          <code>method</code>
+          - hier ist derzeit nur die Methode
+          <code>formBasedUpload</code>
+          definiert.
+        </li>
+        <li>
+          <code>cancelURL</code>
+          - die URL für den Cancel Button.
+        </li>
+        <li>
+          <code>parentObjectID</code>
+          - Die MyCoRe ID des Objektes.
+        </li>
+        <li>
+          <code>derivateID</code>
+          - Die MyCoRe ID des zugehörigen Derivates.
+        </li>
+        <li>
+          <code>filename[]</code>
+          - liste der Einzeldateien.
+        </li>
+      </ul>
+      <p>Properties:</p>
+      <ul>
+        <li>
+          <code>MCR.FileUpload.DecompressZip=[true|false]</code>
+          -
+          <code>true</code>
+          bedeutet das Dekomprimieren der Zip-Dateien,
+          <code>false</code>
+          unterdrückt das.
+        </li>
+      </ul>
+    </section>
+  </body>
+</document>

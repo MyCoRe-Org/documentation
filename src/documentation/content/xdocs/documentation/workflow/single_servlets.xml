@@ -4,6 +4,8 @@
 <document>
   <header>
     <title>Servlets zur Manipulation von MyCoRe-Objekten</title>
+    <release>2015.05</release>
+    <release>2016.06</release>
     <version>2016-08-04</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
@@ -146,7 +148,7 @@
     <section>
       <title>Das MCRDerivateServlet</title>
       <p>
-        Mit Hilfe des MCRDerivateServlet können manipulationen an den Derivaten vorgenommen werden. Mit dem
+        Mit Hilfe des MCRDerivateServlet können Manipulationen an den Derivaten vorgenommen werden. Mit dem
         <code>todo</code>
         <em>ssetfile</em>
         kann die Startdatei festgelegt werden. Mit
