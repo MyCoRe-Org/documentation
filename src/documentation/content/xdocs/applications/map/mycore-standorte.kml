@@ -617,6 +617,22 @@
       </Point>
     </Placemark>
     <Placemark>
+      <name>Universitätsbibliograhie</name>
+      <description><![CDATA[
+            <p>Universität Duisburg-Essen (Universitätsbibliothek)</p>
+            <div class="mcrmap_item">
+                <a href="https://bibliographie.ub.uni-due.de/"><img class="icon" alt="icon" src="map/icons/icon_duisburg-essen_unibibliograhie.png" /></a>
+                <a href="https://bibliographie.ub.uni-due.de/">Universitätsbibliograhie</a>
+            </div>
+            <p>Universität Duisburg-Essen (Universitätsbibliothek)</p>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>7.007442,51.464385,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
       <name>Metropolenzeichen</name>
       <description><![CDATA[
             <div class="mcrmap_item">
