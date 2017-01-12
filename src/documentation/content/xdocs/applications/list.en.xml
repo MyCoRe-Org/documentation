@@ -110,8 +110,11 @@
           <li>
             Institutional content repository with miscellaneous content, as a replacement for miless (Essen) and DuetT (Duisburg),
             <a href="http://duepublico.uni-duisburg-essen.de/?lang=en" title="link to DuEPublico - Duisburg-Essen Publications online"
-              >DuEPublico</a> contains: reserve collections, dissertations, University bibliography and e-publications <em>(<a href="http://www.dini.de/dini-zertifikat"
+              >DuEPublico</a> contains: reserve collections, dissertations and e-publications <em>(<a href="http://www.dini.de/dini-zertifikat"
               title="link to DINI certificate">DINI-certified</a>)</em>
+          </li>
+          <li>
+             <a href="https://bibliographie.ub.uni-due.de" title="link to University bibliography at Duisburg-Essen">University bibliography</a> of Duisburg-Essen University
           </li>
         </ul>
       </dd>
@@ -245,23 +248,6 @@
               Multimedia archive and publication repository
               <em>(<a href="http://www.dini.de/dini-zertifikat"
               title="link to DINI certificate">DINI-certified</a>)</em>
-          </li>
-        </ul>
-      </dd>
-      <dt>
-        <strong>Münster</strong>
-      </dt>
-      <dd>
-        Westfälische Wilhelms-Universität Münster (University Library, Computer Center)
-        <ul>
-          <li>
-            Münster information and archive system for multimedia content
-            <a href="http://miami.uni-muenster.de/"
-              title="miami münstersches information and archive system for multimedia content">Miami</a>
-            <br />
-            Digital document server for the University of Münster,
-            e-dissertations, archive for digital objects and precious
-            manuscripts and the library of the baroque scholar Nünning
           </li>
         </ul>
       </dd>
