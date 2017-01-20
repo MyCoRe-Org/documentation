@@ -64,7 +64,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <dl_archive  label="Release-Archiv"         href="archive.html" />
     </dl_mycore>
     <dl_mir            label="MIR"                    href="mir/">
-      <mir_release     label="Release 2016.06"        href="release.html" />
+      <mir_release     label="Release 2016.12"        href="release.html" />
       <mir_changelog   label="Changelog"              href="changelog.html" />
     </dl_mir>
     <dl_skeleton            label="Skeleton"               href="skeleton/">
