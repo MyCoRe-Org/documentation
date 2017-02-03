@@ -10,17 +10,456 @@
   <title>Changes in MyCoRe</title>
 
   <section>
-    <title>Version 2016.07 - Current Head</title>
+    <title>Version 2017.01 - Current Head</title>
 
     <pre class="brush: xml;gutter: false;">
       &lt;dependency>
         &lt;groupId>org.mycore&lt;/groupId>
         &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2016.07-SNAPSHOT&lt;/version>
+        &lt;version>2017.01-SNAPSHOT&lt;/version>
       &lt;/dependency>
     </pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore/project-reports.html">maven site</a></p>
 
+  </section>
+
+  <section>
+    <title>Version 2016.12 - Heiss &amp; Weiss</title>
+
+    <pre class="brush: xml;gutter: false;">
+      &lt;dependency>
+        &lt;groupId>org.mycore&lt;/groupId>
+        &lt;artifactId>mycore-{component}&lt;/artifactId>
+        &lt;version>2016.12&lt;/version>
+      &lt;/dependency>
+    </pre>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.12/project-reports.html">maven site</a></p>
+    <ul>
+      <li>Bug
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1254'>MCR-1254</a>] -         MODSEmbargoFilter doesn&#39;t work for Viewer
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1290'>MCR-1290</a>] -         Serving ranges of big files takes long time
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1313'>MCR-1313</a>] -         MCRClassificationMappingEventHandler does not support multiple Mappings
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1317'>MCR-1317</a>] -         No output in WebCLI deleting a lot of data
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1318'>MCR-1318</a>] -         MCRDerivateUpdateServlet does not update the derivate
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1319'>MCR-1319</a>] -         solr indexing fails on large mets.xml
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1321'>MCR-1321</a>] -         remove hard-coded uploadhandler instantiation from UploadServlets
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1322'>MCR-1322</a>] -         MyCoReWebPage.xsl filters HTML5 section tag out
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1324'>MCR-1324</a>] -         DB Transaction is not rolled back in classification editor
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1327'>MCR-1327</a>] -         cli command &quot;skip on error&quot; does not work
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1328'>MCR-1328</a>] -         Can&#39;t delete mods objects with related items of type &quot;host&quot;
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1330'>MCR-1330</a>] -         Database connection leak if response is submitted to slow
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1331'>MCR-1331</a>] -         CLI produces a corrupt unprocessed-commands.txt
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1333'>MCR-1333</a>] -         MCRDeletedItemManager cannot return null result
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1335'>MCR-1335</a>] -         repair in o.m.m.c.MCRClassificationMappingEventHandler does not work
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1337'>MCR-1337</a>] -         OAI: fix set support
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1338'>MCR-1338</a>] -         Release 2016.06 does no more support old Lucene search
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1339'>MCR-1339</a>] -         integrate.xml is not correct
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1341'>MCR-1341</a>] -         cancelURL for Uploadform after CreateObjectAppendDerivateServlet links back to editor instad to detailview
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1342'>MCR-1342</a>] -         wrong persistence.xml template
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1347'>MCR-1347</a>] -         MCRMODSLinksEventHandler needs to check if the linked object exists
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1349'>MCR-1349</a>] -         can&#39;t configure MCR.SWORD.Max.Uploaded.File.Size to 100GB
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1358'>MCR-1358</a>] -         repair mcrfsnodes command for project covers command for derivates
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1361'>MCR-1361</a>] -         Fix NPE on RolesConverter if no roles set
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1362'>MCR-1362</a>] -         When Image exist but is not tiled a FileSystemNotFoundException is thrown instead of image not found exception.
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1363'>MCR-1363</a>] -         Temp files are only deleted when application is closed!
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1365'>MCR-1365</a>] -         Creator Cache should check current object for create and use SVN history as fallback
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1367'>MCR-1367</a>] -         WebCLI does not load - HTTP Error 302 Moved temporarily
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1368'>MCR-1368</a>] -         duplicate sword zip in temp folder
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1369'>MCR-1369</a>] -         Update Javadoc for MCRConfiguration
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1376'>MCR-1376</a>] -         Uploading file with invalid character leads to empty derivates
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1397'>MCR-1397</a>] -         Don&#39;t stop queued jobs on PersistenceException
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1400'>MCR-1400</a>] -         UserInformation can be set after initial login
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1403'>MCR-1403</a>] -         Moving category leads to error 500
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1407'>MCR-1407</a>] -         Small images are not displayed in IView
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1410'>MCR-1410</a>] -         Classification Editor discards changes after hitting save button 😳
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1416'>MCR-1416</a>] -         PDF-Module completely fails if it can not find a chapter destination
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1417'>MCR-1417</a>] -         Valid mets could not be parsed by MCRSolrIndexer
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1422'>MCR-1422</a>] -         SOLR score is not available to &lt;doc&gt; XSL templates
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1423'>MCR-1423</a>] -         IFS can&#39;t reliable handle decomposed unicode characters
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1425'>MCR-1425</a>] -         IE11 cannot open some PDF files in mycore-viewer
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1426'>MCR-1426</a>] -         Return Code 204 when opening IView resource with MS Edge
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1428'>MCR-1428</a>] -         The delete event handler should run in all steps independed of temporary errors
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1429'>MCR-1429</a>] -         wrong viewport position in viewer on startup in Firefox/IE
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1436'>MCR-1436</a>] -         not all classifications supported in mods are indexed
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1450'>MCR-1450</a>] -         generate * report in directory {0} commands are not working
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1456'>MCR-1456</a>] -         ALTO Text is not selectable
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1459'>MCR-1459</a>] -         resolve ppn uri to catalog link doesn&#39;t work
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1460'>MCR-1460</a>] -         IFS consistency check commands throws NPEs
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1481'>MCR-1481</a>] -         Opening iview with ?div= should never lead to exception
+          </li>
+        </ul>
+      </li>
+      <li>
+        New Feature
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1189'>MCR-1189</a>] -         Support output of altFormat for title and abstract
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1340'>MCR-1340</a>] -         Command to merge all derivates of a object
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1366'>MCR-1366</a>] -         Implement a method to discard a cached creator from MCRCreatorCache
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1379'>MCR-1379</a>] -         Add Button to clear Commandqueue in WebCLI
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1396'>MCR-1396</a>] -         IIIF-Presentation-API
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1414'>MCR-1414</a>] -         Plugin to embed Buttons into Toolbar
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1415'>MCR-1415</a>] -         Implement REST interface for queued jobs
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1420'>MCR-1420</a>] -         improve thread pools
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1464'>MCR-1464</a>] -         MCRPostUploadFileProcessor to convert goobi to mycore mets
+          </li>
+        </ul>
+      </li>
+      <li>
+        Task
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1294'>MCR-1294</a>] -         Update PDFBox to version 2.0.2
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1372'>MCR-1372</a>] -         CLI: failed command in interactive mode results in endless loop
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1390'>MCR-1390</a>] -         remove guava listenablefuture and replace it with completablefuture (java8)
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1393'>MCR-1393</a>] -         Implement changes for Git-Migration
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1437'>MCR-1437</a>] -         remove dynamic field for related item id
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1442'>MCR-1442</a>] -         make mycore-viewer a mycore-component
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1452'>MCR-1452</a>] -         Update Hibernate to 5.2.2.Final
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1458'>MCR-1458</a>] -         Make use of Java 8 Streams
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1478'>MCR-1478</a>] -         Use image-tiler 1.11
+          </li>
+        </ul>
+      </li>
+      <li>
+        Sub-task
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1382'>MCR-1382</a>] -         Improve I18N Handling
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1476'>MCR-1476</a>] -         upgrade selenium utils to 0.5 in mycore-viewer
+          </li>
+        </ul>
+      </li>
+      <li>
+        Improvement
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1273'>MCR-1273</a>] -         expand pi component for URN
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1297'>MCR-1297</a>] -         Improve performance on update/delete
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1314'>MCR-1314</a>] -         Set flags in MyCoRe-PI to restore DB from objects
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1315'>MCR-1315</a>] -         MCRPersistentServlet: make uploadform customizable
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1316'>MCR-1316</a>] -         MCRPersistentServlet: reduce parameter set for upload webpage
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1320'>MCR-1320</a>] -         MCRObjectID has no isValid() method
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1326'>MCR-1326</a>] -         need command &quot;delete all objects in topological order&quot;
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1329'>MCR-1329</a>] -         Support for auto deploy of jar files in &#39;lib&#39; directory
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1332'>MCR-1332</a>] -         provide url to metadata in mods:url[@access=&#39;object in context&#39;]
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1344'>MCR-1344</a>] -         change subject label in metadata, to match label in editor
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1345'>MCR-1345</a>] -         Add an attribute in datamodel2schema for defining requirements with minOccurs and maxOccurs
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1346'>MCR-1346</a>] -         the isValid() method is insufficient -&gt; add validate() throws MCRException
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1348'>MCR-1348</a>] -         only add recent command to history if it is not the same one as the last one
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1351'>MCR-1351</a>] -         Sword should validate incoming mets.xml files and maybe reject them
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1352'>MCR-1352</a>] -         improve session/transaction control
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1353'>MCR-1353</a>] -         Repair of MCRFSNODES does not work
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1356'>MCR-1356</a>] -         Order is not necessary in mets.xml, Labels of logical divs should be optional.
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1359'>MCR-1359</a>] -         change relatedItem template in modsmetadata.xsl so it can be used without for-each
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1360'>MCR-1360</a>] -         Improve transaction management.
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1370'>MCR-1370</a>] -         Use EntityManager on MCRJob
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1371'>MCR-1371</a>] -         Update to Jersey 2
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1374'>MCR-1374</a>] -         Improve OAI set support
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1375'>MCR-1375</a>] -         move mycore-solr http utils to mycore-base
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1391'>MCR-1391</a>] -         REST-API should hand over facet and facet.field parameters to SOLR
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1394'>MCR-1394</a>] -         MCRMetaISO8601Date do not support date before christ
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1398'>MCR-1398</a>] -         Add catchEx-URIResolver to present users nicer error messages
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1399'>MCR-1399</a>] -         move ping resource to mycore-base
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1401'>MCR-1401</a>] -         Use id attribute instead of name for anchors
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1408'>MCR-1408</a>] -         add redirect to MCRBasketServlet
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1411'>MCR-1411</a>] -         Show GND link of topic in metaview
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1413'>MCR-1413</a>] -         Metadata Plugin shows metadata from mets.xml
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1418'>MCR-1418</a>] -         Object URI Resolver should support revisions
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1421'>MCR-1421</a>] -         Map multiple Shibboleth attributes to user attributes
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1424'>MCR-1424</a>] -         Add profile to keep node folders
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1434'>MCR-1434</a>] -         Update dependencies
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1439'>MCR-1439</a>] -         Make the search feature more visible
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1446'>MCR-1446</a>] -         Use Yarn instead of npm to build MyCoRe-Viewer
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1465'>MCR-1465</a>] -         use more git information in MCRCoreVersion
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1469'>MCR-1469</a>] -         add optional config parameter for TEI stylesheet
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1470'>MCR-1470</a>] -         Make unzip of UploadHandler configurable
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1474'>MCR-1474</a>] -         Resources for API should be extendable for applications
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1477'>MCR-1477</a>] -         clean up webcli build process
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+
+  <section>
+    <title>Version 2016.06.0.1 - LTS</title>
+
+    <pre class="brush: xml;gutter: false;">
+      &lt;dependency>
+        &lt;groupId>org.mycore&lt;/groupId>
+        &lt;artifactId>mycore-{component}&lt;/artifactId>
+        &lt;version>2016.06.0.1&lt;/version>
+      &lt;/dependency>
+    </pre>
+    <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.06.0.x/project-reports.html">maven site</a></p>
+    <ul>
+      <li>Bug
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1254'>MCR-1254</a>] -         MODSEmbargoFilter doesn&#39;t work for Viewer
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1290'>MCR-1290</a>] -         Serving ranges of big files takes long time
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1313'>MCR-1313</a>] -         MCRClassificationMappingEventHandler does not support multiple Mappings
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1317'>MCR-1317</a>] -         No output in WebCLI deleting a lot of data
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1318'>MCR-1318</a>] -         MCRDerivateUpdateServlet does not update the derivate
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1321'>MCR-1321</a>] -         remove hard-coded uploadhandler instantiation from UploadServlets
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1322'>MCR-1322</a>] -         MyCoReWebPage.xsl filters HTML5 section tag out
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1324'>MCR-1324</a>] -         DB Transaction is not rolled back in classification editor
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1327'>MCR-1327</a>] -         cli command &quot;skip on error&quot; does not work
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1328'>MCR-1328</a>] -         Can&#39;t delete mods objects with related items of type &quot;host&quot;
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1330'>MCR-1330</a>] -         Database connection leak if response is submitted to slow
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1331'>MCR-1331</a>] -         CLI produces a corrupt unprocessed-commands.txt
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1333'>MCR-1333</a>] -         MCRDeletedItemManager cannot return null result
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1335'>MCR-1335</a>] -         repair in o.m.m.c.MCRClassificationMappingEventHandler does not work
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1337'>MCR-1337</a>] -         OAI: fix set support
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1338'>MCR-1338</a>] -         Release 2016.06 does no more support old Lucene search
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1339'>MCR-1339</a>] -         integrate.xml is not correct
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1341'>MCR-1341</a>] -         cancelURL for Uploadform after CreateObjectAppendDerivateServlet links back to editor instad to detailview
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1342'>MCR-1342</a>] -         wrong persistence.xml template
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1347'>MCR-1347</a>] -         MCRMODSLinksEventHandler needs to check if the linked object exists
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1358'>MCR-1358</a>] -         repair mcrfsnodes command for project covers command for derivates
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1361'>MCR-1361</a>] -         Fix NPE on RolesConverter if no roles set
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1363'>MCR-1363</a>] -         Temp files are only deleted when application is closed!
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1365'>MCR-1365</a>] -         Creator Cache should check current object for create and use SVN history as fallback
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1367'>MCR-1367</a>] -         WebCLI does not load - HTTP Error 302 Moved temporarily
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1369'>MCR-1369</a>] -         Update Javadoc for MCRConfiguration
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1376'>MCR-1376</a>] -         Uploading file with invalid character leads to empty derivates
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1397'>MCR-1397</a>] -         Don&#39;t stop queued jobs on PersistenceException
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1400'>MCR-1400</a>] -         UserInformation can be set after initial login
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1403'>MCR-1403</a>] -         Moving category leads to error 500
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1407'>MCR-1407</a>] -         Small images are not displayed in IView
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1409'>MCR-1409</a>] -         different MCRSessions stay open
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1410'>MCR-1410</a>] -         Classification Editor discards changes after hitting save button 😳
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1416'>MCR-1416</a>] -         PDF-Module completely fails if it can not find a chapter destination
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1417'>MCR-1417</a>] -         Valid mets could not be parsed by MCRSolrIndexer
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1422'>MCR-1422</a>] -         SOLR score is not available to &lt;doc&gt; XSL templates
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1425'>MCR-1425</a>] -         IE11 cannot open some PDF files in mycore-viewer
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1426'>MCR-1426</a>] -         Return Code 204 when opening IView resource with MS Edge
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1430'>MCR-1430</a>] -         METS editor use external components outside his own HTTPS application
+          </li>
+        </ul>
+      </li>
+      <li>
+        New Feature
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1189'>MCR-1189</a>] -         Support output of altFormat for title and abstract
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1366'>MCR-1366</a>] -         Implement a method to discard a cached creator from MCRCreatorCache
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1379'>MCR-1379</a>] -         Add Button to clear Commandqueue in WebCLI
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1415'>MCR-1415</a>] -         Implement REST interface for queued jobs
+          </li>
+        </ul>
+      </li>
+      <li>
+        Task
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1372'>MCR-1372</a>] -         CLI: failed command in interactive mode results in endless loop
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1393'>MCR-1393</a>] -         Implement changes for Git-Migration
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1447'>MCR-1447</a>] -         Report test case coverage
+          </li>
+        </ul>
+      </li>
+      <li>
+        Sub-task
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1387'>MCR-1387</a>] -         Add remote drivers to test ie, firefox, chrome on remote machine
+          </li>
+        </ul>
+      </li>
+      <li>
+        Improvement
+        <ul>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1315'>MCR-1315</a>] -         MCRPersistentServlet: make uploadform customizable
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1316'>MCR-1316</a>] -         MCRPersistentServlet: reduce parameter set for upload webpage
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1320'>MCR-1320</a>] -         MCRObjectID has no isValid() method
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1326'>MCR-1326</a>] -         need command &quot;delete all objects in topological order&quot;
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1332'>MCR-1332</a>] -         provide url to metadata in mods:url[@access=&#39;object in context&#39;]
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1344'>MCR-1344</a>] -         change subject label in metadata, to match label in editor
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1348'>MCR-1348</a>] -         only add recent command to history if it is not the same one as the last one
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1353'>MCR-1353</a>] -         Repair of MCRFSNODES does not work
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1359'>MCR-1359</a>] -         change relatedItem template in modsmetadata.xsl so it can be used without for-each
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1370'>MCR-1370</a>] -         Use EntityManager on MCRJob
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1375'>MCR-1375</a>] -         move mycore-solr http utils to mycore-base
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1391'>MCR-1391</a>] -         REST-API should hand over facet and facet.field parameters to SOLR
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1399'>MCR-1399</a>] -         move ping resource to mycore-base
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1401'>MCR-1401</a>] -         Use id attribute instead of name for anchors
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1408'>MCR-1408</a>] -         add redirect to MCRBasketServlet
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1411'>MCR-1411</a>] -         Show GND link of topic in metaview
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1412'>MCR-1412</a>] -         Update MyCoRe-Viewer in  2016.06.0.1 to 0.9
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1413'>MCR-1413</a>] -         Metadata Plugin shows metadata from mets.xml
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1418'>MCR-1418</a>] -         Object URI Resolver should support revisions
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1421'>MCR-1421</a>] -         Map multiple Shibboleth attributes to user attributes
+          </li>
+          <li>[<a href='https://mycore.atlassian.net/browse/MCR-1424'>MCR-1424</a>] -         Add profile to keep node folders
+          </li>
+        </ul>
+      </li>
+    </ul>
   </section>
 
   <section>
@@ -30,7 +469,7 @@
       &lt;dependency>
         &lt;groupId>org.mycore&lt;/groupId>
         &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2016.06&lt;/version>
+        &lt;version>2016.06.0&lt;/version>
       &lt;/dependency>
     </pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.06.0.x/project-reports.html">maven site</a></p>

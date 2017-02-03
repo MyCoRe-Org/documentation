@@ -3,26 +3,26 @@
 
 <document xml:lang="de">
 <header>
- <title>Release 2016.02 - ‚Rusty Nail‘</title>
+ <title>Release 2016.12 - ‚Heiss &amp; Weiss‘</title>
 </header>
 
  <body>
 
   <p>
-    Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
-    pom.xml (in DocPortal zu finden unter docportal/config) die MyCoRe-Version der entsprechenden Komponenten
+    Um den aktuellen Stand in der eigenen Anwendung zu verwenden, muss in der
+    pom.xml die MyCoRe-Version der entsprechenden Komponenten
     angepasst werden:
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2016.02&lt;/version>
+&lt;version>2016.12&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-{component}&lt;/artifactId>
-  &lt;version>2016.02&lt;/version>
+  &lt;version>2016.12&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
@@ -32,7 +32,7 @@
   </p>
 
   <p>
-    Die Liste der Änderungen ist im <a href="changelog.html#Version+2016.02+-+%E2%80%9ARusty+Nail%E2%80%98">Changelog zu finden</a>
+    Die Liste der Änderungen ist im <a href="changelog.html#Version+2016.12+-+Heiss+%26+Weiss">Changelog zu finden</a>
   </p>
   </body>
 
