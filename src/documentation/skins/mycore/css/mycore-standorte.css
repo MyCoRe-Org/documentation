@@ -71,8 +71,8 @@ a.ol-popup-closer:HOVER{
 	font-family: "Sintony", Helvetica, Arial, sans-serif;
 	font-size: 95%;
 	background-color: white;
-	margin-top: 0px;
-	margin-bottom: -6px;
+	margin-top: 12px;
+	line-height: 120%;
 }
 
 #popup-content .mcrmap_item_icon {
