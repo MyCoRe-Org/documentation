@@ -5,6 +5,11 @@
     <title>Karte der MyCoRe-Anwendungen</title>
   </header>
   <body>
-      <div id="map_div"></div>
+     <div id="map" class="map">
+    		<div id="popup" class="ol-popup">
+				<a href="#" id="popup-closer" class="ol-popup-closer">&times;</a>
+				<div id="popup-content"></div>
+			</div>
+       	</div>
   </body>
 </document>

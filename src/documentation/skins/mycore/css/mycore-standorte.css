@@ -1,81 +1,98 @@
 /******************************************************
  * CSS Stylesheet fuer MyCoRe Standort-Karte          *
  ******************************************************/
-
-.olFramedCloudPopupContent{
-  font-size: 12px;
-  height: auto !important;
+.map {
+	height: 750px;
+	width: 500px;
 }
 
-.olPopup{
-	background-color:#E6EDF5;
-}
-.olPopup h2 {
-  font-size: 14px;
-  margin-top: 0px;
-  font-weight: bold;
-}
-
-.olPopup h3 {
-  font-size: 14px;
-  font-weight: normal;
-  margin-top: 20px;
-  margin-bottom: 4px;
-  line-height: 150%;
+.ol-popup {
+	position: absolute;
+	background-color: white;
+	-webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+	filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #cccccc;
+	bottom: 12px;
+	left: -50px;
+	min-width: 280px;
 }
 
-.olPopup p {
-  margin: 0px;
-  font-size: .9em;
+.ol-popup:after, .ol-popup:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.ol-popup:after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+}
+
+.ol-popup:before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+}
+
+.ol-popup-closer {
+	text-decoration: none;
+	font-weight:bold;
+	font-size:125%;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+	color: darkred;
+}
+a.ol-popup-closer:HOVER{
+	text-decoration:none;
 }
 
 
-div.mcrmap_item{
-  margin-bottom:4px;
-  width:100%;
-  display:table
+
+#popup-content {
+	margin-top;
+	overflow-y: scroll;
+	max-height: 450px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 85%;
+	line-height:100%;
 }
 
-
-div.mcrmap_item span{
-  display:table-cell;
-  vertical-align: middle;
+#popup-content h2 {
+	font-family: "Sintony", Helvetica, Arial, sans-serif;
+	font-size: 95%;
+	background-color: white;
+	margin-top: 0px;
+	margin-bottom: -6px;
 }
 
-div.mcrmap_item a{
-  display:table-cell;
-  vertical-align: middle;
-  text-decoration: none;
-  color: darkblue;
+#popup-content .mcrmap_item_icon {
+	float: left;
+	margin-right: 6px;
 }
 
-div.mcrmap_item a:FIRST-CHILD{
-  width:32px;
+#popup-content .mcrmap_item_info {
+	float: right;
+	margin-right: 6px;
 }
 
-div.mcrmap_item a:VISITED{
-  text-decoration: none;
+#popup-content .mcrmap_item_name {
+	display: block;
+	padding-bottom: 4px;
+}
+#popup-content .mcrmap_item_owner {
+	font-size:95%;
 }
 
-div.mcrmap_item img.icon{
-  margin-right:12px;
-  vertical-align: middle;
-  height:24px;
-}
-
-div.mcrmap_item img.info{
-  vertical-align: middle;
-}
-
-#map_div {
-  width: 600px;
-  height: 750px;
-  border: 1px solid #dddddd;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-#map_div img {
-  max-width:none;
+#popup-content p {
+	padding-left: 48px;
 }

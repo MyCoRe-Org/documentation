@@ -240,119 +240,151 @@ $(document).ready(function() {
                 language="javascript"
                 src="{$root}skin/jquery-1.7.1.min.js"></script>
         <xsl:if test="$path = 'applications/map.html'">
-          <script type="text/javascript" src="{$root}skin/OpenLayers-2.12/OpenLayers.js"></script>
+          <link rel="stylesheet" href="{$root}skin/OpenLayers-v3.20.1/ol.css" type="text/css" />
+          <script type="text/javascript" src="{$root}skin/OpenLayers-v3.20.1/ol.js"></script>
           <script type="text/javascript">
 <![CDATA[
       var map, select;
       $(document).ready(function() {
-        map = new OpenLayers.Map('map_div',{
-          projection: new OpenLayers.Projection("EPSG:900913"),
-              displayProjection: new OpenLayers.Projection("EPSG: 4326"),
-        });
-        var mapquestLayer = new OpenLayers.Layer.XYZ(
-            "MapQuest",
-                [
-                  "http://otile1.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                  "http://otile2.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                  "http://otile3.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                  "http://otile4.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png"
-                ],
-                {
-                  transitionEffect: "resize"
-                }
-        );
-       // map.addLayer(mapquestLayer);
-map.addLayer(new OpenLayers.Layer.OSM("OpenStreetMap"));
-        var clusterStrategy = new OpenLayers.Strategy.Cluster( { distance: 25, threshold: 1 } );
+     var container = document.getElementById('popup');
+    var content = document.getElementById('popup-content');
+    var closer = document.getElementById('popup-closer');
 
-        var style = new OpenLayers.Style( {
-          pointRadius: "${pointRadius}",
-          fillColor: "#FF9600",
-          fillOpacity: 0.8,
-          strokeColor: "#cc6633",
-          strokeOpacity: 0.8,
-          graphicZIndex: 2,
-          strokeWidth: 2,
-          label: "${label}",
-          title: "Klicken, um Anwendungen anzuzeigen"
-        } , {
-          context:
-          {
-            pointRadius: function(feature) { return 7 + feature.cluster.length.toString().length * 3; },
-            label: function(feature) { return feature.cluster ? feature.cluster.length : "1";  }
+    var overlay = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
+        element: container,
+        autoPan: true,
+        autoPanAnimation: {
+          duration: 250
+        }
+	}));
+
+      /**
+       * Add a click handler to hide the popup.
+       * @return {boolean} Don't follow the href.
+       */
+	closer.onclick = function() {
+    	overlay.setPosition(undefined);
+        closer.blur();
+        return false;
+	};
+
+    var kml = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: 'map/mycore-standorte.kml',
+          format: new ol.format.KML()
+        })
+	});
+    
+    var clusterSource = new ol.source.Cluster({
+        distance: 15,
+        source: kml.getSource()
+	});
+    
+    var styleCache = {};
+    var clusters = new ol.layer.Vector({
+        source: clusterSource,
+       
+        style: function(feature) {
+          var size = feature.get('features').length;
+          var style = styleCache[size];
+          if (!style) {
+            style = new ol.style.Style({
+              image: new ol.style.Circle({
+                radius: 10,
+                stroke: new ol.style.Stroke({
+                  color: '#fff'
+                }),
+                fill: new ol.style.Fill({
+                  color: '#265E78'
+                })
+              }),
+              text: new ol.style.Text({
+                text: size.toString(),
+                fill: new ol.style.Fill({
+                  color: '#fff'
+                })
+              })
+            });
+            styleCache[size] = style;
           }
-        } );
-        var styleMap = new OpenLayers.StyleMap( { "default": style, "select": { fillColor : "orange" } } );
+          return style;
+        }
+    });
+    
+    /* 
+    var osm =  new ol.layer.Tile({
+            source: new ol.source.OSM()
+    });
+	
+    var carto = new ol.layer.Tile({ 
+    	source: new ol.source.XYZ({ 
+        	url:'http://{1-4}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
+    	})
+	}); 
+	
+	 var natgeo = new ol.layer.Tile({ 
+		    source: new ol.source.XYZ({ 
+		        url:'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}'
+		    })
+	 });
+	 */
+	var esri =  new ol.layer.Tile({
+         source: new ol.source.XYZ({
+            attributions: [new ol.Attribution({
+	        	html: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/' +
+	            	  'rest/services/World_Topo_Map/MapServer">ArcGIS</a>'
+	      	})],
+             url: 'https://server.arcgisonline.com/ArcGIS/rest/services/' +
+                 'World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
+           })
+   	});
+	
+	var tiles = esri;
+     
+	var map = new ol.Map({
+        	target: 'map',
+        	layers: [tiles, clusters],
+        	overlays: [overlay],
+        	view: new ol.View({
+				center: ol.proj.fromLonLat([10.5, 50.50]),
+        		zoom: 6
+    		})
+	});
 
-        var kml =  new OpenLayers.Layer.Vector("MyCoRe Standorte", {
-                     projection: new OpenLayers.Projection("EPSG:4326"),
-                     strategies: [ new OpenLayers.Strategy.Fixed(), clusterStrategy ],
-                     styleMap : styleMap,
-                     protocol: new OpenLayers.Protocol.HTTP({
-                       url: "map/mycore-standorte.kml",
-                       format: new OpenLayers.Format.KML({
-                         extractStyles: true,
-                         extractAttributes: true
-                       })
-                     })
-                   });
-        map.addLayer(kml);
+	function isCluster(feature) {
+    	if (!feature || !feature.get('features')) { 
+    		return false; 
+  		}
+    	return feature.get('features').length > 0;
+   	}
+      
+    map.on('click', function(evt) {
+    	var feature = map.forEachFeatureAtPixel(evt.pixel, 
+    		                  function(feature) { return feature; });
+    	
+    	if (isCluster(feature)) {
+    	    // is a cluster, so loop through all the underlying features
+    		var features = feature.get('features');
+    	    var output="";
+    	    for(var i = 0; i < features.length; i++) {
+    	      // here you'll have access to your normal attributes:
+    	      console.log(features[i].get('name'));
+    	      output += "<h2>" + features[i].get('name') + "</h2>" + features[i].get('description');
+			}
+    	  
+			var coordinate = evt.coordinate;
+        
+			// Ausgabe der Koordinaten:
+			// var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(coordinate, 'EPSG:3857', 'EPSG:4326'));
+        	// content.innerHTML = '<p>You clicked here:</p><code>' + hdms + '</code>'
+          
+      		content.innerHTML =  output;
+        	overlay.setPosition(coordinate);
+		}
+    });
+    
+}); //END ready
 
-        select = new OpenLayers.Control.SelectFeature(kml);
-        kml.events.on({
-                    "featureselected": onFeatureSelect,
-                    "featureunselected": onFeatureUnselect,
-        });
-
-        map.addControl(select);
-        select.activate();
-
-        map.setCenter(new OpenLayers.LonLat(9.7,49.8) // Center of the map
-              .transform(
-                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-                new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
-              ), 6); // Zoom level
-      }); //END ready
-
-      function onPopupClose(evt) {
-              select.unselectAll();
-          }
-
-          function onFeatureSelect(event) {
-              var feature = event.feature;
-              // Since KML is user-generated, do naive protection against
-              // Javascript.
-
-              var content = "";
-              if( feature.cluster ) {
-                for(var i = 0; i < feature.cluster.length; i++ ) content += "<h2>" + feature.cluster[i].attributes.name + "</h2>" + feature.cluster[i].attributes.description;
-              } else {
-                content = "<h2>" + feature.attributes.name + "</h2>" + feature.attributes.description;
-              };
-
-              if (content.search("<script") != -1) {
-                  content = "Content contained Javascript! Escaped content below.<br>" + content.replace(/</g, "&lt;");
-              }
-              var pos = feature.geometry.getBounds().getCenterLonLat();
-              var popup = new OpenLayers.Popup.FramedCloud("mycoreapps",
-                  pos,
-                      null,
-                      content,
-                      null, true, onPopupClose);
-              popup.autoSize=true;
-              popup.maxSize =  new OpenLayers.Size(330,800);
-              feature.popup = popup;
-              map.addPopup(popup);
-          }
-
-          function onFeatureUnselect(event) {
-              var feature = event.feature;
-              if(feature.popup) {
-                  map.removePopup(feature.popup);
-                  feature.popup.destroy();
-                  delete feature.popup;
-              }
-          }
 ]]>
           </script>
         </xsl:if>
