@@ -138,6 +138,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcr_components        label="Komponenten"       href="components_structure.html" />
       <eventhandler          label="EventHandler"      href="eventhandler.html" />
       <mcrobj_linktables     label="Linktabellen"      href="linktables.html" />
+      <mcr_mailer            label="Mailer"            href="mailer.html" />
     </content>
 
     <!-- Command Line Interface -->

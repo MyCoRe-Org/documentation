@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Die Link Tabellen</title>
+    <release>2016.06</release>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+    </authors>
+    <abstract>Die Seite beschreibt die Möglichkeiten, aus MyCoRe heraus Mails zu versenden.</abstract>
+  </header>
+  <body>
+
+    <section>
+      <title>MCRMailer</title>
+      <p>
+        Die Klasse
+        <code>org.mycore.common.MCRMailer</code>
+        gestatte es, aus der MyCoRe-Anwendung heraus Mails zu generieren und zu versenden. Eine entsprechende API ist
+        implementiert. Dafür sind die folgenden Konfigurationsmaöglichkeiten vorgesehen:
+      </p>
+      <ul>
+        <li>
+          MCR.Mail.Debug=false - boolscher Wert zum Einschalten zusätzlicher Debug-Informationen; Standard ist
+          <strong>false</strong>
+        </li>
+        <li>
+          MCR.Mail.Encoding=UTF-8 - das Encoding für die Mail; Standard ist
+          <strong>UTF-8</strong>
+        </li>
+        <li>
+          MCR.Mail.NumTries=1 - Anzahl der Versuche, die mail abzuschicken; Standard ist
+          <strong>1</strong>
+        </li>
+        <li>MCR.Mail.Password={Passwort im Mailserver} - das Password für den Kontakt zum Mailserver</li>
+        <li>
+          MCR.Mail.Port=25 - Port des Mailers; Standard ist Port
+          <strong>25</strong>
+        </li>
+        <li>
+          MCR.Mail.Protocol=smtp - das Mail-Transportprotokoll; Standard ist
+          <strong>smtp</strong>
+        </li>
+        <li>MCR.Mail.Sender={address@sender} - die Adresse des Mail-Senders</li>
+        <li>MCR.Mail.Server={Hostname des Mail-Servers}</li>
+        <li>MCR.Mail.User={Benutzer im Mailserver} - Das Benutzer-Login für den Kontakt zum Mailserver</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>MCRMailEventHandler</title>
+      <p>
+        Der
+        <code>MCRMailEventHandler</code>
+        ist Bstandteil der MyCoRe-Workflow-Komponente (wfc). Er wird über die Index-Nummer 900 des EventHandlers
+        angesprochen. Die Konfiguration erfolgt einerseit über die oben genannten Properties, andererseits über eine
+        XML-Steue- und nachrichtendatei,
+        welche über das Stylesheet
+        <code>e-mail-events.xsl</code>
+        generiert wird.
+      </p>
+      <p>... unter Bearbeitung ...</p>
+    </section>
+    
+  </body>
+</document>
+    
