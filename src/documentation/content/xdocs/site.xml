@@ -240,6 +240,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <codestyle           label="Code-Style"                 href="codestyle.html" />
       <conventions         label="Namenskonventionen"         href="conventions.html" />
       <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
+      <plugin_dev          label="Eigene Plugins einbinden"   href="plugin_development.html" />
       <documentation       label="Dokumentation"              href="documentation.html" />
       <tests               label="Tests"                      href="tests.html" />
       <classes             label="Allgemeine Klassen"         href="classes.html" />
