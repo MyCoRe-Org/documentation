@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+    <header>
+        <title>Pluginbasierte Entwicklung auf Basis einer eigenen JAR Datei</title>
+        <version>2017-02-28</version>
+        <release>2016.12</release>
+        <authors>
+            <person name="Paul Rochowski" email="[EMAIL PROTECTED]"/>
+        </authors>
+        <abstract>
+            MyCore bietet die Möglichkeit innerhalb des Konfigurationsverzeichnisses in dem Ordner lib eigene
+            Anwendungserweiterungen (Komponenten) zu hinterlegen. Der folgende Abschnitt beschreibt die Möglichkeiten
+            die ein solches Paket durch seine grundlegende Struktur bietet, stellt ein einfaches Beispiel
+            dar um eine Hello-World Servletkomponente innerhalb von Eclipse zu entwickeln und zeigt wie diese mit dem
+            MyCoRe-Framework verknüpft wird.
+        </abstract>
+    </header>
+
+    <body>
+
+        <section>
+            <title>Aufbau und Struktur eigener Komponenten</title>
+        </section>
+
+        <section>
+            <title>MyCore um Hello World Servletkomponente erweitern</title>
+        </section>
+
+        <section>
+            <title>Deployment/Debugging</title>
+        </section>
+    </body>
+</document>
