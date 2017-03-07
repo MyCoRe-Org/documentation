@@ -2,68 +2,95 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
-    <header>
-        <title>Pluginbasierte Entwicklung auf Basis einer eigenen JAR Datei</title>
-        <version>2017-02-28</version>
-        <release>2016.12</release>
-        <authors>
-            <person name="Paul Rochowski" email="[EMAIL PROTECTED]"/>
-        </authors>
-        <abstract>
-            MyCore bietet die Möglichkeit innerhalb des Konfigurationsverzeichnisses in dem Ordner lib eigene
-            Anwendungserweiterungen (Komponenten) zu hinterlegen. Der folgende Abschnitt beschreibt die Möglichkeiten
-            die ein solches Paket durch seine grundlegende Struktur bietet, stellt ein einfaches Beispiel
-            dar um eine Hello-World Servletkomponente innerhalb von Eclipse zu entwickeln und zeigt wie diese mit dem
-            MyCoRe-Framework verknüpft wird.
-        </abstract>
-    </header>
+  <header>
+    <title>Pluginbasierte Entwicklung auf Basis einer eigenen JAR Datei</title>
+    <version>2017-03-07</version>
+    <release>2016.12</release>
+    <authors>
+      <person name="Paul Rochowski" email="[EMAIL PROTECTED]"/>
+    </authors>
+    <abstract>
+      MyCore bietet die Möglichkeit innerhalb des Konfigurationsverzeichnisses in dem Ordner lib eigene
+      Anwendungserweiterungen (Komponenten) zu hinterlegen. Der folgende Abschnitt beschreibt die Möglichkeiten
+      die ein solches Paket durch seine grundlegende Struktur bietet, stellt ein einfaches Beispiel
+      dar um eine Hello-World Servletkomponente innerhalb von Eclipse zu entwickeln und zeigt wie diese mit dem
+      MyCoRe-Framework verknüpft wird.
+    </abstract>
+  </header>
 
-    <body>
+  <body>
 
-        <section>
-            <title>Warum pluginbasiert entwickeln?</title>
-            <p>
-                Ein stetig wachsender MyCoRe Kern bietet ein solides Framework für die Verwaltung und Präsentation
-                digitaler Inhalte an. Es ist jedoch zu beachten, dass jede MyCoRe Anwendung nun mal für sich
-                eigenständig ist. Zwar bietet die Community mit Skeleton und MIR bereits fertige Anwendungen die schnell
-                an die eigenen Bedürfnisse angepasst werden können, die Frage nach einem eigenen Plugin ist allerdings
-                berechtigt, wenn MIR bzw. Skeleton mit den vorgegebenen Werkzeugen nun mal nicht ausreichen. Es gibt
-                teils Anforderungen an eine MyCoRe Anwendung die ggf. einmalig sind. Hier macht es keinen Sinn diese in
-                den Kern einfließen zu lassen, da dieses Vorgehen nur eine Vergrößerung des Kerns ohne Mehrwert für die
-                Community und eine Verkomplizierung der eigentlichen MyCoRe Entwicklung zur Folge hätte.
-            </p>
-            <p>
-                Ebenfalls gibt es Features die zwar einen Mehrwert für die Community darstellen, allerdings über die
-                Zeit so mächtig geworden sind, dass die Überlegung nahe steht diese in losgelöste Komponenten
-                auszulagern um den Kern auf seine Hauptelemente zu beschränken und die Entwicklung damit zu
-                vereinfachen. Als letzter Punkt ist hier hervorzuheben, dass eine pluginbasierte Entwicklung dem
-                Entwickler immer eine geschützte Sandbox Umgebung zur Verfügung stellt, in welcher er neues ausprobieren
-                und der Community auf diese Weise vorstellen kann.
-            </p>
-        </section>
-        <section>
-            <title>Make JAR not WAR!</title>
-            <p>
-                Mit der 2011 vorgestellten JSR 315: JavaTM Servlet 3.0 Spezifikation erhielten
-                Modularisierungsmöglichkeiten Einzug in Web Anwendungen auf Servlet Basis. Statt wie zuvor über den
-                zentralen Deployment Descriptor(web.xml) die Konfiguration vorzunehmen, wie der Webserver Anfragen
-                annehmen und bedienen soll, geben wir Komponenten innerhalb einer JAR Datei die Eigenverantwortung.
-                Diese Eigenverantwortung bietet für die eigene Anwendung auf MyCoRe Basis weitreichende Möglichkeiten.
-                Innerhalb von GitHub steht ein minimales Maven Projekt bereit, welches die Referenzarchitektur für eine
-                eigene pluginbasierte Anwendung darstellt.
-            </p>
-        </section>
+    <section>
+      <title>Warum pluginbasiert entwickeln?</title>
+      <p>
+        Ein stetig wachsender MyCoRe Kern bietet ein solides Framework für die Verwaltung und Präsentation
+        digitaler Inhalte an. Es ist jedoch zu beachten, dass jede MyCoRe Anwendung nun mal für sich
+        eigenständig ist. Zwar bietet die Community mit Skeleton und MIR bereits fertige Anwendungen die schnell
+        an die eigenen Bedürfnisse angepasst werden können, die Frage nach einem eigenen Plugin ist allerdings
+        berechtigt, wenn MIR bzw. Skeleton mit den vorgegebenen Werkzeugen nun mal nicht ausreichen. Es gibt
+        teils Anforderungen an eine MyCoRe Anwendung die ggf. einmalig sind. Hier macht es keinen Sinn diese in
+        den Kern einfließen zu lassen, da dieses Vorgehen nur eine Vergrößerung des Kerns ohne Mehrwert für die
+        Community und eine Verkomplizierung der eigentlichen MyCoRe Entwicklung zur Folge hätte.
+      </p>
+      <p>
+        Ebenfalls gibt es Features die zwar einen Mehrwert für die Community darstellen, allerdings über die
+        Zeit so mächtig geworden sind, dass die Überlegung nahe steht diese in losgelöste Komponenten
+        auszulagern um den Kern auf seine Hauptelemente zu beschränken und die Entwicklung damit zu
+        vereinfachen. Als letzter Punkt ist hier hervorzuheben, dass eine pluginbasierte Entwicklung dem
+        Entwickler immer eine geschützte Sandbox Umgebung zur Verfügung stellt, in welcher er neues ausprobieren
+        und der Community auf diese Weise vorstellen kann.
+      </p>
+    </section>
+    <section>
+      <title>Make JAR not WAR!</title>
+      <p>
+        Mit der 2011 vorgestellten JSR 315: JavaTM Servlet 3.0 Spezifikation erhielten
+        Modularisierungsmöglichkeiten Einzug in Web Anwendungen auf Servlet Basis. Statt wie zuvor über den
+        zentralen Deployment Descriptor(web.xml) die Konfiguration vorzunehmen, wie der Webserver Anfragen
+        annehmen und bedienen soll, geben wir Komponenten innerhalb einer JAR Datei die Eigenverantwortung.
+        Diese Eigenverantwortung bietet für die eigene Anwendung auf MyCoRe Basis weitreichende Möglichkeiten.
+        Innerhalb von GitHub steht ein minimales Maven Projekt bereit, welches die Referenzarchitektur für eine
+        eigene pluginbasierte Anwendung darstellt.
+      </p>
+    </section>
 
-        <section>
-            <title>Aufbau und Struktur eigener Komponenten</title>
-        </section>
+    <section>
+      <title>Aufbau und Struktur eigener Komponenten</title>
 
-        <section>
-            <title>MyCore um Hello World Servletkomponente erweitern</title>
-        </section>
+      <pre class="brush: xml">
+        <![CDATA[
+<web-fragment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:webfragment="http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd"
+              id="WebFragment_ID" version="3.0">
+</web-fragment>
+]]></pre>
 
-        <section>
-            <title>Deployment/Debugging</title>
-        </section>
-    </body>
+      <pre class="brush: xml">
+        <![CDATA[
+...
+  <display-name>HelloWorldServlet</display-name>
+  <name>HelloWorldServlet</name>
+  <servlet>
+    <servlet-name>HelloWorldServlet</servlet-name>
+    <servlet-class>custom.mycore.servlets.HelloWorldServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloWorldServlet</servlet-name>
+    <url-pattern>/HelloWorld</url-pattern>
+  </servlet-mapping>
+...
+]]></pre>
+
+    </section>
+
+    <section>
+      <title>MyCore um Hello World Servletkomponente erweitern</title>
+    </section>
+
+    <section>
+      <title>Deployment/Debugging</title>
+    </section>
+  </body>
 </document>
