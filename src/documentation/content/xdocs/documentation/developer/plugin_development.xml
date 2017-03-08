@@ -49,11 +49,37 @@
         zentralen Deployment Descriptor(web.xml) die Konfiguration vorzunehmen, wie der Webserver Anfragen
         annehmen und bedienen soll, geben wir Komponenten innerhalb einer JAR Datei die Eigenverantwortung.
         Diese Eigenverantwortung bietet für die eigene Anwendung auf MyCoRe Basis weitreichende Möglichkeiten.
-        Innerhalb von GitHub steht ein minimales Maven Projekt bereit, welches die Referenzarchitektur für eine
+        Innerhalb der  <a href="https://github.com/rochpaul/mycore-custom-module">MyCoRe GitHub Seite</a> (to do:
+        Beispielprojekt auf MyCoRe Github
+        Seite laden) steht ein minimales Maven Projekt bereit, welches die Referenzarchitektur für eine
         eigene pluginbasierte Anwendung darstellt.
       </p>
     </section>
+  
+    <section>
+    <title> Tutorial: HelloWorldServlet in Aktion </title>
+    <p>
+      Um das hier beschriebene Tutorial nacharbeiten zu können, sollten die folgenden Voraussetzung erfüllt sein:
+    </p>
+      <ul>
+        <li>Generelle MyCoRe Anforderungen (<a href="http://mycore.de/documentation/getting_started/requirements.html">siehe Anforderungen</a>)
+          mit einer aktuellen MIR Installation (<a href="http://localhost:8888/documentation/getting_started/mir.html">siehe MIR</a>)</li>
+        <li>Eclipse Grundinstallation (getestet mit Eclipse Java EE IDE for Web Developers Mars.2 Release 4.5.2)</li>
+        <li>Die Eclipse Erweiterungen m2e sowie EGit</li>
+      </ul>
+      <p>
+        Wir checken zunächst von der MyCoRe GitHub Seite das Beispielprojekt custom-module aus. Hierzu öffnen wir in
+        Eclipse die Git Perspective (Window -> Perspective -> Open Perspective -> Other...) und klicken auf die Option
+        „Clone Git Repository“.
+      </p>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/tutorial_plugin_dev/custom_module_checkout.png" alt="Checkout des custom_module Beispielprojektes" style="margin:5px;padding:10px;border:1px solid gray;" width="850px" /><br />
+        <span class="klein"><strong>Abbildung 1:</strong>Checkout des custom_module Beispielprojektes</span>
+      </div>
 
+    </section>
+    
+            
     <section>
       <title>Aufbau und Struktur eigener Komponenten</title>
 
@@ -66,7 +92,32 @@
               id="WebFragment_ID" version="3.0">
 </web-fragment>
 ]]></pre>
+  
+      <pre class="brush: shell; gutter: false;">
+|
+ \ src
+   |
+    \ main
+      |
+       \ resources (Alle nicht zu übersetzenden Resourcen)
+         |
+          \ META-INF (JAR Spezifikation Standard)
+            |
+	     \web-fragment.xml (Definition von Servlets, Filtern und Listener für JAR Ebene)
+	     \resources (Statischer Content mit Zugriff vom web-context root)
 
+       \ java (Java Resourcen)
+	 |
+	  \ custom/mycore (Package Struktur)
+	    |
+             \servlets (Ordner für Servlets)
+               |
+                \HelloWorldServlet (Hello World Servlet Beispiel)
+|
+ \ LICENSE.txt (Lizenzinformationen)
+ \ pom.xml (Maven Einstellungen bzgl. Abhängigkeiten, Versionierung und Build Prozess)
+      </pre>
+      
       <pre class="brush: xml">
         <![CDATA[
 ...
