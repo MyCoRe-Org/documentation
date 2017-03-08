@@ -17,9 +17,9 @@
       MyCoRe-Framework verknüpft wird.
     </abstract>
   </header>
-
+  
   <body>
-
+    
     <section>
       <title>Warum pluginbasiert entwickeln?</title>
       <p>
@@ -55,34 +55,78 @@
         eigene pluginbasierte Anwendung darstellt.
       </p>
     </section>
-  
+    
     <section>
-    <title> Tutorial: HelloWorldServlet in Aktion </title>
-    <p>
-      Um das hier beschriebene Tutorial nacharbeiten zu können, sollten die folgenden Voraussetzung erfüllt sein:
-    </p>
+      <title>Tutorial: HelloWorldServlet in Aktion</title>
+      <p>
+        Um das hier beschriebene Tutorial nacharbeiten zu können, sollten die folgenden Voraussetzung erfüllt sein:
+      </p>
       <ul>
-        <li>Generelle MyCoRe Anforderungen (<a href="http://mycore.de/documentation/getting_started/requirements.html">siehe Anforderungen</a>)
-          mit einer aktuellen MIR Installation (<a href="http://localhost:8888/documentation/getting_started/mir.html">siehe MIR</a>)</li>
+        <li>Generelle MyCoRe Anforderungen (<a href="http://mycore.de/documentation/getting_started/requirements.html">
+          siehe Anforderungen</a>)
+          mit einer aktuellen MIR Installation (<a href="http://mycore.de/documentation/getting_started/mir.html">
+            siehe MIR</a>)
+        </li>
         <li>Eclipse Grundinstallation (getestet mit Eclipse Java EE IDE for Web Developers Mars.2 Release 4.5.2)</li>
         <li>Die Eclipse Erweiterungen m2e sowie EGit</li>
       </ul>
       <p>
-        Wir checken zunächst von der MyCoRe GitHub Seite das Beispielprojekt custom-module aus. Hierzu öffnen wir in
-        Eclipse die Git Perspective (Window -> Perspective -> Open Perspective -> Other...) und klicken auf die Option
-        „Clone Git Repository“.
+        Wir erstellen für das custom-module Beispielprojekt zunächst einen neuen Workspace und checken dann von der
+        MyCoRe GitHub Seite das Projekt aus. Hierzu öffnen wir in Eclipse die Git Perspective (Window -> Perspective ->
+        Open Perspective -> Other...) und klicken auf die Option „Clone Git Repository“. Wir füllen wie in Abbildung 1
+        gezeigt die benötigten Eingabefelder aus (Hier reicht es die URL im Browser mit Strg + c zu kopieren und dann
+        „Clone Git Repository“ zu öffnen, Eclipse füllt die Eingabefelder dann automatisch aus) und wählen den Master
+        aus. Nach Eingabe eines gewünschten Verzeichnispfades erstellen wir mit Finish das lokale custom-module Git
+        Repository.
       </p>
       <div style="text-align:center;margin:10px 0;">
-        <img src="images/tutorial_plugin_dev/custom_module_checkout.png" alt="Checkout des custom_module Beispielprojektes" style="margin:5px;padding:10px;border:1px solid gray;" width="850px" /><br />
-        <span class="klein"><strong>Abbildung 1:</strong>Checkout des custom_module Beispielprojektes</span>
+        <img src="images/tutorial_plugin_dev/custom_module_checkout.png"
+             alt="Checkout des custom_module Beispielprojektes" style="margin:5px;padding:10px;border:1px solid gray;"
+             width="850px"/>
+        <br/>
+        <span class="klein"><strong>Abbildung 1:</strong>Checkout des custom_module Beispielprojektes
+        </span>
       </div>
-
+      <p>
+        Nachdem wir nun lokal alle benötigten Sourcen ausgecheckt haben sagen wir Eclipse, dass es sich um ein Maven
+        Projekt handelt und dieses in unseren Project Explorer importiert werden soll. Hierzu wählen wir unter
+        File - Import die Select Option "Existing Maven Projects" aus. Als Root Directory geben wir den Root unseres
+        zuvor erstellten lokalen Repositories an. Eclipse erkennt nun wie in Abbildung 2 zu sehen ist anhand der im Root
+        liegenden pom.xml, dass es sich
+        um ein Maven Projekt handelt.
+      </p>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/tutorial_plugin_dev/custom_module_maven.png"
+             alt="Import als Maven Projekt" style="margin:5px;padding:10px;border:1px solid gray;"
+             width="850px"/>
+        <br/>
+        <span class="klein"><strong>Abbildung 2:</strong>Import als Maven Projekt
+        </span>
+      </div>
+      <p>
+        Das custom-module wurde nun als Maven Projekt importiert und steht ebenso unter git Versionskontrolle.
+        Um nun ein eigenes Projekt zu erstellen und das custom-module als Basis zu benutzen eignet sich GitHub als
+        öffentliches remote Git Repository. Von dem custom-module Projekt kann innerhalb von GitHub ein Fork erstellt
+        und dieser dann wie in Abbildung 3 zusehen ist konfiguriert werden. Für weitere Infos bzgl. Git/GitHub wird an
+        dieser Stelle die
+        <a href="http://mycore.de/documentation/developer/work_with_git.html">interne Git Dokumentation</a>
+        empfohlen.
+      </p>
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/tutorial_plugin_dev/custom_module_githubremoteurl.png"
+             alt="Einstellung des remote Repositories für die eigene Anwendung"
+             style="margin:5px;padding:10px;border:1px solid gray;"
+             width="850px"/>
+        <br/>
+        <span class="klein"><strong>Abbildung 3:</strong>Einstellung des remote Repositories für die eigene Anwendung
+        </span>
+      </div>
     </section>
     
-            
+    
     <section>
       <title>Aufbau und Struktur eigener Komponenten</title>
-
+      
       <pre class="brush: xml">
         <![CDATA[
 <web-fragment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -92,15 +136,15 @@
               id="WebFragment_ID" version="3.0">
 </web-fragment>
 ]]></pre>
-  
+      
       <pre class="brush: shell; gutter: false;">
 |
  \ src
-   |
+   | 
     \ main
-      |
+      | 
        \ resources (Alle nicht zu übersetzenden Resourcen)
-         |
+         | 
           \ META-INF (JAR Spezifikation Standard)
             |
 	     \web-fragment.xml (Definition von Servlets, Filtern und Listener für JAR Ebene)
@@ -110,7 +154,7 @@
 	 |
 	  \ custom/mycore (Package Struktur)
 	    |
-             \servlets (Ordner für Servlets)
+             \servlets (Ordner für Servlets) 
                |
                 \HelloWorldServlet (Hello World Servlet Beispiel)
 |
@@ -133,13 +177,13 @@
   </servlet-mapping>
 ...
 ]]></pre>
-
+    
     </section>
-
+    
     <section>
       <title>MyCore um Hello World Servletkomponente erweitern</title>
     </section>
-
+    
     <section>
       <title>Deployment/Debugging</title>
     </section>
