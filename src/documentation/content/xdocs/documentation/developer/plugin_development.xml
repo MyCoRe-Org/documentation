@@ -108,9 +108,9 @@
         Um nun ein eigenes Projekt zu erstellen und das custom-module als Basis zu benutzen eignet sich GitHub als
         öffentliches remote Git Repository. Von dem custom-module Projekt kann innerhalb von GitHub ein Fork erstellt
         und dieser dann wie in Abbildung 3 zusehen ist konfiguriert werden. Für weitere Infos bzgl. Git/GitHub wird an
-        dieser Stelle die
+        dieser Stelle auf die
         <a href="http://mycore.de/documentation/developer/work_with_git.html">interne Git Dokumentation</a>
-        empfohlen.
+        verwiesen.
       </p>
       <div style="text-align:center;margin:10px 0;">
         <img src="images/tutorial_plugin_dev/custom_module_githubremoteurl.png"
@@ -121,11 +121,47 @@
         <span class="klein"><strong>Abbildung 3:</strong>Einstellung des remote Repositories für die eigene Anwendung
         </span>
       </div>
+      
+      <section>
+        <title>Projekt Struktur im Detail</title>
+        
+        <pre class="brush: shell; gutter: false;">
+|
+ \ src
+   |
+    \ main
+      |
+       \ resources (Alle nicht zu übersetzenden Resourcen)
+         |
+          \ META-INF (JAR Spezifikation Standard)
+            |
+	     \web-fragment.xml (Definition von Servlets, Filtern und Listener für JAR Ebene)
+	     \resources (Statischer Content mit Zugriff vom web-context root)
+
+       \ java (Java Resourcen)
+	 |
+	  \ custom/mycore (Package Struktur)
+	    |
+             \servlets (Ordner für Servlets)
+               |
+                \HelloWorldServlet (Hello World Servlet Beispiel)
+|
+ \ LICENSE.txt (Lizenzinformationen)
+ \ pom.xml (Maven Einstellungen bzgl. Abhängigkeiten, Versionierung und Build Prozess)
+        </pre>
+        
+        <p>
+          Innerhalb des Root Verzeichnisses befindet sich, wie zuvor schon beim Projekt Import erwähnt die Maven
+          Einstellungsdatei pom.xml. Mithilfe von Maven können viele Regeln für die eigene Plugin Entwicklung in einer
+          Datei, der pom.xml festgelegt werden.
+          Da dieses Beispielprojekt auf der MIR Anwendung aufsetzt, wird org.mycore.mir als Parent Projekt referenziert.
+        </p>
+      
+      </section>
     </section>
     
-    
     <section>
-      <title>Aufbau und Struktur eigener Komponenten</title>
+      <title>To do</title>
       
       <pre class="brush: xml">
         <![CDATA[
@@ -136,31 +172,6 @@
               id="WebFragment_ID" version="3.0">
 </web-fragment>
 ]]></pre>
-      
-      <pre class="brush: shell; gutter: false;">
-|
- \ src
-   | 
-    \ main
-      | 
-       \ resources (Alle nicht zu übersetzenden Resourcen)
-         | 
-          \ META-INF (JAR Spezifikation Standard)
-            |
-	     \web-fragment.xml (Definition von Servlets, Filtern und Listener für JAR Ebene)
-	     \resources (Statischer Content mit Zugriff vom web-context root)
-
-       \ java (Java Resourcen)
-	 |
-	  \ custom/mycore (Package Struktur)
-	    |
-             \servlets (Ordner für Servlets) 
-               |
-                \HelloWorldServlet (Hello World Servlet Beispiel)
-|
- \ LICENSE.txt (Lizenzinformationen)
- \ pom.xml (Maven Einstellungen bzgl. Abhängigkeiten, Versionierung und Build Prozess)
-      </pre>
       
       <pre class="brush: xml">
         <![CDATA[
