@@ -162,6 +162,14 @@
     
     <section>
       <title>To do</title>
+  
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/tutorial_plugin_dev/custom_module_registerActivity.jpg"
+             alt="Import als Maven Projekt" style="margin:5px;padding:10px;border:1px solid gray;"
+             width="850px"/>
+        <br/>
+        <span class="klein"><strong>Aktivitätsdiagramm 1:</strong>Registrierung von eigenen Plugins innerhalb von MyCoRe        </span>
+      </div>
       
       <pre class="brush: xml">
         <![CDATA[
