@@ -121,7 +121,27 @@
         <span class="klein"><strong>Abbildung 3:</strong>Einstellung des remote Repositories für die eigene Anwendung
         </span>
       </div>
-      
+  
+      <p>
+        Als einfachstes Beispiel soll nun auf Grundlage der gegebenen Struktur ein erstes HelloWorld Servlet erstellt
+        werden. Dieses befindet sich bereits innerhalb des Java Package Ordners custom.mycore.servlets. Es ist ein
+        mittels Eclipse New Wizard erstelltes Servlet, welches in der doGet Methode um die Hello World Ausgabe erweitert
+        wurde. Innerhalb der web-fragment.xml wurde konfiguriert wo das Servlet zu finden ist und unter welcher URL es
+        im Browser angesprochen werden kann.
+        Das Beispielprojekt soll nun in MyCoRe eingebunden werden um über einen Webbrowser das HelloWorldServlet
+        anzufragen. Hierzu muss aus der jetzigen Projektstruktur eine JAR Datei erzeugt und diese innerhalb des MyCoRe
+        Konfigurationsverzeichnisses im lib Ordner bereitgestellt werden.
+        Für diese Aufgabe ist Maven das passende Build Werkzeug.
+        Durch die Einbindung des maven jar plugins innerhalb der pom.xml wird die Möglichkeit bereitgestellt auf
+        einfache Weise eine JAR Datei zu bauen. Navigieren Sie mittels Terminal/Kommandozeile ins root Directory des
+        Beispielprojektes und lassen Sie Maven mittels <code>mvn clean &amp;&amp; mvn install</code> Befehl die
+        benötigte Arbeit machen. Es
+        wurde nun ein target Verzeichnis erstellt, in welchem die gebaute JAR Datei abgelagert wurde. Nachdem Sie die
+        Datei ins MyCoRe Konfigurationsverzeichnis kopiert haben, kann MIR nun auf gewohnte Art und Weise mittels Tomcat
+        gestartet werden.
+      </p>
+  
+  
       <section>
         <title>Projekt Struktur im Detail</title>
         
