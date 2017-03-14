@@ -44,7 +44,7 @@
       <p>
         Zuerst ist ist je nach dem, wo der Fehler aufgetreten ist, der
         <code>master</code>
-        und die entsprechenden LTS-Branches auszuchecken. Dies und alle weiteren Schritte in
+        und die entsprechenden LTS-Branches auszuchecken. Bei Fehlern im LTS erfolgt am Ende ein merge in den Master. Dies und alle weiteren Schritte in
         <strong>Git</strong>
         sollten wegen der sichereren Verarbeitung auf der Kommandozeile ausgeführt werden.
       </p>
@@ -103,7 +103,7 @@
       <p>
         Mit
         <code>git push --set-upstream origin issues/{JIRA-Ticket}-{Ticket Summary}</code>
-        wird nun die Änderung richtung GitHub befördert.
+        wird nun die Änderung Richtung GitHub befördert.
       </p>
       <p>
         Da in MyCoRe vor der Aufnahme eines Fixes noch ein Code-Review steht, welches nur wenige Kern-Entwickler
