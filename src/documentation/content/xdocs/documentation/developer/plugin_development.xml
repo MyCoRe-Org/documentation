@@ -166,9 +166,13 @@
           </span>
         </div>
       </section>
-      
+  
       <section>
         <title>Projekt Struktur im Detail</title>
+        <p>
+          Im Folgenden soll das vorherige Beispiel genauer betrachtet werden um die Möglichkeiten die ein solches Java
+          Archiv bietet besser zu verstehen. Hierzu dient die Projekt Struktur des Beispielprojektes:
+        </p>
         <pre class="brush: shell; gutter: false;">
 |
  \ src
@@ -195,27 +199,32 @@
         </pre>
   
         <p>
-          Innerhalb des Root Verzeichnisses befindet sich, wie zuvor schon beim Projekt Import erwähnt die Maven
-          Einstellungsdatei pom.xml. Mithilfe von Maven können viele Regeln für die eigene Plugin Entwicklung in einer
-          Datei, der pom.xml festgelegt werden.
-          Da dieses Beispielprojekt auf der MIR Anwendung aufsetzt, wird org.mycore.mir als Parent Projekt referenziert.
+          Da es sich um ein Maven Projekt handelt, befindet sich innerhalb des root Verzeichnis die zentrale
+          Konfigurationsdatei pom.xml. Damit der Mechanismus so funktionieren kann wie im HelloWorldServlet gezeigt
+          wird, benötigt das Projekt eine bestimmte Grundkonfiguration. Für den MyCore Kern sind JAR Dateien in dem lib
+          Verzeichnis zunächst MCRComponents. Innerhalb von MyCoRe muss es also etwas geben, das JAR Dateien zunächst in
+          einem separaten Konfigurationsverzeichnis als MyCoRe Komponenten identifiziert und diese in
+          Zusammenhang mit dem oben beschriebenen Servlet API Modularisierungsmechanismus bringen kann.
+          Dies erledigt die MCRAutoDeploy Klasse. Durch den <code>pom.xml</code> Eintrag <code> &lt;MCR-Auto-Deploy&gt;
+          true &lt;/MCR-Auto-Deploy&gt;</code> sagt
+          man der MCRAutoDeploy Klasse, dass dieses JAR Archiv Komponenten enthält, die an den MyCoRe Servlet Kontext
+          gebunden werden können. Das folgende Aktivitätsdiagramm verdeutlicht dies:
         </p>
-
+        <div style="text-align:center;margin:10px 0;">
+          <img src="images/tutorial_plugin_dev/custom_module_registerActivity.jpg"
+               alt="Import als Maven Projekt" style="margin:5px;padding:10px;border:1px solid gray;"
+               width="850px"/>
+          <br/>
+          <span class="klein"><strong>Aktivitätsdiagramm 1:</strong>Registrierung von eigenen Plugins innerhalb von
+            MyCoRe
+          </span>
+        </div>
       </section>
     </section>
   
     <section>
       <title>To do</title>
-    
-      <div style="text-align:center;margin:10px 0;">
-        <img src="images/tutorial_plugin_dev/custom_module_registerActivity.jpg"
-             alt="Import als Maven Projekt" style="margin:5px;padding:10px;border:1px solid gray;"
-             width="850px"/>
-        <br/>
-        <span class="klein"><strong>Aktivitätsdiagramm 1:</strong>Registrierung von eigenen Plugins innerhalb von MyCoRe
-        </span>
-      </div>
-    
+      
       <pre class="brush: xml">
         <![CDATA[
 <web-fragment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
