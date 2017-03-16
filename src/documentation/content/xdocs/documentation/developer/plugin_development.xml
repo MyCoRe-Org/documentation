@@ -44,15 +44,17 @@
     <section>
       <title>Make JAR not WAR!</title>
       <p>
-        Mit der 2011 vorgestellten JSR 315: JavaTM Servlet 3.0 Spezifikation erhielten
-        Modularisierungsmöglichkeiten Einzug in Web Anwendungen auf Servlet Basis. Statt wie zuvor über den
-        zentralen Deployment Descriptor(web.xml) die Konfiguration vorzunehmen, wie der Webserver Anfragen
-        annehmen und bedienen soll, geben wir Komponenten innerhalb einer JAR Datei die Eigenverantwortung.
-        Diese Eigenverantwortung bietet für die eigene Anwendung auf MyCoRe Basis weitreichende Möglichkeiten.
-        Innerhalb der  <a href="https://github.com/rochpaul/mycore-custom-module">MyCoRe GitHub Seite</a> (to do:
-        Beispielprojekt auf MyCoRe Github
-        Seite laden) steht ein minimales Maven Projekt bereit, welches die Referenzarchitektur für eine
-        eigene pluginbasierte Anwendung darstellt.
+        Mit der 2011 vorgestellten <a href="https://jcp.org/en/jsr/detail?id=315">JSR 315: JavaTM Servlet 3.0
+        Spezifikation
+      </a> erhielten Modularisierungsmöglichkeiten Einzug in Web Anwendungen auf Servlet Basis.
+        Statt wie zuvor über den zentralen Deployment Descriptor <code>web.xml</code> die Konfiguration
+        wie der Webserver Anfragen annehmen und bedienen soll vorzunehmen, kann man nun vom Web Archive losgelösten
+        Komponenten eine Eigenverantwortung geben. Diese Eigenverantwortung macht sich der MyCoRe Kern zunutze und
+        bietet Entwicklern die Möglichkeit mit eigenen JAR Dateien MyCoRe weiterzuentwickeln als auch die bestehenden
+        Anwendungen MIR/Skeleton auf Java Grundlage an die eigenen Bedürfnisse anzupassen. Innerhalb der
+        <a href="https://github.com/rochpaul/mycore-custom-module">MyCoRe GitHub Seite</a>
+        steht ein minimales Maven Projekt bereit, welches die Referenzarchitektur für eine eigene pluginbasierte
+        Anwendung darstellt.
       </p>
     </section>
     
@@ -71,12 +73,12 @@
         <li>Die Eclipse Erweiterungen m2e sowie EGit</li>
       </ul>
       <p>
-        Wir erstellen für das custom-module Beispielprojekt zunächst einen neuen Workspace und checken dann von der
-        MyCoRe GitHub Seite das Projekt aus. Hierzu öffnen wir in Eclipse die Git Perspective (Window -> Perspective ->
-        Open Perspective -> Other...) und klicken auf die Option „Clone Git Repository“. Wir füllen wie in Abbildung 1
+        Erstellen Sie zunächst für das cusom-module Beispielprojekt einen neuen Workspace und checken Sie dann von der
+        MyCoRe GitHub Seite das Projekt aus. Hierzu öffnen Sie in Eclipse die Git Perspective (Window -> Perspective ->
+        Open Perspective -> Other...) und klicken auf die Option „Clone Git Repository“. Füllen Sie wie in Abbildung 1
         gezeigt die benötigten Eingabefelder aus (Hier reicht es die URL im Browser mit Strg + c zu kopieren und dann
         „Clone Git Repository“ zu öffnen, Eclipse füllt die Eingabefelder dann automatisch aus) und wählen den Master
-        aus. Nach Eingabe eines gewünschten Verzeichnispfades erstellen wir mit Finish das lokale custom-module Git
+        aus. Nach Eingabe eines gewünschten Verzeichnispfades erstellen Sie mit Finish das lokale custom-module Git
         Repository.
       </p>
       <div style="text-align:center;margin:10px 0;">
@@ -88,12 +90,12 @@
         </span>
       </div>
       <p>
-        Nachdem wir nun lokal alle benötigten Sourcen ausgecheckt haben sagen wir Eclipse, dass es sich um ein Maven
-        Projekt handelt und dieses in unseren Project Explorer importiert werden soll. Hierzu wählen wir unter
-        File - Import die Select Option "Existing Maven Projects" aus. Als Root Directory geben wir den Root unseres
-        zuvor erstellten lokalen Repositories an. Eclipse erkennt nun wie in Abbildung 2 zu sehen ist anhand der im Root
-        liegenden pom.xml, dass es sich
-        um ein Maven Projekt handelt.
+        Nachdem Sie nun lokal alle benötigten Sourcen ausgecheckt haben muss Eclipse mitgeteilt werden werden, dass es
+        sich um ein Maven Projekt handelt welches in den Projekt Explorer importiert werden soll. Wählen Sie hierzu
+        unter File - Import die Select Option "Existing Maven Projects" aus. Als Root Directory wird hier der Root des
+        zuvor erstellen lokalen Repositories angegeben. Eclipse erkennt nun wie in Abbildung 2 zu sehen ist anhand der
+        im
+        Root liegenden pom.xml, dass es sich um ein Maven Projekt handelt.
       </p>
       <div style="text-align:center;margin:10px 0;">
         <img src="images/tutorial_plugin_dev/custom_module_maven.png"
@@ -121,7 +123,7 @@
         <span class="klein"><strong>Abbildung 3:</strong>Einstellung des remote Repositories für die eigene Anwendung
         </span>
       </div>
-  
+      
       <p>
         Als einfachstes Beispiel soll nun auf Grundlage der gegebenen Struktur ein erstes HelloWorld Servlet erstellt
         werden. Dieses befindet sich bereits innerhalb des Java Package Ordners custom.mycore.servlets. Es ist ein
@@ -140,8 +142,7 @@
         Datei ins MyCoRe Konfigurationsverzeichnis kopiert haben, kann MIR nun auf gewohnte Art und Weise mittels Tomcat
         gestartet werden.
       </p>
-  
-  
+      
       <section>
         <title>Projekt Struktur im Detail</title>
         
