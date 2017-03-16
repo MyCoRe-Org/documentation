@@ -129,7 +129,7 @@
       </section>
       <section>
         <title>HelloWorldServlet in Aktion</title>
-  
+    
         <p>
           Als einfachstes Beispiel soll nun auf Grundlage der gegebenen Struktur ein erstes HelloWorld Servlet erstellt
           werden. Dieses befindet sich bereits innerhalb des Java Package Ordners <code>custom.mycore.servlets</code>.
@@ -149,9 +149,22 @@
           benötigte Arbeit machen. Es wurde nun ein target Verzeichnis erstellt, in welchem die gebaute JAR Datei
           abgelagert wurde. Nachdem Sie die
           Datei ins MyCoRe Konfigurationsverzeichnis kopiert haben, kann MIR nun auf gewohnte Art und Weise mittels
-          Tomcat
-          gestartet werden.
+          Tomcat gestartet werden.
         </p>
+        <p>
+          Nachdem der startup Vorgang des Tomcat Servers abgeschlossen wurde, kann nun eine Anfrage über einen
+          Webbrowser
+          an das HelloWorldServlet gestellt werden. In Abbildung 4 sieht man das Ergebnis einer Anfrage an das Servlet.
+        </p>
+        <div style="text-align:center;margin:10px 0;">
+          <img src="images/tutorial_plugin_dev/custom_module_helloworldServlet.png"
+               alt="HelloWorldServlet in Aktion"
+               style="margin:5px;padding:10px;border:1px solid gray;"
+               width="850px"/>
+          <br/>
+          <span class="klein"><strong>Abbildung 4:</strong>HelloWorldServlet in Aktion
+          </span>
+        </div>
       </section>
       
       <section>
