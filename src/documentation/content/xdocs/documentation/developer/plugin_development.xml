@@ -59,7 +59,7 @@
     </section>
     
     <section>
-      <title>Tutorial: HelloWorldServlet in Aktion</title>
+      <title>Tutorial: Entwicklung eines eigenen JAR Plugins</title>
       <p>
         Um das hier beschriebene Tutorial nacharbeiten zu können, sollten die folgenden Voraussetzung erfüllt sein:
       </p>
@@ -72,80 +72,90 @@
         <li>Eclipse Grundinstallation (getestet mit Eclipse Java EE IDE for Web Developers Mars.2 Release 4.5.2)</li>
         <li>Die Eclipse Erweiterungen m2e sowie EGit</li>
       </ul>
-      <p>
-        Erstellen Sie zunächst für das cusom-module Beispielprojekt einen neuen Workspace und checken Sie dann von der
-        MyCoRe GitHub Seite das Projekt aus. Hierzu öffnen Sie in Eclipse die Git Perspective (Window -> Perspective ->
-        Open Perspective -> Other...) und klicken auf die Option „Clone Git Repository“. Füllen Sie wie in Abbildung 1
-        gezeigt die benötigten Eingabefelder aus (Hier reicht es die URL im Browser mit Strg + c zu kopieren und dann
-        „Clone Git Repository“ zu öffnen, Eclipse füllt die Eingabefelder dann automatisch aus) und wählen den Master
-        aus. Nach Eingabe eines gewünschten Verzeichnispfades erstellen Sie mit Finish das lokale custom-module Git
-        Repository.
-      </p>
-      <div style="text-align:center;margin:10px 0;">
-        <img src="images/tutorial_plugin_dev/custom_module_checkout.png"
-             alt="Checkout des custom_module Beispielprojektes" style="margin:5px;padding:10px;border:1px solid gray;"
-             width="850px"/>
-        <br/>
-        <span class="klein"><strong>Abbildung 1:</strong>Checkout des custom_module Beispielprojektes
-        </span>
-      </div>
-      <p>
-        Nachdem Sie nun lokal alle benötigten Sourcen ausgecheckt haben muss Eclipse mitgeteilt werden werden, dass es
-        sich um ein Maven Projekt handelt welches in den Projekt Explorer importiert werden soll. Wählen Sie hierzu
-        unter File - Import die Select Option "Existing Maven Projects" aus. Als Root Directory wird hier der Root des
-        zuvor erstellen lokalen Repositories angegeben. Eclipse erkennt nun wie in Abbildung 2 zu sehen ist anhand der
-        im
-        Root liegenden pom.xml, dass es sich um ein Maven Projekt handelt.
-      </p>
-      <div style="text-align:center;margin:10px 0;">
-        <img src="images/tutorial_plugin_dev/custom_module_maven.png"
-             alt="Import als Maven Projekt" style="margin:5px;padding:10px;border:1px solid gray;"
-             width="850px"/>
-        <br/>
-        <span class="klein"><strong>Abbildung 2:</strong>Import als Maven Projekt
-        </span>
-      </div>
-      <p>
-        Das custom-module wurde nun als Maven Projekt importiert und steht ebenso unter git Versionskontrolle.
-        Um nun ein eigenes Projekt zu erstellen und das custom-module als Basis zu benutzen eignet sich GitHub als
-        öffentliches remote Git Repository. Von dem custom-module Projekt kann innerhalb von GitHub ein Fork erstellt
-        und dieser dann wie in Abbildung 3 zusehen ist konfiguriert werden. Für weitere Infos bzgl. Git/GitHub wird an
-        dieser Stelle auf die
-        <a href="http://mycore.de/documentation/developer/work_with_git.html">interne Git Dokumentation</a>
-        verwiesen.
-      </p>
-      <div style="text-align:center;margin:10px 0;">
-        <img src="images/tutorial_plugin_dev/custom_module_githubremoteurl.png"
-             alt="Einstellung des remote Repositories für die eigene Anwendung"
-             style="margin:5px;padding:10px;border:1px solid gray;"
-             width="850px"/>
-        <br/>
-        <span class="klein"><strong>Abbildung 3:</strong>Einstellung des remote Repositories für die eigene Anwendung
-        </span>
-      </div>
-      
-      <p>
-        Als einfachstes Beispiel soll nun auf Grundlage der gegebenen Struktur ein erstes HelloWorld Servlet erstellt
-        werden. Dieses befindet sich bereits innerhalb des Java Package Ordners custom.mycore.servlets. Es ist ein
-        mittels Eclipse New Wizard erstelltes Servlet, welches in der doGet Methode um die Hello World Ausgabe erweitert
-        wurde. Innerhalb der web-fragment.xml wurde konfiguriert wo das Servlet zu finden ist und unter welcher URL es
-        im Browser angesprochen werden kann.
-        Das Beispielprojekt soll nun in MyCoRe eingebunden werden um über einen Webbrowser das HelloWorldServlet
-        anzufragen. Hierzu muss aus der jetzigen Projektstruktur eine JAR Datei erzeugt und diese innerhalb des MyCoRe
-        Konfigurationsverzeichnisses im lib Ordner bereitgestellt werden.
-        Für diese Aufgabe ist Maven das passende Build Werkzeug.
-        Durch die Einbindung des maven jar plugins innerhalb der pom.xml wird die Möglichkeit bereitgestellt auf
-        einfache Weise eine JAR Datei zu bauen. Navigieren Sie mittels Terminal/Kommandozeile ins root Directory des
-        Beispielprojektes und lassen Sie Maven mittels <code>mvn clean &amp;&amp; mvn install</code> Befehl die
-        benötigte Arbeit machen. Es
-        wurde nun ein target Verzeichnis erstellt, in welchem die gebaute JAR Datei abgelagert wurde. Nachdem Sie die
-        Datei ins MyCoRe Konfigurationsverzeichnis kopiert haben, kann MIR nun auf gewohnte Art und Weise mittels Tomcat
-        gestartet werden.
-      </p>
+      <section>
+        <title>Workspace Einrichtung</title>
+        <p>
+          Erstellen Sie zunächst für das cusom-module Beispielprojekt einen neuen Workspace und checken Sie dann von der
+          MyCoRe GitHub Seite das Projekt aus. Hierzu öffnen Sie in Eclipse die Git Perspective (Window -> Perspective
+          ->
+          Open Perspective -> Other...) und klicken auf die Option „Clone Git Repository“. Füllen Sie wie in Abbildung 1
+          gezeigt die benötigten Eingabefelder aus (Hier reicht es die URL im Browser mit Strg + c zu kopieren und dann
+          „Clone Git Repository“ zu öffnen, Eclipse füllt die Eingabefelder dann automatisch aus) und wählen den Master
+          aus. Nach Eingabe eines gewünschten Verzeichnispfades erstellen Sie mit Finish das lokale custom-module Git
+          Repository.
+        </p>
+        <div style="text-align:center;margin:10px 0;">
+          <img src="images/tutorial_plugin_dev/custom_module_checkout.png"
+               alt="Checkout des custom_module Beispielprojektes" style="margin:5px;padding:10px;border:1px solid gray;"
+               width="850px"/>
+          <br/>
+          <span class="klein"><strong>Abbildung 1:</strong>Checkout des custom_module Beispielprojektes
+          </span>
+        </div>
+        <p>
+          Nachdem Sie nun lokal alle benötigten Sourcen ausgecheckt haben muss Eclipse mitgeteilt werden werden, dass es
+          sich um ein Maven Projekt handelt welches in den Projekt Explorer importiert werden soll. Wählen Sie hierzu
+          unter File - Import die Select Option "Existing Maven Projects" aus. Als Root Directory wird hier der Root des
+          zuvor erstellen lokalen Repositories angegeben. Eclipse erkennt nun wie in Abbildung 2 zu sehen ist anhand der
+          im
+          Root liegenden pom.xml, dass es sich um ein Maven Projekt handelt.
+        </p>
+        <div style="text-align:center;margin:10px 0;">
+          <img src="images/tutorial_plugin_dev/custom_module_maven.png"
+               alt="Import als Maven Projekt" style="margin:5px;padding:10px;border:1px solid gray;"
+               width="850px"/>
+          <br/>
+          <span class="klein"><strong>Abbildung 2:</strong>Import als Maven Projekt
+          </span>
+        </div>
+        <p>
+          Das custom-module wurde nun als Maven Projekt importiert und steht ebenso unter git Versionskontrolle.
+          Um nun ein eigenes Projekt zu erstellen und das custom-module als Basis zu benutzen eignet sich GitHub als
+          öffentliches remote Git Repository. Von dem custom-module Projekt kann innerhalb von GitHub ein Fork erstellt
+          und dieser dann wie in Abbildung 3 zusehen ist konfiguriert werden. Für weitere Infos bzgl. Git/GitHub wird an
+          dieser Stelle auf die
+          <a href="http://mycore.de/documentation/developer/work_with_git.html">interne Git Dokumentation</a>
+          verwiesen.
+        </p>
+        <div style="text-align:center;margin:10px 0;">
+          <img src="images/tutorial_plugin_dev/custom_module_githubremoteurl.png"
+               alt="Einstellung des remote Repositories für die eigene Anwendung"
+               style="margin:5px;padding:10px;border:1px solid gray;"
+               width="850px"/>
+          <br/>
+          <span class="klein"><strong>Abbildung 3:</strong>Einstellung des remote Repositories für die eigene Anwendung
+          </span>
+        </div>
+      </section>
+      <section>
+        <title>HelloWorldServlet in Aktion</title>
+  
+        <p>
+          Als einfachstes Beispiel soll nun auf Grundlage der gegebenen Struktur ein erstes HelloWorld Servlet erstellt
+          werden. Dieses befindet sich bereits innerhalb des Java Package Ordners <code>custom.mycore.servlets</code>.
+          Es ist ein mittels Eclipse Wizard erstelltes Servlet, welches in der doGet Methode um die Hello World Ausgabe
+          erweitert
+          wurde. Innerhalb der <code>web-fragment.xml</code> wurde konfiguriert wo das Servlet zu finden ist und unter
+          welcher URL es im Browser angesprochen werden kann.
+          Das Beispielprojekt soll nun in MyCoRe eingebunden werden um zunächst über einen Webbrowser eine Anfrage an
+          das HelloWorldServlet zu schicken. Hierzu muss aus der jetzigen Projektstruktur eine JAR Datei erzeugt und
+          diese innerhalb des
+          MyCoRe Konfigurationsverzeichnisses im lib Ordner bereitgestellt werden.
+          Für diese Aufgabe ist Maven das passende Build Werkzeug. Durch die Einbindung des maven jar plugins innerhalb
+          der <code>pom.xml</code> wird die Möglichkeit
+          bereitgestellt auf einfache Weise eine JAR Datei zu bauen. Navigieren Sie mittels Terminal/Kommandozeile ins
+          root Directory des
+          Beispielprojektes und lassen Sie Maven mittels <code>mvn clean &amp;&amp; mvn install</code> Befehl die
+          benötigte Arbeit machen. Es wurde nun ein target Verzeichnis erstellt, in welchem die gebaute JAR Datei
+          abgelagert wurde. Nachdem Sie die
+          Datei ins MyCoRe Konfigurationsverzeichnis kopiert haben, kann MIR nun auf gewohnte Art und Weise mittels
+          Tomcat
+          gestartet werden.
+        </p>
+      </section>
       
       <section>
         <title>Projekt Struktur im Detail</title>
-        
         <pre class="brush: shell; gutter: false;">
 |
  \ src
@@ -170,28 +180,29 @@
  \ LICENSE.txt (Lizenzinformationen)
  \ pom.xml (Maven Einstellungen bzgl. Abhängigkeiten, Versionierung und Build Prozess)
         </pre>
-        
+  
         <p>
           Innerhalb des Root Verzeichnisses befindet sich, wie zuvor schon beim Projekt Import erwähnt die Maven
           Einstellungsdatei pom.xml. Mithilfe von Maven können viele Regeln für die eigene Plugin Entwicklung in einer
           Datei, der pom.xml festgelegt werden.
           Da dieses Beispielprojekt auf der MIR Anwendung aufsetzt, wird org.mycore.mir als Parent Projekt referenziert.
         </p>
-      
+
       </section>
     </section>
-    
+  
     <section>
       <title>To do</title>
-  
+    
       <div style="text-align:center;margin:10px 0;">
         <img src="images/tutorial_plugin_dev/custom_module_registerActivity.jpg"
              alt="Import als Maven Projekt" style="margin:5px;padding:10px;border:1px solid gray;"
              width="850px"/>
         <br/>
-        <span class="klein"><strong>Aktivitätsdiagramm 1:</strong>Registrierung von eigenen Plugins innerhalb von MyCoRe        </span>
+        <span class="klein"><strong>Aktivitätsdiagramm 1:</strong>Registrierung von eigenen Plugins innerhalb von MyCoRe
+        </span>
       </div>
-      
+    
       <pre class="brush: xml">
         <![CDATA[
 <web-fragment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -201,7 +212,7 @@
               id="WebFragment_ID" version="3.0">
 </web-fragment>
 ]]></pre>
-      
+    
       <pre class="brush: xml">
         <![CDATA[
 ...
@@ -217,13 +228,13 @@
   </servlet-mapping>
 ...
 ]]></pre>
-    
+  
     </section>
-    
+  
     <section>
       <title>MyCore um Hello World Servletkomponente erweitern</title>
     </section>
-    
+  
     <section>
       <title>Deployment/Debugging</title>
     </section>
