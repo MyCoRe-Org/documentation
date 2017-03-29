@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>MIR individualisieren</title>
+    <version>2017-03-29</version>
+    <release>2016.12</release>
+    <authors>
+      <person name="Paul Rochowski" email="[EMAIL PROTECTED]"/>
+    </authors>
+    <abstract>
+      Die eigene MyCoRe Anwendung auf MIR Basis ist gestartet. Wie geht es nun weiter? Wie kann MIR nun an die eigenen
+      Anforderungen angepasst werden? Mit diesem Thema soll sich der folgende Abschnitt befassen. Zunächst ist es
+      wichtig zu klären, was die eigenen Anforderungen sind und welchen Teil davon die MIR Anwendung bereits abdecken
+      kann? Probieren Sie die Anwendung aus, machen Sie sich mit den MyCoRe Grundlagen vertraut um die Konzepte hinter
+      den angebotenen Features zu verstehen.
+    </abstract>
+  </header>
+  
+  <body>
+    
+    <section>
+      <title>Einleitung</title>
+      <p>
+        Die ersten individuellen Änderungen bzgl. MIR könnten Inhalte innerhalb der Startseite, dem Kontaktformular und
+        Impressum betreffen. Hier bietet MIR mit dem sogenannten WCMS Editor direkt innerhalb der Anwendung eine
+        Anpassungsmöglichkeit für xml basierte Inhalte.
+        Schaut man sich die Ablagestruktur von WCMS innerhalb des MyCoRe Konfigurationsverzeichnisses an, erkennt man
+        die
+        Mächtigkeit dieser Struktur. Es ist möglich Webressourcen aus der MIR Anwendung zu überschreiben und um eigene
+        Webressourcen zu erweitern. Diese Ressourcen sind nicht wie bei WCMS Content beschränkt, sondern können
+        angefangen
+        von eigenen Styles, Layout Anpassungen bis hin zu eigenen Komponenten verschiedenste Codefragmente enthalten.
+        Mit
+        verschiedenen Beispielen soll schrittweise die Möglichkeitsvielfalt verdeutlicht werden.
+      </p>
+    </section>
+  </body>
+</document>

@@ -93,6 +93,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <overview              label="Übersicht"                 href="../index.html" />
       <requirements          label="Anforderungen"             href="requirements.html" />
       <mir                   label="MIR"                       href="mir.html" />
+      <mir_customize         label="MIR individualisieren  "   href="mir_customize.html" />
       <skeleton              label="Skeleton"                  href="skeleton.html" />
       <hibernate             label="Datenbank &amp; Hibernate" href="hibernate.html" />
       <jpa                   label="Datenbank &amp; JPA"       href="jpa.html" />
