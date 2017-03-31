@@ -55,10 +55,10 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>MyCoRe Workshop</title>
-          <message>The MyCoRe User Workshop 2016 took place in Leipzig. See workshop site for results and presentations.</message>
-          <url>site:aw_workshop_2016</url>
-          <date>18. Mai 2016</date>
+          <title>MyCoRe Conference Call</title>
+          <message>The MyCoRe developers are offering an open MyCoRe telephone conference: Please contact the MyCoRe office.</message>
+          <url>site:contact</url>
+          <date>31. March 2017</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
