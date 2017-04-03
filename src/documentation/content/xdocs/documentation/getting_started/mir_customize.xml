@@ -75,8 +75,16 @@
         <strong>fortgeschritten</strong>
         – siehe hierzu den Artikel <a href="http://www.mycore.org/documentation/permissions/acl_permissions.html">
         Zugriffskontrolle über ACL
-      </a>). Die ACL Regelzuweisung kann mittels POOLPRIVILEGE use-wcms
+      </a>). Die ACL Regelzuweisung kann mittels <code>POOLPRIVILEGE use-wcms</code>
         zugeordnet werden.
+        <div style="text-align:center;margin:10px 0;">
+          <img src="images/mir_customize/wcms_navigation_view.jpg"
+               alt="mir customize layeroverview" style="margin:5px;padding:10px;border:1px solid gray;"
+               width="900px"/>
+          <br/>
+          <span class="klein"><strong>Abbildung 2:</strong>Verbindung zwischen Navigation View und navigation.xml
+          </span>
+        </div>
       </p>
     </section>
   </body>
