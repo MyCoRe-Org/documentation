@@ -55,6 +55,25 @@
           </span>
         </div>
       </p>
+      <br/>
+      <br/>
+      <p>
+        An einem einfachen Beispiel soll nun gezeigt werden, welche Funktionen der WCMS Editor bietet, wie Content
+        bearbeitet und eine Speicherung von Änderungen intern gehandelt wird.
+      </p>
+        <br/>
+      <p>
+        Um den WCMS Editor zu öffnen benötigen Sie in der Standardkonfiguration einen Benutzer, welcher der admin Gruppe
+        zugeordnet ist. Wie innerhalb des getting started – mir Artikels bereits erwähnt, existiert ein automatisch
+        angelegter Administrator.
+        Falls neu angelegte Benutzer Zugriff für WCMS erhalten sollen, können diese entweder der admin Gruppe zugeordnet
+        werden (empfohlen) oder mittels ACL Regelzuweisung der Gruppenkreis für WCMS erweitert werden (fortgeschritten –
+        siehe hierzu den Artikel Zugriffskontrolle über ACL). Die ACL Regelzuweisung kann mittels POOLPRIVILEGE use-wcms
+        zugeordnet werden.
+  
+  
+      </p>
+      
     </section>
   </body>
 </document>
