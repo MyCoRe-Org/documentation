@@ -40,12 +40,12 @@
       <title>Anpassung von Content mittels WCMS</title>
       <p>
         Mit dem WCMS Editor stellt MyCoRe direkt innerhalb der MIR Anwendung ein Feature zur Verfügung um Content
-        anzupassen. Die Struktur dieses Editors basiert auf einem Baum, welcher über die navigation.xml innerhalb des
+        anzupassen. Die Struktur dieses Editors basiert auf einem Baum, welcher über die <code>navigation.xml</code> innerhalb
+        des
         mir-module Paketes definiert ist. Dieser Baum verknüpft die unterschiedlichen Navigationspunkte von MIR mit dem
         Content Bereich. In welche Bereiche sich die Anwendung grob unterteilt zeigt die folgende Abbildung. Es ist also
-        möglich die hellblauen Bereiche mittels WCMS Editor anzupassen, während die orangenen Bereiche Layout bezogen
-        sind
-        und eine Anpassung im späteren Verlauf dieses Artikels beschrieben wird.
+        möglich die hellblauen Bereiche mittels WCMS anzupassen, während die orangenen Bereiche Layout bezogen
+        sind und eine Anpassung im späteren Verlauf dieses Artikels beschrieben wird.
         <div style="text-align:center;margin:10px 0;">
           <img src="images/mir_customize/mir_customize_layeroverview.jpg"
                alt="mir customize layeroverview" style="margin:5px;padding:10px;border:1px solid gray;"
@@ -58,22 +58,26 @@
       <br/>
       <br/>
       <p>
-        An einem einfachen Beispiel soll nun gezeigt werden, welche Funktionen der WCMS Editor bietet, wie Content
+        An einem einfachen Beispiel soll nun gezeigt werden, welche Funktionen WCMS bietet, wie Content
         bearbeitet und eine Speicherung von Änderungen intern gehandelt wird.
       </p>
-        <br/>
+      <br/>
       <p>
-        Um den WCMS Editor zu öffnen benötigen Sie in der Standardkonfiguration einen Benutzer, welcher der admin Gruppe
-        zugeordnet ist. Wie innerhalb des getting started – mir Artikels bereits erwähnt, existiert ein automatisch
+        Um den WCMS Editor zu öffnen benötigen Sie in der Standardkonfiguration einen Benutzer, welcher der <em>admin
+      </em> Gruppe
+        zugeordnet ist. Wie innerhalb des <a href="http://www.mycore.org/documentation/getting_started/mir.html">Mit
+        MyCoRe starten – MIR Artikels
+      </a> bereits erwähnt, existiert ein automatisch
         angelegter Administrator.
-        Falls neu angelegte Benutzer Zugriff für WCMS erhalten sollen, können diese entweder der admin Gruppe zugeordnet
-        werden (empfohlen) oder mittels ACL Regelzuweisung der Gruppenkreis für WCMS erweitert werden (fortgeschritten –
-        siehe hierzu den Artikel Zugriffskontrolle über ACL). Die ACL Regelzuweisung kann mittels POOLPRIVILEGE use-wcms
+        Falls neu angelegte Benutzer Zugriff für WCMS erhalten sollen, können diese entweder der <em>admin</em> Gruppe
+        zugeordnet
+        werden (<strong>empfohlen</strong>) oder mittels ACL Regelzuweisung der Gruppenkreis für WCMS erweitert werden (
+        <strong>fortgeschritten</strong>
+        – siehe hierzu den Artikel <a href="http://www.mycore.org/documentation/permissions/acl_permissions.html">
+        Zugriffskontrolle über ACL
+      </a>). Die ACL Regelzuweisung kann mittels POOLPRIVILEGE use-wcms
         zugeordnet werden.
-  
-  
       </p>
-      
     </section>
   </body>
 </document>
