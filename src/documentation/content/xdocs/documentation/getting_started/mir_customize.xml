@@ -35,6 +35,15 @@
         Mit
         verschiedenen Beispielen soll schrittweise die Möglichkeitsvielfalt verdeutlicht werden.
       </p>
+  
+      <div style="text-align:center;margin:10px 0;">
+        <img src="images/mir_customize/mir_customize_layeroverview.jpg"
+             alt="mir customize layeroverview" style="margin:5px;padding:10px;border:1px solid gray;"
+             width="900px"/>
+        <br/>
+        <span class="klein"><strong>Abbildung 1:</strong>Übersicht der Anpassungsbereiche
+        </span>
+      </div>
     </section>
   </body>
 </document>
