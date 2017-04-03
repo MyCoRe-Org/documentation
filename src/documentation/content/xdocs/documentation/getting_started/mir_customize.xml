@@ -35,15 +35,26 @@
         Mit
         verschiedenen Beispielen soll schrittweise die Möglichkeitsvielfalt verdeutlicht werden.
       </p>
-  
-      <div style="text-align:center;margin:10px 0;">
-        <img src="images/mir_customize/mir_customize_layeroverview.jpg"
-             alt="mir customize layeroverview" style="margin:5px;padding:10px;border:1px solid gray;"
-             width="900px"/>
-        <br/>
-        <span class="klein"><strong>Abbildung 1:</strong>Übersicht der Anpassungsbereiche
-        </span>
-      </div>
+    </section>
+    <section>
+      <title>Anpassung von Content mittels WCMS</title>
+      <p>
+        Mit dem WCMS Editor stellt MyCoRe direkt innerhalb der MIR Anwendung ein Feature zur Verfügung um Content
+        anzupassen. Die Struktur dieses Editors basiert auf einem Baum, welcher über die navigation.xml innerhalb des
+        mir-module Paketes definiert ist. Dieser Baum verknüpft die unterschiedlichen Navigationspunkte von MIR mit dem
+        Content Bereich. In welche Bereiche sich die Anwendung grob unterteilt zeigt die folgende Abbildung. Es ist also
+        möglich die hellblauen Bereiche mittels WCMS Editor anzupassen, während die orangenen Bereiche Layout bezogen
+        sind
+        und eine Anpassung im späteren Verlauf dieses Artikels beschrieben wird.
+        <div style="text-align:center;margin:10px 0;">
+          <img src="images/mir_customize/mir_customize_layeroverview.jpg"
+               alt="mir customize layeroverview" style="margin:5px;padding:10px;border:1px solid gray;"
+               width="900px"/>
+          <br/>
+          <span class="klein"><strong>Abbildung 1:</strong>Übersicht der Anpassungsbereiche
+          </span>
+        </div>
+      </p>
     </section>
   </body>
 </document>
