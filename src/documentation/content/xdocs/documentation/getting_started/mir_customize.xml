@@ -42,7 +42,7 @@
         Mit dem WCMS Editor stellt MyCoRe direkt innerhalb der MIR Anwendung ein Feature zur Verfügung um Content
         anzupassen. Die Struktur dieses Editors basiert auf einem Baum, welcher über die <code>navigation.xml</code> innerhalb
         des
-        mir-module Paketes definiert ist. Dieser Baum verknüpft die unterschiedlichen Navigationspunkte von MIR mit dem
+        mir-module Paketes definiert ist. Dieser Baum verknüpft die unterschiedlichen Navigationselemente von MIR mit dem
         Content Bereich. In welche Bereiche sich die Anwendung grob unterteilt zeigt die folgende Abbildung. Es ist also
         möglich die hellblauen Bereiche mittels WCMS anzupassen, während die orangenen Bereiche Layout bezogen
         sind und eine Anpassung im späteren Verlauf dieses Artikels beschrieben wird.
