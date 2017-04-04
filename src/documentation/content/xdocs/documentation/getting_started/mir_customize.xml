@@ -42,7 +42,8 @@
         Mit dem WCMS Editor stellt MyCoRe direkt innerhalb der MIR Anwendung ein Feature zur Verfügung um Content
         anzupassen. Die Struktur dieses Editors basiert auf einem Baum, welcher über die <code>navigation.xml</code> innerhalb
         des
-        mir-module Paketes definiert ist. Dieser Baum verknüpft die unterschiedlichen Navigationselemente von MIR mit dem
+        mir-module Paketes definiert ist. Dieser Baum verknüpft die unterschiedlichen Navigationselemente von MIR mit
+        dem
         Content Bereich. In welche Bereiche sich die Anwendung grob unterteilt zeigt die folgende Abbildung. Es ist also
         möglich die hellblauen Bereiche mittels WCMS anzupassen, während die orangenen Bereiche Layout bezogen
         sind und eine Anpassung im späteren Verlauf dieses Artikels beschrieben wird.
@@ -75,7 +76,8 @@
         <strong>fortgeschritten</strong>
         – siehe hierzu den Artikel <a href="http://www.mycore.org/documentation/permissions/acl_permissions.html">
         Zugriffskontrolle über ACL
-      </a>). Die ACL Regelzuweisung kann mittels <code>POOLPRIVILEGE use-wcms</code>
+      </a>). Die ACL Regelzuweisung kann mittels
+        <code>POOLPRIVILEGE use-wcms</code>
         zugeordnet werden.
         <div style="text-align:center;margin:10px 0;">
           <img src="images/mir_customize/wcms_navigation_view.jpg"
@@ -86,6 +88,33 @@
           </span>
         </div>
       </p>
+      <br/>
+      <br/>
+      <p>
+        <strong>Zusammenfassung WCMS</strong>
+        <br/>
+        <br/>
+        Vorteile:
+      </p>
+      <ul>
+        <li>Bearbeitung von Inhalten sogar ohne xml Kenntnisse möglich</li>
+        <li>Lese und Schreibberechtigungen auf die in WCMS verknüpften Seiteninhalte können mittels ACL Regeln
+          festgelegt werden
+        </li>
+        <li>Basierend auf einem mächtigen System um jegliche Webarchiv Ressourcen innerhalb des eigenen
+          Konfigurationsverzeichnisses anzulegen und zu überschreiben (siehe Anpassung für Fortgeschrittene)
+        </li>
+      </ul>
+      <p>
+        <br/>
+        Nachteile:
+      </p>
+      <ul>
+        <li>
+          Derzeit beschränkt auf die Bearbeitung von Inhalten in xml Dateien, das heißt Inhalte die sich in xeditor
+          Formularen, Servlets, XSL Transformationssheets befinden können auf diesem Wege nicht bearbeitet werden
+        </li>
+      </ul>
     </section>
   </body>
 </document>
