@@ -2,19 +2,22 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <document>
+
   <header>
-    <title>Suchen und Finden</title>
-    <subtitle>Die MyCoRe-Anfragesprache MCR-QL</subtitle>
-    <abstract>
-      Der MyCoRe-Kern stellt eine eigene, backend-unabhängige Anfragesprache zur Verfügung,
-      die als einfacher String, im XML-Format oder als Java-Objekt formuliert werden kann.
-    </abstract>
-    <version>2015-04-23</version>
+    <title>Die MyCoRe-Anfragesprache MCR-QL</title>
+    <release>2016.06</release>
+    <release>2015.05</release>
+    <version>2017-04-05</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
+    <abstract>
+      Der MyCoRe-Kern stellt eine eigene, backend-unabhängige Anfragesprache zur Verfügung,
+      die als einfacher String, im XML-Format oder als Java-Objekt formuliert werden kann.
+    </abstract>
   </header>
+  
   <body>
     <section>
       <title>Datentypen und Operatoren</title>
@@ -211,56 +214,6 @@
 </query>]]></pre>
        </section>
 
-       <section>
-        <title>Normalisierung von Suchanfragen</title>
-        <p>
-        Suchanfragen werden vor der Ausführung normalisiert. Insbesondere werden Datumsangaben in Suchausdrücken vom
-        eingegebenen Format z.B. 22.04.1971 automatisch in das ISO8601-Format transformiert also 1971-04-22.
-        </p>
-        <p>
-        Suchbedingungen, die den Operator <code>contains</code> verwenden, werden automatisch in einzelne
-        <code>contains/like/phrase/not-</code>Bedingungen zerlegt. Beispiel:
-        </p>
-        <pre class="brush: xml;"><![CDATA[
-  title contains "-Optik Mecha* 'Lineare Algebra'"
-
-    wird normalisiert zu
-
-  (not (title contains Optik)) and (title like Mech*)
-  and (title phrase 'Lineare Algebra')]]></pre>
-
-        <p>
-        In der Konsequenz bedeutet das, dass man bei der Textsuche in aller Regel den Operator <code>contains</code>
-        verwenden kann. Die Umwandlung in eine <code>like</code>- und/oder <code>contains</code>- und/oder
-        <code>phrase</code>-Suche erfolgt automatisch.
-        </p>
-        <ul>
-        <li>Worte beginnend mit einem Minuszeichen werden zu einer <code>not</code>-Bedingung.</li>
-        <li>Worte, die <code>*</code> oder <code>?</code> enthalten, werden zu einer <code>like</code>-Bedingung.</li>
-        <li>Wortgruppen in einfachen Anführungszeichen werden zu einer <code>phrase</code>-Bedingung.</li>
-        </ul>
-        <p>
-        Eine Suchbedingung kann auch gleichzeitig für mehrere Suchfelder definiert werden. Dazu werden die einzelnen
-        Feldnamen durch Kommata getrennt. Beispiel:
-        </p>
-        <pre class="brush: xml;"><![CDATA[
-  title,author contains Goethe
-
-    entspricht
-
-  (title contains Goethe) or (author contains Goethe)]]></pre>
-
-        <p>
-        Diese Funktionalität kann z.B. verwendet werden, um in einer Suchmaske über nur ein Eingabefeld parallel in
-        mehreren Suchfeldern suchen zu können.<br />
-        Für ein besseres Verständnis der Normalisierung, hier nochmal eine schematische Darstellung zum Ablauf der
-        Textnormalisierung.
-        </p>
-        <div style="text-align:center;margin:10px 0;">
-           <img src="images/progguide_normalization_schema.png" alt="Ablauf Textnormalisierung" title="Ablauf Textnormalisierung" /><br />
-          <span class="klein"><strong>Abbildung 2.5.2:</strong> Ablauf Textnormalisierung</span>
-        </div>
-       </section>
 </body>
 </document>
 

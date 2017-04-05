@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+
+  <header>
+    <title>SOLR und MyCoRe</title>
+    <release>2016.06</release>
+    <release>2015.05</release>
+    <version>2017-04-05</version>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+    </authors>
+    <abstract>
+      Dieses Kapitel beschäftigt sich mit der Einbindung der SOLR-Suchmaschine in MyCoRe.
+    </abstract>
+  </header>
+  
+  <body>
+  
+    <section>
+      <title>SOLR-Abfragen über die API</title>
+      <p> Mit diesem Code-Schnipsel soll demonstriert werden, wie ein Zugriff auf die SOLR-Daten mittels MyCoRe-API erfolgen kann.
+      </p>
+      <pre class="brush: xml;"><![CDATA[
+import org.apache.solr.client.solrj.SolrClient;
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.common.SolrDocumentList;
+
+import org.mycore.solr.MCRSolrClientFactory;
+import org.mycore.solr.MCRSolrUtils;
+
+...
+        SolrClient solrClient = org.mycore.solr.MCRSolrCore.getClient()
+        
+        oder
+
+        SolrClient solrClient = org.mycore.solr.MCRSolrClientFactory.getSolrClient();
+        
+        SolrQuery query = new SolrQuery();
+        query.setQuery("title:foo");
+        query.setRows(10);
+        SolrDocumentList results = solrClient.query(query).getResults();
+
+...]]></pre>
+    </section>
+
+  </body>
+</document>
+
+      

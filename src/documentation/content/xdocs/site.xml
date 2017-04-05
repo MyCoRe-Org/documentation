@@ -140,6 +140,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <eventhandler          label="EventHandler"      href="eventhandler.html" />
       <mcrobj_linktables     label="Linktabellen"      href="linktables.html" />
       <mcr_mailer            label="Mailer"            href="mailer.html" />
+      <mcrservlet            label="MCRServlet"        href="mcrservlet.html" />
     </content>
 
     <!-- Command Line Interface -->
@@ -151,6 +152,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Suche -->
     <search                label="Suche"             href="search/">
+      <using_solr          label="SOLR Nutzung"      href="using_solr.html" />
       <query_language      label="Query-Language"    href="query_language.html" />
       <extract             label="Daten extrahieren" href="extract.html" />
     </search>
@@ -245,7 +247,6 @@ See http://forrest.apache.org/docs/linking.html for more info
       <documentation       label="Dokumentation"              href="documentation.html" />
       <tests               label="Tests"                      href="tests.html" />
       <classes             label="Allgemeine Klassen"         href="classes.html" />
-      <mcrservlet          label="MCRServlet"                 href="mcrservlet.html" />
     </developer>
 
     <doc_archive label="Archiv" href="/../">
