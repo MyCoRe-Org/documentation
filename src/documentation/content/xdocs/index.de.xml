@@ -63,10 +63,10 @@
           <image>newspaper</image>
         </newsentry>
         <newsentry>
-          <title>Mitteilung</title>
-          <message>Der MyCoRe-Code wird jetzt mit dem Versionsverwaltungssystem Git in einem Repository bei GitHub bereitgestellt.</message>
-          <url>site:eclipse</url>
-          <date>19. Oktober 2016</date>
+          <title>Mitteilung zum DBT 2017</title>
+          <message>Am 1. Juni findet auf dem 106. Bibliothekartag in Frankfurt am Main ein MyCoRe-Workshop statt!</message>
+          <url>https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ConferenceContributions/BibTag2017/MyCoReWorkshop</url>
+          <date>11. Mai 2017</date>
           <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
