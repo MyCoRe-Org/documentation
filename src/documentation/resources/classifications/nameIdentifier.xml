@@ -15,5 +15,10 @@
       <label xml:lang="de" text="VIAF" />
       <label xml:lang="x-uri" text="http://www.viaf.org/" />
     </category>
+    <category ID="orcid">
+      <label xml:lang="en" text="ORCID" />
+      <label xml:lang="de" text="ORCID" />
+      <label xml:lang="x-uri" text="http://orcid.org/" />
+    </category>
   </categories>
 </mycoreclass>
