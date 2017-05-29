@@ -43,11 +43,11 @@
           </description>
         </image>
       </images>
-      <location number="70+" label="Projekte" title="Liste aller Standorte ansehen" />
+      <location number="80+" label="Projekte" title="Liste aller Standorte ansehen" />
       <members>
         <member href="http://duepublico.uni-duisburg-essen.de/" label="DuEPublico" title="Zum Dokumentenserver der Universität Duisburg-Essen" />
         <member href="http://intr2dok.vifa-recht.de/" label="&lt;intR&gt;²Dok" title="Fachinformationsdienst für internationale und interdisziplinäre Rechtsforschung" />
-        <member href="http://www.diss.fu-berlin.de/diss" label="Dissertationen&nbsp;Online" title="Zum Dissertationsserver der FU Berlin" />
+        <member href="http://www.diss.fu-berlin.de/" label="Dissertationen&nbsp;Online" title="Zum Dissertationsserver der FU Berlin" />
         <member href="http://cpr.uni-rostock.de" label="Rostocker&nbsp;Professorenkatalog" title="Zum Professorenkatalog der Universität Rostock" />
         <member href="http://zs.thulb.uni-jena.de" label="Journals@UrMEL" title="Zum Zeitschriftenserver der Thüringer Universitäts- und Landesbibliothek Jena (ThULB)" />
         <member href="http://www.islamic-manuscripts.net" label="Islamische&nbsp;Handschriften" title="Zu den Islamische Handschriften der Universitätsbibliothek Leipzig" />
