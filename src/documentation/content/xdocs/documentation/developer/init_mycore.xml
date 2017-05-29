@@ -1,0 +1,38 @@
+<document>
+  <header>
+    <title>Start- und Initialisierungsvorgang von MyCoRe im Detail</title>
+    <version>2017-05-29</version>
+    <release>2016.12</release>
+    <authors>
+      <person name="Paul Rochowski" email="[EMAIL PROTECTED]"/>
+    </authors>
+    <abstract>
+      Damit die MIR Anwendung verwendet werden kann, wird diese in einem Servlet Webcontainer bereitgestellt. Doch wie
+      funktioniert das genau? Wie bilden MyCoRe Komponenten, Anwendungskomponenten und eigene MIR Plugins eine Einheit?
+      Was passiert im Hintergrund um dieses Konstrukt zu verbinden und zu starten? Diesem Thema soll sich der folgende
+      Abschnitt widmen.
+      Um zu verstehen wie so eine Initialisierung beginnt ist es zunächst notwendig die Situation aus dem Blickwinkel
+      des Servlet Webcontainers vorzunehmen. Für diesen ist das MIR Webarchiv einfach nur eine Kollektion aus
+      Komponenten der Servlet Spezifikation (Servlets, Filter, Listener) und anderen Resourcen. Damit diese Servlet
+      Komponenten mit dem Webcontainer kommunizieren können wird eine Schnittstelle benötigt. Diese Schnittstelle wird
+      mit dem ServletContext und seinem Set an Methoden zur Verfügung gestellt.
+    </abstract>
+  </header>
+  
+  <body>
+    
+    <section>
+      <title>Vom Servletcontext zur Initialisierung von MyCoRe</title>
+      <p>
+        Seit Servlet Spezifikation 3.0 bietet die Servlet API das ServletContainerInitializer Interface an. Mittels
+        eigener Implementierung kann die Startphase der Webanwendung individualisiert werden. Genau an dieser Stelle
+        setzt das <code>mycore-base</code> an. Die Initialisierung von MyCoRe beginnt innerhalb der <em>onStart</em> Methode.
+        Dieser Methode
+        wird als Parameter der ServletContext mitgegeben. Auf diese Weise können programmatisch Servlets, Filter sowie
+        Listener ergänzt werden. Genau dieser Mechanismus wird sich bei den vielen MyCoRe Kern Komponenenten/
+        Anwendungskomponenten aber auch zusätzlichen Komponenten von MIR (siehe eigene JAR) zu nutzen gemacht.
+      </p>
+    
+    </section>
+  </body>
+</document>
