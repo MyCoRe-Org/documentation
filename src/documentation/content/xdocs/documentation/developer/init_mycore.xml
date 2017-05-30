@@ -22,7 +22,7 @@
   <body>
     
     <section>
-      <title>Vom Servletcontext zur Initialisierung von MyCoRe</title>
+      <title>ServletContainerInitializer</title>
       <p>
         Seit Servlet Spezifikation 3.0 bietet die Servlet API das ServletContainerInitializer Interface an. Mittels
         eigener Implementierung kann die Startphase der Webanwendung individualisiert werden. Genau an dieser Stelle
@@ -32,6 +32,27 @@
         Listener ergänzt werden. Genau dieser Mechanismus wird sich bei den vielen MyCoRe Kern Komponenenten/
         Anwendungskomponenten aber auch zusätzlichen Komponenten von MIR (siehe eigene JAR) zu nutzen gemacht.
       </p>
+    </section>
+    
+    <section>
+      <title>Vom ServletContainerInitializer zum MyCoRe Startup</title>
+      <p>
+        Die Klasse MCRServletContainerInitializer implementiert das ServletContainerInitializer Interface. Wie zuvor
+        erwähnt wird diese Klasse ausgehend von der Servlet 3.0 Spezifikation als Initialisierungsklasse genutzt. MyCoRe
+        erweitert diesen Mechanismus. Für MyCoRe ist diese Klasse nicht nur Servlet bezogen, sondern der Startpunkt für
+        eine Reihe verschiedener
+        Initialisierungsvorgänge mit unterschiedlichen Kontexten.
+      </p>
+      
+      <div style="text-align:center;margin:10px 0;">
+        <img src="resources/images/forDevelopers/initialization_fromMCRServletInitializer.png"
+             alt="HelloWorldServlet in Aktion"
+             style="margin:5px;padding:10px;border:1px solid gray;"
+             width="650px"/>
+        <br/>
+        <span class="klein"><strong>Abbildung 1:</strong>Initialisierungsvorgänge mit unterschiedlichen Kontexten
+        </span>
+      </div>
     
     </section>
   </body>
