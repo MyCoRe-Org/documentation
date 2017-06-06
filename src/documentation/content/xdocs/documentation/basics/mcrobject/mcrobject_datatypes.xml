@@ -366,7 +366,7 @@
       <p>XML-Syntax des Metadaten-Basistyps MCRMetaNumber:</p>
       <pre class="brush: xml;">
 <![CDATA[<tag class="MCRMetaNumber" heritable="...">
-  <subtag xml:lang="..." dimension="..." mesurement="...">
+  <subtag xml:lang="..." dimension="..." measurement="...">
     ...
   </subtag>
   ...
@@ -376,8 +376,8 @@
 
       <pre class="brush: xml;">
 <![CDATA[<masse class="MCRMetaNumber" heritable="false">
-   <mass xml:lang="de" dimension="Breite" mesurement="cm">12,1</mass>
-   <mass xml:lang="en" type="neu" dimension="width" mesurement="ft">12.2</mass>
+   <mass xml:lang="de" dimension="Breite" measurement="cm">12,1</mass>
+   <mass xml:lang="en" type="neu" dimension="width" measurement="ft">12.2</mass>
    ...
 </masse>]]></pre>
     </section>
