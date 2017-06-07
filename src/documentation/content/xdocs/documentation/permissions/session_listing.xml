@@ -69,7 +69,7 @@
         Der MyCoRe-Kern enthält schon alle Dateien für die Integration der Komponente. Sie muss
         lediglich noch aufgerufen
         werden, z. B. in der navigation.xml mit
-        <code>href="/modules/session-listing/sessionListing.xml"</code>
+        <code>href="/modules/webtools/session/sessionListing.xml"</code>
         .
       </p>
     </section>
