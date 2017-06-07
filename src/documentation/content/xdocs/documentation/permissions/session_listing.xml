@@ -5,7 +5,8 @@
   <header>
     <title>Das Session Listing (session-listing)</title>
     <release>2016.06</release>
-    <version>2016-12-02</version>
+    <release>2017.05</release>
+    <version>2017-06-07</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
@@ -69,8 +70,10 @@
         Der MyCoRe-Kern enthält schon alle Dateien für die Integration der Komponente. Sie muss
         lediglich noch aufgerufen
         werden, z. B. in der navigation.xml mit
+        <code>href="/modules/session-listing/sessionListing.xml"</code> 
+        für Versionen bis LTS-Release 2016 und mit 
         <code>href="/modules/webtools/session/sessionListing.xml"</code>
-        .
+        ab Versionen LTS-Release 2017.
       </p>
     </section>
 
