@@ -78,6 +78,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <logos       label="Material"           href="logos.html" />
     <license     label="Lizenzbedingungen"  href="license.html" />
     <dl_tools    label="Werkzeuge">
+      <github      label="GitHub"             href="https://github.com/MyCoRe-Org" />
       <subversion  label="Subversion"         href="subversion.html" />
       <bamboo      label="Bamboo"             href="https://bamboo.mycore.de/" />
       <artifactory label="Artifactory"        href="http://artifactory.mycore.de/" />
