@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>MyCoRe-Workshop auf dem DBT</title>
+  </header>
+<body>
+
+<section>
+  <title>&#8222;Vielseitig, nachhaltig, anpassbar - MyCoRe im Einsatz&#8220;</title>
+  <p>Die MyCoRe-Community hat auf dem auf dem <a href="http://www.bibliothekartag2014.de/index.php?id=4">103. Deutschen Bibliothekartag (DBT)</a> in Bremen einen Workshop angeboten. Folgende <strong>Vorträge </strong> wurden dort am 3.6.2014 während des MyCoRe-Workshops gehalten. Die Präsentationen finden Sie &#8211; soweit verfügbar &#8211; auf dem <a href="https://opus4.kobv.de/opus4-bib-info/solrsearch/index/search/searchtype/collection/id/16272">Publikationsserver</a> des <abbr title="Berufsverband Information Bibliothek e.V.">BIB</abbr>.</p>
+
+<p>
+  <ul>
+    <li>Themenschwerpunkt <strong>MyCoRe-Anwendungen:</strong></li>
+      <ul>
+      <li>&#8222;<a href="http://www.opus-bayern.de/bib-info/volltexte//2014/1677/">MyCoRe im Überblick</a>&#8220; (Frank Lützenkirchen, Universitätsbibliothek Duisburg/Essen, Essen), URN: urn:nbn:de:0290-opus-16778</li>
+      <li>&#8222;<a href="http://www.opus-bayern.de/bib-info/volltexte//2014/1681/">Die Statistische Bibliothek: mit MyCoRe zu einem gemeinsamen Archiv der Online-Publikationen der Statistischen Ämter</a>&#8220; (Hartmut Rahm, Statistisches Bundesamt, Wiesbaden), URN: urn:nbn:de:0290-opus-16815</li>
+      <li>&#8222;Die Archiv-Anwendung an der ThULB - ein Beispiel für nachhaltige Datenerfassung&#8220;</li>
+	  <ul>
+        <li>kurze technische Vorstellung (Silvio Hermann, ThULB Jena)</li>
+        <li>über die Anwendung und Inhalte (Matthias Ludwig, Vereinigte Domstifter Naumburg)</li>
+      </ul>    
+	  </li>
+      <li>&#8222;Der Zeitschriftenserver der ThULB - ein Beispiel für vielseitige Datenerfassung&#8220;
+	  <ul>
+        <li>kurze technische Vorstellung (Matthias Eichner, ThULB Jena)</li>
+        <li>&#8222;<a href="http://www.opus-bayern.de/bib-info/volltexte//2014/1698/">Zeitschriften, Karten und Porträts. Perspektiven für die Forschung und Integration in virtuelle Welten</a>&#8220; (Dr. Andreas Christoph, Friedrich-Schiller-Universität Jena), URN: urn:nbn:de:0290-opus-16987</li>
+	   </ul>
+      </li>
+     </ul>
+    <br/>
+	 <li>Themenschwerpunkt <strong>Betrieb und Umgang mit Repositorien:</strong></li>
+	 <ul>
+      <li>&#8222;<a href="http://www.opus-bayern.de/bib-info/volltexte//2014/1710/">Bibliografische Metadaten mit MODS erschließen</a>&#8220; (Kathleen Neumann, VZG Göttingen), URN: urn:nbn:de:0290-opus-17104</li>
+      <li>&#8222;Mehrwert und Vernetzung über biographische und geographische Normdaten in MyCoRe&#8220; (Robert Stephan, UB Rostock)</li>
+      <li>&#8222;<a href="http://www.gbv.de/Verbundzentrale/Publikationen/publikationen-der-vzg-2014/pdf/duehrkohp_140603_bibliothekartag_vzg-reposis.pdf">VZG-Reposis - Ein neuer Dienst der VZG auf MyCoRe-Basis</a>&#8220; (Frank Dührkohp, VZG Göttingen)</li>
+      <li>&#8222;<a href="http://www.opus-bayern.de/bib-info/volltexte//2014/1711/">MyCoRe und Langzeitarchivierung: Bestandsaufnahme</a>&#8220; (Kathleen Neumann, VZG Göttingen), URN: urn:nbn:de:0290-opus-17118</li>
+    </ul>
+  </ul>
+</p>
+</section>
+
+</body>
+</document>
+
