@@ -49,12 +49,12 @@
           </tr>
           <tr>
             <td>Editor</td>
-            <td>MCR.EditorFrameworkMCR.Editor</td>
+            <td>MCR.EditorFramework / MCR.Editor</td>
             <td />
           </tr>
           <tr>
             <td>Event Handler / Searcher</td>
-            <td>MCR.EventHandlerMCR.Searcher</td>
+            <td>MCR.EventHandler / MCR.Searcher</td>
             <td />
           </tr>
           <tr>
@@ -95,6 +95,11 @@
           <tr>
             <td>OAI</td>
             <td>MCR.OAI</td>
+            <td />
+          </tr>
+          <tr>
+            <td>REST API</td>
+            <td>MCR.RestAPI</td>
             <td />
           </tr>
           <tr>
