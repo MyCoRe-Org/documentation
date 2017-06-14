@@ -21,5 +21,9 @@
       <label xml:lang="de" text="Leser" />
       <label xml:lang="en" text="Reader" />
     </category>
+    <category ID="rest-api">
+      <label xml:lang="de" text="Schreibender Zugriff für REST-API" />
+      <label xml:lang="en" text="Write Access to REST-API" />
+    </category>
   </categories>
 </mycoreclass>
