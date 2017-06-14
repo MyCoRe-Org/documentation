@@ -424,9 +424,10 @@ See http://forrest.apache.org/docs/linking.html for more info
     <team       label="Team"               href="team.html" />
     <workshops  label="Workshops"          href="workshops/" >
     <!-- <workshop            label="MyCoRe-Workshop 2016"       href="workshop.html" /> -->
+    <dbt-workshop_2017   label="DBT-Workshop 2017"          href="dbt-workshop_2017.html" />
     <aw_workshop_2016    label="Leipzig 2016"               href="leipzig_2016.html" />
     <aw_workshop_2015    label="Ilmenau 2015"               href="ilmenau_2015.html" />
-    <dbt-workshop        label="DBT-Workshop 2014"          href="dbt-workshop.html" />
+    <dbt-workshop_2014   label="DBT-Workshop 2014"          href="dbt-workshop_2014.html" />
     <aw_workshop_2014    label="Braunschweig 2014"          href="braunschweig_2014.html" />
   </workshops>
     <bugs       label="Fehler melden"      href="https://mycore.atlassian.net/" />
