@@ -61,22 +61,49 @@
       <p>
         Der MyCoRe Shutdown Mechanismus wird eingeleitet, sobald alle Servlets und Filter gemäß Servlet Lifecycle
         zerstört wurden. In der Regel ist dies der Fall, sobald der Webserver beendet werden soll.
-        MyCoRe bietet dem Entwickler mittels des <code>Closeable</code> Interface eine Möglichkeit, seine eigenen Klassen
+        MyCoRe bietet dem Entwickler mittels des <code>Closeable</code> Interface eine Möglichkeit, seine eigenen
+        Klassen
         innerhalb des Shutdown Vorgangs sauber zu beenden.
       </p>
+      
+      <section>
+        <title>Wann ist ein Shutdown Handling notwendig / empfehlenswert ?</title>
         
-        <section>
-          <title>Wann ist ein Shutdown Handling notwendig / empfehlenswert ?</title>
-          
-          <p>
+        <p>
           MyCoRe benutzt an verschiedenen Stellen Closeables. Es macht immer dann Sinn eine Klasse mittels Closeable
           Interface zu implementieren, wenn Abhängigkeiten im Spiel sind.
           Beispiele hierfür sind JMX sowie JPA. Innerhalb der JMX Ebene betrifft dies MBeans. Sobald der Webserver
           beendet
           wird, macht es Sinn diese aus der MBean Server Registry zu entfernen um somit ggf. abhängigen MBeans, JMX
           Agenten sowie anderen Anwendungen mitzuteilen, dass bestimmte Ressourcen nicht mehr verfügbar sind.
-          </p>
-        </section>
+        </p>
+      </section>
+      
+      <section>
+        <title>Methoden des Closeable Interface</title>
+        <p>
+          <code>void prepareClose()</code>
+          <br/>
+          <br/>
+          Diese Methode wird als erste innerhalb des MyCoRe Shutdown Prozesses aufgerufen. Hier kann eine Vorbereitung
+          für den eigentlichen <code>close()</code> Vorgang stattfinden. Eine Beispielimplementierung findet sich
+          innerhalb der
+          <code>MCRSolrIndexer</code>
+          Klasse. Hier wird innerhalb der prepareClose Methode der eigentliche Shutdown Prozess für die
+          beteiligten Solr Services initialisiert. Dieser Stil ist vergleichbar mit einem asynchronen Aufruf. Innerhalb
+          der <code>close</code> Methode wird somit versucht auf die eigentliche Terminierungsantwort zu reagieren.
+          Ein anderes Beispiel sind Objekte im Zusammenhang mit Datenbankverbindungen. Bevor Verbindungen zur Datenbank
+          aufgrund des JPA Shutdowns (MCRJPAShutdownProcessor) nicht mehr möglich sind, könnten an dieser Stelle noch
+          Datenbankzugriffe stattfinden.
+          <br/>
+          <br/>
+          <code>void close()</code>
+          <br/>
+          <br/>
+          <code>int getPriority()</code>
+        </p>
+      </section>
+    
     </section>
   
   
