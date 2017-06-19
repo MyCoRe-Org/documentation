@@ -61,13 +61,23 @@
       <p>
         Der MyCoRe Shutdown Mechanismus wird eingeleitet, sobald alle Servlets und Filter gemäß Servlet Lifecycle
         zerstört wurden. In der Regel ist dies der Fall, sobald der Webserver beendet werden soll.
-        MyCoRe bietet dem Entwickler mittels des <code>Closeable</code> Interface eine Möglichkeit, seine eigenen
-        Klassen
-        innerhalb des Shutdown Vorgangs sauber zu beenden.
+        MyCoRe bietet dem Entwickler mit dem <code>Closeable</code> Interface eine Möglichkeit, seine eigenen Klassen
+        innerhalb des Shutdown Vorgangs zu beenden.
+        Die Implementierung des zentralen MyCoRe Shutdown Vorgangs befindet sich innerhalb der <code>
+        MCRShutdownHandler
+      </code> Klasse.
+        Diese Klasse beinhaltet eine Menge registrierter Closeables (also Klassen die das Closeable Interface
+        implementieren) und führt diese zum beschriebenen Zeitpunkt aus.
+        Die Klasse ermöglicht es mit der addCloseable(Closeable) und removeCloseable(Closeable)Methode benötigte
+        Closeables zu
+        registrieren sowie zu entfernen. Ein Closeable muss sich also eigenverantwortlich beim <code>
+        MCRShutdownHandler
+      </code> melden.
+      
       </p>
       
       <section>
-        <title>Wann ist ein Shutdown Handling notwendig / empfehlenswert ?</title>
+        <title>Wann ist ein Closeable empfehlenswert / notwendig?</title>
         
         <p>
           MyCoRe benutzt an verschiedenen Stellen Closeables. Es macht immer dann Sinn eine Klasse mittels Closeable
@@ -81,26 +91,37 @@
       
       <section>
         <title>Methoden des Closeable Interface</title>
+        <br/>
+        <strong>void prepareClose()</strong>
         <p>
-          <code>void prepareClose()</code>
-          <br/>
-          <br/>
           Diese Methode wird als erste innerhalb des MyCoRe Shutdown Prozesses aufgerufen. Hier kann eine Vorbereitung
           für den eigentlichen <code>close()</code> Vorgang stattfinden. Eine Beispielimplementierung findet sich
           innerhalb der
           <code>MCRSolrIndexer</code>
-          Klasse. Hier wird innerhalb der prepareClose Methode der eigentliche Shutdown Prozess für die
+          Klasse. Hier wird innerhalb der <code>prepareClose()</code> Methode der eigentliche Shutdown Prozess für die
           beteiligten Solr Services initialisiert. Dieser Stil ist vergleichbar mit einem asynchronen Aufruf. Innerhalb
-          der <code>close</code> Methode wird somit versucht auf die eigentliche Terminierungsantwort zu reagieren.
+          der <code>close()</code> Methode wird somit versucht auf die eigentliche Terminierungsantwort zu reagieren.
           Ein anderes Beispiel sind Objekte im Zusammenhang mit Datenbankverbindungen. Bevor Verbindungen zur Datenbank
           aufgrund des JPA Shutdowns (MCRJPAShutdownProcessor) nicht mehr möglich sind, könnten an dieser Stelle noch
           Datenbankzugriffe stattfinden.
-          <br/>
-          <br/>
-          <code>void close()</code>
-          <br/>
-          <br/>
-          <code>int getPriority()</code>
+        </p>
+        <br/>
+        <br/>
+        <strong>void close()</strong>
+        <p>
+          Mithilfe der close() Methode wird einer Klasse die das Closeable Interface implementiert die Möglichkeit eines
+          geordneten und sauberen Shutdown Prozesses im MyCoRe Umfeld ermöglicht. Diese Methode wird für das jeweilige
+          Closeable nach der <code>prepareClose()</code> Methode aufgerufen. Vorrangig sollten hier wie im vorherigen
+          Abschnitt bereits
+          beschrieben Abhängigkeiten sauber geschlossen werden.
+        </p>
+        <br/>
+        <br/>
+        <strong>int getPriority()</strong>
+        <p>
+          Mittels Priorität ist es möglich die Closeables in einer Ausführungsreihenfolge zu sortieren. Ein Closeable
+          mit einem höhreren Wert wird vor einem Closeable mit geringeren Wert geschlossen. Jedes Closeable besitzt eine
+          definierte Standardpriorität.
         </p>
       </section>
     
