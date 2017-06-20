@@ -1,30 +1,34 @@
 <document>
   <header>
-    <title>Start- und Initialisierungsvorgang von MyCoRe im Detail</title>
-    <version>2017-06-19</version>
+    <title>MyCoRe Initialisierung und Shutdown verstehen</title>
+    <version>2017-06-20</version>
     <release>2016.12</release>
+    <release>2017.06</release>
     <authors>
       <person name="Paul Rochowski" email="[EMAIL PROTECTED]"/>
     </authors>
+    
     <abstract>
       Damit die MIR Anwendung verwendet werden kann, wird diese in einem Servlet Webcontainer bereitgestellt. Doch wie
       funktioniert das genau? Wie bilden MyCoRe Komponenten, Anwendungskomponenten und eigene MIR Plugins eine Einheit?
-      Was passiert im Hintergrund um dieses Konstrukt zu verbinden und zu starten? Diesem Thema soll sich der folgende
-      Abschnitt widmen.
-      Um zu verstehen wie so eine Initialisierung beginnt ist es zunächst notwendig die Situation aus dem Blickwinkel
-      des Servlet Webcontainers vorzunehmen. Für diesen ist das MIR Webarchiv einfach nur eine Kollektion aus
-      Komponenten der Servlet Spezifikation (Servlets, Filter, Listener) und anderen Resourcen. Damit diese Servlet
-      Komponenten mit dem Webcontainer kommunizieren können wird eine Schnittstelle benötigt. Diese Schnittstelle wird
-      mit dem ServletContext und seinem Set an Methoden zur Verfügung gestellt.
+      Was passiert im Hintergrund um dieses Konstrukt zu verbinden und zu starten? Welche Mechanismen gibt MyCoRe dem
+      Entwickler an die Hand um den Startvorgang zu beeinflussen, und was muss beachtet werden, wenn der
+      ServletContainer
+      beendet wird? Diese Themen sollen hier im Detail erklärt werden.
     </abstract>
   </header>
-  
   <body>
-    
     <section>
-      <title>ServletContainerInitializer</title>
+      <title>Grundlagen der MyCoRe Initialisierung</title>
       <p>
-        Seit Servlet Spezifikation 3.0 bietet die Servlet API das ServletContainerInitializer Interface an. Mittels
+        Um zu verstehen wie die Initialisierung beginnt ist es zunächst notwendig die Situation aus dem Blickwinkel
+        des Servlet Webcontainers vorzunehmen. Für diesen ist das MIR Webarchiv einfach nur eine Kollektion aus
+        Komponenten der Servlet Spezifikation (Servlets, Filter, Listener) und anderen Resourcen. Damit diese Servlet
+        Komponenten mit dem Webcontainer kommunizieren können wird eine Schnittstelle benötigt. Diese Schnittstelle
+        wird mit dem ServletContext und seinem Set an Methoden zur Verfügung gestellt.
+        
+        Seit Servlet Spezifikation 3.0 bietet die Servlet API das <code>ServletContainerInitializer</code> Interface an.
+        Mittels
         eigener Implementierung kann die Startphase der Webanwendung individualisiert werden. Genau an dieser Stelle
         setzt das <code>mycore-base</code> an. Die Initialisierung von MyCoRe beginnt innerhalb der <em>onStart</em> Methode.
         Dieser Methode
@@ -37,9 +41,12 @@
     <section>
       <title>Vom ServletContainerInitializer zum MyCoRe Startup</title>
       <p>
-        Die Klasse MCRServletContainerInitializer implementiert das ServletContainerInitializer Interface. Wie zuvor
-        erwähnt wird diese Klasse ausgehend von der Servlet 3.0 Spezifikation als Initialisierungsklasse genutzt. MyCoRe
-        erweitert diesen Mechanismus. Für MyCoRe ist diese Klasse nicht nur Servlet bezogen, sondern der Startpunkt für
+        Die Klasse <code>MCRServletContainerInitializer</code> implementiert das <code>ServletContainerInitializer
+      </code> Interface. Wie zuvor
+        erwähnt wird diese Klasse ausgehend von der Servlet 3.0 Spezifikation als Initialisierungsklasse genutzt.
+        MyCoRe
+        erweitert diesen Mechanismus. Für MyCoRe ist diese Klasse nicht nur Servlet bezogen, sondern der Startpunkt
+        für
         eine Reihe verschiedener
         Initialisierungsvorgänge mit unterschiedlichen Kontexten.
       </p>
@@ -80,7 +87,8 @@
       <br/>
       <strong>String getName()</strong>
       <p>
-        Der Rückgabewert gibt dem AutoExecutable einen sprechenden Namen und wird derzeit für Logging Zwecke verwendet.
+        Der Rückgabewert gibt dem AutoExecutable einen sprechenden Namen und wird derzeit für Logging Zwecke
+        verwendet.
       </p>
       <br/>
       <strong>startUp(ServletContext servletContext)</strong>
@@ -107,10 +115,9 @@
           Die folgende Zeile in den <code>mycore.properties</code> erweitert den bisherigen Startup Mechanismus:
         </p>
         <code>MCR.Startup.Class=%MCR.Startup.Class%, custom.mycore.CustomStartupHandler</code>
+      
       </section>
-    
     </section>
-    
     
     <section>
       <title>MyCoRe Shutdown Handling</title>

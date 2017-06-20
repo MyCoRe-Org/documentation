@@ -235,7 +235,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Für Entwickler -->
     <developer             label="Für Entwickler"             href="developer/">
-      <initialization      label="Initialisierung verstehen"  href="init_mycore.html" />
+      <lifecycle           label="Init-/Shutdown Handling"    href="lifecycle.html" />
       <maven               label="Maven Site"                 href="http://www.mycore.de/generated/" />
       <apidocs             label="Javadocs"                   href="http://www.mycore.de/generated/mycore/apidocs/" />
       <eclipse             label="Entwicklungsplattformen"    href="eclipse.html" />
