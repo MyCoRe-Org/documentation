@@ -57,6 +57,34 @@
     </section>
     
     <section>
+      <title>Hinzufügen eines eigenen Startup Handlers</title>
+      <p>
+        MyCoRe bietet Entwicklern mit dem AutoExecutable Interface die Möglichkeit den Startup Vorgang zu
+        beeinflussen.
+        Um einen eigenen Startup Handler zu schreiben, muss die Klasse nur das AutoExecutable Interface implementieren
+        und innerhalb der <code>mycore.properties</code> mittels <code>MCR.Startup.Class</code> bekanntgemacht werden.
+      </p>
+      <br/>
+      <p>
+        Im Folgenden werden die Methoden des AutoExecutable Interface erläutert:
+      </p>
+      
+      <p>
+        int getPriority();
+        Mithilfe einer Priorität wird die Ausführungsreihenfolge der eigenen Klasse innerhalb des Startup Vorgangs
+        definiert. MyCoRe selbst verfügt über eine Vielzahl von AutoExecutables, also Klassen die das AutoExecutable
+        Interface implementieren. Diese Vielzahl wird mithilfe der Priorität nach Wichtigkeit sortiert. Als Beispiel
+        soll hier die MCRJPABootstrapper Klasse genannt werden. Diese initialisiert die Schnittstelle zwischen Anwendung
+        und Datenbank. Falls also ein AutoExecutable mittels JPA Datenbank Zugriff benötigt, kann dieser erst nach
+        erfolgreichem durchlaufen des MCRJPABootstrappers stattfinden. Als vordefinierter Wert gilt eine Priorität von
+        0.
+      
+      
+      </p>
+    </section>
+    
+    
+    <section>
       <title>MyCoRe Shutdown Handling</title>
       <p>
         Der MyCoRe Shutdown Mechanismus wird eingeleitet, sobald alle Servlets und Filter gemäß Servlet Lifecycle
