@@ -87,6 +87,28 @@
       <p>
         Über die startup Methode wird die benötigte Initialisierungslogik ausgeführt.
       </p>
+      
+      <section>
+        <title>Beispielimplementierung</title>
+        <p>
+          <a href="https://github.com/rochpaul/mycore-custom-module/blob/master/src/main/java/custom/mycore/CustomStartupHandler.java">
+            Dieses
+          </a>
+          einfache Beispiel kann als Grundlage für den eigenen StartupHandler genommen werden. Für die
+          Einrichtung des zugehörigen Plugins wird an dieser Stelle an die Dokumentation
+          <a href="http://localhost:8888/documentation/developer/plugin_development.html">Eigene MIR Plugins einbinden
+          </a>
+          verwiesen.
+          Um das Beispiel in den MyCoRe Initialisierungsvorgang zu integrieren ist es notwendig das zuvor genannte <code>
+          MCR.Startup.Class
+        </code> Property zu setzen.
+        </p>
+        <p>
+          Die folgende Zeile in den <code>mycore.properties</code> erweitert den bisherigen Startup Mechanismus:
+        </p>
+        <code>MCR.Startup.Class=%MCR.Startup.Class%, custom.mycore.CustomStartupHandler</code>
+      </section>
+    
     </section>
     
     
