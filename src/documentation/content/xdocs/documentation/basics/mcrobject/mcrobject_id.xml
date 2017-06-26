@@ -6,6 +6,7 @@
     <title>Die MyCoRe-Objekt-ID</title>
     <release>2015.05</release>
     <release>2016.06</release>
+    <release>2017.06</release>
     <authors>
       <person name="Jens Kupferschmidt" />
     </authors>
@@ -23,7 +24,7 @@
     <table>
       <tr>
         <td valign="top">
-          <strong>projektkürzel</strong>
+          <strong>Projektkürzel</strong>
         </td>
         <td>Dieses Element ist für ein Projekt und/oder eine Einrichtung / Datengruppe festzulegen, zum Beispiel
           UBLPapyri
@@ -33,7 +34,7 @@
       </tr>
       <tr>
         <td valign="top">
-          <strong>type</strong>
+          <strong>Typ</strong>
         </td>
         <td>Das Element beschreibt den Datenmodelltyp, d. h. der type verweist auf die zugehörige
           Datenmodell-Konfiguration,
@@ -43,7 +44,7 @@
       </tr>
       <tr>
         <td valign="top">
-          <strong>nummer</strong>
+          <strong>Nummer</strong>
         </td>
         <td>Ist eine frei wählbare positive Integerzahl. Diese Zahl kann in Verantwortung des Projektmanagers per Hand
           oder

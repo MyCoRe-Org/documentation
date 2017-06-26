@@ -5,6 +5,7 @@
   <header>
     <title>Systemanforderungen</title>
     <release>2016.06</release>
+    <release>2017.06</release>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
@@ -36,7 +37,8 @@
       <ul>
         <li>JDK 1.8</li>
         <li>Maven 3 oder höher</li>
-        <li>SVN 1.8 oder höher</li>
+        <li>Git 2.12 oder höher</li>
+        <li>SVN 1.8 oder höher (für die Arbeit mit alten Repositories und an der Doku)</li>
       </ul>
     </section>
 

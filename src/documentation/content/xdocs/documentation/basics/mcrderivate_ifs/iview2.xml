@@ -4,6 +4,12 @@
 <document>
   <header>
     <title>Die iView2-Komponente</title>
+    <release>2016.06</release>
+    <release>2017.06</release>
+    <version>???</version>
+    <authors>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
     <abstract>
       Diese Komponente bereitet Bilder, die in Derivaten abgelegt werden auf, damit diese im MyCoRe-eigenen
       Bildbetrachter dargestellt werden können.

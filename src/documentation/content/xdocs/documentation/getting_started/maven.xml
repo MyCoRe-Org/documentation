@@ -6,25 +6,25 @@
     <title>Maven</title>
     <release>2015.05</release>
     <release>2016.06</release>
+    <release>2017.06</release>
   </header>
   <body>
 
     <section>
       <title>Maven</title>
       <p>
-        MyCoRe verwendet das Build-Management-Tool der Apache Software Foundation "Maven". 
-        Das Werkzeug hilft dabei, möglichst viele Schritte der Softwareentwicklung 
+        MyCoRe verwendet das Build-Management-Tool der Apache Software Foundation "Maven".
+        Das Werkzeug hilft dabei, möglichst viele Schritte der Softwareentwicklung
         zu automatisieren.
       </p>
       <p>
-        Alle Informationen zum Softwareprojekt MyCoRe werden 
-        in der Konfigurationsdatei <code>pom.xml</code> beschrieben.
+        Alle Informationen zum Softwareprojekt MyCoRe werden
+        in der Konfigurationsdatei
+        <code>pom.xml</code>
+        beschrieben. Vor jedem Commit des MyCoRe-Kern-Codes sollte lokal das Kommando
+        <code>mvn clean install</code>
+        gegebn werden, um sicher zu stellen, dass der Code korrekt compiliert.
       </p>
-      <!-- 
-      <ul>
-        <li></li>
-      </ul>
-      -->
     </section>
 
   </body>
