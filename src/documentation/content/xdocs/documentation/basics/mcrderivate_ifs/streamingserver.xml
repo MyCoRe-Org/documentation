@@ -3,21 +3,20 @@
 
 <document>
   <header>
-    <title>Das Backend</title>
-    <abstract>
-      Im Backend-Bereich muss zwischen den verschieden Aufgaben unterschieden werden. Für die
-      Speicherung organisatorischer Informationen (Nutzerdaten, Klassifikationen, etc.) wird ein
-      relationales Datenbanksystem über Hibernate verwendet. Für die Suche liefert MyCoRe Apache
-      Lucene mit. Die Ablage der eigentlichen digitalen Objekte und deren Volltexte geschieht im
-      Filesystem. Optional kann für Audio- und Video-Streaming ein Helix-Server angebunden werden.
-    </abstract>
+    <title>Unterstützung von Streaming-Verfahren als digitale MyCoRe-Objekte</title>
+    <release>2016.06</release>
+    <release>2017.06</release>
+    <version>2017-06-26</version>
+    <authors>
+      <person name="???" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
 <body>
 
    <section>
     <title>Streaming-Server</title>
     <p>
-      Diese Seite befindet sich im Aufbau.
+      [ToDo]
     </p>
    </section>
 </body>

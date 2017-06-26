@@ -123,7 +123,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         <mcrder_ifs          label="IFS / IFS2"        href="ifs.html" />
         <mcrder_zip          label="ZIP-Dateien"       href="zipfiles.html" />
         <mcrder_streaming    label="StreamingServer"   href="streamingserver.html" />
-        <mcrder_fileupload   label="File-Upload"       href="fileupload_applet.html" />
+        <mcrder_fileupload   label="File-Upload"       href="fileupload.html" />
         <iview2              label="IView2"            href="iview2.html" />
         <mcrderiv_mets       label="METS"              href="mets.html" />
       </mcrderivate>
