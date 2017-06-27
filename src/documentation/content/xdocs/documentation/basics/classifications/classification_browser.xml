@@ -6,6 +6,7 @@
     <title>KlassifikationsBrowser</title>
     <release>2015.05</release>
     <release>2016.06</release>
+    <release>2017.06</release>
     <version>2016-05-26</version>
     <authors>
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
@@ -25,19 +26,7 @@
     <section>
       <title>Konfiguration</title>
       <p>
-        Seit <span class="label label-info">2013.06</span> kann man je nach Index zwischen zwei Klassifikationsbrowsern unterscheiden. Mit Hilfe des Properties
-        <code>MCR.classbrowser.Servlet</code> kann man angeben, auf welchen Index beruhend der Klassifikationsbrowser arbeiten soll.
-        Folgende Werte sind möglich:
-      </p>
-      <pre class="brush: xml;"><![CDATA[
-  MCR.classbrowser.Servlet=ClassificationBrowser       # Lucene - Standardeinstellung in 2013.06
-  MCR.classbrowser.Servlet=ClassificationBrowserSolr   # Solr
-      ]]></pre>
-      <p>
-        In <span class="label label-info">2014.06</span> ist diese Unterscheidung via Property nicht mehr notwendig.
-      </p>
-      <p>
-        Der Klassifikationsbrowser selbst mittels der Komponente <code>mycore-classbrowser</code> eingebunden und steht
+        Der Klassifikationsbrowser ist mittels der Komponente <code>mycore-classbrowser</code> eingebunden und steht
         dann zur Verfügung. Nutzt man <code>mycore-complete</code>, hat man ebenfalls Zugriff auf den Klassifikationsbrowser.
       </p>
       <p>
