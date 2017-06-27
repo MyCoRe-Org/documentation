@@ -4,8 +4,8 @@
 <document>
   <header>
     <title>Komponenten des MyCoRe-Kerns</title>
-    <release>2016.06</release>
-    <version>2016-11-09</version>
+    <release>2017.06</release>
+    <version>2017-06-27</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Thomas Scheffler" />
@@ -47,12 +47,6 @@
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td>broadcasting</td>
-            <td>Integriert ein Benachrichtigungssystem innerhalb der Web-Anwendung</td>
-            <td><span class="label label-danger">deprecate</span></td>
-            <td>base</td>
-          </tr>
-          <tr>
             <td>buildtools</td>
             <td>Werkzeuge für die Integration von MyCoRe-Komponenten über das ANT-Build-Tool</td>
             <td>optional</td>
@@ -87,13 +81,25 @@
             <td>complete</td>
             <td>spezielle Komponente zum Zusammenbau eines mycore-complete.jar, welches alle Komponenten enthält (siehe unten)
             </td>
-            <td>&nbsp;</td>
+            <td><span class="label label-danger">deprecate</span></td>
             <td>alle</td>
           </tr>
           <tr>
             <td>ifs</td>
             <td>alte Komponente des MyCoRe-Internal-File-Systems, Version 1</td>
             <td>deprecate</td>
+            <td>base</td>
+          </tr>
+          <tr>
+            <td>iiif</td>
+            <td>ene Komponente zur Einbindung von IIIF in MyCoRe</td>
+            <td/>
+            <td>base</td>
+          </tr>
+          <tr>
+            <td>impex</td>
+            <td>...</td>
+            <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
@@ -131,9 +137,9 @@
             <td>base</td>
           </tr>
           <tr>
-            <td>migration-2015</td>
-            <td>Komponente mit Werkzeugen zur Migration auf das MyCoRe-Release 2015</td>
-            <td><span class="label label-danger">deprecate</span></td>
+            <td>migration</td>
+            <td>Komponente mit Werkzeugen zur Migration auf das MyCoRe-Release 2016</td>
+            <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
@@ -171,8 +177,8 @@
             </td>
           </tr>
           <tr>
-            <td>session-listing</td>
-            <td>Erstellung von Listen alles Sessions in der WEB-Anwendung</td>
+            <td>sass</td>
+            <td>...</td>
             <td>optional</td>
             <td>base</td>
           </tr>
@@ -180,12 +186,6 @@
             <td>solr</td>
             <td>Klassen zur Indizierung und Suche mit Apache SOLR</td>
             <td>required</td>
-            <td>base</td>
-          </tr>
-          <tr>
-            <td>swf</td>
-            <td>Implementierung eines einfachen Workflow-Systems</td>
-            <td><span class="label label-danger">deprecate</span></td>
             <td>base</td>
           </tr>
           <tr>
@@ -211,6 +211,12 @@
             </td>
           </tr>
           <tr>
+            <td>viewer</td>
+            <td>...</td>
+            <td>optional</td>
+            <td>base</td>
+          </tr>
+          <tr>
             <td>wcms2</td>
             <td>Implementierung eines Autorensystems für die Webanwendung, Version 2</td>
             <td>optional</td>
@@ -219,6 +225,12 @@
           <tr>
             <td>webcli</td>
             <td>Implementierung der Möglichkeit, Kommandos der CLI über die Webanwendung auszuführen</td>
+            <td>optional</td>
+            <td>base</td>
+          </tr>
+          <tr>
+            <td>webtools</td>
+            <td>...</td>
             <td>optional</td>
             <td>base</td>
           </tr>
@@ -252,11 +264,6 @@
             <td>0.6-SNAPSHOT</td>
           </tr>
           <tr>
-            <td>fileupload-applet</td>
-            <td>MyCoRe signiertes Applet zum Upload von digitalen Objekten in eine Anwendung</td>
-            <td>1.3-SNAPSHOT</td>
-          </tr>
-          <tr>
             <td>mets-printer</td>
             <td>Basis-Projekt mit dem man die PDF-Funktion des MyCoRe-Viewers benutzen kann
             </td>
@@ -279,7 +286,7 @@
 <![CDATA[<project>
   ...
   <properties>
-    <mycore.version>2015.02</mycore.version>
+    <mycore.version>2017.06.0.x-SNAPSHOT</mycore.version>
   </properties>
   ...
   <dependencies>
