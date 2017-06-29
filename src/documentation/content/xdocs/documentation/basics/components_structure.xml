@@ -112,7 +112,7 @@
           </tr>
           <tr>
             <td>impex</td>
-            <td>...</td>
+            <td>generiert Import- und Export-Pakete auf grundlage einer SOLR-Query</td>
             <td>optional</td>
             <td>base</td>
           </tr>
