@@ -6,6 +6,7 @@
     <title>Die Kommandozeilenschnittstelle (CLI)</title>
     <release>2015.05</release>
     <release>2016.06</release>
+    <release>2016.07</release>
     <version>2016-05-17</version>
     <authors>
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
