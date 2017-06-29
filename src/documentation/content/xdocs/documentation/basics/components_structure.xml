@@ -12,18 +12,28 @@
     </authors>
     <abstract>
       Die vorliegende Seite behandelt die Komponenten des MyCoRe-Kerns sowie weitere im Zusammenhang mit
-      MyCoRe nutzbare Bibliotheken.
+      MyCoRe
+      nutzbare Bibliotheken.
     </abstract>
   </header>
   <body>
     <section>
       <title>MyCoRe-Komponenten</title>
       <p>
-        MyCoRe ist kein monolithisches System. Vielmehr besteht der Kern aus einzelnen Modulen, welche sowohl einzeln
-        inklusive ihrer Abhängigkeiten genutzt werden können, wie auch als komplette *.jar-Datei bereitsteht. Die
-        nachfolgende alphabetische Auflistung gibt eine Übersicht über die verfügbaren Teile. Je nach Erfordernissen und
-        Entwicklungen kann es vorkommen, dass einzelne Komponenten im Laufe der MyCoRe-Entwicklung im Laufe der Zeit bei
-        Releases neu hinzukommen oder entfallen. Diese Dokumentation spiegelt den oben genannten Release-Stand wieder.
+        MyCoRe ist kein monolithisches System. Vielmehr besteht der Kern aus einzelnen Modulen, welche einzeln
+        inklusive
+        ihrer Abhängigkeiten genutzt werden können. Die
+        nachfolgende alphabetische Auflistung gibt eine Übersicht über
+        die verfügbaren Teile. Je nach Erfordernissen und
+        Entwicklungen kann es vorkommen, dass einzelne Komponenten im
+        Laufe der MyCoRe-Entwicklung im Laufe der Zeit bei
+        Releases neu hinzukommen oder entfallen. Diese Dokumentation
+        spiegelt den oben genannten Release-Stand wieder.
+        Neben dieser Dokumentation sind die einzelnen Komponenten auch
+        kurz auf den entsprechenden Git-Hub in ihren Kernpunkten
+        beschrieben (z. B.
+        <a target="blank" href="https://github.com/MyCoRe-Org/mycore/tree/2017.06.0.x/mycore-sass">https://github.com/MyCoRe-Org/mycore/tree/2017.06.0.x/mycore-sass</a>
+        ).
       </p>
       <section>
         <title>Liste der Komponenten</title>
@@ -71,7 +81,8 @@
           <tr>
             <td>coma</td>
             <td>Prototypische Entwicklung eines Content-Manager zu entwickeln, mit dem man
-              einen Überblick über den gesamten Bestand an Daten (evtl. auch
+              einen Überblick über den
+              gesamten Bestand an Daten (evtl. auch
               Metadaten) hat.
             </td>
             <td>optional</td>
@@ -79,9 +90,12 @@
           </tr>
           <tr>
             <td>complete</td>
-            <td>spezielle Komponente zum Zusammenbau eines mycore-complete.jar, welches alle Komponenten enthält (siehe unten)
+            <td>spezielle Komponente zum Zusammenbau eines mycore-complete.jar, welches alle Komponenten enthält (siehe
+              unten)
             </td>
-            <td><span class="label label-danger">deprecate</span></td>
+            <td>
+              <span class="label label-danger">deprecate</span>
+            </td>
             <td>alle</td>
           </tr>
           <tr>
@@ -93,7 +107,7 @@
           <tr>
             <td>iiif</td>
             <td>ene Komponente zur Einbindung von IIIF in MyCoRe</td>
-            <td/>
+            <td />
             <td>base</td>
           </tr>
           <tr>
@@ -178,7 +192,7 @@
           </tr>
           <tr>
             <td>sass</td>
-            <td>...</td>
+            <td>Unterstützung des Compile-Vorganges von sass-Files zu css-Files</td>
             <td>optional</td>
             <td>base</td>
           </tr>
@@ -197,7 +211,9 @@
           <tr>
             <td>urn</td>
             <td>Implementierung einer URN-Vergabe für Objekte der Anwendung</td>
-            <td><span class="label label-danger">deprecate</span></td>
+            <td>
+              <span class="label label-danger">deprecate</span>
+            </td>
             <td>base</td>
           </tr>
           <tr>
@@ -212,7 +228,8 @@
           </tr>
           <tr>
             <td>viewer</td>
-            <td>...</td>
+            <td>Enthält den MyCoRe-Viewer für Bilder und PDFs. Das Modul kann sowohl standalone wie auch in einer
+              MyCoRe-Anwendung integriert genutzt werden.</td>
             <td>optional</td>
             <td>base</td>
           </tr>
@@ -230,7 +247,7 @@
           </tr>
           <tr>
             <td>webtools</td>
-            <td>...</td>
+            <td>Enthält Web-Tools wie Session Listing oder die Prozessliste</td>
             <td>optional</td>
             <td>base</td>
           </tr>
@@ -251,7 +268,11 @@
 
       <section>
         <title>Liste weiterer Maven-Module</title>
-        <p>Die nun aufgelisteten zusätzlichen Maven-Module sind im Subversion-System im Baum <code>maven</code> zu finden.</p>
+        <p>
+          Die nun aufgelisteten zusätzlichen Maven-Module sind im Subversion-System im Baum
+          <code>maven</code>
+          zu finden.
+        </p>
         <table class="table">
           <tr>
             <th>Komponente</th>
@@ -276,11 +297,17 @@
         <title>Integration einzelner MyCoRe-Komponenten</title>
       </section>
       <p>
-        MyCoRe-Komponenten können einzeln je nach Bedarf in die eigene Anwendung integriert werden. Dazu sind lediglich die
-        entsprechenden Angaben in der <em>pom.xml</em>-Datei zu machen. Wichtig ist dabei, auf Abhängigkeiten zu achten
-        (siehe oben). Alle Komponenten sollten auch den selben Versionsstand haben, um Kompatibilitätsprobleme zu vermeiden.
-        Die Integration der in den Komponenten enthaltenen Teile erfolgt entsprechend den
-        <a href="https://jcp.org/en/jsr/detail?id=340">Servlet-3.1-Regeln</a>.
+        MyCoRe-Komponenten können einzeln je nach Bedarf in die eigene Anwendung integriert werden. Dazu sind lediglich
+        die
+        entsprechenden Angaben in der
+        <em>pom.xml</em>
+        -Datei zu machen. Wichtig ist dabei, auf Abhängigkeiten zu achten
+        (siehe oben). Alle Komponenten sollten auch den
+        selben Versionsstand haben, um Kompatibilitätsprobleme zu vermeiden.
+        Die Integration der in den Komponenten
+        enthaltenen Teile erfolgt entsprechend den
+        <a href="https://jcp.org/en/jsr/detail?id=340">Servlet-3.1-Regeln</a>
+        .
       </p>
       <pre class="brush: xml;">
 <![CDATA[<project>
