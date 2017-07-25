@@ -5,7 +5,7 @@
 <header>
   <title>Changes in MIR</title>
   <abstract>Changelog for MIR - the MyCoRe / MODS institutional repository.</abstract>
-  <version>2016-11-22</version>
+  <version>2017-02-03</version>
   <authors>
     <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
   </authors>
@@ -16,11 +16,77 @@
   <title>MIR Changelog</title>
 
   <section>
-    <title>Version 2016.07 - Current Head</title>
+    <title>Version 2017.01 - Current Head</title>
 
     <p>For details see <a href="http://www.mycore.de/generated/mir/project-reports.html">maven site</a></p>
 
   </section>
+
+  <section>
+    <title>Version 2016.12 - Release based on MyCoRe release 2016.12</title>
+    <p>For details see <a href="http://www.mycore.de/generated/mir/project-reports.html">maven site</a></p>
+    <ul>
+        <li>Bug
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-357'>MIR-357</a>] -         person browsing - searchfield (oder mit den Zeichen) add &quot;.*&quot; to the string even if it (.*) allready exists
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-527'>MIR-527</a>] -         cc:address for dc:publisher is missing in xMetaDissPlus
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-529'>MIR-529</a>] -         can&#39;t index documents with more than one relatedItem (mods.part)
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-535'>MIR-535</a>] -         File names in file browser may not be displayed completely
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-538'>MIR-538</a>] -         Catalog link ist missing
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-541'>MIR-541</a>] -         Create database schema if configured
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-542'>MIR-542</a>] -         Loose filter when searching after filtering search with facets
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-550'>MIR-550</a>] -         DOI Citation formatter delivers wrong encodet text
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-553'>MIR-553</a>] -         Error handling in file listing does not work in IE 11
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-555'>MIR-555</a>] -         epicur - format information for front page is missing
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-559'>MIR-559</a>] -         validate PPN in xEditor
+            </li>
+          </ul>
+        </li>
+        <li>
+          Task
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-526'>MIR-526</a>] -         Implement changes for Git-Migration
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-530'>MIR-530</a>] -         Update dependencies
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-537'>MIR-537</a>] -         Migrate MIR master to MyCoRe-Viewer-Trunk
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-545'>MIR-545</a>] -         update to grunt release 1.0.0
+            </li>
+          </ul>
+        </li>
+        <li>
+          Sub-task
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-448'>MIR-448</a>] -         DINI - E.1-5 add search option / filter for licenses
+            </li>
+          </ul>
+        </li>
+        <li>
+          Improvement
+          <ul>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-539'>MIR-539</a>] -         use more git information in MIRCoreVersion
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-540'>MIR-540</a>] -         Use Yarn instead of npm for mir-layout build
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-551'>MIR-551</a>] -         Use xalan function instead of solr request to detect mets exist
+            </li>
+            <li>[<a href='https://mycore.atlassian.net/browse/MIR-552'>MIR-552</a>] -         use i18n key for empty select option
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
   <section>
     <title>Version 2016.06.0.1 - LTS on MyCoRe release 2016.06.0.1</title>
