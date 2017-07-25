@@ -300,7 +300,7 @@
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
-            Der MCRXMLMetadataEventHandler speichert das XML des Objektes gemäß dem IFS2 Siecherkonzept für Metadaten ab.
+            Der MCRXMLMetadataEventHandler speichert das XML des Objektes gemäß dem IFS2-Speicherkonzept für Metadaten ab.
             </td>
            </tr>
            <tr>
