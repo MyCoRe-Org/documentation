@@ -3,14 +3,14 @@
 
 <document xml:lang="de">
 <header>
- <title>Release 2016.06 (LTS 2016)</title>
+ <title>Release 2017.06 (LTS)</title>
 </header>
 
  <body>
 
   <p>
     Informationen zur Migration
-    finden Sie im <a href="site:migrate2016.06">Abschnitt zur Migration</a>.
+    finden Sie im <a href="site:migrate2017.06">Abschnitt zur Migration</a>.
   </p>
   <!-- p>
     Außerdem wurde das alte WCMS durch eine deutlich flexiblere Lösung abgelöst. Diese bietet nicht nur
@@ -25,29 +25,28 @@
   </p -->
 
   <p>
-    Um den aktuellen Stand in der eigenen Anwendung oder dem aktuellen DocPortal zu verwenden, muss in der
-    pom.xml (zu finden unter docportal/config) die MyCoRe-Version angepasst werden:
+    Um den aktuellen Stand in der eigenen Anwendung zu verwenden, muss in der
+    pom.xml die MyCoRe-Version angepasst werden:
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2016.06.0.1-SNAPSHOT&lt;/version>
+&lt;version>2017.06.0.1-SNAPSHOT&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-complete&lt;/artifactId>
-  &lt;version>[2016.06.0.1-SNAPSHOT,2016.06.1)&lt;/version>
+  &lt;version>[2017.06.0.1-SNAPSHOT,2017.06.1)&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
 
-    Anschließend muss die Anwendung neu erstellt werden mit <code>mvn clean install</code> oder bei DocPortal
-    <code>ant resolve &amp;&amp; ant create.jar create.scripts create.webapp</code>
+    Anschließend muss die Anwendung neu erstellt werden mit <code>mvn clean install</code>.
   </p>
 
   <p>
-    Die Liste der Änderungen ist im <a href="changelog.html#Version+2016.06+-+LTS">Changelog zu finden</a>
+    Die Liste der Änderungen ist im <a href="changelog.html">Changelog zu finden</a>
   </p>
 
   <!-- p>

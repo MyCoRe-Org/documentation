@@ -58,8 +58,8 @@ See http://forrest.apache.org/docs/linking.html for more info
     <howtoget    label="Übersicht"          href="index.html" />
     <dl_mycore   label="MyCoRe">
       <whats_new   label="Was ist neu?"           href="whats_new.html" />
-      <release     label="Release 2016.12"        href="release.html" />
-      <lts_release label="LTS-Release 2016.06"    href="lts_release.html" />
+      <release     label="Release 2017.06"        href="release.html" />
+      <lts_release label="LTS-Release 2017.06"    href="lts_release.html" />
       <changelog   label="Changelog"              href="changelog.html" />
       <dl_archive  label="Release-Archiv"         href="archive.html" />
     </dl_mycore>
@@ -423,7 +423,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <email      label="Mailinglisten"      href="email.html" />
     <team       label="Team"               href="team.html" />
     <workshops  label="Workshops"          href="workshops/" >
-    <workshop            label="MyCoRe-Workshop 2017"       href="workshop.html" /> 
+    <workshop            label="MyCoRe-Workshop 2017"       href="workshop.html" />
     <dbt-workshop_2017   label="DBT-Workshop 2017"          href="dbt-workshop_2017.html" />
     <aw_workshop_2016    label="Leipzig 2016"               href="leipzig_2016.html" />
     <aw_workshop_2015    label="Ilmenau 2015"               href="ilmenau_2015.html" />

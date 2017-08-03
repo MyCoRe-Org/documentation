@@ -3,36 +3,34 @@
 
 <document xml:lang="en">
 <header>
- <title>Release 2016.02 - ‚Rusty Nail‘</title>
+ <title>Release 2017.06 (LTS)</title>
 </header>
 
  <body>
 
   <p>
-    If your application is already near version 2016.02, you only have to update
-    your pom.xml (using DocPortal, you find this file in docportal/config):
+    If your application is already near version 2017.06, you only have to update
+    your pom.xml:
 
     <pre class="brush: xml;gutter: false;">
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2016.02&lt;/version>
+&lt;version>2017.06&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-{component}&lt;/artifactId>
-  &lt;version>2016.02&lt;/version>
+  &lt;version>2017.06&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
 
-    In the next step you have to build your application again <code>mvn clean install</code> or in
-    DocPortal <code>ant resolve &amp;&amp; create.jar create.scripts create.webapp</code>.
+    In the next step you have to build your application again <code>mvn clean install</code>.
   </p>
 
   <p>
-    See <a href="changelog.html#Version+2016.02+-+%E2%80%9ARusty+Nail%E2%80%98">Changelog</a> for
-    development information.
+    See <a href="changelog.html">Changelog</a> for development information.
   </p>
 
   </body>

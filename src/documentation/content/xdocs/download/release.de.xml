@@ -3,7 +3,7 @@
 
 <document xml:lang="de">
 <header>
- <title>Release 2016.12 - ‚Heiss &amp; Weiss‘</title>
+ <title>Release 2017.06 (LTS)</title>
 </header>
 
  <body>
@@ -17,22 +17,21 @@
 [...]
 &lt;groupId>org.mycore&lt;/groupId>
 &lt;artifactId>application-model&lt;/artifactId>
-&lt;version>2016.12&lt;/version>
+&lt;version>2017.06&lt;/version>
 [...]
 &lt;dependency>
   &lt;groupId>org.mycore&lt;/groupId>
   &lt;artifactId>mycore-{component}&lt;/artifactId>
-  &lt;version>2016.12&lt;/version>
+  &lt;version>2017.06&lt;/version>
   &lt;optional>false&lt;/optional>
 &lt;/dependency>
 [...]</pre>
 
-    Anschließend muss die Anwendung neu erstellt werden mit <code>mvn clean install</code> oder bei DocPortal
-    <code>ant resolve &amp;&amp; ant create.jar create.scripts create.webapp</code>
+    Anschließend muss die Anwendung neu erstellt werden mit <code>mvn clean install</code>.
   </p>
 
   <p>
-    Die Liste der Änderungen ist im <a href="changelog.html#Version+2016.12+-+Heiss+%26+Weiss">Changelog zu finden</a>
+    Die Liste der Änderungen ist im <a href="changelog.html">Changelog zu finden</a>
   </p>
   </body>
 
