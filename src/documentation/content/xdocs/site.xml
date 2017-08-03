@@ -223,6 +223,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Migration -->
     <migrate               label="Migration"                href="migrate/">
       <migrateDP_MIR       label="DocPortal &#8658; MIR"    href="migrateDocPortal_MIR.html" />
+      <migrate2017.06      label="2016.06 &#8658; 2017.06"  href="migrate201706.html" />
       <migrate2016.06      label="2015.05 &#8658; 2016.06"  href="migrate201606.html" />
       <migrate2014.06      label="2014.03 &#8658; 2014.06"  href="migrate201406.html" />
       <migrate2013.08_11   label="2013.08 &#8658; 2013.11"  href="migrate201308_201311.html" />

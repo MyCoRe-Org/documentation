@@ -53,7 +53,7 @@
       <metadata>
         <def.modsContainer class="MCRMetaXML" notinherit="true">
           <modsContainer>
-            <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+            <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" version="3.6">
               <xsl:apply-templates select="mycoreobject/metadata" />
               <xsl:call-template name="originInfo" />
               <xsl:call-template name="rights" />
@@ -66,6 +66,17 @@
       </metadata>
       <service>
         <xsl:apply-templates select="mycoreobject/service/servdates" />
+
+70          <servflags class="MCRMetaLangText">
+71            <xsl:for-each select="mycoreobject/service/servflags/servflag[not(@type='modifiedby')]">
+72              <xsl:copy-of select="."/>
+73            </xsl:for-each>
+74            <xsl:if test="not(mycoreobject/service/servflags/servflag/@type='createdby')">
+75              <servflag type="createdby" inherited="0" form="plain">administrator</servflag>
+76            </xsl:if>
+77            <servflag type="modifiedby" inherited="0" form="plain">administrator</servflag>
+78          </servflags>
+
 
         <xsl:copy-of select="mycoreobject/service/servflags" />
         <xsl:if test="not(mycoreobject/service/servflags/servflag/@type='createdby')">
@@ -606,6 +617,32 @@
     </mods:relatedItem>
   </xsl:template>
 
+
+618     <xsl:template match="relationlink">
+619       <mods:relatedItem type="references">
+620         <mods:titleInfo>
+621           <mods:title>
+622             <xsl:value-of select="@xlink:title" />
+623           </mods:title>
+624         </mods:titleInfo>
+625         <mods:identifier>
+626           <xsl:choose>
+627             <xsl:when test="starts-with(@xlink:href,'http')" >
+628               <xsl:attribute name="type">
+629                 <xsl:value-of select="'uri'" />
+630               </xsl:attribute>
+631             </xsl:when>
+632             <xsl:otherwise>
+633               <xsl:attribute name="type">
+634                 <xsl:value-of select="'local'"/>
+635               </xsl:attribute>
+636             </xsl:otherwise>
+637           </xsl:choose>
+638           <xsl:value-of select="@xlink:href" />
+639         </mods:identifier>
+640       </mods:relatedItem>
+641     </xsl:template>
+
   <xsl:template match="relationlinks">
     <xsl:apply-templates />
   </xsl:template>
@@ -613,6 +650,8 @@
   <xsl:template match="relationlink">
     <mods:relatedItem type="references">
       <mods:location>
+      --> <mods:url></mods:url>
+
         <xsl:value-of select="@xlink:href" />
       </mods:location>
     </mods:relatedItem>
