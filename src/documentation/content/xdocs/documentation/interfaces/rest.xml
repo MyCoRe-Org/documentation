@@ -293,7 +293,7 @@
     <section>
       <title>Anzeige / Download einer Datei aus einem Derivat</title>
       <p>Diese Funktionalität wird nicht über die REST-API, sondern über die File-API bereitgestellt. Die URL
-         kann man dem <code>@href</code>-Attribut der Auflistung der Dateien entnehmen (siehe obige Beispiel-Requests für <tt>/objects/{$id}/derivates/{$derid}/files</tt>).
+         kann man dem <code>@href</code>-Attribut der Auflistung der Dateien entnehmen (siehe obige Beispiel-Requests für <tt>/objects/{$id}/derivates/{$derid}/contents</tt>).
       </p>
       <h4>Beispiel-Requests</h4>
         <ul>
