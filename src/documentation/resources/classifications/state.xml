@@ -6,13 +6,13 @@
   <label xml:lang="it" text="stato dell'oggetto" />
   <categories>
     <category ID="submitted">
-      <label xml:lang="it" text=" presentata" />
+      <label xml:lang="it" text="presentata" />
       <label xml:lang="de" text="eingereicht" />
       <label xml:lang="en" text="submitted" />
     </category>
     <category ID="review">
       <label xml:lang="en" text="in review" />
-      <label xml:lang="it" text=" lavorazione" />
+      <label xml:lang="it" text="lavorazione" />
       <label xml:lang="de" text="wird bearbeitet" />
     </category>
     <category ID="published">
