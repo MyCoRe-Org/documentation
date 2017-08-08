@@ -118,6 +118,12 @@
           <code>mvn --version</code> getestet werden. Unter Linux-Systemen wird im Wurzelverzeichnis des Nutzers ein Verzeichnis
           <code>.m2</code> angelegt, worin sich alle relevanten Maven-Daten befinden.
         </p>
+        <p>
+        	Um während des Entwicklungsprozesses eine einzelne MyCoRe-Komponente (einschließlich der von ihr 
+        	abhängigen Module und Komponenten) zu bauen, wechselt man in das ausgecheckte <code>mycore</code>-Verzeichnis und
+        	führt das Kommando
+        	<code>mvn clean install -DskipTests -am -pl mycore-XXX</code> aus.
+        </p>
       </section>
       <section>
         <title>Nutzung von Eclipse</title>
