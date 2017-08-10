@@ -138,7 +138,7 @@
       <condition value="thomas" operator="=" field="user" />
       <condition value="kathleen" operator="=" field="user" />
     </boolean>
-    <condition value="127.0.0.1/32" operator="=" field="ip" />
+    <condition value="192.168.2.0/255.255.255.0" operator="=" field="ip" />
   </boolean>
 </condition>]]></pre>
     </section>
