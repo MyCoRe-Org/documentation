@@ -22,6 +22,20 @@
       </p>
     </section>
     <section>
+    	<title>Zugriffsschutz</title>
+		<p>Seit <span class="label label-info">2017.06</span> wird die Nutzung der REST-API durch 
+		   	<a href="site:permissions/acl_permissions">ACLs</a> geschützt.
+			Für den lesenden Zugriff muss immer eine ACL auf <code>restapi:/</code>
+			mit dem Recht <code>read</code> gesetzt sein.
+			Der Zugriff auf einzelne Pfade wie <code>/objects</code>, <code>/search</code> oder
+			<code>/classifications</code> kann durch entsprechende ACLs (z.B. <code>restapi:/v1/objects</code>) 
+			zusätzlich beschränkt werden.
+		</p>
+		<p>Durch Setzen entsprechender ACL-Regeln kann der Zugriff komplett freigeschaltet (<code>TRUE</code>), 
+		   auf einzelne Nutzer oder Rollen beschränkt oder auf bestimmte IP-Adressen / IP-Bereiche begrenzt werden.</p>
+
+	</section>
+    <section>
       <title>Metadatenobjekte und Derivate anzeigen</title>
       <section>
         <title>/objects</title>
