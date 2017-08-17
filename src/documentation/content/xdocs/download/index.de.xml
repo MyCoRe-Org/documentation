@@ -10,14 +10,14 @@
 
   <div style="margin-bottom:50px;">
     <p>
-      Die aktuellste MyCoRe-Version kann jeweils direkt via Maven oder aus dem
+      Die aktuelle MyCoRe-Version kann jeweils direkt via Maven oder aus dem
       <a href="http://artifactory.mycore.de/">MyCoRe-Artifactory</a> bezogen werden.
       Als fertige Anwendungslösung für ein institutionelles Repository steht alternativ die
       <a href="site:mir">MIR-Anwendung</a> zur Verfügung.
     </p>
     <p>
       Neben den Releases, das max. monatlich erscheint, stellt das Entwickler-Team ein sogenanntes
-      Long-Term-Support-Release (aktuell <a href="site:lts_release">LTS-Release 2016.06</a>) bereit. Dieses
+      Long-Term-Support-Release (aktuell <a href="site:lts_release">LTS-Release 2017.06</a>) bereit. Dieses
       wird über ca. 1 Jahr bis zum nächsten LTS-Release gepflegt.
     </p>
     <p>
@@ -32,10 +32,10 @@
       <script type="text/javascript" src="http://www.ohloh.net/p/16348/widgets/project_basic_stats.js"></script>
     </div>
     <p>
-      Den aktuellsten Codestand finden Sie in unserem Versionsmanagementsystem:
+      Den aktuellen Codestand finden Sie im MyCoRe-Repositorium auf GitHub:
     </p>
     <ul>
-      <li><a href="site:subversion">Subversion Zugang</a></li>
+      <li><a href="https://github.com/MyCoRe-Org">MyCoRe bei GitHub</a></li>
       <li><a href="site:changelog">ChangeLog</a></li>
     </ul>
     <p>

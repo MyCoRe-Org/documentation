@@ -11,13 +11,13 @@
   <div style="margin-bottom:50px;">
     <p>
       You can get the latest MyCoRe version directly using Maven or from the
-      <a href="http://artifactory.mycore.de/">MyCoRe Artifactory</a>. Alternatively
+      <a href="http://artifactory.mycore.de/">MyCoRe-Artifactory</a>. Alternatively
       you can download the <a href="site:mir">MIR application</a>, an out-of-the-box
       solution for institutional repositories.
     </p>
     <p>
       Besides the official current release, you can also use our long term support release (LTS)
-      <a href="site:lts_release">2016.06</a>, which is supported til next LTS (ca. 1 year).
+      <a href="site:lts_release">2017.06</a>, which is supported til next LTS (ca. 1 year).
     </p>
     <p>
       All older versions are archived.
@@ -31,10 +31,10 @@
       <script type="text/javascript" src="http://www.ohloh.net/p/16348/widgets/project_basic_stats.js"></script>
     </div>
     <p>
-      The latest sources can be accessed using our version management system:
+      The latest sources can be downloaded from the MyCoRe Repository at GitHub:
     </p>
     <ul>
-      <li><a href="site:subversion">Subversion access</a></li>
+      <li><a href="https://github.com/MyCoRe-Org">MyCoRe-Org at GitHub</a></li>
       <li><a href="site:changelog">ChangeLog</a></li>
     </ul>
     <p>
