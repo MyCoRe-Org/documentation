@@ -112,7 +112,7 @@
     </category>
     <category ID="collection">
       <label xml:lang="de" text="Sammelwerk" />
-      <label xml:lang="x-mapping" text="marcgt:series diniPublType:Other" />
+      <label xml:lang="x-mapping" text="marcgt:series diniPublType:other" />
       <label xml:lang="it" text="Compilazione" />
       <label xml:lang="x-hosts" text="series standalone" />
       <label xml:lang="en" text="Collection" />
@@ -217,7 +217,7 @@
     </category>
     <category ID="series">
       <label xml:lang="x-hosts" text="standalone" />
-      <label xml:lang="x-mapping" text="marcgt:series diniPublType:Other" />
+      <label xml:lang="x-mapping" text="marcgt:series diniPublType:other" />
       <label xml:lang="en" text="Series" />
       <label xml:lang="de" text="Serie" />
       <label xml:lang="it" text="Collana" />

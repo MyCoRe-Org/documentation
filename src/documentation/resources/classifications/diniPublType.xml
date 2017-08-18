@@ -186,7 +186,7 @@
       <label xml:lang="en" text="research data"
            description="Structured or unstructed data collection. The current form is not intellectually interpreted. Examples are raw or primary data and derived secondary data." />
     </category>
-    <category ID="Other">
+    <category ID="other">
       <label xml:lang="de" text="Verschiedenartige Ressourcen, nicht textgeprägt"
            description="Speziell gedacht für Material, das nicht anderweitig zugeordnet werden kann." />
       <label xml:lang="en" text="other resources, not textual"
