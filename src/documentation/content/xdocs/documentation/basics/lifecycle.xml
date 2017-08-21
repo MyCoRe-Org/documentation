@@ -1,11 +1,12 @@
 <document>
   <header>
     <title>MyCoRe Initialisierung und Shutdown verstehen</title>
-    <version>2017-06-20</version>
+    <version>2017-08-21</version>
     <release>2016.12</release>
     <release>2017.06</release>
     <authors>
       <person name="Paul Rochowski" email="[EMAIL PROTECTED]"/>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]"/>
     </authors>
     
     <abstract>
@@ -14,9 +15,11 @@
       Was passiert im Hintergrund um dieses Konstrukt zu verbinden und zu starten? Welche Mechanismen gibt MyCoRe dem
       Entwickler an die Hand um den Startvorgang zu beeinflussen, und was muss beachtet werden, wenn der
       ServletContainer
-      beendet wird? Diese Themen sollen hier im Detail erklärt werden.
+      beendet wird? Diese Themen sollen hier im Detail erklärt werden. Weitehin wird die Ladereihenfolge der Komponenten
+      und Module erläutert.
     </abstract>
   </header>
+  
   <body>
     <section>
       <title>Grundlagen der MyCoRe Initialisierung</title>
@@ -169,7 +172,6 @@
           Datenbankzugriffe stattfinden.
         </p>
         <br/>
-        <br/>
         <strong>void close()</strong>
         <p>
           Mithilfe der close() Methode wird einer Klasse die das Closeable Interface implementiert die Möglichkeit eines
@@ -178,7 +180,6 @@
           Abschnitt bereits
           beschrieben Abhängigkeiten sauber geschlossen werden.
         </p>
-        <br/>
         <br/>
         <strong>int getPriority()</strong>
         <p>
@@ -190,6 +191,42 @@
     
     </section>
   
+      <section>
+        <title>Ladereihenfolge der Komponenten und Module</title>
+        <p>Für die Gestaltung komplexer Anwendungen mit mehreren Subanwendungen und Mandanten ist es erforderlich, festzulegen,
+        in welcher Reihenfole Klassen und Ressourcen gefunden und eingebunden werden. Hierfür werden im Startup-Prozess Maifest-Informationen
+        der eingebundnen <code>*.jar</code>-Dateien ausgewertet. Die Reihenfolge des Überladens ist dabei :</p>
+        <ul>
+          <li>Komponenten des MyCoRe-Kerns - diese haben die Prioritäten 0 bis 99</li>
+          <li>Module in Form von integrierten <code>*.jar</code>-Dateien der Anwendung - diese habe eine Priorität von 0 aufwärts, wobei zu 
+          dieser Priorität noch ein Offset von 100 hinzugerechnet wird, um MyCoRe-Komponenten vorher einzuordnen.</li>
+        </ul>
+        <p>Bei gleichen Prioritäten kann die Reihenfolge der Integration nicht vorhergesagt werden. Die reihenfolgeabhängige Integration
+        der Ressourcen bezieht sich auf die Properties der Anwendung und die definierten I18N-Werte.</p>
+        <p>Die Festlegung in den Manifest-Dateien kann beispielsweise mittels Maven wie folgend realisiert werden :</p>
+    <source class="code"><![CDATA[..
+<artifactId>my-module</artifactId>
+<name>My Application Module</name>
+...
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <configuration>
+      <archive>
+        <manifest>
+          <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            <mainClass>org.mycore.mir.common.MIRCoreVersion</mainClass>
+          <addExtensions />
+        </manifest>
+        <manifestEntries>
+          <MCR-Artifact-Id>${project.artifactId}</MCR-Artifact-Id>
+          <MCR-Application-Module>${project.name}</MCR-Application-Module>
+          <Priority>50</Priority>
+        </manifestEntries>
+      </archive>
+    </configuration>
+  </plugin>]]></source>      
+      </section>
   
   </body>
 </document>
