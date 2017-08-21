@@ -100,7 +100,6 @@ See http://forrest.apache.org/docs/linking.html for more info
       <jpa                   label="Datenbank &amp; JPA"       href="jpa.html" />
       <solr                  label="Solr-Integration"          href="solr.html" />
       <properties            label="Konfiguration &amp; Properties" href="mcr_properties.html" />
-      <maven                 label="Buildprozess mit Maven"    href="maven.html" />
     </getting_started>
 
     <!-- Grundlagen -->
@@ -243,16 +242,17 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Für Entwickler -->
     <developer             label="Für Entwickler"             href="developer/">
-      <maven               label="Maven Site"                 href="http://www.mycore.de/generated/" />
-      <apidocs             label="Javadocs"                   href="http://www.mycore.de/generated/mycore/apidocs/" />
       <eclipse             label="Entwicklungsplattformen"    href="eclipse.html" />
-      <jira                label="JIRA"                       href="jira.html" />
-      <git                 label="Arbeit mit Git"             href="work_with_git.html" />
       <codestyle           label="Code-Style"                 href="codestyle.html" />
       <conventions         label="Namenskonventionen"         href="conventions.html" />
+      <jira                label="JIRA"                       href="jira.html" />
+      <git                 label="Arbeit mit Git"             href="work_with_git.html" />
+      <build_process       label="Buildprozesse"              href="build_process.html" />
+      <documentation       label="Dokumentation"              href="documentation.html" />
+      <apidocs             label="Javadocs"                   href="http://www.mycore.de/generated/mycore/apidocs/" />
+      <maven               label="Maven Site"                 href="http://www.mycore.de/generated/" />
       <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
       <plugin_dev          label="Eigene Plugins einbinden"   href="plugin_development.html" />
-      <documentation       label="Dokumentation"              href="documentation.html" />
       <classes             label="Allgemeine Klassen"         href="classes.html" />
     </developer>
 

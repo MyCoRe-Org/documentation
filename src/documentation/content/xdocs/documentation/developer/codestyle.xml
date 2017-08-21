@@ -3,6 +3,14 @@
 <document>
   <header>
     <title>Festlegungen für die Code Entwicklung</title>
+    <release>2016.06</release>
+    <release>2017.06</release>
+    <version>2017-08-21</version>
+    <authors>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+      <person name="Thomas Scheffler" email="[EMAIL PROTECTED]" />
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
   <body>
       <section>

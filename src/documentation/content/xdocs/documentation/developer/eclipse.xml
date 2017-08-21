@@ -3,7 +3,9 @@
 <document>
   <header>
     <title>Gemeinsame Entwicklungsplattformen</title>
-    <version>2016-10-13</version>
+    <release>2016.06</release>
+    <release>2017.06</release>
+    <version>2017-08-21</version>
     <authors>
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
@@ -54,15 +56,25 @@
              <li>da unter <em>Remote tracking</em> <code>checkout as new branch</code> auswählen</li>
            </ul>
            <note label="Anschalten der Warnung für die pom.xml">
-           Hierfür ist die jeweilige <code>pom.xml</code> zu öffnen. Ober erscheint eine Warnung. Auf der Warnung rechte Maustaste und <em>Make goal update-project-license as ignored in eclipse build</em> markieren.
+           Hierfür ist die jeweilige <code>pom.xml</code> zu öffnen. Ober erscheint eine Warnung. Auf der Warnung rechte 
+           Maustaste und <em>Make goal update-project-license as ignored in eclipse build</em> markieren.
            </note>
+         </section>
+         <section>
+           <title>Weiteres Repositories von MyCoRe-Entwicklern</title>
+           <p>Neben dem Repository auf GitHub betreiben einige Entwickler noch eigene Repositories auf GitLab-Grundlage.</p>
+           <ul>
+             <li><a href="" target="blank">Sientific Git des URZ der Uni Leipzig</a></li>
+           </ul>
          </section>
       </section>
 
       <section>
         <title>Subversion-Zugang</title>
-        <p> Der Quellcode der MyCoRe-Kerns und einiger Anwendungen, z. B. der Beispielanwendung MIR, wird auf
-          einem Subversion-Server an der Universität Duisburg-Essen verwaltet.
+        <p> Der <strong>alte</strong> Quellcode der MyCoRe-Kerns und einiger Anwendungen, wird auf
+          einem Subversion-Server an der Universität Duisburg-Essen verwaltet. <strong>Achtung, die Codestände von 
+          bereits auf Git migrierten Projekten sind veraltet und sollten nur noch zur Information genutzt werden!!!</strong>
+          Die Nutzung des SVN wird schrittweise nach GitHub oder anderen Git-Systemen migriert.
         </p>
         <p> Aktuell gib es zwei Zugangsmöglichkeiten: über HTTP im lesenden Zugriff und über SSH mit Schreibrechten
           (sofern der Entwickler Zugang zum System hat [der Server wird von Frank Lützenkirchen verwaltet]).
@@ -71,17 +83,6 @@
           <a href="http://www.mycore.de/svn/">http://www.mycore.de/svn/</a>
         </p>
         <p class="kasten">svn+ssh://server.mycore.de/svn/ </p>
-        <p>
-          Der Code ist innerhalb eines Projektes in die Zweige branches – für Releases, tags – für Snapshots
-          und trunk - für den altuellen HEAD-Zweig unterteilt.
-        </p>
-        <note label="Hinweis für Kommandozeilen-Nutzer">
-          Dateien in der SVN-Arbeitskopie nie direkt mit Betreibssystemmitteln kopieren, löschen und verschieben.
-          Stattdessen auf jeden Fall auf die <code>svn</code>-Kommandos <code>cp</code>, <code>rm</code> und
-          <code>mv</code> zurück.
-        </note>
-        <note label="Hinweis für Eclipse-Nutzer"> Ab sofort sollten Dateien nicht mehr mit Cut &amp; Paste sondern vielmehr über die
-          Team-Funktionen kopiert werden, damit die Histories nicht verloren gehen!</note>
         <note label="MIME-Typ für alle neuen Dateien">
           Alle neuen Dateien, die bei MyCoRe mit Subversion verwaltet werden müssen das SVN Property
           <code>svn:mime-type</code> ausgefüllt haben. Bei Mime-Typ <code>text/*</code>
@@ -93,10 +94,10 @@
           <code>[auto-props]</code>.
         </note>
         <note label="Weiter Repositories für Anwendungen">
-          Neben dem zentralen Repository auf <code>mycore.de</code> gibt es noch einige Subversion-Systeme der
+          Neben dem alten zentralen Repository auf <code>mycore.de</code> gibt es noch einige Subversion-Systeme der
           Anwendungsentwickler. Diese enthalten produktive Anwendungen der Einrichtungen und stellen Code für 
           die Nachnutzung in eigenen Anwendungen bereit. Diese Applikationen stellen auch weitere Beispiellösunge
-          zur Anwendung von MyCoRe dar.
+          zur Anwendung von MyCoRe dar. <strong>Auch hier wird in nächster Zeit schrittweise zu Repositories auf Git-Grundlage gewechselt!</strong>
           <ul>
             <li>SVN in Leipzig - <a href="http://svnextern.dl.uni-leipzig.de/viewsvn/" target="_blank">svnextern.dl.uni-leipzig.de</a> - 
             Ansprechpartner ist Jens Kupferschmidt</li>
@@ -104,27 +105,6 @@
         </note>
       </section>
       
-      <section>
-        <title>Maven Grundsystem</title>
-        <p>
-          Neben der Installation von Subversion für die Arbeit mit einem zentralen Code-Repository ist ab Version 2.1
-          auch das Produkt Maven (<a href="http://maven.apache.org/">http://maven.apache.org/</a>)
-          (Version 3.3.9 oder höher) erforderlich, um an den Kernkomponenten zu arbeiten. Installieren Sie Maven gemäß Anleitung der Home Page
-          und setzen Sie die Umgebungsvariablen M2_HOME und MAVEN_OPTS. Binden Sie das mvn-Kommando in den Suchpfad mit
-          ein.
-        </p>
-        <p>
-          Die Funktion von Maven kann mit dem Kommando
-          <code>mvn --version</code> getestet werden. Unter Linux-Systemen wird im Wurzelverzeichnis des Nutzers ein Verzeichnis
-          <code>.m2</code> angelegt, worin sich alle relevanten Maven-Daten befinden.
-        </p>
-        <p>
-        	Um während des Entwicklungsprozesses eine einzelne MyCoRe-Komponente (einschließlich der von ihr 
-        	abhängigen Module und Komponenten) zu bauen, wechselt man in das ausgecheckte <code>mycore</code>-Verzeichnis und
-        	führt das Kommando
-        	<code>mvn clean install -DskipTests -am -pl mycore-XXX</code> aus.
-        </p>
-      </section>
       <section>
         <title>Nutzung von Eclipse</title>
         <p>
