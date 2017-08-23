@@ -106,13 +106,13 @@
           </tr>
           <tr>
             <td>iiif</td>
-            <td>ene Komponente zur Einbindung von IIIF in MyCoRe</td>
+            <td>eine Komponente zur Einbindung von IIIF in MyCoRe</td>
             <td />
             <td>base</td>
           </tr>
           <tr>
             <td>impex</td>
-            <td>generiert Import- und Export-Pakete auf grundlage einer SOLR-Query</td>
+            <td>generiert Import- und Export-Pakete auf Grundlage einer SOLR-Query</td>
             <td>optional</td>
             <td>base</td>
           </tr>
