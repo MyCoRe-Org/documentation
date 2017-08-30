@@ -359,7 +359,7 @@
           </p>
           <table class="table table-bordered">
             <tr>
-              <td><code>LogoURL</code></td>
+              <td><code>logoURL</code></td>
               <td>
                 <strong>(string)</strong><br/>
                 die absolute URL zum Logo welches in der Toolbar angezeigt werden soll.
