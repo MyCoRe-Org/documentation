@@ -55,8 +55,8 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>MyCoRe Conference Call</title>
-          <message>The MyCoRe developers are offering an open MyCoRe telephone conference: Please contact the MyCoRe office.</message>
+          <title>MyCoRe-Workshop 2017</title>
+          <message>The MyCoRe User Workshop at 8. and 9. November 2017 will take place in Hamburg. Register now ...</message>
           <url>site:contact</url>
           <date>31. March 2017</date>
           <author>Wiebke Oeltjen</author>

@@ -55,9 +55,9 @@
       <map title="Alle Projekte auf einer Karte anzeigen" label="Karte" />
       <news>
         <newsentry>
-          <title>Offene MyCoRe-Telko</title>
-          <message>Die MyCoRe-Entwickler bieten eine offen MyCoRe-Telefonkonferenz an: Bitte Fragen und Themen der MyCoRe-Geschäftsstelle mitteilen.</message>
-          <url>contact/index.html</url>
+          <title>MyCoRe-Workshop 2017</title>
+          <message>Der MyCoRe-Anwenderworkshop findet am 8. und 9. November 2017 in Hamburg statt. Jetzt anmelden ... </message>
+          <url>site:workshops/workshop</url>
           <date>31. März 2017</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
