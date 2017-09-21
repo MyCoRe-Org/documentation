@@ -164,11 +164,11 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>016</td>
-            <td title="Klasse">Enthalten in mycore-mods<br/>org.mycore.mods.classification.MCRClassificationMappingEventHandler</td>
+            <td title="Klasse"><span class="label label-info">seit 2016.01</span> Enthalten in mycore-mods<br/>org.mycore.mods.classification.MCRClassificationMappingEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
-            <span class="label label-info">seit 2016.01</span> Der MCRClassificationMappingEventHandler für MODS setzt MyCoRe-Klassifikationen
+            Der MCRClassificationMappingEventHandler für MODS setzt MyCoRe-Klassifikationen
             in spezielle Klassifikationen im MODS-Datenmodell für z.B. für DINI um.
             </td>
            </tr>
@@ -226,7 +226,7 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>060</td>
-            <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
+            <td title="Klasse"><span class="label label-info">bis 2016.01</span> Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
@@ -236,7 +236,6 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>070</td>
-<!--            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.datamodel.common.MCRURNEventHandler</td> -->
             <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.urn.events.MCRURNEventHandler</td>
            </tr>
            <tr>
@@ -336,7 +335,7 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>070</td>
-            <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
+            <td title="Klasse"><span class="label label-info">bis 2016.01</span> Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
