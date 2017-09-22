@@ -11,7 +11,7 @@
         Archivanwendungen, Sammlungen von Digitalisaten oder vergleichbaren Repositorien.
         Auf MyCoRe basierende Anwendungen nutzen einen gemeinsamen Kern, der die
         typischerweise für solche Anwendungen erforderliche Funktionalität wie Metadatenverwaltung,
-        Suchfunktionen, OAI Schnittstelle, ein Bildbetrachtungsmodul etc. bereitstellt.
+        Suchfunktionen, OAI-Schnittstelle, ein Bildbetrachtungsmodul etc. bereitstellt.
         Dieser Kern kann um eigene, spezielle lokale Funktionen erweitert und per
         Konfiguration angepasst werden.
         Das CoRe in MyCoRe steht für „Content Repository“ oder wahlweise für „Core“ (Kern),

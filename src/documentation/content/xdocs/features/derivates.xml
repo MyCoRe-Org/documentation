@@ -11,12 +11,12 @@
     <section>
       <title>Dateibereiche</title>
       <p>
-        Einem MyCoRe Metadaten-Objekt wie z. B. einer Publikation sind in der Regel auch Dateien zugeordnet,
-        z. B. der Volltext der Publikation. MyCoRe speicher diese Dateien in einer eigenen, internen Struktur, dem
+        Einem MyCoRe-Metadaten-Objekt wie z. B. einer Publikation sind in der Regel auch Dateien zugeordnet,
+        z. B. der Volltext der Publikation. MyCoRe speichert diese Dateien in einer eigenen, internen Struktur, dem
         internen Dateisystem (IFS).
       </p>
       <p>
-        Hierzu sind einem MyCoRe Objekt ein oder mehrere Dateibereiche zugeordnet, intern "Derivate" genannt.
+        Hierzu sind einem MyCoRe-Objekt ein oder mehrere Dateibereiche zugeordnet, intern "Derivate" genannt.
         Derivate sind Bündel von zusammengehörigen Dateien, die auch eine interne Verzeichnisstruktur besitzen dürfen.
         So können z.B. Varianten eines Dokumentes in PDF- und HTML-Form existieren, die jeweils ein Derivat mit
         ein oder mehreren Dateien bilden.
@@ -24,7 +24,7 @@
     </section>
 
     <section>
-      <title>Content Stores</title>
+      <title>„Content Stores“</title>
       <p>
         Neben den Datei-Inhalten werden auch weitere beschreibende Daten zu Dateien verwaltet,
         insbesondere eine MD5 Prüfsumme zur Konsistenzprüfung. Als physisches Speichermedium dient ein separater Bereich
@@ -37,7 +37,7 @@
         MyCoRe kann mehrere solcher Speicherorte für Dateien (Content Stores) parallel verwenden.
         Anhand von Regeln wird für die importierte Datei ein entsprechender Content Store gewählt.
         So können etwa Audio-/Videodateien anhand ihrer Dateiendung automatisch beim Upload auf
-        einem Video Streaming Server abgelegt werden.
+        einem Video-Streaming-Server abgelegt werden.
       </p>
     </section>
 
@@ -94,10 +94,10 @@
         Der Nutzer importiert eine Datei bzw. lädt sie über den Webbrowser hoch.
         Anhand der Dateiendung und hinterlegter Regeln wählt MyCoRe dann
         automatisch den Streamingserver als Speicherort. Die Audio-/Videodatei kann dann über den
-        Streaming Server wiedergegeben  werden, ohne dass ein Download erforderlich ist.
+        Streaming-Server wiedergegeben  werden, ohne dass ein Download erforderlich ist.
         Der Nutzer kann frei im Videostrom navigieren oder direkt über die URL
         bestimmte Stellen ansteuern. In der Weboberfläche können aus dem
-        Streaming Server gewonnene technische Metadaten wie Bitrate, Framerate und Abspieldauer angezeigt werden.
+        Streaming-Server gewonnene technische Metadaten wie Bitrate, Framerate und Abspieldauer angezeigt werden.
       </p>
       <img src="images/videostreaming.png" alt="Video-Streaming" title="Video-Streaming"/>
       <p class="klein"><strong>Abbildung 5:</strong> Anzeige multimedialer Daten</p>

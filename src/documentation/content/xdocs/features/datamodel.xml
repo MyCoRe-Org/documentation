@@ -49,7 +49,7 @@
       <p>
         Für Vater-Kind-Beziehungen zwischen Objekten bietet MyCoRe einen <strong>Vererbungsmechanismus</strong> für Metadaten.
         Kindobjekte können dabei über mehrere Hierarchiestufen hinweg Werte bestimmter Felder
-        von den übergeordneten Obekten erben.
+        von den übergeordneten Objkten erben.
         Ein Zeitschriftenartikel könnte z. B. das Veröffentlichungsdatum des Heftes erben, in dem der
         Artikel erschienen ist.
         Vererbung bezieht sich hier also auf die Werte der Metadaten, nicht auf die Datenmodelldefinition.
@@ -71,45 +71,45 @@
         <a href="http://www.loc.gov/standards/mods/" title="zur MODS-Homepage">MODS</a> (Metadata Object Description Schema)
         ist ein XML-basiertes Metadatenschema der Library of Congress, für das MyCoRe bereits eine
         spezielle Unterstützung mit vordefinierter Funktionalität bietet.
-        Dazu gehören etwa der direkte Import von MODS-Metadaten als MyCoRe Objekte
-        und die Abbildung auf MyCoRe Klassifikationen.
+        Dazu gehören etwa der direkte Import von MODS-Metadaten als MyCoRe-Objekte
+        und die Abbildung auf MyCoRe-Klassifikationen.
       </p>
       <p>
         MODS ist das von MyCoRe empfohlene Metadatenformat für Publikationsserver,
-        dem wir besondere Aufmerksamkeit und Funktionalität widmen. So ist die MyCoRe-Beispielanwendung "MIR" eine auf MODS-basierende Anwendung.
+        dem wir besondere Aufmerksamkeit und Funktionalität widmen. So ist die MyCoRe-Beispielanwendung "MIR" eine auf MODS basierende Anwendung.
       </p>
     </section>
     <section>
       <title>Internes Speicherformat der Metadaten</title>
       <p>
-        Die Metadaten aller MyCoRe Objekte werden intern als XML-Dokumente gespeichert.
+        Die Metadaten aller MyCoRe-Objekte werden intern als XML-Dokumente gespeichert.
         Dies unterstützt Strategien der Langzeitarchivierung und stellt sicher,
         dass Metadaten auch unabhängig von MyCoRe zu einem späteren Zeitpunkt
         weiter verarbeitet werden können.
       </p>
       <p>
-        Intern ist jedes MyCoRe Objekt dabei in drei Bereiche unterteilt:
+        Intern ist jedes MyCoRe-Objekt dabei in drei Bereiche unterteilt:
       </p>
       <dl>
         <dt>
           <code>metadata</code>
         </dt>
         <dd>
-          im metadata Teil werden die Werte der Datenfelder gespeichert, die das Objekt beschreiben,
+          im metadata-Teil werden die Werte der Datenfelder gespeichert, die das Objekt beschreiben,
           die eigentlichen Metadaten.
         </dd>
         <dt>
           <code>structure</code>
         </dt>
         <dd>
-          im structure Teil werden die Vater-Kind-Beziehungen zwischen Objekten gespeichert,
+          im structure-Teil werden die Vater-Kind-Beziehungen zwischen Objekten gespeichert,
           die Verweise auf übergeordnete Objekte.
         </dd>
         <dt>
           <code>service</code>
         </dt>
         <dd>
-          im service Teil werden administrative und teils automatisch generierte Metadaten gespeichert,
+          im service-Teil werden administrative und teils automatisch generierte Metadaten gespeichert,
           z. B. das Änderungsdatum und (beim Import) Verweise auf Access Control Listen zur Zugriffssteuerung.
         </dd>
       </dl>
@@ -120,14 +120,14 @@
       <p>
         Klassifikationssysteme finden in vielen internationalen Metadaten-Standards Verwendung, um Datenbestände
         sachlich zu erschließen und Inhalte zu strukturieren. Beispiele für solche Klassifikationen sind
-        die <strong>Dewey Dezimalklassifikation (DDC)</strong>, oder das <strong>"Gemeinsame Vokabular"</strong>
+        die <strong>Dewey-Dezimalklassifikation (DDC)</strong>, oder das <strong>"Gemeinsame Vokabular"</strong>
         von DINI und Deutscher Nationalbibliothek zur Einordnung von Publikationstypen.
         Auch fach- oder anwendungsspezifische Klassifikationsysteme werden
         verwendet, z. B. die Organisationsstruktur der eigenen Einrichtung.
       </p>
       <p>
         MyCoRe kann beliebige solcher Klassifikationssysteme unterstützen. Eine Klassifikation besteht in MyCoRe aus
-        einer Liste oder Hiearchie von Kategorien. Jede Kategorie besitzt eine eindeutige ID, eine mehrsprachige Bezeichnung,
+        einer Liste oder Hierarchie von Kategorien. Jede Kategorie besitzt eine eindeutige ID, eine mehrsprachige Bezeichnung,
         sowie optional ein Kommentarfeld und einen weiterführenden Link.
       </p>
       <p>
@@ -137,19 +137,19 @@
         die ersten Ebenen der DDC, das Gemeinsame Vokabular, eine Liste der Sprachen nach RFC4646 und weitere.
       </p>
       <p>
-        MyCoRe Objekte können beliebigen Klassifikationskategorien zugewiesen werden.
+        MyCoRe-Objekte können beliebigen Klassifikationskategorien zugewiesen werden.
         Bei der <strong>Recherche</strong> kann über Kategorien gesucht werden, wobei auch die Hierarchie von Kategorien berücksichtigt wird.
         Über einen <strong>Klassifikationsbrowser</strong> kann der Bestand nach Kategorien strukturiert präsentiert werden.
       </p>
     </section>
 
     <section>
-      <title>Persistent Identifier</title>
+      <title>Persistente Identifikatoren (Persistent Identifier)</title>
       <p>
-        Persistent Identifier Systeme wie <strong>URN, DOI und Handle</strong> dienen in Online-Repositorien
+        Persistent-Identifier-Systeme wie <strong>URN, DOI und Handle</strong> dienen in Online-Repositorien
         der dauerhaften Referenzierung von Ressourcen. Elektronische Publikationen und Digitalisate
         erhalten so eine dauerhafte, standardisierte und weltweit eindeutige Adresse, unter der sie erreichbar sind
-        und mit der sie zitiert werden können. Alle Formen von Persistent Identifiern können in den MyCoRe Metadaten
+        und mit der sie zitiert werden können. Alle Formen von „Persistent Identifiern“ können in den MyCoRe-Metadaten
         gespeichert werden.
       </p>
       <p>
@@ -164,7 +164,7 @@
         Deutsche Nationalbibliothek gemeldet werden.
       </p>
       <p>
-        Eine vergleichbare, direktere Unterstützung für das Handle System ist in Entwicklung.
+        Eine vergleichbare, direktere Unterstützung für das Handle-System ist in Entwicklung.
       </p>
     </section>
 
