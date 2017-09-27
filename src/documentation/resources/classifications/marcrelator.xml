@@ -45,6 +45,10 @@
           description="Eine Person oder Institution, die für die Erstellung und/oder Wartung von Entwürfen, Quellcode, maschinell ausführbaren Dateien und unterstützender Dokumentation eines Computerprogramms verantwortlich ist." />
         <label xml:lang="x-miless" text="programmer" />
       </category>
+      <category ID="isb">
+        <label xml:lang="de" text="Herausgebendes Organ" description="Eine Person, Familie oder Organisation, die ein Werk herausgeben, z.B. ein offizielles Organ einer Körperschaft." />
+        <label xml:lang="en" text="Issuing body" description="A person, family or organization issuing a work, such as an official organ of the body" />
+      </category>
     </category>
     <category ID="pbl">
       <label xml:lang="en" text="Publisher"
@@ -57,13 +61,6 @@
         <label xml:lang="de" text="Distribution"
           description="Eine Person oder Organisation, die die exklusiven oder geteilten Vermarktungsrechte für ein Werk hat." />
         <label xml:lang="x-miless" text="distributor" />
-      </category>
-      <category ID="edt">
-        <label xml:lang="en" text="Editor"
-          description="Use for a person or organization who prepares for publication a work not primarily his/her own, such as by elucidating text, adding introductory or other critical matter, or technically directing an editorial staff." />
-        <label xml:lang="de" text="Herausgeber(in)"
-          description="Eine Person oder Institution, die vorbereitend bei der Veröffentlichung einer nicht primär eigenen Arbeit mitwirkt, z.B. duch Texterklärungen, Hinzufügen von Einleitungen und anderen kritischen Inhalten, oder die technische Leitung ..." />
-        <label xml:lang="x-miless" text="editor" />
       </category>
     </category>
     <category ID="ctb">
@@ -85,6 +82,13 @@
         <label xml:lang="de" text="Gutachter(in), Rezensent(in)"
           description="Eine Person oder Institution, die für die Begutachtung von Büchern, Filmen, Aufführungen, etc. verantwortlich ist." />
         <label xml:lang="x-miless" text="referee" />
+      </category>
+      <category ID="edt">
+        <label xml:lang="en" text="Editor"
+          description="Use for a person or organization who prepares for publication a work not primarily his/her own, such as by elucidating text, adding introductory or other critical matter, or technically directing an editorial staff." />
+        <label xml:lang="de" text="Herausgeber(in)"
+          description="Eine Person oder Institution, die vorbereitend bei der Veröffentlichung einer nicht primär eigenen Arbeit mitwirkt, z.B. duch Texterklärungen, Hinzufügen von Einleitungen und anderen kritischen Inhalten, oder die technische Leitung ..." />
+        <label xml:lang="x-miless" text="editor" />
       </category>
       <category ID="ann">
         <label xml:lang="en" text="Annotator"
@@ -219,6 +223,21 @@
         <label xml:lang="de" text="Metadaten Kontakt"
                description="Die Person oder Institution, die hauptsächlich für die Pflege der Metadaten verantwortlich ist." />
         <label xml:lang="x-miless" text="metadataContact" />
+      </category>
+      <category ID="mod">
+        <label xml:lang="en" text="Moderator" description="A performer contributing to a resource by leading a program (often broadcast) where topics are discussed, usually with participation of experts in fields related to the discussion." />
+        <label xml:lang="de" text="Moderator" description="A performer contributing to a resource by leading a program (often broadcast) where topics are discussed, usually with participation of experts in fields related to the discussion." />
+        <label xml:lang="x-miless" text="moderator" />
+      </category>
+      <category ID="cmm">
+        <label xml:lang="de" text="Kommentator" description="A performer contributing to a work by providing interpretation, analysis, or a discussion of the subject matter on a recording, film, or other audiovisual medium." />
+        <label xml:lang="en" text="Commentator" description="A performer contributing to a work by providing interpretation, analysis, or a discussion of the subject matter on a recording, film, or other audiovisual medium." />
+        <label xml:lang="x-miless" text="commentator" />
+      </category>
+      <category ID="mrk">
+        <label xml:lang="en" text="Markup editor" description="A person or organization performing the coding of SGML, HTML, or XML markup of metadata, text, etc." />
+        <label xml:lang="de" text="Markup Ersteller" description="A person or organization performing the coding of SGML, HTML, or XML markup of metadata, text, etc." />
+        <label xml:lang="x-miless" text="machineReadableCreator" />
       </category>
     </category>
     <category ID="own">
