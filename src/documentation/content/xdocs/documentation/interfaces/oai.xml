@@ -296,7 +296,7 @@ MCR.OAIDataProvider.OAI2.MapSetToQuery.ec_fundedresources=((derCount:[1 TO *] AN
       <pre class="brush: shell">
 MCR.OAIDataProvider.OAI2.MetadataFormats=oai_dc,epicur,oai_datacite
 MCR.OAIDataProvider.MetadataFormat.oai_datacite.Namespace=http://schema.datacite.org/oai/oai-1.0/
-MCR.OAIDataProvider.MetadataFormat.oai_datacite.Schema=http://schema.datacite.org/oai/oai-1.0/oai_datacite.xsd
+MCR.OAIDataProvider.MetadataFormat.oai_datacite.Schema=https://schema.datacite.org/oai/oai-1.0/oai.xsd
       </pre>
     </section>
 
