@@ -69,7 +69,7 @@
      });
      return this;
      };
-     var version = "2016.12";
+     var version = "2017.06";
      $('[data-role=artifactResolver]').resolveArtifacts(version);
      });
      })(jQuery);
