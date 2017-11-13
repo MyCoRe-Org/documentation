@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+ <header>
+  <title>Web Tools für Administratoren</title>
+  <release>2016.06</release>
+  <release>2017.06</release>
+  <version>2017-11-13</version>
+  <authors>
+   <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+   <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+  </authors>
+ </header>
+
+ <body>
+
+  <section>
+   <title>Allgemeines</title>
+
+   <p>Zur besseren Arbeit mit den MyCoRe-Anwendungen, vor allem im Umfeld der Web Applikation wurden kleine Werkzeuge
+    implementiert, welch den Administrator online unterstützen sollen. Diese sind in der Rubrik WebTools
+    zusammengefasst.</p>
+
+  </section>
+
+  <section>
+   <title>Web CLI</title>
+
+   <p>
+    Die Web CLI ist mit im Abschitt zum
+    <a href="../cli/cli_web.xml" target="_self">Command Line Interface</a>
+    beschrieben.
+   </p>
+
+  </section>
+
+  <section>
+   <title>Session Listing</title>
+
+   <section>
+    <title>Allgemeines</title>
+
+    <p>
+     Die Komponente Session Listing ist relativ klein und einfach. Sie stellt lediglich die
+     Möglichkeit bereit, in der
+     interaktiven Sitzung angezeigt zu bekommen, welche Sitzungen
+     für die MyCoRe-Anwendung aktiv sind. Die Anfrage an das
+     Servlet liefert eine XML-Datei
+     zurück, welche über das mitgelieferte Stylesheet angezeigt wird. Ggf. kann dieses
+     Stylesheet
+     durch eine eigene Variante überschrieben werden.
+    </p>
+   </section>
+
+   <section>
+    <title>Zugriffsrechte</title>
+
+    <p>
+     Das Session-Listing-System ist durch eine Zugriffsregel geschützt. Nur berechtigte Nutzer dürfen diese
+     Funktionalität ausführen. Hierfür ist das
+     <em>PRIVILEG</em>
+     <strong>manage-sessions</strong>
+     mittels des CLI-Kommandos
+     <code>load permissions data from file {file}</code>
+     in die Zugriffsliste einzutragen. Nachfolgend eine Beispielkonfiguration als XML-File.
+    </p>
+    <pre class="brush: xml;">
+<![CDATA[<?xml version="1.0" encoding="UTF-8" ?>
+<mcrpermissions
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRPermissions.xsd"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+>
+  <mcrpermission name="manage-sessions"
+    description="Administration rights for the session system"
+    ruledescription="For administrators only">
+    <condition format="xml">
+      <boolean operator="or">
+        <condition value="admin" operator="=" field="group"/>
+      </boolean>
+    </condition>
+  </mcrpermission>
+</mcrpermissions>
+]]></pre>
+   </section>
+
+   <section>
+    <title>Integration</title>
+    <p>
+     Der MyCoRe-Kern enthält schon alle Dateien für die Integration der Komponente. Sie muss
+     lediglich noch in der
+     Navigation der Anwendung aufgerufen werden.</p>
+    <p>
+     <dt>für LTS-Release 2017.06</dt>
+     <dd>
+      <code>href="/modules/webtools/session/sessionListing.xml"</code>
+     </dd>
+     <dt>für LTS-Release 2016.06</dt>
+     <dd>
+      <code>href="/modules/session-listing/sessionListing.xml"</code>
+     </dd>
+    </p>
+   </section>
+
+  </section>
+
+  <section>
+   <title>Processing Tool</title>
+
+   <section>
+    <title>Allgemeines</title>
+    <p>
+     Mit dem Processing Tool können interne Systemprozesse angezeigt werden. Dies sind
+     <ul>
+      <li>der Image Tiler Process</li>
+     </ul>
+    </p>
+   </section>
+
+   <section>
+    <title>Integration</title>
+    <p>
+     Der MyCoRe-Kern enthält schon alle Dateien für die Integration der Komponente. Sie muss
+     lediglich noch in der
+     Navigation der Anwendung aufgerufen werden.</p>
+    <p>
+     <dt>für LTS-Release 2017.06</dt>
+     <dd>
+      <code>href="/modules/webtools/processing/processing.xml"</code>
+     </dd>
+    </p>
+   </section>
+
+  </section>
+
+ </body>
+</document>
