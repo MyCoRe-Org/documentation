@@ -4,6 +4,12 @@
 <document>
   <header>
     <title>Google-Sitemap</title>
+    <release>2017.07</release>
+    <version>2016-11-16</version>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
   <body>
 
@@ -16,8 +22,8 @@
    Für die Konfiguration dieser XML-Ausgabe stehen folgende Properties zur Verfügung:
    </p>
    <dl>
-   <dt><code>MCR.GoogleSitemap.Types</code></dt>
-   <dd>Liste von mit Komma getrennten MyCoRe-Objekttypen</dd>
+   <dt><code>MCR.GoogleSitemap.SolrQuery</code></dt>
+   <dd>enthält eine SOLR Query zum Selektieren der Objekte(Bsp.:<code>objectType:mods</code>)</dd>
    <dt><code>MCR.GoogleSitemap.Freq</code></dt>
    <dd>Zugriffsfrequenz von Google – Standard ist monthly – weiter möglich sind: allways / hourly / daily / weekly /
    monthly / yearly / never</dd>
