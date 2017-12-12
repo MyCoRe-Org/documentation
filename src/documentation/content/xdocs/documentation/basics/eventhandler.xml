@@ -185,7 +185,7 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>018</td>
-            <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.pi.MCRPersistentIdentifierEventHandler</td>
+            <td title="Klasse">Enthalten in mycore-pi<br/>org.mycore.pi.MCRPersistentIdentifierEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
