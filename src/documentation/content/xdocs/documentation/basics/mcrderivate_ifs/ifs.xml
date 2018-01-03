@@ -7,14 +7,22 @@
     <release>2015.05</release>
     <release>2016.06</release>
     <release>2017.06</release>
-    <version>???</version>
-    <authors>
+    <version>2018-01-03</version>
+     <authors>
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
     </authors>
   </header>
 
   <body>
    <!-- TODO: copied from miless documentation - refacturing needed -->
+    <section>
+      <title>Speicherung der Derivat-XML-Dateien</title>
+      <p>
+        Genau wie die Metadaten werden auch die XML-Dateien der Derivate abgespeichert.
+        Eine genaue Beschreibung dazu ist unter <em>MyCoRe-Objekte -> Metadatenspeicher</em> zu finden.
+      </p>
+    </section>
+
    <section>
      <title>Speicherorte für Dateien konfigurieren</title>
      <p>
