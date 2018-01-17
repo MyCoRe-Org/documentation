@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
+
+<document>
+
+  <header>
+    <title>Benutzung von MyCoRe unter Gradle</title>
+    <release>2017.06</release>
+    <version>2018-01-17</version>
+    <authors>
+      <person name="Huu Chi Vu" email="[EMAIL PROTECTED]" />
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+    </authors>
+  </header>
+  
+  <body>
+    <section>
+      <title>Einbindung unter Gradle</title>
+      <p>
+      Neben Maven als Build-System wird auch <a target="_blank" href="https://gradle.org/">Gradle</a> immer beliebter.
+      Um den MyCoRe-Kern auch in dieser Umgebung einzubinden, kann der folgende Code-Baustein für die Konfiguration
+      wichtige Hinweise geben.
+      </p>
+      <pre class="brush: xml"><![CDATA[
+allprojects {
+    def releaseURL = "http://artifactory.mycore.de/mycore-releases"
+    def snapshotsURL = "http://artifactory.mycore.de/mycore-snapshots"
+    def sonatypeSnapshotsURL = "https://oss.sonatype.org/content/repositories/snapshots"
+
+    repositories {
+        mavenLocal()
+
+        mavenCentral()
+
+        maven { url releaseURL }
+
+        maven { url snapshotsURL }
+
+        maven { url sonatypeSnapshotsURL }
+    }
+}
+  ]]>
+      </pre>
+    </section>
+  </body>
+  
+</document>

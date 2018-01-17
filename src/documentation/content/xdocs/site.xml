@@ -247,10 +247,10 @@ See http://forrest.apache.org/docs/linking.html for more info
       <conventions         label="Namenskonventionen"         href="conventions.html" />
       <jira                label="JIRA"                       href="jira.html" />
       <git                 label="Arbeit mit Git"             href="work_with_git.html" />
-      <build_process       label="Buildprozesse"              href="build_process.html" />
+      <work_with_maven     label="Arbeit mit Maven"           href="work_with_maven.html" />
+      <work_with_gradle    label="Arbeit mit Gradle"          href="work_with_gradle.html" />
       <documentation       label="Dokumentation"              href="documentation.html" />
       <apidocs             label="Javadocs"                   href="http://www.mycore.de/generated/mycore/apidocs/" />
-      <maven               label="Maven Site"                 href="http://www.mycore.de/generated/" />
       <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
       <plugin_dev          label="Eigene Plugins einbinden"   href="plugin_development.html" />
       <classes             label="Allgemeine Klassen"         href="classes.html" />
