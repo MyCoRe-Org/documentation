@@ -10,7 +10,7 @@
       <person email="[EMAIL PROTECTED]" name="Wiebke Oeltjen" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
-    <version>2015-06-16</version>
+    <version>2018-01-19</version>
     <abstract>Der URI-Resolver in MyCoRe ist eine Erweiterung des Standard-URI-Resolvers und gestattet innerhalb der
       MyCoRe-Anwendung den einfachen Zugriff auf interne Komponenten.
     </abstract>
@@ -39,14 +39,11 @@
           erfolgt
           direkt, d.h. ohne HTTP Request oder Anwendung eines Stylesheets.
         </p>
-        <p class="break">
-          <source><![CDATA[
-webapp:{path}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-webapp:config/labels.xml]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          webapp:{path}
+
+          webapp:config/labels.xml
+        </pre>
       </section>
 
       <section>
@@ -56,15 +53,11 @@ webapp:config/labels.xml]]></source>
           MyCoRe-Anwendung. Im Gegensatz zur http/https Methode ist der Pfad relativ zur Basis-URL der Web-Applikation
           anzugeben, die MCRSessionID wird automatisch als HTTP GET Parameter ergänzt.
         </p>
-        <p class="break">
-          <source><![CDATA[
-request:{path}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-request:servlets/MCRLinkServlet?
-  XSL.Style=xml&amp;form=&amp;to=DocPortal_document_00000001&amp;type=derivate]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          request:{path}
+
+          request:servlets/MCRLinkServlet?XSL.Style=xml&amp;form=&amp;to=mir_mods_00000001&amp;type=derivate
+        </pre>
       </section>
 
       <section>
@@ -79,14 +72,11 @@ request:servlets/MCRLinkServlet?
           jar-Datei
           abgelegt sind.
         </p>
-        <p class="break">
-          <source><![CDATA[
-resource:{path}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-resource:ContentStoreSelectionRules.xml]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          resource:{path}
+
+          resource:ContentStoreSelectionRules.xml
+        </pre>
       </section>
 
       <section>
@@ -104,14 +94,11 @@ resource:ContentStoreSelectionRules.xml]]></source>
           <code>get()</code>
           Methode aus der Session lesen.
         </p>
-        <p class="break">
-          <source><![CDATA[
-session:{key}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-session:mylist]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          session:{key}
+
+          session:mylist
+        </pre>
         <p>
           Das Beispiel liest das JDOM XML-Element, das als Ergebnis von
           <code>MCRSessionMgr.getCurrentSession().get("mylist");</code>
@@ -122,37 +109,30 @@ session:mylist]]></source>
       <section>
         <title>mcrobject:[MCRObjectID]</title>
         <p>liest die XML-Darstellung der Metadaten eines MCRObject mit der angegebenen MCRObjectID aus.</p>
-        <p class="break">
-          <source><![CDATA[
-mcrobject:{mcrobjectid}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-mcrobject:DocPortal_document_07910401]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          mcrobject:{mcrobjectid}
+
+          mcrobject:mir_mods_07910401
+        </pre>
       </section>
 
       <section>
         <title>deletedMcrObject:[MCRObjectID]</title>
         <p>löscht ein MCRObject mit der angegebenen MCRObjectID.</p>
-        <p class="break">
-          <source><![CDATA[
-deletedMcrObject:{mcrobjectid}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-deletedMcrObject:DocPortal_document_07910401]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          deletedMcrObject:{mcrobjectid}
+
+          deletedMcrObject:mir_mods_07910401
+        </pre>
       </section>
 
       <section>
         <title>classification:[ClassificationQuery]</title>
         <p>gibt eine Klassifikation in unterschiedlichen Formaten aus.
         </p>
-        <p class="break">
-          <source><![CDATA[
-classification:{editor['['formatAlias']']|editorComplete|metadata}:{Levels}[:noEmptyLeaves]:{parents|children}:{ClassID}[:CategID]]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          classification:{editor['['formatAlias']']|editorComplete|metadata}:{Levels}[:noEmptyLeaves]:{parents|children}:{ClassID}[:CategID]
+        </pre>
         <p>Die einzelnen Parameter sind durch Doppelpunkte getrennt.</p>
         <ol>
           <li>
@@ -160,13 +140,10 @@ classification:{editor['['formatAlias']']|editorComplete|metadata}:{Levels}[:noE
             <ul>
               <li>
                 <code>editor</code>
-                bereitet die Klassifikation für die Nutzung in der Editor-Selectbox auf.Letztere kann für den Label-Text
-                noch unterschiedliche Formatanweisungen enthalten, die mit
-                <code>formatAlias</code>
-                referenziert werden.Das Property
-                <code>MCR.UriResolver.Classification.Format.{formatAlias}</code>
-                enthält dann die Formatieranweisung.
-                Diese besteht aus beliebigem Text kombiniert mit Platzhaltern:
+                bereitet die Klassifikation für die Nutzung in der Editor-Selectbox auf. Letztere kann für den Label-Text
+                noch unterschiedliche Formatanweisungen enthalten, die mit <code>[formatAlias]</code> 
+                referenziert werden. Das Property <code>MCR.URIResolver.Classification.Format.{formatAlias}</code>
+                enthält dann die Formatieranweisung. Diese besteht aus beliebigem Text kombiniert mit Platzhaltern:
                 <ul>
                   <li>
                     <code>{id}</code>
@@ -224,33 +201,27 @@ classification:{editor['['formatAlias']']|editorComplete|metadata}:{Levels}[:noE
             gibt an, ob bei Angabe einer
             <code>CategID</code>
             zusätzlich
-            alle übergeordneten Kategorien mit zurückgegeben werden (
-            <code>parents</code>
-            ) oder ob nur die Kinder der Kategorie
-            berücksichtigt werden sollen. Bei Angabe eines positiven Levels und „
-            <code>parents</code>
-            “ werden sowohl die Eltern
-            ausgegeben, wie auch
-            <code>{Levels}</code>
+            alle übergeordneten Kategorien mit zurückgegeben werden (<code>parents</code>)
+            oder ob nur die Kinder der Kategorie
+            berücksichtigt werden sollen. Bei Angabe eines positiven Levels und „<code>parents</code>“
+            werden sowohl die Eltern ausgegeben, wie auch <code>{Levels}</code>
             Hierarchieebenen der Kinder.
           </li>
           <li>
-            <code>ClassID</code>
-            ist die Klassifikations-ID
+            <code>ClassID</code> ist die Klassifikations-ID
           </li>
           <li>
-            <code>CategID</code>
-            ist Kategorie-ID
+            <code>CategID</code> ist Kategorie-ID
           </li>
         </ol>
-        <p class="break">
-          <source><![CDATA[
-classification:editor[CountDocument]:2:noEmptyLeaves:children:DocPortal_class_00000002
+        <pre class="brush: bash; gutter: false">
+          MCR.URIResolver.Classification.Format.textDescription={text} - {description}
+          classification:editor[textDescription]:-1:children:PACS
 
-classification:editorComplete:3:noEmptyLeaves:children:MyCoRe_class_00000001:Categ0003
+          classification:editorComplete:3:noEmptyLeaves:children:DDC:09
 
-classification:metadata:0:parents:DocPortal_class_00000001:Unis.Jena]]></source>
-        </p>
+          classification:metadata:0:parents:mir_institutes:Unis.Jena
+        </pre>
         <p>Mit dem Property <code>MCR.URIResolver.Classification.Sort.{ClassID}</code>
            kann gesteuert werden, ob die Label in der zurückgelieferten Klassifikation 
            alphabetisch sortiert ausgegeben werden sollen (default=<tt>true</tt>). 
@@ -265,10 +236,9 @@ classification:metadata:0:parents:DocPortal_class_00000001:Unis.Jena]]></source>
           <code>servacls</code>
           aus.
         </p>
-        <p class="break">
-          <source><![CDATA[
-access:action=[all|{permision}]&amp;object={MCRObjectID}]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          access:action=[all|{permision}]&amp;object={MCRObjectID}
+        </pre>
         <ul>
           <li>
             Der Parameter
@@ -281,12 +251,11 @@ access:action=[all|{permision}]&amp;object={MCRObjectID}]]></source>
             kann eine relevante Permission angegeben werden.
           </li>
         </ul>
-        <p class="break">
-          <source><![CDATA[
-access:action=all&amp;object=DocPortal_document_07910401
+        <pre class="brush: bash; gutter: false">
+          access:action=all&amp;object=mir_mods_07910401
 
-access:action=writedb&amp;object=DocPortal_document_07910401]]></source>
-        </p>
+          access:action=writedb&amp;object=mir_mods_07910401
+        </pre>
       </section>
 
       <section>
@@ -296,14 +265,11 @@ access:action=writedb&amp;object=DocPortal_document_07910401]]></source>
           <code>mcrdirectory</code>
           -Verzeichnisstruktur im XML-Format.
         </p>
-        <p class="break">
-          <source><![CDATA[
-ifs:{MCRDerivateID}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-ifs:DocPortal_derivate_00000001]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          ifs:{MCRDerivateID}
+
+          ifs:mir_derivate_00000001
+        </pre>
       </section>
 
       <section>
@@ -314,14 +280,11 @@ ifs:DocPortal_derivate_00000001]]></source>
           <code>resolve</code>
           -Methode aufgerufen. Andernfalls wird ein JDOM-Source zurückgegeben.
         </p>
-        <p class="break">
-          <source><![CDATA[
-localclass:{class}?{param}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-localclass:org.mycore.ClassName?mode=getAll]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          localclass:{class}?{param}
+
+          localclass:org.mycore.ClassName?mode=getAll
+        </pre>
       </section>
 
       <section>
@@ -329,25 +292,20 @@ localclass:org.mycore.ClassName?mode=getAll]]></source>
         <p>
           generiert aus dem String ein JDOM-Objekt.
         </p>
-        <p class="break">
-          <source><![CDATA[
-buildxml:_rootName_={root_element_name}&{xpath_entry}[&{xpath_entry}][...]]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-buildxml:_rootName_=mycoreobject&metadata/parents/parent/@href= 'FooBar_Document_4711'
+        <pre class="brush: bash; gutter: false">
+          buildxml:_rootName_={root_element_name}&amp;{xpath_entry}[&amp;{xpath_entry}][...]
 
-erzeugt:
-
-<mycoreobject>
+          buildxml:_rootName_=mycoreobject&amp;metadata/parents/parent/@href= 'mir_mods_4711'
+         </pre>
+         <p>erzeugt:</p>
+<pre class="brush: xml"><![CDATA[<mycoreobject>
  <metadata>
   <parents>
-   <parent href="FooBar_Document_4711" />
+   <parent href="mir_mods_4711" />
   </parents>
  </metadata>
 </mycoreobject>
-]]></source>
-        </p>
+]]></pre>
       </section>
 
       <section>
@@ -355,14 +313,11 @@ erzeugt:
         <p>
           liefert eine konkrete Datei aus einem MCRDerivate, welche über den Pfad adressiert ist.
         </p>
-        <p class="break">
-          <source><![CDATA[
-mcrfile:{MCRDerivateID}/{path}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-file:DocPortal_derivate_00000001/folder1/image2.jpg]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          mcrfile:{MCRDerivateID}/{path}
+
+          file:mir_derivate_00000001/folder1/image2.jpg
+        </pre>
       </section>
 
       <section>
@@ -370,14 +325,11 @@ file:DocPortal_derivate_00000001/folder1/image2.jpg]]></source>
         <p>
           liefert ???.
         </p>
-        <p class="break">
-          <source><![CDATA[
-fileMeta:???]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-fileMeta:???]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          fileMeta:???
+
+          fileMeta:???
+        </pre>
       </section>
 
       <section>
@@ -387,18 +339,14 @@ fileMeta:???]]></source>
           zurückgegebene XML
           enthält die ISO 639-1 und ISO 639-2 Sprachcodes für die angefragte Sprache.
         </p>
-        <p class="break">
-          <source><![CDATA[
-language:{code}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-language:de
+        <pre class="brush: bash; gutter: false">
+          language:{code}
 
-erzeugt folgenden XML-Output:
+          language:de
+        </pre>
+        <p>erzeugt folgenden XML-Output:</p>
 
-<language xmlCode="de" biblCode="ger" termCode="deu" />]]></source>
-        </p>
+        <pre class="brush: xml"><![CDATA[<language xmlCode="de" biblCode="ger" termCode="deu" />]]></pre>
       </section>
 
       <section>
@@ -407,10 +355,9 @@ erzeugt folgenden XML-Output:
           liefert Einträge aus der Korbfunktion einer Session einer MyCoRe-Anwendung. Der Resolver wird z. B. für den
           Input des Korb-Editors genutzt.
         </p>
-        <p class="break">
-          <source><![CDATA[
-basket:{typeID}:{entryID}]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          basket:{typeID}:{entryID}
+        </pre>
         <ul>
           <li>
             Die
@@ -428,10 +375,9 @@ basket:{typeID}:{entryID}]]></source>
             <strong>MCRObjectID</strong>
           </li>
         </ul>
-        <p class="break">
-          <source><![CDATA[
-basket:objects:MyCoRe_basket_00000001]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          basket:objects:MyCoRe_basket_00000001
+        </pre>
       </section>
 
       <section>
@@ -440,21 +386,17 @@ basket:objects:MyCoRe_basket_00000001]]></source>
           liefert Versionsinformationen über ein MyCoRe-Objekt im XML-Format. Ist die Versionierung abgeschaltet, wird
           nur eine Versionszeile mit den Datum der letzten Änderung ausgegeeben.
         </p>
-        <p class="break">
-          <source><![CDATA[
-versioninfo:{MCRObjectID}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-versioninfo:MyCore_document_00000001
+        <pre class="brush: bash; gutter: false">
+          versioninfo:{MCRObjectID}
 
-erzeugt folgenden XML-Output:
+          versioninfo:MyCore_document_00000001
+        </pre>
+        <p>erzeugt folgenden XML-Output:</p>
 
-<versions>
+<pre class="brush: xml"><![CDATA[<versions>
  <version user="editor" date="2015-06-19" r="12345" action="update"/>
  ...
-</versions>]]></source>
-        </p>
+</versions>]]></pre>
       </section>
 
       <section>
@@ -467,25 +409,21 @@ erzeugt folgenden XML-Output:
           weitere XSL-Dateien hinzugeladen werden, um zusätzliche Templates
           bereitszustellen oder vorhandene zu Überschreiben.
         </p>
-        <p class="break">
-          <source><![CDATA[
+        <pre class="brush: bash; gutter: false">
 MCR.URIResolver.xslInclude.{include_name}={xsl_file1},{xsl_file2}...
           
-xslImport:{import_name}:{xsl_file...}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
+xslImport:{import_name}:{xsl_file...}
+
 MCR.URIResolver.xslIncludes.components=iview.xsl,wcms.xsl
 
 xslInclude:components
+        </pre>
+        <p>erzeugt folgenden XML-Output:</p>
 
-erzeugt folgenden XML-Output:
-
-<xsl:stylesheet version="1.0">
+<pre class="brush: xml"><![CDATA[<xsl:stylesheet version="1.0">
  <xsl:include href="iview.xsl"/>
  <xsl:include href="wcms.xsl"/>
-</xsl:stylesheet>]]></source>
-        </p>
+</xsl:stylesheet>]]></pre>
       </section>
 
       <section>
@@ -502,18 +440,15 @@ erzeugt folgenden XML-Output:
           <code>MCR.URIResolver.xslImports.{import_name}</code>
           definiert.
         </p>
-        <p class="break">
-          <source><![CDATA[
-MCR.URIResolver.xslImports.{import_name}={xsl_file1},{xsl_file2}...
-          
-xslImport:{import_name}:{xsl_file...}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-MCR.URIResolver.xslImports.components=first.xsl,second.xsl
+        <pre class="brush: bash; gutter: false">
+          MCR.URIResolver.xslImports.{import_name}={xsl_file1},{xsl_file2}...
 
-<xsl:import href="xslImport:components:first.xsl"/>]]></source>
-        </p>
+          xslImport:{import_name}:{xsl_file...}
+
+
+          MCR.URIResolver.xslImports.components=first.xsl,second.xsl
+        </pre>
+        <pre class="brush: xml"><![CDATA[<xsl:import href="xslImport:components:first.xsl"/>]]></pre>
       </section>
 
       <section>
@@ -523,14 +458,11 @@ MCR.URIResolver.xslImports.components=first.xsl,second.xsl
           <code>MCR.URIResolver.redirect.{alias}</code>
           definiert ist.
         </p>
-        <p class="break">
-          <source><![CDATA[
-MCR.URIResolver.redirect.{alias}={href}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-MCR.URIResolver.redirect.alias=webapp:path/to/alias.xml]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          MCR.URIResolver.redirect.{alias}={href}
+
+          MCR.URIResolver.redirect.alias=webapp:path/to/alias.xml
+        </pre>
       </section>
 
       <section>
@@ -549,14 +481,11 @@ MCR.URIResolver.redirect.alias=webapp:path/to/alias.xml]]></source>
           URIs zu verwenden, aber gegen Fehler
           abzusichern.
         </p>
-        <p class="break">
-          <source><![CDATA[
-notnull:{uri}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-notnull:mcrobject:DocPortal_document_07910401]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          notnull:{uri}
+
+          notnull:mcrobject:mir_mods_07910401
+        </pre>
       </section>
 
       <section>
@@ -573,13 +502,12 @@ notnull:mcrobject:DocPortal_document_07910401]]></source>
           Stylesheet gleich durch ein zweites
           zu weiterzuleiten.
         </p>
-        <p class="break">
-          <source><![CDATA[
-xslStyle:{stylesheet},{stylesheet}{?param1=value1{&param2=value2}}:{anyMyCoReURI}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-xslStyle:mycoreobject-mods,mods2dc?derivate=mycore_derivate_00000001:mcrobject:mycore_doc_00000001]]></source>
+        <pre class="brush: bash; gutter: false">
+          xslStyle:{stylesheet},{stylesheet}{?param1=value1{&amp;param2=value2}}:{anyMyCoReURI}
+
+          xslStyle:mycoreobject-mods,mods2dc?derivate=mycore_derivate_00000001:mcrobject:mycore_doc_00000001
+        </pre>
+        <p>
           Dabei würde das Objekt erst in ein MODS-Dokument umgewandelt, um danach
           letztendlich als Dublin-Core-Dokument ausgegeben worden zu sein.
         </p>
@@ -597,14 +525,11 @@ xslStyle:mycoreobject-mods,mods2dc?derivate=mycore_derivate_00000001:mcrobject:m
           Verhalten also noch konfigurierbar und prinzipiell nicht auf "XSL"
           beschränkt.
         </p>
-        <p class="break">
-          <source><![CDATA[
-xslTransform:{stylesheet}[?param1=value1[&param2=value2]...]:{anyMyCoReURI}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-xslTransform:mycoreobject-txt:file:object.txt]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          xslTransform:{stylesheet}[?param1=value1[&amp;param2=value2]...]:{anyMyCoReURI}
+
+          xslTransform:mycoreobject-txt:file:object.txt
+        </pre>
       </section>
       
       <section>
@@ -612,14 +537,11 @@ xslTransform:mycoreobject-txt:file:object.txt]]></source>
         <p>
           liefert den Inhalt einer Data-URL zurück.
         </p>
-        <p class="break">
-          <source><![CDATA[
-data:[mime-type[;param1=value1[;param2=value=2]]]{,content}]]></source>
-        </p>
-        <p class="break">
-          <source><![CDATA[
-data:text/html;charset=utf-8,%3Ch1%3EHello%20MyCoRe!%3C%2Fh1%3E]]></source>
-        </p>
+        <pre class="brush: bash; gutter: false">
+          data:[mime-type[;param1=value1[;param2=value=2]]]{,content}
+
+          data:text/html;charset=utf-8,%3Ch1%3EHello%20MyCoRe!%3C%2Fh1%3E
+        </pre>
       </section>
 
     </section>
@@ -673,7 +595,7 @@ data:text/html;charset=utf-8,%3Ch1%3EHello%20MyCoRe!%3C%2Fh1%3E]]></source>
         <code>MCRResolverProvider</code>
         mittels
         folgendem Property
-        <code>MCR.UriResolver.externalResolver.class = {voller Klassenname}</code>
+        <code>MCR.URIResolver.externalResolver.class = {voller Klassenname}</code>
       </p>
     </section>
   </body>
