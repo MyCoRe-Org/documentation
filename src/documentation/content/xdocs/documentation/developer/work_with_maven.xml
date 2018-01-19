@@ -119,6 +119,7 @@
     <name>Central Repository</name>
     <url>https://repo.maven.apache.org/maven2</url>
   </repository>
+  
   <repository>
     <releases>
       <enabled>false</enabled>
@@ -130,13 +131,7 @@
     <url>https://oss.sonatype.org/content/repositories/snapshots</url>
   </repository>
   
-  <repository>
-    <snapshots>
-      <enabled>false</enabled>
-    </snapshots>
-    <id>MyCoRe HQ</id>
-    <url>http://artifactory.mycore.de/mycore-releases</url>
-  </repository>
+  <!-- add this if you use snapshots form the old MyCoRe artifactory -->
   <repository>
     <releases>
       <enabled>false</enabled>
@@ -165,6 +160,7 @@
     <name>Central Repository</name>
     <url>https://repo.maven.apache.org/maven2</url>
   </pluginRepository>
+  
   <pluginRepository>
     <releases>
       <enabled>false</enabled>
@@ -176,6 +172,7 @@
     <url>https://oss.sonatype.org/content/repositories/snapshots</url>
   </pluginRepository>
   
+  <!-- add this if you use snapshots form the old MyCoRe artifactory -->
   <pluginRepository>
     <snapshots>
       <enabled>false</enabled>
@@ -183,6 +180,7 @@
     <id>MyCoRe HQ</id>
     <url>http://artifactory.mycore.de/mycore-releases</url>
   </pluginRepository>
+  
   <pluginRepository>
     <releases>
       <enabled>false</enabled>
