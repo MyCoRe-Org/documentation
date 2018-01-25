@@ -51,7 +51,7 @@
     </category>
     <category ID="100">
       <label xml:lang="de" text="100 Philosophie" />
-      <label xml:lang="en" text="100 Philosphy" />
+      <label xml:lang="en" text="100 Philosophy" />
     </category>
     <category ID="130">
       <label xml:lang="de" text="130 Parapsychologie, Okkultismus" />
@@ -75,7 +75,7 @@
     </category>
     <category ID="290">
       <label xml:lang="de" text="290 Andere Religionen" />
-      <label xml:lang="en" text="290 Other &amp; comarative religions" />
+      <label xml:lang="en" text="290 Other &amp; comparative religions" />
     </category>
     <category ID="300">
       <label xml:lang="de" text="300 Sozialwissenschaften, Soziologie, Anthropologie" />
@@ -235,7 +235,7 @@
     </category>
     <category ID="640">
       <label xml:lang="de" text="640 Hauswirtschaft und Familienleben" />
-      <label xml:lang="en" text="640 home economics &amp; family living" />
+      <label xml:lang="en" text="640 Home economics &amp; family living" />
     </category>
     <category ID="650">
       <label xml:lang="de" text="650 Management" />
