@@ -210,6 +210,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <oai                 label="OAI"                   href="oai.html" />
       <pid                 label="Persistent Identifier" href="pid.html" />
       <google              label="Google-Sitemap"        href="google_sitemap.html" />
+      <dfgviewer           label="DFG-Viewer"            href="dfg_viewer.html" />
       <sword               label="SWORD"                 href="sword.html" />
     </interfaces>
 
