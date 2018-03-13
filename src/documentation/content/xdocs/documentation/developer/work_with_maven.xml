@@ -99,7 +99,7 @@
     </section>
 
     <section>
-      <title>Integration in die eigene Anwednung</title>
+      <title>Integration in die eigene Anwendnung</title>
       <p>
         Um MyCore in die eigene Anwendung unter Maven einzubinden, müssen die folgenden Repositories in der eigenen
         <code>pom.xml</code>
