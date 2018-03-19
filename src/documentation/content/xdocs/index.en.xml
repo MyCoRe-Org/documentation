@@ -48,17 +48,18 @@
         <member href="http://duepublico.uni-duisburg-essen.de/" label="DuEPublico" title="Zum Dokumentenserver der Universität Duisburg-Essen" />
         <member href="http://intr2dok.vifa-recht.de/" label="&lt;intR&gt;²Dok" title="Fachinformationsdienst für internationale und interdisziplinäre Rechtsforschung" />
         <member href="http://www.diss.fu-berlin.de/" label="Dissertationen&nbsp;Online" title="Zum Dissertationsserver der FU Berlin" />
+        <member href="https://www.lexm.uni-hamburg.de/" label="LexM" title="Zum Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit" />
         <member href="http://cpr.uni-rostock.de" label="Rostocker&nbsp;Professorenkatalog" title="Zum Professorenkatalog der Universität Rostock" />
         <member href="http://zs.thulb.uni-jena.de" label="Journals@UrMEL" title="Zum Zeitschriftenserver der Thüringer Universitäts- und Landesbibliothek Jena (ThULB)" />
-        <member href="http://www.islamic-manuscripts.net" label="Islamische&nbsp;Handschriften" title="Zu den Islamische Handschriften der Universitätsbibliothek Leipzig" />
+        <member href="https://www.bach-digital.de/" label="Bach digital" title="Zu Bach digital - dem Bach-Portal für Forschung und Musikpraxis" />
       </members>
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
           <title>MyCoRe-Developer Meeting</title>
-          <message>From 13 to 15 March 2018, the developers will meet in Berlin for the spring conference.</message>
+          <message>From 13 to 15 March 2018, the developers met in Essen for the spring conference.</message>
           <url>https://www.uni-due.de/ub/</url>
-          <date>07. März 2018</date>
+          <date>19. März 2018</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
