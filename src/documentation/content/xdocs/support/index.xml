@@ -4,8 +4,9 @@
 <document>
   <header>
     <title>MyCoRe-Community</title>
-    <version>2016-11-11</version>
+    <version>2018-03-27</version>
     <authors>
+      <person name="Wiebke Oeltjen" email="[EMAIL PROTECTED]" />
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
     </authors>
   </header>
@@ -56,7 +57,10 @@
         Übersicht der Organisationsstruktur und die genutzten Werkzeuge.
       </p>
       <div style="text-align:center;margin:10px 0;">
-        <img src="images/mycore_organization.png" alt="Übersicht der MyCoRe-Organisation" style="margin:5px;padding:10px;border:1px solid gray;" width="550px" /><br />
+        <center>
+          <img src="images/mycore_organization.png" alt="Übersicht der MyCoRe-Organisation" style="margin:5px;padding:10px;border:1px solid gray;" width="800px" />
+        </center>
+        <br />
         <span class="klein"><strong>Abbildung 1:</strong> Übersicht der MyCoRe-Organisation</span>
       </div>
       <p>
@@ -65,34 +69,35 @@
       <ul>
         <li>
           Als Entwickler-Plattform wird vorrangig
-          <a href="https://eclipse.org/">Eclipse</a>
+          <a href="https://eclipse.org/" target="_blank">Eclipse</a>
           eingesetzt.
         </li>
         <li>
           Als Software-Versionierungssystem wird der MyCoRe-Code bei
-          <a href="https://github.com/MyCoRe-Org/">GitHub</a> gehostet.
+          <a href="https://github.com/MyCoRe-Org/" target="_blank">GitHub</a> gehostet.
           betrieben.
         </li>
         <li>
-          Daneben werden durch einzelne Entwicklereinrichtungen noch
-          <a href="https://subversion.apache.org/">Subversion-Server</a>
-          betrieben.
+          Daneben werden durch einzelne Entwicklereinrichtungen noch eigene GitLab-Instanzen betrieben.
+          <ul>
+            <li><a href="https://git.sc.uni-leipzig.de/mycore_applications" target="_blank">GitLab des URZ der Universität Leipzig</a></li>
+          </ul>
         </li>
         <li>
-          Werden Änderungen und Weiterentwicklungen in das Subversion-System commited, werden automatisch die Kommentare
+          Werden Änderungen und Weiterentwicklungen in das GitHub-System commited, werden automatisch die Kommentare
           in das entsprechende Ticket übernommen. Hier haben wir
-          <a href="https://mycore.atlassian.net/secure/Dashboard.jspa">Atlassian JIRA</a>
+          <a href="https://mycore.atlassian.net/secure/Dashboard.jspa" target="_blank">Atlassian JIRA</a>
           im Einsatz.
         </li>
         <li>
           In zyklischen Abständen werden mittels
-          <a href="https://bamboo.mycore.de/allPlans.action">Atlassian Bamboo</a>
+          <a href="https://bamboo.mycore.de/allPlans.action" target="_blank">Atlassian Bamboo</a>
           Integrationstest durchgefüht.
         </li>
         <li>
-          Erfolgreiche Builds von Releases und Snapshots des Codes werden im
-          <a href="http://artifactory.mycore.de/webapp/#/home">MyCoRe-Artifactory</a>
-          zur Nutzung via <em>Maven</em> bereitgestellt.
+          Erfolgreiche Builds von Snapshots des Codes werden nach Prüfung durch <strong>Travis</strong> und 
+          <strong>Codacy</strong> im Sonatype MyCoRe-Artifactory zur Nutzung via <em>Maven</em> bereitgestellt.
+          Analog dazu werden die Releases im <strong>Maven-Central</strong> eingestellt.
         </li>
       </ul>
     </section>

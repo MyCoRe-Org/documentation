@@ -2,10 +2,13 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
 
 <document xml:lang="de">
-<header>
- <title>Team</title></header>
-
-
+  <header>
+    <title>Team</title>
+    <version>2018-03-27</version>
+    <authors>
+      <person name="Wiebke Oeltjen" email="[EMAIL PROTECTED]" />
+    </authors>
+  </header>
 
  <body>
 
@@ -81,8 +84,6 @@
     kupferschmidt (at) rz.uni-leipzig.de, Tel. 0341 / 97 33348
   </p>
   <ul>
-    <li>Commandline tools</li>
-    <li>Simple Workflow</li>
     <li>Umsetzung Mehrsprachigkeit</li>
     <li>Anwendungsentwicklung in Leipzig</li>
     <li>Dokumentation</li>

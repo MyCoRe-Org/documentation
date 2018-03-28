@@ -4,6 +4,10 @@
 <document>
   <header>
     <title>Kontakt</title>
+    <version>2018-03-27</version>
+    <authors>
+      <person name="Wiebke Oeltjen" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
 
   <body>

@@ -426,25 +426,23 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   </documentation>
 
-  <support      label="Organisation"       href="support/" tab="support">
+  <support label="Organisation"       href="support/" tab="support">
     <community  label="Community"          href="index.html" />
-    <email      label="Mailinglisten"      href="email.html" />
+    <email      label="Kontakt zu uns"     href="email.html" />
     <team       label="Team"               href="team.html" />
     <workshops  label="Workshops"          href="workshops/" >
-    <!-- <workshop            label="MyCoRe-Workshop 2017"       href="workshop.html" /> -->
-    <aw_workshop_2017    label="Hamburg 2017"               href="hamburg_2017.html" />
-    <dbt-workshop_2017   label="DBT-Workshop 2017"          href="dbt-workshop_2017.html" />
-    <aw_workshop_2016    label="Leipzig 2016"               href="leipzig_2016.html" />
-    <aw_workshop_2015    label="Ilmenau 2015"               href="ilmenau_2015.html" />
-    <dbt-workshop_2014   label="DBT-Workshop 2014"          href="dbt-workshop_2014.html" />
-    <aw_workshop_2014    label="Braunschweig 2014"          href="braunschweig_2014.html" />
-  </workshops>
-    <bugs       label="Fehler melden"      href="https://mycore.atlassian.net/" />
-    <wiki       label="MyCoRe Wiki"        href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
-    <archive    label="Meldungen Archiv"   href="archive.html" />
+      <aw_workshop_2017    label="Hamburg 2017"               href="hamburg_2017.html" />
+      <dbt-workshop_2017   label="DBT-Workshop 2017"          href="dbt-workshop_2017.html" />
+      <aw_workshop_2016    label="Leipzig 2016"               href="leipzig_2016.html" />
+      <aw_workshop_2015    label="Ilmenau 2015"               href="ilmenau_2015.html" />
+      <dbt-workshop_2014   label="DBT-Workshop 2014"          href="dbt-workshop_2014.html" />
+      <aw_workshop_2014    label="Braunschweig 2014"          href="braunschweig_2014.html" />
+    </workshops>
+    <bugs       label="zu MyCoRe JIRA"     href="https://mycore.atlassian.net/" />
+    <wiki       label="zu MyCoRe Wiki"     href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
   </support>
 
-  <impressum label="Impressum" href="impressum/index.html" tab="impressum" />
+  <imprint   label="Impressum" href="imprint/index.html"   tab="imprint" />
   <contact   label="Kontakt"   href="contact/index.html"   tab="contact" />
 
 
@@ -459,10 +457,5 @@ See http://forrest.apache.org/docs/linking.html for more info
     <presentations label="Präsentationen"     href="presentations.html" />
     <team          label="Team"               href="team.html" />
     <sitemap       label="Sitemap"            href="linkmap.html" />
-
-  <demo label="Beispiele">
-    <docportal label="DocPortal" href="http://www.mycore.de:8291/" />
-  </demo -->
-
-
+    -->
 </site>
