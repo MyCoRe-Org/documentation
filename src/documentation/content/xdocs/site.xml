@@ -24,20 +24,6 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   <welcome         label="Start" href="index.html" tab="welcome" />
 
-<!--  <about label="Organisation"        href="about/" tab="about">
-    <index         label="Über MyCoRe"        href="index.html" />
-    <license       label="Lizenzbedingungen"  href="/license.html" />
-    <publications  label="Veröffentlichungen" href="/publications.html" />
-    <presentations label="Präsentationen"     href="/presentations.html" />
-    <whos_using label="Wer nutzt MyCoRe?">
-      <applications  label="Neuste Anwendungen"        href="/applications.html" >
-        <journals  href="#zs" />
-      </applications>
-      <list         label="Vollständige Liste"        href="/list.html" />
-      <app_archiv   label="Archiv"                    href="/app_archiv.html" />
-    </whos_using>
-  </about> -->
-
   <features     label="Funktionen"       href="features/" tab="features">
     <index      label="Übersicht"        href="index.html" />
     <datamodel  label="Datenmodell"      href="datamodel.html" />
@@ -56,12 +42,13 @@ See http://forrest.apache.org/docs/linking.html for more info
 
   <download      label="Download"           href="download/" tab="download">
     <howtoget    label="Übersicht"          href="index.html" />
-    <dl_mycore   label="MyCoRe">
-      <whats_new   label="Was ist neu?"           href="whats_new.html" />
-      <release     label="Release 2017.06"        href="release.html" />
-      <lts_release label="LTS-Release 2017.06"    href="lts_release.html" />
+    <dl_mycore   label="MyCoRe"             href="mycore/">
+      <lts_release_2017 label="LTS-Release 2017.06"    href="lts_release_2017.html" />
+      <lts_release_2018 label="LTS-Release 2018.06"    href="lts_release_2018.html" />
+      <!-- ToDo 2018-04-10 -->
+      <!-- 
       <changelog   label="Changelog"              href="changelog.html" />
-      <dl_archive  label="Release-Archiv"         href="archive.html" />
+      -->
     </dl_mycore>
     <dl_mir            label="MIR"                    href="mir/">
       <mir_release     label="Release 2017.06"        href="release.html" />
@@ -71,20 +58,8 @@ See http://forrest.apache.org/docs/linking.html for more info
       <skeleton_release     label="Release 2016.06"        href="release.html" />
       <skeleton_changelog   label="Changelog"              href="changelog.html" />
     </dl_skeleton>
-    <!-- dl_viewer            label="Viewer"               href="viewer/">
-      <viewer_release     label="Release 2016.02"        href="release.html" />
-      <viewer_changelog   label="Changelog"              href="changelog.html" />
-    </dl_viewer -->
-    <logos       label="Material"           href="logos.html" />
     <license     label="Lizenzbedingungen"  href="license.html" />
-    <dl_tools    label="Werkzeuge">
-      <github      label="GitHub"             href="https://github.com/MyCoRe-Org" />
-      <subversion  label="Subversion"         href="subversion.html" />
-      <bamboo      label="Bamboo"             href="https://bamboo.mycore.de/" />
-      <artifactory label="Artifactory"        href="http://artifactory.mycore.de/" />
-    </dl_tools>
-
-
+    <logos       label="Material"           href="logos.html" />
   </download>
 
   <documentation           label="Dokumentation"     href="documentation/" tab="documentation">
@@ -445,17 +420,4 @@ See http://forrest.apache.org/docs/linking.html for more info
   <imprint   label="Impressum" href="imprint/index.html"   tab="imprint" />
   <contact   label="Kontakt"   href="contact/index.html"   tab="contact" />
 
-
-    <!-- news          label="Aktuelles"          href="index.html" />
-    <workshop      label="Anwenderworkshop"   href="workshop.html" />
-    <archive       label="Meldungen Archiv"   href="archive.html" />
-    <about         label="Über MyCoRe"        href="about.html" />
-    <license       label="Lizenzbedingungen"  href="license.html" />
-    <requirements  label="Voraussetzungen"    href="requirements.html" />
-    <functionality label="Funktionalität"     href="functionality.html" />
-    <publications  label="Veröffentlichungen" href="publications.html" />
-    <presentations label="Präsentationen"     href="presentations.html" />
-    <team          label="Team"               href="team.html" />
-    <sitemap       label="Sitemap"            href="linkmap.html" />
-    -->
 </site>

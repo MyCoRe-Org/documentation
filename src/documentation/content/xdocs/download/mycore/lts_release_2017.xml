@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.3//EN" "document-v13.dtd">
+
+<document xml:lang="de">
+  <header>
+    <title>Release 2017.06 (LTS)</title>
+    <release>2017.06</release>
+    <version>2018-04-09</version>
+    <authors>
+      <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+    </authors>
+  </header>
+
+  <body>
+
+    <p>
+      Informationen zur Migration finden Sie im
+      <a href="site:migrate2017.06">Abschnitt zur Migration</a>
+      .
+    </p>
+
+    <p>
+      Um den aktuellen Stand in der eigenen Anwendung zu verwenden, muss in der
+      pom.xml die MyCoRe-Version angepasst
+      werden:
+    </p>
+
+      <pre class="brush: xml;gutter: false;">
+<![CDATA[<project>
+  ...
+  <properties>
+    <mycore.version>2017.06.0.x-SNAPSHOT</mycore.version>
+  </properties>
+  ...
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>  
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>MyCoRe HQ</id>
+      <url>http://artifactory.mycore.de/mycore-releases</url>
+    </repository>
+    <repository> 
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>MyCoRe HQ Snapshots</id> 
+      <url>http://artifactory.mycore.de/mycore-snapshots</url>
+    </repository>
+  </repositories>
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artififactId>mycore-base</artifactId>
+      <version>${mycore.version}</version>
+    </dependency>
+    ...
+  </dependencies>
+...
+</project>]]></pre>
+
+  </body>
+
+</document>
