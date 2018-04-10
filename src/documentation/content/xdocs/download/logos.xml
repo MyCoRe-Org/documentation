@@ -12,9 +12,16 @@
   </header>
 
   <body>
-    <p style="padding-bottom:15px;">Die hier bereitgestellten Logos gehören zu MyCoRe und sind nur im Zusammenhang mit unserer Software zu verwenden.
-      Natürlich freuen sich die Entwickler, wenn diese Logos bei der Präsentation von Anwendungen, welche MyCoRe als
-      Grundlage haben, erscheinen. Die Nutzung unterliegt auch der GPL3.</p>
+    <p>
+      Die hier bereitgestellten Logos gehören zu MyCoRe und sind urheberrechtlich geschützt. Sie dürfen jedoch
+      <ul>
+        <li>als Bestandteil von Webanwendungen, die MyCoRe verwenden, sowie</li>
+        <li>im Rahmen von Publikationen, in Vorträgen und auf Webseiten über MyCoRe</li>
+      </ul>
+      vervielfältigt, verbreitet, öffentlich zugänglich gemacht und in sonstiger Weise öffentlich wiedergegeben werden.
+    </p>
+    <p style="margin-bottom:15px;">
+    </p>
     <div id="logos">
       <ul>
         <li>
