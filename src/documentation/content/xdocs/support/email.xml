@@ -20,8 +20,8 @@
       <title>Mailingliste für Anwender: MyCoRe-User</title>
       <p>
         In der Mailingliste
-        <a href="mailto:mycore-user@listserv.dfn.de">
-          mycore-user@listserv.dfn.de</a>
+          <a href="mailto:user@mycore.de">
+          user@mycore.de</a>
         werden alle Fragen der Nutzung von MyCoRe, Skeleton und MIR
         diskutiert. Über diese Liste werden Anwender auch
         über neue Releases, wichtige Bugfixes und neue
@@ -36,7 +36,7 @@
         Problemen einzubeziehen.</p>
       <ul>
         <li>
-          <a href="mailto:mycore-user@listserv.dfn.de">Email an MyCoRe-User-Liste schreiben</a>
+          <a href="mailto:user@mycore.de">Email an MyCoRe-User-Liste schreiben</a>
         </li>
         <li>
           <a href="https://www.listserv.dfn.de/sympa/subscribe/mycore-user" title="MyCoRe-User-Liste abonnieren" target="_blank">MyCoRe-User-Liste abonnieren</a>
