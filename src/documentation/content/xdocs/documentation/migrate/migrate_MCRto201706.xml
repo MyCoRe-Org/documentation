@@ -4,48 +4,34 @@
 <document>
 
   <header>
-    <title>Migration Release 2015.05 nach 2016.06</title>
+    <title>Migration Release 2016.06 nach 2017.06</title>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
-    <version>2016-07-25</version>
+    <release>2017.06</release>
+    <version>2018-03-17</version>
     <abstract>
-      Diese Seite fasst alle Informationen für die Migration vom LTS-Release 2015.05 zum LTS-Release 2016.06
+      Diese Seite fasst Informationen für die Migration vom LTS-Release 2016.06 zum LTS-Release 2017.06
       zusammen.
     </abstract>
   </header>
 
   <body>
 
-    <section id="requirements_201606">
+    <section id="requirements_201706">
       <title>Voraussetzungen für das Release</title>
       <p>
         Die
         <a href="site:requirements">Systemanforderungen</a>
-        haben sich für das Release 2016.06 wie folgt
-        geändert:
+        sind hier zu finden.
       </p>
-      <ul>
-        <li>JDK 1.8 (vorher 1.7)</li>
-        <li>Servlet Container 3.1 (vorher 3.0)</li>
-      </ul>
-      <p>
-        Diese Systemkomponenten sind in folgenden Distributionen enthalten, welche bei einzelnen
-        Community-Mitgliedern
-        im Einsatz sind.
-      </p>
-      <ul>
-        <li>Open SuSE Leap 42.1</li>
-        <li>SuSE SLES 12 SP 1</li>
-        <li>Ubuntu 16.04 LTS</li>
-      </ul>
 
       <section id="dependency_versions">
         <title>Versionsnummern für Produkte von Open Source Drittanbietern</title>
         <p>MyCoRe und die darauf basierenden Anwendungen nutzen eine Reihe von Bibliotheken anderer
           Open-Source-Projekte.
-          Die für das Release 2016.06 verwendeten sind hier aufgelistet, sofern sie für die
+          Die für das Release 2017.06 verwendeten sind hier aufgelistet, sofern sie für die
           Ergänzung duch eigenen Code
           relevant sind. Einige Bibliotheken werden nur intern benötigt oder befriedigen
           Abhängigkeiten. Diese sind hier

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+
+  <header>
+    <title>Migration Release 2017.06 nach 2018.06</title>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+    </authors>
+    <release>2018.06</release>
+    <version>2018-03-17</version>
+    <abstract>
+      Diese Seite fasst Informationen für die Migration vom LTS-Release 2017.06 zum LTS-Release 2018.06
+      zusammen.
+    </abstract>
+  </header>
+
+  <body>
+
+    <section id="requirements_201806">
+      <title>Systemanforderungen</title>
+      <p>
+        Im weiteren werden die grundlegenden Systemanforderungen beschrieben, welche für den Betrieb einer
+        MyCoRe-Anwendung unter LTS 2018.06 erforderlich sind.
+      </p>
+
+      <h2>Betriebssystem</h2>
+      <p>MyCoRe LTS 2018 ist auf diesen Betriebsystemen im Einsatz. Höhere Versionen sollten kein Problem darstellen.
+      </p>
+      <ul>
+        <li>Open SuSE Leap 42.3</li>
+        <li>SuSE SLES 12 SP 3</li>
+        <li>Ubuntu 16.04 LTS</li>
+      </ul>
+
+      <h2>Standardsoftware</h2>
+      <p>Zur Arbeit mit MyCoRe LTS 2018 sind folgende Softwarekomponenten erforderlich bzw. empfohlen. Diese sind alle
+        von Drittanbietern und im Normalfall in den Distributionen enthalten.
+      </p>
+      <ul>
+        <li>Java 8 oder Java 9 (getestet, aber noch nicht zwingend erforderlich)</li>
+        <li>Tomcat 8 oder Jetty 9.4.9 (alternativ ein System mit Unterstützung von Servlet-3.1)</li>
+        <li>SOLR 7.3.x oder höher</li>
+        <li>
+          eine
+          <a href="http://docs.jboss.org/hibernate/orm/5.1/javadocs/org/hibernate/dialect/package-summary.html"
+            target="_blank">hibernate-fähige</a>
+          relationale Datenbank wie PostGreSQL, MySQL, DB2; für Testzwecke genügt auch die integrierte Datenbank H2
+        </li>
+        <li>Git 2.12 oder höher</li>
+        <li>Apache Maven 3.3.9 oder höher</li>
+      </ul>
+
+    </section>
+    
+    <section id="changes_201806">
+      <title>Änderungen gegenüber 2017.06</title>
+      
+      <h2>MyCoRe-Module</h2>
+      <p>Mit Release 2018.06 entfällt das alle MyCoRe-Komponenten enthaltende Module <code>mycore-complete</code>.
+      Es ist nun erforderlich, alle einzelnen Komponenten in den Maven-dependencies anzugeben, welche von der Anwendung
+      tatsächlich benötigt werden.</p>
+    </section>
+
+  </body>
+
+</document>

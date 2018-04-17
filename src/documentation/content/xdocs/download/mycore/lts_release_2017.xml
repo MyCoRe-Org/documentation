@@ -15,16 +15,22 @@
   <body>
 
     <p>
-      Informationen zur Migration finden Sie im
-      <a href="site:migrate2017.06">Abschnitt zur Migration</a>
+      Informationen zur aus 2016.06 Migration finden Sie im
+      <a href="site:migrate_mcr2017.06">Abschnitt zur Migration</a>
       .
     </p>
 
-    <p>
-      Um den aktuellen Stand in der eigenen Anwendung zu verwenden, muss in der
-      pom.xml die MyCoRe-Version angepasst
-      werden:
-    </p>
+    <section>
+      <title>Einbindung der Module</title>
+      <p>
+        Die Einbindung der Module aus dem MyCoRe-Kern erfolgt über
+        <strong>Maven</strong>
+        und die
+        entsprechenden, für die eigene Anwendung erforderlichen dependenies. Um das LTS 2018.06
+        in der eigenen
+        Anwendung zu verwenden, müssen in der pom.xml die MyCoRe-Version und die
+        MAVEN-Repositories angepasst werden:
+      </p>
 
       <pre class="brush: xml;gutter: false;">
 <![CDATA[<project>
@@ -81,6 +87,7 @@
   </dependencies>
 ...
 </project>]]></pre>
+    </section>
 
   </body>
 

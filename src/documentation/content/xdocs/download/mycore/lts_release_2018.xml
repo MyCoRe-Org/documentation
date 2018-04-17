@@ -14,24 +14,33 @@
 
   <body>
 
-    <p><span style="color:red"><strong>Dieses Release ist in der Alpha-Testphase!!!</strong></span></p>
     <p>
-      Informationen zur Migration finden Sie im
-      <a href="site:migrate2018.06">Abschnitt zur Migration</a>
+      <span style="color:red">
+        <strong>Dieses Release ist in der Alpha-Testphase!!!</strong>
+      </span>
+    </p>
+    <p>
+      Informationen zur Migration aus LTL 2017.06 finden Sie im
+      <a href="site:migrate_mcr2018.06">Abschnitt zur Migration</a>
       .
     </p>
 
-    <p>
-      Um den aktuellen Stand in der eigenen Anwendung zu verwenden, muss in der
-      pom.xml die MyCoRe-Version angepasst
-      werden:
-    </p>
+    <section>
+      <title>Einbindung der Module</title>
+      <p>
+        Die Einbindung der Module aus dem MyCoRe-Kern erfolgt über
+        <strong>Maven</strong>
+        und die
+        entsprechenden, für die eigene Anwendung erforderlichen dependenies. Um das LTS 2018.06
+        in der eigenen Anwendung zu verwenden, müssen in der pom.xml die MyCoRe-Version und die
+        MAVEN-Repositories angepasst werden:
+      </p>
 
       <pre class="brush: xml;gutter: false;">
 <![CDATA[<project>
   ...
   <properties>
-    <mycore.version>2017.07.0.x-SNAPSHOT</mycore.version>
+    <mycore.version>2017.07-SNAPSHOT</mycore.version>
   </properties>
   ...
   <repositories>
@@ -65,6 +74,7 @@
   </dependencies>
 ...
 </project>]]></pre>
+    </section>
 
   </body>
 
