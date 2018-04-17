@@ -5,7 +5,8 @@
   <header>
     <title>Komponenten des MyCoRe-Kerns</title>
     <release>2017.06</release>
-    <version>2017-06-27</version>
+    <release>2018.06</release>
+    <version>2018-03-17</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Thomas Scheffler" />
@@ -39,37 +40,45 @@
         <title>Liste der Komponenten</title>
         <table class="table">
           <tr>
-            <th>Komponentname</th>
+            <th>Name</th>
+            <th>Prio.</th>
             <th>Beschreibung</th>
             <th>&nbsp;</th>
             <th>abhängig von</th>
           </tr>
           <tr>
             <td>acl-editor2</td>
+            <td>70</td>
             <td>2. Version des Editors für die benutzten Access Control List</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>base</td>
+            <td>1</td>
             <td>Basis für alle anderen Komponenten</td>
             <td>required</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
             <td>buildtools</td>
+            <td>*</td>
             <td>Werkzeuge für die Integration von MyCoRe-Komponenten über das ANT-Build-Tool</td>
-            <td>optional</td>
+            <td>
+              <span class="label label-danger">only 2017.06</span>
+            </td>
             <td>base</td>
           </tr>
           <tr>
             <td>classbrowser</td>
+            <td>25</td>
             <td>Anzeigekomponente für Klassifikationen</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>classeditor</td>
+            <td>75</td>
             <td>Online-Editor für Klassifikationen</td>
             <td>required</td>
             <td>
@@ -80,6 +89,7 @@
           </tr>
           <tr>
             <td>coma</td>
+            <td>*</td>
             <td>Prototypische Entwicklung eines Content-Manager zu entwickeln, mit dem man
               einen Überblick über den
               gesamten Bestand an Daten (evtl. auch
@@ -90,46 +100,53 @@
           </tr>
           <tr>
             <td>complete</td>
+            <td>*</td>
             <td>spezielle Komponente zum Zusammenbau eines mycore-complete.jar, welches alle Komponenten enthält (siehe
               unten)
             </td>
             <td>
-              <span class="label label-danger">deprecate</span>
+              <span class="label label-danger">only 2017.06</span>
             </td>
             <td>alle</td>
           </tr>
           <tr>
             <td>ifs</td>
+            <td>*</td>
             <td>alte Komponente des MyCoRe-Internal-File-Systems, Version 1</td>
             <td>deprecate</td>
             <td>base</td>
           </tr>
           <tr>
             <td>iiif</td>
+            <td>*</td>
             <td>eine Komponente zur Einbindung von IIIF in MyCoRe</td>
             <td />
             <td>base</td>
           </tr>
           <tr>
             <td>impex</td>
+            <td>95</td>
             <td>generiert Import- und Export-Pakete auf Grundlage einer SOLR-Query</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>indexing</td>
+            <td>30</td>
             <td>Erstellung von Google-Sitemaps für angegebene Datenmodelltypen</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>iview2</td>
+            <td>40</td>
             <td>der ImageViewer, Version 2</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>media</td>
+            <td>*</td>
             <td>Werkzeuge zum Ermitteln von Medieninformationen für einzustellendes Material</td>
             <td>optional</td>
             <td>
@@ -140,30 +157,35 @@
           </tr>
           <tr>
             <td>meta</td>
+            <td>*</td>
             <td>Dummy-Komponente, die die Verweise auf alle Komponenten zum Bau von mycore-complete.jar enthält</td>
             <td>&nbsp;</td>
             <td>base</td>
           </tr>
           <tr>
             <td>mets</td>
+            <td>45</td>
             <td>Komponente zur Bereitstellung von METS-Daten für die gespeicherten Derivate</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>migration</td>
+            <td>35</td>
             <td>Komponente mit Werkzeugen zur Migration auf das MyCoRe-Release 2016</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>mods</td>
+            <td>50</td>
             <td>Werkzeuge zum Verarbeiten von MODS-Daten</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>oai</td>
+            <td>60</td>
             <td>Implementierung eines OAI-Data-Providers für die MyCoRe-Webanwendung</td>
             <td>optional</td>
             <td>
@@ -176,12 +198,21 @@
           </tr>
           <tr>
             <td>pi</td>
+            <td>*</td>
             <td>Codesammlung zur Arbeit mit PURL - derzeit wird nur DOI unterstützt</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
+            <td>orcid</td>
+            <td>55</td>
+            <td>ORCID Unterstützung</td>
+            <td>optional</td>
+            <td>base</td>
+          </tr>
+          <tr>
             <td>restapi</td>
+            <td>65</td>
             <td>Implementierung einer REST-API</td>
             <td>optional</td>
             <td>
@@ -192,24 +223,28 @@
           </tr>
           <tr>
             <td>sass</td>
+            <td>*</td>
             <td>Unterstützung des Compile-Vorganges von sass-Files zu css-Files</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>solr</td>
+            <td>10</td>
             <td>Klassen zur Indizierung und Suche mit Apache SOLR</td>
             <td>required</td>
             <td>base</td>
           </tr>
           <tr>
             <td>sword</td>
+            <td>*</td>
             <td>Implementierung einer Sword-Schnittstelle, Version 2</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>urn</td>
+            <td>*</td>
             <td>Implementierung einer URN-Vergabe für Objekte der Anwendung</td>
             <td>
               <span class="label label-danger">deprecate</span>
@@ -218,6 +253,7 @@
           </tr>
           <tr>
             <td>user2</td>
+            <td>15</td>
             <td>Implementierung des Nutzer-Systems, Version 2</td>
             <td>required</td>
             <td>
@@ -228,37 +264,46 @@
           </tr>
           <tr>
             <td>viewer</td>
+            <td>*</td>
             <td>Enthält den MyCoRe-Viewer für Bilder und PDFs. Das Modul kann sowohl standalone wie auch in einer
-              MyCoRe-Anwendung integriert genutzt werden.</td>
-            <td>optional</td>
+              MyCoRe-Anwendung integriert genutzt werden.
+            </td>
+            <td>
+              <span class="label label-danger">deprecate</span>
+            </td>
             <td>base</td>
           </tr>
           <tr>
             <td>wcms2</td>
+            <td>90</td>
             <td>Implementierung eines Autorensystems für die Webanwendung, Version 2</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>webcli</td>
+            <td>80</td>
             <td>Implementierung der Möglichkeit, Kommandos der CLI über die Webanwendung auszuführen</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>webtools</td>
+            <td>85</td>
             <td>Enthält Web-Tools wie Session Listing oder die Prozessliste</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>wfc</td>
+            <td>*</td>
             <td>Eine Workflow-Implementierung</td>
             <td>optional</td>
             <td>base</td>
           </tr>
           <tr>
             <td>xeditor</td>
+            <td>20</td>
             <td>Ein Gestaltungsystem für die Erstellung von Editorformularen, Version 2</td>
             <td>optional</td>
             <td>base</td>
@@ -313,7 +358,7 @@
 <![CDATA[<project>
   ...
   <properties>
-    <mycore.version>2017.06.0.x-SNAPSHOT</mycore.version>
+    <mycore.version>2018.06-SNAPSHOT</mycore.version>
   </properties>
   ...
   <dependencies>
@@ -322,21 +367,7 @@
       <artififactId>mycore-base</artifactId>
       <version>${mycore.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.mycore</groupId>
-      <artififactId>mycore-user2</artifactId>
-      <version>${mycore.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mycore</groupId>
-      <artififactId>mycore-classeditor</artifactId>
-      <version>${mycore.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mycore</groupId>
-      <artififactId>mycore-solr</artifactId>
-      <version>${mycore.version}</version>
-     </dependency>
+    ...
   </dependencies>
 ...
 </project>]]></pre>
