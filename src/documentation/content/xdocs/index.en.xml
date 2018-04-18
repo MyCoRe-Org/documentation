@@ -56,10 +56,10 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>MyCoRe-Developer Meeting</title>
-          <message>From 13 to 15 March 2018, the developers met in Essen for the spring conference.</message>
-          <url>https://www.uni-due.de/ub/</url>
-          <date>19. März 2018</date>
+          <title>MyCoRe User Workshop</title>
+          <message>Announcement: From 13 to 15 November the annual MyCoRe User Workshop will take place in Leipzig. </message>
+          <url>support/workshops/workshop.html</url>
+          <date>18. April 2018</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>

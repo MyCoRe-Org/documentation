@@ -3,33 +3,33 @@
 
 <document>
   <header>
-    <title>MyCoRe-Workshop 2017</title>
+    <title>MyCoRe-Workshop 2018</title>
   </header>
 <body>
 
 <section>
-<title>Einladung</title>
-  <p>Zum diesjährigen <strong>MyCoRe-Anwenderworkshop</strong> laden wir alle 
-   MyCoRe-Anwenderinnen, MyCoRe-Anwender und Interessierten ein teilzunehmen: 
+<title>Ankündigung</title>
+  <p>Der diesjährige <strong>MyCoRe-Anwenderworkshop</strong> findet vom 13. bis 15. November an der <strong>Universität Leipzig</strong> im Neuen Augusteum in Leipzig statt.
    <ul>
-     <li>Ort: <strong>Universität Hamburg</strong></li>
-     <li>Anreisetag: <strong>Dienstag, 07.11.2017</strong>, <em>Get-together um 19 Uhr</em>, </li>
-     <li>Workshop: <strong>Mittwoch, 08.11.2017</strong>, Beginn: 9 Uhr, ganztägig.</li>
-     <li>„Hands-on-Workshop“: <strong>Donnerstag, 09.11.2017</strong>, Beginn: 9 Uhr, voraussichtliches Ende: 12 Uhr.</li>
+     <li>Anreisetag: Dienstag, 13.11.2018, <em>Get-together um 19 Uhr</em>, </li>
+     <li>Workshop: Mittwoch, 14.11.2018, Beginn: 9 Uhr, ganztägig.</li>
+     <li>„<em>Hands-on-Workshop</em>“: Donnerstag, 15.11.2018, Beginn: 9 Uhr, voraussichtliches Ende: 12 Uhr.</li>
    </ul>
    Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen MyCoRe-Anwenderinnen, MyCoRe-Anwendern, den Entwicklern und Interessierten zu ermöglichen. Kurze Beiträge und Berichte über eigene Entwicklungen sind gewünscht und willkommen! Die MyCoRe-Entwickler werden neue Entwicklungen vorstellen und es wird Gelegenheit für Fragen an die Entwickler geben. </p>
 
   <section>
-  <title>Anmeldung ist nicht mehr möglich</title>
+    <title>Themenvorschläge</title>
+<!--  <title>Anmeldung ist nicht mehr möglich</title> -->
 <!--<p>Zur Anmeldung bitte eine formlose <a href="mailto:info@mycore.de">e-Mail</a> an die <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a> senden und im Nachrichtentext angeben, an welchen Tagen bzw. Abendveranstaltungen Sie teilnehmen möchten.</p> -->
   <p>
-  Falls Sie ein Workshop-Thema vorschlagen möchten, so teilen Sie auch das bitte mit (siehe <a href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag">Themenvorschlagsseite</a>). 
-  Kurzvorträge sollten ca. 10 Minuten dauern.</p>
+  Falls Sie ein Workshop-Thema vorschlagen möchten, teilen Sie das bitte mit. Sie können Ihren Themenwunsch auf der <a href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ThemenVorschlag">Themenvorschlagsseite</a> eintragen oder eine Nachricht an die <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a> schicken. 
+  <!-- Kurzvorträge sollten ca. 10 Minuten dauern. -->
+  </p>
   </section>
   <section>
   <title>Anreise und Hotel-Informationen</title>
-  <p>Im <a href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/ReiseInfoHamburg#Hotels">Wiki</a> sind alle Informationen zur Anreise und Hotelinformationen zu finden.</p>
-  <p>Falls Sie Fragen oder Vorschläge für Workshop-Themen haben, wenden Sie sich gerne an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
+  <p>Im <a href="https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/AnwenderWorkshop2018#Hotelinformationen">Wiki</a> sind alle Informationen zur Anreise und Hotelinformationen zu finden.</p>
+  <p>Für weitere Informationen wenden Sie sich gerne an unsere <a title="Geschäftsstelle" href="site:contact">MyCoRe Geschäftsstelle</a>.</p>
   </section>
 </section>
 
