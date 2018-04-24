@@ -584,6 +584,14 @@
             <td><p>wiederholbarer Parameter, der die auszugebenden Facettenfelder spezifiziert.</p></td>
           </tr>
           <tr>
+            <td><code>facet.sort</code></td>
+            <td><p>gibt an, wie sortiert werden soll. Mögliche Werte sind <tt>count</tt> (nach Anzahl, default) und <tt>index</tt>.</p></td>
+          </tr>
+          <tr>
+            <td><code>facet.limit</code></td>
+            <td><p>gibt die Anzahl der im Response enthaltenen Facetten an, Default-Wert ist 100. Eine negative Angabe bedeutet unbegrenzt.</p></td>
+          </tr>
+          <tr>
             <td><code>json.wrf</code></td>
             <td><p>Name der Wrapper-Funktion, die die JSON-Ausgabe umschließt. Diese wird in AJAX/Javascript als Callback Funktion aufgerufen.</p>
                 <p>Das HTML-Beispiel <a href="/downloads/snippets/js_counting.html">js_counting.html</a> zeigt, wie man ein Suchergebnis per AJAX und JQuery in eine Webseite einbettet.</p>
