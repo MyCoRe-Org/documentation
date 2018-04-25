@@ -74,16 +74,16 @@
         <newsentry>
           <title>Update</title>
           <message>MIR and Skeleton are using the current LongTermSupport release version 2017.06.</message>
-          <url>http://www.mycore.de/download/skeleton/release.html</url>
+          <url>http://www.mycore.de/download/index.html</url>
           <date>03. Juli 2017</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
           <title>Application</title>
-          <message>The application „&lt;IntR>²Dok &#91;§&#93;“ of the ViFa-Recht has received the DINI certificate.</message>
+          <message>The digital library „Institutional Repository of TU Braunschweig“ has received the DINI certificate.</message>
           <url>https://intr2dok.vifa-recht.de/</url>
-          <date>08. Dezember 2017</date>
+          <date>25. April 2018</date>
           <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
