@@ -3,7 +3,7 @@
 
 <document>
   <header>
-    <title>Suche in MyCoRe mit Apache Solr</title>
+    <title>Suche in MyCoRe mit Apache Solr 4.10</title>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
@@ -12,7 +12,7 @@
     <release>2015.05</release>
     <release>2016.06</release>
     <release>2017.06</release>
-    <version>2015-10-21</version>
+    <version>2018-04-26</version>
     <abstract>
         Die MyCoRe-Anwendungen benötigen eine leistungsstarke Suchmaschine für vielfältige Suchoperationen.
         Daher hat sich das MyCoRe-Team für die Einbindung von Apache Solr

@@ -73,7 +73,8 @@ See http://forrest.apache.org/docs/linking.html for more info
       <skeleton              label="Skeleton"                  href="skeleton.html" />
       <hibernate             label="Datenbank &amp; Hibernate" href="hibernate.html" />
       <jpa                   label="Datenbank &amp; JPA"       href="jpa.html" />
-      <solr                  label="Solr-Integration"          href="solr.html" />
+      <solr4                 label="Solr4-Integration"         href="solr_4.html" />
+      <solr7                 label="Solr7-Integration"         href="solr_7.html" />
       <properties            label="Konfiguration &amp; Properties" href="mcr_properties.html" />
     </getting_started>
 

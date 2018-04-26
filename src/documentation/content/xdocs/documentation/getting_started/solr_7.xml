@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Suche in MyCoRe mit Apache Solr</title>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
+    </authors>
+    <release>2018.06</release>
+    <version>2018-04-26</version>
+    <abstract>
+      Die MyCoRe-Anwendungen benötigen eine leistungsstarke Suchmaschine für vielfältige Suchoperationen.
+      Mit
+      Release 2018.06 wird die z. Z. aktuelle Version SOLR 7.3 benutzt. Die Installation, Migration und
+      Nutzung wird auf
+      dieser Seite beschrieben. <span style="color:red">Der Artikel ist noch in Arbeit!</span>
+    </abstract>
+  </header>
+
+  <body>
+    <section>
+      <title>Einrichtung eines Solr 7.3 - Servers</title>
+      <p>
+        Die Installation ist recht einfach und auf der
+        <a target="_blank" href="https://lucene.apache.org/solr/guide/7_3/installing-solr.html">SOLR-Seite</a>
+        recht gut beschieben. Von Anfang an sollte das Verzeichnis mit den eigenen Cores nicht innerhalb der
+        SOLR7-Distribution liegen. Nachfolgendes Startkommando 'individualisiert' das zu den zu startenden 
+        SOLR7-Jetty-Server.
+      </p>
+      <code>.../solr-7.3.0/bin/solr start -s {my_data_dir} -p {my_port} -m {my_ram}</code>
+      <p>
+        Soll SOLR7 direkt als Systemdienst starten, so ist folgendes zu tun: <span style="color:red">ToDo</span>
+      </p>
+    </section>
+    
+    <section>
+      <title>Konfiguration</title>
+      <p>
+      Ist die <code>solr.xml</code> einmal im Verzeichnis {my_data_dir} platziert, muss diese nicht mehr verändert 
+      werden. Alle Änderungen werden direkt in den Cores vorgenommen.
+      </p>
+    </section>
+    
+    <section>
+      <title>Migration von SOLR4</title>
+      <p>
+        Einige Dinge haben sich zwischen Version 4 und 7 geändert. Diese sollen in loser Reihenfolge hier aufgelistet
+        werden.
+      </p>
+      <ul>
+        <li>Die <code>solr.xml</code> hat sich völlig verändert und sollte von einem SOLR7-Beispiel übernommen werden.</li>
+        <li>Die Schemadaten stehen nicht mehr in <code>schema.xml</code> sondern in der Datei <code>managed-schema</code>.</li>
+        <li>Das Standardformat der Rückgabe einer Anfrage ist jetzt <strong>json</strong> und nicht mehr <strong>xml</strong>.</li>
+      </ul>
+    </section>
+  </body>
+
+</document>
+    
