@@ -122,7 +122,7 @@
   <section>
     <title>DOI-Registrierung über datacite</title>
     <p>
-      <span class="label label-info">2016.06</span> Um DOIs aus der MyCoRe-Anwendung heraus
+      <span class="label label-info">2016.06</span><span class="label label-info">2017.06</span> Um DOIs aus der MyCoRe-Anwendung heraus
       zu prägen und bei DataCite über die REST-API zu registrieren stellt MyCoRe die Komponente
       <code>mycore-pi</code> mit einer entsprechenden Implementierung bereit. Diese
       basiert auf dem MyCoRe-MODS-Datenmodell. Mit der folgenden Konfiguration kann die
@@ -133,9 +133,9 @@
   MCR.DOI.HostingInstitution=MyCoRe Community
   MCR.DOI.NISSPattern=yyyyMMdd-HHmmss
   MCR.PI.Registration.Datacite=org.mycore.pi.doi.MCRDOIRegistrationService
-  MCR.PI.Registration.Datacite.Inscriber=MODSDOI
+  MCR.PI.Registration.Datacite.MetadataManager=MODSDOI
   MCR.PI.Registration.Datacite.Generator=DateDOI
-  MCR.PI.Registration.Datacite.RegisterBaseURL=http://intr2dok.vifa-recht.de
+  MCR.PI.Registration.Datacite.RegisterBaseURL=https://intr2dok.vifa-recht.de
   MCR.PI.Registration.Datacite.Username=
   MCR.PI.Registration.Datacite.Password=
 #  MCR.PI.Registration.Datacite.UseTestPrefix=true
@@ -143,9 +143,20 @@
   MCR.PI.Registration.Datacite.Transformer=datacite
   MCR.PI.Generator.UUIDDOI=org.mycore.pi.doi.MCRUUIDDOIGenerator
   MCR.PI.Generator.DateDOI=org.mycore.pi.doi.MCRCreateDateDOIGenerator
-  MCR.PI.Inscriber.MODSDOI=org.mycore.mods.identifier.MCRMODSDOIPersistentIdentifierInscriber
+  MCR.PI.MetadataManager.MODSDOI=org.mycore.mods.identifier.MCRMODSDOIPersistentIdentifierMetadataManager
   MCR.PI.Parsers.doi=org.mycore.pi.doi.MCRDOIParser
     </pre>
+    <p>
+      <span class="label label-alert">Achtung!</span>Wichtig für die Version 2016.06: In dieser Version heisst der MetadataManager noch Inscriber!
+    </p>
+    <pre class="brush: bash">
+  MCR.PI.Registration.Datacite.Inscriber=MODSDOI
+  MCR.PI.Inscriber.MODSDOI=org.mycore.mods.identifier.MCRMODSDOIPersistentIdentifierInscriber
+    </pre>
+    <p>
+      Für den Umstieg auf Version 2018.06 muss ebenfalls eine Migration der Properties erfolgen.
+      Details dazu siehe <a href="https://github.com/MyCoRe-Org/mycore/tree/master/mycore-migration">mycore-migration</a>.
+    </p>
     <p>
       Nachdem die Anwendung entsprechend konfiguriert wurde, kann mittels des URL-Parameters
       <code>XSL.Transformer=datacite</code> das datacite-XML abgerufen werden. Sollte im MODS
