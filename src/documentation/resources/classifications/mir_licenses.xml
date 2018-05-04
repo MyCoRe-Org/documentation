@@ -96,5 +96,25 @@
       <label xml:lang="de" text="ODC-ODbL - Open Database License" />
       <label xml:lang="en" text="ODC-ODbL - Open Database License" />
     </category>
+    <category ID="ogl">
+      <label xml:lang="en" text="Open Government Licence" />
+      <label xml:lang="de" text="Open Government Licence" />
+      <url xlink:href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/open-government-licence/" xlink:type="locator" />
+      <category ID="ogl_3.0">
+        <label xml:lang="de" text="OGL 3.0" />
+        <label xml:lang="en" text="OGL 3.0" />
+        <url xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" xlink:type="locator" />
+      </category>
+      <category ID="ogl_2.0">
+        <label xml:lang="de" text="OGL 2.0" />
+        <label xml:lang="en" text="OGL 2.0" />
+        <url xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/" xlink:type="locator" />
+      </category>
+      <category ID="ogl_1.0">
+        <label xml:lang="de" text="OGL 1.0" />
+        <label xml:lang="en" text="OGL 1.0" />
+        <url xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/1/" xlink:type="locator" />
+      </category>
+    </category>
   </categories>
 </mycoreclass>
