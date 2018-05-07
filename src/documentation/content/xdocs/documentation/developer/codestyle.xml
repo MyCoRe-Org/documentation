@@ -76,7 +76,7 @@
           </ol>
           <note label="Download der Eclipse-Style-Definition">
             Eclipse-Nutzer können sich einfach die
-            <a href="../../filecollection/mycore-javastyle.xml">Code-Style-Definition</a>
+            <a href="/downloads/mycore-javastyle.xml">Code-Style-Definition</a>
             herunterladen und importieren (unter: Properties -> Java code style -> Formatter).
           </note>
         </section>
