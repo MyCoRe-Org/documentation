@@ -10,7 +10,7 @@
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
     <release>2018.06</release>
-    <version>2018-03-17</version>
+    <version>2018-05-18</version>
     <abstract>
       Diese Seite fasst Informationen für die Migration vom LTS-Release 2017.06 zum LTS-Release 2018.06
       zusammen.
@@ -64,6 +64,11 @@
       <p>Mit Release 2018.06 entfällt das alle MyCoRe-Komponenten enthaltende Module <code>mycore-complete</code>.
       Es ist nun erforderlich, alle einzelnen Komponenten in den Maven-dependencies anzugeben, welche von der Anwendung
       tatsächlich benötigt werden.</p>
+      
+      <h2>persitence.xml</h2>
+      <p>Die Datei persitence.xml muss um einen Eintrag für Viewer-Mapping ergänzt werden.</p>
+      <source class="code"><![CDATA[<mapping-file>META-INF/mycore-viewer-mappings.xml</mapping-file>]]></source>
+      
     </section>
 
   </body>
