@@ -413,7 +413,8 @@ See http://forrest.apache.org/docs/linking.html for more info
     <wiki       label="zu MyCoRe Wiki"     href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
   </support>
 
-  <imprint   label="Impressum" href="imprint/index.html"   tab="imprint" />
-  <contact   label="Kontakt"   href="contact/index.html"   tab="contact" />
+  <imprint   label="Impressum"   href="imprint/index.html"   tab="imprint" />
+  <contact   label="Kontakt"     href="contact/index.html"   tab="contact" />
+  <privacy   label="Datenschutz" href="privacy/index.html"   tab="privacy" />
 
 </site>

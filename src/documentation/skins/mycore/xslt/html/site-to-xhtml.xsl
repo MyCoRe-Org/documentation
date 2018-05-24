@@ -597,7 +597,8 @@ $(document).ready(function() {
     <xsl:template name="footer_menu">
         <div id="footer_menu" class="pull-right">
             <a href="{$root}contact/index.html"><i18n:text i18n:catalogue="menu" i18n:key="Kontakt" /></a> |
-            <a href="{$root}imprint/index.html"><i18n:text i18n:catalogue="menu" i18n:key="Impressum" /></a>
+            <a href="{$root}imprint/index.html"><i18n:text i18n:catalogue="menu" i18n:key="Impressum" /></a> |
+            <a href="{$root}privacy/index.html"><i18n:text i18n:catalogue="menu" i18n:key="Datenschutz" /></a>
         </div>
     </xsl:template>
 
