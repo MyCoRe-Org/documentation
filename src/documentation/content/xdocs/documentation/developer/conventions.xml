@@ -2,8 +2,16 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
 <document>
   <header>
-    <title>Namenskonventionen</title>
+    <title>Arbeiten mit Git</title>
+    <release>2017.06</release>
+    <release>2018.06</release>
+    <version>2018-05-22</version>
+    <authors>
+      <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
+      <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+    </authors>
   </header>
+
   <body>
 
       <section>
@@ -103,8 +111,8 @@
             <td />
           </tr>
           <tr>
-            <td>Simple Workflow</td>
-            <td>MCR.SWF</td>
+            <td>SOLR</td>
+            <td>MCR.Solr</td>
             <td />
           </tr>
           <tr>
@@ -118,18 +126,8 @@
             <td />
           </tr>
           <tr>
-            <td>Upload Applet</td>
-            <td>MCR.UploadApplet</td>
-            <td />
-          </tr>
-          <tr>
             <td>URI Resolver</td>
             <td>MCR.URIResolver</td>
-            <td />
-          </tr>
-          <tr>
-            <td>URN</td>
-            <td>MCR.URN</td>
             <td />
           </tr>
           <tr>
@@ -152,17 +150,9 @@
             <td>MCR.Zip</td>
             <td />
           </tr>
-          <tr>
-            <td>Z3950</td>
-            <td>MCR.z3950</td>
-            <td />
-          </tr>
         </table>
-        <p class="klein">
-          <strong>Tabelle 3.1:</strong>
-          Liste der Property-Präfixe
-        </p>
       </section>
+      
       <section>
         <title>Benennung von I18N Übersetzungen</title>
         <p>
@@ -179,6 +169,7 @@
           docportal.title.label = Titel
         </p>
       </section>
+      
       <section>
         <title>Stylesheets</title>
         <p> Stylesheets in MyCoRe und DocPortal sind einheitlich zu benennen. Sie sollten (wenn möglich) komplett klein
@@ -198,6 +189,13 @@
           <br />
           <code>[ToDo: Thomas] Namenskonvention bzgl. RootTag</code>
         </p>
+      </section>
+
+      <section>
+        <title>Verwendung des Maven-Datamodel-Plugin</title>
+        <p>Datenmodelle nach dem MyCoRe-Datenmodel-Schema 2 müssen im Maven-Modul unter <code>src/main/datamodel/def</code>
+        stehen und den Namen <code>{datenmodel}.xml</code> haben. Dabei wird {datenmodel} dann in die Schemadatei
+        {datenmodel}.xsd umgewandelt und so referenziert. </p>
       </section>
 
   </body>

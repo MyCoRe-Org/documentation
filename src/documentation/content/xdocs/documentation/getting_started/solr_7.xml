@@ -10,13 +10,16 @@
       <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
     </authors>
     <release>2018.06</release>
-    <version>2018-04-26</version>
+    <version>2018-05-31</version>
     <abstract>
       Die MyCoRe-Anwendungen benötigen eine leistungsstarke Suchmaschine für vielfältige Suchoperationen.
-      Mit
-      Release 2018.06 wird die z. Z. aktuelle Version SOLR 7.3 benutzt. Die Installation, Migration und
-      Nutzung wird auf
-      dieser Seite beschrieben. <span style="color:red">Der Artikel ist noch in Arbeit!</span>
+      Mit Release
+      2018.06 wird die z. Z. aktuelle Version SOLR 7.3 benutzt. Die Grundinstallation wird auf
+      dieser Seite beschrieben.
+      Hinsichtlich der konkreten MyCoRe-Anwendung gibt es einen weiterführenden
+      Artikel unter der Rubrik
+      <strong>Suche</strong>
+      .
     </abstract>
   </header>
 
@@ -26,24 +29,35 @@
       <p>
         Die Installation ist recht einfach und auf der
         <a target="_blank" href="https://lucene.apache.org/solr/guide/7_3/installing-solr.html">SOLR-Seite</a>
-        recht gut beschieben. Von Anfang an sollte das Verzeichnis mit den eigenen Cores nicht innerhalb der
-        SOLR7-Distribution liegen. Nachfolgendes Startkommando 'individualisiert' das zu den zu startenden 
-        SOLR7-Jetty-Server.
+        gut beschieben. Von Anfang an sollte das Datenverzeichnis mit den eigenen Cores nicht innerhalb der
+        SOLR7-Distribution liegen. Gleiches gilt für die Log-Dateien.
       </p>
-      <code>.../solr-7.3.0/bin/solr start -s {my_data_dir} -p {my_port} -m {my_ram}</code>
       <p>
-        Soll SOLR7 direkt als Systemdienst starten, so ist folgendes zu tun: <span style="color:red">ToDo</span>
+        Nachfolgendes Startkommando 'individualisiert' das zu den zu startenden
+        SOLR7-Jetty-Server. Cores werden nach
+        {my_data_dir} gelegt, Log-Dateien nach {my_log_dir}.
+        Beide Verzeichnisse müssen vorher angelegt werden.
+      </p>
+      <code>cd .../solr-7.3.0/bin ; solr start -s {my_data_dir} -p {my_port} -m {my_ram} -Dsolr.log.dir={my_log_dir}</code>
+      <p>
+        Soll SOLR7 direkt als Systemdienst starten, so ist folgendes zu tun:
+        <span style="color:red">ToDo</span>
       </p>
     </section>
-    
+
     <section>
       <title>Konfiguration</title>
       <p>
-      Ist die <code>solr.xml</code> einmal im Verzeichnis {my_data_dir} platziert, muss diese nicht mehr verändert 
-      werden. Alle Änderungen werden direkt in den Cores vorgenommen.
+        Ist die
+        <code>solr.xml</code>
+        einmal im Verzeichnis {my_data_dir} platziert, muss diese nicht mehr verändert
+        werden. Alle Änderungen werden
+        direkt in den Cores vorgenommen. Diese Konfiguration ist für die MyCoRe-Anwendungen in der erwähnten Rubrik
+        <strong>Suche</strong>
+        näher beschieben.
       </p>
     </section>
-    
+
     <section>
       <title>Migration von SOLR4</title>
       <p>
@@ -51,9 +65,25 @@
         werden.
       </p>
       <ul>
-        <li>Die <code>solr.xml</code> hat sich völlig verändert und sollte von einem SOLR7-Beispiel übernommen werden.</li>
-        <li>Die Schemadaten stehen nicht mehr in <code>schema.xml</code> sondern in der Datei <code>managed-schema</code>.</li>
-        <li>Das Standardformat der Rückgabe einer Anfrage ist jetzt <strong>json</strong> und nicht mehr <strong>xml</strong>.</li>
+        <li>
+          Die
+          <code>solr.xml</code>
+          hat sich völlig verändert und sollte von einem SOLR7-Beispiel übernommen werden.
+        </li>
+        <li>
+          Die Schemadaten stehen nicht mehr in
+          <code>schema.xml</code>
+          sondern in der Datei
+          <code>managed-schema</code>
+          .
+        </li>
+        <li>
+          Das Standardformat der Rückgabe einer Anfrage ist jetzt
+          <strong>json</strong>
+          und nicht mehr
+          <strong>xml</strong>
+          .
+        </li>
       </ul>
     </section>
   </body>
