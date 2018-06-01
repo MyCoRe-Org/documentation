@@ -62,6 +62,9 @@ or
       <p><code>mycore.sh reload solr configuration for core test1 with type default-core</code></p>
       <p>Anschließend sollte noch einmal über die Web-Oberfläche geprüft werden, ob der Core konfiguriert wurde.
       Auch ist im Log zu prüfen, ob SOLR nicht Definitionen abgelehnt hat. Ist alles okay, so ist der Core betriebsbereit.</p>
+      <p>siehe <a href="https://lucene.apache.org/solr/guide/7_3/solr-control-script-reference.html" target="_blank">Solr Control Script Reference</a>, 
+      <a href="https://lucene.apache.org/solr/guide/7_3/schema-api.html" target="_blank">Schema API</a> und 
+      <a href="https://lucene.apache.org/solr/guide/7_3/config-api.html" target="_blank">Config API</a></p>
     </section>
 
     <section>
