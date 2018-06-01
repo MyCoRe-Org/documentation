@@ -2,10 +2,10 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V1.2//EN" "http://apache.org/forrest/dtd/document-v12.dtd">
 <document>
   <header>
-    <title>Arbeiten mit Git</title>
+    <title>MyCoRe-Konventionen</title>
     <release>2017.06</release>
     <release>2018.06</release>
-    <version>2018-05-22</version>
+    <version>2018-06.01</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
@@ -196,6 +196,15 @@
         <p>Datenmodelle nach dem MyCoRe-Datenmodel-Schema 2 müssen im Maven-Modul unter <code>src/main/datamodel/def</code>
         stehen und den Namen <code>{datenmodel}.xml</code> haben. Dabei wird {datenmodel} dann in die Schemadatei
         {datenmodel}.xsd umgewandelt und so referenziert. </p>
+      </section>
+
+      <section>
+        <title>SOLR-Konfigurationen</title>
+        <p>Die SOLR-Konfiguration wurde mit Release 2018.06 modularisiert. Somit enthält jedes Modul nur noch die
+        SOLR-Konfigurationsdefinitionen, die es benötigt. Um Namensdopplungen zu vermeiden, haben alle Typ- und
+        Felddefinitionen einen Modulprefix in der Form <code>{prefix}.{name}</code>, Beispiel <code>mods.identifier</code>.
+        Lediglich die MyCoRe-Basisfelder in <em>mycore-base</em> entsprechen nicht diese Konvention, da sie immer
+        vorhanden sind.</p>
       </section>
 
   </body>

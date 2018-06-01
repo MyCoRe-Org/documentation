@@ -5,9 +5,8 @@
 
   <header>
     <title>SOLR und MyCoRe</title>
-    <release>2017.06</release>
     <release>2018.06</release>
-    <version>2018-05-31</version>
+    <version>2018-06-01</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
@@ -35,13 +34,65 @@
         Folgende Schritte sind durchzuführen, um einen neuen <strong>default-core</strong> zu erstellen. Dieser ist so,
         oder in einer durch die Anwender erweiterten Form immer erforderlich.
       </p>
-<pre class="brush: xml"><![CDATA[cd .../solr-7.3.0/server/solr/configsets
+<pre><![CDATA[cd .../solr-7.3.0/server/solr/configsets
 git clone git@github.com:MyCoRe-Org/mycore-default-core-template.git
-.../solr-7.3.0/bin/solr create -d mycore-default-core-template -c {my_core_name}
-        ]]></pre>
+.../solr-7.3.0/bin/solr create -d mycore-default-core-template -c {my_core_name}]]></pre>
         <p>Anschließend kann über die Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde.</p>
+        <p>
+          Die Konfigurationen für die einzelnen SOLR-Suchfelder stehen nun in den entsprechenden Modulen. Hierbei gilt 
+          nachfolgende  Struktur. Für einzelne Fälle kann es erforderlich sein, dass neben dem <em>default-core</em>
+          weitere Definitionen für andere Cores, z. B. classification-core, definiert sind. Die Namenskonventionen
+          für die einzelnen Felder sind auf der entsprechenden Doku-Seite beschrieben.
+        </p>
+<pre><![CDATA[{mycore-module}/src/main/resources/components/{module_name}/config/solr 
+or
+{application-module}/src/main/resources/config/{application-module}/solr
+
+   .../default-core - the core that use each MyCoRe application
+       .../solr-schema.json - filled if the module use SOLR schema definitions
+       .../solr-config.json - filled if the module use SOLR configurations
+       
+   .../{other_name} - other core definitions
+       .../solr-schema.json - filled if the module use SOLR schema definitions
+       .../solr-config.json - filled if the module use SOLR configurations]]></pre>
+      <p>Nun müssen dies Definitionen noch in den Core geladen werden. Pro Core ist je ein Ladevorgang notwendig.
+      Sollen bereits bestehende / in MyCoRe vorhandene Felder in ihrer Definition geändert werden, so können diese
+      mit <em>replace</em> in der JSON-Datei überschrieben werden.</p>
+      <p><code>mycore.sh reload solr configuration for core {core_name} with type {type_name}</code></p>
+      <p><code>mycore.sh reload solr configuration for core test1 with type default-core</code></p>
+      <p>Anschließend sollte noch einmal über die Web-Oberfläche geprüft werden, ob der Core konfiguriert wurde.
+      Auch ist im Log zu prüfen, ob SOLR nicht Definitionen abgelehnt hat. Ist alles okay, so ist der Core betriebsbereit.</p>
     </section>
 
+    <section>
+      <title>Erzeugen der zu speichernden Daten</title>
+      <p>Die in SOLR zu speichernden Daten werden über eine Kette von XSLT-Transformern generiert. Hierfür ist das 
+      Property <em>MCR.URIResolver.xslImports.solr-document</em> zuständig. Grundsätzlich in der Kette enthalten sind
+      die Stylesheets <em>solr-basetemplate.xsl</em> und <em>mycoreobject-dynamicfields.xsl</em>. Weiter Transformer
+      können dieser Kette angefügt werden (siehe Beispielcode). Der an SOLR ausgehende Datenstrom läßt sich im Web-Browser
+      mit der URL <code>http://{myapp}/receive/{mycore_id}?XSL.Style=solr-document</code> überprüfen.</p>
+<pre><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xalan="http://xml.apache.org/xalan"
+  exclude-result-prefixes="xalan xlink mcrxsl">
+   
+  <xsl:import href="xslImport:solr-document:viaf2solr.xsl" />
+  
+  <xsl:template match="mycoreobject[contains(@ID,'_{my_datamodel}_')]">
+    <xsl:apply-imports />
+    <!-- field name="viaf_name_all" type="text_general" multiValued="true" stored="true" -->
+    <xsl:for-each select="./metadata/def.preferredName/preferredName">
+      <field name="viaf_name_all">
+        <xsl:value-of select="fullname/text()" />
+      </field>
+    </xsl:for-each>
+    ...
+  </template>
+</stylesheet>]]></pre>
+    </section>
+    
     <section>
       <title>Properties für die SOLR-Komponente</title>
       <p>
@@ -55,9 +106,9 @@ git clone git@github.com:MyCoRe-Org/mycore-default-core-template.git
       <div style="font-size:12px;">
         <table style="padding-left:3px;padding-right:3px;border:1px;">
           <tr>
-            <th>Property in 2018</th>
-            <th>Bedeutung</th>
-            <th width="10%">in App.-Config</th>
+            <th style="width:40%">Property in 2018</th>
+            <th style="width=35%">Bedeutung</th>
+            <th style="width=25%">in App.-Config</th>
           </tr>
           <tr>
             <td style="vertical-align:top;">MCR.Solr.ServerURL</td>
@@ -175,7 +226,8 @@ git clone git@github.com:MyCoRe-Org/mycore-default-core-template.git
           <tr>
             <td style="vertical-align:top;">MCR.Solr.DynamicFields</td>
             <td style="vertical-align:top;">default=true ; erzeugt auch dynamische Felder für SOLR</td>
-            <td></td>
+            <td>Es sollte geprüft werden, ob die Übertragung  dynamischer Felder in der speziellen Anwendung
+            erforderlich ist. Andernfalls sollte der Wert auf <em>false</em> gestellt werden.</td>
           </tr>
           <tr>
             <td style="vertical-align:top;">MCR.Solr.ContentBaseFields</td>
@@ -195,7 +247,7 @@ git clone git@github.com:MyCoRe-Org/mycore-default-core-template.git
           <tr>
             <td style="vertical-align:top;">MCR.Solr.JoinQueryFileds</td>
             <td style="vertical-align:top;">
-              enthält die liste der Properties
+              enthält die Liste der Properties
               <em>MCR.Solr.ContentBaseFields</em>
               ,
               <em>MCR.Solr.AVExtenderFields</em>
@@ -206,7 +258,7 @@ git clone git@github.com:MyCoRe-Org/mycore-default-core-template.git
           </tr>
           <tr>
             <td style="vertical-align:top;">MCR.Solr.netsedDocuments</td>
-            <td style="vertical-align:top;">default=truze ; ???</td>
+            <td style="vertical-align:top;">default=true ; ???</td>
             <td></td>
           </tr>
         </table>
@@ -218,8 +270,7 @@ git clone git@github.com:MyCoRe-Org/mycore-default-core-template.git
       <p> Mit diesem Code-Schnipsel soll demonstriert werden, wie ein Zugriff auf die SOLR-Daten mittels MyCoRe-API
         erfolgen kann.
       </p>
-      <pre class="brush: xml;"><![CDATA[
-import org.apache.solr.client.solrj.SolrClient;
+<pre><![CDATA[import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.common.SolrDocumentList;
