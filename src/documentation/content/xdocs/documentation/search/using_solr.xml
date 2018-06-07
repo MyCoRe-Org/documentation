@@ -31,12 +31,12 @@
         unterstützt, werden die Templates durch MyCoRe über GitHub bereitgestellt.
       </p>
       <p>
-        Folgende Schritte sind durchzuführen, um einen neuen <strong>default-core</strong> zu erstellen. Dieser ist so,
+        Folgende Schritte sind durchzuführen, um einen neuen <strong>main</strong> Core zu erstellen. Dieser ist so,
         oder in einer durch die Anwender erweiterten Form immer erforderlich.
       </p>
 <pre><![CDATA[cd .../solr-7.3.0/server/solr/configsets
-git clone git@github.com:MyCoRe-Org/mycore-default-core-template.git
-.../solr-7.3.0/bin/solr create -d mycore-default-core-template -c {my_core_name}]]></pre>
+git clone git@github.com:MyCoRe-Org/mycore_solr_configset_main.git
+.../solr-7.3.0/bin/solr create -d mycore_solr_configset_main -c {my_core_name}]]></pre>
         <p>Anschließend kann über die Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde.</p>
         <p>
           Die Konfigurationen für die einzelnen SOLR-Suchfelder stehen nun in den entsprechenden Modulen. Hierbei gilt 
@@ -48,7 +48,7 @@ git clone git@github.com:MyCoRe-Org/mycore-default-core-template.git
 or
 {application-module}/src/main/resources/config/{application-module}/solr
 
-   .../default-core - the core that use each MyCoRe application
+   .../main - the core that use each MyCoRe application
        .../solr-schema.json - filled if the module use SOLR schema definitions
        .../solr-config.json - filled if the module use SOLR configurations
        
@@ -58,8 +58,8 @@ or
       <p>Nun müssen dies Definitionen noch in den Core geladen werden. Pro Core ist je ein Ladevorgang notwendig.
       Sollen bereits bestehende / in MyCoRe vorhandene Felder in ihrer Definition geändert werden, so können diese
       mit <em>replace</em> in der JSON-Datei überschrieben werden.</p>
-      <p><code>mycore.sh reload solr configuration for core {core_name} with type {type_name}</code></p>
-      <p><code>mycore.sh reload solr configuration for core test1 with type default-core</code></p>
+      <p><code>mycore.sh reload solr core configuration for type {type_name}</code></p>
+      <p>z.B. <code>mycore.sh reload solr core configuration for type main</code></p>
       <p>Anschließend sollte noch einmal über die Web-Oberfläche geprüft werden, ob der Core konfiguriert wurde.
       Auch ist im Log zu prüfen, ob SOLR nicht Definitionen abgelehnt hat. Ist alles okay, so ist der Core betriebsbereit.</p>
       <p>siehe <a href="https://lucene.apache.org/solr/guide/7_3/solr-control-script-reference.html" target="_blank">Solr Control Script Reference</a>, 
@@ -116,12 +116,12 @@ or
           <tr>
             <td style="vertical-align:top;">MCR.Solr.ServerURL</td>
             <td style="vertical-align:top;">the URL to the SOLR server like http://mysolr.de:8983/</td>
-            <td style="font-weight:bold">requiered</td>
+            <td style="font-weight:bold">required</td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.Core.Main</td>
+            <td style="vertical-align:top;">MCR.Solr.Core.main</td>
             <td style="vertical-align:top;">the main core that will be used for this MyCoRe application</td>
-            <td style="font-weight:bold">requiered</td>
+            <td style="font-weight:bold">required</td>
           </tr>
           <tr>
             <td style="vertical-align:top;">MCR.Solr.Indexer.File.AccumulatorList</td>
