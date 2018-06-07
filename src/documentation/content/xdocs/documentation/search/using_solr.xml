@@ -31,17 +31,21 @@
         unterstützt, werden die Templates durch MyCoRe über GitHub bereitgestellt.
       </p>
       <p>
-        Folgende Schritte sind durchzuführen, um einen neuen <strong>main</strong> Core zu erstellen. Dieser ist so,
-        oder in einer durch die Anwender erweiterten Form immer erforderlich.
+        Folgende Schritte sind durchzuführen, um einen neuen <strong>main</strong>-Core zu erstellen. Dieser ist so,
+        oder in einer durch die Anwender erweiterten Form immer für eine MyCoRe-Anwendung erforderlich. Gleiches gilt
+        dann natürlich auch für weitere Cores.
       </p>
 <pre><![CDATA[cd .../solr-7.3.0/server/solr/configsets
 git clone git@github.com:MyCoRe-Org/mycore_solr_configset_main.git
 .../solr-7.3.0/bin/solr create -d mycore_solr_configset_main -c {my_core_name}]]></pre>
         <p>Anschließend kann über die Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde.</p>
+        <p>Die Zuordnung der Cores zu den entsprechenden Core-Typen erfolgt mittels Properties (s. u.). Dabei ist die 
+        Verbindung zwischen Core-Name und Core-Typ wie folgend anzugeben: <code>MCR.Solr.Core.{core_type}={core_name}</code>.
+        Der Typ <em>main</em> stellt dabei den Standard-Core-Namen für MyCoRe-Anwendungen dar.</p>
         <p>
           Die Konfigurationen für die einzelnen SOLR-Suchfelder stehen nun in den entsprechenden Modulen. Hierbei gilt 
-          nachfolgende  Struktur. Für einzelne Fälle kann es erforderlich sein, dass neben dem <em>default-core</em>
-          weitere Definitionen für andere Cores, z. B. classification-core, definiert sind. Die Namenskonventionen
+          nachfolgende  Struktur. Für einzelne Fälle kann es erforderlich sein, dass neben dem <em>main</em>-Core
+          weitere Definitionen für andere Cores, z. B. <em>classification</em>-Core, definiert sind. Die Namenskonventionen
           für die einzelnen Felder sind auf der entsprechenden Doku-Seite beschrieben.
         </p>
 <pre><![CDATA[{mycore-module}/src/main/resources/components/{module_name}/config/solr 
@@ -58,8 +62,8 @@ or
       <p>Nun müssen dies Definitionen noch in den Core geladen werden. Pro Core ist je ein Ladevorgang notwendig.
       Sollen bereits bestehende / in MyCoRe vorhandene Felder in ihrer Definition geändert werden, so können diese
       mit <em>replace</em> in der JSON-Datei überschrieben werden.</p>
-      <p><code>mycore.sh reload solr core configuration for type {type_name}</code></p>
-      <p>z.B. <code>mycore.sh reload solr core configuration for type main</code></p>
+      <p><code>mycore.sh reload solr configuration for type {type_name}</code></p>
+      <p><code>mycore.sh reload solr configuration for type main</code></p>
       <p>Anschließend sollte noch einmal über die Web-Oberfläche geprüft werden, ob der Core konfiguriert wurde.
       Auch ist im Log zu prüfen, ob SOLR nicht Definitionen abgelehnt hat. Ist alles okay, so ist der Core betriebsbereit.</p>
       <p>siehe <a href="https://lucene.apache.org/solr/guide/7_3/solr-control-script-reference.html" target="_blank">Solr Control Script Reference</a>, 
@@ -119,9 +123,9 @@ or
             <td style="font-weight:bold">required</td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.Core.main</td>
-            <td style="vertical-align:top;">the main core that will be used for this MyCoRe application</td>
-            <td style="font-weight:bold">required</td>
+            <td style="vertical-align:top;">MCR.Solr.Core.{core_type}</td>
+            <td style="vertical-align:top;">the name of the core for the core type that will be used for this MyCoRe application</td>
+            <td style="font-weight:bold">requiered</td>
           </tr>
           <tr>
             <td style="vertical-align:top;">MCR.Solr.Indexer.File.AccumulatorList</td>
