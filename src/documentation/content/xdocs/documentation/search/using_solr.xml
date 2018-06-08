@@ -10,6 +10,7 @@
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
+      <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
     </authors>
     <abstract>
       Dieses Kapitel beschäftigt sich mit der Einbindung der SOLR7-Suchmaschine in MyCoRe. Aktuell wird Version
@@ -22,18 +23,21 @@
     <section>
       <title>SOLR Konfiguration für MyCoRe</title>
       <p>
-        Nach dem klar ist, auf welchem System der SOLR7-Server laufen soll, wurde gemäß der allgemeinen Anleitung
-        unter
-        <strong>Mit MyCoRe Starten -> SOLR7-Integration</strong>
-        ein SOLR-Server aufgesetzt. Nun müssen entsprechend der benutzten Anwendungen ein oder mehrere SOLR-Cores
-        angelegt werden. Diese stehen unter dem GitHub-Account MyCoRe-Org bereit. Für verschiedene Anwendungen
-        sind ein oder mehrere Cores erforderlich. Da die SOLR-API noch nicht das dynamische Verteilen von Mapping-Dateien
-        unterstützt, werden die Templates durch MyCoRe über GitHub bereitgestellt.
+        Falls noch kein Solr7 Server zur Verfügung steht, kann er gemäß der Anleitung im Abschnitt <a href="site:solr7">Einrichtung eines Solr 7.3 Servers</a> installiert werden.
+     </p>
+     <p>
+     	Nun müssen für jede MyCoRe-Anwendung ein oder mehrere Solr-Cores angelegt werden.
+     	Da sich noch nicht alle Konfigurationsdateien für einen Core über die die Solr-API erstellen lassen,
+     	werden Templates für die Basiskonfiguration durch MyCoRe über GitHub bereitgestellt.
       </p>
+      <p>Da verschiedene MyCoRe Komponenten und Module individuelle Suchfelder und Datentypen benötigen, können diese direkt
+      in den Modulen definiert werden. Mittels eines MyCoRe-Kommandos werden diese Definitonsdateien ausgelesen und über die <a href="https://lucene.apache.org/solr/guide/7_3/schema-api.html">Solr Schema API</a>
+      in den Core geschrieben.</p>
+      
       <p>
         Folgende Schritte sind durchzuführen, um einen neuen <strong>main</strong>-Core zu erstellen. Dieser ist so,
-        oder in einer durch die Anwender erweiterten Form immer für eine MyCoRe-Anwendung erforderlich. Gleiches gilt
-        dann natürlich auch für weitere Cores.
+        oder in einer durch die Anwender erweiterten Form immer für eine MyCoRe-Anwendung erforderlich. Weitere Cores können analog erstellt werden.
+        
       </p>
 <pre><![CDATA[cd .../solr-7.3.0/server/solr/configsets
 git clone git@github.com:MyCoRe-Org/mycore_solr_configset_main.git
@@ -43,7 +47,7 @@ git clone git@github.com:MyCoRe-Org/mycore_solr_configset_main.git
         Verbindung zwischen Core-Name und Core-Typ wie folgend anzugeben: <code>MCR.Solr.Core.{core_type}={core_name}</code>.
         Der Typ <em>main</em> stellt dabei den Standard-Core-Namen für MyCoRe-Anwendungen dar.</p>
         <p>
-          Die Konfigurationen für die einzelnen SOLR-Suchfelder stehen nun in den entsprechenden Modulen. Hierbei gilt 
+          Die Konfigurationen für die einzelnen Solr-Suchfelder stehen nun in den entsprechenden Modulen. Hierbei gilt 
           nachfolgende  Struktur. Für einzelne Fälle kann es erforderlich sein, dass neben dem <em>main</em>-Core
           weitere Definitionen für andere Cores, z. B. <em>classification</em>-Core, definiert sind. Die Namenskonventionen
           für die einzelnen Felder sind auf der entsprechenden Doku-Seite beschrieben.
