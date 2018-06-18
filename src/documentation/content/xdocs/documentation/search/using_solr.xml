@@ -24,39 +24,48 @@
       <title>SOLR Konfiguration für MyCoRe</title>
       <p>
         Falls noch kein Solr7 Server zur Verfügung steht, kann er gemäß der Anleitung im Abschnitt <a href="site:solr7">Einrichtung eines Solr 7.3 Servers</a> installiert werden.
-     </p>
-     <p>
-       Nun müssen für jede MyCoRe-Anwendung ein oder mehrere Solr-Cores angelegt werden.
-       Da sich noch nicht alle Konfigurationsdateien für einen Core über die die Solr-API erstellen lassen,
-       werden Templates für die Basiskonfiguration durch MyCoRe über GitHub bereitgestellt.
-     </p>
-     <p>
-       Da verschiedene MyCoRe Komponenten und Module individuelle Suchfelder und Datentypen benötigen, können diese direkt
-       in den Modulen definiert werden. Mittels eines MyCoRe-Kommandos werden diese Definitonsdateien ausgelesen und über die <a href="https://lucene.apache.org/solr/guide/7_3/schema-api.html">Solr Schema API</a>
-       in den Core geschrieben.</p>
-       
-       <subsection>
+        Nun müssen für jede MyCoRe-Anwendung ein oder mehrere Solr-Cores angelegt werden.
+        Da sich noch nicht alle Konfigurationsdateien für einen Core über die die Solr-API erstellen lassen,
+        werden Templates für die Basiskonfiguration durch MyCoRe über GitHub bereitgestellt.
+      </p>
       <p>
-        Folgende Schritte sind durchzuführen, um einen neuen <strong>main</strong>-Core zu erstellen. Dieser ist so,
-        oder in einer durch die Anwender erweiterten Form immer für eine MyCoRe-Anwendung erforderlich. Weitere Cores können analog erstellt werden.
-     </p>
-<pre><![CDATA[cd .../solr-7.3.0/server/solr/configsets
-git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git
-.../solr-7.3.0/bin/solr create -d mycore_solr_configset_main -c {my_core_name}]]></pre>
-      <p>Anschließend kann über die Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde (<a href="localhost:8983/solr/#/~cores/">localhost:8983/solr/#/~cores</a>).</p>
-      <p>Die Zuordnung der Cores zu den entsprechenden Core-Typen erfolgt mittels Properties (s. u.). Dabei ist die 
-        Verbindung zwischen Core-Name und Core-Typ wie folgend anzugeben: <code>MCR.Solr.Core.{core_type}={core_name}</code>.
-        Der Typ <em>main</em> stellt dabei den Standard-Core-Namen für MyCoRe-Anwendungen dar.</p>
-        </subsection>
+        Da verschiedene MyCoRe Komponenten und Module individuelle Suchfelder und Datentypen benötigen, können diese direkt
+        in den Modulen definiert werden. Mittels eines MyCoRe-Kommandos werden diese Definitonsdateien ausgelesen und über die <a href="https://lucene.apache.org/solr/guide/7_3/schema-api.html">Solr Schema API</a>
+        in den Core geschrieben.
+      </p>
+       
+      <section>
+        <title>Solr-Core anlegen</title>
         <p>
-          Die Konfigurationen für die einzelnen Solr-Suchfelder stehen nun in den entsprechenden Modulen. Hierbei gilt 
-          nachfolgende  Struktur. Für einzelne Fälle kann es erforderlich sein, dass neben dem <em>main</em>-Core
-          weitere Definitionen für andere Cores, z. B. <em>classification</em>-Core, definiert sind. Die Namenskonventionen
+          Folgende Schritte sind durchzuführen, um einen neuen Core vom Typ <code>main</code> zu erstellen. Dieser ist so,
+          oder in einer durch die Anwender erweiterten Form immer für eine MyCoRe-Anwendung erforderlich. Weitere Cores können
+          analog erstellt werden.
+       </p>
+     <pre class="brush: shell;gutter: false;">
+cd .../solr-7.3.1/server/solr/configsets
+git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git
+.../solr-7.3.1/bin/solr create -d mycore_solr_configset_main -c {my_core_name}
+     </pre>
+      <p>Anschließend kann über die Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde (<a href="localhost:8983/solr/#/~cores/">localhost:8983/solr/#/~cores</a>).</p>
+      <p>
+        Die Zuordnung der Cores zu den entsprechenden Core-Typen erfolgt mittels Properties (s. u.). Dabei ist die 
+        Verbindung zwischen Core-Name und Core-Typ wie folgend anzugeben: <code>MCR.Solr.Core.{core_type}.Name={core_name}</code>.
+        Der Typ <code>main</code> stellt dabei den Standard-Solr-Kern für MyCoRe-Anwendungen dar.
+      </p>
+        </section>
+      
+      <section>
+        <title>Konfiguration</title>
+        <p>
+          Die Konfigurationen für die einzelnen Solr-Suchfelder stehen nun in den entsprechenden Komponenten. Hierbei gilt 
+          nachfolgende  Struktur. Für einzelne Fälle kann es erforderlich sein, dass neben dem <code>main</code>-Core
+          weitere Definitionen für andere Cores, z. B. <code>classification</code>-Core, definiert sind. Die Namenskonventionen
           für die einzelnen Felder sind auf der entsprechenden Doku-Seite beschrieben.
         </p>
-<pre><![CDATA[{mycore-module}/src/main/resources/components/{module_name}/config/solr 
+        <pre class="brush: shell;gutter: false;">
+{mycore-component}/src/main/resources/components/{component_name}/config/solr 
 or
-{application-module}/src/main/resources/config/{application-module}/solr
+{application}/src/main/resources/config/{application}/solr
 
    .../main - the core that use each MyCoRe application
        .../solr-schema.json - filled if the module use SOLR schema definitions
@@ -64,28 +73,31 @@ or
        
    .../{other_type} - other core definitions
        .../solr-schema.json - filled if the module use SOLR schema definitions
-       .../solr-config.json - filled if the module use SOLR configurations]]></pre>
+       .../solr-config.json - filled if the module use SOLR configurations
+      </pre>
        
       <p>Nun müssen dies Definitionen noch in den Core geladen werden. Pro Core ist je ein Ladevorgang notwendig.
       Sollen bereits bestehende / in MyCoRe vorhandene Felder in ihrer Definition geändert werden, so können diese
-      mit <em>replace</em> in der JSON-Datei überschrieben werden.</p>
+      mit <code>replace</code> in der JSON-Datei überschrieben werden.</p>
       <p><code>mycore.sh reload solr configuration for type {type_name}</code></p>
       <p><code>mycore.sh reload solr configuration for type main</code></p>
       <p>Anschließend sollte noch einmal über die Web-Oberfläche geprüft werden, ob der Core konfiguriert wurde.
       Auch ist im Log zu prüfen, ob SOLR nicht Definitionen abgelehnt hat. Ist alles okay, so ist der Core betriebsbereit.</p>
-      <p>siehe <a href="https://lucene.apache.org/solr/guide/7_3/solr-control-script-reference.html" target="_blank">Solr Control Script Reference</a>, 
-      <a href="https://lucene.apache.org/solr/guide/7_3/schema-api.html" target="_blank">Schema API</a> und 
-      <a href="https://lucene.apache.org/solr/guide/7_3/config-api.html" target="_blank">Config API</a></p>
+      <p>siehe <a href="https://lucene.apache.org/solr/guide/7_3/solr-control-script-reference.html">Solr Control Script Reference</a>, 
+      <a href="https://lucene.apache.org/solr/guide/7_3/schema-api.html">Schema API</a> und 
+      <a href="https://lucene.apache.org/solr/guide/7_3/config-api.html">Config API</a>
+      </p>
+      </section>
     </section>
 
     <section>
-      <title>Erzeugen der zu speichernden Daten</title>
-      <p>Die in SOLR zu speichernden Daten werden über eine Kette von XSLT-Transformern generiert. Hierfür ist das 
-      Property <em>MCR.URIResolver.xslImports.solr-document</em> zuständig. Grundsätzlich in der Kette enthalten sind
-      die Stylesheets <em>solr-basetemplate.xsl</em> und <em>mycoreobject-dynamicfields.xsl</em>. Weiter Transformer
+      <title>Das Solr-Document</title>
+      <p>Die in SOLR zu speichernden Daten werden als Solr-Document über eine Kette von XSLT-Transformern generiert. Hierfür ist das 
+      Property <code>MCR.URIResolver.xslImports.solr-document</code> zuständig. Grundsätzlich in der Kette enthalten sind
+      die Stylesheets <code>solr-basetemplate.xsl</code> und <code>mycoreobject-dynamicfields.xsl</code>. Weitere Transformer
       können dieser Kette angefügt werden (siehe Beispielcode). Der an SOLR ausgehende Datenstrom läßt sich im Web-Browser
       mit der URL <code>http://{myapp}/receive/{mycore_id}?XSL.Style=solr-document</code> überprüfen.</p>
-<pre><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+      <pre class="brush: xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -110,181 +122,179 @@ or
     <section>
       <title>Properties für die SOLR-Komponente</title>
       <p>
-        In LTS 2017.06 sind die Properties noch mit
-        <em>MCR.Module-solr</em>
-        statt mit
-        <strong>MCR.Solr</strong>
-        bezeichnet.
-        in LTS 2018.06 ist das deprecate!!!
+        <span class="label label-warning">Achtung:</span> In LTS 2017.06 sind die Properties noch mit <code>MCR.Module-solr</code>
+        statt mit <code>MCR.Solr</code> bezeichnet. Mit dem LTS 2018.06 sind diese deprecated!
       </p>
-      <div style="font-size:12px;">
-        <table style="padding-left:3px;padding-right:3px;border:1px;">
+      <table class="table table-condensed solr-properties-table">
           <tr>
-            <th style="width:40%">Property in 2018</th>
-            <th style="width=35%">Bedeutung</th>
-            <th style="width=25%">in App.-Config</th>
+            <th>Property in 2018</th>
+            <th>Bedeutung</th>
+            <th>in App.-Config</th>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.ServerURL</td>
-            <td style="vertical-align:top;">the URL to the SOLR server like http://mysolr.de:8983/</td>
-            <td style="font-weight:bold">required</td>
+            <td><code>MCR.Solr.ServerURL</code></td>
+            <td>the URL to the SOLR server like http://mysolr.de:8983/</td>
+            <td><strong>required</strong></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.Core.{core_type}</td>
-            <td style="vertical-align:top;">the name of the core for the core type that will be used for this MyCoRe application</td>
-            <td style="font-weight:bold">requiered</td>
+            <td><code>MCR.Solr.Core.{core_type}</code></td>
+            <td>the name of the core for the core type that will be used for this MyCoRe application</td>
+            <td><strong>required</strong></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.Indexer.File.AccumulatorList</td>
-            <td style="vertical-align:top;">???</td>
+            <td><code>MCR.Solr.Indexer.File.AccumulatorList</code></td>
+            <td>???</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.Indexer.BulkSize</td>
-            <td style="vertical-align:top;">default=100 ; Die Anzahl der objekte, die mit einem mal an SOLR geschickt werden.</td>
+            <td><code>MCR.Solr.Indexer.BulkSize</code></td>
+            <td>default=100 ; Die Anzahl der objekte, die mit einem mal an SOLR geschickt werden.</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.Indexer.ThreadCount</td>
-            <td style="vertical-align:top;">default=4 ; Anzahl der benutzten Threads</td>
+            <td><code>MCR.Solr.Indexer.ThreadCount</code></td>
+            <td>default=4 ; Anzahl der benutzten Threads</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.XMLProtocolVersion</td>
-            <td style="vertical-align:top;">current=4.5</td>
+            <td><code>MCR.Solr.XMLProtocolVersion</code></td>
+            <td>current=4.5</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.SelectProxy.MaxConnections</td>
-            <td style="vertical-align:top;">default=20 ; max. Anzahl der Verbindungen zum SOLR-Server für select</td>
+            <td><code>MCR.Solr.SelectProxy.MaxConnections</code></td>
+            <td>default=20 ; max. Anzahl der Verbindungen zum SOLR-Server für select</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.SelectPath</td>
-            <td style="vertical-align:top;">default=/select</td>
+            <td><code>MCR.Solr.SelectPath</code></td>
+            <td>default=/select</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.UpdatePath</td>
-            <td style="vertical-align:top;">default=/update</td>
+            <td><code>MCR.Solr.UpdatePath</code></td>
+            <td>default=/update</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.ExtractPath</td>
-            <td style="vertical-align:top;">default=/update/extract</td>
+            <td><code>MCR.Solr.ExtractPath</code></td>
+            <td>default=/update/extract</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.Proxy.WhiteList</td>
-            <td style="vertical-align:top;">default=/select ; der Proxy akzeptiert nur die Liste davon</td>
+            <td><code>MCR.Solr.Proxy.WhiteList</code></td>
+            <td>default=/select ; der Proxy akzeptiert nur die Liste davon</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.SolrClient.ConnectionTimeout</td>
-            <td style="vertical-align:top;">default=0</td>
+            <td><code>MCR.Solr.SolrClient.ConnectionTimeout</code></td>
+            <td>default=0</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.SolrClient.SocketTimeout</td>
-            <td style="vertical-align:top;">default=50000</td>
+            <td><code>MCR.Solr.SolrClient.SocketTimeout</code></td>
+            <td>default=50000</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.ConcurrentSolrUpdateClient.Enabled</td>
-            <td style="vertical-align:top;">default=true ; soll das Update parallel erfolgen?</td>
+            <td><code>MCR.Solr.ConcurrentSolrUpdateClient.Enabled</code></td>
+            <td>default=true ; soll das Update parallel erfolgen?</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.ConcurrentSolrUpdateClient.QueueSize</td>
-            <td style="vertical-align:top;">default=100</td>
+            <td><code>MCR.Solr.ConcurrentSolrUpdateClient.QueueSize</code></td>
+            <td>default=100</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.ConcurrentSolrUpdateClient.ThreadCount</td>
-            <td style="vertical-align:top;">
+            <td><code>MCR.Solr.ConcurrentSolrUpdateClient.ThreadCount</code></td>
+            <td>
               Wert entspricht dem Property
-              <em>MCR.Solr.Indexer.ThreadCount</em>
+              <code>MCR.Solr.Indexer.ThreadCount</code>
             </td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.SolrInputDocument.Factory</td>
-            <td style="vertical-align:top;">default=org.mycore.solr.index.document.MCRSolrTransformerInputDocumentFactory</td>
+            <td><code>MCR.Solr.SolrInputDocument.Factory</code></td>
+            <td>default=org.mycore.solr.index.document.MCRSolrTransformerInputDocumentFactory</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.SolrInputDocument.Transformer</td>
-            <td style="vertical-align:top;">default=mycoreobject-solrdocument</td>
+            <td><code>MCR.Solr.SolrInputDocument.Transformer</code></td>
+            <td>default=mycoreobject-solrdocument</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.SolrInputDocument.Path.Factory</td>
-            <td style="vertical-align:top;">default=org.mycore.solr.index.file.MCRSolrPathDocumentFactory</td>
+            <td><code>MCR.Solr.SolrInputDocument.Path.Factory</code></td>
+            <td>default=org.mycore.solr.index.file.MCRSolrPathDocumentFactory</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.IndexHandler.Factory</td>
-            <td style="vertical-align:top;">default=org.mycore.solr.index.handlers.MCRSolrLazyInputDocumentHandlerFactory</td>
+            <td><code>MCR.Solr.IndexHandler.Factory</code></td>
+            <td>default=org.mycore.solr.index.handlers.MCRSolrLazyInputDocumentHandlerFactory</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.FileIndexStrategy</td>
-            <td style="vertical-align:top;">default=org.mycore.solr.index.strategy.MCRSolrMimeTypeStrategie</td>
+            <td><code>MCR.Solr.FileIndexStrategy</code></td>
+            <td>default=org.mycore.solr.index.strategy.MCRSolrMimeTypeStrategie</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.MimeTypeStrategy.Pattern</td>
-            <td style="vertical-align:top;">default=image/.*</td>
+            <td><code>MCR.Solr.MimeTypeStrategy.Pattern</code></td>
+            <td>default=image/.*</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.DynamicFields</td>
-            <td style="vertical-align:top;">default=true ; erzeugt auch dynamische Felder für SOLR</td>
-            <td>Es sollte geprüft werden, ob die Übertragung  dynamischer Felder in der speziellen Anwendung
-            erforderlich ist. Andernfalls sollte der Wert auf <em>false</em> gestellt werden.</td>
-          </tr>
-          <tr>
-            <td style="vertical-align:top;">MCR.Solr.ContentBaseFields</td>
-            <td style="vertical-align:top;">eine Liste von Feldnamen für allgemeine Derivate-Metadaten</td>
+            <td><code>MCR.Solr.DynamicFields</code></td>
+            <td>default=true ; erzeugt auch dynamische Felder für SOLR <br/>
+            Es sollte geprüft werden, ob die Übertragung  dynamischer Felder in der speziellen Anwendung
+            erforderlich ist. Andernfalls sollte der Wert auf <code>false</code> gestellt werden.</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.AVExtenderFields</td>
-            <td style="vertical-align:top;">eine Liste von Feldnamen für Video-Derivate-Metadaten</td>
+            <td><code>MCR.Solr.ContentBaseFields</code></td>
+            <td>eine Liste von Feldnamen für allgemeine Derivate-Metadaten</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.TikaFileds</td>
-            <td style="vertical-align:top;">eine Liste von Feldnamen für Tika-Metadaten</td>
+            <td><code>MCR.Solr.AVExtenderFields</code></td>
+            <td>eine Liste von Feldnamen für Video-Derivate-Metadaten</td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.JoinQueryFileds</td>
-            <td style="vertical-align:top;">
+            <td><code>MCR.Solr.TikaFileds</code></td>
+            <td>eine Liste von Feldnamen für Tika-Metadaten</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>MCR.Solr.JoinQueryFileds</code></td>
+            <td>
               enthält die Liste der Properties
-              <em>MCR.Solr.ContentBaseFields</em>
+              <code>MCR.Solr.ContentBaseFields</code>
               ,
-              <em>MCR.Solr.AVExtenderFields</em>
+              <code>MCR.Solr.AVExtenderFields</code>
               ,
-              <em>MCR.Solr.TikaFileds</em>
+              <code>MCR.Solr.TikaFileds</code>
             </td>
             <td></td>
           </tr>
           <tr>
-            <td style="vertical-align:top;">MCR.Solr.netsedDocuments</td>
-            <td style="vertical-align:top;">default=true ; ???</td>
+            <td><code>MCR.Solr.netsedDocuments</code></td>
+            <td>default=true ; ???</td>
             <td></td>
           </tr>
         </table>
-      </div>
+      
     </section>
 
     <section>
       <title>SOLR-Abfragen über die MyCoRe-Java-API</title>
-      <p> Mit diesem Code-Schnipsel soll demonstriert werden, wie ein Zugriff auf die SOLR-Daten mittels MyCoRe-API
+      <p>
+        Mit diesem Code-Schnipsel soll demonstriert werden, wie ein Zugriff auf die SOLR-Daten mittels MyCoRe-API
         erfolgen kann.
       </p>
-<pre><![CDATA[import org.apache.solr.client.solrj.SolrClient;
+      <pre class="brush: java">
+import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.common.SolrDocumentList;
@@ -304,7 +314,8 @@ import org.mycore.solr.MCRSolrUtils;
         query.setRows(10);
         SolrDocumentList results = solrClient.query(query).getResults();
 
-...]]></pre>
+...
+      </pre>
     </section>
 
   </body>

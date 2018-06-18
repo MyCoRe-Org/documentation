@@ -492,6 +492,7 @@ a:hover.sphereLink {
 
     .table { font-size: 1em;}
     .event-handler-table tbody > tr:nth-child(2n) > td {padding-bottom: 25px;}
+    .solr-properties-table {font-size: smaller;}
 
     code {
       padding: 2px 4px;
