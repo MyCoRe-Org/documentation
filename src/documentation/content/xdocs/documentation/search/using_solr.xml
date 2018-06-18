@@ -26,26 +26,28 @@
         Falls noch kein Solr7 Server zur Verfügung steht, kann er gemäß der Anleitung im Abschnitt <a href="site:solr7">Einrichtung eines Solr 7.3 Servers</a> installiert werden.
      </p>
      <p>
-     	Nun müssen für jede MyCoRe-Anwendung ein oder mehrere Solr-Cores angelegt werden.
-     	Da sich noch nicht alle Konfigurationsdateien für einen Core über die die Solr-API erstellen lassen,
-     	werden Templates für die Basiskonfiguration durch MyCoRe über GitHub bereitgestellt.
-      </p>
-      <p>Da verschiedene MyCoRe Komponenten und Module individuelle Suchfelder und Datentypen benötigen, können diese direkt
-      in den Modulen definiert werden. Mittels eines MyCoRe-Kommandos werden diese Definitonsdateien ausgelesen und über die <a href="https://lucene.apache.org/solr/guide/7_3/schema-api.html">Solr Schema API</a>
-      in den Core geschrieben.</p>
-      
+       Nun müssen für jede MyCoRe-Anwendung ein oder mehrere Solr-Cores angelegt werden.
+       Da sich noch nicht alle Konfigurationsdateien für einen Core über die die Solr-API erstellen lassen,
+       werden Templates für die Basiskonfiguration durch MyCoRe über GitHub bereitgestellt.
+     </p>
+     <p>
+       Da verschiedene MyCoRe Komponenten und Module individuelle Suchfelder und Datentypen benötigen, können diese direkt
+       in den Modulen definiert werden. Mittels eines MyCoRe-Kommandos werden diese Definitonsdateien ausgelesen und über die <a href="https://lucene.apache.org/solr/guide/7_3/schema-api.html">Solr Schema API</a>
+       in den Core geschrieben.</p>
+       
+       <subsection>
       <p>
         Folgende Schritte sind durchzuführen, um einen neuen <strong>main</strong>-Core zu erstellen. Dieser ist so,
         oder in einer durch die Anwender erweiterten Form immer für eine MyCoRe-Anwendung erforderlich. Weitere Cores können analog erstellt werden.
-        
-      </p>
+     </p>
 <pre><![CDATA[cd .../solr-7.3.0/server/solr/configsets
-git clone git@github.com:MyCoRe-Org/mycore_solr_configset_main.git
+git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git
 .../solr-7.3.0/bin/solr create -d mycore_solr_configset_main -c {my_core_name}]]></pre>
-        <p>Anschließend kann über die Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde.</p>
-        <p>Die Zuordnung der Cores zu den entsprechenden Core-Typen erfolgt mittels Properties (s. u.). Dabei ist die 
+      <p>Anschließend kann über die Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde (<a href="localhost:8983/solr/#/~cores/">localhost:8983/solr/#/~cores</a>).</p>
+      <p>Die Zuordnung der Cores zu den entsprechenden Core-Typen erfolgt mittels Properties (s. u.). Dabei ist die 
         Verbindung zwischen Core-Name und Core-Typ wie folgend anzugeben: <code>MCR.Solr.Core.{core_type}={core_name}</code>.
         Der Typ <em>main</em> stellt dabei den Standard-Core-Namen für MyCoRe-Anwendungen dar.</p>
+        </subsection>
         <p>
           Die Konfigurationen für die einzelnen Solr-Suchfelder stehen nun in den entsprechenden Modulen. Hierbei gilt 
           nachfolgende  Struktur. Für einzelne Fälle kann es erforderlich sein, dass neben dem <em>main</em>-Core
@@ -60,9 +62,10 @@ or
        .../solr-schema.json - filled if the module use SOLR schema definitions
        .../solr-config.json - filled if the module use SOLR configurations
        
-   .../{other_name} - other core definitions
+   .../{other_type} - other core definitions
        .../solr-schema.json - filled if the module use SOLR schema definitions
        .../solr-config.json - filled if the module use SOLR configurations]]></pre>
+       
       <p>Nun müssen dies Definitionen noch in den Core geladen werden. Pro Core ist je ein Ladevorgang notwendig.
       Sollen bereits bestehende / in MyCoRe vorhandene Felder in ihrer Definition geändert werden, so können diese
       mit <em>replace</em> in der JSON-Datei überschrieben werden.</p>
