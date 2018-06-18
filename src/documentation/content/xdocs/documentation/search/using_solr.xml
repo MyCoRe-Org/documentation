@@ -133,13 +133,18 @@ or
           </tr>
           <tr>
             <td><code>MCR.Solr.ServerURL</code></td>
-            <td>the URL to the SOLR server like http://mysolr.de:8983/</td>
+            <td>default URL to SOLR server like http://mysolr.de:8983/ without <strong>solr</strong>, use only URL!</td>
             <td><strong>required</strong></td>
           </tr>
           <tr>
-            <td><code>MCR.Solr.Core.{core_type}</code></td>
-            <td>the name of the core for the core type that will be used for this MyCoRe application</td>
+            <td><code>MCR.Solr.Core.{core_type}.Name</code></td>
+            <td>core name for the core type that will be used for this MyCoRe application</td>
             <td><strong>required</strong></td>
+          </tr>
+          <tr>
+            <td><code>MCR.Solr.Core.{core_type}.ServerURL</code></td>
+            <td>if core runs on another server than configured as default, you can specify this URL here</td>
+            <td></td>
           </tr>
           <tr>
             <td><code>MCR.Solr.Indexer.File.AccumulatorList</code></td>
@@ -148,7 +153,7 @@ or
           </tr>
           <tr>
             <td><code>MCR.Solr.Indexer.BulkSize</code></td>
-            <td>default=100 ; Die Anzahl der objekte, die mit einem mal an SOLR geschickt werden.</td>
+            <td>default=100 ; Die Anzahl der Objekte, die mit einem mal an SOLR geschickt werden.</td>
             <td></td>
           </tr>
           <tr>
