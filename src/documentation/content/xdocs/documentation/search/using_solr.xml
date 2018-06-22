@@ -508,10 +508,10 @@ die Daten in den Solr Core eingespielt werden. Um alle Daten zu indexieren, kann
           indexiert worden sind und führt für fehlende Objekte eine Neuindexierung aus.<br />
         </dd>
         <dt>
-          <code>synchronize solr metadata index in core {1}</code>
+          <code>synchronize solr metadata index in core {0}</code>
         </dt>
         <dd>
-          prüft, ob die Metadaten aller MyCoRe-Objekte im Solr Core mit der ID <code>{1}</code>
+          prüft, ob die Metadaten aller MyCoRe-Objekte im Solr Core mit der ID <code>{0}</code>
           indexiert worden sind und führt für fehlende Objekte eine Neuindexierung aus.<br />
         </dd>
 
