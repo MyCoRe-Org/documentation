@@ -130,6 +130,8 @@ See http://forrest.apache.org/docs/linking.html for more info
     <!-- Suche -->
     <search                label="Suche"             href="search/">
       <using_solr          label="Solr Nutzung"      href="using_solr.html" />
+      <using_solr__solr_commands
+                           label="Kommandos"         href="using_solr.html#solr_commands" type="hidden" />
       <query_language      label="Query-Language"    href="query_language.html" />
       <extract             label="Daten extrahieren" href="extract.html" />
     </search>

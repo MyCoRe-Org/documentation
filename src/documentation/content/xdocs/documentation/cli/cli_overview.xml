@@ -137,6 +137,7 @@
       		<li><a href="site:content/mcrobject/mcrobj_commands__mcrobject_commands">Kommandos zur Verwaltung von MyCoRe Objekten</a></li>
        		<li><a href="site:content/mcrderivate/mcrder_commands__mcrderivate_commands">Kommandos zur Verwaltung von MyCoRe Derivaten</a></li>
       		<li><a href="site:content/classifications/classif_commands__class_commands">Kommandos zur Verwaltung von Klassifikationen</a></li>
+            <li><a href="site:search/using_solr__solr_commands">Kommandos zur Arbeit mit Solr</a></li>
       		<li><a href="site:permissions/user_management__user_commands">Kommandos zur Verwaltung von Nutzern</a></li>
         	<li><a href="site:permissions/user_management__role_commands">Kommandos zur Verwaltung von Nutzerrollen</a></li>
         	<li><a href="site:permissions/acl_permissions__acl_commands">Kommandos für die Verwaltung der Zugriffskontrolle über ACL</a></li>

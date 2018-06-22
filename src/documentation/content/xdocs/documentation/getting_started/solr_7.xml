@@ -13,37 +13,39 @@
     <version>2018-05-31</version>
     <abstract>
       Die MyCoRe-Anwendungen benötigen eine leistungsstarke Suchmaschine für vielfältige Suchoperationen.
-      Mit Release 2018.06 wird die derzeit aktuelle Version Solr 7.3 benutzt. Die Grundinstallation wird auf
+      Im Release 2018.06 wird für MyCoRe die Version Solr 7.0.1 benutzt. Die Grundinstallation wird auf
       dieser Seite beschrieben.
       Hinsichtlich der konkreten MyCoRe-Anwendung gibt es weiterführenden Hinweise im Kapitel Suche.
-      .
     </abstract>
   </header>
 
   <body>
     <section>
-      <title>Einrichtung eines Solr 7.3 Servers</title>
+      <title>Einrichtung eines Solr 7.0.1 Servers</title>
+      <p><strong>Achtung: </strong>Das MyCoRe Release 2018.06 LTS lässt sich zur Zeit nicht mit akutelleren Solr Versionen (7.1 - 7.3) 
+       betreiben. Deshalb muss unbedingt <strong>Solr 7.0.1</strong> eingesetzt werden.</p>
       <p>
         Um Solr zu installieren, folge man der Anleitung  
-        <a target="_blank" href="https://lucene.apache.org/solr/guide/7_3/installing-solr.html">&quot;Installing Solr&quot;</a>
+        <a target="_blank" href="https://lucene.apache.org/solr/guide/7_0/installing-solr.html">&quot;Installing Solr&quot;</a>
         von der Solr Homepage.
       </p>
+      <p>Die richtige SOLR Version kann <a href="http://archive.apache.org/dist/lucene/solr/7.0.1/">hier</a> heruntergeladen werden.</p>
       <p>Es ist sinnvoll, wenn man das Datenverzeichnis mit den eigenen Cores nicht innerhalb der
         Solr-Distribution anlegt. Das gilt auch für die Log-Dateien.
       </p>
       <p>
         Mit folgendem Kommando lässt sich der Solr-Server 'individualisiert' starten:<br /><br />
         
-        <code>cd .../solr-7.3.0/bin ; solr start -s {my_data_dir} -p {my_port} -m {my_ram} -Dsolr.log.dir={my_log_dir}</code><br /><br />
+        <code>cd .../solr-7.0.1/bin ; solr start -s {my_data_dir} -p {my_port} -m {my_ram} -Dsolr.log.dir={my_log_dir}</code><br /><br />
         
         Die Cores werden dabei nach <code>{my_data_dir}</code> gelegt, Log-Dateien nach <code>{my_log_dir}</code>.
         Beide Verzeichnisse müssen vorher angelegt werden. Eine detailierte Beschreibung der Startparameter und weitere Konfigurationsmöglichkeiten
-        liefert die Seite <a target="_blank" href="https://lucene.apache.org/solr/guide/7_3/installing-solr.html">&quot;Solr Control Script Reference&quot;</a>. 
+        liefert die Seite <a target="_blank" href="https://lucene.apache.org/solr/guide/7_0/solr-control-script-reference.html">&quot;Solr Control Script Reference&quot;</a>. 
       </p>
       
       <p>
         Für den produktiven Einsatz von Solr (Verzeichnisstruktur, <tt>init.d</tt> Skript für den automatischen Start, ...) liefert die Seite
-        <a target="_blank" href="https://lucene.apache.org/solr/guide/7_3/taking-solr-to-production.html">&quot;Taking Solr to Production&quot;</a>.
+        <a target="_blank" href="https://lucene.apache.org/solr/guide/7_0/taking-solr-to-production.html">&quot;Taking Solr to Production&quot;</a>.
       	die notwendigen Informationen.
       </p>
     </section>
@@ -90,4 +92,3 @@
   </body>
 
 </document>
-    
