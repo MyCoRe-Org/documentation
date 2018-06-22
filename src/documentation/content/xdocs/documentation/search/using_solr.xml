@@ -52,8 +52,8 @@ Alternativ kann das Verzeichnis auch manuell heruntergeladen und an in diesen Or
      </p>
   </section>
   
-<subsection>
-<h3>Standard Solr Core (main) erzeugen</h3>
+<section>
+<title>Standard Solr Core (main) erzeugen</title>
 
 <p>Falls noch nicht geschehen, sollte jetzt die Solr-Server-URL der MyCoRe-Anwendung über ein Property bekannt gemacht werden:</p>
 <pre><![CDATA[MCR.Solr.ServerURL=http://localhost:8983/]]></pre>
@@ -78,10 +78,10 @@ mycore.sh register solr core with name {0} as core main
 
     <p>Über das Kommando <code>show solr configuration</code> kann eine Liste der zu setzenden Properties erzeugt werden.</p>
 
-  </subsection>  
+  </section>  
 
-  <subsection>
-    <h3>Solr Konfiguration und Schema erstellen</h3>
+  <section>
+    <title>Solr Konfiguration und Schema erstellen</title>
 
         <p>
           Die Konfiguration der Solr-Suchfelder, Request-Handler, ... wurden seit MyCoRe 2018.06 LTS 
@@ -118,7 +118,7 @@ or
       <p>siehe <a href="https://lucene.apache.org/solr/guide/7_0/solr-control-script-reference.html">Solr Control Script Reference</a>, 
       <a href="https://lucene.apache.org/solr/guide/7_0/schema-api.html">Schema API</a> und 
       <a href="https://lucene.apache.org/solr/guide/7_0/config-api.html">Config API</a></p>
-     </subsection>
+     </section>
     </section>
 
    <section>
