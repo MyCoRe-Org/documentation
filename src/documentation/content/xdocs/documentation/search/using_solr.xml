@@ -59,7 +59,7 @@ Alternativ kann das Verzeichnis auch manuell heruntergeladen und an in diesen Or
 <pre><![CDATA[MCR.Solr.ServerURL=http://localhost:8983/]]></pre>
 
 Anschließend kann der <strong>main</strong> Core über die MyCoRe-CLI erstellt und registriert werden:
-<pre><![CDATA[mycore.sh create solr core with name {name} with configset mycore_solr_configset_main
+<pre><![CDATA[mycore.sh create solr core with name {name} using configset mycore_solr_configset_main
 mycore.sh register solr core with name {0} as core main
 ]]></pre>
 
