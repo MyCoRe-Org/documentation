@@ -26,7 +26,7 @@
        betreiben. Deshalb muss unbedingt <strong>Solr 7.0.1</strong> eingesetzt werden.</p>
       <p>
         Um Solr zu installieren, folge man der Anleitung  
-        <a target="_blank" href="https://lucene.apache.org/solr/guide/7_0/installing-solr.html">&quot;Installing Solr&quot;</a>
+        <a href="https://lucene.apache.org/solr/guide/7_0/installing-solr.html">&quot;Installing Solr&quot;</a>
         von der Solr Homepage.
       </p>
       <p>Die richtige SOLR Version kann <a href="http://archive.apache.org/dist/lucene/solr/7.0.1/">hier</a> heruntergeladen werden.</p>
@@ -40,12 +40,12 @@
         
         Die Cores werden dabei nach <code>{my_data_dir}</code> gelegt, Log-Dateien nach <code>{my_log_dir}</code>.
         Beide Verzeichnisse müssen vorher angelegt werden. Eine detailierte Beschreibung der Startparameter und weitere Konfigurationsmöglichkeiten
-        liefert die Seite <a target="_blank" href="https://lucene.apache.org/solr/guide/7_0/solr-control-script-reference.html">&quot;Solr Control Script Reference&quot;</a>. 
+        liefert die Seite <a href="https://lucene.apache.org/solr/guide/7_0/solr-control-script-reference.html">&quot;Solr Control Script Reference&quot;</a>. 
       </p>
       
       <p>
         Für den produktiven Einsatz von Solr (Verzeichnisstruktur, <tt>init.d</tt> Skript für den automatischen Start, ...) liefert die Seite
-        <a target="_blank" href="https://lucene.apache.org/solr/guide/7_0/taking-solr-to-production.html">&quot;Taking Solr to Production&quot;</a>.
+        <a href="https://lucene.apache.org/solr/guide/7_0/taking-solr-to-production.html">&quot;Taking Solr to Production&quot;</a>.
       	die notwendigen Informationen.
       </p>
     </section>
