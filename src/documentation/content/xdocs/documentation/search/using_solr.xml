@@ -98,7 +98,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
   
         <p>
           Die Konfiguration der Solr-Suchfelder, Request-Handler, ... wurden seit MyCoRe 2018.06 LTS 
-          auf die Module und Komponenten aufgteilt, in denen sie verwendet werden. Die Basisfelder / -Konfiguration für alle MyCoRe-Anwendungen
+          auf die Module und Komponenten aufgeteilt, in denen sie verwendet werden. Die Basisfelder / -Konfiguration für alle MyCoRe-Anwendungen
           befindet sich im Modul <code>mycore-solr</code>.
         </p>
         <p> 
