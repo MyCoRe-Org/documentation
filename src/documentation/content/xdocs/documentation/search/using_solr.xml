@@ -111,12 +111,12 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
           {application-module}/src/main/resources/config/{application-module}/solr
   
            .../main - the core that use each MyCoRe application
-               .../solr-schema.json - filled if the module use SOLR schema definitions
-               .../solr-config.json - filled if the module use SOLR configurations
+               .../solr-schema.json - vorhanden, wenn das Modul das Solr-Schema erweitert
+               .../solr-config.json - vorhanden, wenn das Modul die Solr-Konfiguration erweitert
                
            .../{other_type} - other core definitions
-               .../solr-schema.json - filled if the module use SOLR schema definitions
-               .../solr-config.json - filled if the module use SOLR configurations
+               .../solr-schema.json - vorhanden, wenn das Modul das Solr-Schema erweitert
+               .../solr-config.json - vorhanden, wenn das Modul die Solr-Konfiguration erweitert
         </pre>
          
         <p>
@@ -133,7 +133,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         
         <p>
           Anschließend sollte noch einmal über die Solr-Web-Oberfläche geprüft werden, ob der Core vollständig konfiguriert wurde.
-          Auch sollte im MyCoRe-Log / in der Kommandozeile geprüft werden, ob SOLR sämtliche Konfigurationskommandos ausgeführt hat
+          Auch sollte im MyCoRe-Log / in der Kommandozeile geprüft werden, ob Solr sämtliche Konfigurationskommandos ausgeführt hat
           Ist alles okay, so ist der Core betriebsbereit.
         </p>
         <p>
@@ -147,7 +147,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
     <section>
       <title>Das Solr-Document</title>
       <p>
-        Die in SOLR zu speichernden Daten werden als Solr-Document über eine Kette von XSLT-Transformern generiert. Hierfür ist das 
+        Die in Solr zu speichernden Daten werden als Solr-Document über eine Kette von XSLT-Transformationen generiert. Hierfür ist das 
         Property <code>MCR.URIResolver.xslImports.solr-document</code> zuständig. Grundsätzlich in der Kette enthalten sind
         die Stylesheets <code>solr-basetemplate.xsl</code> und <code>mycoreobject-dynamicfields.xsl</code>. Weitere Transformer
         können dieser Kette angefügt werden (siehe Beispielcode). Der an SOLR ausgehende Datenstrom läßt sich im Web-Browser
@@ -184,7 +184,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
     </section>
   
     <section>
-      <title>Properties für die SOLR-Komponente</title>
+      <title>Properties für die Solr-Komponente</title>
       <p>
         <span class="label label-warning">Achtung:</span> In LTS 2017.06 sind die Properties noch mit <code>MCR.Module-solr</code>
         statt mit <code>MCR.Solr</code> bezeichnet. Mit dem LTS 2018.06 sind diese deprecated!
@@ -197,17 +197,17 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         </tr>
         <tr>
           <td><code>MCR.Solr.ServerURL</code></td>
-          <td>default URL to SOLR server like http://mysolr.de:8983/ without <strong>solr</strong>, use only URL!</td>
+          <td>default URL für den Solr-Server, z.B.<code>http://mysolr.de:8983/</code> (ohne <strong>/solr</strong> am Ende)</td>
           <td><strong>required</strong></td>
         </tr>
         <tr>
           <td><code>MCR.Solr.Core.{coreID}.Name</code></td>
-          <td>core name for the core type that will be used for this MyCoRe application</td>
+          <td>Name des Solr Cores (wird Pfadbestandteil der Solr-URL zum Core)</td>
           <td><strong>required</strong></td>
         </tr>
         <tr>
           <td><code>MCR.Solr.Core.{coreID}.ServerURL</code></td>
-          <td>if core runs on another server than configured as default, you can specify this URL here</td>
+          <td>Basis-URL des Solr-Servers, falls der Core nicht auf dem Standard-Server (s.o.) installiert wurde</td>
           <td></td>
         </tr>
         <tr>
