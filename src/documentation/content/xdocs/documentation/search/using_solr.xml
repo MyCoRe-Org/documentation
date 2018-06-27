@@ -4,7 +4,7 @@
 <document>
 
   <header>
-    <title>SOLR und MyCoRe</title>
+    <title>Solr und MyCoRe</title>
     <release>2018.06</release>
     <version>2018-06-22</version>
     <authors>
@@ -13,7 +13,7 @@
       <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
     </authors>
     <abstract>
-      Dieses Kapitel beschäftigt sich mit der Einbindung der SOLR7-Suchmaschine in MyCoRe. Im MyCoRe Release 2018.06 LTS wird Solr 
+      Dieses Kapitel beschäftigt sich mit der Einbindung der Solr7-Suchmaschine in MyCoRe. Im MyCoRe Release 2018.06 LTS wird Solr 
       7.0.1 verwendet.
     </abstract>
   </header>
@@ -21,7 +21,7 @@
   <body>
 
     <section>
-      <title>SOLR Konfiguration für MyCoRe</title>
+      <title>Solr Konfiguration für MyCoRe</title>
       <p>
         Falls noch kein Solr7 Server zur Verfügung steht, kann er gemäß der Anleitung im Abschnitt <a href="site:solr7">Einrichtung eines Solr 7.0.1 Servers</a> installiert werden.
       </p>
@@ -150,7 +150,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         Die in Solr zu speichernden Daten werden als Solr-Document über eine Kette von XSLT-Transformationen generiert. Hierfür ist das 
         Property <code>MCR.URIResolver.xslImports.solr-document</code> zuständig. Grundsätzlich in der Kette enthalten sind
         die Stylesheets <code>solr-basetemplate.xsl</code> und <code>mycoreobject-dynamicfields.xsl</code>. Weitere Transformer
-        können dieser Kette angefügt werden (siehe Beispielcode). Der an SOLR ausgehende Datenstrom läßt sich im Web-Browser
+        können dieser Kette angefügt werden (siehe Beispielcode). Der an Solr ausgehende Datenstrom läßt sich im Web-Browser
         mit der URL <code>http://{myapp}/receive/{mycore_id}?XSL.Style=solr-document</code> überprüfen.
       </p>
       <pre class="brush: xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -217,7 +217,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         </tr>
         <tr>
           <td><code>MCR.Solr.Indexer.BulkSize</code></td>
-          <td>default=100 ; Die Anzahl der Objekte, die mit einem mal an SOLR geschickt werden.</td>
+          <td>default=100 ; Die Anzahl der Objekte, die mit einem Mal an Solr geschickt werden.</td>
           <td></td>
         </tr>
         <tr>
@@ -232,7 +232,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         </tr>
         <tr>
           <td><code>MCR.Solr.SelectProxy.MaxConnections</code></td>
-          <td>default=20 ; max. Anzahl der Verbindungen zum SOLR-Server für select</td>
+          <td>default=20 ; max. Anzahl der Verbindungen zum Solr-Server für select</td>
           <td></td>
         </tr>
         <tr>
@@ -315,7 +315,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         </tr>
         <tr>
           <td><code>MCR.Solr.DynamicFields</code></td>
-          <td>default=true ; erzeugt auch dynamische Felder für SOLR <br/>
+          <td>default=true ; erzeugt auch dynamische Felder für Solr <br/>
           Es sollte geprüft werden, ob die Übertragung  dynamischer Felder in der speziellen Anwendung
           erforderlich ist. Andernfalls sollte der Wert auf <code>false</code> gestellt werden.</td>
           <td></td>
@@ -356,9 +356,9 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
     </section>
   
     <section id="solr_commands">
-      <title>SOLR Kommandos für die MyCoRe CLI</title>
+      <title>Solr Kommandos für die MyCoRe CLI</title>
       <p>
-        Folgende Kommandos stehen für die Arbeit mit SOLR an der Kommandozeile zur Verfügung.<br />
+        Folgende Kommandos stehen für die Arbeit mit Solr an der Kommandozeile zur Verfügung.<br />
         Die Core ID für den Standard Solr Core in MyCoRe ist <code>main</code>.
       </p>
        <dl>
@@ -545,9 +545,9 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
     </section>
   
     <section>
-      <title>SOLR-Abfragen über die MyCoRe-Java-API</title>
+      <title>Solr-Abfragen über die MyCoRe-Java-API</title>
       <p>
-        Mit diesem Code-Schnipsel soll demonstriert werden, wie ein Zugriff auf die SOLR-Daten mittels MyCoRe-API
+        Mit diesem Code-Schnipsel soll demonstriert werden, wie ein Zugriff auf die Solr-Daten mittels MyCoRe-API
         erfolgen kann.
       </p>
       <pre class="brush: java">
