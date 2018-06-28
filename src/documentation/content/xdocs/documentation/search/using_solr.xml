@@ -44,33 +44,38 @@
           befindet sich ein solches Set im <a href="https://github.com/MyCoRe-Org/mycore_solr_configset_main">GitHub</a>.
         </p>
         <p>
-          Um das Configuration Set in den Solr-Server zu integrieren kann folgende Kommandos ausgeführt werden:
+          Um das Configuration Set in den Solr-Server zu integrieren, können folgende Kommandos ausgeführt werden:
         </p>
         <pre class="brush: shell;gutter: false;">
 cd .../solr-7.0.1/server/solr/configsets
 git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         <p>
-          Alternativ kann das Verzeichnis auch manuell heruntergeladen und an in diesen Ordner kopiert werden.
+          Alternativ kann das Verzeichnis auch manuell heruntergeladen und in diesen Ordner kopiert werden.
         </p>
       </section>
 
       <section>
         <title>Standard Solr Core (main) erzeugen</title>
+        <p>Basierend auf dem bereitgestellten Configuration Set wird nun ein Solr Core erzeugt.
+        Als Name des <strong>main</strong> Cores kann der Name der MyCoRe-Anwendung gewählt werden.</p>
+        <pre class="brush: shell;gutter: false;">
+.../solr-7.0.1/bin/solr create -c {0} -d mycore_solr_configset_main
+        </pre>        
+        
         <p>
-          Falls noch nicht geschehen, sollte jetzt die Solr-Server-URL der MyCoRe-Anwendung über ein Property bekannt gemacht werden:
+          Falls noch nicht geschehen, sollte jetzt die Solr-Server-URL der MyCoRe-Anwendung über ein Property bekannt gemacht werden 
+          (siehe <a href="site:properties">MyCoRe-Konfigurationsverzeichnis</a>):
         </p>
         <pre class="brush: shell;gutter: false;">MCR.Solr.ServerURL=http://localhost:8983/</pre>
   
         <p>
-          Anschließend kann der <strong>main</strong> Core über die MyCoRe-CLI erstellt und registriert werden:
+          Anschließend muss der <strong>main</strong> Core über die MyCoRe-CLI registriert werden:
         </p>
         <pre class="brush: shell;gutter: false;">
-          mycore.sh create solr core with name {name} using configset mycore_solr_configset_main
           mycore.sh register solr core with name {0} as core main
         </pre>
   
         <p>
-          Als Name des Cores (<code>{name}</code>) kann der Name der MyCoRe-Anwendung gewählt werden.
           Anschließend kann über die Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde 
           (<a href="http://localhost:8983/solr/#/~cores">http://localhost:8983/solr/#/~cores</a>).
         </p>
@@ -368,7 +373,12 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         <dd>
           listet die aktuell konfigurierten Solr Cores auf.
         </dd>
-        
+        <!--  create commandos do not work,
+              the used API create a dependency from all created cores to their base configset.
+              That means that all modifications to one core also modify the config set  
+              and through this all other cores based on this configset.
+              Solr cores can only be created outside MyCoRe.-->
+        <!-- 
         <dt>
           <code>create solr core with name {0} on server {1} using configset {2}</code>
         </dt>
@@ -384,7 +394,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
           legt einen neuen Core mit dem Namen <code>{0}</code> (entspricht URL-Pfad des Cores auf dem Solr Server), auf dem Default Solr Server
           (siehe Property: <code>MCR.Solr.ServerURL</code>) und dem Solr ConfigSet <code>{1}</code> (BasisKonfiguration als Template auf dem Solr Server) an.
         </dd>
-        
+        -->
         <dt>
           <code>register solr core with name {0} on server {1} as core {2}</code>
         </dt>
