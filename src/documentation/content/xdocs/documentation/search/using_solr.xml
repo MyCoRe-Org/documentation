@@ -6,15 +6,15 @@
   <header>
     <title>Solr und MyCoRe</title>
     <release>2018.06</release>
-    <version>2018-06-22</version>
+    <version>2018-06-29</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
       <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
     </authors>
     <abstract>
-      Dieses Kapitel beschäftigt sich mit der Einbindung der Solr7-Suchmaschine in MyCoRe. Im MyCoRe Release 2018.06 LTS wird Solr 
-      7.0.1 verwendet.
+      Dieses Kapitel beschäftigt sich mit der Einbindung der Apache Solr-Suchmaschine in MyCoRe.
+      Im das MyCoRe Release 2018.06 LTS wurde erfolgreich mit Solr 7.0.1 getestet.
     </abstract>
   </header>
 
@@ -23,7 +23,7 @@
     <section>
       <title>Solr Konfiguration für MyCoRe</title>
       <p>
-        Falls noch kein Solr7 Server zur Verfügung steht, kann er gemäß der Anleitung im Abschnitt <a href="site:solr7">Einrichtung eines Solr 7.0.1 Servers</a> installiert werden.
+        Falls noch kein Solr Server zur Verfügung steht, kann er gemäß der Anleitung im Abschnitt <a href="site:solr7">Einrichtung eines Solr 7 Servers</a> installiert werden.
       </p>
       <p>
         Nun müssen für jede MyCoRe-Anwendung ein oder mehrere Solr-Cores angelegt werden.
@@ -33,25 +33,30 @@
       <p>
         Da verschiedene MyCoRe Komponenten und Module individuelle Suchfelder und Datentypen benötigen, können diese direkt
         in den Modulen definiert werden. Mittels eines MyCoRe-Kommandos werden diese Definitonsdateien ausgelesen und über die 
-        <a href="https://lucene.apache.org/solr/guide/7_0/schema-api.html">Solr Schema API</a>
+        <a href="https://lucene.apache.org/solr/guide/7_4/schema-api.html">Solr Schema API</a>
         in den Core geschrieben.
       </p>
 
       <section>
         <title>Configuration Sets laden</title>
         <p>
-          Die Basis-Konfiguration eines Solr Cores erfolgt über <strong>Configuration Sets</strong>. Für den MyCoRe <strong>main</strong> Core
-          befindet sich ein solches Set im <a href="https://github.com/MyCoRe-Org/mycore_solr_configset_main">GitHub</a>.
+          Die Basis-Konfiguration eines Solr-Cores erfolgt über <strong>Configuration Sets</strong>. Bei GitHub werden verschiedene
+          <a href="https://github.com/search?q=topic%3Asolr-core+org%3AMyCoRe-Org">MyCoRe-Config-Sets</a> zur Verfügung gestellt. Für
+          den Solr-Core vom Typ <strong>main</strong> wird das <a href="https://github.com/MyCoRe-Org/mycore_solr_configset_main">mycore_solr_configset_main</a>
+          benötigt.
         </p>
         <p>
-          Um das Configuration Set in den Solr-Server zu integrieren, können folgende Kommandos ausgeführt werden:
+          Um das Set in den Solr-Server zu integrieren, können folgende Kommandos ausgeführt werden:
         </p>
         <pre class="brush: shell;gutter: false;">
-cd .../solr-7.0.1/server/solr/configsets
-git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
+cd .../solr/server/solr/configsets
+git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git mycore_main</pre>
         <p>
-          Alternativ kann das Verzeichnis auch manuell heruntergeladen und in diesen Ordner kopiert werden.
+          Alternativ kann das Verzeichnis auch manuell heruntergeladen und in diesen Ordner kopiert werden. Analog kann dies für
+          das Klassifikations-Set aufgerufen werden:
         </p>
+        <pre class="brush: shell;gutter: false;">
+git clone https://github.com/MyCoRe-Org/mycore_solr_configset_classification.git mycore_classification</pre>
       </section>
 
       <section>
@@ -59,7 +64,7 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
         <p>Basierend auf dem bereitgestellten Configuration Set wird nun ein Solr Core erzeugt.
         Als Name des <strong>main</strong> Cores kann der Name der MyCoRe-Anwendung gewählt werden.</p>
         <pre class="brush: shell;gutter: false;">
-.../solr-7.0.1/bin/solr create -c {0} -d mycore_solr_configset_main
+.../solr/bin/solr create -c {0} -d mycore_main
         </pre>        
         
         <p>
@@ -142,9 +147,9 @@ git clone https://github.com/MyCoRe-Org/mycore_solr_configset_main.git</pre>
           Ist alles okay, so ist der Core betriebsbereit.
         </p>
         <p>
-          siehe <a href="https://lucene.apache.org/solr/guide/7_0/solr-control-script-reference.html">Solr Control Script Reference</a>, 
-          <a href="https://lucene.apache.org/solr/guide/7_0/schema-api.html">Schema API</a> und 
-          <a href="https://lucene.apache.org/solr/guide/7_0/config-api.html">Config API</a>
+          siehe <a href="https://lucene.apache.org/solr/guide/7_4/solr-control-script-reference.html">Solr Control Script Reference</a>, 
+          <a href="https://lucene.apache.org/solr/guide/7_4/schema-api.html">Schema API</a> und 
+          <a href="https://lucene.apache.org/solr/guide/7_4/config-api.html">Config API</a>
         </p>
       </section>
     </section>
