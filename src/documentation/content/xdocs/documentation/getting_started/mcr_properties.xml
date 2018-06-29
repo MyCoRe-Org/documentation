@@ -63,7 +63,7 @@
             <td>%MCR.basedir%/data (default)</td>
           </tr>
           <tr>
-            <td>MCR.Solr.ServerURL<span class="label label-warning">ab LTS2018</span</td>
+            <td>MCR.Solr.ServerURL<span class="label label-warning">ab LTS2018</span></td>
             <td>URL zum Server für die gegebene Anwendung</td>
             <td>http://localhost:8983/</td>
           </tr>
