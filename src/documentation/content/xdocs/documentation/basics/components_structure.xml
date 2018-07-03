@@ -6,7 +6,7 @@
     <title>Komponenten des MyCoRe-Kerns</title>
     <release>2017.06</release>
     <release>2018.06</release>
-    <version>2018-03-17</version>
+    <version>2018-07-03</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Thomas Scheffler" />
@@ -354,11 +354,16 @@
         <a href="https://jcp.org/en/jsr/detail?id=340">Servlet-3.1-Regeln</a>
         .
       </p>
+      <p>Folgende Versionsnummern können genutzt werden:<ul>
+        <li>LTS 2017.06 -> 2017.06.0.1-SNAPSHOT</li>
+        <li>LTS 2018.06 -> 2018.06.0.1-SNAPSHOT</li>
+        <li>Master -> 2018.06-SNAPSHOT</li>
+      </ul></p>
       <pre class="brush: xml;">
 <![CDATA[<project>
   ...
   <properties>
-    <mycore.version>2018.06-SNAPSHOT</mycore.version>
+    <mycore.version>VERSIONSNUMMER</mycore.version>
   </properties>
   ...
   <dependencies>
