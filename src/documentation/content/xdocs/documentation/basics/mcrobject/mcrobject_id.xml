@@ -4,13 +4,12 @@
 <document>
   <header>
     <title>Die MyCoRe-Objekt-ID</title>
-    <release>2015.05</release>
-    <release>2016.06</release>
     <release>2017.06</release>
+    <release>2018.06</release>
     <authors>
       <person name="Jens Kupferschmidt" />
     </authors>
-    <version>2014-11-26</version>
+    <version>2018-07-03</version>
   </header>
 
   <body>

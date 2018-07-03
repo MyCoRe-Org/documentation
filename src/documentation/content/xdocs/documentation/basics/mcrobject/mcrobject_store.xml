@@ -4,13 +4,13 @@
 <document>
   <header>
     <title>Die Speicherung der MyCoRe-Metadaten-Objekte</title>
-    <release>2016.06</release>
     <release>2017.06</release>
+    <release>2018.06</release>
+    <version>2018-07-03</version>
     <authors>
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
     </authors>
-    <version>2018-01-03</version>
   </header>
 
   <body>

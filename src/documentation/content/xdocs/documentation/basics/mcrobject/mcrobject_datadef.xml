@@ -5,14 +5,13 @@
 
   <header>
     <title>Gestaltung eigener MyCoRe-Metadatenobjekte</title>
-    <release>2015.05</release>
-    <release>2016.06</release>
     <release>2017.06</release>
+    <release>2018.06</release>
+    <version>2018-07-03</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Robert Stephan" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
-    <version>2016-07-25</version>
     <abstract>In diesem Abschnitt wird der Syntax der Definitionsdatei für eigene Metadatenmodelle nach dem
       MyCoRe-Datamodell-Prinzip 2 vorgestellt. Weiterhin folgt eine Beschreibung der Integration in den Build-Prozess.
     </abstract>

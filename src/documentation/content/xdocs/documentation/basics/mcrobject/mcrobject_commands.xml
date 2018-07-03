@@ -4,14 +4,13 @@
 <document>
   <header>
     <title>Kommandos zum Verwalten der Objekte</title>
-    <release>2015.05</release>
-    <release>2016.06</release>
     <release>2017.06</release>
+    <release>2018.06</release>
+    <version>2018-07-03</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Thomas Scheffler" />
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
-    <version>2014-11-26</version>
     <abstract>
       Der Abschnitt beschreibt alle Commandline-Kommandos, die mittels des MyCoRe Commandline Interfaces
       <code>mycore.sh</code>
