@@ -4,8 +4,9 @@
 <document>
   <header>
     <title>File Upload für digitale Objekte</title>
-    <release>2016.06</release>
-    <version>2016-12-20</version>
+    <release>2017.06</release>
+    <release>2018.06</release>
+    <version>2018-07-04</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>

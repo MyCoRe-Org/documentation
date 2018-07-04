@@ -4,9 +4,9 @@
 <document>
   <header>
     <title>Servlets zur Manipulation von MyCoRe-Objekten</title>
-    <release>2015.05</release>
-    <release>2016.06</release>
-    <version>2016-08-04</version>
+    <release>2017.06</release>
+    <release>2018.06</release>
+    <version>2018-07-04</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
     </authors>
