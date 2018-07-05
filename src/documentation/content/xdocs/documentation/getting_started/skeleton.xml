@@ -89,7 +89,7 @@
         <p>
           Um in der Anwendung suchen und recherchieren wird ein Solr-Suchserver benötigt.<br />
           Dieser läuft als eigene Webanwendung, die in einem Servlet-Container (z.B. Tomcat) deployed
-          und konfiguiert werden muss (siehe <a href="site:solr">Solr-Integration</a>).
+          und konfiguiert werden muss (siehe <a href="site:solr4">Solr-Integration</a>).
         </p>
         <p>Der Solr-Core <code>collection1</code> sollte in <code>skeleton</code> umbenannt werden.
            Dazu  muss im Solr-Home-Verzeichnis das Verzeichnis für den Core umbenannt und darin

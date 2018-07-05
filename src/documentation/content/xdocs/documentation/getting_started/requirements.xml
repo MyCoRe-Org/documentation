@@ -62,7 +62,7 @@
         Für die Suchfunktionalität von MyCoRe wird ein Solr-Server vorausgesetzt. Informationen zur Installation
         speziell für MyCoRe
         sind in der entsprechenden
-        <a href="site:solr">Solr-Dokumentation</a>
+        <a href="site:solr7">Solr-Dokumentation</a>
         zu finden. Umfassende Informationen zur Solr-Installation
         und Konfiguration finden sich in der
         <a href="http://wiki.apache.org/solr/SolrInstall">Solr-Dokumentation</a>

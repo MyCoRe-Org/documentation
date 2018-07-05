@@ -26,19 +26,19 @@
       <h3>Download</h3>
       <p>
         Informationen zum aktuellen Release und ein Changelog befinden sich im <a href="site:mir_release">Download-Bereich</a>.
-        Hier kann das aktuelle <a href="mir.war" data-role="artifactResolver" data-artifact="mir-webapp" data-suffix=".war" download="mir.war">MIR-Paket</a>
+        Bei Sonatype kann die aktuelle <a href="https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&amp;g=org.mycore.mir&amp;a=mir-webapp&amp;v=LATEST&amp;e=war">MIR-Version</a>
         (speichern als <code>mir.war</code>) heruntergeladen werden. Dieses kann mit dem Context 'mir' direkt in einen Servlet Container ausgeliefert (deployed) werden.
       </p>
       <p>
         Für administrative Zwecke kann zusätzlich eine MIR-CLI in zwei verschiedenen Formaten heruntergeladen werden:
       </p>
       <ol>
-        <li><a href="mir-cli.zip" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".zip" download="mir-cli.zip">ZIP archive</a> (speichern als <code>mir-cli.zip</code>)</li>
-        <li><a href="mir-cli.tar.gz" data-role="artifactResolver" data-artifact="mir-cli" data-suffix=".tar.gz" download="mir-cli.tar.gz">tar.gz archive</a> (speichern als <code>mir-cli.tar.gz</code>)</li>
+        <li><a href="https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&amp;g=org.mycore.mir&amp;a=mir-cli&amp;v=LATEST&amp;e=zip">ZIP archive</a> (speichern als <code>mir-cli.zip</code>)</li>
+        <li><a href="https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&amp;g=org.mycore.mir&amp;a=mir-cli&amp;v=LATEST&amp;e=tar.gz">tar.gz archive</a> (speichern als <code>mir-cli.tar.gz</code>)</li>
       </ol>
       <h3>Solr-Installation</h3>
       <p>
-        Soll ein eigener Solr-Server aufgesetzt werden, sind weitere Informationen dazu in unserer <a href="site:solr">Solr-Dokumentation</a> zu finden.
+        Soll ein eigener Solr-Server aufgesetzt werden, sind weitere Informationen dazu in unserer <a href="site:solr4">Solr-Dokumentation</a> zu finden.
         Den Solr-Kern für MIR liefert die Installation über den MIR-Wizard mit. Soll nicht das vom MIR-Wizard angelegte solr-home verwendet werden, so
         muss das Verzeichnis <code>mir/data/solr/collection1</code> entsprechend umkopiert werden. Auch der Name des Solr-Kerns kann beliebig angepasst
         werden. Wo der passende Kern gefunden werden kann, wird im MIR-Wizard konfiguriert.
