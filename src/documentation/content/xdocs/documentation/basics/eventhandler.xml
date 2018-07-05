@@ -121,7 +121,7 @@
           <tbody>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>010</td>
-            <td title="Klasse">Erforderlich bei Nutzung von mycore-swf<br/>org.mycore.access.MCRAccessEventHandler</td>
+            <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.access.MCRAccessEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
@@ -273,7 +273,7 @@
           <tbody>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>010</td>
-            <td title="Klasse">Erforderlich bei Nutzung von mycore-swf<br/>org.mycore.access.MCRAccessEventHandler</td>
+            <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.access.MCRAccessEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">

@@ -164,9 +164,9 @@
           Beispiel:<br /><br />
           common.cancel = Abbrechen
           <br />
-          swf.object.edit = Editieren Objekt
+          mods.object.edit = Editieren Objekt
           <br />
-          docportal.title.label = Titel
+          myapp.title.label = Titel
         </p>
       </section>
       
