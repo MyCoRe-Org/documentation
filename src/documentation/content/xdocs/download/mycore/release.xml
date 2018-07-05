@@ -14,10 +14,26 @@
 
   <body>
     <p>
-      Informationen zur Migration aus LTS 2017.06 finden Sie im
+      Informationen zur Migration vom LTS 2017.06 finden Sie im
       <a href="site:migrate_mcr2018.06">Abschnitt zur Migration</a>.
     </p>
-
+	
+    <section>
+      <title>Was ist neu?</title>
+      <!-- TODO: weiter ausformulieren! -->
+      <ul>
+        <li>Umgestellt auf Maven-Central, siehe <a href="https://mvnrepository.com/artifact/org.mycore">https://mvnrepository.com/artifact/org.mycore</a></li>
+        <li>Umstieg auf Solr 7 - siehe <a href="site:using_solr">Solr Nutzung</a></li>
+        <li>ORCID-Integration</li>
+        <li>Datacite-Schema konfigurierbar</li>
+		<li>Überarbeiteter FileUpload - siehe entsprechender <a href="https://blog.mycore.de/dateiupload-mit-dem-2018-06-release/">Blogeintrag</a></li>
+        <li>Abrundung der PI-Komponente</li>
+        <li>Sprachklassifikation RFC5646 löst RFC4646 ab</li>
+        <li>MCRConfiguration2</li>
+        <li>Komponenten entfernt: mycore-urn, mycore-complete und mycore-buildtools </li>
+      </ul>
+    </section>
+	
     <section>
       <title>Einbindung der Komponenten</title>
       <p>
@@ -65,21 +81,6 @@
   </dependencies>
 ...
 </project>]]></pre>
-    </section>
-
-    <section>
-      <title>Was ist neu?</title>
-      <!-- TODO: weiter ausformulieren! -->
-      <ul>
-        <li>Umgestellt auf Maven-Central, siehe <a href="https://mvnrepository.com/artifact/org.mycore">https://mvnrepository.com/artifact/org.mycore</a></li>
-        <li>Umstieg auf Solr 7</li>
-        <li>ORCID-Integration</li>
-        <li>Datacite-Schema konfigurierbar</li>
-        <li>Abrundung der PI-Komponente</li>
-        <li>Sprachklassifikation RFC5646 löst RFC4646 ab</li>
-        <li>MCRConfiguration2</li>
-        <li>Komponenten entfernt: mycore-urn, mycore-complete und mycore-buildtools </li>
-      </nul>
     </section>
 
   </body>
