@@ -6,7 +6,7 @@
     <title>Download: Übersicht</title>
     <release>2017.06</release>
     <release>2018.06</release>
-    <version>2018-04-09</version>
+    <version>2018-07-05</version>
     <authors>
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
@@ -14,6 +14,45 @@
   </header>
 
   <body>
+
+    <section>
+      <title>Snapshots und Releases</title>
+      <p>
+        Das Entwickler-Team stellt jedes Jahr ein sogenanntes
+        Long-Term-Support-Release (aktuell <a href="site:release">LTS-Release 2018.06</a>)
+        bereit. Dieses wird über ca. 1 Jahr bis zum nächsten LTS-Release gepflegt und mit Bugfixes versorgt. Neben dem
+        Kern erscheinen dabei auch für <strong>MIR</strong> und <strong>Skeleton</strong> jährliche Releases.
+      </p>
+    </section>
+    
+    <p>
+      Alte Versionen (Release und LTS-Release) werden im GitHub und im Maven-Repository archiviert.
+      Da auch die MyCoRe-Dokumentation über GitHub archiviert wird, muss ggf. hier nach alten Dokumentationen
+      gesucht werden. Dazu unterliegt auch diese Dokumentation parallel zu Release einer Versionierung.
+    </p>
+    
+    <div style="float:right;margin-left:20px;">
+      <script type="text/javascript" src="http://www.ohloh.net/p/16348/widgets/project_basic_stats.js"></script>
+    </div>
+    
+    <div>
+      <p>
+        Den aktuellen Codestand finden Sie im MyCoRe-Repositorium auf GitHub. Daneben werden von den Entwicklern noch
+        eigene Repositories zur Nachnutzung von Komponenten und Anwendungen betrieben.
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/MyCoRe-Org">MyCoRe bei GitHub</a>
+        </li>
+        <li>
+          <a href="https://git.sc.uni-leipzig.de/mycore_applications">GitLab des URZ der Universität Leipzig</a>
+        </li>
+      </ul>
+      <br />
+      <br />
+    </div>
+    
+    <div style="clear" />
 
     <section>
       <title>MyCoRe</title>
@@ -56,54 +95,6 @@
         .
       </p>
     </section>
-
-    <section>
-      <title>Snapshots und Releases</title>
-      <p>
-        Das Entwickler-Team stellt jedes Jahr ein sogenanntes
-        Long-Term-Support-Release (aktuell
-        <a href="site:lts_release_2017">LTS-Release 2017.06</a>
-        ) bereit. Dieses
-        wird über ca. 1 Jahr bis zum nächsten LTS-Release gepflegt und mit Bugfixes versorgt. Neben dem
-        Kern erscheinen dabei
-        auch für
-        <strong>MIR</strong>
-        und
-        <strong>Skeleton</strong>
-        jährliche Releases.
-      </p>
-    </section>
-
-    <p>
-      Alte Versionen (Release und LTS-Release) werden im GitHub und im Maven-Repository archiviert.
-      Da auch die
-      MyCoRe-Dokumentation über GitHub archiviert wird, muss ggf. hier nach alten Dokumentationen
-      gesucht werden. Dazu
-      unterliegt auch diese Dokumentation parallel zu Release einer Versionierung.
-    </p>
-
-    <div style="float:right;margin-left:20px;">
-      <script type="text/javascript" src="http://www.ohloh.net/p/16348/widgets/project_basic_stats.js"></script>
-    </div>
-
-    <div>
-      <p>
-        Den aktuellen Codestand finden Sie im MyCoRe-Repositorium auf GitHub. Daneben werden von den Entwicklern noch
-        eigene Repositories zur Nachnutzung von Komponenten und Anwendungen betrieben.
-      </p>
-      <ul>
-        <li>
-          <a href="https://github.com/MyCoRe-Org">MyCoRe bei GitHub</a>
-        </li>
-        <li>
-          <a href="https://git.sc.uni-leipzig.de/mycore_applications" target="_blank">GitLab des URZ der Universität Leipzig</a>
-        </li>
-      </ul>
-      <br />
-      <br />
-    </div>
-
-    <div style="clear" />
 
   </body>
 </document>

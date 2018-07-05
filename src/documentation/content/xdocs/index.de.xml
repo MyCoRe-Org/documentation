@@ -39,7 +39,7 @@
           <id>sphere_lasting</id>
           <alt>Nachhaltigkeit</alt>
           <description>
-            seit 15 Jahren kontinuierliche Community-Entwicklung
+            seit mehr als 15 Jahren kontinuierliche Community-Entwicklung
           </description>
         </image>
       </images>
@@ -65,26 +65,26 @@
         </newsentry>
         <newsentry>
           <title>MyCoRe auf dem DBT 2018</title>
-          <message>Auf dem 107. Bibliothekartag in Berlin wurden Vorträge über MyCoRe gehalten.</message>
+          <message>Auf dem 107. Bibliothekartag in Berlin war die Community mit einem Poster und zwei Vorträgen vertreten.</message>
           <url>https://opus4.kobv.de/opus4-bib-info/solrsearch/index/search/start/0/rows/20/sortfield/score/sortorder/desc/searchtype/advanced/author/L%C3%BCtzenkirchen+Neumann/authormodifier/contains_any/abstract/ORCID+MyCoRe/abstractmodifier/contains_any/year/2018/yearmodifier/contains_all</url>
           <date>20. Juni 2018</date>
           <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Release 2017.06</title>
-          <message>Das MyCoRe-Release 2017.06 steht mit den dazu passenden Skeleton- und MIR-Release-Versionen zur Verfügung.</message>
-          <url>download/index.html</url>
-          <date>03. Juli 2017</date>
+          <title>Release 2018.06</title>
+          <message>Am 02.07.2018 wurde das MyCoRe-Release 2018.06 als erstes Release bei Maven Central bereitgestellt.</message>
+          <url>download/release.html</url>
+          <date>05. Juli 2018</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
           <title>Anwendung</title>
-          <message>Die „Digitale Bibliothek Braunschweig“ hat das DINI-Zertifikat erhalten.</message>
-          <url>http://www.digibib.tu-braunschweig.de/</url>
-          <date>25. April 2018</date>
-          <author>Wiebke Oeltjen</author>
+          <message>Der aktualisierte Dokumentenserver „RosDok“ ist online - basierend auf JSPDocportal und MyCoRe 2017.06 LTS.</message>
+          <url>http://rosdok.uni-rostock.de</url>
+          <date>05. Juli 2018</date>
+          <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
       </news>

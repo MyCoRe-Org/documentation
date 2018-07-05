@@ -43,12 +43,8 @@ See http://forrest.apache.org/docs/linking.html for more info
   <download      label="Download"           href="download/" tab="download">
     <howtoget    label="Übersicht"          href="index.html" />
     <dl_mycore   label="MyCoRe"             href="mycore/">
-      <lts_release_2017 label="LTS-Release 2017.06"    href="lts_release_2017.html" />
-      <lts_release_2018 label="LTS-Release 2018.06"    href="lts_release_2018.html" />
-      <!-- ToDo 2018-04-10 -->
-      <!-- 
+      <release     label="LTS-Release 2018.06"    href="release.html" />
       <changelog   label="Changelog"              href="changelog.html" />
-      -->
     </dl_mycore>
     <dl_mir            label="MIR"                    href="mir/">
       <mir_release     label="Release 2017.06"        href="release.html" />

@@ -39,7 +39,7 @@
           <id>sphere_lasting</id>
           <alt>persistent</alt>
           <description>
-            continuous developement in a community since more than 10 years
+            continuous developement in a community since more than 15 years
           </description>
         </image>
       </images>
@@ -72,19 +72,19 @@
           <image>sf</image>
         </newsentry>
         <newsentry>
-          <title>Update</title>
-          <message>MIR and Skeleton are using the current LongTermSupport release version 2017.06.</message>
-          <url>http://www.mycore.de/download/index.html</url>
-          <date>03. Juli 2017</date>
+          <title>Release 2018.06</title>
+          <message>We have a new LTS release out now, which is the first available on maven central.</message>
+          <url>download/index.html</url>
+          <date>05. Juli 2018</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
         <newsentry>
           <title>Application</title>
-          <message>The digital library „Institutional Repository of TU Braunschweig“ has received the DINI certificate.</message>
-          <url>https://intr2dok.vifa-recht.de/</url>
-          <date>25. April 2018</date>
-          <author>Wiebke Oeltjen</author>
+          <message>A new version of „RosDok“ is now online - based on JSPDocportal and MyCoRe 2017.06 LTS.</message>
+          <url>http://rosdok.uni-rostock.de</url>
+          <date>05. Juli 2018</date>
+          <author>Kathleen Neumann</author>
           <image>sf</image>
         </newsentry>
       </news>
