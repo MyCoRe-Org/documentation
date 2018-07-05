@@ -67,6 +67,21 @@
 </project>]]></pre>
     </section>
 
+    <section>
+      <title>Was ist neu?</title>
+      <!-- TODO: weiter ausformulieren! -->
+      <ul>
+        <li>Umgestellt auf Maven-Central, siehe <a href="https://mvnrepository.com/artifact/org.mycore">https://mvnrepository.com/artifact/org.mycore</a></li>
+        <li>Umstieg auf Solr 7</li>
+        <li>ORCID-Integration</li>
+        <li>Datacite-Schema konfigurierbar</li>
+        <li>Abrundung der PI-Komponente</li>
+        <li>Sprachklassifikation RFC5646 löst RFC4646 ab</li>
+        <li>MCRConfiguration2</li>
+        <li>Komponenten entfernt: mycore-urn, mycore-complete und mycore-buildtools </li>
+      </nul>
+    </section>
+
   </body>
 
 </document>
