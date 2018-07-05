@@ -74,7 +74,7 @@
         <newsentry>
           <title>Release 2018.06</title>
           <message>We have a new LTS release out now, which is the first available on maven central.</message>
-          <url>download/index.html</url>
+          <url>download/mycore/release.html</url>
           <date>05. Juli 2018</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>

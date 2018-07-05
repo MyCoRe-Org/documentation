@@ -74,7 +74,7 @@
         <newsentry>
           <title>Release 2018.06</title>
           <message>Am 02.07.2018 wurde das MyCoRe-Release 2018.06 als erstes Release bei Maven Central bereitgestellt.</message>
-          <url>download/release.html</url>
+          <url>download/mycore/release.html</url>
           <date>05. Juli 2018</date>
           <author>Kathleen Neumann</author>
           <image>sf</image>
