@@ -662,40 +662,6 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>FU Dissertationen Online</name>
-      <description><![CDATA[
-            <div class="mcrmap_item">
-                <a class="mcrmap_item_icon" href="http://www.diss.fu-berlin.de"><img class="icon" alt="icon" src="map/icons/icon_berlin_fu.png" /></a>
-                <p>
-                	<a class="mcrmap_item_name" href="http://www.diss.fu-berlin.de">Elektronisches Publizieren von Dissertationen und Habilitationsschriften</a>
-           			<span class="mcrmap_item_owner">Freie Universität Berlin (Universitätsbibliothek)</span>
-                </p>
-          	</div>
-          ]]>
-        </description>
-      <styleUrl>#style_MyCoRe-Pin</styleUrl>
-      <Point>
-        <coordinates>13.28749,52.4525264,0</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>FU Dokumentenserver Online</name>
-      <description><![CDATA[
-            <div class="mcrmap_item">
-                <a class="mcrmap_item_icon" href="http://edocs.fu-berlin.de"><img class="icon" alt="icon" src="map/icons/icon_berlin_fu.png" /></a>
-                <p>
-                	<a class="mcrmap_item_name" href="http://edocs.fu-berlin.de">Dokumentenserver der FU Berlin</a>
-					<span class="mcrmap_item_owner">Freie Universität Berlin (Universitätsbibliothek)</span>
-                </p>
-          	</div>
-          ]]>
-        </description>
-      <styleUrl>#style_MyCoRe-Pin</styleUrl>
-      <Point>
-        <coordinates>13.28749,52.4525264,0</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
       <name>Orient Digital</name>
       <description><![CDATA[
             <div class="mcrmap_item">
