@@ -303,6 +303,17 @@
 
     </section>
 
+ 
+    <section>
+      <title>Eigene Request-Handler einbinden</title>
+      <p>MyCoRe verhindert grundsätzlich den Gebrauch eigener Request-Handler solange diese nicht MyCoRe bekannt 
+      sind. Grundsätzlich sind nur die Handler <code>/select</code> und <code>/update</code> aus Sicherheitsgründen 
+      zugelassen. Sollen weitere Handler benutzt werden, so müssen diese im Property <code>MCR.Solr.Proxy.WhiteList</code>
+      hinzugefügt werden. Dies kann mit folgender Konfiguration erfolgen:</p>
+      <pre class="brush: shell;gutter: false;">MCR.Solr.Proxy.WhiteList=%MCR.Solr.Proxy.WhiteList%,/myhandler</pre>
+      <p>[ToDo] Beispiel Autosuggestion</p>
+    </section>
+    
     <section>
       <title>Properties für die Solr-Komponente</title>
       <p>
