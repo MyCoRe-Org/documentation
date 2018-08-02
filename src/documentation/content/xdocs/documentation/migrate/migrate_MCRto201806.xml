@@ -78,8 +78,9 @@
       </p>
       <p>Das Secret kann auch händisch z.B. mit folgendem Befehl erzeugt werden:</p>
       <pre class="brush: shell;">
-        openssl rand 4096 -out {Pfadzu}/jwt.secret
+        openssl rand 4096 -out ~/.mycore/{MCR.AppName}/jwt.secret
       </pre>
+      <p>Weiterhin MUSS der Parameter -DMCR.AppName={MCR.AppName} beim Tomcat-Start mit gegeben werden.</p>
       
       <h2>Proxy-Header</h2>
       <p>Damit MyCoRe auch hinter einem Proxy sauber funktioniert wurde die Nutznung der Proxy-Header realisiert. Läuft die Anwendung
