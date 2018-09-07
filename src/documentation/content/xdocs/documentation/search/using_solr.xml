@@ -25,7 +25,7 @@
       <title>Solr Konfiguration für MyCoRe</title>
       <p>
         Falls noch kein Solr Server zur Verfügung steht, kann er gemäß der Anleitung im Abschnitt
-        <a href="site:solr7">Einrichtung eines Solr 7 Servers</a>
+        <a href="site:solr7">Einrichtung eines Solr-7-Servers</a>
         installiert werden.
       </p>
       <p>
@@ -87,14 +87,10 @@
       <section>
         <title>Configuration Sets laden</title>
         <p>
-          Die Basis-Konfiguration eines Solr-Cores erfolgt über
-          <strong>Configuration Sets</strong>
-          . Bei GitHub werden verschiedene
+          Die Basis-Konfiguration eines Solr-Cores erfolgt über <strong>Configuration Sets</strong>.
+          Bei GitHub werden verschiedene
           <a href="https://github.com/search?q=topic%3Asolr-core+org%3AMyCoRe-Org">MyCoRe-Config-Sets</a>
-          zur Verfügung gestellt. Für
-          den Solr-Core vom Typ
-          <strong>main</strong>
-          wird das
+          zur Verfügung gestellt. Für den Solr-Core vom Typ <code>main</code> wird das
           <a href="https://github.com/MyCoRe-Org/mycore_solr_configset_main">mycore_solr_configset_main</a>
           benötigt.
         </p>
@@ -167,9 +163,7 @@
 
         <p>
           Anschließend kann über die SOLR-Web-Oberfläche geprüft werden, ob der Core richtig angelegt wurde
-          (
-          <a href="http://localhost:8983/solr/#/~cores">http://localhost:8983/solr/#/~cores</a>
-          ).
+          (<a href="http://localhost:8983/solr/#/~cores">http://localhost:8983/solr/#/~cores</a>).
         </p>
 
         <p>
@@ -185,19 +179,13 @@
 
         <p>
           Die Konfiguration der Solr-Suchfelder, Request-Handler, ... wurden seit MyCoRe 2018.06 LTS
-          auf die Module und
-          Komponenten aufgeteilt, in denen sie verwendet werden. Die Basisfelder / -Konfiguration für alle
-          MyCoRe-Anwendungen
-          befindet sich im Modul
-          <code>mycore-solr</code>
-          .
+          auf die Module und Komponenten aufgeteilt, in denen sie verwendet werden. Die Basisfelder / -Konfiguration
+          für alle MyCoRe-Anwendungen befindet sich in der Komponente <code>mycore-solr</code>.
         </p>
         <p>
-          In Einzelfällen kann es erforderlich sein, dass neben dem Solr Corevom Typ
-          <code>main</code>
-          weitere Definitionen für andere Core Typen (z. B.
-          <code>classification</code>
-          ) definiert sind.
+          In Einzelfällen kann es erforderlich sein, dass neben dem Solr-Core vom Typ
+          <code>main</code> weitere Definitionen für andere Core Typen (z. B.
+          <code>classification</code>) definiert sind.
         </p>
         <pre class="brush: shell;gutter: false;">
           {mycore-module}/src/main/resources/components/{module_name}/config/solr
@@ -220,9 +208,7 @@
           Die JSON-Dateien bestehen aus Json-Arrays, die Kommandos der Solr-Schema bzw. Solr-Configuration API
           enthalten.
           Sollen bereits bestehende / in MyCoRe vorhandene Felder oder ihre Definition geändert werden, kann
-          dies über
-          <code>replace</code>
-          -Anweisungen in den JSON-Konfigurationsdateien erfolgen.
+          dies über <code>replace</code>-Anweisungen in den JSON-Konfigurationsdateien erfolgen.
         </p>
         <p>
           Über das MyCoRe-CLI Kommando wird die Konfiguration geladen. Für den Normalfall lautet das Kommando:
@@ -240,10 +226,8 @@
         </p>
         <p>
           siehe
-          <a href="https://lucene.apache.org/solr/guide/7_4/solr-control-script-reference.html">Solr Control Script Reference</a>
-          ,
-          <a href="https://lucene.apache.org/solr/guide/7_4/schema-api.html">Schema API</a>
-          und
+          <a href="https://lucene.apache.org/solr/guide/7_4/solr-control-script-reference.html">Solr Control Script Reference</a>,
+          <a href="https://lucene.apache.org/solr/guide/7_4/schema-api.html">Schema API</a> und
           <a href="https://lucene.apache.org/solr/guide/7_4/config-api.html">Config API</a>
         </p>
       </section>
@@ -253,20 +237,11 @@
       <title>Das Solr-Document</title>
       <p>
         Die in Solr zu speichernden Daten werden als Solr-Document über eine Kette von XSLT-Transformationen generiert.
-        Hierfür ist das
-        Property
-        <code>MCR.URIResolver.xslImports.solr-document</code>
-        zuständig. Grundsätzlich in der Kette enthalten sind
-        die Stylesheets
-        <code>solr-basetemplate.xsl</code>
-        und
-        <code>mycoreobject-dynamicfields.xsl</code>
-        . Weitere Transformer
-        können dieser Kette angefügt werden (siehe Beispielcode). Der an Solr ausgehende Datenstrom
-        läßt sich im Web-Browser
-        mit der URL
-        <code>http://{myapp}/receive/{mycore_id}?XSL.Style=solr-document</code>
-        überprüfen.
+        Hierfür ist das Property <code>MCR.URIResolver.xslImports.solr-document</code>
+        zuständig. Grundsätzlich in der Kette enthalten sind die Stylesheets <code>solr-basetemplate.xsl</code>
+        und <code>mycoreobject-dynamicfields.xsl</code>. Weitere Transformer können dieser Kette angefügt werden (siehe Beispielcode).
+        Der an Solr ausgehende Datenstrom läßt sich im Web-Browser mit der URL
+        <code>http://{myapp}/receive/{mycore_id}?XSL.Style=solr-document</code> überprüfen.
       </p>
       <pre class="brush: xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -290,13 +265,8 @@
 </stylesheet>]]></pre>
 
       <p>
-        Über verschiedene
-        <code>rebuild</code>
-        Kommandos (siehe
-        <a href="site:search/using_solr__solr_commands">Kommandos zur Arbeit mit Solr</a>
-        ) können
-        die Daten in den Solr Core eingespielt werden. Um alle Daten zu indexieren, kann folgendes Kommando
-        verwendet werden:
+        Über verschiedene <code>rebuild</code> Kommandos (siehe <a href="site:search/using_solr__solr_commands">Kommandos zur Arbeit mit Solr</a>)
+        können die Daten in den Solr Core eingespielt werden. Um alle Daten zu indexieren, kann folgendes Kommando verwendet werden:
       </p>
       <pre class="brush: shell;gutter: false;">rebuild solr metadata and content index in core main</pre>
 
@@ -311,7 +281,7 @@
       zugelassen. Sollen weitere Handler benutzt werden, so müssen diese im Property <code>MCR.Solr.Proxy.WhiteList</code>
       hinzugefügt werden. Dies kann mit folgender Konfiguration erfolgen:</p>
       <pre class="brush: shell;gutter: false;">MCR.Solr.Proxy.WhiteList=%MCR.Solr.Proxy.WhiteList%,/myhandler</pre>
-      <p>[ToDo] Beispiel Autosuggestion</p>
+      <!-- p>[ToDo] Beispiel Autosuggestion</p -->
     </section>
     
     <section>
