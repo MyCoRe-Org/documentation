@@ -110,7 +110,7 @@ location /mir {
       <h2>Migration auf MCRMetadataHistoryManager</h2>
       <p>Die "Deletion Policy“ braucht man zwingend für DINI-Repositorien und OAI2. Daher muss der MCRMetadataHistoryManager im Einsatz seien.
       Initial erfolgt dies über die beiden Kommandos <code>mycore.sh clear metadata history completely</code> und 
-      <code>build metadata history completely</code>. Weiterhin muss der <strong>MCRMetadataHistoryManager</strong>
+      <code>mycore.sh build metadata history completely</code>. Weiterhin muss der <strong>MCRMetadataHistoryManager</strong>
       als EventHandler aktiv sein.</p>
       
       <h2>rfc5646</h2>
