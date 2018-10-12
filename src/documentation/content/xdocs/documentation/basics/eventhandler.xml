@@ -331,16 +331,6 @@
         <table class="table table-striped event-handler-table">
           <tbody>
            <tr>
-            <td title="Nr. in Pipeline">optional<br/>010</td>
-            <td title="Klasse">Enthalten in mycore-solr; erforderlich bei Nutzung von SOLR<br/>org.mycore.solr.index.MCRSolrIndexEventHandler</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Der MCRSolrIndexEventHandler indexiert die Datenobjekte für Solr, sofern diese von einem passenden
-            Datentyp sind.
-            </td>
-           </tr>
-           <tr>
             <td title="Nr. in Pipeline">optional<br/>020</td>
             <td title="Klasse">Enthalten in mycore-iview2; erforderlich bei Nutzung von IView2<br/>org.mycore.iview2.events.MCRImageTileEventHandler</td>
            </tr>
