@@ -4,16 +4,24 @@
 <document>
   <header>
     <title>MyCoRe-Workshop 2018</title>
+    <version>2018-10-10</version>
+    <authors>
+      <person name="Wiebke Oeltjen" email="[EMAIL PROTECTED]" />
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+    </authors>
   </header>
 <body>
 
 <section>
 <title>Ankündigung</title>
-  <p>Der diesjährige <strong>MyCoRe-Anwenderworkshop</strong> findet vom 13. bis 15. November an der <strong>Universität Leipzig</strong> im Neuen Augusteum in Leipzig statt.
+  <p>Der diesjährige <strong>MyCoRe-Anwenderworkshop</strong> findet vom 13. bis 15. November an der 
+  <strong>Universität Leipzig</strong> im Neuen Augusteum (Augustusplatz 10), Raum A120 (Treppenaufgang auf der Hochhausseite, 1. Etage)
+   in Leipzig statt.
    <ul>
      <li>Anreisetag: Dienstag, 13.11.2018, <em>Get-together um 19 Uhr</em>, </li>
      <li>Workshop: Mittwoch, 14.11.2018, Beginn: 9 Uhr, ganztägig.</li>
-     <li>„<em>Hands-on-Workshop</em>“: Donnerstag, 15.11.2018, Beginn: 9 Uhr, voraussichtliches Ende: 12 Uhr.</li>
+     <li>„<em>Hands-on-Workshop</em>“: Donnerstag, 15.11.2018, Beginn: 9 Uhr, voraussichtliches Ende: 11:30 Uhr.</li>
+     <li>Donnerstag, 15.11.2018 11:30-12.30 - Führung durch das Ägyptische Museum der Uni Leipzig</li>
    </ul>
    Ziel des Workshops ist es, einen Erfahrungsaustausch zwischen MyCoRe-Anwenderinnen, MyCoRe-Anwendern, den Entwicklern und Interessierten zu ermöglichen. Kurze Beiträge und Berichte über eigene Entwicklungen sind gewünscht und willkommen! Die MyCoRe-Entwickler werden neue Entwicklungen vorstellen und es wird Gelegenheit für Fragen an die Entwickler geben. </p>
 
