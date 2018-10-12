@@ -10,7 +10,7 @@
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
     <release>2018.06</release>
-    <version>2018-07-05</version>
+    <version>2018-10-11</version>
     <abstract>
       Diese Seite fasst Informationen für die Migration vom LTS-Release 2017.06 zum LTS-Release 2018.06
       zusammen.
@@ -107,6 +107,12 @@ location /mir {
       <p>Die Solr-Properties und MyCoRe-PI-Properties wurden zum Teil umgebannt und müssen angepasst werden. Details dazu siehe
         <a href="https://github.com/MyCoRe-Org/mycore/tree/master/mycore-migration">MyCoRe-Migration</a>.</p>
 
+      <h2>Migration auf MCRMetadataHistoryManager</h2>
+      <p>Die "Deletion Policy“ braucht man zwingend für DINI-Repositorien und OAI2. Daher muss der MCRMetadataHistoryManager im Einsatz seien.
+      Initial erfolgt dies über die beiden Kommandos <code>mycore.sh clear metadata history completely</code> und 
+      <code>build metadata history completely</code>. Weiterhin muss der <strong>MCRMetadataHistoryManager</strong>
+      als EventHandler aktiv sein.</p>
+      
       <h2>rfc5646</h2>
       <p>Die Sprachklassifikation rfc4646 wurde durch eine neuere und vollständige Version rfc5646 abgelöst. Details dazu folgen,
         erste Informationen können dem <a href="https://github.com/MyCoRe-Org/mycore/pull/570/files">Github-Commit</a> entnommen
