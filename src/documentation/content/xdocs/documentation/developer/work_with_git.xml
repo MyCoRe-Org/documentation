@@ -5,7 +5,7 @@
     <title>Arbeiten mit Git</title>
     <release>2016.06</release>
     <release>2017.06</release>
-    <version>2016-11-11</version>
+    <version>2018-08-16</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Jens Kupferschmidt" />
       <person email="[EMAIL PROTECTED]" name="Thomas Scheffler" />
@@ -84,7 +84,12 @@
         stehen. Beispiel:
         <em>git checkout -b issues/MCR-1428-delete_in_SVN_store</em>
       </p>
-      <p>Nun sind die gewünschten Änderungen in den Code einzuarbeiten und lokal zu testen.</p>
+      <p>Nun sind die gewünschten Änderungen in den Code einzuarbeiten und lokal zu testen. Um Probleme mit
+      dem CI im GitHub zu vermeiden, sollten folgende Tests erfolgreich sein:</p>
+      <ul>
+        <li><code>export CI=true; mvn clean install</code></li>
+        <li><code>mvn javadoc:javadoc</code></li>
+      </ul>
       <p>
         Mit
         <code>git diff [--index | --cached]</code>
