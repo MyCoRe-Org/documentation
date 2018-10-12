@@ -4,10 +4,9 @@
 <document>
   <header>
     <title>Das EventHandler-Modell</title>
-    <release>2015.05</release>
-    <release>2016.06</release>
     <release>2017.06</release>
-    <version>2016-11-09</version>
+    <release>2018.06</release>
+    <version>2018-10-11</version>
     <authors>
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
       <person name="Kathleen Neumann" email="[EMAIL PROTECTED]" />
@@ -164,7 +163,7 @@
            </tr>
            <tr>
             <td title="Nr. in Pipeline">optional<br/>016</td>
-            <td title="Klasse"><span class="label label-info">seit 2016.01</span> Enthalten in mycore-mods<br/>org.mycore.mods.classification.MCRClassificationMappingEventHandler</td>
+            <td title="Klasse">Enthalten in mycore-mods<br/>org.mycore.mods.classification.MCRClassificationMappingEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
@@ -181,15 +180,6 @@
             Der MCRServiceFlagEventHandler setzt im Service-Bereich <em>/mycore.../services/servflags</em> je ein Flag
             mit dem aktuellen Nutzer und den Typen createdby und/oder modifiedby an und leitet das modifizierte Objekt
             in der Pipeline weiter. Die geschieht nur, wenn der <em>ImportMode</em> des Objektes <em>false</em> ist.
-            </td>
-           </tr>
-           <tr>
-            <td title="Nr. in Pipeline">optional<br/>018</td>
-            <td title="Klasse">Enthalten in mycore-pi<br/>org.mycore.pi.MCRPersistentIdentifierEventHandler</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Die Beschreibung zum MCRPersistentIdentifierEventHandler folgt.
             </td>
            </tr>
            <tr>
@@ -225,22 +215,22 @@
             </td>
            </tr>
            <tr>
-            <td title="Nr. in Pipeline">optional<br/>060</td>
-            <td title="Klasse"><span class="label label-info">bis 2016.01</span> Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
+            <td title="Nr. in Pipeline">060</td>
+            <td title="Klasse"> Enthalten in mycore-base<br/>org.mycore.datamodel.metadata.history.MCRMetadataHistoryManager</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
-            Der MCRDeleteObjectEventHandler speichert alle gelöschen MCRObjectIDs und MCRDerivateIDs in der
-            SQL-Tabelle MCRDELETEDITEMS.
+            Der MCRMetadataHistoryManager ersetzt den MCRDeleteObjectEventHandler und führt eine History über den Stand der
+            vorhandenen Objekte und ggf. deren Löschung.
             </td>
            </tr>
            <tr>
-            <td title="Nr. in Pipeline">optional<br/>070</td>
-            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.urn.events.MCRURNEventHandler</td>
+            <td title="Nr. in Pipeline">optional<br/>071</td>
+            <td title="Klasse">Enthalten in mycore-pi<br/>org.mycore.pi.MCRPersistentIdentifierEventHandler</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
-            Der MCRURNEventHandler aktualisiert die MyCoRe-interne URN-Verwaltung für das entsprechende Objekt.
+            Die Beschreibung zum MCRPersistentIdentifierEventHandler folgt.
             </td>
            </tr>
            <tr>
@@ -303,27 +293,6 @@
             </td>
            </tr>
            <tr>
-            <td valign="top" title="Nr. in Pipeline">030</td>
-            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.urn.events.MCRURNEventHandler</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Der MCRURNEventHandler aktualisiert die MyCoRe-interne URN-Verwaltung für das entsprechende Objekt.
-            </td>
-           </tr>
-           <tr>
-            <td title="Nr. in Pipeline">optional<br/>040</td>
-            <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.datamodel.metadata.MCRFileMetaEventHandler</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Der MCRFileMetaEventHandler ist eine vorläufige Lösung.
-            Im XML des Derivates, können Dateien in Klassifikationen einsortiert
-            werden. Dafür gibt es z.Zt. keine GUI. Der EventHandler fügt Links zu
-            den Kategorien in die Datenbank ein.
-            </td>
-           </tr>
-           <tr>
             <td title="Nr. in Pipeline">optional<br/>050</td>
             <td title="Klasse">Enthalten in mycore-mets<br/>org.mycore.mets.events.MCRUpdateMetsOnDerivateChangeEventHandler</td>
            </tr>
@@ -334,13 +303,13 @@
             </td>
            </tr>
            <tr>
-            <td title="Nr. in Pipeline">optional<br/>070</td>
-            <td title="Klasse"><span class="label label-info">bis 2016.01</span> Enthalten in mycore-base<br/>org.mycore.datamodel.common.MCRDeleteObjectEventHandler</td>
+            <td title="Nr. in Pipeline">070</td>
+            <td title="Klasse"> Enthalten in mycore-base<br/>org.mycore.datamodel.metadata.history.MCRMetadataHistoryManager</td>
            </tr>
            <tr>
             <td title="Beschreibung" colspan="2">
-            Der MCRDeleteObjectEventHandler speichert alle gelöschen MCRObjectIDs und MCRDerivateIDs in der
-            SQL-Tabelle MCRDELETEDITEMS.
+            Der MCRMetadataHistoryManager ersetzt den MCRDeleteObjectEventHandler und führt eine History über den Stand der
+            vorhandenen Objekte und ggf. deren Löschung.
             </td>
            </tr>
            <tr>
@@ -382,27 +351,6 @@
             </td>
            </tr>
            <tr>
-            <td title="Nr. in Pipeline">optional<br/>030</td>
-            <td title="Klasse">Enthalten in mycore-base<br/>org.mycore.datamodel.metadata.MCRFileMetaEventHandler</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Der MCRFileMetaEventHandler ist eine vorläufige Lösung.
-            Im XML des Derivates, können Dateien in Klassifikationen einsortiert
-            werden. Dafür gibt es z.Zt. keine GUI. Der EventHandler fügt Links zu
-            den Kategorien in die Datenbank ein.
-            </td>
-           </tr>
-           <tr>
-            <td title="Nr. in Pipeline">optional<br/>035</td>
-            <td title="Klasse">Enthalten in mycore-urn<br/>org.mycore.urn.events.MCRURNEventHandler</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Der MCRURNEventHandler aktualisiert die MyCoRe-interne URN-Verwaltung für das entsprechende Objekt.
-            </td>
-           </tr>
-           <tr>
             <td title="Nr. in Pipeline">optional<br/>060</td>
             <td title="Klasse">Enthalten in mycore-mets; erforderlich bei Nutzung von mets<br/>org.mycore.mets.events.MCRUpdateMetsOnDerivateChangeEventHandler</td>
            </tr>
@@ -420,16 +368,6 @@
             <td title="Beschreibung" colspan="2">
             Der MCRSolrIndexEventHandler indexiert die Volltexte für Solr, sofern diese von einem passenden
             MimeType sind.
-            </td>
-           </tr>
-           <tr>
-            <td title="Nr. in Pipeline">optional<br/>110</td>
-            <td title="Klasse">Enthalten in mycore-handle; erforderlich wenn ein Handle erzeugt werden soll<br/>org.mycore.handle.MCRHandleEventHandler</td>
-           </tr>
-           <tr>
-            <td title="Beschreibung" colspan="2">
-            Nutzt beispielsweise einen Webservice des GBV zur Vergabe eines Handle, fragt diesen ab und trägt den Wert dann in das Derivat-XML ein.
-            <span class="label label-danger">deprecated seit 2016.06</span>
             </td>
            </tr>
           </tbody>
