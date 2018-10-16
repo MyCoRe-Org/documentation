@@ -4,7 +4,7 @@
 <document>
   <header>
     <title>MyCoRe-Community</title>
-    <version>2018-04-09</version>
+    <version>2018-10-16</version>
     <authors>
       <person name="Wiebke Oeltjen" email="[EMAIL PROTECTED]" />
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
@@ -90,7 +90,7 @@
         </li>
         <li>
           Erfolgreiche Builds von Snapshots des Codes werden nach Prüfung durch <strong>Travis</strong> und 
-          <strong>Codacy</strong> im Sonatype MyCoRe-Artifactory zur Nutzung via <em>Maven</em> bereitgestellt.
+          <strong>Codacy</strong> im <a href="https://oss.sonatype.org/#nexus-search;quick~mycore" target="_blank">Sonatype MyCoRe-Artifactory</a> zur Nutzung via <em>Maven</em> bereitgestellt.
           Analog dazu werden die Releases im <strong>Maven-Central</strong> eingestellt.
         </li>
       </ul>
