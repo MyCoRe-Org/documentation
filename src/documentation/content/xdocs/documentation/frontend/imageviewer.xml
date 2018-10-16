@@ -8,6 +8,8 @@
       <person email="[EMAIL PROTECTED]" name="Sebastian Hofmann" />
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
+    <release>2017.06</release>
+    <release>2018.06</release>
     <version>2016-01-14</version>
     <abstract>
       Die in einer MyCoRe-Anwendung abgelegten Dokumente können z.T. auch wieder präsentiert werden
@@ -490,12 +492,5 @@
       </section>
     </section>
 
-    <section>
-      <title>DFG-Viewer</title>
-      <p>
-        Am Beispiel des DFG-Viewer soll gezeigt werden, wie Bildbetrachter von Drittanbietern
-        eingebunden werden können.
-      </p>
-    </section>
   </body>
 </document>
