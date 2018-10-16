@@ -5,7 +5,8 @@
 
   <header>
     <title>Daten für den DFG-Viewer</title>
-    <release>2017.07</release>
+    <release>2017.06</release>
+    <release>2018.06</release>
     <version>2018-02-06</version>
     <authors>
       <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
