@@ -185,6 +185,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <pid                 label="Persistent Identifier" href="pid.html" />
       <google              label="Google-Sitemap"        href="google_sitemap.html" />
       <dfgviewer           label="DFG-Viewer"            href="dfg_viewer.html" />
+      <iiif_support        label="IIIF-Unterstützung"    href="iiif_support.html" />
       <sword               label="SWORD"                 href="sword.html" />
     </interfaces>
 
