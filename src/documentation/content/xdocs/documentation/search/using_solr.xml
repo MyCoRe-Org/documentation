@@ -15,7 +15,7 @@
     <abstract>
       Dieses Kapitel beschäftigt sich mit der Einbindung der Apache Solr-Suchmaschine in MyCoRe.
       Im das MyCoRe
-      Release 2018.06 LTS wurde erfolgreich mit Solr 7.0.1 getestet.
+      Release 2018.06 LTS wurde erfolgreich mit Solr 7.4.0 getestet.
     </abstract>
   </header>
 
