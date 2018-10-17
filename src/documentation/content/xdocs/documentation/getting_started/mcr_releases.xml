@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+
+<document>
+  <header>
+    <title>Release-Konzept</title>
+    <release>2018.06</release>
+    <version>2018-10-16</version>
+    <authors>
+      <person name="Jens Kupferschmidt" email="[EMAIL PROTECTED]" />
+      <person name="Thomas Scheffler" email="[EMAIL PROTECTED]" />
+    </authors>
+    <abstract>Der Artikel beschreibt die Konzeption von MyCoRe-Releases.</abstract>
+  </header>
+  <body>
+
+    <section>
+      <title>Allgemein</title>
+      <p>
+        Releases des
+        <strong>MyCoRe</strong>
+        -Projektes unterteilen sich in Ausgaben mit langzeitlicher Unterstützung (
+        <em>LTS</em>
+        ) und Zwischen-Releases der Entwickler, um den Abschluss bestimmter Entwicklungsteilschritte zu markieren und
+        bereit zu stellen. Der garantierte Supportzeitraum für
+        <em>LTS</em>
+        beträgt zwei Jahre nach dem Erscheinen. In Ausnahmefällen können auch nach diesem Zeitraum noch kritische Fixes
+        eingespielt werden. Die Versionsnummern entsprechen den Branches in GitHub.
+      </p>
+    </section>
+
+    <section>
+      <title>LTS</title>
+      <p>
+        <em>LTS</em>
+        erscheinen einmal jährlich und werden mit dem Erscheinungsjahr und Monat bezeichnet. Releases sind unter ihrer
+        Nummer
+        <code>yyyy.09.rel.fix</code>
+        (z. B. 2018.06.0.1) auf
+        <a href="https://mvnrepository.com/artifact/org.mycore" target="_blank">https://mvnrepository.com/artifact/org.mycore
+        </a>
+        abgelegt. Erscheinungsmonat soll der September des Jahres sein.
+      </p>
+    </section>
+
+    <section>
+      <title>Test-Releases</title>
+      <p>
+        Test-/Zwischen-Releases sollen mehrfach im laufenden Entwicklungsjahr gemacht werden, um Anwendern einen fixen
+        Stand zum Testen anzubiete. Die ist ca. alle drei Monate geplant. Die Releases stehen auch auf Maven Central und
+        haben Nummern wie yyyy.mm, wobei mm nicht 09 ist.
+      </p>
+    </section>
+
+    <section>
+      <title>Snapshots</title>
+      <p>
+        Für alle Releases gibt es auf
+        <a href="https://oss.sonatype.org/#nexus-search;quick~mycore" target="_blank">Sonatype</a>
+        Snapshots des jeweiligen LTS-Standes. Diese Versionen haben die Form
+        <code>yyyy.09.rel.{fix+1}-SNAPSHOT</code>
+        (z. B. 2018.06.0.2-SNAPSHOT). Snapshots werden regelmäßig ergänzt durch aktuelle Bug-Fixes und sollte genutzt
+        werden, um von aktuellen Korrekturen des LTS zu profitieren.
+      </p>
+    </section>
+
+    <section>
+      <title>Master</title>
+      <p>
+        Der Master ist der aktuelle Entwicklungszweig. Nach erfolgreicher Übernahme eines Developer Branch in den
+        Master wird nach dem CI-Test ein entsprechender Snapshot in
+        <a href="https://oss.sonatype.org/#nexus-search;quick~mycore" target="_blank">Sonatype</a>
+        abgelegt. Zyklisch werden davon Test-Releases gebaut.
+      </p>
+    </section>
+
+  </body>
+</document>
+      

@@ -72,6 +72,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <solr4                 label="Solr4-Integration"         href="solr_4.html" />
       <solr7                 label="Solr7-Integration"         href="solr_7.html" />
       <properties            label="Konfiguration &amp; Properties" href="mcr_properties.html" />
+      <releases              label="Releases"                  href="mcr_releases.html" />
     </getting_started>
 
     <!-- Grundlagen -->
