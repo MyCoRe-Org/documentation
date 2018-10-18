@@ -47,7 +47,8 @@ See http://forrest.apache.org/docs/linking.html for more info
       <changelog   label="Changelog"              href="changelog.html" />
     </dl_mycore>
     <dl_mir            label="MIR"                    href="mir/">
-      <mir_release     label="Release 2017.06"        href="release.html" />
+      <mir_release_2018     label="Release 2018.08"        href="release_2018.html" />
+      <mir_release_2017     label="Release 2017.06"        href="release_2017.html" />
       <mir_changelog   label="Changelog"              href="changelog.html" />
     </dl_mir>
     <dl_skeleton            label="Skeleton"               href="skeleton/">
@@ -207,7 +208,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <migrate               label="Migration"                href="migrate/">
       <migrate_mcr2018.06      label="MCR 2017.06 &#8658; 2018.06"  href="migrate_MCRto201806.html" />
       <migrate_mcr2017.06      label="MCR 2016.06 &#8658; 2017.06"  href="migrate_MCRto201706.html" />
-      <migrate_mir2018.06      label="MIR 2017.06 &#8658; 2018.06"  href="migrate_MIRto201806.html" />
+      <migrate_mir2018.08      label="MIR 2017.06 &#8658; 2018.08"  href="migrate_MIRto201808.html" />
       <migrateDP_MIR       label="DocPortal &#8658; MIR"    href="migrateDocPortal_MIR.html" />
     </migrate>
 
