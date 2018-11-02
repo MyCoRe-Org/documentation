@@ -44,9 +44,9 @@
       <name>KiBiDaNo</name>
       <description><![CDATA[
             <div class="mcrmap_item">
-                <a class="mcrmap_item_icon" href="http://www.uni-kiel.de/kibidano"><img class="icon" alt="icon" src="map/icons/icon_kiel_kibidano.png" /></a>
+                <a class="mcrmap_item_icon" href="http://www.uni-kiel.de/kibidano/"><img class="icon" alt="icon" src="map/icons/icon_kiel_kibidano.png" /></a>
                 <p>
-                	<a class="mcrmap_item_name" href="http://www.uni-kiel.de/kibidano">Kieler Bilddatenbank Naher Osten</a>
+                	<a class="mcrmap_item_name" href="http://www.uni-kiel.de/kibidano/">Kieler Bilddatenbank Naher Osten</a>
                 	<span class="mcrmap_item_owner">Kiel: Christian-Albrechts-Universität (Rechenzentrum, Bibliothek)</span>
                 </p>
             </div>
@@ -61,9 +61,9 @@
       <name>MACAU</name>
       <description><![CDATA[
             <div class="mcrmap_item">
-                <a class="mcrmap_item_icon" href="http://eldiss.uni-kiel.de"><img class="icon" alt="icon" src="map/icons/icon_kiel_eldiss.png" /></a>
+                <a class="mcrmap_item_icon" href="https://macau.uni-kiel.de/"><img class="icon" alt="icon" src="map/icons/icon_kiel_macau.png" /></a>
                 <p>
-                	<a class="mcrmap_item_name" href="http://eldiss.uni-kiel.de">Multimedialer Archiv- und Publikationsserver der Christian-Albrechts-Universität zu Kiel</a>
+                	<a class="mcrmap_item_name" href="https://macau.uni-kiel.de/">Multimedialer Archiv- und Publikationsserver der Christian-Albrechts-Universität zu Kiel</a>
                	 	<span class="mcrmap_item_owner">Kiel: Christian-Albrechts-Universität (Rechenzentrum, Bibliothek)</span>
                 </p>
             </div>
