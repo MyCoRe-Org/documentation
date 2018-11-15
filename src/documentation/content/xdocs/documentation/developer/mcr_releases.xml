@@ -36,7 +36,7 @@
         <em>LTS</em>
         erscheinen einmal jährlich und werden mit dem Erscheinungsjahr und Monat bezeichnet. Releases sind unter ihrer
         Nummer
-        <code>yyyy.06.rel.fix</code>
+        <code>yyyy.06.fix</code>
         (z. B. 2019.06.1) auf
         <a href="https://mvnrepository.com/artifact/org.mycore" target="_blank">https://mvnrepository.com/artifact/org.mycore
         </a>
