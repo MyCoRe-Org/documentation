@@ -21,7 +21,8 @@
         Das Entwickler-Team stellt jedes Jahr ein sogenanntes
         Long-Term-Support-Release (aktuell <a href="site:release">LTS-Release 2018.06</a>)
         bereit. Dieses wird über ca. 1 Jahr bis zum nächsten LTS-Release gepflegt und mit Bugfixes versorgt. Neben dem
-        Kern erscheinen dabei auch für <strong>MIR</strong> und <strong>Skeleton</strong> jährliche Releases.
+        Kern erscheinen dabei auch für <strong>MIR</strong> und <strong>Skeleton</strong> jährliche Releases. Weitere
+        Informationen zum Release-Management entnehmen Sie unserer <a href="site:release_docu">Entwicklerdokumentation</a>.
       </p>
     </section>
     

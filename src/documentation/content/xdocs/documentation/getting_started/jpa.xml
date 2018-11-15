@@ -19,7 +19,7 @@
       <title>Allgemeines</title>
       <p>
         Mit Release 2016.06 wurde die Datenbankanbindung in MyCoRe von der direkten Nutzung von
-        <strong>Hibernate</strong>
+        <strong>Hibernate</strong> (siehe <a href="site:hibernate">Archiv</a>)
         auf die
         <strong>Java Persitence API (JPA)</strong>
         umgestellt. Dies hat den Vorteil, dass bei Bedarf die darunter liegende

@@ -13,8 +13,7 @@
     <version>2018-08-08</version>
     <abstract>
       Die MyCoRe-Anwendungen benötigen eine leistungsstarke Suchmaschine für vielfältige Suchoperationen.
-      Im Release 2018.06 wird für MyCoRe die Version Solr 7.4.0 benutzt. Die Grundinstallation wird auf
-      dieser Seite beschrieben.
+      Die Grundinstallation wird auf dieser Seite beschrieben.
       Hinsichtlich der konkreten MyCoRe-Anwendung gibt es weiterführenden Hinweise im Kapitel Suche.
     </abstract>
   </header>
@@ -23,6 +22,7 @@
     <section>
       <title>Einrichtung eines Solr-Servers</title>
       <p>
+        Mit dem Release 2018.06 wurde in MyCoRe von Solr 4.10 (siehe <a href="site:solr4">Archiv</a>) auf Solr 7 umgestellt.
         Um Solr zu installieren, folge man der Anleitung  
         <a href="https://lucene.apache.org/solr/guide/7_4/installing-solr.html">&quot;Installing Solr&quot;</a>
         von der Solr Homepage.
