@@ -113,7 +113,6 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcr_mailer            label="Mailer"            href="mailer.html" />
       <mcrservlet            label="MCRServlet"        href="mcrservlet.html" />
       <mcrconfigdir          label="Config-Struktur"   href="configdir.html" />
-      <lifecycle             label="Init-/Shutdown Handling"    href="lifecycle.html" />
     </content>
 
     <!-- Command Line Interface -->
@@ -221,9 +220,10 @@ See http://forrest.apache.org/docs/linking.html for more info
       <work_with_gradle    label="Arbeit mit Gradle"          href="work_with_gradle.html" />
       <documentation       label="Dokumentation"              href="documentation.html" />
       <apidocs             label="Javadocs"                   href="http://www.mycore.de/generated/mycore/apidocs/" />
-      <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
-      <plugin_dev          label="Eigene Plugins einbinden"   href="plugin_development.html" />
       <classes             label="Allgemeine Klassen"         href="classes.html" />
+      <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
+      <lifecycle           label="Init-/Shutdown Handling"    href="lifecycle.html" />
+      <plugin_dev          label="Eigene Plugins einbinden"   href="plugin_development.html" />
     </developer>
 
     <doc_archive label="Archiv" href="/../">
