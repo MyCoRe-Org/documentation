@@ -202,6 +202,7 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Migration -->
     <migrate               label="Migration"                href="migrate/">
+      <migrate_index           label="Übersicht"            href="index.html" />
       <migrate_mcr2018.06      label="MCR 2017.06 &#8658; 2018.06"  href="migrate_MCRto201806.html" />
       <migrate_mcr2017.06      label="MCR 2016.06 &#8658; 2017.06"  href="migrate_MCRto201706.html" />
       <migrate_mir2018.08      label="MIR 2017.06 &#8658; 2018.08"  href="migrate_MIRto201808.html" />
