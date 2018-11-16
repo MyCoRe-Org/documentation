@@ -406,7 +406,8 @@ See http://forrest.apache.org/docs/linking.html for more info
     <email      label="Kontakt zu uns"     href="email.html" />
     <team       label="Team"               href="team.html" />
     <workshops  label="Workshops"          href="workshops/" >
-      <workshop            label="MyCoRe-Workshop 2018"       href="workshop.html" /> 
+      <!-- <workshop            label="MyCoRe-Workshop 2018"       href="workshop.html" /> -->
+      <aw_workshop_2018    label="Leipzig 2018"               href="leipzig_2018.html" /> 
       <aw_workshop_2017    label="Hamburg 2017"               href="hamburg_2017.html" />
       <dbt-workshop_2017   label="DBT-Workshop 2017"          href="dbt-workshop_2017.html" />
       <aw_workshop_2016    label="Leipzig 2016"               href="leipzig_2016.html" />
