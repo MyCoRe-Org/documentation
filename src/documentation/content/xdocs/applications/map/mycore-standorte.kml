@@ -718,7 +718,28 @@
         <coordinates>13.3669673,52.506525,0</coordinates>
       </Point>
     </Placemark>
-
+    <Placemark>
+      <name>Publikationsserver des WIAS</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a class="mcrmap_item_icon" href="http://archive.wias-berlin.de/">
+                  <img class="icon" alt="icon" src="map/icons/icon_berlin_wias.png" />
+                </a>
+                <p>
+                	<a class="mcrmap_item_name" href="http://archive.wias-berlin.de/">Publikationsserver des WIAS</a>
+					<span class="mcrmap_item_owner">Weierstraß-Institut</span>
+                </p>
+          	</div>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>13.395940,52.512680,0</coordinates>
+      </Point>
+    </Placemark>
+    
+    
+    
 <!-- ***************************************************************************************************************** -->
 <!-- Duisburg-Essen                                                                                                          -->
 <!-- ***************************************************************************************************************** -->

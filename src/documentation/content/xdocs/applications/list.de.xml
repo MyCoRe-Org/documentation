@@ -41,6 +41,16 @@
           </li>
         </ul>
       </dd>
+      <dd>
+        Weierstraß-Instituts für Angewandte Analysis und Stochastik
+        <ul>
+          <li>
+            <a href="http://archive.wias-berlin.de/"
+              title="Link zum Publikationsserver des WIAS">Publikationsserver</a> 
+              des Weierstraß-Instituts für Angewandte Analysis und Stochastik 
+          </li>
+        </ul>
+      </dd>
       <dt>
         <strong>Bonn</strong>
       </dt>
@@ -385,10 +395,10 @@
         Akademie der Wissenschaften zu Göttingen - KOHD
         <ul>
           <li>
-            'Katalogisierung der Orientalischen Handschriften in Deutschland' (nicht öffentliches Projekt)
+            MyIHS-Teilprojekt „Katalogisierung der Orientalischen Handschriften in Deutschland“ (nicht öffentliches Projekt)
           </li>
           <li>
-            Papyri-Teilprojekt <a target="blank" href="https://coptica.kohd.adw-goe.de">Katalogisierung der koptischen Papyri</a>
+            Papyri-Teilprojekt „Katalogisierung der koptischen Papyri“ (nicht öffentliches Projekt)
           </li>
         </ul>
       </dd>
@@ -509,15 +519,18 @@
         bereitgestellt durch die Universität Leipzig (Universitätsrechenzentrum / -bibliothek)
         <ul>
           <li>
-            <a href="https://www.organapapyrologica.net/" title="Organa Papyrologica">Organa Papyrologica</a>
-            <ul>
-              <li><strong>Papyrus-Portal</strong></li>
-              <li><strong>Neue Fachwörterbuch der griechischen Verwaltungssprache</strong></li>
-              <li><strong>Herrscherrepräsentation und Herrscherkult in den außerägyptischen Besitzungen und Einflussgebieten der Ptolemäer (323 bis 30 v. Chr.)</strong></li>
-            </ul>
+            <a href="http://www.organapapyrologica.net/" title="Organa Papyrologica">Organa Papyrologica</a> vereint eine einheitliche
+            Rechercheplattform aller digitalen Papyrussammlungen (Papyrus-Portal) und das <strong>Neue Fachwörterbuch der griechischen Verwaltungssprache</strong>
           </li>
           <li>
-            <a href="https://papyri.uni-leipzig.de/" title="Eine Kollektion verschiedener deutscher Papyrussammlungen">Eine Kollektion verschiedener deutscher Papyrussammlungen</a>
+            <a href="http://papyri-collection.dl.uni-leipzig.de/" title="Eine Kollektion verschiedener deutscher Papyrussammlungen">Eine Kollektion verschiedener deutscher Papyrussammlungen</a>
+          </li>
+          <li>
+            <a href="http://papyri-giessen.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Gießen">Gießen</a>
+          </li>
+          <li>
+            <a href="http://papyri-leipzig.dl.uni-leipzig.de/" title="Das Papyrus-Projekt Halle-Jena-Leipzig">
+              Halle-Jena-Leipzig</a>
           </li>
         </ul>
       </dd>
@@ -534,6 +547,9 @@
             <a href="http://www.refaiya.uni-leipzig.de/" title="Refaiya der Universitätsbibliothek Leipzig">Damaszener
               Familienbibliothek Refaiya an der UBL</a>
           </li>
+          <li>
+            <a href="http://nusantara.dl.uni-leipzig.de/" title="Historische Handschriften Indonesien">Historische Handschriften
+              Indonesien</a> (Entstanden aus den Kooperationsprojekten 'Banda Aceh' und 'Java' des auswärtigen Amts) </li>
         </ul>
       </dd>
     </dl>
