@@ -405,10 +405,10 @@
         Göttingen Academy of Sciences and Humanities
         <ul>
           <li>
-            MyIHS project part Katalogisierung der Orientalischen Handschriften in Deutschland (non public project)
+            'Katalogisierung der Orientalischen Handschriften in Deutschland' (non public project)
           </li>
           <li>
-            Papyri project part Katalogisierung der koptischen Papyri (non public project)
+            <a target="blank" href="https://coptica.kohd.adw-goe.de">Cataloug of coptic papyrus</a>
           </li>
         </ul>
       </dd>
@@ -528,19 +528,16 @@
         Projects of Papyrus research und collections of different universities and institutions,
         provided by the University of Leipzig (University Computer Center / Library)
         <ul>
+           <li>
+            <a href="https://www.organapapyrologica.net/" title="Organa Papyrologica">Organa Papyrologica</a>
+            <ul>
+              <li><strong>Papyrus Portal</strong></li>
+              <li><strong>Neue Fachwörterbuch der griechischen Verwaltungssprache</strong></li>
+              <li><strong>Herrscherrepräsentation und Herrscherkult in den außerägyptischen Besitzungen und Einflussgebieten der Ptolemäer (323 bis 30 v. Chr.)</strong></li>
+            </ul>
+         </li>
           <li>
-            <a href="http://papyri-collection.dl.uni-leipzig.de/" title="A combination of german Papyrus collections">A combination of different german papyrus collections</a>
-          </li>
-          <li>
-            <a href="http://papyri-giessen.dl.uni-leipzig.de/" title="The Papyrus Project Gießen">Gießen</a>
-          </li>
-          <li>
-            <a href="http://papyri-leipzig.dl.uni-leipzig.de/" title="The Papyrus Project Halle-Jena-Leipzig">
-              Halle-Jena-Leipzig</a>
-          </li>
-          <li>
-            The <a href="http://www.papyrusportal.de/" title="Papyrus Portal">Papyrus Portal</a> as one unique
-            search plattform for all digitale papyrus collections
+            <a href="https://papyri.uni-leipzig.de/" title="A combination of german Papyrus collections">A combination of different german papyrus collections</a>
           </li>
         </ul>
       </dd>
@@ -556,10 +553,6 @@
           <li>
             <a href="http://www.refaiya.uni-leipzig.de/" title="Refaiya der Universitätsbibliothek Leipzig">Damaszener
               Family library „Refaiya“ at the UBL</a>
-          </li>
-          <li>
-            <a href="http://nusantara.dl.uni-leipzig.de/" title="Historische Handschriften Indonesien">Historical Manuscripts
-              of Indonesia</a> (as a result from the project cooperation „Banda Aceh“ and „Java“ with the Federal Foreign Office)
           </li>
         </ul>
       </dd>
