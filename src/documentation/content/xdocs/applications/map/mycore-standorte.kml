@@ -1517,6 +1517,23 @@
         <coordinates>7.135606,50.703199,0</coordinates>
       </Point>
     </Placemark>
+    <Placemark>
+      <name>perspectivia.net</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a class="mcrmap_item_icon" href="https://perspectivia.net/"><img class="icon" alt="icon" src="map/icons/icon_bonn_perspectivia.png" /></a>
+                <p>
+                	<a class="mcrmap_item_name" href="https://perspectivia.net/">Die Publikationsplattform perspectivia.net</a>
+					<span class="mcrmap_item_owner">Max Weber Stiftung</span>
+                </p>
+            </div>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>7.160333,50.686196,0</coordinates>
+      </Point>
+    </Placemark>
 
 <!-- ***************************************************************************************************************** -->
 <!-- Wiesbaden                                                                                                         -->
