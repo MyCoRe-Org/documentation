@@ -47,7 +47,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <changelog   label="Changelog"              href="changelog.html" />
     </dl_mycore>
     <dl_mir            label="MIR"                    href="mir/">
-      <mir_release_2018     label="Release 2018.08"        href="release_2018.html" />
+      <mir_release_2018     label="Release 2018.06"        href="release_2018.html" />
       <mir_release_2017     label="Release 2017.06"        href="release_2017.html" />
       <mir_changelog   label="Changelog"              href="changelog.html" />
     </dl_mir>

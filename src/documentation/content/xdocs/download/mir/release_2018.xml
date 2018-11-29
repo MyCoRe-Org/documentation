@@ -3,12 +3,12 @@
 
 <document>
   <header>
-    <title>Release 2018.08 (LTS)</title>
+    <title>Release 2018.06 (LTS)</title>
     <abstract>
-      The current release (MIR 2018.08) based on MyCoRe LTS Release 2018.06 is now online.
+      The current release (MIR 2018.06.0.x) based on MyCoRe LTS Release 2018.06.0.x is now online.
     </abstract>
     <release>2018.06</release>
-    <version>2018-10-17</version>
+    <version>2018-11-29</version>
     <authors>
       <person email="[EMAIL PROTECTED]" name="Kathleen Neumann" />
     </authors>
@@ -18,7 +18,7 @@
 
     <p>
       Hier kann das aktuelle
-      <a href="https://oss.sonatype.org/service/local/repositories/releases/content/org/mycore/mir/mir-webapp/2018.08/mir-webapp-2018.08.war">MIR-Paket</a>
+      <a href="https://oss.sonatype.org/service/local/repositories/releases/content/org/mycore/mir/mir-webapp/2018.06.0.1/mir-webapp-2018.06.0.1.war">MIR-Paket</a>
       (speichern als
       <code>mir.war</code>
       ) heruntergeladen werden. Dieses kann mit dem Context 'mir' direkt in einen Servlet Container ausgeliefert
@@ -29,13 +29,13 @@
     </p>
     <ul>
       <li>
-        <a href="https://oss.sonatype.org/service/local/repositories/releases/content/org/mycore/mir/mir-cli/2018.08/mir-cli-2018.08.zip">zip archive</a>
+        <a href="https://oss.sonatype.org/service/local/repositories/releases/content/org/mycore/mir/mir-cli/2018.06.0.1/mir-cli-2018.06.0.1.zip">zip archive</a>
         (speichern als
         <code>mir-cli.zip</code>
         )
       </li>
       <li>
-        <a href="https://oss.sonatype.org/service/local/repositories/releases/content/org/mycore/mir/mir-cli/2018.08/mir-cli-2018.08.tar.gz">tar.gz archive</a>
+        <a href="https://oss.sonatype.org/service/local/repositories/releases/content/org/mycore/mir/mir-cli/2018.06.0.1/mir-cli-2018.06.0.1.tar.gz">tar.gz archive</a>
         (speichern als
         <code>mir-cli.tar.gz</code>
         )
