@@ -81,10 +81,10 @@
         </newsentry>
         <newsentry>
           <title>Anwendung</title>
-          <message>Der aktualisierte Dokumentenserver „RosDok“ ist online - basierend auf JSPDocportal und MyCoRe 2017.06 LTS.</message>
-          <url>http://rosdok.uni-rostock.de</url>
-          <date>05. Juli 2018</date>
-          <author>Kathleen Neumann</author>
+          <message>Die Publikationsplattform der Max Weber Stiftung „perspectivia.net“ basiert nun auf MyCoRe.</message>
+          <url>https://www.perspectivia.net/</url>
+          <date>06. Dezember 2018</date>
+          <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
       </news>
