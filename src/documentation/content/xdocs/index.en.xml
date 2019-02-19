@@ -56,10 +56,10 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>MyCoRe User Workshop</title>
-          <message>From 13 to 15 November the annual MyCoRe User Workshop will take place in Leipzig. </message>
-          <url>support/workshops/workshop.html</url>
-          <date>18. April 2018</date>
+          <title>MyCoRe Developer Conference</title>
+          <message>The first MyCoRe developer conference in 2019 will take part in Jena.</message>
+          <url>https://www.openstreetmap.org/node/559256262#map=18/50.92904/11.58144<</url>
+          <date>11. Februar 2019</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
@@ -81,10 +81,10 @@
         </newsentry>
         <newsentry>
           <title>Application</title>
-          <message>A new version of „RosDok“ is now online - based on JSPDocportal and MyCoRe 2017.06 LTS.</message>
-          <url>http://rosdok.uni-rostock.de</url>
-          <date>05. Juli 2018</date>
-          <author>Kathleen Neumann</author>
+          <message>The publication server of the Max Weber Stiftung perspectivia.net is now based on MyCoRe.</message>
+          <url>https://www.perspectivia.net/</url>
+          <date>06. Dezember 2018</date>
+          <author>Wiebke Oeltjen</author>
           <image>sf</image>
         </newsentry>
       </news>
