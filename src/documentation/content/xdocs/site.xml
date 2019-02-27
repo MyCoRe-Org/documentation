@@ -416,7 +416,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <dbt-workshop_2014   label="DBT-Workshop 2014"          href="dbt-workshop_2014.html" />
       <aw_workshop_2014    label="Braunschweig 2014"          href="braunschweig_2014.html" />
     </workshops>
-    <bugs       label="zu MyCoRe JIRA"     href="https://mycore.atlassian.net/" />
+    <bugs       label="zu MyCoRe JIRA"     href="http://mycore.atlassian.net/" />
     <wiki       label="zu MyCoRe Wiki"     href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
   </support>
 
