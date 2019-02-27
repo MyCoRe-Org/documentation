@@ -63,13 +63,14 @@ See http://forrest.apache.org/docs/linking.html for more info
 
     <!-- Mit MyCoRe starten -->
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
-      <overview              label="Übersicht"                 href="../index.html" />
-      <requirements          label="Anforderungen"             href="requirements.html" />
-      <mir                   label="MIR"                       href="mir.html" />
-      <mir_customize         label="MIR individualisieren  "   href="mir_customize.html" />
-      <skeleton              label="Skeleton"                  href="skeleton.html" />
-      <jpa                   label="Datenbank &amp; JPA"       href="jpa.html" />
-      <solr7                 label="Solr-Integration"          href="solr_7.html" />
+      <overview              label="Übersicht"              href="../index.html" />
+      <requirements          label="Anforderungen"          href="requirements.html" />
+      <mir                   label="MIR"                    href="mir.html" />
+      <mir_customize         label="MIR individualisieren"  href="mir_customize.html" />
+      <maven_archetype       label="Maven Archetype"        href="maven_archetype.html" />
+      <initialization		 label="Initialisierung" 		href="initialization.html" />
+      <jpa                   label="Datenbank &amp; JPA"    href="jpa.html" />
+      <solr7                 label="Solr-Integration"		href="solr_7.html" />
       <properties            label="Konfiguration &amp; Properties" href="mcr_properties.html" />
     </getting_started>
 
@@ -241,6 +242,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       </old_components>
       <version_2017 label="MyCoRe 2017.06" href="archiv/version2017/">
         <solr4      label="Solr4-Integration"         href="solr_4.html" />
+        <skeleton   label="Skeleton"                  href="skeleton.html" />
       </version_2017>
       <version_2015 label="MyCoRe 2015.05" href="archiv/version2015/">
         <hibernate  label="Datenbank &amp; Hibernate" href="hibernate.html" />

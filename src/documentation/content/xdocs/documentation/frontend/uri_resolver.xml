@@ -24,11 +24,11 @@
         <code>org.mycore.common.xml.MCRURIResolver</code>
         implementiert einen Resolver, mit dem an verschiedenen
         Stellen im MyCoRe-System XML-Daten über URI's gelesen
-        werden können. Der Resolver wird zur Zeit an vilen Stellen des Layout-Prozesses eingesetzt. Für eigene Ziele
+        werden können. Der Resolver wird zur Zeit an vielen Stellen des Layout-Prozesses eingesetzt. Für eigene Ziele
         kann der URI-Resolver auch entsprechend erweitert werden.
       </p>
 
-      <p>Der Resolver unterstützt neben den Schemata des JAVA-URIResolvers die folgenden Schemata bzw. Protokolle:</p>
+      <p>Der Resolver unterstützt neben den Schemata des JAVA-URI-Resolvers die folgenden Schemata bzw. Protokolle:</p>
 
       <section>
         <title>webapp:[Path]</title>

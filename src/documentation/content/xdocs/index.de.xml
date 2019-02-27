@@ -56,10 +56,10 @@
       <map title="Alle Projekte auf einer Karte anzeigen" label="Karte" />
       <news>
         <newsentry>
-          <title>MyCoRe-User-Workshop 2018</title>
-          <message>Vom 13. bis 15. Nov. fand der diesjährige MyCoRe-User-Workshop in Leipzig statt. </message>
-          <url>support/workshops/leipzig_2018.html</url>
-          <date>16. November 2018</date>
+          <title>MyCoRe-Entwickler-Treffen</title>
+          <message>Die MyCoRe-Entwickler treffen sich zur ersten MyCoRe-Entwickler-Konferenz 2019 in Jena.</message>
+          <url>https://cmswiki.rrz.uni-hamburg.de/hummel/MyCoRe/Organisation/FebruarTreffen19</url>
+          <date>11. Februar 2019</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
