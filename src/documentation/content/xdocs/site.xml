@@ -220,7 +220,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <git                 label="Arbeit mit Git"             href="work_with_git.html" />
       <work_with_maven     label="Arbeit mit Maven"           href="work_with_maven.html" />
       <work_with_gradle    label="Arbeit mit Gradle"          href="work_with_gradle.html" />
-      <documentation       label="Dokumentation"              href="documentation.html" />
+      <documentation_dev   label="Dokumentation"              href="documentation.html" />
       <apidocs             label="Javadocs"                   href="http://www.mycore.de/generated/mycore/apidocs/" />
       <classes             label="Allgemeine Klassen"         href="classes.html" />
       <app_structure       label="Anwendungsstruktur"         href="app_structure.html" />
