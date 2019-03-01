@@ -272,7 +272,7 @@ See http://forrest.apache.org/docs/linking.html for more info
           <section03 label="3 Broadcasting"    href="03_broadcasting.html" />
           <section04 label="4 Basket"    href="04_basket.html" />
           <section05 label="5 XEditor"    href="05_xeditor.html" />
-          <section05 label="6 SolR"    href="06_solr.html" />
+          <section06 label="6 SolR"    href="06_solr.html" />
         </components>
         <componentes            label="alte Komponenten"   href="components.html" />
         <mymaker               label="DocPortal"           href="docportal/">
