@@ -420,6 +420,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     </workshops>
     <bugs       label="zu MyCoRe JIRA"     href="http://mycore.atlassian.net/" />
     <wiki       label="zu MyCoRe Wiki"     href="http://cmswiki.rrz.uni-hamburg.de/hummel#MyCoReWikiWiki" />
+    <maven      label="zu MyCoRe Maven"    href="http://mvnrepository.com/artifact/org.mycore" />
   </support>
 
   <imprint   label="Impressum"   href="imprint/index.html"   tab="imprint" />
