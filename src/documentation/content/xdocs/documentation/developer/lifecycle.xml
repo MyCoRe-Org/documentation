@@ -55,7 +55,7 @@
       </p>
       
       <div style="text-align:center;margin:10px 0;">
-        <img src="resources/images/forDevelopers/initialization_fromMCRServletInitializer.png"
+        <img src="images/forDevelopers/initialization_fromMCRServletInitializer.png"
              alt="HelloWorldServlet in Aktion"
              style="margin:5px;padding:10px;border:1px solid gray;"
              width="650px"/>
