@@ -12,13 +12,13 @@
   <section>
     <title>Version 2018.08 - Current Head</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2018.08-SNAPSHOT&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2018.08-SNAPSHOT</version>
+      </dependency>
+    ]]></pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore/project-reports.html">maven site</a></p>
 
   </section>
@@ -26,13 +26,13 @@
     <section>
       <title>Version 2018.06 - LTS</title>
       
-      <pre class="brush: xml;gutter: false;">
-    &lt;dependency>
-      &lt;groupId>org.mycore&lt;/groupId>
-      &lt;artifactId>mycore-{component}&lt;/artifactId>
-      &lt;version>2018.06.0&lt;/version>
-    &lt;/dependency>
-  </pre>
+      <pre class="brush: xml;gutter: false;"><![CDATA[
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artifactId>mycore-{component}</artifactId>
+      <version>2018.06.0</version>
+    </dependency>
+  ]]></pre>
       <p>more details see <a href="http://www.mycore.de/generated/mycore-2018.06.0/project-reports.html">maven site</a></p>
       <ul>
         <li>Bug
@@ -111,13 +111,13 @@
     <section>
       <title>Version 2018.05 - Kleine Warze</title>
       
-      <pre class="brush: xml;gutter: false;">
-    &lt;dependency>
-      &lt;groupId>org.mycore&lt;/groupId>
-      &lt;artifactId>mycore-{component}&lt;/artifactId>
-      &lt;version>2018.05&lt;/version>
-    &lt;/dependency>
-  </pre>
+      <pre class="brush: xml;gutter: false;"><![CDATA[
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artifactId>mycore-{component}</artifactId>
+      <version>2018.05</version>
+    </dependency>
+  ]]></pre>
       <p>more details see <a href="http://www.mycore.de/generated/mycore-2018.05/project-reports.html">maven site</a></p>
       <ul>
         <li>Bug
@@ -500,13 +500,13 @@
     <section>
       <title>Version 2017.06 - LTS</title>
       
-      <pre class="brush: xml;gutter: false;">
-    &lt;dependency>
-      &lt;groupId>org.mycore&lt;/groupId>
-      &lt;artifactId>mycore-{component}&lt;/artifactId>
-      &lt;version>2017.06.0&lt;/version>
-    &lt;/dependency>
-  </pre>
+      <pre class="brush: xml;gutter: false;"><![CDATA[
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artifactId>mycore-{component}</artifactId>
+      <version>2017.06.0</version>
+    </dependency>
+  ]]></pre>
       <p>more details see <a href="http://www.mycore.de/generated/mycore-2017.06.0/project-reports.html">maven site</a></p>
       <ul>
         <li>Bug
@@ -643,13 +643,13 @@
   <section>
     <title>Version 2017.05 - Portonic</title>
     
-    <pre class="brush: xml;gutter: false;">
-    &lt;dependency>
-      &lt;groupId>org.mycore&lt;/groupId>
-      &lt;artifactId>mycore-{component}&lt;/artifactId>
-      &lt;version>2017.05&lt;/version>
-    &lt;/dependency>
-  </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artifactId>mycore-{component}</artifactId>
+      <version>2017.05</version>
+    </dependency>
+  ]]></pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2017.05/project-reports.html">maven site</a></p>
     <ul>
       <li>Bug
@@ -878,13 +878,13 @@
   <section>
     <title>Version 2016.12 - Heiss &amp; Weiss</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2016.12&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2016.12</version>
+      </dependency>
+    ]]></pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.12/project-reports.html">maven site</a></p>
     <ul>
       <li>Bug
@@ -1142,13 +1142,13 @@
   <section>
     <title>Version 2016.06.0.1 - LTS</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2016.06.0.1&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2016.06.0.1</version>
+      </dependency>
+    ]]></pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.06.0.x/project-reports.html">maven site</a></p>
     <ul>
       <li>Bug
@@ -1317,13 +1317,13 @@
   <section>
     <title>Version 2016.06 - LTS</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2016.06.0&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2016.06.0</version>
+      </dependency>
+    ]]></pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.06.0.x/project-reports.html">maven site</a></p>
     <ul>
       <li>Bug
@@ -1587,13 +1587,13 @@
   <section>
     <title>Version 2016.02 - ‚Rusty Nail‘</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2016.02&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2016.02</version>
+      </dependency>
+    ]]></pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2016.02/project-reports.html">maven site</a></p>
     <ul>
       <li>Bug
@@ -1753,13 +1753,13 @@
   <section>
     <title>Version 2015.11 - ‚Old Fashioned‘</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2015.11&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2015.11</version>
+      </dependency>
+    ]]></pre>
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.11/project-reports.html">maven site</a></p>
     <ul>
       <li>Sub-task
@@ -1915,13 +1915,13 @@
   <section>
     <title>Version 2015.07 - ‚Last Tequila Sour‘</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2015.07&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2015.07</version>
+      </dependency>
+    ]]></pre>
 
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.07/project-reports.html">maven site</a></p>
     <ul>
@@ -1973,13 +1973,13 @@
   <section>
     <title>Version 2015.05.0 - LTS 2015</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2015.05.0&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2015.05.0</version>
+      </dependency>
+    ]]></pre>
 
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.05.0/project-reports.html">maven site</a></p>
     <ul>
@@ -2071,13 +2071,13 @@
   <section>
     <title>Version 2015.02 - ‚Titty Twister‘</title>
 
-    <pre class="brush: xml;gutter: false;">
-      &lt;dependency>
-        &lt;groupId>org.mycore&lt;/groupId>
-        &lt;artifactId>mycore-{component}&lt;/artifactId>
-        &lt;version>2015.02&lt;/version>
-      &lt;/dependency>
-    </pre>
+    <pre class="brush: xml;gutter: false;"><![CDATA[
+      <dependency>
+        <groupId>org.mycore</groupId>
+        <artifactId>mycore-{component}</artifactId>
+        <version>2015.02</version>
+      </dependency>
+    ]]></pre>
 
     <p>more details see <a href="http://www.mycore.de/generated/mycore-2015.02/project-reports.html">maven site</a></p>
     <ul>
