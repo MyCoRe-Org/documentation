@@ -65,7 +65,7 @@ See http://forrest.apache.org/docs/linking.html for more info
     <getting_started       label="Mit MyCoRe starten" href="getting_started/">
       <overview              label="Übersicht"              href="../index.html" />
       <requirements          label="Anforderungen"          href="requirements.html" />
-      <mir                   label="MIR"                    href="mir.html" />
+      <mir                   label="MIR installieren"       href="mir.html" />
       <mir_customize         label="MIR individualisieren"  href="mir_customize.html" />
       <maven_archetype       label="Maven Archetype"        href="maven_archetype.html" />
       <initialization		 label="Initialisierung" 		href="initialization.html" />
@@ -74,8 +74,8 @@ See http://forrest.apache.org/docs/linking.html for more info
       <properties            label="Konfiguration &amp; Properties" href="mcr_properties.html" />
     </getting_started>
 
-    <!-- Grundlagen -->
-    <content               label="Grundlagen"          href="basics/">
+    <!-- Basiskonzepte -->
+    <content               label="Basiskonzepte"          href="basics/">
       <mcr_components        label="Komponenten"       href="components_structure.html" />
       <mcrobject             label="MyCoRe-Objekte"    href="mcrobject/">
         <mcrobj_xml          label="XML-Format"        href="mcrobject_datamodel.html" />
@@ -85,13 +85,13 @@ See http://forrest.apache.org/docs/linking.html for more info
         <mcrobj_store        label="Metadatenspeicher" href="mcrobject_store.html" />
         <mcrobj_commands     label="Kommandos"         href="mcrobject_commands.html" />
         <mcrobj_commands__mcrobject_commands
-                               label="Kommandos"           href="mcrobject_commands.html#mcrobject_commands" type="hidden" />
+          label="Kommandos"           href="mcrobject_commands.html#mcrobject_commands" type="hidden" />
       </mcrobject>
       <mcrderivate           label="Derivate"          href="mcrderivate_ifs/">
         <mcrder_xml          label="XML-Format"        href="mcrderivate_datamodel.html" />
         <mcrder_commands     label="Kommandos"         href="mcrderivate_commands.html" />
         <mcrder_commands__mcrderivate_commands
-                             label="Kommandos"         href="mcrderivate_commands.html#mcrderivate_commands" type="hidden" />
+          label="Kommandos"         href="mcrderivate_commands.html#mcrderivate_commands" type="hidden" />
         <mcrder_ifs          label="IFS / IFS2"        href="ifs.html" />
         <mcrder_zip          label="ZIP-Dateien"       href="zipfiles.html" />
         <mcrder_streaming    label="StreamingServer"   href="streamingserver.html" />
@@ -104,7 +104,7 @@ See http://forrest.apache.org/docs/linking.html for more info
         <classif_xml         label="Datenmodell"       href="classification_datamodel.html" />
         <classif_commands    label="Kommandos"         href="classification_commands.html" />
         <classif_commands__class_commands
-                             label="Kommandos"         href="classification_commands.html#class_commands" type="hidden" />
+          label="Kommandos"         href="classification_commands.html#class_commands" type="hidden" />
         <classif_browser     label="Browser"           href="classification_browser.html" />
         <classif_editor      label="Editor"            href="classification_editor.html" />
         <classif_mapping     label="Mapping"           href="classification_mapping.html" />
@@ -113,7 +113,7 @@ See http://forrest.apache.org/docs/linking.html for more info
       <mcrobj_linktables     label="Linktabellen"      href="linktables.html" />
       <mcr_mailer            label="Mailer"            href="mailer.html" />
       <mcrservlet            label="MCRServlet"        href="mcrservlet.html" />
-      <mcrconfigdir          label="Config-Struktur"   href="configdir.html" />
+      <mcrconfigdir          label="Konfiguration"     href="configdir.html" />
     </content>
 
     <!-- Command Line Interface -->

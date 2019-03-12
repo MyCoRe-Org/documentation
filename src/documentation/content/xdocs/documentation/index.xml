@@ -25,8 +25,8 @@
       Repository-Funktionen und die Metadaten werden im MODS-Standard erfasst und abgelegt.
     </p>
     <p>
-      Möchte man eine eigene MyCoRe-Anwendung entwickeln mit eigenem Datenmodell und angepassten Funktionen, kann das
-      <a href="site:skeleton">Skeleton-Modul</a> als Einstieg genutzt werden.
+      Möchte man eine eigene MyCoRe-Anwendung entwickeln mit eigenem Datenmodell und angepassten Funktionen, kann der
+      <a href="site:maven_archetype">"Maven Archetype</a> als Einstieg genutzt werden.
     </p>
     <p>
       Eine Übersicht bestehender Applikationen der MyCore-Anwender steht unter <a href="site:list">Standorte und Projekte</a>.
