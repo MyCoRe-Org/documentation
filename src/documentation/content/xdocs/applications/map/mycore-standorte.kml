@@ -1512,6 +1512,27 @@
     </Placemark>
 
 <!-- ***************************************************************************************************************** -->
+<!-- Münster                                                                                                              -->
+<!-- ***************************************************************************************************************** -->
+    <Placemark>
+      <name>Corpus Musicae Ottomanicae</name>
+      <description><![CDATA[
+            <div class="mcrmap_item">
+                <a class="mcrmap_item_icon" href="https://corpus-musicae-ottomanicae.de/"><img class="icon" alt="icon" src="map/icons/icon_muenster_cmo.png" /></a>
+                <p>
+                	<a class="mcrmap_item_name" href="https://corpus-musicae-ottomanicae.de/">Corpus Musicae Ottomanicae (CMO)</a>
+					<span class="mcrmap_item_owner">Westfälische Wilhelms-Universität Münster</span>
+                </p>
+            </div>
+          ]]>
+        </description>
+      <styleUrl>#style_MyCoRe-Pin</styleUrl>
+      <Point>
+        <coordinates>7.5994589,51.9711865,0</coordinates>
+      </Point>
+    </Placemark>
+
+<!-- ***************************************************************************************************************** -->
 <!-- Erlangen                                                                                                          -->
 <!-- ***************************************************************************************************************** -->
     <Placemark>
