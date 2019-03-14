@@ -56,10 +56,10 @@
       <map title="show all projects on map" label="Map" />
       <news>
         <newsentry>
-          <title>MyCoRe Developer Conference</title>
-          <message>The first MyCoRe developer conference in 2019 took place in Jena.</message>
-          <url>https://www.openstreetmap.org/node/559256262#map=18/50.92904/11.58144</url>
-          <date>13. March 2019</date>
+          <title>Library Congress in Leipzig</title>
+          <message>Conference talk about university bibliographies and research information systems based on MyCoRe.</message>
+          <url>http://www.professionalabstracts.com/bid2019/iplanner/#/presentation/253</url>
+          <date>14. March 2019</date>
           <author>Wiebke Oeltjen</author>
           <image>newspaper</image>
         </newsentry>
