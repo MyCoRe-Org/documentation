@@ -116,7 +116,10 @@
               title="link to DINI certificate">DINI-certified</a>)</em>
           </li>
           <li>
-             <a href="https://bibliographie.ub.uni-due.de" title="link to University bibliography at Duisburg-Essen">University bibliography</a> of Duisburg-Essen University
+            <a href="https://oer.uni-duisburg-essen.de/" title="Open Educational Resources (OER)">Open Educational Resources (OER)</a> of the Duisburg-Essen University.
+          </li>
+          <li>
+             <a href="https://bibliographie.ub.uni-due.de" title="link to University bibliography at Duisburg-Essen">University bibliography</a> of the Duisburg-Essen University
           </li>
         </ul>
       </dd>
@@ -209,6 +212,22 @@
           <li>
             Das Niedersächsische Online-Archiv <a href="https://noa.gwlb.de/" title="link to IR">NOA</a> dient der Aufbewahrung und
             Bereitstellung von Online-Publikationen aus und über Niedersachsen.
+          </li>
+        </ul>
+      </dd>
+      <dd>
+        Hannover Medical School (Library)
+        <ul>
+          <li>
+            <a href="https://publikationsserver.mh-hannover.de/" title="link to RepoMed">RepoMed</a> is the repository of the Hannover Medical School (MHH).
+          </li>
+        </ul>
+      </dd>
+      <dd>
+        University of Veterinary Medicine Hannover, Foundation (Library)
+        <ul>
+          <li>
+            <a href="https://elib.tiho-hannover.de/" title="link to TiHo eLib">TiHo eLib</a> is the publication server of the University of Veterinary Medicine Hannover, Foundation (TiHo).
           </li>
         </ul>
       </dd>
@@ -699,6 +718,24 @@
     </dl>
   </section><!-- Ende - Bilddatenbanken -->
 
+<!-- Quellenkataloge -->
+  <section>
+    <title>Catalogue/Finding Aid</title>
+    <dl>
+      <dt>
+        <strong>Münster</strong>
+      </dt>
+      <dd>
+        Westfälische Wilhelms-Universität Münster (CMO)
+        <ul>
+          <li>
+            Corpus Musicae Ottomanicae 
+            <a href="https://corpus-musicae-ottomanicae.de/" title="CMO">CMO</a> Editions and Catalogue
+          </li>
+        </ul>
+      </dd>
+    </dl>
+  </section><!-- Ende - Quellenkatalog -->
 <!-- Sonstige -->
   <section>
     <title>Other</title>

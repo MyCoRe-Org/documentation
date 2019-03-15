@@ -117,9 +117,12 @@
             Videos, Universitätsbibliographie
           </li>
           <li>
+            <a href="https://oer.uni-duisburg-essen.de/" title="Open Educational Resources (OER)">Open Educational Resources (OER)</a> an der Universität Duisburg-Essen.
+          </li>
+          <li>
             <a href="https://bibliographie.ub.uni-due.de" title="Universitätsbibliograhie">Universitätsbibliograhie</a> der Universität Duisburg-Essen.
           </li>
-        </ul>
+          </ul>
       </dd>
       <dt>
         <strong>Düsseldorf</strong>
@@ -207,8 +210,24 @@
         Gottfried Wilhelm Leibniz Bibliothek (GWLB)
         <ul>
           <li>
-            Das Niedersächsische Online-Archiv <a href="https://noa.gwlb.de/" title="link to IR">NOA</a> dient der Aufbewahrung und
+            Das Niedersächsische Online-Archiv <a href="https://noa.gwlb.de/" title="link to NOA">NOA</a> dient der Aufbewahrung und
             Bereitstellung von Online-Publikationen aus und über Niedersachsen.
+          </li>
+        </ul>
+      </dd>
+      <dd>
+        Medizinische Hochschule Hannover (Bibliothek)
+        <ul>
+          <li>
+            <a href="https://publikationsserver.mh-hannover.de/" title="link to RepoMed">RepoMed</a> ist das Repositorium der Medizinischen Hochschule Hannover (MHH).
+          </li>
+        </ul>
+      </dd>
+      <dd>
+        Stiftung Tierärztliche Hochschule Hannover (Bibliothek)
+        <ul>
+          <li>
+            <a href="https://elib.tiho-hannover.de/" title="link to TiHo eLib">TiHo eLib</a> ist das Repositorium der Stiftung Tierärztliche Hochschule Hannover (TiHo).
           </li>
         </ul>
       </dd>
@@ -691,6 +710,26 @@
     </dl>
   </section><!-- Ende - Bilddatenbanken -->
 
+<!-- Quellenkataloge -->
+  <section>
+    <title>Quellenkataloge/Repertorien</title>
+    <dl>
+      <dt>
+        <strong>Münster</strong>
+      </dt>
+      <dd>
+        Westfälische Wilhelms-Universität Münster (CMO)
+        <ul>
+          <li>
+            Corpus Musicae Ottomanicae 
+            <a href="https://corpus-musicae-ottomanicae.de/" title="CMO">CMO</a> ist ein Editionen und Quellenkatalog
+          </li>
+        </ul>
+      </dd>
+    </dl>
+  </section><!-- Ende - Quellenkatalog -->
+
+  
 <!-- Sonstige -->
   <section>
     <title>Sonstige</title>
