@@ -123,7 +123,7 @@ MCR.OAIDataProvider.OAI2.DeletedRecord=transient
 MCR.OAIDataProvider.OAI2.DeletedRecordTypes=derivate,mods
 MCR.OAIDataProvider.OAI2.Granularity=YYYY_MM_DD
 
-MCR.OAIDataProvider.OAI2.Friends.DuEPublico=https://duepublico2.uni-duisburg-essen.de/servlets/OAIDataProvider
+MCR.OAIDataProvider.OAI2.Friends.DuEPublico=https://duepublico2.uni-due.de/servlets/OAIDataProvider
 MCR.OAIDataProvider.OAI2.Friends.DBThueringen=https://www.db-thueringen.de/servlets/OAIDataProvider
       </pre>
 
